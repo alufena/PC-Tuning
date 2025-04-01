@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Steam\bin\steamservice.exe" /repair

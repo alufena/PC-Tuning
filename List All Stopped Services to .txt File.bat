@@ -1,0 +1,1 @@
+ PowerShell Get-Service ^| Select StartType, Status, Name, DisplayName ^| Where-Object {$_.Status -eq 'Stopped'} ^| Format-Table -AutoSize ^| Out-File -filepath "$Env:userprofile\Desktop\Stopped_Services.txt"

@@ -1,0 +1,1 @@
+PowerShell Get-Service ^| Select StartType, Status, Name, DisplayName ^| Where-Object {$_.Status -eq 'Running'} ^| Format-Table -AutoSize ^| Out-File -filepath "%userprofile%\Desktop\Running_Services.txt"
