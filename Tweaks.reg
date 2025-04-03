@@ -73,19 +73,23 @@ Windows Registry Editor Version 5.00
 "FeatureSettingsOverride"=dword:00000003
 "FeatureSettingsOverrideMask"=dword:00000003
 "LargeSystemCache"=dword:00000001
-"DisablePagingExecutive"=dword:00000000
+"DisablePagingExecutive"=dword:00000001
 
 ; SplitLargeCaches =- padrão, 1 tweak
 ; GlobalTimerResolutionRequests 0 padrão, 1 tweak
 ; SerializeTimerExpiration =- padrão, 1 ou 2 tweak (2 só para w11. 0 auto, 1 force, 2 off)
 ; ThreadDpcEnable =- padrão, 0 tweak
-; InterruptSteeringDisabled =- padrão, 0 tweak (w11 24h2 removido)
+; InterruptSteeringDisabled =- padrão, 1 tweak (w11 24h2 removido)
+; DisableExceptionChainValidation =- padrão, tweak 1
+; KernelSEHOPEnabled =- padrão, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 "SerializeTimerExpiration"=dword:00000001
-"SplitLargeCaches"=-
+"SplitLargeCaches"=dword:00000001
 "GlobalTimerResolutionRequests"=dword:00000001
 "ThreadDpcEnable"=dword:00000000
 "InterruptSteeringDisabled"=dword:00000001
+"DisableExceptionChainValidation"=dword:00000001
+"KernelSEHOPEnabled"=dword:00000000
 
 ; =- padrão, 5 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
@@ -223,8 +227,20 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments]
 "SaveZoneInformation"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Attachments]
+"SaveZoneInformation"=dword:00000001
+
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings]
 "NOC_GLOBAL_SETTING_TOASTS_ENABLED"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Ole]
+"EnableDCOM"="N"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows Script\Settings]
+"JITDebug"=dword:00000000
+
+[HKEY_USERS\.Default\Microsoft\Windows Script\Settings]
+"JITDebug"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat]
 "AITEnable"=dword:00000000
@@ -265,6 +281,9 @@ Windows Registry Editor Version 5.00
 "RemoteDesktop-UserMode-In-TCP"="v2.33|Action=Allow|Active=FALSE|Dir=In|Protocol=6|LPort=3389|App=%SystemRoot%\\system32\\svchost.exe|Svc=termservice|Name=@FirewallAPI.dll,-28775|Desc=@FirewallAPI.dll,-28756|EmbedCtxt=@FirewallAPI.dll,-28752|"
 "RemoteDesktop-UserMode-In-UDP"="v2.33|Action=Allow|Active=FALSE|Dir=In|Protocol=17|LPort=3389|App=%SystemRoot%\\system32\\svchost.exe|Svc=termservice|Name=@FirewallAPI.dll,-28776|Desc=@FirewallAPI.dll,-28777|EmbedCtxt=@FirewallAPI.dll,-28752|"
 "RemoteDesktop-Shadow-In-TCP"="v2.33|Action=Allow|Active=FALSE|Dir=In|Protocol=6|App=%SystemRoot%\\system32\\RdpSa.exe|Name=@FirewallAPI.dll,-28778|Desc=@FirewallAPI.dll,-28779|EmbedCtxt=@FirewallAPI.dll,-28752|Edge=TRUE|Defer=App|"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Associations]
+"DefaultFileTypeRisk"=dword:00000710
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
 "AddressBarTrendingSuggestEnabled"=dword:00000000
@@ -432,9 +451,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdNisDrv]
 "Start"=dword:00000004
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DiagTrack]
-"Start"=dword:00000004
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SecurityHealthService]
 "Start"=dword:00000004
 
@@ -445,9 +461,6 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wscsvc]
-"Start"=dword:00000004
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\dmwappushservice]
 "Start"=dword:00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\Circular Kernel Context Logger]
@@ -468,9 +481,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\MDCoreSvc]
 "Start"=dword:00000004
 
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\BcastDVRUserService]
-"Start"=dword:00000004
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\TabletPC]
 "PreventHandwritingDataSharing"=dword:00000001
 
@@ -489,6 +499,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Speech]
 "AllowSpeechModelUpdate"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\PolicyManager\current\device\Accounts]
+"AllowMicrosoftAccountSignInAssistant"=dword:00000001
+
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "Start_TrackDocs"=dword:00000000
 "Start_AccountNotifications"=dword:00000000
@@ -500,6 +513,11 @@ Windows Registry Editor Version 5.00
 "HideFileExt"=dword:00000000
 "ShowSyncProviderNotifications"=dword:00000000
 "DisallowShaking"=dword:00000001
+"TaskbarAl"=dword:00000000
+"Start_NotifyNewApps"=dword:00000000
+"ShowTaskViewButton"=dword:00000000
+"ShowSecondsInSystemClock"=dword:00000000
+"ExtendedUIHoverTime"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsInkWorkspace]
 "AllowWindowsInkWorkspace"=dword:00000000
@@ -520,6 +538,7 @@ Windows Registry Editor Version 5.00
 "MouseSpeed"="0"
 "MouseThreshold1"="0"
 "MouseThreshold2"="0"
+"MouseHoverTime"="0"
 
 [HKEY_CURRENT_USER\Keyboard Layout\Toggle]
 "Language Hotkey"="3"
@@ -638,6 +657,7 @@ Windows Registry Editor Version 5.00
 "JPEGImportQuality"=dword:00000100
 "AutoEndTasks"="1"
 "PaintDesktopVersion"=dword:00000001
+"MenuShowDelay"=dword:00000190
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
 "ShowRecommendations"=dword:00000000
@@ -811,6 +831,17 @@ Windows Registry Editor Version 5.00
 "AllowOnlineTips"=dword:00000000
 "NoPublishingWizard"=dword:00000001
 "NoInternetOpenWith"=dword:00000001
+"NoLowDiskSpaceChecks"=dword:00000001
+"NoLowDiskSpaceChecks"=dword:00000001
+"ClearRecentDocsOnExit"=dword:00000001
+"NoRecentDocsHistory"=hex:01,00,00,00
+"LinkResolveIgnoreLinkInfo"=dword:00000001
+"NoResolveSearch"=dword:00000001
+"NoResolveTrack"=dword:00000001
+"EnforceShellExtensionSecurity"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
+"WaitToKillServiceTimeout"="2000"
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "EnableTransparency"=dword:00000000
@@ -981,6 +1012,13 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\SQM]
 "DisableCustomerImprovementProgram"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Attachments]
+"ScanWithAntiVirus"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Download]
+"CheckExeSignatures"="no"
+"RunInvalidSignatures"=dword:00000001
+
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Privacy]
 "TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
 
@@ -1042,6 +1080,7 @@ Windows Registry Editor Version 5.00
 "DisableNotificationCenter"=dword:00000001
 "NoTileApplicationNotification"=dword:00000001
 "HidePeopleBar"=dword:00000001
+"EnableLegacyBalloonNotifications"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\Setup\UpgradeNotification]
 "UpgradeAvailable"=dword:00000000
@@ -1166,9 +1205,16 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
 "SmartScreenEnabled"="Off"
+"AlwaysUnloadDLL"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Edge\SmartScreenEnabled]
 @=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\OptimalLayout]
+"EnableAutoLayout"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Dfrg\BootOptimizeFunction]
+"Enable"="n"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\PhishingFilter]
 "EnabledV9"=dword:00000000
@@ -1198,8 +1244,12 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Policy]
 "VerifiedAndReputablePolicyState"=dword:00000000
 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage] 
+"OpenAtLogon"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People]
 "TaskbarCapacity"=dword:00000000
+"PeopleBand"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
 "TdrDelay"=dword:0000000a
@@ -1351,6 +1401,10 @@ Windows Registry Editor Version 5.00
 [-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager\Subscriptions]
 
 [-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager\SuggestedApps]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Extensions\{c95fe080-8f5d-11d2-a20b-00aa003c157a}]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RemoteComputer]
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
