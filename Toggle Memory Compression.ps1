@@ -1,33 +1,27 @@
-﻿# Verifica o status atual da compressão de memória
 $status = (Get-MMAgent).MemoryCompression
-
 if ($status) {
-    Write-Output "Memory Compression está ATIVADA."
+    Write-Output "Memory Compression is ENABLED."
 } else {
-    Write-Output "Memory Compression está DESATIVADA."
+    Write-Output "Memory Compression is DISABLED."
 }
 
-# Pergunta ao usuário se deseja alterar o estado atual
-$opcao = Read-Host "Deseja alterar o estado? (S/N)"
-
-if ($opcao -match "^S|s$") {
+$option = Read-Host "Do you want to change the state? (Y/N)"
+if ($option -match "^Y|y$") {
     if ($status) {
-        Write-Output "Desativando Memory Compression..."
+        Write-Output "Disabling Memory Compression..."
         Disable-MMAgent -mc
     } else {
-        Write-Output "Ativando Memory Compression..."
+        Write-Output "Enabling Memory Compression..."
         Enable-MMAgent -mc
     }
-
-    # Aguarda um momento e verifica novamente
+    
     Start-Sleep -Seconds 2
-    $status_novo = (Get-MMAgent).MemoryCompression
-
-    if ($status_novo) {
-        Write-Output "Memory Compression agora está ATIVADA."
+    $new_status = (Get-MMAgent).MemoryCompression
+    if ($new_status) {
+        Write-Output "Memory Compression is now ENABLED."
     } else {
-        Write-Output "Memory Compression agora está DESATIVADA."
+        Write-Output "Memory Compression is now DISABLED."
     }
 } else {
-    Write-Output "Nenhuma alteração feita. Saindo..."
+    Write-Output "No changes were made."
 }
