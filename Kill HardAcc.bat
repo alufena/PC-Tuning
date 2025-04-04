@@ -100,6 +100,10 @@ taskkill /f /im SecurityHealthHost.exe
 taskkill /f /im ApplicationFrameHost.exe
 taskkill /f /im vssadmin.exe
 taskkill /f /im werfault.exe
+sc stop "SysMain"
+sc config "SysMain" start= disabled
+::sc start "SysMain"
+::sc config "SysMain" start= auto
 sc stop "ClickToRunSvc"
 sc config "ClickToRunSvc" start= manual
 sc stop "BcastDVRUserService"
@@ -242,6 +246,8 @@ sc stop "WinRM"
 sc config "WinRM" start= disabled
 sc stop "W32Time"
 sc config "W32Time" start= disabled
+sc stop "RemoteRegistry"
+sc config "RemoteRegistry" start= disabled
 powercfg.exe hibernate off
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform" /v "InactivityShutdownDelay" /t REG_DWORD /d "4294967295" /f
 reg delete "HKEY_CURRENT_USER\Software\Spoon" /f
