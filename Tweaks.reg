@@ -109,6 +109,10 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0cc5b647-c1df-4637-891a-dec35c318583]
 "Attributes"=dword:00000000
 
+; prefetch = 2 on, 4 off
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SysMain]
+"Start"=dword:00000004
+
 ; EnablePrefetcher 3 padrão, 0 tweak
 ; EnableSuperfetch =- padrão, 0 tweak
 ; EnableBootTrace =- padrão, 0 tweak
@@ -118,10 +122,6 @@ Windows Registry Editor Version 5.00
 "EnableSuperfetch"=dword:00000000
 "EnableBootTrace"=dword:00000000
 "SfTracingState"=dword:00000000
-
-; prefetch = 2 on, 4 off
-; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SysMain]
-; "Start"=dword:00000002
 
 ; =- padrão, 3 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
@@ -734,6 +734,7 @@ Windows Registry Editor Version 5.00
 "EnableLUA"=dword:00000000
 "DisableAutomaticRestartSignOn"=dword:00000001
 "MSAOptional"=dword:00000001
+"DelayedDesktopSwitchTimeout"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata]
 "PreventDeviceMetadataFromNetwork"=dword:00000001
