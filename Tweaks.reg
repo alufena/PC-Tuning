@@ -82,6 +82,7 @@ Windows Registry Editor Version 5.00
 ; InterruptSteeringDisabled =- padrão, 1 tweak (w11 24h2 removido)
 ; DisableExceptionChainValidation =- padrão, tweak 1
 ; KernelSEHOPEnabled =- padrão, 0 tweak
+; DistributeTimers =- padrão, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 "SerializeTimerExpiration"=dword:00000001
 "SplitLargeCaches"=dword:00000001
@@ -90,6 +91,12 @@ Windows Registry Editor Version 5.00
 "InterruptSteeringDisabled"=dword:00000001
 "DisableExceptionChainValidation"=dword:00000001
 "KernelSEHOPEnabled"=dword:00000000
+"DistributeTimers"=-
+
+; 0 padrão, 10 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Executive]
+"AdditionalCriticalWorkerThreads"=dword:00000010
+"AdditionalDelayedWorkerThreads"=dword:00000010
 
 ; =- padrão, 5 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
@@ -101,27 +108,26 @@ Windows Registry Editor Version 5.00
 "KMD_RebarControlMode"=dword:00000000
 "KMD_RebarControlSupport"=dword:00000000
 
-; 80000002 padrão, 80000001 tweak
+; NtfsDisableLastAccessUpdate 80000002 padrão, 80000001 tweak
+; MaximumTunnelEntries =- padrão, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "NtfsDisableLastAccessUpdate"=dword:80000001
+"LongPathsEnabled"=dword:00000001
+"MaximumTunnelEntries"=dword:00000000
 
 ; unpark cores = 64 padrão, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0cc5b647-c1df-4637-891a-dec35c318583]
 "Attributes"=dword:00000000
 
-; prefetch = 2 on, 4 off
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SysMain]
-"Start"=dword:00000004
-
 ; EnablePrefetcher 3 padrão, 0 tweak
-; EnableSuperfetch =- padrão, 0 tweak
-; EnableBootTrace =- padrão, 0 tweak
-; SfTracingState =- padrão, 0 tweak
+; EnableSuperfetch =- padrão, 0 tweak, 3 max
+; EnableBootTrace =- padrão, 0 tweak, 1 on
+; SfTracingState =- padrão, 0 tweak, 1 on
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
-"EnablePrefetcher"=dword:00000000
-"EnableSuperfetch"=dword:00000000
-"EnableBootTrace"=dword:00000000
-"SfTracingState"=dword:00000000
+"EnablePrefetcher"=dword:00000003
+"EnableSuperfetch"=dword:00000003
+"EnableBootTrace"=-
+"SfTracingState"=-
 
 ; =- padrão, 3 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
@@ -246,6 +252,13 @@ Windows Registry Editor Version 5.00
 "AITEnable"=dword:00000000
 "DisableInventory"=dword:00000001
 "DisableUAR"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\RemovalTools\MpGears]
+"HeartbeatTrackingIndex"=dword:00000000
+"SpyNetReportingLocation"=""
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Steps-Recorder]
+"Enabled"=dword:00000000
 
 [HKEY_USERS\.DEFAULT\Control Panel\Desktop]
 "AutoEndTasks"="1"
@@ -538,7 +551,9 @@ Windows Registry Editor Version 5.00
 "MouseSpeed"="0"
 "MouseThreshold1"="0"
 "MouseThreshold2"="0"
-"MouseHoverTime"="0"
+"MouseHoverTime"="400"
+"SmoothMouseXCurve"=-
+"SmoothMouseYCurve"=-
 
 [HKEY_CURRENT_USER\Keyboard Layout\Toggle]
 "Language Hotkey"="3"
@@ -644,9 +659,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
 "FlightSettingsMaxPauseDays"=dword:00001c84
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
-"LongPathsEnabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation]
 "Model"="model"
@@ -846,6 +858,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "EnableTransparency"=dword:00000000
+"ColorPrevalence"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
 "{CA6CC9F1-867A-481E-951E-A28C5E4F01EA}"="Edit in Notepad"
@@ -1197,9 +1210,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet]
 "DisableBlockAtFirstSeen"=dword:00000001
 
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize]
-"ColorPrevalence"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\SmartScreen]
 "ConfigureAppInstallControlEnabled"=dword:00000001
 "ConfigureAppInstallControl"="Anywhere"
@@ -1254,6 +1264,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
 "TdrDelay"=dword:0000000a
+"TdrDdiDelay"=dword:0000000a
+"TdrLevel"=dword:00000003
 
 [HKEY_CURRENT_USER\Software\Microsoft\Avalon.Graphics]
 "DisableHWAcceleration"=dword:00000001
