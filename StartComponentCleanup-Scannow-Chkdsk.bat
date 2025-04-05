@@ -1,5 +1,5 @@
-chkdsk /scan
 SC config trustedinstaller start=auto
+chkdsk /scan
 net stop bits
 net stop wuauserv
 net stop msiserver
@@ -38,12 +38,13 @@ net start pla
 bcdedit /deletevalue nointegritychecks
 bcdedit /deletevalue loadoptions
 bcdedit /debug off
-bcdedit /deletevalue nx
+::bcdedit /deletevalue nx
 fsutil usn deletejournal /d /n c:
 winmgmt /salvagerepository
 taskkill /f /im msiexec.exe
 taskkill /f /im CompPkgSrv.exe
 taskkill /f /im TiWorker.exe
+taskkill /f /im TrustedInstaller.exe
 taskkill /f /im conhost.exe
 timeout /t 20 /nobreak
 exit
