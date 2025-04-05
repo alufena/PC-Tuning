@@ -53,7 +53,6 @@ taskkill /f /t /im EABackgroundService.exe
 taskkill /f /t /im WindowsPackageManagerServer.exe
 taskkill /f /t /im rundll32.exe
 taskkill /f /t /im armsvc.exe
-taskkill /f /t /im MoUsoCoreWorker.exe
 taskkill /f /t /im "Razer Central.exe"
 taskkill /f /t /im "Razer Synapse 3.exe"
 taskkill /f /t /im "Razer Synapse Service Process.exe"
@@ -74,7 +73,6 @@ taskkill /f /t /im RtkNGUI64.exe
 taskkill /f /t /im PerfWatson2.exe
 taskkill /f /t /im sqlwriter.exe
 taskkill /f /t /im smss.exe
-taskkill /f /t /im sppsvc.exe
 taskkill /f /t /im DashboardNotificationManager.exe
 taskkill /f /t /im jcef_helper.exe
 taskkill /f /t /im DataExchangeHost.exe
@@ -82,6 +80,7 @@ taskkill /f /t /im SecurityHealthHost.exe
 taskkill /f /t /im ApplicationFrameHost.exe
 taskkill /f /t /im vssadmin.exe
 taskkill /f /t /im werfault.exe
+taskkill /f /t /im sppsvc.exe
 ::sc stop "SysMain"
 ::sc config "SysMain" start= disabled
 sc start "SysMain"
@@ -142,8 +141,6 @@ sc stop "DiagTrack"
 sc config "DiagTrack" start= disabled
 sc stop "SecurityHealthService"
 sc config "SecurityHealthService" start= disabled
-sc stop "sppsvc"
-sc config "sppsvc" start= disabled
 sc stop "webthreatdefsvc"
 sc config "webthreatdefsvc" start= disabled
 sc stop "WinHttpAutoProxySvc"
@@ -255,19 +252,13 @@ taskkill /f /t /im ShellHost.exe
 wmic process where name="OfficeClickToRun.exe" CALL terminate
 wmic process where name="Adobe Crash Processor.exe" CALL terminate
 wmic process where name="MpDefenderCoreService.exe" CALL terminate
-wmic process where name="sppsvc.exe" CALL terminate
 wmic process where name="taskhostw.exe" CALL terminate
 wmic process where name="WmiPrvSvc.exe" CALL terminate
 wmic process where name="MoUsoCoreWorker.exe" CALL terminate
 ::wmic process where name="dwm.exe" CALL setpriority 64
 wmic process where name="dllhost.exe" CALL setpriority 64
-wmic process where name="dllhost.exe" CALL setpriority 64
-wmic process where name="dllhost.exe" CALL setpriority 64
 wmic process where name="fontdrvhost.exe" CALL setpriority 64
-wmic process where name="fontdrvhost.exe" CALL setpriority 64
-wmic process where name="sppsvc.exe" CALL setpriority 64
 taskkill /f /t /im MoUsoCoreWorker.exe
-taskkill /f /t /im dllhost.exe
 taskkill /f /t /im WMIADAP.exe
 taskkill /f /t /im UserOOBEBroker.exe
 taskkill /f /t /im RuntimeBroker.exe
@@ -284,6 +275,6 @@ taskkill /f /t /im SearchProtocolHost.exe
 taskkill /f /t /im SearchIndexer.exe
 taskkill /f /t /im SearchFilterHost.exe
 taskkill /f /t /im SearchApp.exe
-taskkill /f /t /im cmd.exe & taskkill /f /t /im conhost.exe
 TIMEOUT /T 3
+taskkill /f /t /im cmd.exe & taskkill /f /t /im conhost.exe
 exit
