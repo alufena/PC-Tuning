@@ -6,11 +6,11 @@ function Write-Section {
 # === PAGEFILE ===
 Write-Section "PAGEFILE"
 
-# Verifica se o gerenciamento autom·tico do Pagefile est· ativado
+# Verifica se o gerenciamento autom√°tico do Pagefile est√° ativado
 $autoPagefile = (Get-WmiObject -Class Win32_ComputerSystem).AutomaticManagedPagefile
 $pagefiles = Get-WmiObject Win32_PageFileUsage
 
-# Determina se pelo menos um Pagefile est· em "System Managed Size"
+# Determina se pelo menos um Pagefile est√° em "System Managed Size"
 $hasSystemManaged = $false
 foreach ($pagefile in $pagefiles) {
     if ($pagefile.AllocatedBaseSize -eq 0) { 
@@ -21,7 +21,7 @@ foreach ($pagefile in $pagefiles) {
 
 # Define o texto correto para exibir
 if ($autoPagefile) {
-    Write-Host "Gerenciamento do Pagefile: Autom·tico (todos os discos)"
+    Write-Host "Gerenciamento do Pagefile: Autom√°tico (todos os discos)"
 } elseif ($hasSystemManaged) {
     Write-Host "Gerenciamento do Pagefile: Tamanho gerenciado pelo sistema"
 } else {
@@ -32,7 +32,7 @@ if ($autoPagefile) {
 if ($pagefiles) {
     Write-Host "`nEstado atual do Pagefile:"
     $pagefiles | ForEach-Object {
-        Write-Host ("{0,-15} | Usado: {1,7} MB | Padr„o M·ximo: {2,7} MB" -f $_.Name, $_.CurrentUsage, $_.AllocatedBaseSize)
+        Write-Host ("{0,-15} | Usado: {1,7} MB | Padr√£o M√°ximo: {2,7} MB" -f $_.Name, $_.CurrentUsage, $_.AllocatedBaseSize)
     }
 } else {
     Write-Host "Nenhum Pagefile detectado no sistema."
@@ -47,9 +47,9 @@ Write-Host "Estado: $($mc -replace 'True','Ativado' -replace 'False','Desativado
 Write-Section "SUPERFETCH (SysMain)"
 $sysMain = Get-Service -Name "SysMain" -ErrorAction SilentlyContinue
 if ($sysMain) {
-    Write-Host "Status do serviÁo: $($sysMain.Status)"
+    Write-Host "Status do servi√ßo: $($sysMain.Status)"
 } else {
-    Write-Host "ServiÁo SysMain n„o encontrado."
+    Write-Host "Servi√ßo SysMain n√£o encontrado."
 }
 
 # === PREFETCH & SUPERFETCH (REGISTRO) ===
@@ -64,7 +64,7 @@ try {
             0 { "Desativado" }
             1 { "Somente aplicativos" }
             2 { "Somente boot" }
-            3 { "Aplicativos e boot (padr„o)" }
+            3 { "Aplicativos e boot (padr√£o)" }
             Default { "Desconhecido ($($params.EnablePrefetcher))" }
         }
         Write-Host "Prefetch:  $prefetchStatus"
@@ -75,16 +75,35 @@ try {
                 0 { "Desativado" }
                 1 { "Somente aplicativos" }
                 2 { "Somente boot" }
-                3 { "Aplicativos e boot (padr„o)" }
+                3 { "Aplicativos e boot (padr√£o)" }
                 Default { "Desconhecido ($($params.EnableSuperfetch))" }
             }
             Write-Host "Superfetch: $superfetchStatus"
         } else {
-            Write-Host "Superfetch: N„o configurado no registro."
+            Write-Host "Superfetch: N√£o configurado no registro."
         }
     } else {
-        Write-Host "Chave de registro de Prefetch/Superfetch n„o encontrada."
+        Write-Host "Chave de registro de Prefetch/Superfetch n√£o encontrada."
     }
 } catch {
     Write-Host "Erro ao acessar o registro de Prefetch/Superfetch."
 }
+
+# === DEP (Data Execution Prevention) ===
+Write-Section "DEP (Data Execution Prevention)"
+try {
+    $depPolicy = wmic OS Get DataExecutionPrevention_SupportPolicy /value | Out-String
+    $depPolicyValue = ($depPolicy -split "=")[1] -as [int]
+    $depStatus = switch ($depPolicyValue) {
+        0 { "Desativado para todos os processos" }
+        1 { "Ativado para todos os processos" }
+        2 { "Ativado apenas para componentes e servi√ßos do sistema (padr√£o)" }
+        3 { "Ativado para todos os processos" }
+        Default { "Valor desconhecido ($depPolicyValue)" }
+    }
+    Write-Host "Estado atual do DEP: $depStatus"
+} catch {
+    Write-Host "Erro ao consultar o estado do DEP."
+}
+
+pause
