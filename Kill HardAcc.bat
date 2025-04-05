@@ -1,109 +1,91 @@
-taskkill /f /im video.ui.exe
-taskkill /f /im msiexec.exe
-taskkill /f /im yourphone.exe
-taskkill /f /im startmenuexperiencehost.exe
-taskkill /f /im searchhost.exe
-taskkill /f /im msedgewebview2.exe
-taskkill /f /im msedgewebview2.exe
-taskkill /f /im msedgewebview2.exe
-taskkill /f /im msedgewebview2.exe
-taskkill /f /im msedgewebview2.exe
-taskkill /f /im msedgewebview2.exe
-taskkill /f /im memBoost.exe
-taskkill /f /im microsoft.photos.exe
-taskkill /f /im winstore.app.exe
-taskkill /f /im textinputhost.exe
-taskkill /f /im GameManagerService.exe
-taskkill /f /im textinputhost.exe
-taskkill /f /im AppVShNotify.exe
-taskkill /f /im Agent.exe
-taskkill /f /im calculator.exe
-taskkill /f /im lockapp.exe
-taskkill /f /im hxoutlook.exe
-taskkill /f /im hxaccounts.exe
-taskkill /f /im JackettConsole.exe
-taskkill /f /im CHXSmartScreen.exe
-taskkill /f /im SDXHelper.exe
-taskkill /f /im CompPkgSrv.exe
-taskkill /f /im AdobeIPCBroker.exe
-taskkill /f /im AdobeIPCBroker.exe
-taskkill /f /im CoreSync.exe
-taskkill /f /im SET-UP.exe
-taskkill /f /im set-up.exe
-taskkill /f /im CCXProcess.exe
-taskkill /f /im CCLibrary.exe
-taskkill /f /im CrashMailer_64.exe
-taskkill /f /im gamebar.exe
-taskkill /f /im FESearchHost.exe
-taskkill /f /im FESearchHost.exe
-taskkill /f /im smartscreen.exe
-taskkill /f /im Widgets.exe
-taskkill /f /im SecurityHealthService.exe
-taskkill /f /im SecurityHealthService.exe
-taskkill /f /im SecurityHealthSystray.exe
-taskkill /f /im HelpPane.exe
-taskkill /f /im ai.exe
-taskkill /f /im GameBarPresenceWriter.exe
-taskkill /f /im SelectiveToolApp.exe
-taskkill /f /im PhoneExperienceHost.exe
-taskkill /f /im MicrosoftEdgeUpdate.exe
-taskkill /f /im CalculatorApp.exe
-taskkill /f /im PhotosService.exe
-taskkill /f /im WidgetService.exe
-taskkill /f /im adb.exe
-taskkill /f /im VSSVC.exe
-taskkill /f /im cfbackd.w32.exe
-taskkill /f /im WmiPrvSE.exe
-taskkill /f /im WmiPrvSE.exe
-taskkill /f /im WmiPrvSE.exe
-taskkill /f /im helperservice.exe
-taskkill /f /im SnippingTool.exe
-taskkill /f /im fdm.exe
-taskkill /f /im memreduct.exe
-taskkill /f /im OSE.exe
-taskkill /f /im HxTsr.exe
-taskkill /f /im GameInputSvc.exe
-taskkill /f /im GameInputSvc.exe
-taskkill /f /im EABackgroundService.exe
-taskkill /f /im WindowsPackageManagerServer.exe
-taskkill /f /im rundll32.exe
-taskkill /f /im armsvc.exe
-taskkill /f /im MoUsoCoreWorker.exe
-taskkill /f /im "Razer Central.exe"
-taskkill /f /im "Razer Synapse 3.exe"
-taskkill /f /im "Razer Synapse Service Process.exe"
-taskkill /f /im "Razer Synapse Service.exe"
-taskkill /f /im "RazerCentralService.exe"
-taskkill /f /im NVDisplay.Container.exe
-taskkill /f /im NVDisplay.Container.exe
-taskkill /f /im acrotray.exe
-taskkill /f /im splwow64.exe
-taskkill /f /im splwow64.exe
-taskkill /f /im spoolsv.exe
-taskkill /f /im spoolsv.exe
-taskkill /f /im TiWorker.exe
-taskkill /f /im TrustedInstaller.exe
-taskkill /f /im backgroundTaskHost.exe
-taskkill /f /im vds.exe
-taskkill /f /im SystemSettingsBroker.exe
-taskkill /f /im FileCoAuth.exe
-taskkill /f /im uhssvc.exe
-taskkill /f /im RtkNGUI64.exe
-taskkill /f /im PerfWatson2.exe
-taskkill /f /im sqlwriter.exe
-taskkill /f /im smss.exe
-taskkill /f /im sppsvc.exe
-taskkill /f /im DashboardNotificationManager.exe
-taskkill /f /im jcef_helper.exe
-taskkill /f /im DataExchangeHost.exe
-taskkill /f /im SecurityHealthHost.exe
-taskkill /f /im ApplicationFrameHost.exe
-taskkill /f /im vssadmin.exe
-taskkill /f /im werfault.exe
-sc stop "SysMain"
-sc config "SysMain" start= disabled
-::sc start "SysMain"
-::sc config "SysMain" start= auto
+taskkill /f /t /im video.ui.exe
+taskkill /f /t /im msiexec.exe
+taskkill /f /t /im yourphone.exe
+taskkill /f /t /im startmenuexperiencehost.exe
+taskkill /f /t /im searchhost.exe
+taskkill /f /t /im msedgewebview2.exe
+taskkill /f /t /im memBoost.exe
+taskkill /f /t /im microsoft.photos.exe
+taskkill /f /t /im winstore.app.exe
+taskkill /f /t /im textinputhost.exe
+taskkill /f /t /im GameManagerService.exe
+taskkill /f /t /im AppVShNotify.exe
+taskkill /f /t /im Agent.exe
+taskkill /f /t /im calculator.exe
+taskkill /f /t /im lockapp.exe
+taskkill /f /t /im hxoutlook.exe
+taskkill /f /t /im hxaccounts.exe
+taskkill /f /t /im JackettConsole.exe
+taskkill /f /t /im CHXSmartScreen.exe
+taskkill /f /t /im SDXHelper.exe
+taskkill /f /t /im CompPkgSrv.exe
+taskkill /f /t /im AdobeIPCBroker.exe
+taskkill /f /t /im CoreSync.exe
+taskkill /f /t /im set-up.exe
+taskkill /f /t /im CCXProcess.exe
+taskkill /f /t /im CCLibrary.exe
+taskkill /f /t /im CrashMailer_64.exe
+taskkill /f /t /im gamebar.exe
+taskkill /f /t /im FESearchHost.exe
+taskkill /f /t /im smartscreen.exe
+taskkill /f /t /im Widgets.exe
+taskkill /f /t /im SecurityHealthService.exe
+taskkill /f /t /im HelpPane.exe
+taskkill /f /t /im ai.exe
+taskkill /f /t /im GameBarPresenceWriter.exe
+taskkill /f /t /im SelectiveToolApp.exe
+taskkill /f /t /im PhoneExperienceHost.exe
+taskkill /f /t /im MicrosoftEdgeUpdate.exe
+taskkill /f /t /im CalculatorApp.exe
+taskkill /f /t /im PhotosService.exe
+taskkill /f /t /im WidgetService.exe
+taskkill /f /t /im adb.exe
+taskkill /f /t /im VSSVC.exe
+taskkill /f /t /im cfbackd.w32.exe
+taskkill /f /t /im WmiPrvSE.exe
+taskkill /f /t /im helperservice.exe
+taskkill /f /t /im SnippingTool.exe
+taskkill /f /t /im fdm.exe
+taskkill /f /t /im OSE.exe
+taskkill /f /t /im HxTsr.exe
+taskkill /f /t /im GameInputSvc.exe
+taskkill /f /t /im EABackgroundService.exe
+taskkill /f /t /im WindowsPackageManagerServer.exe
+taskkill /f /t /im rundll32.exe
+taskkill /f /t /im armsvc.exe
+taskkill /f /t /im MoUsoCoreWorker.exe
+taskkill /f /t /im "Razer Central.exe"
+taskkill /f /t /im "Razer Synapse 3.exe"
+taskkill /f /t /im "Razer Synapse Service Process.exe"
+taskkill /f /t /im "Razer Synapse Service.exe"
+taskkill /f /t /im "RazerCentralService.exe"
+taskkill /f /t /im NVDisplay.Container.exe
+taskkill /f /t /im acrotray.exe
+taskkill /f /t /im splwow64.exe
+taskkill /f /t /im spoolsv.exe
+taskkill /f /t /im TiWorker.exe
+taskkill /f /t /im TrustedInstaller.exe
+taskkill /f /t /im backgroundTaskHost.exe
+taskkill /f /t /im vds.exe
+taskkill /f /t /im SystemSettingsBroker.exe
+taskkill /f /t /im FileCoAuth.exe
+taskkill /f /t /im uhssvc.exe
+taskkill /f /t /im RtkNGUI64.exe
+taskkill /f /t /im PerfWatson2.exe
+taskkill /f /t /im sqlwriter.exe
+taskkill /f /t /im smss.exe
+taskkill /f /t /im sppsvc.exe
+taskkill /f /t /im DashboardNotificationManager.exe
+taskkill /f /t /im jcef_helper.exe
+taskkill /f /t /im DataExchangeHost.exe
+taskkill /f /t /im SecurityHealthHost.exe
+taskkill /f /t /im ApplicationFrameHost.exe
+taskkill /f /t /im vssadmin.exe
+taskkill /f /t /im werfault.exe
+::sc stop "SysMain"
+::sc config "SysMain" start= disabled
+sc start "SysMain"
+sc config "SysMain" start= auto
 sc stop "ClickToRunSvc"
 sc config "ClickToRunSvc" start= manual
 sc stop "BcastDVRUserService"
@@ -192,8 +174,6 @@ sc stop "XboxNetApiSvc"
 sc config "XboxNetApiSvc" start= disabled
 sc start "TabletInputService"
 sc config "TabletInputService" start= auto
-sc stop "DsSvc"
-sc config "DsSvc" start= disabled
 sc stop "DevQueryBroker"
 sc config "DevQueryBroker" start= disabled
 sc stop "EFS"
@@ -270,48 +250,40 @@ bcdedit /set hypervisorlaunchtype off
 %windir%\system32\lodctr /R
 %windir%\sysWOW64\lodctr /R
 lodctr /e:PerfOS
-taskkill /f /im OfficeClickToRun.exe
-taskkill /f /im ShellHost.exe
-taskkill /f /im ShellHost.exe
+taskkill /f /t /im OfficeClickToRun.exe
+taskkill /f /t /im ShellHost.exe
 wmic process where name="OfficeClickToRun.exe" CALL terminate
 wmic process where name="Adobe Crash Processor.exe" CALL terminate
 wmic process where name="MpDefenderCoreService.exe" CALL terminate
 wmic process where name="sppsvc.exe" CALL terminate
 wmic process where name="taskhostw.exe" CALL terminate
 wmic process where name="WmiPrvSvc.exe" CALL terminate
-wmic process where name=MoUsoCoreWorker.exe" CALL terminate
+wmic process where name="MoUsoCoreWorker.exe" CALL terminate
 ::wmic process where name="dwm.exe" CALL setpriority 64
-::wmic process where name="dllhost.exe" CALL setpriority 64
-::wmic process where name="dllhost.exe" CALL setpriority 64
-::wmic process where name="dllhost.exe" CALL setpriority 64
-::wmic process where name="fontdrvhost.exe" CALL setpriority 64
-::wmic process where name="fontdrvhost.exe" CALL setpriority 64
-::wmic process where name="sppsvc.exe" CALL setpriority 64
-taskkill /f /im MoUsoCoreWorker.exe
-taskkill /f /im dllhost.exe
-taskkill /f /im dllhost.exe
-taskkill /f /im dllhost.exe
-taskkill /f /im dllhost.exe
-taskkill /f /im dllhost.exe
-taskkill /f /im dllhost.exe
-taskkill /f /im WMIADAP.exe
-taskkill /f /im UserOOBEBroker.exe
-taskkill /f /im RuntimeBroker.exe
-taskkill /f /im RuntimeBroker.exe
-taskkill /f /im RuntimeBroker.exe
-taskkill /f /im RuntimeBroker.exe
-taskkill /f /im RuntimeBroker.exe
-taskkill /f /im RuntimeBroker.exe
+wmic process where name="dllhost.exe" CALL setpriority 64
+wmic process where name="dllhost.exe" CALL setpriority 64
+wmic process where name="dllhost.exe" CALL setpriority 64
+wmic process where name="fontdrvhost.exe" CALL setpriority 64
+wmic process where name="fontdrvhost.exe" CALL setpriority 64
+wmic process where name="sppsvc.exe" CALL setpriority 64
+taskkill /f /t /im MoUsoCoreWorker.exe
+taskkill /f /t /im dllhost.exe
+taskkill /f /t /im WMIADAP.exe
+taskkill /f /t /im UserOOBEBroker.exe
+taskkill /f /t /im RuntimeBroker.exe
+BCDEDIT /SET {CURRENT} NX ALWAYSOFF
+powershell -Command "Set-ProcessMitigation -System -Disable DEP"
+powershell -Command "Set-ProcessMitigation -System -Disable EmulateAtlThunks"
 bcdedit /deletevalue nointegritychecks
 bcdedit /deletevalue loadoptions
 bcdedit /debug off
-bcdedit /deletevalue nx
-taskkill /f /im CompPkgSrv.exe
+::bcdedit /deletevalue nx
+taskkill /f /t /im CompPkgSrv.exe
 reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&0&UID37124\Device Parameters" /v EDID /f
-taskkill /f /im SearchProtocolHost.exe
-taskkill /f /im SearchIndexer.exe
-taskkill /f /im SearchFilterHost.exe
-taskkill /f /im SearchApp.exe
-taskkill /f /im conhost.exe
+taskkill /f /t /im SearchProtocolHost.exe
+taskkill /f /t /im SearchIndexer.exe
+taskkill /f /t /im SearchFilterHost.exe
+taskkill /f /t /im SearchApp.exe
+taskkill /f /t /im cmd.exe & taskkill /f /t /im conhost.exe
 TIMEOUT /T 3
 exit
