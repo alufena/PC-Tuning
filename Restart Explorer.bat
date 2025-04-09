@@ -1,4 +1,4 @@
-taskkill /f /t /im explorer.exe
-taskkill /f /t /im NVDisplay.Container.exe
+taskkill /f /im explorer.exe
+taskkill /f /im NVDisplay.Container.exe
+timeout /t 1 /nobreak > nul
 start explorer.exe
-exit
