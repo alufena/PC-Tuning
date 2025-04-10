@@ -1,20 +1,21 @@
 Windows Registry Editor Version 5.00
 
-; hex e dec respectivamente (use hex)
-; 02 = 02 (programs, padrão e igual ao hex 26)
-; 1a = 26
-; 2a = 42
-; 14 = 20
-; 15 = 21
-; 16 = 22 (calypto)
-; 18 = 24 (background services)
-; 19 = 25
-; 24 = 36
-; 25 = 37
-; 28 = 40 (disables foreground boost)
-; 29 = 41
+; hex dec quantum type boost
+; 02 = 02 short variable foreground (legacy default)
+; 14 = 20 long variable none (balanced)
+; 15 = 21 long variable mild (foreground favor)
+; 16 = 22 long variable high (calypto tweak)
+; 18 = 24 long fixed none (background services optable in gui)
+; 19 = 25 long fixed mild (light bg interactivity)
+; 1A = 26 long fixed high (modernized legacy boost)
+; 24 = 36 short variable none (uniform quick tasks)
+; 25 = 37 short variable mild (responsive desktop)
+; 26 = 38 short variable foreground (aggressive legacy boost)
+; 28 = 40 short fixed none (disables foreground boost)
+; 29 = 41 short fixed mild (neutral multitask)
+; 2A = 42 short fixed high (maximum foreground boost)
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\PriorityControl]
-"Win32PrioritySeparation"=dword:00000028
+"Win32PrioritySeparation"=dword:00000016
 
 ; game mode = 1 on, 0 off
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\GameBar]
@@ -75,28 +76,28 @@ Windows Registry Editor Version 5.00
 "LargeSystemCache"=dword:00000001
 "DisablePagingExecutive"=dword:00000001
 
-; SplitLargeCaches =- padrão, 1 tweak
-; GlobalTimerResolutionRequests 0 padrão, 1 tweak
 ; SerializeTimerExpiration =- padrão, 1 ou 2 tweak (2 só para w11. 0 auto, 1 force, 2 off)
+; SplitLargeCaches =- padrão, 1 tweak
+; GlobalTimerResolutionRequests =- padrão, 1 tweak
 ; ThreadDpcEnable =- padrão, 0 tweak
 ; InterruptSteeringDisabled =- padrão, 1 tweak (w11 24h2 removido)
 ; DisableExceptionChainValidation =- padrão, tweak 1
 ; KernelSEHOPEnabled =- padrão, 0 tweak
 ; DistributeTimers =- padrão, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
-"SerializeTimerExpiration"=dword:00000001
+"SerializeTimerExpiration"=-
 "SplitLargeCaches"=dword:00000001
-"GlobalTimerResolutionRequests"=dword:00000001
+"GlobalTimerResolutionRequests"=-
 "ThreadDpcEnable"=dword:00000000
 "InterruptSteeringDisabled"=dword:00000001
 "DisableExceptionChainValidation"=dword:00000001
-"KernelSEHOPEnabled"=dword:00000000
-"DistributeTimers"=dword:00000001
+"KernelSEHOPEnabled"=-
+"DistributeTimers"=-
 
 ; 0 padrão, 10 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Executive]
-"AdditionalCriticalWorkerThreads"=dword:00000010
-"AdditionalDelayedWorkerThreads"=dword:00000010
+"AdditionalCriticalWorkerThreads"=dword:00000000
+"AdditionalDelayedWorkerThreads"=dword:00000000
 
 ; =- padrão, 5 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
@@ -113,7 +114,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "NtfsDisableLastAccessUpdate"=dword:80000001
 "LongPathsEnabled"=dword:00000001
-"MaximumTunnelEntries"=dword:00000000
+"MaximumTunnelEntries"=-
 
 ; unpark cores = 64 padrão, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0cc5b647-c1df-4637-891a-dec35c318583]
@@ -125,7 +126,7 @@ Windows Registry Editor Version 5.00
 ; SfTracingState =- padrão, 0 tweak, 1 on
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
 "EnablePrefetcher"=dword:00000003
-"EnableSuperfetch"=dword:00000003
+"EnableSuperfetch"=-
 "EnableBootTrace"=-
 "SfTracingState"=-
 
@@ -138,6 +139,78 @@ Windows Registry Editor Version 5.00
 "CpuPriorityClass"=dword:00000004
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
 "IoPriority"=dword:00000004
+
+; DisableVidMemVBs =- padrão, 0 tweak
+; MMX Fast Path =- padrão, 1 tweak
+; FlipNoVsync =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D]
+"DisableVidMemVBs"=-
+"MMX Fast Path"=-
+"FlipNoVsync"=-
+
+; DisableVidMemVBs =- padrão, 0 tweak
+; MMX Fast Path =- padrão, 1 tweak
+; FlipNoVsync =- padrão, 1 tweak
+[HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Direct3D]
+"DisableVidMemVBs"=-
+"MMX Fast Path"=-
+"FlipNoVsync"=-
+
+; DisableVidMemVBs =- padrão, 0 tweak
+; MMX Fast Path =- padrão, 1 tweak
+; FlipNoVsync =- padrão, 1 tweak
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Direct3D]
+"DisableVidMemVBs"=-
+"MMX Fast Path"=-
+"FlipNoVsync"=-
+
+; =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D\Drivers]
+"SoftwareOnly"=-
+
+; =- padrão, 1 tweak
+[HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Direct3D\Drivers]
+"SoftwareOnly"=-
+
+; =- padrão, 1 tweak
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Direct3D\Drivers]
+"SoftwareOnly"=-
+
+; =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectDraw]
+"EmulationOnly"=-
+
+; =- padrão, 1 tweak
+[HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\DirectDraw]
+"EmulationOnly"=-
+
+; =- padrão, 1 tweak
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\DirectDraw]
+"EmulationOnly"=-
+
+; DisableVidMemVBs =- padrão, 0 tweak
+; MMX Fast Path =- padrão, 1 tweak
+; FlipNoVsync =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Direct3D]
+"DisableVidMemVBs"=-
+"MMX Fast Path"=-
+"FlipNoVsync"=-
+
+; =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Direct3D\Drivers]
+"SoftwareOnly"=-
+
+; DisableAGPSupport =- padrão, 1 tweak
+; DisableInactivate =- padrão, 1 tweak
+; DisableMMX =- padrão, 1 tweak
+; DisableNoSysLock =- padrão, 1 tweak
+; EmulationOnly =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\DirectDraw]
+"DisableAGPSupport"=-
+"DisableInactivate"=-
+"DisableMMX"=-
+"DisableNoSysLock"=-
+"EmulationOnly"=- 
 
 [HKEY_CLASSES_ROOT\Directory\shell\cmdprompt]
 @="Open Command Prompt here"
@@ -175,6 +248,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Reporting]
 "DisableGenericRePorts"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
+"ConvertibilityEnabled"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
 "StartupDelayInMSec"=dword:00000000
@@ -513,7 +589,7 @@ Windows Registry Editor Version 5.00
 "AllowSpeechModelUpdate"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\PolicyManager\current\device\Accounts]
-"AllowMicrosoftAccountSignInAssistant"=dword:00000001
+"AllowMicrosoftAccountSignInAssistant"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "Start_TrackDocs"=dword:00000000
