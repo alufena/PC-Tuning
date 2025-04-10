@@ -19,9 +19,14 @@ foreach ($pagefile in $pagefiles) {
     }
 }
 
+# Detecta se todos os Pagefiles estão desativados
+$allPagefilesDisabled = $pagefiles.Count -eq 0 -or ($pagefiles | Where-Object { $_.AllocatedBaseSize -gt 0 }).Count -eq 0
+
 # Define o texto correto para exibir
 if ($autoPagefile) {
     Write-Host "Gerenciamento do Pagefile: Automático (todos os discos)"
+} elseif ($allPagefilesDisabled) {
+    Write-Host "Gerenciamento do Pagefile: Desativado (nenhum arquivo de paginação configurado)"
 } elseif ($hasSystemManaged) {
     Write-Host "Gerenciamento do Pagefile: Tamanho gerenciado pelo sistema"
 } else {
