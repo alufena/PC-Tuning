@@ -20,6 +20,7 @@ Windows Registry Editor Version 5.00
 ; game mode = 1 on, 0 off
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\GameBar]
 "AllowAutoGameMode"=dword:00000000
+"AutoGameModeEnabled"=dword:00000000
 
 ; HAGS = 2 on, 1 off
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
@@ -43,6 +44,9 @@ Windows Registry Editor Version 5.00
 "GameDVR_FSEBehaviorMode"=dword:00000002
 "GameDVR_HonorUserFSEBehaviorMode"=dword:00000001
 
+; Priority 2 padrão, 6 tweak
+; Scheduling Category Medium padrão, High tweak
+; SFIO Priority Normal padrão, High tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games]
 "Affinity"=dword:00000000
 "Background Only"="False"
@@ -85,7 +89,7 @@ Windows Registry Editor Version 5.00
 ; KernelSEHOPEnabled =- padrão, 0 tweak
 ; DistributeTimers =- padrão, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
-"SerializeTimerExpiration"=-
+"SerializeTimerExpiration"=dword:00000001
 "SplitLargeCaches"=dword:00000001
 "GlobalTimerResolutionRequests"=-
 "ThreadDpcEnable"=dword:00000000
@@ -103,11 +107,11 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
 "OverlayTestMode"=dword:00000005
 
-; 0 padrão, 1 tweak
+; =- padrão, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
-"KMD_EnableReBarForLegacyASIC"=dword:00000000
-"KMD_RebarControlMode"=dword:00000000
-"KMD_RebarControlSupport"=dword:00000000
+"KMD_EnableReBarForLegacyASIC"=-
+"KMD_RebarControlMode"=-
+"KMD_RebarControlSupport"=-
 
 ; NtfsDisableLastAccessUpdate 80000002 padrão, 80000001 tweak
 ; MaximumTunnelEntries =- padrão, 0 tweak
@@ -139,6 +143,21 @@ Windows Registry Editor Version 5.00
 "CpuPriorityClass"=dword:00000004
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
 "IoPriority"=dword:00000004
+
+; =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000001
+
+; =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\fontdrvhost.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000001
+
+; =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winlogon.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000001
 
 ; DisableVidMemVBs =- padrão, 0 tweak
 ; MMX Fast Path =- padrão, 1 tweak
@@ -265,8 +284,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Drive\shell\cmdprompt\command]
 @="cmd.exe /s /k pushd \"%V\""
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\0001]
-"NetworkAddress"="D45DB2A21F16"
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\0001]
+; "NetworkAddress"="D45DB2A21F16"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup]
 "AllowUpgradesWithUnsupportedTPMOrCPU"=dword:00000001
@@ -337,6 +356,12 @@ Windows Registry Editor Version 5.00
 "HideRecommendedSection"=dword:00000001
 "NoUseStoreOpenWith"=dword:00000001
 "NoNewAppAlert"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\Current\Device\Start]
+"HideRecommendedSection"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\Current\Device\Education]
+"IsEducationEnvironment"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments]
 "SaveZoneInformation"=dword:00000001
@@ -437,6 +462,7 @@ Windows Registry Editor Version 5.00
 "WebWidgetIsEnabledOnStartup"=dword:00000000
 "EdgeDiscoverEnabled"=dword:00000000
 "EdgeCopilotEnabled"=dword:00000000
+"SmartScreenEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
 "AlternateErrorPagesEnabled"=dword:00000000
@@ -596,11 +622,14 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Diagtrack-Listener]
 "Start"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\CDPUserSvc]
-"Start"=dword:00000004
-
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\MDCoreSvc]
 "Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\AutoLogger-Diagtrack-Listener]
+"Start"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\DiagLog]
+"Start"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\TabletPC]
 "PreventHandwritingDataSharing"=dword:00000001
@@ -975,6 +1004,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
 "{CA6CC9F1-867A-481E-951E-A28C5E4F01EA}"="Edit in Notepad"
+"{7AD84985-87B4-4a16-BE58-8B72A5B390F7}"=""
+"{596AB062-B4D2-4215-9F74-E9109B0A8153}"=""
+"{1d27f844-3a1f-4410-85ac-14651078412d}"=""
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\EventTranscriptKey]
 "EnableEventTranscript"=dword:00000000
@@ -1077,6 +1109,7 @@ Windows Registry Editor Version 5.00
 "AllowUpdateComplianceProcessing"=dword:00000000
 "AllowWUfBCloudProcessing"=dword:00000000
 "AllowDeviceNameInTelemetry"=dword:00000000
+"MaxTelemetryAllowed"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
 "ContentDeliveryAllowed"=dword:00000000
@@ -1099,6 +1132,9 @@ Windows Registry Editor Version 5.00
 "SubscribedContent-88000326Enabled"=dword:00000000
 "SubscribedContentEnabled"=dword:00000000
 "SystemPaneSuggestionsEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Program-Telemetry]
+"Enabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\PushToInstall]
 "DisablePushToInstall"=dword:00000001
@@ -1141,6 +1177,12 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Attachments]
 "ScanWithAntiVirus"=dword:00000000
+
+[HKEY_CLASSES_ROOT\CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\ShellFolder]
+"Attributes"=dword:b0140064
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Classes\CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\ShellFolder]
+"Attributes"=dword:b0140064
 
 [HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Download]
 "CheckExeSignatures"="no"
@@ -1532,6 +1574,44 @@ Windows Registry Editor Version 5.00
 
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RemoteComputer]
 
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.jpg\Shell\3D Edit]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.jpeg\Shell\3D Edit]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.jpe\Shell\3D Edit]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.png\Shell\3D Edit]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.bmp\Shell\3D Edit]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.gif\Shell\3D Edit]
+
+[-HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\ModernSharing]
+
+[-HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\Sharing]
+
+[-HKEY_CLASSES_ROOT\Directory\Background\shellex\ContextMenuHandlers\Sharing]
+
+[-HKEY_CLASSES_ROOT\Directory\shellex\ContextMenuHandlers\Sharing]
+
+[-HKEY_CLASSES_ROOT\Drive\shellex\ContextMenuHandlers\Sharing]
+
+[-HKEY_CLASSES_ROOT\LibraryFolder\background\shellex\ContextMenuHandlers\Sharing]
+
+[-HKEY_CLASSES_ROOT\UserLibraryFolder\shellex\ContextMenuHandlers\Sharing]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}]
+
+[-HKEY_CLASSES_ROOT\Folder\ShellEx\ContextMenuHandlers\Library Location]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\ShellEx\ContextMenuHandlers\Library Location]
+
+[-HKEY_CLASSES_ROOT\AllFilesystemObjects\shellex\ContextMenuHandlers\SendTo]
+
+[-HKEY_CLASSES_ROOT\UserLibraryFolder\shellex\ContextMenuHandlers\SendTo]
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
@@ -1915,6 +1995,14 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame_BE.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame_BE.exe\PerfOptions]
+"IoPriority"=dword:00000003
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Obsidian.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000003
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Obsidian.exe\PerfOptions]
+"IoPriority"=dword:00000003
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5_Enhanced.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000003
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5_Enhanced.exe\PerfOptions]
 "IoPriority"=dword:00000003
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\DirectX\UserGpuPreferences]
@@ -2152,6 +2240,7 @@ Windows Registry Editor Version 5.00
 "F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\S.T.A.L.K.E.R. 2\\Stalker2\\Binaries\\Win64\\Stalker2-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\S.T.A.L.K.E.R. 2\\Stalker2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Users\\Administrator\\AppData\\Local\\Programs\\Obsidian\\Obsidian.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers]
 "C:\\Program Files (x86)\\Battle.net\\Battle.net Launcher.exe"="~ RUNASADMIN"
@@ -2277,3 +2366,4 @@ Windows Registry Editor Version 5.00
 "F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\S.T.A.L.K.E.R. 2\\Stalker2\\Binaries\\Win64\\Stalker2-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\S.T.A.L.K.E.R. 2\\Stalker2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Users\\Administrator\\AppData\\Local\\Programs\\Obsidian\\Obsidian.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
