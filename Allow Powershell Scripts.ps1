@@ -1,1 +1,1 @@
-﻿Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine -Force
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
