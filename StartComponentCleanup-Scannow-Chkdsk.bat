@@ -45,6 +45,6 @@ taskkill /f /im msiexec.exe
 taskkill /f /im CompPkgSrv.exe
 taskkill /f /im TiWorker.exe
 taskkill /f /im TrustedInstaller.exe
-taskkill /f /im conhost.exe
-timeout /t 20 /nobreak
-exit
+taskkill /f /im MoUsoCoreWorker.exe
+taskkill /f /t /im conhost.exe
+taskkill /f /t /im cmd.exe
