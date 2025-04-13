@@ -72,7 +72,6 @@ taskkill /f /t /im uhssvc.exe
 taskkill /f /t /im RtkNGUI64.exe
 taskkill /f /t /im PerfWatson2.exe
 taskkill /f /t /im sqlwriter.exe
-taskkill /f /t /im smss.exe
 taskkill /f /t /im DashboardNotificationManager.exe
 taskkill /f /t /im jcef_helper.exe
 taskkill /f /t /im DataExchangeHost.exe
@@ -81,10 +80,16 @@ taskkill /f /t /im ApplicationFrameHost.exe
 taskkill /f /t /im vssadmin.exe
 taskkill /f /t /im werfault.exe
 taskkill /f /t /im sppsvc.exe
+taskkill /f /t /im smss.exe
+taskkill /f /t /im WUDFHost.exe
+taskkill /f /t /im MpCmdRun.exe
 ::sc stop "SysMain"
 ::sc config "SysMain" start= disabled
 sc start "SysMain"
 sc config "SysMain" start= auto
+sc start "TabletInputService"
+sc config "TabletInputService" start= auto
+sc config "wlidsvc" start= auto
 sc stop "ClickToRunSvc"
 sc config "ClickToRunSvc" start= manual
 sc stop "BcastDVRUserService"
@@ -169,8 +174,6 @@ sc stop "XblGameSave"
 sc config "XblGameSave" start= disabled
 sc stop "XboxNetApiSvc"
 sc config "XboxNetApiSvc" start= disabled
-sc start "TabletInputService"
-sc config "TabletInputService" start= auto
 sc stop "DevQueryBroker"
 sc config "DevQueryBroker" start= disabled
 sc stop "EFS"
@@ -193,8 +196,6 @@ sc stop "PolicyAgent"
 sc config "PolicyAgent" start= disabled
 sc stop "diagnosticshub.standardcollector.service"
 sc config "diagnosticshub.standardcollector.service" start= disabled
-sc stop "Netman"
-sc config "Netman" start= disabled
 sc stop "SEMgrSvc"
 sc config "SEMgrSvc" start= disabled
 sc stop "WPDBusEnum"
@@ -215,8 +216,6 @@ sc stop "WebClient"
 sc config "WebClient" start= disabled
 sc stop "WbioSrvc"
 sc config "WbioSrvc" start= disabled
-sc stop "Wcmsvc"
-sc config "Wcmsvc" start= disabled
 sc stop "StiSvc"
 sc config "StiSvc" start= disabled
 sc stop "WinRM"
@@ -225,6 +224,9 @@ sc stop "W32Time"
 sc config "W32Time" start= disabled
 sc stop "RemoteRegistry"
 sc config "RemoteRegistry" start= disabled
+sc stop "Themes"
+sc config "Themes" start= disabled
+ie4uinit.exe -ClearIconCache
 powercfg.exe hibernate off
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform" /v "InactivityShutdownDelay" /t REG_DWORD /d "4294967295" /f
 reg delete "HKEY_CURRENT_USER\Software\Spoon" /f
@@ -232,18 +234,32 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v P
 ::bcdedit /deletevalue useplatformclock
 ::bcdedit /deletevalue disabledynamictick
 ::bcdedit /deletevalue useplatformtick
-bcdedit /deletevalue uselegacyapicmode
-bcdedit /deletevalue x2apicpolicy
-bcdedit /deletevalue tscsyncpolicy
+::bcdedit /deletevalue uselegacyapicmode
+::bcdedit /deletevalue x2apicpolicy
+::bcdedit /deletevalue tscsyncpolicy
 ::bcdedit /set hypervisorlaunchtype auto
+::bcdedit /deletevalue usephysicaldestination
+::bcdedit /deletevalue usefirmwarepcisettings
+::bcdedit /deletevalue tpmbootentropy
+::bcdedit /deletevalue bootux
+::bcdedit /deletevalue vsmlaunchtype
+::bcdedit /deletevalue vm
+::bcdedit /deletevalue quietboot
 bcdedit /set useplatformclock false
 bcdedit /set disabledynamictick yes
 bcdedit /set useplatformtick no
-::bcdedit /set uselegacyapicmode yes
-::bcdedit /set x2apicpolicy disable
+bcdedit /set uselegacyapicmode no
+bcdedit /set x2apicpolicy Enable
 bcdedit /set hypervisorlaunchtype off
 ::bcdedit /set tscsyncpolicy legacy
-::bcdedit /set tscsyncpolicy enhanced
+bcdedit /set tscsyncpolicy enhanced
+bcdedit /set usephysicaldestination no
+bcdedit /set usefirmwarepcisettings no
+bcdedit /set tpmbootentropy ForceDisable
+bcdedit /set bootux Disabled
+bcdedit /set vsmlaunchtype off
+bcdedit /set vm no
+bcdedit /set quietboot yes
 %windir%\system32\lodctr /R
 %windir%\sysWOW64\lodctr /R
 lodctr /e:PerfOS
@@ -258,6 +274,7 @@ wmic process where name="MoUsoCoreWorker.exe" CALL terminate
 ::wmic process where name="dwm.exe" CALL setpriority 64
 wmic process where name="dllhost.exe" CALL setpriority 64
 wmic process where name="fontdrvhost.exe" CALL setpriority 64
+wmic process where name="winlogon.exe" CALL setpriority 64
 taskkill /f /t /im MoUsoCoreWorker.exe
 taskkill /f /t /im WMIADAP.exe
 taskkill /f /t /im UserOOBEBroker.exe
@@ -275,6 +292,5 @@ taskkill /f /t /im SearchProtocolHost.exe
 taskkill /f /t /im SearchIndexer.exe
 taskkill /f /t /im SearchFilterHost.exe
 taskkill /f /t /im SearchApp.exe
-TIMEOUT /T 3
-taskkill /f /t /im cmd.exe & taskkill /f /t /im conhost.exe
-exit
+taskkill /f /t /im conhost.exe
+taskkill /f /t /im cmd.exe
