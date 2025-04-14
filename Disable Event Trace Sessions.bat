@@ -29,4 +29,4 @@ for %%X in (
 ) do (
     logman stop %%X -ets
 )
-pause
+exit
