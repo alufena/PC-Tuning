@@ -1,18 +1,18 @@
 Windows Registry Editor Version 5.00
 
 ; hex dec quantum type boost
-; 02 = 02 short variable foreground (legacy default)
-; 14 = 20 long variable none (balanced)
-; 15 = 21 long variable mild (foreground favor)
+; 02 = 02 short variable foreground (untouched)
+; 26 = 38 short variable foreground (programs)
+; 18 = 24 long fixed none (background services)
+; 14 = 20 long variable none
+; 15 = 21 long variable mild
 ; 16 = 22 long variable high (calypto tweak)
-; 18 = 24 long fixed none (background services optable in gui)
-; 19 = 25 long fixed mild (light bg interactivity)
-; 1A = 26 long fixed high (modernized legacy boost)
-; 24 = 36 short variable none (uniform quick tasks)
-; 25 = 37 short variable mild (responsive desktop)
-; 26 = 38 short variable foreground (aggressive legacy boost)
+; 19 = 25 long fixed mild
+; 1A = 26 long fixed high
+; 24 = 36 short variable none
+; 25 = 37 short variable mild
 ; 28 = 40 short fixed none (disables foreground boost)
-; 29 = 41 short fixed mild (neutral multitask)
+; 29 = 41 short fixed mild
 ; 2A = 42 short fixed high (maximum foreground boost)
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\PriorityControl]
 "Win32PrioritySeparation"=dword:00000016
@@ -88,7 +88,7 @@ Windows Registry Editor Version 5.00
 ; 0000001e = 30
 ; 00000010 = 16
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mouclass\Parameters]
-"MouseDataQueueSize"=dword:00000064
+"MouseDataQueueSize"=dword:0000001e
 
 ; hex e dec respectivamente
 ; 00000064 = 100 padrão
@@ -96,7 +96,7 @@ Windows Registry Editor Version 5.00
 ; 0000001e = 30
 ; 00000010 = 16
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters]
-"KeyboardDataQueueSize"=dword:00000064
+"KeyboardDataQueueSize"=dword:0000001e
 
 ; FeatureSettingsOverride =- padrão, 3 tweak
 ; FeatureSettingsOverrideMask =- padrão, 3 tweak
@@ -119,7 +119,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 "SerializeTimerExpiration"=dword:00000001
 "SplitLargeCaches"=dword:00000001
-"GlobalTimerResolutionRequests"=-
+"GlobalTimerResolutionRequests"=dword:00000001
 "ThreadDpcEnable"=dword:00000000
 "InterruptSteeringDisabled"=dword:00000001
 "DisableExceptionChainValidation"=dword:00000001
@@ -148,9 +148,7 @@ Windows Registry Editor Version 5.00
 "LongPathsEnabled"=dword:00000001
 "MaximumTunnelEntries"=-
 
-; Attributes 00000064 padrão, 0 tweak
-; ValueMax 00000064 padrão, 0 tweak
-; ValueMin 00000064 padrão, 0 tweak
+; tudo abaixo 00000064 padrão, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0cc5b647-c1df-4637-891a-dec35c318583]
 "Attributes"=dword:00000000
 "ValueMax"=dword:00000000
@@ -191,19 +189,7 @@ Windows Registry Editor Version 5.00
 "CpuPriorityClass"=dword:00000001
 "IoPriority"=dword:00000001
 
-; D3D12_ENABLE_RUNTIME_DRIVER_OPTIMIZATIONS =- padrão, 1 tweak  
-; D3D12_RESOURCE_ALIGNMENT =- padrão, 1 tweak  
-; D3D11_MULTITHREADED =- padrão, 1 tweak  
-; D3D12_MULTITHREADED =- padrão, 1 tweak  
-; D3D11_DEFERRED_CONTEXTS =- padrão, 1 tweak  
-; D3D12_DEFERRED_CONTEXTS =- padrão, 1 tweak  
-; D3D11_ALLOW_TILING =- padrão, 1 tweak  
-; D3D11_ENABLE_DYNAMIC_CODEGEN =- padrão, 1 tweak  
-; D3D12_ALLOW_TILING =- padrão, 1 tweak  
-; D3D12_CPU_PAGE_TABLE_ENABLED =- padrão, 1 tweak  
-; D3D12_HEAP_SERIALIZATION_ENABLED =- padrão, 1 tweak  
-; D3D12_MAP_HEAP_ALLOCATIONS =- padrão, 1 tweak  
-; D3D12_RESIDENCY_MANAGEMENT_ENABLED =- padrão, 1 tweak
+; tudo abaixo =- padrão, 1 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectX]
 "D3D12_ENABLE_RUNTIME_DRIVER_OPTIMIZATIONS"=dword:00000001
 "D3D12_RESOURCE_ALIGNMENT"=dword:00000001
@@ -263,30 +249,7 @@ Windows Registry Editor Version 5.00
 "EnergySaverStatus"=dword:00000000
 "DynamicThrottlePolicy"=dword:00000000
 
-; DefaultD3TransitionLatencyActivelyUsed =- padrão, 1 tweak
-; DefaultD3TransitionLatencyIdleLongTime =- padrão, 1 tweak
-; DefaultD3TransitionLatencyIdleMonitorOff =- padrão, 1 tweak
-; DefaultD3TransitionLatencyIdleNoContext =- padrão, 1 tweak
-; DefaultD3TransitionLatencyIdleShortTime =- padrão, 1 tweak
-; DefaultD3TransitionLatencyIdleVeryLongTime =- padrão, 1 tweak
-; DefaultLatencyToleranceIdle0 =- padrão, 1 tweak
-; DefaultLatencyToleranceIdle0MonitorOff =- padrão, 1 tweak
-; DefaultLatencyToleranceIdle1 =- padrão, 1 tweak
-; DefaultLatencyToleranceIdle1MonitorOff =- padrão, 1 tweak
-; DefaultLatencyToleranceMemory =- padrão, 1 tweak
-; DefaultLatencyToleranceNoContext =- padrão, 1 tweak
-; DefaultLatencyToleranceNoContextMonitorOff =- padrão, 1 tweak
-; DefaultLatencyToleranceOther =- padrão, 1 tweak
-; DefaultLatencyToleranceTimerPeriod =- padrão, 1 tweak
-; DefaultMemoryRefreshLatencyToleranceActivelyUsed =- padrão, 1 tweak
-; DefaultMemoryRefreshLatencyToleranceMonitorOff =- padrão, 1 tweak
-; DefaultMemoryRefreshLatencyToleranceNoContext =- padrão, 1 tweak
-; Latency =- padrão, 1 tweak
-; MaxIAverageGraphicsLatencyInOneBucket =- padrão, 1 tweak
-; MiracastPerfTrackGraphicsLatency =- padrão, 1 tweak
-; MonitorLatencyTolerance =- padrão, 1 tweak
-; MonitorRefreshLatencyTolerance =- padrão, 1 tweak
-; TransitionLatency =- padrão, 1 tweak
+; tudo abaixo =- padrão, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Power]
 "DefaultD3TransitionLatencyActivelyUsed"=dword:00000001
 "DefaultD3TransitionLatencyIdleLongTime"=dword:00000001
@@ -393,6 +356,78 @@ Windows Registry Editor Version 5.00
 "IgnoreSP"=dword:00000001
 "DontAskAgain"=dword:00000001
 
+; DisableVidMemVBs =- padrão, 0 tweak
+; MMX Fast Path =- padrão, 1 tweak
+; FlipNoVsync =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D]
+"DisableVidMemVBs"=-
+"MMX Fast Path"=-
+"FlipNoVsync"=-
+
+; DisableVidMemVBs =- padrão, 0 tweak
+; MMX Fast Path =- padrão, 1 tweak
+; FlipNoVsync =- padrão, 1 tweak
+[HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Direct3D]
+"DisableVidMemVBs"=-
+"MMX Fast Path"=-
+"FlipNoVsync"=-
+
+; DisableVidMemVBs =- padrão, 0 tweak
+; MMX Fast Path =- padrão, 1 tweak
+; FlipNoVsync =- padrão, 1 tweak
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Direct3D]
+"DisableVidMemVBs"=-
+"MMX Fast Path"=-
+"FlipNoVsync"=-
+
+; =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D\Drivers]
+"SoftwareOnly"=-
+
+; =- padrão, 1 tweak
+[HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Direct3D\Drivers]
+"SoftwareOnly"=-
+
+; =- padrão, 1 tweak
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Direct3D\Drivers]
+"SoftwareOnly"=-
+
+; =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectDraw]
+"EmulationOnly"=-
+
+; =- padrão, 1 tweak
+[HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\DirectDraw]
+"EmulationOnly"=-
+
+; =- padrão, 1 tweak
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\DirectDraw]
+"EmulationOnly"=-
+
+; DisableVidMemVBs =- padrão, 0 tweak
+; MMX Fast Path =- padrão, 1 tweak
+; FlipNoVsync =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Direct3D]
+"DisableVidMemVBs"=-
+"MMX Fast Path"=-
+"FlipNoVsync"=-
+
+; =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Direct3D\Drivers]
+"SoftwareOnly"=-
+
+; DisableAGPSupport =- padrão, 1 tweak
+; DisableInactivate =- padrão, 1 tweak
+; DisableMMX =- padrão, 1 tweak
+; DisableNoSysLock =- padrão, 1 tweak
+; EmulationOnly =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\DirectDraw]
+"DisableAGPSupport"=-
+"DisableInactivate"=-
+"DisableMMX"=-
+"DisableNoSysLock"=-
+"EmulationOnly"=- 
+
 [HKEY_CLASSES_ROOT\Directory\shell\cmdprompt]
 @="Open Command Prompt here"
 "Icon"="cmd.exe"
@@ -442,6 +477,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.BackupReminder]
 "Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
+"PortableOperatingSystem"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System]
 "EnableActivityFeed"=dword:00000000
