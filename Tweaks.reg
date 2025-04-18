@@ -538,6 +538,16 @@ Windows Registry Editor Version 5.00
 "NoUseStoreOpenWith"=dword:00000001
 "NoNewAppAlert"=dword:00000001
 
+[HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
+"HideCopilotButton"=dword:00000001
+"DisableSearchBoxSuggestions"=dword:00000001
+"HideRecommendedPersonalizedSites"=-
+"HideRecommendedSection"=-
+"DisableNotificationCenter"=dword:00000001
+"NoTileApplicationNotification"=dword:00000001
+"HidePeopleBar"=dword:00000001
+"EnableLegacyBalloonNotifications"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\Current\Device\Start]
 "HideRecommendedSection"=dword:00000001
 
@@ -549,6 +559,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Attachments]
 "SaveZoneInformation"=dword:00000001
+"ScanWithAntiVirus"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings]
 "NOC_GLOBAL_SETTING_TOASTS_ENABLED"=dword:00000000
@@ -610,7 +621,8 @@ Windows Registry Editor Version 5.00
 "RemoteDesktop-Shadow-In-TCP"="v2.33|Action=Allow|Active=FALSE|Dir=In|Protocol=6|App=%SystemRoot%\\system32\\RdpSa.exe|Name=@FirewallAPI.dll,-28778|Desc=@FirewallAPI.dll,-28779|EmbedCtxt=@FirewallAPI.dll,-28752|Edge=TRUE|Defer=App|"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Associations]
-"DefaultFileTypeRisk"=dword:00000710
+"LowRiskFileTypes"=".avi;.bat;.com;.cmd;.exe;.htm;.html;.lnk;.mpg;.mpeg;.mov;.mp3;.msi;.m3u;.rar;.reg;.txt;.vbs;.wav;.zip"
+"DefaultFileTypeRisk"=dword:00001808
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
 "AddressBarTrendingSuggestEnabled"=dword:00000000
@@ -860,6 +872,7 @@ Windows Registry Editor Version 5.00
 "ShowSecondsInSystemClock"=dword:00000000
 "ExtendedUIHoverTime"=dword:00000000
 "HideDrivesWithNoMedia"=dword:00000000
+"ShowCortanaButton"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsInkWorkspace]
 "AllowWindowsInkWorkspace"=dword:00000000
@@ -889,6 +902,14 @@ Windows Registry Editor Version 5.00
 "ExtraIconsOnMinimized"=dword:00000000
 "Transparency"=dword:000000ff
 "Label"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\CTF\MSUTB]
+"ShowDeskBand"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Streams\Desktop]
+"TaskbarWinXP"=hex(3):0C,00,00,00,08,00,00,00,01,00,00,00,00,00,00,00,AA,4F,\
+28,68,48,6A,D0,11,8C,78,00,C0,4F,D9,18,B4,C6,02,00,00,40,0D,00,00,00,00,00,\
+00,1E,00,00,00,00,00,00,00,00,00,00,00,1E,00,00,00,00,00,00,00,01,00,00,00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\generativeAI]
 "Value"="Deny"
@@ -1044,6 +1065,9 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Feeds\DSB]
 "OpenOnHover"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\FTH]
+"Enabled"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SettingSync]
 "DisableSettingSync"=dword:00000002
 "DisableSettingSyncUserOverride"=dword:00000001
@@ -1071,7 +1095,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
 "NoConnectedUser"=dword:00000003
 "ConsentPromptBehaviorAdmin"=dword:00000000
-"ConsentPromptBehaviorUser"=dword:00000000
+"ConsentPromptBehaviorUser"=dword:00000001
 "HideFastUserSwitching"=dword:00000001
 "TypeOfAdminApprovalMode"=dword:00000001
 "VerboseStatus"=dword:00000001
@@ -1153,8 +1177,15 @@ Windows Registry Editor Version 5.00
 "DontSendAdditionalData"=dword:00000001
 "LoggingDisabled"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting\WMR]
+"Disable"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting\Consent]
+"DefaultConsent"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting]
 "Disabled"=dword:00000001
+"DontSendAdditionalData"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
 "SecurityHealth"=-
@@ -1162,6 +1193,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run]
 "WindowsWelcomeCenter"=-
+"ctfmon.exe"=-
+"OneDrive"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Spynet]
 "SpyNetReporting"=dword:00000000
@@ -1184,9 +1217,11 @@ Windows Registry Editor Version 5.00
 "NoResolveSearch"=dword:00000001
 "NoResolveTrack"=dword:00000001
 "EnforceShellExtensionSecurity"=dword:00000001
+"HideSCAMeetNow"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 "TurnOffSPIAnimations"=dword:00000001
+"HideSCAMeetNow"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "EnableTransparency"=dword:00000000
@@ -1372,9 +1407,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\SQM]
 "DisableCustomerImprovementProgram"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Attachments]
-"ScanWithAntiVirus"=dword:00000000
-
 [HKEY_CLASSES_ROOT\CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\ShellFolder]
 "Attributes"=dword:b0140064
 
@@ -1457,18 +1489,11 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot]
 "TurnOffWindowsCopilot"=dword:00000001
 
-[HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
-"HideCopilotButton"=dword:00000001
-"DisableSearchBoxSuggestions"=dword:00000001
-"HideRecommendedPersonalizedSites"=-
-"HideRecommendedSection"=-
-"DisableNotificationCenter"=dword:00000001
-"NoTileApplicationNotification"=dword:00000001
-"HidePeopleBar"=dword:00000001
-"EnableLegacyBalloonNotifications"=dword:00000001
-
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications]
 "NoTileApplicationNotification"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications]
+"NoCloudApplicationNotification"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\Setup\UpgradeNotification]
 "UpgradeAvailable"=dword:00000000
@@ -1532,6 +1557,7 @@ Windows Registry Editor Version 5.00
 "BingSearchEnabled"=dword:00000000
 "CortanaConsent"=dword:00000000
 "DeviceHistoryEnabled"=dword:00000000
+"SearchboxTaskbarMode"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
 "GlobalUserDisabled"=dword:00000001
