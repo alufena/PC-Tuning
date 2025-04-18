@@ -14,13 +14,35 @@ Windows Registry Editor Version 5.00
 ; 28 = 40 short fixed none (disables foreground boost)
 ; 29 = 41 short fixed mild
 ; 2A = 42 short fixed high (maximum foreground boost)
+; IRQ... =- padrão, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\PriorityControl]
-"Win32PrioritySeparation"=dword:0000001a
+"Win32PrioritySeparation"=dword:00000028
+"IRQ00Priority"=dword:00000001
+"IRQ08Priority"=dword:00000001
+"IRQ16Priority"=dword:00000001
+"IRQ23Priority"=dword:00000001
+"IRQ8Priority"=dword:00000001
 
 ; EnableGpuFirmware 0 padrão, 1 tweak
+; ReportAnalytics =- padrão, 0 tweak
+; EnableUlps =- padrão, 0 tweak
+; DisableDMACopy =- padrão, 1 tweak
+; DisableBlockWrite =- padrão, 0 tweak
+; StutterMode =- padrão, 0 tweak
+; PP_SclkDeepSleepDisable =- padrão, 1 tweak
+; PP_ThermalAutoThrottlingEnable =- padrão, 0 tweak
+; DisableDrmdmaPowerGating =- padrão, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
 "RMHdcpKeyglobZero"=dword:00000001
 "EnableGpuFirmware"=dword:00000001
+"ReportAnalytics"=dword:00000000
+"EnableUlps"=dword:00000000
+"DisableDMACopy"=dword:00000001
+"DisableBlockWrite"=dword:00000000
+"StutterMode"=dword:00000000
+"PP_SclkDeepSleepDisable"=dword:00000001
+"PP_ThermalAutoThrottlingEnable"=dword:00000000
+"DisableDrmdmaPowerGating"=dword:00000001
 
 ; game mode = 1 on, 0 off
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\GameBar]
@@ -93,7 +115,7 @@ Windows Registry Editor Version 5.00
 ; 0000001e = 30
 ; 00000010 = 16
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mouclass\Parameters]
-"MouseDataQueueSize"=dword:00000064
+"MouseDataQueueSize"=dword:00000010
 
 ; hex 			 dec
 ; 00000064 = 100 padrão
@@ -101,17 +123,21 @@ Windows Registry Editor Version 5.00
 ; 0000001e = 30
 ; 00000010 = 16
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters]
-"KeyboardDataQueueSize"=dword:00000064
+"KeyboardDataQueueSize"=dword:00000010
 
 ; FeatureSettingsOverride =- padrão, 3 tweak
 ; FeatureSettingsOverrideMask =- padrão, 3 tweak
 ; LargeSystemCache 0 padrão, 1 tweak
 ; DisablePagingExecutive 0 padrão, 1 tweak
+; PoolUsageMaximum =- padrão, 00000028 tweak
+; CoalescingTimerInterval =- padrão, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
 "FeatureSettingsOverride"=dword:00000003
 "FeatureSettingsOverrideMask"=dword:00000003
 "LargeSystemCache"=dword:00000001
 "DisablePagingExecutive"=dword:00000001
+"PoolUsageMaximum"=dword:00000028
+"CoalescingTimerInterval"=dword:00000000
 
 ; SerializeTimerExpiration =- padrão, 1 ou 2 tweak (0 auto, 1 force, 2 off)
 ; SplitLargeCaches =- padrão, 1 tweak
@@ -121,8 +147,55 @@ Windows Registry Editor Version 5.00
 ; DisableExceptionChainValidation =- padrão, tweak 1
 ; KernelSEHOPEnabled =- padrão, 0 tweak
 ; DistributeTimers =- padrão, 1 tweak
+; AdjustDpcThreshold =- padrão, 0 tweak
+; BufferSize =- padrão, 00000020 tweak
+; BugCheckUnexpectedInterrupts =- padrão, 0 tweak
+; DebugPollInterval =- padrão, 000003e8 tweak
+; DelayCloseSize =- padrão, 0 tweak
+; DelayDerefKCBLimit =- padrão, 0 tweak
+; DisableAutoBoost =- padrão, 1 tweak
+; DisableBufferedIoInit =- padrão, 1 tweak
+; DisableControlFlowGuardExportSuppression =- padrão, 1 tweak
+; DisableControlFlowGuardXfg =- padrão, 1 tweak
+; DisableLowQosTimerResolution =- padrão, 0 tweak
+; DisableOverlappedExecution =- padrão, 0 tweak
+; DisableTsx =- padrão, 1 tweak
+; DpcCumulativeSoftTimeout =- padrão, 0 tweak
+; DpcQueueDepth =- padrão, 1 tweak
+; DpcTimeout =- padrão, 0 tweak
+; DpcWatchdogPeriod =- padrão, 0 tweak
+; DpcWatchdogProfileBufferSizeBytes =- padrão, 1 tweak
+; DpcWatchdogProfileOffset 00002710 padrão, 0 tweak
+; DynamicDpcProtocol =- padrão, 1 tweak
+; ExTryQueueWorkItem =- padrão, 00000020 tweak
+; ForceForegroundBoostDecay =- padrão, 0 tweak
+; ForceIdleGracePeriod =- padrão, 0 tweak
+; IdealDpcRate =- padrão, 1 tweak
+; IdleDurationExpirationTimeout =- padrão, 0 tweak
+; IdleScanInterval =- padrão, 0 tweak
+; IoEnqueueIrp =- padrão, 00000020 tweak
+; IoQueueThreadIrp =- padrão, 00000020 tweak
+; IoQueueWorkItem =- padrão, 00000020 tweak
+; IoQueueWorkItemEx =- padrão, 00000020 tweak
+; IoQueueWorkItemToNode =- padrão, 00000020 tweak
+; MaxDynamicTickDuration =- padrão, 0000000a tweak
+; MaximumDpcQueueDepth =- padrão, 1 tweak
+; MaximumDpcRate =- padrão, 1 tweak
+; MaximumSharedReadyQueueSize =- padrão, 1 tweak
+; MinimumDpcRate =- padrão, 1 tweak
+; MitigationAuditOptions hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
+; MitigationOptions hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
+; ObUnsecureGlobalNames =- padrão
+; PassiveWatchdogTimeout =- padrão, 0 tweak
+; PriorityControl =- padrão, 00000032 tweak
+; QuantumLength =- padrão, 00000014 tweak
+; TimeIncrement =- padrão, 0000000f tweak
+; UnlimitDpcQueue =- padrão, 1 tweak
+; WatchdogResumeTimeout =- padrão, 0 tweak
+; WorkerFactoryThreadIdleTimeout =- padrão, 0 tweak
+; XMMIZeroingEnable =- padrão, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
-"SerializeTimerExpiration"=dword:00000001
+"SerializeTimerExpiration"=dword:00000002
 "SplitLargeCaches"=dword:00000001
 "GlobalTimerResolutionRequests"=dword:00000001
 "ThreadDpcEnable"=dword:00000000
@@ -130,6 +203,60 @@ Windows Registry Editor Version 5.00
 "DisableExceptionChainValidation"=dword:00000001
 "KernelSEHOPEnabled"=dword:00000000
 "DistributeTimers"=dword:00000001
+"AdjustDpcThreshold"=dword:00000000
+"BufferSize"=dword:00000020
+"BugCheckUnexpectedInterrupts"=dword:00000000
+"DebugPollInterval"=dword:000003e8
+"DelayCloseSize"=dword:00000000
+"DelayDerefKCBLimit"=dword:00000000
+"DisableAutoBoost"=dword:00000001
+"DisableBufferedIoInit"=dword:00000001
+"DisableControlFlowGuardExportSuppression"=dword:00000001
+"DisableControlFlowGuardXfg"=dword:00000001
+"DisableLowQosTimerResolution"=dword:00000000
+"DisableOverlappedExecution"=dword:00000000
+"DisableTsx"=dword:00000001
+"DpcCumulativeSoftTimeout"=dword:00000000
+"DpcQueueDepth"=dword:00000001
+"DpcTimeout"=dword:00000000
+"DpcWatchdogPeriod"=dword:00000000
+"DpcWatchdogProfileBufferSizeBytes"=dword:00000001
+"DpcWatchdogProfileOffset"=dword:00000000
+"DynamicDpcProtocol"=dword:00000001
+"ExTryQueueWorkItem"=dword:00000020
+"ForceForegroundBoostDecay"=dword:00000000
+"ForceIdleGracePeriod"=dword:00000000
+"IdealDpcRate"=dword:00000001
+"IdleDurationExpirationTimeout"=dword:00000000
+"IdleScanInterval"=dword:00000000
+"IoEnqueueIrp"=dword:00000020
+"IoQueueThreadIrp"=dword:00000020
+"IoQueueWorkItem"=dword:00000020
+"IoQueueWorkItemEx"=dword:00000020
+"IoQueueWorkItemToNode"=dword:00000020
+"MaxDynamicTickDuration"=dword:0000000a
+"MaximumDpcQueueDepth"=dword:00000001
+"MaximumDpcRate"=dword:00000001
+"MaximumSharedReadyQueueSize"=dword:00000001
+"MinimumDpcRate"=dword:00000001
+"PassiveWatchdogTimeout"=dword:00000000
+"PriorityControl"=dword:00000032
+"QuantumLength"=dword:00000014
+"TimeIncrement"=dword:0000000f
+"UnlimitDpcQueue"=dword:00000001
+"WatchdogResumeTimeout"=dword:00000000
+"WorkerFactoryThreadIdleTimeout"=dword:00000000
+"XMMIZeroingEnable"=dword:00000000
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+
+; =- padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Kernel DMA Protection]
+"DeviceEnumerationPolicy"=dword:00000000
+
+; =- padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Kernel DMA Protection]
+"DeviceEnumerationPolicy"=dword:00000000
 
 ; 0 padrão, 00000010 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Executive]
@@ -219,40 +346,55 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\0002]
 "PnPCapabilities"=dword:00000024
 
-; ExitLatency =- padrão, 1 tweak
-; ExitLatencyCheckEnabled =- padrão, 1 tweak
-; Latency =- padrão, 1 tweak
-; LatencyToleranceDefault =- padrão, 1 tweak
-; LatencyToleranceFSVP =- padrão, 1 tweak
-; LatencyTolerancePerfOverride =- padrão, 1 tweak
-; LatencyToleranceScreenOffIR =- padrão, 1 tweak
-; LatencyToleranceVSyncEnabled =- padrão, 1 tweak
-; RtlCapabilityCheckLatency =- padrão, 1 tweak
 ; CsEnabled =- padrão, 0 tweak
+; CoalescingTimerInterval =- padrão, 0 tweak
+; DisableSensorWatchdog =- padrão, 1 tweak
+; DisableVsyncLatencyUpdate =- padrão, 0 tweak
+; DynamicThrottlePolicy =- padrão, 0 tweak
 ; EnergyEstimationEnabled 1 padrão, 0 tweak
 ; EnergySaverPolicy =- padrão, 1 tweak
 ; EnergySaverStatus =- padrão, 0 tweak
-; DynamicThrottlePolicy =- padrão, 0 tweak
+; EventProcessorEnabled 1 padrão, 0 tweak
+; ExitLatency =- padrão, 1 tweak
+; ExitLatencyCheckEnabled =- padrão, 1 tweak
+; Latency =- padrão, 1 tweak
+; LatencyToleranceDefault =- padrão, 0 tweak
+; LatencyToleranceFSVP =- padrão, 0 tweak
+; LatencyTolerancePerfOverride =- padrão, 0 tweak
+; LatencyToleranceScreenOffIR =- padrão, 0 tweak
+; LatencyToleranceVSyncEnabled =- padrão, 0 tweak
+; PerfCalculateActualUtilization =- padrão, 0 tweak
+; QosManagesIdleProcessors =- padrão, 0 tweak
+; RtlCapabilityCheckLatency =- padrão, 1 tweak
+; SleepReliabilityDetailedDiagnostics =- padrão, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power]
-"EcoModeState"=dword:00000002
-"EcoMode"=dword:00000000
-"HibernateEnabledDefault"=dword:00000000
-"HibernateEnabled"=dword:00000000
-"PlatformAoAcOverride"=dword:00000000
-"ExitLatency"=dword:00000001
-"ExitLatencyCheckEnabled"=dword:00000001
-"Latency"=dword:00000001
-"LatencyToleranceDefault"=dword:00000001
-"LatencyToleranceFSVP"=dword:00000001
-"LatencyTolerancePerfOverride"=dword:00000001
-"LatencyToleranceScreenOffIR"=dword:00000001
-"LatencyToleranceVSyncEnabled"=dword:00000001
-"RtlCapabilityCheckLatency"=dword:00000001
+"CoalescingTimerInterval"=dword:00000000
 "CsEnabled"=dword:00000000
+"DisableSensorWatchdog"=dword:00000001
+"DisableVsyncLatencyUpdate"=dword:00000000
+"DynamicThrottlePolicy"=dword:00000000
+"EcoMode"=dword:00000000
+"EcoModeState"=dword:00000002
 "EnergyEstimationEnabled"=dword:00000000
 "EnergySaverPolicy"=dword:00000001
 "EnergySaverStatus"=dword:00000000
-"DynamicThrottlePolicy"=dword:00000000
+"EventProcessorEnabled"=dword:00000000
+"ExitLatency"=dword:00000001
+"ExitLatencyCheckEnabled"=dword:00000001
+"HibernateEnabled"=dword:00000000
+"HibernateEnabledDefault"=dword:00000000
+"Latency"=dword:00000001
+"LatencyToleranceDefault"=dword:00000000
+"LatencyToleranceFSVP"=dword:00000000
+"LatencyToleranceIdleResiliency"=dword:00000000
+"LatencyTolerancePerfOverride"=dword:00000000
+"LatencyToleranceScreenOffIR"=dword:00000000
+"LatencyToleranceVSyncEnabled"=dword:00000000
+"PerfCalculateActualUtilization"=dword:00000000
+"PlatformAoAcOverride"=dword:00000000
+"QosManagesIdleProcessors"=dword:00000000
+"RtlCapabilityCheckLatency"=dword:00000001
+"SleepReliabilityDetailedDiagnostics"=dword:00000000
 
 ; tudo abaixo =- padrão, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Power]
@@ -313,13 +455,17 @@ Windows Registry Editor Version 5.00
 "PruningMode"=dword:00000000
 
 ; SvcHostSplitThresholdInKB 01000000 padrão, 02000000 tweak
+; CoalescingTimerInterval =- padrão, 00000000 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
 "WaitToKillServiceTimeout"="1000"
 "SvcHostSplitThresholdInKB"=dword:02000000
+"CoalescingTimerInterval"=dword:00000000
 
-; 0000000a padrão, 0 tweak
+; SystemResponsiveness 0000000a padrão, 0 tweak
+; NetworkThrottlingIndex ffffffff padrão, 0000000a
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
 "SystemResponsiveness"=dword:00000000
+"NetworkThrottlingIndex"=dword:0000000a
 
 ; WindowedGsyncGeforceFlag =- padrão, 0 tweak
 ; FrameRateMin =- padrão, tweak ffffffff
@@ -361,85 +507,164 @@ Windows Registry Editor Version 5.00
 "IgnoreSP"=dword:00000001
 "DontAskAgain"=dword:00000001
 
-; DisableVidMemVBs =- padrão, 0 tweak
-; MMX Fast Path =- padrão, 1 tweak
-; FlipNoVsync =- padrão, 1 tweak
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D]
-"DisableVidMemVBs"=-
-"MMX Fast Path"=-
-"FlipNoVsync"=-
+; LegacyImpersonationLevel 2 padrão, 4 tweak
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Ole]
+"EnableDCOM"="N"
+"LegacyImpersonationLevel"=dword:00000004
 
-; DisableVidMemVBs =- padrão, 0 tweak
-; MMX Fast Path =- padrão, 1 tweak
-; FlipNoVsync =- padrão, 1 tweak
-[HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Direct3D]
-"DisableVidMemVBs"=-
-"MMX Fast Path"=-
-"FlipNoVsync"=-
+; 0 padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mouhid\Parameters]
+"TreatAbsolutePointerAsAbsolute"=dword:00000001
 
-; DisableVidMemVBs =- padrão, 0 tweak
-; MMX Fast Path =- padrão, 1 tweak
-; FlipNoVsync =- padrão, 1 tweak
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Direct3D]
-"DisableVidMemVBs"=-
-"MMX Fast Path"=-
-"FlipNoVsync"=-
+; 00000006 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
+"TimeLimitInSeconds"=dword:00000000
 
-; =- padrão, 1 tweak
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D\Drivers]
-"SoftwareOnly"=-
+; 1 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability]
+"TimeStampInterval"=dword:00000000
 
-; =- padrão, 1 tweak
-[HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Direct3D\Drivers]
-"SoftwareOnly"=-
+; =- padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\kernel]
+"CoalescingTimerInterval"=dword:00000000
 
-; =- padrão, 1 tweak
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Direct3D\Drivers]
-"SoftwareOnly"=-
+; =- padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Executive]
+"CoalescingTimerInterval"=dword:00000000
 
-; =- padrão, 1 tweak
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectDraw]
-"EmulationOnly"=-
+; =- padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Power\ModernSleep]
+"CoalescingTimerInterval"=dword:00000000
 
-; =- padrão, 1 tweak
-[HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\DirectDraw]
-"EmulationOnly"=-
+; CapPercentage 64 padrão, 0 tweak
+; SchedulingType 3 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\HardCap0]
+"CapPercentage"=dword:00000000
+"SchedulingType"=dword:00000000
 
-; =- padrão, 1 tweak
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\DirectDraw]
-"EmulationOnly"=-
+; CapPercentage 64 padrão, 0 tweak
+; SchedulingType 2 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\Paused]
+"CapPercentage"=dword:00000000
+"SchedulingType"=dword:00000000
 
-; DisableVidMemVBs =- padrão, 0 tweak
-; MMX Fast Path =- padrão, 1 tweak
-; FlipNoVsync =- padrão, 1 tweak
-[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Direct3D]
-"DisableVidMemVBs"=-
-"MMX Fast Path"=-
-"FlipNoVsync"=-
+; CapPercentage 64 padrão, 0 tweak
+; SchedulingType 2 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\SoftCapFull]
+"CapPercentage"=dword:00000000
+"SchedulingType"=dword:00000000
 
-; =- padrão, 1 tweak
-[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Direct3D\Drivers]
-"SoftwareOnly"=-
+; CapPercentage 64 padrão, 0 tweak
+; 00008000 padrão, 00000020 tweak
+; SchedulingType 2 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\SoftCapFullAboveNormal]
+"CapPercentage"=dword:00000000
+"PriorityClass"=dword:00000020
+"SchedulingType"=dword:00000000
 
-; DisableAGPSupport =- padrão, 1 tweak
-; DisableInactivate =- padrão, 1 tweak
-; DisableMMX =- padrão, 1 tweak
-; DisableNoSysLock =- padrão, 1 tweak
-; EmulationOnly =- padrão, 1 tweak
-[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\DirectDraw]
-"DisableAGPSupport"=-
-"DisableInactivate"=-
-"DisableMMX"=-
-"DisableNoSysLock"=-
-"EmulationOnly"=- 
+; CapPercentage 64 padrão, 0 tweak
+; SchedulingType 2 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\SoftCapLow]
+"CapPercentage"=dword:00000000
+"SchedulingType"=dword:00000000
+
+; CapPercentage 64 padrão, 0 tweak
+; 00100000 padrão, 00000020 tweak
+; SchedulingType 2 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\SoftCapLowBackgroundBegin]
+"CapPercentage"=dword:00000000
+"PriorityClass"=dword:00000020
+"SchedulingType"=dword:00000000
+
+; CapPercentage 64 padrão, 0 tweak
+; 00100000 padrão, 00000020 tweak
+; SchedulingType 2 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\UnmanagedAboveNormal]
+"CapPercentage"=dword:00000000
+"PriorityClass"=dword:00000020
+"SchedulingType"=dword:00000000
+
+; =- padrão, 0007e806 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Processor]
+"Capabilities"=dword:0007e806
+
+; 0 padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System]
+"IoEnableSessionZeroAccessCheck"=dword:00000001
+
+; 1 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\BackgroundDefault]
+"IsLowPriority"=dword:00000000
+
+; 1 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\Frozen]
+"IsLowPriority"=dword:00000000
+
+; 1 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\FrozenDNCS]
+"IsLowPriority"=dword:00000000
+
+; 1 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\FrozenDNK]
+"IsLowPriority"=dword:00000000
+
+; 1 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\FrozenPPLE]
+"IsLowPriority"=dword:00000000
+
+; 1 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\Paused]
+"IsLowPriority"=dword:00000000
+
+; 1 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\PausedDNK]
+"IsLowPriority"=dword:00000000
+
+; 1 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\Pausing]
+"IsLowPriority"=dword:00000000
+
+; 1 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\PrelaunchForeground]
+"IsLowPriority"=dword:00000000
+
+; 1 padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\ThrottleGPUInterference]
+"IsLowPriority"=dword:00000000
+
+; ProtectionMode 1 padrão, 0 tweak
+; AlpcWakePolicy =- padrão, 1 tweak
+; CoalescingTimerInterval =- padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager]
+"ProtectionMode"=dword:00000000
+"AlpcWakePolicy"=dword:00000001
+"CoalescingTimerInterval"=dword:00000000
 
 [HKEY_CURRENT_USER\Control Panel\Mouse]
-"MouseSpeed"="0"
+"MouseAccel"="-"
+"MouseAccel_Max"="-"
+"MouseAccel_Scale"="-"
+"RawInput"="1"
+"MouseTrails"="0"
 "MouseThreshold1"="0"
 "MouseThreshold2"="0"
-"MouseHoverTime"="400"
-"DoubleClickSpeed"="900"
+"MouseSpeed"="0"
 "MouseSensitivity"="10"
+"Beep"="0"
+"ActiveWindowTracking"=dword:00000000
+"DoubleClickHeight"="4"
+"DoubleClickSpeed"="500"
+"DoubleClickWidth"="4"
+"ExtendedSounds"="No"
+"MouseHoverHeight"="4"
+"MouseHoverTime"="500"
+"MouseHoverWidth"="4"
+"SnapToDefaultButton"="0"
+"SwapMouseButtons"="0"
+"SmoothMouseXCurve"=hex:00,00,00,00,00,00,00,00,15,6e,00,00,00,00,00,00,00,40,\
+  01,00,00,00,00,00,29,dc,03,00,00,00,00,00,00,00,28,00,00,00,00,00
+"SmoothMouseYCurve"=hex:00,00,00,00,00,00,00,00,fd,11,01,00,00,00,00,00,00,24,\
+  04,00,00,00,00,00,00,fc,12,00,00,00,00,00,00,c0,bb,01,00,00,00,00
 
 [HKEY_CLASSES_ROOT\Directory\shell\cmdprompt]
 @="Open Command Prompt here"
@@ -488,6 +713,12 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl]
 "DisplayParameters"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\LanmanServer\Parameters]
+"AutoShareWks"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\TabletPC]
+"TurnOffPenFeedback"=dword:00000001
+
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.BackupReminder]
 "Enabled"=dword:00000000
 
@@ -506,6 +737,7 @@ Windows Registry Editor Version 5.00
 "EnableCdp"=dword:00000000
 "DisableAIDataAnalysis"=dword:00000001
 "DisableAIPoweredFeature"=dword:00000001
+"DisableHHDEP"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
 "DisableCloudOptimizedContent"=dword:00000001
@@ -514,6 +746,26 @@ Windows Registry Editor Version 5.00
 "DisableTailoredExperiencesWithDiagnosticData"=dword:00000001
 "DisableWindowsConsumerFeatures"=dword:00000001
 "DisableWindowsSpotlightFeatures"=dword:00000001
+
+[HKEY_CURRENT_USER\Control Panel\Input Method]
+"Show Status"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\FVE]
+"DisableExternalDMAUnderLock"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\WUDF]
+"LogEnable"=dword:00000000
+"LogLevel"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Peernet]
+"Disabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\DeviceGuard]
+"EnableVirtualizationBasedSecurity"=dword:00000000
+"HVCIMATRequired"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows]
+"NonBestEffortLimit"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling]
 "PowerThrottlingOff"=dword:00000001
@@ -564,8 +816,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings]
 "NOC_GLOBAL_SETTING_TOASTS_ENABLED"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Ole]
-"EnableDCOM"="N"
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\FTP]
+"Use PASV"="no"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows Script\Settings]
 "JITDebug"=dword:00000000
@@ -797,9 +1049,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdNisDrv]
 "Start"=dword:00000004
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SecurityHealthService]
-"Start"=dword:00000004
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Sense]
 "Start"=dword:00000004
 
@@ -856,6 +1105,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "Start_TrackDocs"=dword:00000000
+"Start_TrackProgs"=dword:00000000
+"Start_LargeMFUIcons"=dword:00000000
 "Start_AccountNotifications"=dword:00000000
 "Start_IrisRecommendations"=dword:00000000
 "ShowCopilotButton"=dword:00000000
@@ -902,6 +1153,9 @@ Windows Registry Editor Version 5.00
 "ExtraIconsOnMinimized"=dword:00000000
 "Transparency"=dword:000000ff
 "Label"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings]
+"ShowSleepOption"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\CTF\MSUTB]
 "ShowDeskBand"=dword:00000000
@@ -1027,6 +1281,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
 "ShowRecommendations"=dword:00000000
+"EnableAutoTray"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\StandardProfile]
 "EnableFirewall"=dword:00000000
@@ -1104,12 +1359,24 @@ Windows Registry Editor Version 5.00
 "DisableAutomaticRestartSignOn"=dword:00000001
 "MSAOptional"=dword:00000001
 "DelayedDesktopSwitchTimeout"=dword:00000000
+"FilterAdministratorToken"=dword:00000000
+"EnableUIADesktopToggle"=dword:00000000
+"EnableInstallerDetection"=dword:00000000
+"ValidateAdminCodeSignatures"=dword:00000000
+"EnableSecureUIAPaths"=dword:00000000
+"EnableCursorSuppression"=dword:00000000
+
+[HKEY_CURRENT_USER\Control Panel\Cursors]
+"CursorDeadzoneJumpingSetting"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata]
 "PreventDeviceMetadataFromNetwork"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Settings]
 "DownloadMode"="0"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config]
+"DownloadMode"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
 "EnableAeroPeek"=dword:00000000
@@ -1218,6 +1485,7 @@ Windows Registry Editor Version 5.00
 "NoResolveTrack"=dword:00000001
 "EnforceShellExtensionSecurity"=dword:00000001
 "HideSCAMeetNow"=dword:00000001
+"HideSCAHealth"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 "TurnOffSPIAnimations"=dword:00000001
@@ -1430,6 +1698,9 @@ Windows Registry Editor Version 5.00
 "AllowCortanaAboveLock"=dword:00000000
 "ConnectedSearchUseWeb"=dword:00000000
 "DisableWebSearch"=dword:00000001
+"AllowIndexingEncryptedStoresOrItems"=dword:00000000
+"AllowSearchToUseLocation"=dword:00000000
+"AlwaysUseAutoLangDetection"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\SearchCompanion]
 "DisableContentFileUpdates"=dword:00000001
@@ -1527,11 +1798,19 @@ Windows Registry Editor Version 5.00
 "BackgroundHistoryPath3"=-
 "BackgroundHistoryPath4"=-
 
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\safer\codeidentifiers]
+"authenticodeenabled"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
 @=""
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB]
 "EnhancedPowerManagementEnabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Control Panel\Accessibility\MouseKeys]
+"Flags"="186"
+"MaximumSpeed"="40"
+"TimeToMaximumSpeed"="3000"
 
 [HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys]
 "Flags"=dword:506
@@ -1630,6 +1909,10 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\AppHost]
 "EnableWebContentEvaluation"=dword:00000000
 "PreventOverride"=dword:00000000
+"ContentEvaluation"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\PolicyManager\default\WiFi\AllowAutoConnectToWiFiSenseHotspots]
+"value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization]
 "NoLockScreen"=dword:00000001
@@ -1645,6 +1928,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\FTS]
 "EnableGR535"=dword:00000001
+"EnableRID61684"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Policy]
 "VerifiedAndReputablePolicyState"=dword:00000000
@@ -1822,6 +2106,27 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e967-e325-11ce-bfc1-08002be10318}]
+"LowerFilters"=""
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96c-e325-11ce-bfc1-08002be10318}]
+"UpperFilters"=""
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{6bdd1fc6-810f-11d0-bec7-08002be2092f}]
+"UpperFilters"=""
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{71a27cdd-812a-11d0-bec7-08002be2092f}]
+"LowerFilters"=""
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{ca3e7ab9-b4c3-4ae6-8251-579ef933890f}]
+"UpperFilters"=""
+
+[-HKEY_CURRENT_USER\System\GameConfigStore\Children]
+
+[-HKEY_CURRENT_USER\System\GameConfigStore\Parents]
+
+[-HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers\BlockList\Kernel]
 
 [-HKEY_CLASSES_ROOT\AppX43hnxtbyyps62jhe9sqpdzxn1790zetc\Shell\ShellCreateVideo]
 
