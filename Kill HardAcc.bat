@@ -226,6 +226,14 @@ sc stop "RemoteRegistry"
 sc config "RemoteRegistry" start= disabled
 sc stop "Themes"
 sc config "Themes" start= disabled
+sc stop "pla"
+sc config "pla" start= disabled
+sc stop "BthAvctpSvc"
+sc config "BthAvctpSvc" start= disabled
+sc stop "Dnscache"
+sc config "Dnscache" start= disabled
+sc stop "KtmRm"
+sc config "KtmRm" start= disabled
 ie4uinit.exe -ClearIconCache
 powercfg.exe hibernate off
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform" /v "InactivityShutdownDelay" /t REG_DWORD /d "4294967295" /f
