@@ -50,7 +50,7 @@ Windows Registry Editor Version 5.00
 ; GameDVR_DXGIHonorFSEWindowsCompatible 0 padrão, 1 tweak
 ; GameDVR_EFSEFeatureFlags 0 padrão
 ; GameDVR_Enabled 0 padrão
-; GameDVR_FSEBehavior =- padrão, 
+; GameDVR_FSEBehavior =- padrão,
 ; GameDVR_FSEBehaviorMode 0 padrão, 2 tweak
 ; GameDVR_HonorUserFSEBehaviorMode 0 padrão, 1 tweak
 [HKEY_CURRENT_USER\System\GameConfigStore]
@@ -1511,7 +1511,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\GameBar]
 "UseNexusForGameBarEnabled"=dword:00000000
 "ShowStartupPanel"=dword:00000000
-"GamePanelStartupTipIndex"=dword:00000003 
+"GamePanelStartupTipIndex"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore]
 "AutoDownload"=dword:00000002
@@ -1677,7 +1677,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Policy]
 "VerifiedAndReputablePolicyState"=dword:00000000
 
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage] 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
 "OpenAtLogon"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People]
@@ -2412,7 +2412,7 @@ Windows Registry Editor Version 5.00
 "C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\World of Warcraft Launcher.exe"="GpuPreference=2;"
 "G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="GpuPreference=2;"
 "C:\\Program Files (x86)\\Okular\\okular.exe"="GpuPreference=1;"
-"G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelGame\\Marvel\\Binaries\\Win64\Marvel-Win64-Shipping.exe"="GpuPreference=2;"
+"G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelGame\\Marvel\\Binaries\\Win64\\Marvel-Win64-Shipping.exe"="GpuPreference=2;"
 "G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelGame\\Marvel.exe"="GpuPreference=2;"
 "G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelRivals_Launcher.exe"="GpuPreference=2;"
 "D:\\SteamLibrary\\steamapps\\common\\PUBG\\TslGame\\Binaries\\Win64\\TslGame.exe"="GpuPreference=2;"
@@ -2671,7 +2671,7 @@ Windows Registry Editor Version 5.00
 "C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\World of Warcraft Launcher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files\\All-About-PDF\\All-About-PDF.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelGame\\Marvel\\Binaries\\Win64\Marvel-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelGame\\Marvel\\Binaries\\Win64\\Marvel-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelGame\\Marvel.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelRivals_Launcher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\DPC Latency Checker\\a.exe"="~ RUNASADMIN"
