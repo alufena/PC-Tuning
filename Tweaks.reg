@@ -81,12 +81,14 @@ Windows Registry Editor Version 5.00
 ; FeatureSettingsOverrideMask =- padrão, 3 tweak
 ; LargeSystemCache 0 padrão, 1 tweak
 ; FeatureSettings 0 padrão, 1 tweak
+; IoPageLockLimit =- padrão, 80000000 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
 "DisablePagingExecutive"=dword:00000001
 "FeatureSettingsOverride"=dword:00000003
 "FeatureSettingsOverrideMask"=dword:00000003
 "LargeSystemCache"=dword:00000001
 "FeatureSettings"=dword:00000001
+"IoPageLockLimit"=dword:80000000
 
 ; DpcWatchdogProfileOffset 00002710 padrão, 0 tweak
 ; SerializeTimerExpiration =- padrão, 1 ou 2 tweak (0 auto, 1 force, 2 off)
@@ -132,8 +134,6 @@ Windows Registry Editor Version 5.00
 ; MaximumDpcRate =- padrão, 1 tweak
 ; MaximumSharedReadyQueueSize =- padrão, 1 tweak
 ; MinimumDpcRate =- padrão, 1 tweak
-; MitigationAuditOptions hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
-; MitigationOptions hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
 ; ObUnsecureGlobalNames =- padrão
 ; PassiveWatchdogTimeout =- padrão, 0 tweak
 ; PriorityControl =- padrão, 00000032 tweak
@@ -143,6 +143,8 @@ Windows Registry Editor Version 5.00
 ; WatchdogResumeTimeout =- padrão, 0 tweak
 ; WorkerFactoryThreadIdleTimeout =- padrão, 0 tweak
 ; XMMIZeroingEnable =- padrão, 0 tweak
+; MitigationAuditOptions hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
+; MitigationOptions hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 "DpcWatchdogProfileOffset"=dword:00000000
 "SerializeTimerExpiration"=dword:00000002
@@ -159,7 +161,7 @@ Windows Registry Editor Version 5.00
 "DebugPollInterval"=dword:000003e8
 "DelayCloseSize"=dword:00000000
 "DelayDerefKCBLimit"=dword:00000000
-"DisableAutoBoost"=dword:00000000
+"DisableAutoBoost"=dword:00000001
 "DisableBufferedIoInit"=dword:00000001
 "DisableControlFlowGuardExportSuppression"=dword:00000001
 "DisableControlFlowGuardXfg"=dword:00000001
@@ -198,6 +200,14 @@ Windows Registry Editor Version 5.00
 "XMMIZeroingEnable"=dword:00000000
 "MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+
+; =- padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Kernel DMA Protection]
+"DeviceEnumerationPolicy"=dword:00000000
+
+; =- padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Kernel DMA Protection]
+"DeviceEnumerationPolicy"=dword:00000000
 
 ; =- padrão, 5 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
@@ -250,6 +260,16 @@ Windows Registry Editor Version 5.00
 "D3D12_HEAP_SERIALIZATION_ENABLED"=dword:00000001
 "D3D12_MAP_HEAP_ALLOCATIONS"=dword:00000001
 "D3D12_RESIDENCY_MANAGEMENT_ENABLED"=dword:00000001
+
+; =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+"AlwaysOn"=dword:00000001
+"NoLazyMode"=dword:00000001
+
+; Tcp1323Opts =- padrão, 3 tweak
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Tcp1323Opts]
+"DisablePowerManagement"=dword:00000001
+"Tcp1323Opts"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
@@ -824,9 +844,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Ole]
 "EnableDCOM"="N"
-
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Tcp1323Opts]
-"DisablePowerManagement"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsInkWorkspace]
 "AllowWindowsInkWorkspace"=dword:00000000
