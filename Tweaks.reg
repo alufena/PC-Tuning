@@ -87,6 +87,8 @@ Windows Registry Editor Version 5.00
 "IoPageLockLimit"=dword:80000000
 
 ; DpcWatchdogProfileOffset 00002710 padrão, 0 tweak
+; MitigationAuditOptions hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
+; MitigationOptions hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
 ; SerializeTimerExpiration =- padrão, 1 ou 2 tweak (0 auto, 1 force, 2 off)
 ; SplitLargeCaches =- padrão, 1 tweak
 ; GlobalTimerResolutionRequests =- padrão, 1 tweak
@@ -139,10 +141,10 @@ Windows Registry Editor Version 5.00
 ; WatchdogResumeTimeout =- padrão, 0 tweak
 ; WorkerFactoryThreadIdleTimeout =- padrão, 0 tweak
 ; XMMIZeroingEnable =- padrão, 0 tweak
-; MitigationAuditOptions hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
-; MitigationOptions hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 "DpcWatchdogProfileOffset"=dword:00000000
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "SerializeTimerExpiration"=dword:00000002
 "SplitLargeCaches"=dword:00000001
 "GlobalTimerResolutionRequests"=dword:00000001
@@ -194,8 +196,6 @@ Windows Registry Editor Version 5.00
 "WatchdogResumeTimeout"=dword:00000000
 "WorkerFactoryThreadIdleTimeout"=dword:00000000
 "XMMIZeroingEnable"=dword:00000000
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
-"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 
 ; =- padrão, 0 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Kernel DMA Protection]
@@ -548,6 +548,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling]
 "PowerThrottlingOff"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore]
+"DisableSR"=-
+
 [HKEY_CURRENT_USER\Software\Microsoft\input]
 "IsInputAppPreloadEnabled"=dword:00000000
 
@@ -666,6 +669,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform]
 "InactivityShutdownDelay"=dword:ffffffff
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters]
+"Type"="NTP"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Associations]
 "LowRiskFileTypes"=".avi;.bat;.com;.cmd;.exe;.htm;.html;.lnk;.mpg;.mpeg;.mov;.mp3;.msi;.m3u;.rar;.reg;.txt;.vbs;.wav;.zip"
@@ -940,6 +946,7 @@ Windows Registry Editor Version 5.00
 "FolderContentsInfoTip"=dword:00000001
 "ShowInfoTip"=dword:00000001
 "SharingWizardOn"=dword:00000000
+"TaskbarEndTask"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
 "WaitToKillServiceTimeout"="1000"
