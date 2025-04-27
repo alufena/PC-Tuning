@@ -1,0 +1,13 @@
+{
+  "policies": {
+    "AppAutoUpdate": false,
+    "BackgroundAppUpdate": false,
+    "DisableAppUpdate": false,
+	"DisableFirefoxStudies": true,
+    "ManualAppUpdateOnly": false,
+	"AutofillAddressEnabled": false,
+	"AutofillCreditCardEnabled": false,
+	"DisablePocket": true,
+    "DisableTelemetry": true
+  }
+}
