@@ -706,10 +706,19 @@ Windows Registry Editor Version 5.00
 "RegValueNameRedirect"="DisableImageCreator"
 "value"=dword:00000000
 
+[HKEY_CURRENT_USER\Control Panel\Mouse]
+"SnapToDefaultButton"="0"
+"MouseSpeed"="0"
+"MouseThreshold1"="0"
+"MouseThreshold2"="0"
+"DoubleClickSpeed"="900"
+"MouseSensitivity"="10"
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Paint]
 "DisableGenerativeFill"=dword:00000001
 "DisableCocreator"=dword:00000001
 "DisableImageCreator"=dword:00000001
+
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Ndu]
 "Start"=dword:00000004
