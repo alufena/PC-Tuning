@@ -83,6 +83,7 @@ taskkill /f /t /im sppsvc.exe
 taskkill /f /t /im smss.exe
 taskkill /f /t /im WUDFHost.exe
 taskkill /f /t /im MpCmdRun.exe
+taskkill /f /t /im WmiApSrv.exe
 ::sc stop "SysMain"
 ::sc config "SysMain" start= disabled
 sc start "SysMain"
@@ -234,11 +235,11 @@ sc stop "Dnscache"
 sc config "Dnscache" start= disabled
 sc stop "KtmRm"
 sc config "KtmRm" start= disabled
+sc stop "WSAIFabricSvc"
+sc config WSAIFabricSvc start= disabled
 ie4uinit.exe -ClearIconCache
 powercfg.exe hibernate off
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform" /v "InactivityShutdownDelay" /t REG_DWORD /d "4294967295" /f
 reg delete "HKEY_CURRENT_USER\Software\Spoon" /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v POWERSHELL_TELEMETRY_OPTOUT /t REG_SZ /d "0" /f
 ::bcdedit /deletevalue useplatformclock
 ::bcdedit /deletevalue disabledynamictick
 ::bcdedit /deletevalue useplatformtick
@@ -253,11 +254,22 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v P
 ::bcdedit /deletevalue vsmlaunchtype
 ::bcdedit /deletevalue vm
 ::bcdedit /deletevalue quietboot
+::bcdedit /deletevalue ems
+::bcdedit /deletevalue bootems
+::bcdedit /deletevalue debug
+::bcdedit /deletevalue integrityservices
+::bcdedit /deletevalue disableelamdrivers
+::bcdedit /deletevalue isolatedcontext
+::bcdedit /deletevalue allowedinmemorysettings
+::bcdedit /deletevalue numproc
+::bcdedit /deletevalue maxproc
+::bcdedit /deletevalue configaccesspolicy
+::bcdedit /deletevalue MSI
 bcdedit /set useplatformclock false
 bcdedit /set disabledynamictick yes
 bcdedit /set useplatformtick no
 bcdedit /set uselegacyapicmode no
-bcdedit /set x2apicpolicy Enable
+bcdedit /set x2apicpolicy Disable
 bcdedit /set hypervisorlaunchtype off
 ::bcdedit /set tscsyncpolicy legacy
 bcdedit /set tscsyncpolicy enhanced
@@ -268,6 +280,17 @@ bcdedit /set bootux Disabled
 bcdedit /set vsmlaunchtype off
 bcdedit /set vm no
 bcdedit /set quietboot yes
+bcdedit /set ems No
+bcdedit /set bootems No
+bcdedit /set debug No
+bcdedit /set integrityservices disable
+bcdedit /set disableelamdrivers Yes
+bcdedit /set isolatedcontext No
+bcdedit /set allowedinmemorysettings 0x0
+bcdedit /set numproc 16
+bcdedit /set maxproc yes
+bcdedit /set configaccesspolicy Default
+bcdedit /set MSI Default
 %windir%\system32\lodctr /R
 %windir%\sysWOW64\lodctr /R
 lodctr /e:PerfOS
@@ -281,13 +304,13 @@ wmic process where name="WmiPrvSvc.exe" CALL terminate
 wmic process where name="MoUsoCoreWorker.exe" CALL terminate
 ::wmic process where name="dwm.exe" CALL setpriority 64
 wmic process where name="dllhost.exe" CALL setpriority 64
-wmic process where name="fontdrvhost.exe" CALL setpriority 64
 wmic process where name="winlogon.exe" CALL setpriority 64
+wmic process where name="fontdrvhost.exe" CALL setpriority 64
 taskkill /f /t /im MoUsoCoreWorker.exe
 taskkill /f /t /im WMIADAP.exe
 taskkill /f /t /im UserOOBEBroker.exe
 taskkill /f /t /im RuntimeBroker.exe
-BCDEDIT /SET {CURRENT} NX ALWAYSOFF
+bcdedit /set nx AlwaysOf
 powershell -Command "Set-ProcessMitigation -System -Disable DEP"
 powershell -Command "Set-ProcessMitigation -System -Disable EmulateAtlThunks"
 bcdedit /deletevalue nointegritychecks
@@ -296,9 +319,12 @@ bcdedit /debug off
 ::bcdedit /deletevalue nx
 taskkill /f /t /im CompPkgSrv.exe
 reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&0&UID37124\Device Parameters" /v EDID /f
+w32tm /resync
 taskkill /f /t /im SearchProtocolHost.exe
 taskkill /f /t /im SearchIndexer.exe
 taskkill /f /t /im SearchFilterHost.exe
 taskkill /f /t /im SearchApp.exe
+timeout /t 5 /nobreak
 taskkill /f /t /im conhost.exe
 taskkill /f /t /im cmd.exe
+exit
