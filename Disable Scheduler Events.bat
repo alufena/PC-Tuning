@@ -108,3 +108,13 @@ schtasks /change /tn "microsoft\windows\workplace join\automatic-device-join" /d
 schtasks /change /tn "microsoft\windows\wwansvc\notificationtask" /disable
 schtasks /change /tn "microsoft\windows\wwansvc\oobediscovery" /disable
 schtasks /Change /TN "Microsoft\XblGameSave\XblGameSaveTask" /Disable
+schtasks /Change /TN "Microsoft\Windows\ExploitGuard\ExploitGuard MDM policy Refresh" /Disable
+schtasks /Change /TN "Microsoft\Windows\Windows Defender\Windows Defender Cache Maintenance" /Disable
+schtasks /Change /TN "Microsoft\Windows\Windows Defender\Windows Defender Cleanup" /Disable
+schtasks /Change /TN "Microsoft\Windows\Windows Defender\Windows Defender Scheduled Scan" /Disable
+schtasks /Change /TN "Microsoft\Windows\Windows Defender\Windows Defender Verification" /Disable
+schtasks /Change /TN "Microsoft\Windows\NetworkExperimentation" /Disable
+schtasks /Change /TN "Microsoft\Windows\Management\Connectivity\ESIMPM" /Disable
+schtasks /Change /TN "Microsoft\Windows\Input\RemoteMouseSyncDataAvailable" /Disable
+schtasks /Change /TN "Microsoft\Windows\Input\RemotePenSyncDataAvailable" /Disable
+schtasks /Change /TN "Microsoft\Windows\Input\RemoteTouchpadSyncDataAvailable" /Disable
