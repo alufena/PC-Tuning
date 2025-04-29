@@ -1,0 +1,1 @@
+cmd /c start "" "C:\Program Files (x86)\Steam\Steam.exe" -vrdisable -skipstreamingdrivers -cef-force-occlusion -cef-force-opaque-backgrounds -cef-disable-gpu -no-dwrite -cef-disable-gpu-compositing -cef-disable-d3d11 -nocrashmonitor -cef-disable-breakpad -nofasthtml -disablehighdpi -cef-single-process -no-browser -nofriendsui -nodircheck -single_core -vgui
