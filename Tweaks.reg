@@ -458,6 +458,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Appx]
 "AllowAutomaticAppArchiving"=dword:00000000
+"RestrictAppToSystemVolume"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE]
 "BypassNRO"=dword:00000001
@@ -609,6 +610,8 @@ Windows Registry Editor Version 5.00
 "EdgeCopilotEnabled"=dword:00000000
 "SmartScreenEnabled"=dword:00000000
 "HideFirstRunExperience"=dword:00000001
+"AllowSurfGame"=dword:00000000
+"TextPredictionEnabled"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Edge\SmartScreenPuaEnabled]
 @=dword:00000000
@@ -652,6 +655,7 @@ Windows Registry Editor Version 5.00
 "TranslateEnabled"=dword:00000000
 "UrlKeyedAnonymizedDataCollectionEnabled"=dword:00000000
 "UserFeedbackAllowed"=dword:00000000
+"DefaultShareAdditionalOSRegionSetting"=dword:00000002
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Google\Chrome]
 "AutofillAddressEnabled"=dword:00000000
@@ -811,6 +815,11 @@ Windows Registry Editor Version 5.00
 "HibernateEnabled"=dword:00000000
 "HibernateEnabledDefault"=dword:00000000
 "PlatformAoAcOverride"=dword:00000000
+"EnergySaverState"=dword:00000002
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Power\PowerSettings\f15576e8-98b7-4186-b944-eafa664402d9]
+"ACSettingIndex"=dword:00000000
+"DCSettingIndex"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Input\TIPC]
 "Enabled"=dword:00000000
@@ -937,6 +946,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\WindowsAI]
 "DisableAIDataAnalysis"=dword:00000001
+"DisableClickToDo"=-
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\Copilot]
 "IsCopilotAvailable"=dword:00000000
@@ -957,6 +967,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsAI]
 "DisableAIDataAnalysis"=dword:00000001
 "AllowRecallEnablement"=dword:00000000
+"DisableClickToDo"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\CredUI]
 "EnumerateAdministrators"=dword:00000000
@@ -1003,6 +1014,14 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
 "FlightSettingsMaxPauseDays"=dword:00001c84
+"ExcludeWUDriversInQualityUpdate"=dword:00000001
+"AllowMUUpdateService"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\PolicyState]
+"ExcludeWUDrivers"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsMediaPlayer]
+"PreventLibrarySharing"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation]
 "Model"="model"
@@ -1054,11 +1073,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Update\ExcludeWUDriversInQualityUpdate]
 "value"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
-"ExcludeWUDriversInQualityUpdate"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
 "ExcludeWUDriversInQualityUpdate"=dword:00000001
+"DisableWUfBSafeguards"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Feeds\DSB]
 "OpenOnHover"=dword:00000000
@@ -1536,6 +1553,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\FileHistory]
 "Disabled"=dword:00000001
 
+[HKEY_CURRENT_USER\Software\Microsoft\Notepad]
+"ShowStoreBanner"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CDP]
 "CdpSessionUserAuthzPolicy"=dword:00000000
 "NearShareChannelUserAuthzPolicy"=dword:00000000
@@ -1583,6 +1603,10 @@ Windows Registry Editor Version 5.00
 "IsDynamicSearchBoxEnabled"=dword:00000000
 "SafeSearchMode"=dword:00000000
 "IsDeviceSearchHistoryEnabled"=dword:00000000
+"IsGlobalFileSearchProviderToggleEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Biometrics\FacialFeatures]
+"EnhancedAntiSpoofing"=-
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
 "GlobalUserDisabled"=dword:00000001
