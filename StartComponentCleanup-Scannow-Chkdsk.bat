@@ -41,10 +41,10 @@ bcdedit /debug off
 ::bcdedit /deletevalue nx
 fsutil usn deletejournal /d /n c:
 winmgmt /salvagerepository
-taskkill /f /im msiexec.exe
-taskkill /f /im CompPkgSrv.exe
-taskkill /f /im TiWorker.exe
-taskkill /f /im TrustedInstaller.exe
-taskkill /f /im MoUsoCoreWorker.exe
+taskkill /f /t /im msiexec.exe
+taskkill /f /t /im CompPkgSrv.exe
+taskkill /f /t /im TiWorker.exe
+taskkill /f /t /im TrustedInstaller.exe
+taskkill /f /t /im MoUsoCoreWorker.exe
 taskkill /f /t /im conhost.exe
 taskkill /f /t /im cmd.exe
