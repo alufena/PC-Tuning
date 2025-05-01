@@ -324,6 +324,8 @@ taskkill /f /t /im SearchProtocolHost.exe
 taskkill /f /t /im SearchIndexer.exe
 taskkill /f /t /im SearchFilterHost.exe
 taskkill /f /t /im SearchApp.exe
+taskkill /f /t /im node.exe
+taskkill /f /t /im powershell.exe
 timeout /t 5 /nobreak
 taskkill /f /t /im conhost.exe
 taskkill /f /t /im cmd.exe
