@@ -1,7 +1,7 @@
 Windows Registry Editor Version 5.00
 
 ; hex dec quantum type boost
-; 02 = 02 short variable foreground (untouched)
+; 02 = 02 short variable foreground (default)
 ; 26 = 38 short variable foreground (programs)
 ; 18 = 24 long fixed none (background services)
 ; 14 = 20 long variable none
@@ -205,6 +205,162 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Kernel DMA Protection]
 "DeviceEnumerationPolicy"=dword:00000000
 
+; AUDIO_DEVICE_BUFFER_SIZE padrão =-, tweak 512
+; AUDIO_DEVICE_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; AUDIO_DEVICE_PENDING_INTERRUPTS padrão =-, tweak 0
+; AUDIO_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; CPU_BOOST_POLICY padrão =-, tweak 2
+; CPU_IDLE_POLICY padrão =-, tweak 0
+; CPU_INTERRUPT_BALANCE_POLICY padrão =-, tweak 1
+; CPU_MAX_FREQUENCY padrão =-, tweak 100
+; CPU_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; CPU_MAX_PENDING_IO padrão =-, tweak 0
+; CPU_POWER_POLICY padrão =-, tweak 1
+; DEVICE_COMPLETION_POLICY padrão =-, tweak 0
+; DEVICE_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; DEVICE_MAX_PENDING_IO padrão =-, tweak 0
+; DEVICE_PENDING_INTERRUPTS padrão =-, tweak 0
+; DISABLE_DYNAMIC_TICK padrão =-, tweak yes
+; DISK_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; DISK_MAX_PENDING_IO padrão =-, tweak 0
+; DWM_COMPOSITOR_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; DWM_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; GPU_MAX_PENDING_COMPUTE padrão =-, tweak 0
+; GPU_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; GPU_MAX_PENDING_RENDER padrão =-, tweak 0
+; GPU_PENDING_INTERRUPTS padrão =-, tweak 0
+; IO_COMPLETION_POLICY padrão =-, tweak 0
+; IO_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; IO_PRIORITY padrão =-, tweak 0
+; IO_REQUEST_LIMIT padrão =-, tweak 1024
+; MEMORY_LATENCY_POLICY padrão =-, tweak 0
+; MEMORY_MAX_ALLOCATION padrão =-, tweak 0
+; MEMORY_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; MEMORY_PREFETCH_POLICY padrão =-, tweak 2
+; MKL_DEBUG_CPU_TYPE padrão =-, tweak 10
+; NETWORK_ADAPTER_INTERRUPT_MODERATION padrão =-, tweak 0
+; NETWORK_ADAPTER_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; NETWORK_ADAPTER_MAX_PENDING_IO padrão =-, tweak 0
+; NETWORK_ADAPTER_PENDING_INTERRUPTS padrão =-, tweak 0
+; NETWORK_BUFFER_SIZE padrão =-, tweak 512
+; NETWORK_INTERRUPT_COALESCING padrão =-, tweak 0
+; NETWORK_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; PCIE_DEVICE_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; PCIE_DEVICE_MAX_PENDING_IO padrão =-, tweak 0
+; PCIE_DEVICE_PENDING_INTERRUPTS padrão =-, tweak 0
+; PCIE_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; POWER_IDLE_TIMEOUT padrão =-, tweak 0
+; POWER_THROTTLE_POLICY padrão =-, tweak 0
+; STORAGE_DEVICE_COMPLETION_POLICY padrão =-, tweak 0
+; STORAGE_DEVICE_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; STORAGE_DEVICE_MAX_PENDING_IO padrão =-, tweak 0
+; STORAGE_DEVICE_PENDING_INTERRUPTS padrão =-, tweak 0
+; STORAGE_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; THREAD_SCHEDULER_POLICY padrão =-, tweak 0
+; TIMER_RESOLUTION padrão =-, tweak 0
+; USB_DEVICE_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; USB_DEVICE_MAX_PENDING_IO padrão =-, tweak 0
+; USB_DEVICE_PENDING_INTERRUPTS padrão =-, tweak 0
+; USB_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]
+"AUDIO_DEVICE_BUFFER_SIZE"="512"
+"AUDIO_DEVICE_MAX_PENDING_INTERRUPTS"="0"
+"AUDIO_DEVICE_PENDING_INTERRUPTS"="0"
+"AUDIO_MAX_PENDING_INTERRUPTS"="0"
+"CPU_BOOST_POLICY"="2"
+"CPU_IDLE_POLICY"="0"
+"CPU_INTERRUPT_BALANCE_POLICY"="1"
+"CPU_MAX_FREQUENCY"="100"
+"CPU_MAX_PENDING_INTERRUPTS"="0"
+"CPU_MAX_PENDING_IO"="0"
+"CPU_POWER_POLICY"="1"
+"DEVICE_COMPLETION_POLICY"="0"
+"DEVICE_MAX_PENDING_INTERRUPTS"="0"
+"DEVICE_MAX_PENDING_IO"="0"
+"DEVICE_PENDING_INTERRUPTS"="0"
+"DISABLE_DYNAMIC_TICK"="yes"
+"DISK_MAX_PENDING_INTERRUPTS"="0"
+"DISK_MAX_PENDING_IO"="0"
+"DWM_COMPOSITOR_MAX_PENDING_INTERRUPTS"="0"
+"DWM_MAX_PENDING_INTERRUPTS"="0"
+"GPU_MAX_PENDING_COMPUTE"="0"
+"GPU_MAX_PENDING_INTERRUPTS"="0"
+"GPU_MAX_PENDING_RENDER"="0"
+"GPU_PENDING_INTERRUPTS"="0"
+"IO_COMPLETION_POLICY"="0"
+"IO_MAX_PENDING_INTERRUPTS"="0"
+"IO_PRIORITY"="0"
+"IO_REQUEST_LIMIT"="1024"
+"MEMORY_LATENCY_POLICY"="0"
+"MEMORY_MAX_ALLOCATION"="0"
+"MEMORY_MAX_PENDING_INTERRUPTS"="0"
+"MEMORY_PREFETCH_POLICY"="2"
+"MKL_DEBUG_CPU_TYPE"="10"
+"NETWORK_ADAPTER_INTERRUPT_MODERATION"="0"
+"NETWORK_ADAPTER_MAX_PENDING_INTERRUPTS"="0"
+"NETWORK_ADAPTER_MAX_PENDING_IO"="0"
+"NETWORK_ADAPTER_PENDING_INTERRUPTS"="0"
+"NETWORK_BUFFER_SIZE"="512"
+"NETWORK_INTERRUPT_COALESCING"="0"
+"NETWORK_MAX_PENDING_INTERRUPTS"="0"
+"PCIE_DEVICE_MAX_PENDING_INTERRUPTS"="0"
+"PCIE_DEVICE_MAX_PENDING_IO"="0"
+"PCIE_DEVICE_PENDING_INTERRUPTS"="0"
+"PCIE_MAX_PENDING_INTERRUPTS"="0"
+"POWER_IDLE_TIMEOUT"="0"
+"POWER_THROTTLE_POLICY"="0"
+"STORAGE_DEVICE_COMPLETION_POLICY"="0"
+"STORAGE_DEVICE_MAX_PENDING_INTERRUPTS"="0"
+"STORAGE_DEVICE_MAX_PENDING_IO"="0"
+"STORAGE_DEVICE_PENDING_INTERRUPTS"="0"
+"STORAGE_MAX_PENDING_INTERRUPTS"="0"
+"THREAD_SCHEDULER_POLICY"="0"
+"TIMER_RESOLUTION"="0"
+"USB_DEVICE_MAX_PENDING_INTERRUPTS"="0"
+"USB_DEVICE_MAX_PENDING_IO"="0"
+"USB_DEVICE_PENDING_INTERRUPTS"="0"
+"USB_MAX_PENDING_INTERRUPTS"="0"
+
+; 00000023 padrão, =- tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0AABB002-A307-447e-9B81-1D819DF6C6D0}]
+"Pri"=-
+
+; 00000002 padrão, =- tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0c3d5326-944b-4aab-8ad8-fe422a0e50e0}]
+"Pri"=-
+
+; 00000028 padrão, =- tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}]
+"Pri"=-
+
+; 0000001e padrão, =- tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{4569E601-272E-4869-BCAB-1C6C03D7966F}]
+"Pri"=-
+
+; 0000000a padrão, =- tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{8BC6262C-C026-411d-AE3B-7E2F70811A13}]
+"Pri"=-
+
+; 00000001 padrão, =- tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{a4a61b5f-f42c-4d23-b3ab-5c27df9f0f18}]
+"Pri"=-
+
+; 00000000 padrão, =- tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{c04a802d-2205-4910-ae98-3b51e3bb72f2}]
+"Pri"=-
+
+; 00000020 padrão, =- tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{D4140C81-EBBA-4e60-8561-6918290359CD}]
+"Pri"=-
+
+; 00000014 padrão, =- tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{EE1E4F72-E368-46b1-B3C6-5048B11C2DBD}]
+"Pri"=-
+
+; 6 padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
+"TimeLimitInSeconds"=dword:00000001
+
 ; =- padrão, 5 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
 "OverlayTestMode"=dword:00000005
@@ -333,6 +489,107 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control]
 "CoalescingTimerInterval"=dword:00000000
+
+ D3PCLatency =- padrão, 0 tweak
+; DisableWriteCombining =- padrão, 1 tweak
+; EnableRuntimePowerManagement =- padrão, 0 tweak
+; FlTransitionLatency =- padrão, 0 tweak
+; LOWLATENCY =- padrão, 1 tweak
+; Node3DLowLatency =- padrão, 1 tweak
+; PciLatencyTimerControl =- padrão, 00000020 tweak
+; PowerSavingTweaks =- padrão, 0 tweak
+; PrimaryPushBufferSize =- padrão, 1 tweak
+; RMDeepLlEntryLatencyUsec =- padrão, 0 tweak
+; RMDisablePostL2Compression =- padrão, 1 tweak
+; RmDisableRegistryCaching =- padrão, 1 tweak
+; RmGpsPsEnablePerCpuCoreDpc =- padrão, 1 tweak
+; UseGpuTimer =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
+"D3PCLatency"=dword:00000000
+"DisableWriteCombining"=dword:00000001
+"EnableRuntimePowerManagement"=dword:00000000
+"FlTransitionLatency"=dword:00000000
+"LOWLATENCY"=dword:00000001
+"Node3DLowLatency"=dword:00000001
+"PciLatencyTimerControl"=dword:00000020
+"PowerSavingTweaks"=dword:00000000
+"PrimaryPushBufferSize"=dword:00000001
+"RMDeepLlEntryLatencyUsec"=dword:00000000
+"RMDisablePostL2Compression"=dword:00000001
+"RmDisableRegistryCaching"=dword:00000001
+"RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
+"UseGpuTimer"=dword:00000001
+
+; D3PCLatency =- padrão, 0 tweak
+; DisableWriteCombining =- padrão, 1 tweak
+; EnableRuntimePowerManagement =- padrão, 0 tweak
+; FlTransitionLatency =- padrão, 0 tweak
+; LOWLATENCY =- padrão, 1 tweak
+; Node3DLowLatency =- padrão, 1 tweak
+; PciLatencyTimerControl =- padrão, 00000020 tweak
+; PowerSavingTweaks =- padrão, 0 tweak
+; PrimaryPushBufferSize =- padrão, 1 tweak
+; RMDeepLlEntryLatencyUsec =- padrão, 0 tweak
+; RMDisablePostL2Compression =- padrão, 1 tweak
+; RmDisableRegistryCaching =- padrão, 1 tweak
+; RmGpsPsEnablePerCpuCoreDpc =- padrão, 1 tweak
+; UseGpuTimer =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Power]
+"D3PCLatency"=dword:00000000
+"DisableWriteCombining"=dword:00000001
+"EnableRuntimePowerManagement"=dword:00000000
+"FlTransitionLatency"=dword:00000000
+"LOWLATENCY"=dword:00000001
+"Node3DLowLatency"=dword:00000001
+"PciLatencyTimerControl"=dword:00000020
+"PowerSavingTweaks"=dword:00000000
+"PrimaryPushBufferSize"=dword:00000001
+"RMDeepLlEntryLatencyUsec"=dword:00000000
+"RMDisablePostL2Compression"=dword:00000001
+"RmDisableRegistryCaching"=dword:00000001
+"RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
+"UseGpuTimer"=dword:00000001
+
+; AllowDeepCStates =- padrão, 0 tweak
+; BuffersInFlight =- padrão, 00000080 tweak
+; DisableGDIAcceleration =- padrão, 0 tweak
+; DisablePFonDP =- padrão, 1 tweak
+; Disable_OverlayDSQualityEnhancement =- padrão, 1 tweak
+; D3PCLatency =- padrão, 0 tweak
+; DisableWriteCombining =- padrão, 1 tweak
+; EnableRuntimePowerManagement =- padrão, 0 tweak
+; FlTransitionLatency =- padrão, 0 tweak
+; LOWLATENCY =- padrão, 1 tweak
+; Node3DLowLatency =- padrão, 1 tweak
+; PciLatencyTimerControl =- padrão, 00000020 tweak
+; PowerSavingTweaks =- padrão, 0 tweak
+; PrimaryPushBufferSize =- padrão, 1 tweak
+; RMDeepLlEntryLatencyUsec =- padrão, 0 tweak
+; RMDisablePostL2Compression =- padrão, 1 tweak
+; RmDisableRegistryCaching =- padrão, 1 tweak
+; RmGpsPsEnablePerCpuCoreDpc =- padrão, 1 tweak
+; UseGpuTimer =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm]
+"AllowDeepCStates"=dword:00000000
+"BuffersInFlight"=dword:00000080
+"DisableGDIAcceleration"=dword:00000000
+"DisablePFonDP"=dword:00000001
+"Disable_OverlayDSQualityEnhancement"=dword:00000001
+"D3PCLatency"=dword:00000000
+"DisableWriteCombining"=dword:00000001
+"EnableRuntimePowerManagement"=dword:00000000
+"FlTransitionLatency"=dword:00000000
+"LOWLATENCY"=dword:00000001
+"Node3DLowLatency"=dword:00000001
+"PciLatencyTimerControl"=dword:00000020
+"PowerSavingTweaks"=dword:00000000
+"PrimaryPushBufferSize"=dword:00000001
+"RMDeepLlEntryLatencyUsec"=dword:00000000
+"RMDisablePostL2Compression"=dword:00000001
+"RmDisableRegistryCaching"=dword:00000001
+"RmFbsrPagedDMA"=dword:00000000
+"RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
+"UseGpuTimer"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
 "TdrLevel"=dword:00000003
