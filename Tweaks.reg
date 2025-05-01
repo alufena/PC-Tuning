@@ -596,6 +596,11 @@ Windows Registry Editor Version 5.00
 "TdrDelay"=dword:0000000a
 "TdrDdiDelay"=dword:0000000a
 
+; 01000000 padrão, 04000000 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
+"WaitToKillServiceTimeout"="1000"
+"SvcHostSplitThresholdInKB"=dword:04000000
+
 ; EnableGpuFirmware 0 padrão, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
 "EnableGpuFirmware"=dword:00000000
@@ -636,6 +641,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Reporting]
 "DisableGenericRePorts"=dword:00000001
+"DisableEnhancedNotifications"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
 "ConvertibilityEnabled"=dword:00000000
@@ -658,6 +664,22 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
 "PortableOperatingSystem"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Settings\OnlineSpeechPrivacy]
+"HasAccepted"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Maps]
+"AutoDownloadAndUpdateMapData"=dword:00000000
+"AllowUntriggeredNetworkTrafficOnSettingsPage"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\StorageHealth]
+"AllowDiskHealthModelUpdates"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Messaging]
+"CloudServiceSyncEnabled"=dword:00000000
+
+[HKEY_USERS\New\SOFTWARE\Microsoft\Messaging]
+"CloudServiceSyncEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System]
 "EnableActivityFeed"=dword:00000000
@@ -706,6 +728,11 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore]
 "DisableSR"=-
+"DisableConfig"=-
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\SystemRestore]
+"DisableSR"=-
+"DisableConfig"=-
 
 [HKEY_CURRENT_USER\Software\Microsoft\input]
 "IsInputAppPreloadEnabled"=dword:00000000
@@ -727,16 +754,20 @@ Windows Registry Editor Version 5.00
 "HideRecommendedSection"=dword:00000001
 "NoUseStoreOpenWith"=dword:00000001
 "NoNewAppAlert"=dword:00000001
+"HideTaskViewButton"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
 "HideCopilotButton"=dword:00000001
 "DisableSearchBoxSuggestions"=dword:00000001
-"HideRecommendedPersonalizedSites"=-
-"HideRecommendedSection"=-
+"HideRecommendedPersonalizedSites"=dword:00000001
+"HideRecommendedSection"=dword:00000001
 "DisableNotificationCenter"=dword:00000001
 "NoTileApplicationNotification"=dword:00000001
 "HidePeopleBar"=dword:00000001
 "EnableLegacyBalloonNotifications"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\HideCopilotButton]
+"value"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shell\ActionCenter\Quick Actions]
 "PinnedQuickActionSlotCount"=dword:00000000
@@ -788,6 +819,13 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds]
 "EnableFeeds"=dword:00000000
+"HeadlinesOnboardingComplete"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\NonEnum]
+"{645FF040-5081-101B-9F08-00AA002F954E}"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Windows Chat]
+"ChatIcon"=dword:00000003
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds\FeedRepositoryState]
 "webView2EnabledV1"=dword:00000000
@@ -804,6 +842,10 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Siuf\Rules]
 "NumberOfSIUFInPeriod"=dword:00000000
 "PeriodInNanoSeconds"=dword:00000000
+
+[HKEY_USERS\New\Software\Microsoft\Siuf\Rules]
+"PeriodInNanoSeconds"=dword:00000000
+"NumberOfSIUFInPeriod"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell]
 "UseWin32BatteryFlyout"=dword:00000001
@@ -842,6 +884,7 @@ Windows Registry Editor Version 5.00
 "BrowserSignin"=dword:00000000
 "ComposeInlineEnabled"=dword:00000000
 "CopilotPageContextEnabled"=dword:00000000
+"CopilotPageContext"=dword:00000000
 "DefaultBrowserSettingEnabled"=dword:00000000
 "DesktopSharingHubEnabled"=dword:00000000
 "DiagnosticData"=dword:00000000
@@ -867,8 +910,17 @@ Windows Registry Editor Version 5.00
 "EdgeCopilotEnabled"=dword:00000000
 "SmartScreenEnabled"=dword:00000000
 "HideFirstRunExperience"=dword:00000001
+"PreventFirstRunPage"=dword:00000001
 "AllowSurfGame"=dword:00000000
 "TextPredictionEnabled"=dword:00000000
+"CopilotCDPPageContext"=dword:00000000
+"DiscoverPageContextEnabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\EdgeUI]
+"DisableMFUTracking"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EdgeUI]
+"DisableMFUTracking"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Edge\SmartScreenPuaEnabled]
 @=dword:00000000
@@ -878,6 +930,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\TabPreloader]
 "AllowTabPreloading"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main]
+"PreventLiveTileDataCollection"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
 "AlternateErrorPagesEnabled"=dword:00000000
@@ -980,6 +1035,8 @@ Windows Registry Editor Version 5.00
 "DisableCocreator"=dword:00000001
 "DisableImageCreator"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\LicenseManager]
+"Start"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Ndu]
 "Start"=dword:00000004
@@ -1056,14 +1113,14 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\DefenderAuditLogger]
 "Start"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\DefenderApiLogger]
+"Start"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\TabletPC]
 "PreventHandwritingDataSharing"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\HandwritingErrorReports]
 "PreventHandwritingErrorReports"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\DefenderApiLogger]
-"Start"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power]
 "CsEnabled"=dword:00000000
@@ -1073,6 +1130,7 @@ Windows Registry Editor Version 5.00
 "HibernateEnabledDefault"=dword:00000000
 "PlatformAoAcOverride"=dword:00000000
 "EnergySaverState"=dword:00000002
+"PowerThrottling"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Power\PowerSettings\f15576e8-98b7-4186-b944-eafa664402d9]
 "ACSettingIndex"=dword:00000000
@@ -1104,7 +1162,6 @@ Windows Registry Editor Version 5.00
 "Start_IrisRecommendations"=dword:00000000
 "ShowCopilotButton"=dword:00000000
 "TaskbarDa"=dword:00000000
-"ShowSyncProviderNotifications"=dword:00000000
 "EnableSnapBar"=dword:00000000
 "HideFileExt"=dword:00000000
 "Hidden"=dword:00000001
@@ -1121,9 +1178,10 @@ Windows Registry Editor Version 5.00
 "ShowInfoTip"=dword:00000001
 "SharingWizardOn"=dword:00000000
 "TaskbarEndTask"=dword:00000001
+"LaunchTo"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
-"WaitToKillServiceTimeout"="1000"
+[HKEY_USERS\New\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_TrackProgs"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Ole]
 "EnableDCOM"="N"
@@ -1151,6 +1209,28 @@ Windows Registry Editor Version 5.00
 "Hotkey"="3"
 "Layout Hotkey"="3"
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing]
+"DisableRemovePayload"=dword:00000000
+"DisableWerReporting"=dword:00000001
+"EnableDpxLog"=dword:00000000
+"LCUReoffer"=dword:00000000
+"ResetManifestCache"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\SideBySide\Configuration]
+"CBSLogCompress"=dword:00000001
+"CompressBackups"=dword:00000000
+"CompressMutables"=dword:00000000
+"DisableComponentBackups"=dword:00000001
+"DisableResetbase"=dword:00000000
+"DisableWerReporting"=dword:00000001
+"LCUReoffer"=dword:00000000
+"NTFSCompressPayload"=dword:00000000
+"NumCBSPersistLogs"=dword:00000000
+"PreserveFileCompressionState"=dword:00000001
+"ReofferUpdate"=dword:00000000
+"SupersededActions"=dword:00000001
+"TransientManifestCache"=dword:00000001
+
 [HKEY_CURRENT_USER\Software\Microsoft\CTF\LangBar]
 "ShowStatus"=dword:00000003
 "ExtraIconsOnMinimized"=dword:00000000
@@ -1159,6 +1239,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell\Update\Packages]
 "UndockingDisabled"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\ScriptedDiagnostics]
+"EnableDiagnostics"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings]
 "ShowSleepOption"=dword:00000000
@@ -1184,10 +1267,21 @@ Windows Registry Editor Version 5.00
 "RemoteDesktop-UserMode-In-UDP"="v2.33|Action=Allow|Active=FALSE|Dir=In|Protocol=17|LPort=3389|App=%SystemRoot%\\system32\\svchost.exe|Svc=termservice|Name=@FirewallAPI.dll,-28776|Desc=@FirewallAPI.dll,-28777|EmbedCtxt=@FirewallAPI.dll,-28752|"
 "RemoteDesktop-Shadow-In-TCP"="v2.33|Action=Allow|Active=FALSE|Dir=In|Protocol=6|App=%SystemRoot%\\system32\\RdpSa.exe|Name=@FirewallAPI.dll,-28778|Desc=@FirewallAPI.dll,-28779|EmbedCtxt=@FirewallAPI.dll,-28752|Edge=TRUE|Defer=App|"
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\FirewallRules]
+"{0DE40C8E-C126-4A27-9371-A27DAB1039F7}"="v2.25|Action=Block|Active=TRUE|Dir=Out|Protocol=6|App=%systemroot%\SystemApps\Microsoft.Windows.Cortana_cw5n1h2txyewy\searchUI.exe|Name=Block outbound Cortana|"
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\InputPersonalization]
 "AllowInputPersonalization"=dword:00000000
 "RestrictImplicitInkCollection"=dword:00000001
 "RestrictImplicitTextCollection"=dword:00000001
+
+[HKEY_USERS\New\Software\Microsoft\InputPersonalization]
+"RestrictImplicitTextCollection"=dword:00000001
+"RestrictImplicitInkCollection"=dword:00000001
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows Security Health\State]
+"AppAndBrowser_EdgeSmartScreenOff"=dword:00000000
+"AppAndBrowser_StoreAppsSmartScreenOff"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device]
 "DevicePasswordLessBuildVersion"=dword:00000002
@@ -1203,7 +1297,14 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\WindowsAI]
 "DisableAIDataAnalysis"=dword:00000001
-"DisableClickToDo"=-
+"DisableClickToDo"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\MDM]
+"DisableRegistration"=dword:00000001
+"AutoEnrollMDM"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"AllowTemporaryEnterpriseFeatureControl"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\Copilot]
 "IsCopilotAvailable"=dword:00000000
@@ -1214,6 +1315,12 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\A9\SnapshotCapture]
 "IsFilteringTelemetryEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\MicrosoftWindows.Client.AIX_cw5n1h2txyewy]
+@=""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\MicrosoftWindows.Client.AIX_cw5n1h2txyewy]
+@=""
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\SystemGuard]
 "Enabled"=dword:00000000
@@ -1334,6 +1441,10 @@ Windows Registry Editor Version 5.00
 "ExcludeWUDriversInQualityUpdate"=dword:00000001
 "DisableWUfBSafeguards"=dword:00000001
 
+[HKEY_CURRENT_USER\Control Panel\UnsupportedHardwareNotificationCache]
+"SV1"=dword:00000000
+"SV2"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Feeds\DSB]
 "OpenOnHover"=dword:00000000
 
@@ -1393,6 +1504,18 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata]
 "PreventDeviceMetadataFromNetwork"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FindMyDevice]
+"AllowFindMyDevice"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Internet Explorer\Main]
+"DisableFirstRunCustomize"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\FlipAhead]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Feeds]
+"BackgroundSyncStatus"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Settings]
 "DownloadMode"="0"
@@ -1555,6 +1678,9 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Search\Preferences]
 "WholeFileSystem"=dword:00000000
 
+[HKEY_USERS\New\Software\Microsoft\InputPersonalization\TrainedDataStore]
+"HarvestContacts"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common]
 "sendcustomerdata"=dword:00000000
 
@@ -1682,6 +1808,8 @@ Windows Registry Editor Version 5.00
 "LetAppsAccessGenerativeAI_ForceAllowTheseApps"=hex(7):00,00
 "LetAppsAccessGenerativeAI_ForceDenyTheseApps"=hex(7):00,00
 "LetAppsGetDiagnosticInfo"=dword:00000002
+"LetAppsActivateWithVoiceAboveLock"=dword:00000002
+"LetAppsActivateWithVoice"=dword:00000002
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Mobility]
 "OptedIn"=dword:00000000
@@ -1731,6 +1859,7 @@ Windows Registry Editor Version 5.00
 "AllowIndexingEncryptedStoresOrItems"=dword:00000000
 "AllowSearchToUseLocation"=dword:00000000
 "AlwaysUseAutoLangDetection"=dword:00000000
+ "ConnectedSearchUseWebOverMeteredConnections"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\SearchCompanion]
 "DisableContentFileUpdates"=dword:00000001
@@ -1762,12 +1891,21 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Policies\Microsoft\Windows\CloudContent]
 "DisableTailoredExperiencesWithDiagnosticData"=dword:00000001
 
+[HKEY_USERS\New\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
+"DisableTailoredExperiencesWithDiagnosticData"=dword:00000001
+
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Assistance\Client\1.0]
 "NoExplicitFeedback"=dword:00000001
 "NoImplicitFeedback"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Personalization\Settings]
 "AcceptedPrivacyPolicy"=dword:00000000
+
+[HKEY_USERS\New\Software\Microsoft\Personalization\Settings]
+"AcceptedPrivacyPolicy"=dword:00000000
+
+[HKEY_USERS\New\Software\Microsoft\Windows\CurrentVersion\CPSS\Store\InkingAndTypingPersonalization]
+"Value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\NewsAndInterests\AllowNewsAndInterests]
 "value"=dword:00000000
@@ -1807,6 +1945,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore]
 "AutoDownload"=dword:00000002
 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WindowsStore\WindowsUpdate]
+"AutoDownload"=dword:00000002
+
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\FileHistory]
 "Disabled"=dword:00000001
 
@@ -1823,6 +1964,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\OneDrive]
 "DisableFileSyncNGSC"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\OneDrive]
+"PreventNetworkTrafficPreUserSignIn"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers]
 "BackgroundHistoryPath0"=-
@@ -1862,6 +2006,9 @@ Windows Registry Editor Version 5.00
 "IsDeviceSearchHistoryEnabled"=dword:00000000
 "IsGlobalFileSearchProviderToggleEnabled"=dword:00000000
 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start]
+"ShowRecentList"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Biometrics\FacialFeatures]
 "EnhancedAntiSpoofing"=-
 
@@ -1874,6 +2021,7 @@ Windows Registry Editor Version 5.00
 "CortanaConsent"=dword:00000000
 "DeviceHistoryEnabled"=dword:00000000
 "SearchboxTaskbarMode"=dword:00000000
+"HistoryViewEnabled"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
 "GlobalUserDisabled"=dword:00000001
@@ -1958,6 +2106,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization]
 "NoLockScreen"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization]
+"LockScreenOverlaysDisabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity]
 "Enabled"=dword:00000000
@@ -2149,6 +2300,22 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\TCPIP\v6Transition\Teredo_State]
+
+[-HKEY_USERS\New\SOFTWARE\Policies\Microsoft\Windows\CloudContent\DisableWindowsSpotlightFeatures]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Appx\MdmHosts]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System\EnableFontProviders]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\SystemCertificates\AuthRoot\DisableRootAutoUpdate]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Mail\ManualLaunchAllowed]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PreviewBuilds\AllowBuildPreview]
+
+[-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\NamingTemplates]
 
 [-HKEY_CURRENT_USER\Software\Spoon]
 
