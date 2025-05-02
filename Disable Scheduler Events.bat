@@ -107,6 +107,8 @@ schtasks /change /tn "microsoft\windows\work folders\work folders maintenance wo
 schtasks /change /tn "microsoft\windows\workplace join\automatic-device-join" /disable
 schtasks /change /tn "microsoft\windows\wwansvc\notificationtask" /disable
 schtasks /change /tn "microsoft\windows\wwansvc\oobediscovery" /disable
+schtasks /change /tn "microsoft\office\officeTelemetryAgentFallBack" /disable
+schtasks /change /tn "microsoft\office\officeTelemetryAgentLogOn" /disable
 schtasks /Change /TN "Microsoft\XblGameSave\XblGameSaveTask" /Disable
 schtasks /Change /TN "Microsoft\Windows\ExploitGuard\ExploitGuard MDM policy Refresh" /Disable
 schtasks /Change /TN "Microsoft\Windows\Windows Defender\Windows Defender Cache Maintenance" /Disable
