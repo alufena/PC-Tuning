@@ -1,6 +1,6 @@
 @echo off
-setlocal EnableDelayedExpansion
 
+setlocal EnableDelayedExpansion
 POWERSHELL "ForEach($v in (Get-Command -Name \"Set-ProcessMitigation\").Parameters[\"Disable\"].Attributes.ValidValues){Set-ProcessMitigation -System -Disable $v.ToString() -ErrorAction SilentlyContinue}"  >NUL 2>&1
 
 ECHO Disabling IoLatencyCap...
@@ -69,10 +69,16 @@ FOR /F "tokens=*" %%a in ('REG QUERY "HKLM\System\CurrentControlSet\Enum" /S /F 
     )
 )
 
-REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v "SleepStudyDisabled" /t REG_DWORD /d "1" /f >NUL 2>&1
-
 for %%a in ("SleepStudy" "Kernel-Processor-Power" "UserModePowerService") do (
     wevtutil sl Microsoft-Windows-%%~a/Diagnostic /e:false
 )
 
-pause
+ECHO Disabling background access of default apps
+POWERSHELL "ForEach($key in (Get-ChildItem 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications')) { Set-ItemProperty -Path ('HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\' + $key.PSChildName) -Name 'Disabled' -Value 1 -ErrorAction SilentlyContinue }" >NUL 2>&1
+
+setlocal EnableDelayedExpansion
+ECHO Disabling synchronisation of settings...
+POWERSHELL -Command "Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync' -Name 'BackupPolicy' -Value 0x3c -ErrorAction SilentlyContinue; Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync' -Name 'DeviceMetadataUploaded' -Value 0 -ErrorAction SilentlyContinue; Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync' -Name 'PriorLogons' -Value 1 -ErrorAction SilentlyContinue" >NUL 2>&1
+POWERSHELL -Command "$groups = @('Accessibility','AppSync','BrowserSettings','Credentials','DesktopTheme','Language','PackageState','Personalization','StartLayout','Windows'); foreach ($group in $groups) { $path = 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\' + $group; New-Item -Path $path -Force -ErrorAction SilentlyContinue | Out-Null; Set-ItemProperty -Path $path -Name 'Enabled' -Value 0 -ErrorAction SilentlyContinue }" >NUL 2>&1
+
+exit
