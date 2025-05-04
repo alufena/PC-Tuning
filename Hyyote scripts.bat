@@ -81,4 +81,15 @@ ECHO Disabling synchronisation of settings...
 POWERSHELL -Command "Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync' -Name 'BackupPolicy' -Value 0x3c -ErrorAction SilentlyContinue; Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync' -Name 'DeviceMetadataUploaded' -Value 0 -ErrorAction SilentlyContinue; Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync' -Name 'PriorLogons' -Value 1 -ErrorAction SilentlyContinue" >NUL 2>&1
 POWERSHELL -Command "$groups = @('Accessibility','AppSync','BrowserSettings','Credentials','DesktopTheme','Language','PackageState','Personalization','StartLayout','Windows'); foreach ($group in $groups) { $path = 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\' + $group; New-Item -Path $path -Force -ErrorAction SilentlyContinue | Out-Null; Set-ItemProperty -Path $path -Name 'Enabled' -Value 0 -ErrorAction SilentlyContinue }" >NUL 2>&1
 
+setlocal EnableDelayedExpansion
+ECHO Removendo SystemApps com telemetria...
+set key=HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\InboxApplications
+for %%i in (
+AppRep.ChxApp
+CloudExperienceHost
+SecHealthUI
+) do (
+  for /f %%a in ('reg query "%key%" /f %%i /k ^| find /i "InboxApplications"') do if not errorlevel 1 (reg delete "%%a" /f)
+)
+
 exit
