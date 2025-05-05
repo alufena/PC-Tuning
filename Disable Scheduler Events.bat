@@ -1,4 +1,5 @@
 schtasks /change /tn "microsoft\office\office clicktorun service monitor" /disable
+schtasks /change /tn "Microsoft\Office\Office Automatic Updates" /disable
 schtasks /change /tn "microsoft\windows\.net framework\.net framework ngen v4.0.30319 64 critical" /disable
 schtasks /change /tn "microsoft\windows\.net framework\.net framework ngen v4.0.30319 64" /disable
 schtasks /change /tn "microsoft\windows\.net framework\.net framework ngen v4.0.30319 critical" /disable
@@ -120,3 +121,17 @@ schtasks /Change /TN "Microsoft\Windows\Management\Connectivity\ESIMPM" /Disable
 schtasks /Change /TN "Microsoft\Windows\Input\RemoteMouseSyncDataAvailable" /Disable
 schtasks /Change /TN "Microsoft\Windows\Input\RemotePenSyncDataAvailable" /Disable
 schtasks /Change /TN "Microsoft\Windows\Input\RemoteTouchpadSyncDataAvailable" /Disable
+schtasks /change /tn "EqualizerAPOUpdateChecker" /disable
+schtasks /change /tn "MicrosoftEdgeUpdateTaskMachineCore" /disable
+schtasks /change /tn "MicrosoftEdgeUpdateTaskMachineUA" /disable
+schtasks /change /tn "MSIAfterburner" /disable
+schtasks /change /tn "Microsoft\Windows\SoftwareProtectionPlatform\SvcRestartTask" /disable
+schtasks /change /tn "Microsoft\Windows\SettingSync\NetworkStateChangeTask" /disable
+schtasks /change /tn "Microsoft\VisualStudio\Updates\BackgroundDownload" /disable
+echo Desativando tarefas do MEGAsync...
+powershell -Command "Get-ScheduledTask | Where-Object { $_.TaskName -like 'MEGAsync Update Task*' } | ForEach-Object { Disable-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath }"
+echo Desativando tarefas do Google Updater...
+powershell -Command "Get-ScheduledTask | Where-Object { $_.TaskName -like 'GoogleUpdaterTaskSystem*' } | ForEach-Object { Disable-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath }"
+echo Desativando tarefas do Firefox Default Browser Agent...
+powershell -Command "Get-ScheduledTask | Where-Object { $_.TaskName -like 'Firefox Default Browser Agent*' } | ForEach-Object { Disable-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath }"
+exit
