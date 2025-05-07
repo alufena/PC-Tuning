@@ -175,8 +175,8 @@ Windows Registry Editor Version 5.00
 "EnablePerVolumeLazyWriter"=dword:00000002
 
 ; DpcWatchdogProfileOffset 00002710 padrão, 0 tweak
-; MitigationAuditOptions hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
-; MitigationOptions hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00 padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
+; MitigationAuditOptions =- padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
+; MitigationOptions -= padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
 ; SerializeTimerExpiration =- padrão, 1 ou 2 tweak (0 auto, 1 force, 2 off)
 ; SplitLargeCaches =- padrão, 1 tweak
 ; GlobalTimerResolutionRequests =- padrão, 1 tweak
@@ -512,22 +512,38 @@ Windows Registry Editor Version 5.00
 "DisablePowerManagement"=dword:00000001
 "Tcp1323Opts"=dword:00000003
 
+; =- padrão, 1 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
+
+; CpuPriorityClass =- padrão, 1 tweak
+; IoPriority e PagePriority =- padrão, 0 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
 "IoPriority"=dword:00000000
 "PagePriority"=dword:00000000
+
+; CpuPriorityClass =- padrão, 1 tweak
+; IoPriority e PagePriority =- padrão, 0 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
 "IoPriority"=dword:00000000
 "PagePriority"=dword:00000000
+
+; CpuPriorityClass =- padrão, 4 tweak
+; IoPriority =- padrão, 3 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000004
 "IoPriority"=dword:00000003
+
+; CpuPriorityClass =- padrão, 4 tweak
+; IoPriority =- padrão, 3 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000004
 "IoPriority"=dword:00000003
+
+; CpuPriorityClass =- padrão, 4 tweak
+; IoPriority =- padrão, 3 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000004
 "IoPriority"=dword:00000003
@@ -568,6 +584,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System]
 "PassiveIntRealTimeWorkerCount"=dword:00000010
 
+; =- padrão, 0 tweak
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Power]
 "CoalescingTimerInterval"=dword:00000000
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management]
@@ -753,6 +770,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl]
 "DisplayParameters"=dword:00000001
+"DisableEmoticon"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\LanmanServer\Parameters]
 "AutoShareWks"=dword:00000000
@@ -871,6 +889,7 @@ Windows Registry Editor Version 5.00
 "NoNewAppAlert"=dword:00000001
 "HideTaskViewButton"=dword:00000000
 "MultiTaskingAltTabFilter"=dword:00000004
+"ShowOrHideMostUsedApps"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
 "HideCopilotButton"=dword:00000001
@@ -1065,6 +1084,48 @@ Windows Registry Editor Version 5.00
 "CopilotCDPPageContext"=dword:00000000
 "DiscoverPageContextEnabled"=dword:00000000
 "CaretBrowsingEnabled"=dword:00000000
+"NewTabPageHideDefaultTopSites"=dword:00000001
+"EdgeShoppingAssistantEnabled"=dword:00000000
+"GamerModeEnabled"=dword:00000000
+"ImportOnEachLaunch"=dword:00000000
+"NewTabPageQuickLinksEnabled"=dword:00000000
+"UserFeedbackAllowed"=dword:00000000
+"DefaultGeolocationSetting"=dword:00000002
+"DefaultNotificationsSetting"=dword:00000002
+"DefaultLocalFontsSetting"=dword:00000002
+"DefaultSensorsSetting"=dword:00000002
+"DefaultSerialGuardSetting"=dword:00000002
+"CloudReportingEnabled"=dword:00000000
+"DriveDisabled"=dword:00000001
+"PasswordManagerEnabled"=dword:00000000
+"PasswordSharingEnabled"=dword:00000000
+"PasswordLeakDetectionEnabled"=dword:00000000
+"QuickAnswersEnabled"=dword:00000000
+"SafeBrowsingExtendedReportingEnabled"=dword:00000000
+"SafeBrowsingSurveysEnabled"=dword:00000000
+"SafeBrowsingDeepScanningEnabled"=dword:00000000
+"DeviceActivityHeartbeatEnabled"=dword:00000000
+"DeviceMetricsReportingEnabled"=dword:00000000
+"HeartbeatEnabled"=dword:00000000
+"LogUploadEnabled"=dword:00000000
+"ReportAppInventory"=""
+"ReportDeviceActivityTimes"=dword:00000000
+"ReportDeviceAppInfo"=dword:00000000
+"ReportDeviceSystemInfo"=dword:00000000
+"ReportDeviceUsers"=dword:00000000
+"ReportWebsiteTelemetry"=""
+"AlternateErrorPagesEnabled"=dword:00000000
+"AutofillCreditCardEnabled"=dword:00000000
+"BrowserGuestModeEnabled"=dword:00000000
+"BuiltInDnsClientEnabled"=dword:00000000
+"MetricsReportingEnabled"=dword:00000000
+"ParcelTrackingEnabled"=dword:00000000
+"RelatedWebsiteSetsEnabled"=dword:00000000
+"ShoppingListEnabled"=dword:00000000
+"SyncDisabled"=dword:00000001
+"ExtensionManifestV2Availability"=dword:00000002
+"HttpsUpgradesEnabled"=dword:00000001
+"SpellcheckEnabled"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\EdgeUI]
 "DisableMFUTracking"=dword:00000001
@@ -1089,27 +1150,55 @@ Windows Registry Editor Version 5.00
 "AutofillAddressEnabled"=dword:00000000
 "AutofillCreditCardEnabled"=dword:00000000
 "BackgroundModeEnabled"=dword:00000000
+"BrowserGuestModeEnabled"=dword:00000000
 "BrowserSignin"=dword:00000000
 "BuiltInDnsClientEnabled"=dword:00000000
 "ChromeCleanupEnabled"=dword:00000000
 "ChromeCleanupReportingEnabled"=dword:00000000
 "CloudPrintProxyEnabled"=dword:00000000
+"CloudReportingEnabled"=dword:00000000
 "CollectStatsConsent"=dword:00000000
 "DefaultBrowserSettingEnabled"=dword:00000000
+"DefaultGeolocationSetting"=dword:00000002
+"DefaultLocalFontsSetting"=dword:00000002
+"DefaultNotificationsSetting"=dword:00000002
+"DefaultSensorsSetting"=dword:00000002
+"DefaultSerialGuardSetting"=dword:00000002
+"DefaultShareAdditionalOSRegionSetting"=dword:00000002
+"DeviceActivityHeartbeatEnabled"=dword:00000000
 "DeviceMetricsReportingEnabled"=dword:00000000
+"DriveDisabled"=dword:00000001
 "EnableMediaRouter"=dword:00000000
+"ExtensionManifestV2Availability"=dword:00000002
 "HardwareAccelerationModeEnabled"=dword:00000000
+"HeartbeatEnabled"=dword:00000000
 "HighEfficiencyModeEnabled"=dword:00000001
+"LogUploadEnabled"=dword:00000000
 "MetricsReportingEnabled"=dword:00000000
 "NetworkPredictionOptions"=dword:00000002
+"ParcelTrackingEnabled"=dword:00000000
+"PasswordLeakDetectionEnabled"=dword:00000000
 "PasswordManagerEnabled"=dword:00000000
+"PasswordSharingEnabled"=dword:00000000
 "PrivacySandboxAdMeasurementEnabled"=dword:00000000
 "PrivacySandboxAdsAPIsEnabled"=dword:00000000
 "PrivacySandboxAdTopicsEnabled"=dword:00000000
 "PrivacySandboxPromptEnabled"=dword:00000000
 "PrivacySandboxSiteEnabledAdsEnabled"=dword:00000000
 "PromotionalTabsEnabled"=dword:00000000
+"QuickAnswersEnabled"=dword:00000000
+"RelatedWebsiteSetsEnabled"=dword:00000000
+"ReportAppInventory"=""
+"ReportDeviceActivityTimes"=dword:00000000
+"ReportDeviceAppInfo"=dword:00000000
+"ReportDeviceSystemInfo"=dword:00000000
+"ReportDeviceUsers"=dword:00000000
+"ReportWebsiteTelemetry"=""
+"SafeBrowsingDeepScanningEnabled"=dword:00000000
+"SafeBrowsingExtendedReportingEnabled"=dword:00000000
+"SafeBrowsingSurveysEnabled"=dword:00000000
 "SearchSuggestEnabled"=dword:00000000
+"ShoppingListEnabled"=dword:00000000
 "SigninAllowed"=dword:00000000
 "SpellCheckServiceEnabled"=dword:00000000
 "StartupBoostEnabled"=dword:00000000
@@ -1117,7 +1206,6 @@ Windows Registry Editor Version 5.00
 "TranslateEnabled"=dword:00000000
 "UrlKeyedAnonymizedDataCollectionEnabled"=dword:00000000
 "UserFeedbackAllowed"=dword:00000000
-"DefaultShareAdditionalOSRegionSetting"=dword:00000002
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Google\Chrome]
 "AutofillAddressEnabled"=dword:00000000
@@ -1339,7 +1427,8 @@ Windows Registry Editor Version 5.00
 "LaunchTo"=dword:00000001
 "SeparateProcess"=dword:00000000
 "DisableThumbnailCache"=dword:00000001
-"NoThumbnailCache"=dword:00000001 
+"NoThumbnailCache"=dword:00000001
+"EnableSnapAssistFlyout"=dword:00000000
 
 [HKEY_USERS\New\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "Start_TrackProgs"=dword:00000000
@@ -1402,7 +1491,7 @@ Windows Registry Editor Version 5.00
 "UndockingDisabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\ScriptedDiagnostics]
-"EnableDiagnostics"=dword:00000000
+"EnableDiagnostics"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings]
 "ShowSleepOption"=dword:00000000
@@ -2620,6 +2709,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
+
+[-HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers\BlockList\Kernel]
 
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\TCPIP\v6Transition\Teredo_State]
 
