@@ -15,6 +15,7 @@ taskkill /f /t /im calculator.exe
 taskkill /f /t /im lockapp.exe
 taskkill /f /t /im TabTip.exe
 taskkill /f /t /im hxoutlook.exe
+taskkill /f /t /im CEPHtmlEngine.exe
 taskkill /f /t /im hxaccounts.exe
 taskkill /f /t /im JackettConsole.exe
 taskkill /f /t /im CHXSmartScreen.exe
