@@ -778,6 +778,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\TabletPC]
 "TurnOffPenFeedback"=dword:00000001
 
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"UseSWRender"=dword:00000001
+
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.BackupReminder]
 "Enabled"=dword:00000000
 
