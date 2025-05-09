@@ -86,6 +86,9 @@ taskkill /f /t /im smss.exe
 taskkill /f /t /im WUDFHost.exe
 taskkill /f /t /im MpCmdRun.exe
 taskkill /f /t /im WmiApSrv.exe
+taskkill /f /t /im ssh-agent.exe
+taskkill /f /t /im ssh.exe
+taskkill /f /t /im RtkAudUService64.exe
 ::sc stop "SysMain"
 ::sc config "SysMain" start= disabled
 sc start "SysMain"
@@ -321,6 +324,7 @@ bcdedit /debug off
 ::bcdedit /deletevalue nx
 taskkill /f /t /im CompPkgSrv.exe
 reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&0&UID37124\Device Parameters" /v EDID /f
+reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\IrisService" /f
 w32tm /resync
 taskkill /f /t /im SearchProtocolHost.exe
 taskkill /f /t /im SearchIndexer.exe
@@ -328,7 +332,7 @@ taskkill /f /t /im SearchFilterHost.exe
 taskkill /f /t /im SearchApp.exe
 taskkill /f /t /im node.exe
 taskkill /f /t /im powershell.exe
-timeout /t 5 /nobreak
+timeout /t 8 /nobreak
 taskkill /f /t /im conhost.exe
 taskkill /f /t /im cmd.exe
 exit
