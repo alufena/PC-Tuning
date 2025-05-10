@@ -30,101 +30,91 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\DirectX\UserGpuPreferences]
 "DirectXUserGlobalSettings"="SwapEffectUpgradeEnable=0;"
 
-; "Priority" 2 padrão, 8 tweak
-; "Scheduling Category" Medium padrão, High tweak
-; "SFIO Priority" Normal padrão, High tweak
+; =- padrão, 1 tweak
+[HKEY_CURRENT_USER\Software\Microsoft\DirectX\GraphicsSettings]
+"SwapEffectUpgradeCache"=dword:00000001
+"SpecificGPUOptionApplicable"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games]
 "Affinity"=dword:00000000
 "Background Only"="False"
 "Clock Rate"=dword:00002710
-"GPU Priority"=dword:00000008
+"GPU Priority"=dword:00000012
 "Priority"=dword:00000006
 "Scheduling Category"="High"
 "SFIO Priority"="High"
+"Latency Sensitive"="True"
 
-; "Priority" 2 padrão, 8 tweak
-; "Scheduling Category" Medium padrão, High tweak
-; "SFIO Priority" Normal padrão, High tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio]
 "Affinity"=dword:00000000
-"Background Only"="False"
 "Clock Rate"=dword:00002710
+"Background Only"="True"
 "GPU Priority"=dword:00000008
-"Priority"=dword:00000006
-"Scheduling Category"="High"
+"Priority"=dword:00000002
+"Scheduling Category"="Medium"
 "SFIO Priority"="High"
+"Latency Sensitive"=-
 
-; "Priority" 2 padrão, 8 tweak
-; "Scheduling Category" Medium padrão, High tweak
-; "SFIO Priority" Normal padrão, High tweak
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Capture]
-"Affinity"=dword:00000000
-"Background Only"="False"
-"Clock Rate"=dword:00002710
-"GPU Priority"=dword:00000008
-"Priority"=dword:00000006
-"Scheduling Category"="High"
-"SFIO Priority"="High"
-
-; "Priority" 2 padrão, 8 tweak
-; "Scheduling Category" Medium padrão, High tweak
-; "SFIO Priority" Normal padrão, High tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing]
 "Affinity"=dword:00000000
-"Background Only"="False"
 "Clock Rate"=dword:00002710
-"GPU Priority"=dword:00000008
-"Priority"=dword:00000006
+"Background Only"="False"
+"BackgroundPriority"=dword:00000018
+"GPU Priority"=dword:00000012
+"Priority"=dword:00000008
 "Scheduling Category"="High"
 "SFIO Priority"="High"
+"Latency Sensitive"="True"
 
-; "Priority" 2 padrão, 8 tweak
-; "Scheduling Category" Medium padrão, High tweak
-; "SFIO Priority" Normal padrão, High tweak
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Distribution]
-"Affinity"=dword:00000000
-"Background Only"="False"
-"Clock Rate"=dword:00002710
-"GPU Priority"=dword:00000008
-"Priority"=dword:00000006
-"Scheduling Category"="High"
-"SFIO Priority"="High"
-
-; "Priority" 2 padrão, 8 tweak
-; "Scheduling Category" Medium padrão, High tweak
-; "SFIO Priority" Normal padrão, High tweak
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Playback]
-"Affinity"=dword:00000000
-"Background Only"="False"
-"Clock Rate"=dword:00002710
-"GPU Priority"=dword:00000008
-"Priority"=dword:00000006
-"Scheduling Category"="High"
-"SFIO Priority"="High"
-
-; "Priority" 2 padrão, 8 tweak
-; "Scheduling Category" Medium padrão, High tweak
-; "SFIO Priority" Normal padrão, High tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Pro Audio]
 "Affinity"=dword:00000000
-"Background Only"="False"
 "Clock Rate"=dword:00002710
-"GPU Priority"=dword:00000008
-"Priority"=dword:00000006
+"Background Only"="False"
+"GPU Priority"=dword:00000001
+"Priority"=dword:00000002
 "Scheduling Category"="High"
 "SFIO Priority"="High"
+"Latency Sensitive"=-
 
-; "Priority" 2 padrão, 8 tweak
-; "Scheduling Category" Medium padrão, High tweak
-; "SFIO Priority" Normal padrão, High tweak
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Capture]
+"Affinity"=dword:00000000
+"Clock Rate"=dword:00002710
+"Background Only"="False"
+"GPU Priority"=dword:00000008
+"Priority"=dword:00000002
+"Scheduling Category"="Medium"
+"SFIO Priority"="Normal"
+"Latency Sensitive"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Distribution]
+"Affinity"=dword:00000000
+"Clock Rate"=dword:00002710
+"Background Only"="False"
+"GPU Priority"=dword:00000008
+"Priority"=dword:00000002
+"Scheduling Category"="Medium"
+"SFIO Priority"="Normal"
+"Latency Sensitive"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Playback]
+"Affinity"=dword:00000000
+"Clock Rate"=dword:00002710
+"Background Only"="False"
+"GPU Priority"=dword:00000008
+"Priority"=dword:00000002
+"Scheduling Category"="Medium"
+"SFIO Priority"="Normal"
+"Latency Sensitive"=-
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Window Manager]
 "Affinity"=dword:00000000
-"Background Only"="False"
 "Clock Rate"=dword:00002710
+"Background Only"="False"
 "GPU Priority"=dword:00000008
-"Priority"=dword:00000006
-"Scheduling Category"="High"
-"SFIO Priority"="High"
+"Priority"=dword:00000002
+"Scheduling Category"="Medium"
+"SFIO Priority"="Normal"
+"Latency Sensitive"=-
 
 ; GameDVR_DSEBehavior =- padrão, 2 tweak
 ; GameDVR_DXGIHonorFSEWindowsCompatible 0 padrão, 1 tweak
@@ -135,19 +125,28 @@ Windows Registry Editor Version 5.00
 ; GameDVR_HonorUserFSEBehaviorMode 0 padrão, 1 tweak
 [HKEY_CURRENT_USER\System\GameConfigStore]
 "GameDVR_DSEBehavior"=dword:00000002
-"GameDVR_DXGIHonorFSEWindowsCompatible"=dword:00000000
+"GameDVR_DXGIHonorFSEWindowsCompatible"=dword:00000001
 "GameDVR_EFSEFeatureFlags"=dword:00000000
 "GameDVR_Enabled"=dword:00000000
 "GameDVR_FSEBehavior"=dword:00000002
 "GameDVR_FSEBehaviorMode"=dword:00000000
-"GameDVR_HonorUserFSEBehaviorMode"=dword:00000000
+"GameDVR_HonorUserFSEBehaviorMode"=dword:00000001
+
+[HKEY_USERS\.DEFAULT\System\GameConfigStore]
+"GameDVR_DSEBehavior"=dword:00000002
+"GameDVR_DXGIHonorFSEWindowsCompatible"=dword:00000001
+"GameDVR_EFSEFeatureFlags"=dword:00000000
+"GameDVR_Enabled"=dword:00000000
+"GameDVR_FSEBehavior"=dword:00000002
+"GameDVR_FSEBehaviorMode"=dword:00000000
+"GameDVR_HonorUserFSEBehaviorMode"=dword:00000001
 
 ; 00000064 = 100 padrão
 ; 00000036 = 54
 ; 0000001e = 30
 ; 00000010 = 16
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mouclass\Parameters]
-"MouseDataQueueSize"=dword:00000010
+"MouseDataQueueSize"=dword:00000016
 
 ; 00000064 = 100 padrão
 ; 00000036 = 54
@@ -161,7 +160,7 @@ Windows Registry Editor Version 5.00
 ; FeatureSettingsOverrideMask =- padrão, 3 tweak
 ; LargeSystemCache 0 padrão, 1 tweak
 ; FeatureSettings 0 padrão, 1 tweak
-; IoPageLockLimit =- padrão, 08000000 tweak
+; IoPageLockLimit =- padrão, ffffffff tweak
 ; DontVerifyRandomDrivers =- padrão, 1 tweak
 ; EnablePerVolumeLazyWriter =- padrão, 2 tweak
 ; EnableCfg =- padrão, 0 tweak
@@ -171,10 +170,11 @@ Windows Registry Editor Version 5.00
 "FeatureSettingsOverrideMask"=dword:00000003
 "LargeSystemCache"=dword:00000001
 "FeatureSettings"=dword:00000001
-"IoPageLockLimit"=dword:08000000
+"IoPageLockLimit"=dword:ffffffff
 "DontVerifyRandomDrivers"=dword:00000001
 "EnablePerVolumeLazyWriter"=dword:00000002
 "EnableCfg"=dword:00000000
+"SwapfileControl"=dword:00000000
 
 ; DpcWatchdogProfileOffset 00002710 padrão, 0 tweak
 ; MitigationAuditOptions =- padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
@@ -235,7 +235,7 @@ Windows Registry Editor Version 5.00
 "DpcWatchdogProfileOffset"=dword:00000000
 "MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
-"SerializeTimerExpiration"=dword:00000002
+"SerializeTimerExpiration"=dword:00000001
 "SplitLargeCaches"=dword:00000001
 "GlobalTimerResolutionRequests"=dword:00000001
 "ThreadDpcEnable"=dword:00000000
@@ -507,13 +507,13 @@ Windows Registry Editor Version 5.00
 "D3D12_MAP_HEAP_ALLOCATIONS"=dword:00000001
 "D3D12_RESIDENCY_MANAGEMENT_ENABLED"=dword:00000001
 
-; SystemResponsiveness 0000000a padrão, 00000000 tweak
+; SystemResponsiveness 0000000a padrão, 0 ou 1 tweak
 ; AlwaysOn e NoLazyMode =- padrão, 1 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
 "AlwaysOn"=dword:00000001
 "NoLazyMode"=dword:00000001
 "NetworkThrottlingIndex"=dword:ffffffff
-"SystemResponsiveness"=dword:00000000
+"SystemResponsiveness"=dword:00000001
 
 ; Tcp1323Opts =- padrão, 3 tweak
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Tcp1323Opts]
@@ -631,6 +631,7 @@ Windows Registry Editor Version 5.00
 "RMDisablePostL2Compression"=dword:00000001
 "RmDisableRegistryCaching"=dword:00000001
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
+"PlatformSupportMiracast"=dword:00000001
 "UseGpuTimer"=dword:00000001
 
 ; D3PCLatency até RMDeepLlEntryLatencyUsec =- padrão, 0 tweak
@@ -697,7 +698,10 @@ Windows Registry Editor Version 5.00
 "EnableRuntimePowerManagement"=dword:00000000
 "D3PCLatency"=dword:00000000
 "FlTransitionLatency"=dword:00000000
+"EnableCEPreemption"=dword:00000000
 "PowerSavingTweaks"=dword:00000000
+"EnableTiledDisplay"=dword:00000000
+"ComputePreemption"=dword:00000000
 "RMDeepLlEntryLatencyUsec"=dword:00000000
 "DisablePFonDP"=dword:00000001
 "Disable_OverlayDSQualityEnhancement"=dword:00000001
@@ -708,7 +712,20 @@ Windows Registry Editor Version 5.00
 "RMDisablePostL2Compression"=dword:00000001
 "RmDisableRegistryCaching"=dword:00000001
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
+"NVFBCEnable"=dword:00000001
+"DisablePreemption"=dword:00000001
+"DisablePreemptionOnS3S4"=dword:00000001
 "UseGpuTimer"=dword:00000001
+
+; =- padrão, 1 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\NVAPI]
+"RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
+
+; RmGpsPsEnablePerCpuCoreDpc =- padrão, 1 tweak
+; DisplayPowerSaving =- padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\Global\NVTweak]
+"RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
+"DisplayPowerSaving"=dword:00000000
 
 ; DpiMapIommuContiguous =- padrão, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
@@ -716,31 +733,119 @@ Windows Registry Editor Version 5.00
 "TdrDelay"=dword:0000000a
 "TdrDdiDelay"=dword:0000000a
 "DpiMapIommuContiguous"=dword:00000001
+"DisableCABC"=dword:00000001
 
-; PreferSystemMemoryContiguous até PP_SclkDeepSleepDisable =- padrão, 1 tweak
-; EnableUlps =- padrão, 0 tweak
+; EnableUlps até PP_ThermalAutoThrottlingEnable =- padrão, 0 tweak
+; PreferSystemMemoryContiguous até vrrDeflickerMaxUs =- padrão, 1 tweak
+; PciLatencyTimerControl =- padrão, 00000032 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
-"PreferSystemMemoryContiguous"=dword:00000001
-"DisableDrmdmaPowerGating"=dword:00000001
-"DisableDMACopy"=dword:00000001
-"PP_SclkDeepSleepDisable"=dword:00000001
 "EnableUlps"=dword:00000000
 "DisableBlockWrite"=dword:00000000
 "StutterMode"=dword:00000000
 "PP_ThermalAutoThrottlingEnable"=dword:00000000
+"PreferSystemMemoryContiguous"=dword:00000001
+"DisableDrmdmaPowerGating"=dword:00000001
+"DisableDMACopy"=dword:00000001
+"PP_SclkDeepSleepDisable"=dword:00000001
+"D3PCLatency"=dword:00000001
+"F1TransitionLatency"=dword:00000001
+"LOWLATENCY"=dword:00000001
+"Node3DLowLatency"=dword:00000001
+"RMDeepL1EntryLatencyUsec"=dword:00000001
+"RmGspcMaxFtuS"=dword:00000001
+"RmGspcMinFtuS"=dword:00000001
+"RmGspcPerioduS"=dword:00000001
+"RMLpwrEiIdleThresholdUs"=dword:00000001
+"RMLpwrGrIdleThresholdUs"=dword:00000001
+"RMLpwrGrRgIdleThresholdUs"=dword:00000001
+"RMLpwrMsIdleThresholdUs"=dword:00000001
+"VRDirectFlipDPCDelayUs"=dword:00000001
+"VRDirectFlipTimingMarginUs"=dword:00000001
+"VRDirectJITFlipMsHybridFlipDelayUs"=dword:00000001
+"vrrCursorMarginUs"=dword:00000001
+"vrrDeflickerMarginUs"=dword:00000001
+"vrrDeflickerMaxUs"=dword:00000001
+"PciLatencyTimerControl"=dword:00000032
 
-; PreferSystemMemoryContiguous =- padrão, 1 tweak
+; PreferSystemMemoryContiguous até vrrDeflickerMaxUs =- padrão, 1 tweak
+; PciLatencyTimerControl =- padrão, 00000032 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001]
 "PreferSystemMemoryContiguous"=dword:00000001
+"D3PCLatency"=dword:00000001
+"F1TransitionLatency"=dword:00000001
+"LOWLATENCY"=dword:00000001
+"Node3DLowLatency"=dword:00000001
+"RMDeepL1EntryLatencyUsec"=dword:00000001
+"RmGspcMaxFtuS"=dword:00000001
+"RmGspcMinFtuS"=dword:00000001
+"RmGspcPerioduS"=dword:00000001
+"RMLpwrEiIdleThresholdUs"=dword:00000001
+"RMLpwrGrIdleThresholdUs"=dword:00000001
+"RMLpwrGrRgIdleThresholdUs"=dword:00000001
+"RMLpwrMsIdleThresholdUs"=dword:00000001
+"VRDirectFlipDPCDelayUs"=dword:00000001
+"VRDirectFlipTimingMarginUs"=dword:00000001
+"VRDirectJITFlipMsHybridFlipDelayUs"=dword:00000001
+"vrrCursorMarginUs"=dword:00000001
+"vrrDeflickerMarginUs"=dword:00000001
+"vrrDeflickerMaxUs"=dword:00000001
+"PciLatencyTimerControl"=dword:00000032
 
-; PreferSystemMemoryContiguous =- padrão, 1 tweak
+; PreferSystemMemoryContiguous até vrrDeflickerMaxUs =- padrão, 1 tweak
+; PciLatencyTimerControl =- padrão, 00000032 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0002]
 "PreferSystemMemoryContiguous"=dword:00000001
+"F1TransitionLatency"=dword:00000001
+"LOWLATENCY"=dword:00000001
+"Node3DLowLatency"=dword:00000001
+"RMDeepL1EntryLatencyUsec"=dword:00000001
+"RmGspcMaxFtuS"=dword:00000001
+"RmGspcMinFtuS"=dword:00000001
+"RmGspcPerioduS"=dword:00000001
+"RMLpwrEiIdleThresholdUs"=dword:00000001
+"RMLpwrGrIdleThresholdUs"=dword:00000001
+"RMLpwrGrRgIdleThresholdUs"=dword:00000001
+"RMLpwrMsIdleThresholdUs"=dword:00000001
+"VRDirectFlipDPCDelayUs"=dword:00000001
+"VRDirectFlipTimingMarginUs"=dword:00000001
+"VRDirectJITFlipMsHybridFlipDelayUs"=dword:00000001
+"vrrCursorMarginUs"=dword:00000001
+"vrrDeflickerMarginUs"=dword:00000001
+"vrrDeflickerMaxUs"=dword:00000001
+"PciLatencyTimerControl"=dword:00000032
+
+; PreferSystemMemoryContiguous até vrrDeflickerMaxUs =- padrão, 1 tweak
+; PciLatencyTimerControl =- padrão, 00000032 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0003]
+"PreferSystemMemoryContiguous"=dword:00000001
+"D3PCLatency"=dword:00000001
+"F1TransitionLatency"=dword:00000001
+"LOWLATENCY"=dword:00000001
+"Node3DLowLatency"=dword:00000001
+"RMDeepL1EntryLatencyUsec"=dword:00000001
+"RmGspcMaxFtuS"=dword:00000001
+"RmGspcMinFtuS"=dword:00000001
+"RmGspcPerioduS"=dword:00000001
+"RMLpwrEiIdleThresholdUs"=dword:00000001
+"RMLpwrGrIdleThresholdUs"=dword:00000001
+"RMLpwrGrRgIdleThresholdUs"=dword:00000001
+"RMLpwrMsIdleThresholdUs"=dword:00000001
+"VRDirectFlipDPCDelayUs"=dword:00000001
+"VRDirectFlipTimingMarginUs"=dword:00000001
+"VRDirectJITFlipMsHybridFlipDelayUs"=dword:00000001
+"vrrCursorMarginUs"=dword:00000001
+"vrrDeflickerMarginUs"=dword:00000001
+"vrrDeflickerMaxUs"=dword:00000001
+"PciLatencyTimerControl"=dword:00000032
 
 ; SvcHostSplitThresholdInKB 01000000 padrão, 04000000 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
 "WaitToKillServiceTimeout"="1000"
+"DisableRemoteScmEndpoints"=dword:00000000
+"HandlerTimeout"=dword:7FFFFFFF
 "SvcHostSplitThresholdInKB"=dword:04000000
+"PortableOperatingSystem"=dword:00000000
+"ServicesPipeTimeout"=dword:00240000
 
 ; padrão 1, tweak 0
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
@@ -758,9 +863,131 @@ Windows Registry Editor Version 5.00
 "IRQ23Priority"=dword:00000001
 "IRQ8Priority"=dword:00000001
 
-; 1 padrão, 0 tweak
+; TimeStampInterval 1 padrão, 0 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability]
 "TimeStampInterval"=dword:00000000
+"ShutdownReasonOn"=dword:00000000
+"ShutdownReasonUI"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Reliability]
+"ShutdownReasonOn"=dword:00000000
+"ShutdownReasonUI"=dword:00000000
+
+; =- padrão, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\iaStor\Parameters\Port0]
+"LPM"=dword:00000000
+"LPMDSTATE"=dword:00000000
+"DIPM"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\iaStor\Parameters\Port1]
+"LPM"=dword:00000000
+"LPMDSTATE"=dword:00000000
+"DIPM"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\iaStor\Parameters\Port2]
+"LPM"=dword:00000000
+"LPMDSTATE"=dword:00000000
+"DIPM"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\iaStor\Parameters\Port3]
+"LPM"=dword:00000000
+"LPMDSTATE"=dword:00000000
+"DIPM"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\iaStor\Parameters\Port4]
+"LPM"=dword:00000000
+"LPMDSTATE"=dword:00000000
+"DIPM"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\iaStor\Parameters\Port5]
+"LPM"=dword:00000000
+"LPMDSTATE"=dword:00000000
+"DIPM"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power]
+"CsEnabled"=dword:00000000
+"EcoMode"=dword:00000000
+"EcoModeState"=dword:00000002
+"HibernateEnabled"=dword:00000000
+"HibernateEnabledDefault"=dword:00000000
+"PlatformAoAcOverride"=dword:00000000
+"EnergySaverState"=dword:00000002
+"PowerThrottling"=dword:00000000
+"ExitLatency"=dword:00000001
+"DisableSensorWatchdog"=dword:00000001
+"ExitLatencyCheckEnabled"=dword:00000001
+"Latency"=dword:00000001
+"LatencyToleranceDefault"=dword:00000001
+"LatencyToleranceFSVP"=dword:00000001
+"LatencyToleranceIdleResiliency"=dword:00000001
+"LatencyTolerancePerfOverride"=dword:00000001
+"LatencyToleranceScreenOffIR"=dword:00000001
+"LatencyToleranceVSyncEnabled"=dword:000000001
+"MfBufferingThreshold"=dword:00000000
+"QosManagesIdleProcessors"=dword:00000000
+"SleepReliabilityDetailedDiagnostics"=dword:00000000
+"EventProcessorEnabled"=dword:00000000
+"AwayModeEnabled"=dword:00000000
+"CoreParkingDisabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\HARDWARE\DEVICEMAP\ACPI\HPET]
+"Enable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\usbhub\hubg]
+"DisableOnSoftRemove"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\xusb22\Parameters]
+"IoQueueWorkItem"=dword:0000000a
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USBXHCI\Parameters]
+"IoQueueWorkItem"=dword:0000000a
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\usbhub\Parameters]
+"IoQueueWorkItem"=dword:0000000a
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB]
+"AllowIdleIrpInD3"=dword:00000001
+"EnhancedPowerManagementEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USBXHCI\Parameters\Wdf]
+"NoExtraBufferRoom"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags]
+"fid_D1Latency"=dword:00000001
+"fid_D2Latency"=dword:00000001
+"fid_D3Latency"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\usbhub\hubg]
+"DisableOnSoftRemove"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EnhancedStorageDevices]
+"TCGSecurityActivationDisabled"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\LeapSecondInformation]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Classpnp]
+"NVMeDisablePerfThrottling"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\StorPort]
+"TelemetryPerformanceEnabled"=dword:00000000
+"TelemetryErrorDataEnabled"=dword:00000000
+"TelemetryDeviceHealthEnabled"=dword:00000000
+"HmbAllocationPolicy"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SCMConfig]
+"EnableSvchostMitigationPolicy"=hex(b):00,00,00,00,00,00,00,00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Processor]
+"CPPCEnable"=dword:00000000
+"AllowPepPerfStates"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Quota System]
+"EnableCpuQuota"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System]
+"CountOperations"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\fssProv]
+"EncryptProtocol"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\pci\Parameters]
+"ASPMOptOut"=dword:00000001
 
 [HKEY_CLASSES_ROOT\Directory\shell\cmdprompt]
 @="Open Command Prompt here"
@@ -816,6 +1043,21 @@ Windows Registry Editor Version 5.00
 "DisplayParameters"=dword:00000001
 "DisableEmoticon"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps]
+"DumpFolder"="C:\\dumps"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"AutoRestartShell"=dword:00000001
+"WinStationsDisabled"="1"
+"AllowMultipleTSSessions"=dword:00000000
+"SyncForegroundPolicy"=dword:00000000
+"DisableBkGndGroupPolicy"=dword:00000001
+"EnableFirstLogonAnimation"=dword:00000000
+"PowerdownAfterShutdown"="1"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\BamThrottling]
+"DisableWindowHinting"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\LanmanServer\Parameters]
 "AutoShareWks"=dword:00000000
 
@@ -828,21 +1070,48 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.BackupReminder]
 "Enabled"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
-"PortableOperatingSystem"=dword:00000000
-
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Typelib\{8cec5860-07a1-11d9-b15e-000d56bfe6ee}\1.0\0\win32]
 @=""
 
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Typelib\{8cec5860-07a1-11d9-b15e-000d56bfe6ee}\1.0\0\win64]
 @=""
 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lock Screen\Creative]
+"LockImageFlags"=dword:00000000
+"CreativeId"="0"
+"PortraitAssetPath"="0"
+"LandscapeAssetPath"="0"
+"PlacementId"="0"
+"ImpressionToken"="0"
+"HotspotImageFolderPath"="0"
+"CreativeJson"="0"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\OOBE]
+"DisablePrivacyExperience"=dword:00000001
+
 [HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Settings\OnlineSpeechPrivacy]
 "HasAccepted"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Preferences]
+"VoiceActivationOn"=dword:0000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Maps]
 "AutoDownloadAndUpdateMapData"=dword:00000000
 "AllowUntriggeredNetworkTrafficOnSettingsPage"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\Maps]
+"UpdateOnlyOnWifi"=dword:00000001
+"AutoUpdateEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Maps]
+"AutoDownloadAndUpdateMapData"=dword:00000000
+"AllowUntriggeredNetworkTrafficOnSettingsPage"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Maps\AllowOfflineMapsDownloadOverMeteredConnection]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Maps\EnableOfflineMapsAutoUpdate]
+"value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\StorageHealth]
 "AllowDiskHealthModelUpdates"=dword:00000000
@@ -853,8 +1122,11 @@ Windows Registry Editor Version 5.00
 [HKEY_USERS\New\SOFTWARE\Microsoft\Messaging]
 "CloudServiceSyncEnabled"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Browser\AllowSmartScreen]
-"value"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState]
+"FullPath"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Windows.delete]
+"SkipCloudDownload"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System]
 "EnableActivityFeed"=dword:00000000
@@ -870,6 +1142,10 @@ Windows Registry Editor Version 5.00
 "DisableAIPoweredFeature"=dword:00000001
 "DisableHHDEP"=dword:00000001
 "AllowDomainDelayLock"=dword:00000000
+"RunAsPPL"=dword:00000000
+"NoLocalPasswordResetQuestions"=dword:00000001
+"DisableAcrylicBackgroundOnLogon"=dword:00000001
+"SlowLinkUIEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
 "DisableCloudOptimizedContent"=dword:00000001
@@ -878,9 +1154,42 @@ Windows Registry Editor Version 5.00
 "DisableTailoredExperiencesWithDiagnosticData"=dword:00000001
 "DisableWindowsConsumerFeatures"=dword:00000001
 "DisableWindowsSpotlightFeatures"=dword:00000001
+"ConfigureWindowsSpotlight"=dword:00000002
+"IncludeEnterpriseSpotlight"=dword:00000000
+"DisableWindowsSpotlightWindowsWelcomeExperience"=dword:00000001
+"DisableWindowsSpotlightOnActionCenter"=dword:00000001
+"DisableWindowsSpotlightOnSettings"=dword:00000001
+"DisableThirdPartySuggestions"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows Media Foundation\Platform]
-"EnableFrameServerMode"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\creative]
+"Intent"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\entertainment]
+"Intent"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\family]
+"Intent"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\gaming]
+"Intent"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\schoolwork]
+"Intent"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\business]
+"Intent"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\development]
+"Intent"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\DisableCloudOptimizedContent]
+"value"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows Media Foundation]
+"EnableFrameServerMode"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Media Foundation]
+"EnableFrameServerMode"=-
 
 [HKEY_CURRENT_USER\Control Panel\Input Method]
 "Show Status"=dword:00000000
@@ -888,6 +1197,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\FVE]
 "DisableExternalDMAUnderLock"=dword:00000000
 "OSAllowedHardwareEncryptionAlgorithms"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Config]
+"VulnerableDriverBlocklistEnable"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\WUDF]
 "LogEnable"=dword:00000000
@@ -937,18 +1249,37 @@ Windows Registry Editor Version 5.00
 "HideTaskViewButton"=dword:00000000
 "MultiTaskingAltTabFilter"=dword:00000004
 "ShowOrHideMostUsedApps"=dword:00000000
+"DisableGraphRecentItems"=dword:00000001
+"NoHeapTerminationOnCorruption"=dword:00000001
+"NoResolveTrack"=dword:00000001
+"NoRecentDocsHistory"=dword:00000001
+"NoRecentDocsMenu"=dword:00000001
+"NoRecentDocsNetHood"=dword:00000001
+"HideRecentlyAddedApps"=dword:00000001
+"NoDataExecutionPrevention"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
 "HideCopilotButton"=dword:00000001
 "DisableSearchBoxSuggestions"=dword:00000001
 "HideRecommendedPersonalizedSites"=dword:00000001
-"HideRecommendedSection"=dword:00000001
+"HideRecommendedSection"=-
 "DisableNotificationCenter"=dword:00000001
 "NoTileApplicationNotification"=dword:00000001
 "HidePeopleBar"=dword:00000001
 "EnableLegacyBalloonNotifications"=dword:00000001
 "MultiTaskingAltTabFilter"=dword:00000004
- "DisableThumbsDBOnNetworkFolders"=dword:00000001 
+"DisableThumbsDBOnNetworkFolders"=dword:00000001 
+"DisableGraphRecentItems"=dword:00000001
+"NoNewAppAlert"=dword:00000001
+"NoUseStoreOpenWith"=dword:00000001
+"ExcludedFromStableAnaheimDownloadPromotionSL"=dword:00000001
+"IrisClientRefresh"=dword:00000000
+"ExplorerStartupTraceRecorded"=dword:00000000
+"TelemetrySalt"=dword:00000000
+"SIDUpdatedOnLibraries"=dword:00000000
+"NoHeapTerminationOnCorruption"=dword:00000001
+"HideRecentlyAddedApps"=dword:00000001
+"NoDataExecutionPrevention"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\TabletTip\1.7]
 "EnableDesktopModeAutoInvoke"=dword:00000000
@@ -969,8 +1300,21 @@ Windows Registry Editor Version 5.00
 "TurnOffInsertSpace"=dword:00000001
 "TurnOffOfferTextPredictions"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\NGEN]
+"C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\mscorsvw.exe"=dword:00000000
+"C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\mscorsvw.exe"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell]
 "TabletMode"=dword:00000000
+"SignInMode"=dword:00000001
+"ConvertibleSlateModePromptPreference"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ImmersiveShell\Launcher]
+"DisableLightDismiss"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\FlightedFeatures]
+"ComponentUIForWinRTPicker"=dword:00000001
+"ImmersiveContextMenu"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\HideCopilotButton]
 "value"=dword:00000001
@@ -1008,6 +1352,13 @@ Windows Registry Editor Version 5.00
 "DisableInventory"=dword:00000001
 "DisableUAR"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\HidePeopleBar]
+"value"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\EMDMgmt]
+"GroupPolicyDisallowCaches"=dword:00000001
+"AllowNewCachesByDefault"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CompatTelRunner.exe]
 "Debugger"="%windir%\\System32\\systray.exe"
 
@@ -1042,17 +1393,67 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Windows Chat]
 "ChatIcon"=dword:00000003
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\ConfigureChatIcon]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Communications]
+"Capabilities"=dword:00000000
+"ConfigureChatAutoInstall"=dword:00000000
+
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds\FeedRepositoryState]
 "webView2EnabledV1"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard]
 "EnableVirtualizationBasedSecurity"=dword:00000000
+"DeployConfigCIPolicy"=dword:00000000
+"HVCIMATRequired"=dword:00000000
+"RequirePlatformSecurityFeature"=dword:00000000
+"CachedDrtmAuthIndex"=dword:00000000
+"LsaCfgFlags"=dword:00000000
+"RequireMicrosoftSignedBootChain"=dword:00000000
+"RequirePlatformSecurityFeatures"=dword:00000000
+"Locked"=dword:00000000
+"ConfigCIPolicyFilePath"="C:\\Windows\\schemas\\CodeIntegrity\\ExamplePolicies\\AllowAll.xml"
+"HypervisorEnforcedCodeIntegrity"=dword:00000000
+"ConfigureSystemGuardLaunch"=dword:0000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\DeviceGuard\EnableVirtualizationBasedSecurity]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\DeviceGuard\ConfigureSystemGuardLaunch]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\DeviceGuard\LsaCfgFlags]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\DeviceGuard\RequirePlatformSecurityFeatures]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\VirtualizationBasedTechnology\HypervisorEnforcedCodeIntegrity]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\VirtualizationBasedTechnology\RequireUEFIMemoryAttributesTable]
+"value"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.ActionCenter.SmartOptOut]
 "Enabled"=dword:00000000
 
 [HKEY_CURRENT_USER\Control Panel\International\User Profile]
 "HttpAcceptLanguageOptOut"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Throttle]
+"PerfEnablePackageIdle"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\TaggedEnergy]
+"DisableTaggedEnergyLogging"=dword:00000001
+"TelemetryMaxApplication"=dword:00000000
+"TelemetryMaxTagPerApplication"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Siuf\Rules]
 "NumberOfSIUFInPeriod"=dword:00000000
@@ -1077,6 +1478,10 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DWM]
 "DisallowComposition"=dword:00000001
+"DWMWA_TRANSITIONS_FORCEDISABLED"=dword:00000001
+"DisallowFlip3d"=dword:00000001
+"DisallowColorizationColorChanges"=dword:00000001
+"DisallowAnimations"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Diagnostics\Performance]
 "DisableDiagnosticTracing"=dword:00000001
@@ -1096,7 +1501,7 @@ Windows Registry Editor Version 5.00
 "AllowGamesMenu"=dword:00000000
 "AutoDiscardSleepingTabsEnabled"=-
 "BackgroundModeEnabled"=dword:00000000
-"BrowserSignin"=dword:00000000
+"BrowserSignin"=dword:00000001
 "ComposeInlineEnabled"=dword:00000000
 "CopilotPageContextEnabled"=dword:00000000
 "CopilotPageContext"=dword:00000000
@@ -1104,7 +1509,7 @@ Windows Registry Editor Version 5.00
 "DesktopSharingHubEnabled"=dword:00000000
 "DiagnosticData"=dword:00000000
 "EdgeCollectionsEnabled"=dword:00000000
-"HardwareAccelerationModeEnabled"=dword:00000000
+"HardwareAccelerationModeEnabled"=dword:00000001
 "HubsSidebarEnabled"=dword:00000000
 "LocalBrowserDataShareEnabled"=dword:00000000
 "NewTabPagePrerenderEnabled"=dword:00000000
@@ -1113,7 +1518,7 @@ Windows Registry Editor Version 5.00
 "SeamlessWebToBrowserSignInEnabled"=dword:00000000
 "SearchbarAllowed"=dword:00000000
 "SearchbarIsEnabledOnStartup"=dword:00000000
-"SearchFiltersEnabled"=dword:00000000
+"SearchFiltersEnabled"=dword:00000001
 "SmartScreenPuaEnabled"=dword:00000000
 "StandaloneHubsSidebarEnabled"=dword:00000000
 "StartupBoostEnabled"=dword:00000000
@@ -1133,15 +1538,14 @@ Windows Registry Editor Version 5.00
 "CaretBrowsingEnabled"=dword:00000000
 "NewTabPageHideDefaultTopSites"=dword:00000001
 "EdgeShoppingAssistantEnabled"=dword:00000000
-"GamerModeEnabled"=dword:00000000
 "ImportOnEachLaunch"=dword:00000000
 "NewTabPageQuickLinksEnabled"=dword:00000000
 "UserFeedbackAllowed"=dword:00000000
 "DefaultGeolocationSetting"=dword:00000002
-"DefaultNotificationsSetting"=dword:00000002
+"DefaultNotificationsSetting"=dword:00000003
 "DefaultLocalFontsSetting"=dword:00000002
-"DefaultSensorsSetting"=dword:00000002
-"DefaultSerialGuardSetting"=dword:00000002
+"DefaultSensorsSetting"=dword:00000001
+"DefaultSerialGuardSetting"=dword:00000003
 "CloudReportingEnabled"=dword:00000000
 "DriveDisabled"=dword:00000001
 "PasswordManagerEnabled"=dword:00000000
@@ -1162,7 +1566,7 @@ Windows Registry Editor Version 5.00
 "ReportDeviceUsers"=dword:00000000
 "ReportWebsiteTelemetry"=""
 "AlternateErrorPagesEnabled"=dword:00000000
-"AutofillCreditCardEnabled"=dword:00000000
+"AutofillCreditCardEnabled"=dword:00000001
 "BrowserGuestModeEnabled"=dword:00000000
 "BuiltInDnsClientEnabled"=dword:00000000
 "MetricsReportingEnabled"=dword:00000000
@@ -1173,12 +1577,273 @@ Windows Registry Editor Version 5.00
 "ExtensionManifestV2Availability"=dword:00000002
 "HttpsUpgradesEnabled"=dword:00000001
 "SpellcheckEnabled"=dword:00000000
+"PreventTyposquattingPromptOverride"=dword:00000000
+"EdgeWorkspacesEnabled"=dword:00000000
+"GamerModeEnabled"=dword:00000000
+"WindowsHelloForHTTPAuthEnabled"=dword:00000001
+"BasicAuthOverHttpEnabled"=dword:00000001
+"GuidedSwitchEnabled"=dword:00000000
+"LinkedAccountEnabled"=dword:00000000
+"ProactiveAuthWorkflowEnabled"=dword:00000000
+"SwitchIntranetSitesToWorkProfile"=dword:00000000
+"SwitchSitesOnIEModeSiteListToWorkProfile"=dword:00000000
+"WAMAuthBelowWin10RS3Enabled"=dword:00000001
+"ImmersiveReaderGrammarToolsEnabled"=dword:00000000
+"ImmersiveReaderPictureDictionaryEnabled"=dword:00000000
+"EdgeManagementUserPolicyOverridesCloudMachinePolicy"=dword:00000000
+"EdgeManagementPolicyOverridesPlatformPolicy"=dword:00000000
+"EdgeManagementExtensionsFeedbackEnabled"=dword:00000000
+"EdgeManagementEnabled"=dword:00000000
+"MAMEnabled"=dword:00000000
+"ZstdContentEncodingEnabled"=dword:00000001
+"CompressionDictionaryTransportEnabled"=dword:00000001
+"BlockTruncatedCookies"=dword:00000000
+"PasswordGeneratorEnabled"=dword:00000000
+"PasswordMonitorAllowed"=dword:00000000
+"PasswordProtectionWarningTrigger"=dword:00000000
+"PrimaryPasswordSetting"=dword:00000003
+"EfficiencyMode"=dword:00000001
+"EfficiencyModeEnabled"=dword:00000000
+"EfficiencyModeOnPowerEnabled"=dword:00000000
+"PerformanceDetectorEnabled"=dword:00000000
+"PinBrowserEssentialsToolbarButton"=dword:00000000
+"PrintingEnabled"=dword:00000001
+"PrintingBackgroundGraphicsDefault"="enabled"
+"PrintStickySettings"=dword:00000001
+"PrintRasterizationMode"=dword:00000000
+"PrintPreviewUseSystemDefaultPrinter"=dword:00000001
+"PrintHeaderFooter"=dword:00000000
+"InsecurePrivateNetworkRequestsAllowed"=dword:00000001
+"SleepingTabsEnabled"=dword:00000001
+"NewSmartScreenLibraryEnabled"=dword:00000000
+"PreventSmartScreenPromptOverride"=dword:00000000
+"PreventSmartScreenPromptOverrideForFiles"=dword:00000000
+"SmartScreenDnsRequestsEnabled"=dword:00000000
+"SmartScreenForTrustedDownloadsEnabled"=dword:00000000
+"NewTabPageCompanyLogoEnabled"=dword:00000000
+"NewTabPageBingChatEnabled"=dword:00000001
+"NewTabPageAppLauncherEnabled"=dword:00000001
+"ApplicationGuardFavoritesSyncEnabled"=dword:00000000
+"ApplicationGuardPassiveModeEnabled"=dword:00000001
+"ApplicationGuardTrafficIdentificationEnabled"=dword:00000000
+"ApplicationGuardUploadBlockingEnabled"=dword:00000001
+"EnableMediaRouter"=dword:00000001
+"ShowCastIconInToolbar"=dword:00000001
+"EdgeDisableDialProtocolForCastDiscovery"=dword:00000001
+"DefaultAutomaticDownloadsSetting"=dword:00000001
+"DefaultCookiesSetting"=dword:00000001
+"DefaultFileSystemReadGuardSetting"=dword:00000003
+"DefaultFileSystemWriteGuardSetting"=dword:00000003
+"DefaultImagesSetting"=dword:00000001
+"DefaultInsecureContentSetting"=dword:00000003
+"DefaultJavaScriptJitSetting"=dword:00000001
+"DefaultPluginsSetting"=dword:00000003
+"DefaultPopupsSetting"=dword:00000001
+"DefaultWebBluetoothGuardSetting"=dword:00000003
+"DefaultWebHidGuardSetting"=dword:00000003
+"DefaultWebUsbGuardSetting"=dword:00000003
+"DefaultWindowManagementSetting"=dword:00000003
+"IntranetFileLinksEnabled"=dword:00000001
+"LegacySameSiteCookieBehaviorEnabled"=dword:00000002
+"DefaultSearchProviderEnabled"=dword:00000001
+"DefaultSearchProviderImageURL"="{google:baseURL}searchbyimage/upload"
+"DefaultSearchProviderImageURLPostParams"="encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight}"
+"DefaultSearchProviderSearchURL"="{google:baseURL}search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}ie={inputEncoding}"
+"DefaultSearchProviderSuggestURL"="{google:baseURL}complete/search?output=chrome&q={searchTerms}"
+"NewTabPageSearchBox"="redirect"
+"DefaultSearchProviderName"="Google"
+"DefaultSearchProviderKeyword"="googl"
+"TyposquattingCheckerEnabled"=dword:00000000
+"AIGenThemesEnabled"=dword:00000001
+"AccessibilityImageLabelsEnabled"=dword:00000000
+"AdditionalSearchBoxEnabled"=dword:00000000
+"AddressBarMicrosoftSearchInBingProviderEnabled"=dword:00000000
+"AdsSettingForIntrusiveAdsSites"=dword:00000002
+"AdsTransparencyEnabled"=dword:00000000
+"AllowBackForwardCacheForCacheControlNoStorePageEnabled"=dword:00000000
+"AllowDeletingBrowserHistory"=dword:00000001
+"AllowFileSelectionDialogs"=dword:00000001
+"AllowSystemNotifications"=dword:00000001
+"AlwaysOpenPdfExternally"=dword:00000001
+"AppCacheForceEnabled"=dword:00000000
+"AskBeforeCloseEnabled"=dword:00000000
+"AudioCaptureAllowed"=dword:00000001
+"AudioProcessHighPriorityEnabled"=dword:00000001
+"AudioSandboxEnabled"=dword:00000001
+"AutoImportAtFirstRun"=dword:00000004
+"AutoLaunchProtocolsComponentEnabled"=dword:00000001
+"AutofillAddressEnabled"=dword:00000001
+"AutofillMembershipsEnabled"=dword:00000001
+"AutomaticHttpsDefault"=dword:00000000
+"AutoplayAllowed"=dword:00000001
+"BackgroundTemplateListUpdatesEnabled"=dword:00000000
+"BeforeunloadEventCancelByPreventDefaultEnabled"=dword:00000000
+"BingAdsSuppression"=dword:00000001
+"BlockThirdPartyCookies"=dword:00000000
+"BrowserCodeIntegritySetting"=dword:00000000
+"BrowserLegacyExtensionPointsBlockingEnabled"=dword:00000000
+"BrowserNetworkTimeQueriesEnabled"=dword:00000000
+"ClearCachedImagesAndFilesOnExit"=dword:00000001
+"ClickOnceEnabled"=dword:00000001
+"CommandLineFlagSecurityWarningsEnabled"=dword:00000000
+"ComponentUpdatesEnabled"=dword:00000000
+"ConfigureDoNotTrack"=dword:00000001
+"ConfigureFriendlyURLFormat"=dword:00000001
+"ConfigureOnlineTextToSpeech"=dword:00000000
+"ConfigureShare"=dword:00000001
+"CrossOriginWebAssemblyModuleSharingEnabled"=dword:00000000
+"CryptoWalletEnabled"=dword:00000000
+"DNSInterceptionChecksEnabled"=dword:00000000
+"DefaultBrowserSettingsCampaignEnabled"=dword:00000000
+"DefaultClipboardSetting"=dword:00000003
+"DefaultSearchProviderContextMenuAccessAllowed"=dword:00000001
+"DefaultShareAdditionalOSRegionSetting"=dword:00000001
+"DeleteDataOnMigration"=dword:00000000
+"DirectInvokeEnabled"=dword:00000001
+"Disable3DAPIs"=dword:00000000
+"DisableScreenshots"=dword:00000000
+"DownloadRestrictions"=dword:00000000
+"Edge3PSerpTelemetryEnabled"=dword:00000000
+"EdgeAssetDeliveryServiceEnabled"=dword:00000000
+"EdgeEDropEnabled"=dword:00000000
+"EdgeEnhanceImagesEnabled"=dword:00000000
+"EdgeFollowEnabled"=dword:00000000
+"EdgeOpenInSidebarEnabled"=dword:00000000
+"EdgeWalletCheckoutEnabled"=dword:00000000
+"EdgeWalletEtreeEnabled"=dword:00000000
+"EnableDomainActionsDownload"=dword:00000000
+"EnableOnlineRevocationChecks"=dword:00000000
+"EnhanceSecurityModeAllowUserBypass"=dword:00000001
+"EnhanceSecurityModeBypassIntranet"=dword:00000000
+"EnhanceSecurityModeIndicatorUIEnabled"=dword:00000000
+"EnhanceSecurityModeOptOutUXEnabled"=dword:00000001
+"EnterpriseHardwarePlatformAPIEnabled"=dword:00000001
+"ExperimentationAndConfigurationServiceControl"=dword:00000000
+"FamilySafetySettingsEnabled"=dword:00000000
+"FavoritesBarEnabled"=dword:00000001
+"ForceBingSafeSearch"=dword:00000000
+"ForceBuiltInPushMessagingClient"=dword:00000000
+"ForceGoogleSafeSearch"=dword:00000001
+"ForceNetworkInProcess"=dword:00000000
+"ForcePermissionPolicyUnloadDefaultEnabled"=dword:00000000
+"ForceYouTubeRestrict"=dword:00000000
+"FullscreenAllowed"=dword:00000001
+"GloballyScopeHTTPAuthCacheEnabled"=dword:00000000
+"HideInternetExplorerRedirectUXForIncompatibleSitesEnabled"=dword:00000001
+"HideRestoreDialogEnabled"=dword:00000001
+"InsecureFormsWarningsEnabled"=dword:00000000
+"InternetExplorerIntegrationEnhancedHangDetection"=dword:00000000
+"InternetExplorerIntegrationComplexNavDataTypes"=dword:00000000
+"InternetExplorerIntegrationLevel"=dword:00000000
+"InternetExplorerIntegrationLocalFileShowContextMenu"=dword:00000001
+"InternetExplorerIntegrationTestingAllowed"=dword:00000000
+"InternetExplorerModeClearDataOnExitEnabled"=dword:00000001
+"InternetExplorerModeEnableSavePageAs"=dword:00000001
+"IntranetRedirectBehavior"=dword:00000002
+"LiveCaptionsAllowed"=dword:00000000
+"LocalProvidersEnabled"=dword:00000000
+"MathSolverEnabled"=dword:00000000
+"MediaRouterCastAllowAllIPs"=dword:00000001
+"MicrosoftEdgeInsiderPromotionEnabled"=dword:00000000
+"MicrosoftEditorProofingEnabled"=dword:00000000
+"MicrosoftEditorSynonymsEnabled"=dword:00000000
+"MicrosoftOfficeMenuEnabled"=dword:00000000
+"MouseGestureEnabled"=dword:00000001
+"MutationEventsEnabled"=dword:00000000
+"NetworkPredictionOptions"=dword:00000002
+"NetworkServiceSandboxEnabled"=dword:00000001
+"NewPDFReaderEnabled"=dword:00000000
+"OutlookHubMenuEnabled"=dword:00000000
+"PDFXFAEnabled"=dword:00000000
+"PersonalizationReportingEnabled"=dword:00000000
+"PictureInPictureOverlayEnabled"=dword:00000001
+"PinningWizardAllowed"=dword:00000001
+"QRCodeGeneratorEnabled"=dword:00000001
+"QuicAllowed"=dword:00000001
+"QuickSearchShowMiniMenu"=dword:00000000
+"QuickViewOfficeFilesEnabled"=dword:00000000
+"ReadAloudEnabled"=dword:00000000
+"RedirectSitesFromInternetExplorerPreventBHOInstall"=dword:00000001
+"RemoteDebuggingAllowed"=dword:00000000
+"RendererCodeIntegrityEnabled"=dword:00000000
+"RendererAppContainerEnabled"=dword:00000000
+"ResolveNavigationErrorsUseWebService"=dword:00000000
+"RestorePdfView"=dword:00000000
+"RoamingProfileSupportEnabled"=dword:00000000
+"RunAllFlashInAllowMode"=dword:00000001
+"SSLErrorOverrideAllowed"=dword:00000000
+"SandboxExternalProtocolBlocked"=dword:00000000
+"ScreenCaptureAllowed"=dword:00000001
+"SearchForImageEnabled"=dword:00000001
+"SearchInSidebarEnabled"=dword:00000002
+"SearchSuggestEnabled"=dword:00000001
+"SendIntranetToInternetExplorer"=dword:00000000
+"SendSiteInfoToImproveServices"=dword:00000000
+"ShadowStackCrashRollbackBehavior"=dword:00000000
+"SharedLinksEnabled"=dword:00000000
+"ShowAcrobatSubscriptionButton"=dword:00000000
+"ShowDownloadsToolbarButton"=dword:00000001
+"ShowHistoryThumbnails"=dword:00000000
+"ShowMicrosoftRewards"=dword:00000000
+"ShowOfficeShortcutInFavoritesBar"=dword:00000000
+"ShowRecommendationsEnabled"=dword:00000000
+"SitePerProcess"=dword:00000000
+"SiteSafetyServicesEnabled"=dword:00000000
+"SpeechRecognitionEnabled"=dword:00000000
+"SuperDragDropEnabled"=dword:00000000
+"SuppressUnsupportedOSWarning"=dword:00000001
+"TabFreezingEnabled"=dword:00000000
+"TabServicesEnabled"=dword:00000000
+"TaskManagerEndProcessEnabled"=dword:00000001
+"TravelAssistanceEnabled"=dword:00000000
+"U2fSecurityKeyApiEnabled"=dword:00000001
+"TripleDESEnabled"=dword:00000001
+"UploadFromPhoneEnabled"=dword:00000000
+"UrlDiagnosticDataEnabled"=dword:00000000
+"UserAgentClientHintsGREASEUpdateEnabled"=dword:00000000
+"UserAgentReduction"=dword:00000000
+"VideoCaptureAllowed"=dword:00000001
+"VisualSearchEnabled"=dword:00000001
+"WPADQuickCheckEnabled"=dword:00000000
+"WalletDonationEnabled"=dword:00000000
+"WebRtcRespectOsRoutingTableEnabled"=dword:00000001
+"WinHttpProxyResolverEnabled"=dword:00000001
+"WindowOcclusionEnabled"=dword:00000001
+"RemoveDesktopShortcutDefault"=dword:00000001
+"SpotlightExperiencesAndRecommendationsEnabled"=dword:00000000
+"AllowCrossOriginAuthPrompt"=dword:00000000
+"DisableAuthNegotiateCnameLookup"=dword:00000001
+"NativeMessagingUserLevelHosts"=dword:00000000
+"UseSystemPrintDialog"=dword:00000001
+"RestoreOnStartup"=dword:00000004
+"HomepageLocation"="www.google.com"
+"NewTabPageLocation"="www.google.com"
+"InternetExplorerIntegrationLocalFileAllowed"=dword:00000000
+"VerticalTabsAllowed"=dword:00000001
+"IntensiveWakeUpThrottlingEnabled"=dword:00000000
+"DnsOverHttpsMode"="off"
+"TargetBlankImpliesNoOpener"=dword:00000000
+"ForceEphemeralProfiles"=dword:00000000
+"GoToIntranetSiteForSingleWordEntryInAddressBar"=dword:00000001
+"RelaunchNotification"=dword:00000000
+"PromotionalTabsEnabled"=dword:00000000
+"TotalMemoryLimitMb"=dword:00008192
+"DefaultJavaScriptSetting"=dword:00000001
+"NewTabPageContentEnabled"=dword:00000000
+"NewTabPageAllowedBackgroundTypes"=dword:00000003
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs]
+"1"="www.google.com"
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\EdgeUI]
 "DisableMFUTracking"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EdgeUI]
 "DisableMFUTracking"=dword:00000001
+"AllowEdgeSwipe"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\LockDown\AllowEdgeSwipe]
+"value"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Edge\SmartScreenPuaEnabled]
 @=dword:00000000
@@ -1193,12 +1858,13 @@ Windows Registry Editor Version 5.00
 "PreventLiveTileDataCollection"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
 "AlternateErrorPagesEnabled"=dword:00000000
 "AutofillAddressEnabled"=dword:00000000
 "AutofillCreditCardEnabled"=dword:00000000
 "BackgroundModeEnabled"=dword:00000000
 "BrowserGuestModeEnabled"=dword:00000000
-"BrowserSignin"=dword:00000000
+"BrowserSignin"=dword:00000001
 "BuiltInDnsClientEnabled"=dword:00000000
 "ChromeCleanupEnabled"=dword:00000000
 "ChromeCleanupReportingEnabled"=dword:00000000
@@ -1207,19 +1873,19 @@ Windows Registry Editor Version 5.00
 "CollectStatsConsent"=dword:00000000
 "DefaultBrowserSettingEnabled"=dword:00000000
 "DefaultGeolocationSetting"=dword:00000002
-"DefaultLocalFontsSetting"=dword:00000002
-"DefaultNotificationsSetting"=dword:00000002
+"DefaultLocalFontsSetting"=dword:00000003
+"DefaultNotificationsSetting"=dword:00000003
 "DefaultSensorsSetting"=dword:00000002
-"DefaultSerialGuardSetting"=dword:00000002
+"DefaultSerialGuardSetting"=dword:00000003
 "DefaultShareAdditionalOSRegionSetting"=dword:00000002
 "DeviceActivityHeartbeatEnabled"=dword:00000000
 "DeviceMetricsReportingEnabled"=dword:00000000
 "DriveDisabled"=dword:00000001
-"EnableMediaRouter"=dword:00000000
+"EnableMediaRouter"=dword:00000001
 "ExtensionManifestV2Availability"=dword:00000002
-"HardwareAccelerationModeEnabled"=dword:00000000
+"HardwareAccelerationModeEnabled"=dword:00000001
 "HeartbeatEnabled"=dword:00000000
-"HighEfficiencyModeEnabled"=dword:00000001
+"HighEfficiencyModeEnabled"=dword:00000000
 "LogUploadEnabled"=dword:00000000
 "MetricsReportingEnabled"=dword:00000000
 "NetworkPredictionOptions"=dword:00000002
@@ -1250,9 +1916,147 @@ Windows Registry Editor Version 5.00
 "SpellCheckServiceEnabled"=dword:00000000
 "StartupBoostEnabled"=dword:00000000
 "SyncDisabled"=dword:00000001
-"TranslateEnabled"=dword:00000000
+"TranslateEnabled"=dword:00000001
 "UrlKeyedAnonymizedDataCollectionEnabled"=dword:00000000
 "UserFeedbackAllowed"=dword:00000000
+"DefaultSearchProviderEnabled"=dword:00000001
+"DefaultSearchProviderImageURLPostParams"="content={google:imageThumbnail},url={google:imageURL},sbisrc={google:imageSearchSource}"
+"DefaultSearchProviderKeyword"="googl"
+"DefaultSearchProviderName"="Google"
+"DefaultSearchProviderSuggestURL"="{google:baseURL}complete/search?output=chrome&q={searchTerms}"
+"DefaultSearchProviderSearchURLPostParams"="q={searchTerms},ie=utf-8,oe=utf-8"
+"DefaultSearchProviderSearchURL"="{google:baseURL}search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}ie={inputEncoding}"
+"DefaultSearchProviderSuggestURLPostParams"="q={searchTerms},ie=utf-8,oe=utf-8"
+"HelpMeWriteSettings"=dword:00000001
+"LensRegionSearchEnabled"=dword:00000000
+"LensOverlaySettings"=dword:00000000
+"HistorySearchSettings"=dword:00000002
+"TabOrganizerSettings"=dword:00000002
+"GenAiDefaultSettings"=dword:00000001
+"CreateThemesSettings"=dword:00000002
+"DevToolsGenAiSettings"=dword:00000002
+"TabCompareSettings"=dword:00000002
+"GenAILocalFoundationalModelSettings"=dword:00000001
+"MediaRouterCastAllowAllIPs"=dword:00000001
+"ShowCastIconInToolbar"=dword:00000001
+"ShowCastSessionsStartedByOtherDevices"=dword:00000001
+"AccessCodeCastEnabled"=dword:00000001
+"CloudAPAuthEnabled"=dword:00000001
+"CompressionDictionaryTransportEnabled"=dword:00000001
+"AccessControlAllowMethodsInCORSPreflightSpecConformant"=dword:00000001
+"IPv6ReachabilityOverrideEnabled"=dword:00000001
+"ZstdContentEncodingEnabled"=dword:00000001
+"DeletingUndecryptablePasswordsEnabled"=dword:00000000
+"PrintHeaderFooter"=dword:00000000
+"PrintingEnabled"=dword:00000001
+"PrintingLPACSandboxEnabled"=dword:00000001
+"ExtensionUnpublishedAvailability"=dword:00000000
+"CloudProfileReportingEnabled"=dword:00000000
+"WPADQuickCheckEnabled"=dword:00000000
+"WebRtcEventLogCollectionAllowed"=dword:00000000
+"WebRtcIPHandling"="default"
+"WebRtcTextLogCollectionAllowed"=dword:00000000
+"DefaultInsecureContentSetting"=dword:00000003
+"PrivateNetworkAccessRestrictionsEnabled"=dword:00000000
+"AdvancedProtectionDeepScanningEnabled"=dword:00000000
+"DefaultPluginsSetting"=dword:00000001
+"DisableSSLRecordSplitting"=dword:00000001
+"DnsPrefetchingEnabled"=dword:00000000
+"OptimizationGuideFetchingEnabled"=dword:00000000
+"SafeBrowsingProxiedRealTimeChecksAllowed"=dword:00000000
+"SafeBrowsingProtectionLevel"=dword:00000000
+"DisableSafeBrowsingProceedAnyway"=dword:00000001
+"PasswordProtectionWarningTrigger"=dword:00000000
+"HomepageIsNewTabPage"=dword:00000000
+"HomepageLocation"="google.com"
+"NewTabPageLocation"="google.com"
+"RestoreOnStartup"=dword:00000003
+"ShowHomeButton"=dword:00000000
+"AbusiveExperienceInterventionEnforce"=dword:00000000
+"AccessibilityImageLabelsEnabled"=dword:00000000
+"AdditionalDnsQueryTypesEnabled"=dword:00000000
+"AdsSettingForIntrusiveAdsSites"=dword:00000002
+"AdvancedProtectionAllowed"=dword:00000000
+"AllowBackForwardCacheForCacheControlNoStorePageEnabled"=dword:00000000
+"AllowDinosaurEasterEgg"=dword:00000000
+"AllowFileSelectionDialogs"=dword:00000001
+"ApplicationBoundEncryptionEnabled"=dword:00000001
+"AudioCaptureAllowed"=dword:00000001
+"AudioProcessHighPriorityEnabled"=dword:00000001
+"AudioSandboxEnabled"=dword:00000001
+"AutoplayAllowed"=dword:00000001
+"BatterySaverModeAvailability"=dword:00000000
+"BrowserGuestModeEnforced"=dword:00000000
+"BrowserLabsEnabled"=dword:00000000
+"BrowserNetworkTimeQueriesEnabled"=dword:00000000
+"CSSCustomStateDeprecatedSyntaxEnabled"=dword:00000001
+"CORSNonWildcardRequestHeadersSupport"=dword:00000001
+"ChromeForTestingAllowed"=dword:00000000
+"ChromeVariations"=dword:00000002
+"ClickToCallEnabled"=dword:00000000
+"CloudManagementEnrollmentMandatory"=dword:00000000
+"CloudPolicyOverridesPlatformPolicy"=dword:00000000
+"CloudUserPolicyMerge"=dword:00000000
+"CloudUserPolicyOverridesCloudMachinePolicy"=dword:00000000
+"CommandLineFlagSecurityWarningsEnabled"=dword:00000000
+"ComponentUpdatesEnabled"=dword:00000000
+"DNSInterceptionChecksEnabled"=dword:00000000
+"DesktopSharingHubEnabled"=dword:00000001
+"DomainReliabilityAllowed"=dword:00000000
+"DownloadRestrictions"=dword:00000000
+"DynamicCodeSettings"=dword:00000000
+"FeedbackSurveysEnabled"=dword:00000000
+"ForceGoogleSafeSearch"=dword:00000001
+"ForcePermissionPolicyUnloadDefaultEnabled"=dword:00000000
+"ForceYouTubeRestrict"=dword:00000000
+"FullscreenAllowed"=dword:00000001
+"GloballyScopeHTTPAuthCacheEnabled"=dword:00000000
+"GoogleSearchSidePanelEnabled"=dword:00000000
+"HeadlessMode"=dword:00000002
+"HideWebStoreIcon"=dword:00000001
+"HistoryClustersVisible"=dword:00000000
+"HttpsUpgradesEnabled"=dword:00000000
+"IntensiveWakeUpThrottlingEnabled"=dword:00000001
+"IntranetRedirectBehavior"=dword:00000002
+"KeyboardFocusableScrollersEnabled"=dword:00000000
+"LensDesktopNTPSearchEnabled"=dword:00000000
+"MediaRecommendationsEnabled"=dword:00000000
+"NTPCardsVisible"=dword:00000000
+"NetworkServiceSandboxEnabled"=dword:00000001
+"PaymentMethodQueryEnabled"=dword:00000000
+"PrefixedVideoFullscreenApiAvailability"="enabled"
+"PromotionsEnabled"=dword:00000000
+"QRCodeGeneratorEnabled"=dword:00000001
+"QuicAllowed"=dword:00000001
+"RendererAppContainerEnabled"=dword:00000000
+"RequireOnlineRevocationChecksForLocalAnchors"=dword:00000000
+"RoamingProfileSupportEnabled"=dword:00000000
+"SafeBrowsingForTrustedSourcesEnabled"=dword:00000000
+"SandboxExternalProtocolBlocked"=dword:00000000
+"SafeSitesFilterBehavior"=dword:00000001
+"ScrollToTextFragmentEnabled"=dword:00000001
+"SharedClipboardEnabled"=dword:00000000
+"ShowFullUrlsInAddressBar"=dword:00000001
+"SideSearchEnabled"=dword:00000000
+"SpellcheckEnabled"=dword:00000000
+"StandardizedBrowserZoomEnabled"=dword:00000000
+"SuppressUnsupportedOSWarning"=dword:00000001
+"TaskManagerEndProcessEnabled"=dword:00000001
+"ToolbarAvatarLabelSettings"=dword:00000001
+"UserAgentReduction"=dword:00000001
+"SafeBrowsingEnabled"=dword:00000000
+"RendererCodeIntegrityEnabled"=dword:00000000
+"ProxyServerMode"=dword:00000003
+"InsecureFormsWarningsEnabled"=dword:00000000
+"DefaultWindowPlacementSetting"=dword:00000003
+"UiAutomationProviderEnabled"=dword:00000000
+"ScreenCaptureAllowed"=dword:00000001
+"DataUrlInSvgUseEnabled"=dword:00000001
+"DefaultWindowManagementSetting"=dword:00000003
+"DefaultWebUsbGuardSetting"=dword:00000003
+"DefaultWebHidGuardSetting"=dword:00000003
+"DefaultWebBluetoothGuardSetting"=dword:00000003
+"WindowOcclusionEnabled"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Google\Chrome]
 "AutofillAddressEnabled"=dword:00000000
@@ -1268,6 +2072,9 @@ Windows Registry Editor Version 5.00
 "SearchSuggestEnabled"=dword:00000000
 "SigninAllowed"=dword:00000000
 "SyncDisabled"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ClearBrowsingDataOnExitList]
+"1"="cached_images_and_files"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Update]
 "AutoUpdateCheckPeriodMinutes"=dword:00000000
@@ -1408,21 +2215,15 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\DefenderApiLogger]
 "Start"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\ClientTelemetry]
+"DontRetryOnError"=dword:00000001
+"IsCensusDisabled"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\TabletPC]
 "PreventHandwritingDataSharing"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\HandwritingErrorReports]
 "PreventHandwritingErrorReports"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power]
-"CsEnabled"=dword:00000000
-"EcoMode"=dword:00000000
-"EcoModeState"=dword:00000002
-"HibernateEnabled"=dword:00000000
-"HibernateEnabledDefault"=dword:00000000
-"PlatformAoAcOverride"=dword:00000000
-"EnergySaverState"=dword:00000002
-"PowerThrottling"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Power\PowerSettings\f15576e8-98b7-4186-b944-eafa664402d9]
 "ACSettingIndex"=dword:00000000
@@ -1440,6 +2241,10 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
 "ForceDisableModeChangeAnimation"=dword:00000001
+"EnableAeroPeek"=dword:00000000
+"SuperWetEnabled"=dword:00000000
+"AnimationAttributionEnabled"=dword:00000000
+"AnimationAttributionHashingEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Speech]
 "AllowSpeechModelUpdate"=dword:00000000
@@ -1449,6 +2254,13 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\PolicyManager\current\device\Accounts]
 "AllowMicrosoftAccountSignInAssistant"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellTaskScheduler]
+"MaxWorkerThreadsPerScheduler"=dword:000000ff
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"CopyBufferSize"=dword:00100000
+"FolderContentsInfoTip"=dword:00000001 
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "Start_TrackDocs"=dword:00000000
@@ -1479,6 +2291,25 @@ Windows Registry Editor Version 5.00
 "DisableThumbnailCache"=dword:00000001
 "NoThumbnailCache"=dword:00000001
 "EnableSnapAssistFlyout"=dword:00000000
+"ThumbnailLivePreviewHoverTime"=dword:00000001
+"DontPrettyPath"=dword:00000001
+"NoNetCrawling"=dword:00000001
+"PersistBrowsers"=dword:00000000
+"EnableTaskGroups"=dword:00000000
+"UseCompactMode"=dword:00000001
+"TaskbarAnimations"=dword:00000000
+"AutoSearch"=dword:00000000
+"SearchBoxVisibleInTouchImprovement"=dword:00000001
+
+[HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
+"PaddedBorderWidth"="0"
+"MinAnimate"="0"
+"MaxAnimate"="0"
+
+[HKEY_USERS\.DEFAULT\Control Panel\Desktop\WindowMetrics]
+"PaddedBorderWidth"="0"
+"MinAnimate"="0"
+"MaxAnimate"="0"
 
 [HKEY_USERS\New\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "Start_TrackProgs"=dword:00000000
@@ -1565,6 +2396,10 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
 "fDenyTSConnections"=dword:00000001
 "updateRDStatus"=dword:00000000
+"fSingleSessionPerUser"=dword:00000001
+"StartRCM"=dword:00000000
+"TSUserEnabled"=dword:00000000
+"fAllowToGetHelp"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules]
 "RemoteDesktop-UserMode-In-TCP"="v2.33|Action=Allow|Active=FALSE|Dir=In|Protocol=6|LPort=3389|App=%SystemRoot%\\system32\\svchost.exe|Svc=termservice|Name=@FirewallAPI.dll,-28775|Desc=@FirewallAPI.dll,-28756|EmbedCtxt=@FirewallAPI.dll,-28752|"
@@ -1581,10 +2416,85 @@ Windows Registry Editor Version 5.00
 "AllowInputPersonalization"=dword:00000000
 "RestrictImplicitInkCollection"=dword:00000001
 "RestrictImplicitTextCollection"=dword:00000001
+"Installed"=dword:00000000
+"Shutdown"=dword:00000001
+"AcceptedPrivacyPolicy"=dword:00000000
+"HarvestContacts"=dword:00000000
 
 [HKEY_USERS\New\Software\Microsoft\InputPersonalization]
 "RestrictImplicitTextCollection"=dword:00000001
 "RestrictImplicitInkCollection"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\InputPersonalization]
+"AllowInputPersonalization"=-
+"RestrictImplicitInkCollection"=dword:00000001
+"RestrictImplicitTextCollection"=dword:00000001
+"Installed"=dword:00000000
+"Shutdown"=dword:00000001
+"AcceptedPrivacyPolicy"=dword:00000000
+"HarvestContacts"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\InputPersonalization]
+"AllowInputPersonalization"=-
+"RestrictImplicitInkCollection"=dword:00000001
+"RestrictImplicitTextCollection"=dword:00000001
+"Installed"=dword:00000000
+"Shutdown"=dword:00000001
+"AcceptedPrivacyPolicy"=dword:00000000
+"HarvestContacts"=dword:00000000
+
+[HKEY_USERS\.DEFAULT\Software\Microsoft\InputPersonalization]
+"AllowInputPersonalization"=-
+"RestrictImplicitInkCollection"=dword:00000001
+"RestrictImplicitTextCollection"=dword:00000001
+"Installed"=dword:00000000
+"Shutdown"=dword:00000001
+"AcceptedPrivacyPolicy"=dword:00000000
+"HarvestContacts"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\InputPersonalization\TrainedDataStore]
+"HarvestContacts"=dword:00000000
+"InsightsEnabled"=dword:00000000
+"LMDataLoggerEnabled"=dword:00000000
+
+[HKEY_USERS\.DEFAULT\Software\Microsoft\InputPersonalization\TrainedDataStore]
+"HarvestContacts"=dword:00000000
+"InsightsEnabled"=dword:00000000
+"LMDataLoggerEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowHardwareKeyboardTextSuggestions]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowKeyboardTextSuggestions]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowTextInputSuggestionUpdate]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowLinguisticDataCollection]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowIMELogging]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CPSS\UserPolicy\ImproveInkingAndTyping]
+"DefaultValue"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CPSS\UserPolicy\InkingAndTypingPersonalization]
+"DefaultValue"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CPSS\DevicePolicy\InkingAndTypingPersonalization]
+"DefaultValue"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CPSS\DevicePolicy\ImproveInkingAndTyping]
+"DefaultValue"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\software\policies\microsoft\ime\shared]
+"UserDict"=dword:00000000
+"UseHistorybasedPredictiveInput"=dword:00000000
+"Enable Cloud Candidate"="0"
+"Enable Lexicon Update"="0"
+"misconvlogging"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows Security Health\State]
 "AppAndBrowser_EdgeSmartScreenOff"=dword:00000000
@@ -1596,8 +2506,17 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Messaging]
 "AllowMessageSync"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\DeviceHealthAttestationService]
+"EnableDeviceHealthAttestationService"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\VideoSettings]
 "EnableOutsideModeFeature"=dword:00000000
+"EnableAutoEnhanceDuringPlayback"=dword:00000000
+"EnableHDRForPlayback"=dword:00000001
+"DisableHDROnBattery"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\BitLocker]
+"PreventDeviceEncryption"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lock Screen]
 "LockScreenWidgetsEnabled"=dword:00000000
@@ -1700,7 +2619,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 "Win8DpiScaling"=dword:00000000
 "LogPixels"=dword:00000060
-"JPEGImportQuality"=dword:00000100
+"JPEGImportQuality"=dword:00000064
 "AutoEndTasks"="1"
 "PaintDesktopVersion"=dword:00000001
 "MenuShowDelay"="400"
@@ -1708,30 +2627,54 @@ Windows Registry Editor Version 5.00
 "LowLevelHooksTimeout"="100"
 "WaitToKillAppTimeout"="1000"
 "WaitToKillServiceTimeout"="1000"
-"HungAppTimeout"="3000"
+"HungAppTimeout"="1000"
 "MouseWheelRouting"=dword:00000002
-"EnablePerProcessSystemDPI"="1"
+"EnablePerProcessSystemDPI"=dword:00000001
 "WindowArrangementActive"="0"
+"MonitorRemovalRecalcBehavior"=dword:00000001
+"ScreenSaveTimeOut"=-
+"SCRNSAVE.EXE"=-
+"ForegroundLockTimeout"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control]
+"WaitToKillServiceTimeout"="1000"
+"DisableRemoteScmEndpoints"=dword:00000000
+"HandlerTimeout"=dword:7FFFFFFF
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PnP]
+"PollBootPartitionTimeout"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows]
+"ShutdownWarningDialogTimeout"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Control Panel\Desktop]
 "EnablePerProcessSystemDPI"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Display]
-"EnablePerProcessSystemDPIForProcesses"=""
-"DisablePerProcessSystemDPIForProcesses"=""
+"EnablePerProcessSystemDPIForProcesses"=dword:00000001
+"DisablePerProcessSystemDPIForProcesses"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop]
 "EnablePerProcessSystemDPI"=dword:00000001
+"ScreenSaveActive"="0"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Display]
-"EnablePerProcessSystemDPIForProcesses"=-
-"DisablePerProcessSystemDPIForProcesses"=-
+"EnablePerProcessSystemDPIForProcesses"=dword:00000001
+"DisablePerProcessSystemDPIForProcesses"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
 "ShowRecommendations"=dword:00000000
 "EnableAutoTray"=dword:00000000
 "AltTabSettings"=dword:00000000
 "link"=hex:00,00,00,00
+"Reason Setting"=dword:00000000
+"ExcludedFromStableAnaheimDownloadPromotionSL"=dword:00000001
+"IrisClientRefresh"=dword:00000000
+"ExplorerStartupTraceRecorded"=dword:00000000
+"TelemetrySalt"=dword:00000000
+"SIDUpdatedOnLibraries"=dword:00000000
+"ShowRecent"=dword:00000000
+"ShowFrequent"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\StandardProfile]
 "EnableFirewall"=dword:00000000
@@ -1739,6 +2682,8 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa]
 "RunAsPPL"=dword:00000000
 "RunAsPPLBoot"=dword:00000000
+"LsaConfigFlags"=dword:00000000
+"LmCompatibilityLevel"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Installer]
 "Logging"=dword:00000000
@@ -1773,6 +2718,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Control Panel\UnsupportedHardwareNotificationCache]
 "SV1"=dword:00000000
 "SV2"=dword:00000000
+"SV3"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Feeds\DSB]
 "OpenOnHover"=dword:00000000
@@ -1792,6 +2738,12 @@ Windows Registry Editor Version 5.00
 "DisableStartLayoutSettingSync"=dword:00000002
 "DisableSettingSyncUserOverride"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\UEV\Agent]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WorkFolders]
+"AutoProvision"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Notifications]
 "DisableNotifications"=dword:00000001
 "DisableEnhancedNotifications"=dword:00000001
@@ -1804,6 +2756,22 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global\NGXCore]
 "ShowDlssIndicator"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsRuntime\WellKnownContracts]
+"Windows.ApplicationModel.SocialInfo.SocialInfoContract"=-
+"Windows.System.Profile.ProfileRetailInfoContract"=-
+"Windows.Services.Maps.GuidanceContract"=-
+"Windows.Services.Maps.LocalSearchContract"=-
+"Windows.Media.AppBroadcasting.AppBroadcastingContract"=-
+"Windows.Media.AppRecording.AppRecordingContract"=-
+"Windows.Media.Capture.AppBroadcastContract"=-
+"Windows.Media.Capture.AppCaptureContract"=-
+"Windows.Media.Capture.AppCaptureMetadataContract"=-
+"Windows.Media.Capture.CameraCaptureUIContract"=-
+"Windows.Media.Capture.GameBarContract"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsRuntime\ActivatableClassId\Windows.Gaming.UI.GameBar]
+"ActivationType"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings]
 "AutoOpenCopilotLargeScreens"=dword:00000000
@@ -1821,7 +2789,7 @@ Windows Registry Editor Version 5.00
 "ConsentPromptBehaviorUser"=dword:00000001
 "HideFastUserSwitching"=dword:00000001
 "TypeOfAdminApprovalMode"=dword:00000001
-"VerboseStatus"=dword:00000001
+"VerboseStatus"=dword:00000000
 "PromptOnSecureDesktop"=dword:00000000
 "EnableLUA"=dword:00000000
 "DisableAutomaticRestartSignOn"=dword:00000001
@@ -1836,6 +2804,29 @@ Windows Registry Editor Version 5.00
 "DontDisplayLockedUserId"=-
 "DontDisplayLastUserName"=-
 "EnableVirtualization"=dword:00000000
+"SynchronousMachineGroupPolicy"=dword:00000000
+"SynchronousUserGroupPolicy"=dword:00000000
+"NoInternetOpenWith"=dword:00000001
+"EnableFirstLogonAnimation"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\AppV\Client]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\AppV\Client\PackageManagement]
+"AutoCleanupEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\AppV\Client\Publishing]
+"EnablePublishingRefreshUI"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\AppV\Client\Reporting]
+"ReportingEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\AppV\Client\Virtualization]
+"EnableDynamicVirtualization"=dword:00000000
+"ProcessesUsingVirtualComponents"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\AppV\CEIP]
+"CEIPEnable"=dword:00000000
 
 [HKEY_CURRENT_USER\Control Panel\Cursors]
 "CursorDeadzoneJumpingSetting"=dword:00000000
@@ -1845,9 +2836,16 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FindMyDevice]
 "AllowFindMyDevice"=dword:00000000
+"LocationSyncEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Settings\FindMyDevice]
 "LocationSyncEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MdmCommon\SettingValues]
+"LocationSyncEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowFindMyDevice]
+"value"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Internet Explorer\Main]
 "DisableFirstRunCustomize"=dword:00000001
@@ -1870,12 +2868,26 @@ Windows Registry Editor Version 5.00
 "UseDpiScaling"=dword:00000000
 "CompositionPolicy"=dword:00000000
 "Composition"=dword:00000000
+"AlwaysHibernateThumbnails"=dword:00000000
+"AnimationAttributionEnabled"=dword:00000000
+"AnimationAttributionHashingEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowSyncMySettings]
 "value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Maintenance]
 "MaintenanceDisabled"=dword:00000001
+"DisableRpcOver"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Terminal Server Client]
+"ShowShutdownDialog"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WlanSvc\AnqpCache]
+"OsuRegistrationStatus"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\NvCache]
+"OptimizeBootAndResume"=dword:00000000
+"EnablePowerModeState"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\Credential Providers\{8AF662BF-65A0-4D0A-A540-A338A999D36F}]
 "Disabled"=dword:00000001
@@ -1916,6 +2928,13 @@ Windows Registry Editor Version 5.00
 "TSAppCompat"=dword:00000000
 "TSEnabled"=dword:00000000
 "TSUserEnabled"=dword:00000000
+"fAllowFullControl"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services\Client]
+"fEnableUsbBlockDeviceBySetupClass"=dword:00000000
+"fEnableUsbNoAckIsochWriteToDevice"=dword:00000000
+"fEnableUsbSelectDeviceByInterface"=dword:00000000
+"fClientDisableUDP"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WMDRM]
 "DisableOnline"=dword:00000001
@@ -1928,6 +2947,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Messenger\Client]
 "CEIP"=dword:00000002
+"PreventAutoRun"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\InternetManagement]
 "Customer Experience Improvement Program"=dword:00000001
@@ -1953,6 +2973,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]
 "POWERSHELL_TELEMETRY_OPTOUT"="1"
 
+[HKEY_CURRENT_USER\Software\Microsoft\Shared Tools\MsConfig]
+"NoRebootUI"=dword:00000001
+
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\AppCompat]
 "DisablePCA"=dword:00000001
 
@@ -1963,21 +2986,87 @@ Windows Registry Editor Version 5.00
 "IncludeMicrosoftApps"=dword:00000000
 "IncludeWindowsApps"=dword:00000000
 "IncludeShutdownErrs"=dword:00000000
+"ForceQueueMode"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\PCHealth\ErrorReporting\DW]
+"DWFileTreeRoot"="0"
+"DWNoExternalURL"=dword:00000001
+"DWNoFileCollection"=dword:00000001
+"DWNoSecondLevelCollection"=dword:00000001
+"DWReporteeName"="0"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting]
 "Disabled"=dword:00000001
 "DontSendAdditionalData"=dword:00000001
 "LoggingDisabled"=dword:00000001
+"DoReport"=dword:00000000
+"AutoApproveOSDumps"=dword:00000000
+"ConfigureArchive"=dword:00000000
+"DisableArchive"=dword:00000001
+"DontShowUI"=dword:00000001
+"BypassDataThrottling"=dword:00000000
+"OobeCompleted"=dword:00000001
+
+[HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting]
+"Disabled"=dword:00000001
+"DontShowUI"=dword:00000001
+"DoReport"=dword:00000000
+"AutoApproveOSDumps"=dword:00000000
+"ConfigureArchive"=dword:00000000
+"DisableArchive"=dword:00000001
+"DontSendAdditionalData"=dword:00000001
+"LoggingDisabled"=dword:00000001
+"DontShowUI"=dword:00000001
+"BypassDataThrottling"=dword:00000000
+"OobeCompleted"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting\WMR]
 "Disable"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UnattendSettings\Windows Error Reporting\Consent]
+"DefaultConsent"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UnattendSettings\Windows Error Reporting]
+"DisableWER"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting\Consent]
-"DefaultConsent"=dword:00000001
+"DefaultConsent"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting\Consent]
+"DefaultConsent"=dword:00000000
+"NewUserDefaultConsent"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting]
 "Disabled"=dword:00000001
 "DontSendAdditionalData"=dword:00000001
+"EnableZip"=dword:00000001
+"ErrorPort"=-
+"ServiceTimeout"=-
+"MachineID"="0"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting\Escalation]
+"DisableEscalation"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting\Assert Filtering Policy]
+"ReportAndContinue"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting\BrokerUp]
+"WWAJSE"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\Windows Error Reporting]
+"AutoApproveOSDumps"=dword:00000000
+"Disabled"=dword:00000001
+"DontSendAdditionalData"=dword:00000001
+"DontShowUI"=dword:00000001
+"LoggingDisabled"=dword:00000001
+"ConfigureArchive"=dword:00000000
+"DisableArchive"=dword:00000001
+"BypassDataThrottling"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Windows]
+"ErrorMode"=dword:00000002
+"NoInteractiveServices"=dword:00000001
+"ShellErrorMode"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
 "SecurityHealth"=-
@@ -1999,9 +3088,130 @@ Windows Registry Editor Version 5.00
 "SpyNetReporting"=dword:00000000
 "LocalSettingOverrideSpynetReporting"=dword:00000001
 
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\input\Settings]
-"InsightsEnabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Input\Settings]
+"AutoAccent"=dword:00000000
+"AutoApostrophe"=dword:00000000
+"AutoCap"=dword:00000000
+"AutoCapAllTokens"=dword:00000000
+"AutoCorrectFirstWord"=dword:00000000
+"AutoCorrection"=dword:00000000
+"AutoCorrectVisualDelay"=dword:00000000
+"AutoswitchAfterEmoji"=dword:00000000
+"ContactPenalty"=dword:00000000
+"DictationEnabled"=dword:00000001
+"DisablePersonalization"=dword:00000001
+"EmojiSuggestion"=dword:00000000
+"EmojiTranslation"=dword:00000001
+"EnableHwkbAutocorrection"=dword:00000000
+"EnableHwkbMode"=dword:00000000
 "EnableHwkbTextPrediction"=dword:00000000
+"HarvestContacts"=dword:00000000
+"HasTrailer"=dword:00000000
+"HTREnabled"=dword:00000000
+"HwkbAutocorrectionAlwaysOffList"=-
+"HwkbInlinePredictionAlwaysOffList"=-
+"HwkbInlinePredictionAlwaysOnList"=-
+"HwkbLayoutMappingTemplate"=-
+"InsightsEnabled"=dword:00000000
+"IsVoiceTypingKeyEnabled"=dword:00000001
+"KeyboardMode"=dword:00000000
+"LMDataLoggerEnabled"=dword:00000000
+"MaxCorrections"=dword:00000000
+"MultilingualEnabled"=dword:00000000
+"NotActiveLanguagePenalty"=dword:00000000
+"NotPredictedLanguagePenalty"=dword:00000000
+"PeriodShortcut"=dword:00000000
+"Prediction"=dword:00000000
+"Private"=dword:00000000
+"ProofDataSources"=dword:00000000
+"SearchDataSources"=dword:00000000
+"Spellcheck"=dword:00000000
+"TouchKeyboard_EnableKeyAudioFeedback"=dword:00000000
+"EnableExpressiveInputEmojiMultipleSelection"=dword:00000000
+"EnableHwkbAutocorrection2"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Input\Settings]
+"AutoAccent"=dword:00000000
+"AutoApostrophe"=dword:00000000
+"AutoCap"=dword:00000000
+"AutoCapAllTokens"=dword:00000000
+"AutoCorrectFirstWord"=dword:00000000
+"AutoCorrection"=dword:00000000
+"AutoCorrectVisualDelay"=dword:00000000
+"AutoswitchAfterEmoji"=dword:00000000
+"ContactPenalty"=dword:00000000
+"DictationEnabled"=dword:00000001
+"DisablePersonalization"=dword:00000001
+"EmojiSuggestion"=dword:00000000
+"EmojiTranslation"=dword:00000001
+"EnableHwkbAutocorrection"=dword:00000000
+"EnableHwkbMode"=dword:00000000
+"EnableHwkbTextPrediction"=dword:00000000
+"HarvestContacts"=dword:00000000
+"HasTrailer"=dword:00000000
+"HTREnabled"=dword:00000000
+"HwkbAutocorrectionAlwaysOffList"=-
+"HwkbInlinePredictionAlwaysOffList"=-
+"HwkbInlinePredictionAlwaysOnList"=-
+"HwkbLayoutMappingTemplate"=-
+"InsightsEnabled"=dword:00000000
+"IsVoiceTypingKeyEnabled"=dword:00000001
+"KeyboardMode"=dword:00000000
+"LMDataLoggerEnabled"=dword:00000000
+"MaxCorrections"=dword:00000000
+"MultilingualEnabled"=dword:00000000
+"NotActiveLanguagePenalty"=dword:00000000
+"NotPredictedLanguagePenalty"=dword:00000000
+"PeriodShortcut"=dword:00000000
+"Prediction"=dword:00000000
+"Private"=dword:00000000
+"ProofDataSources"=dword:00000000
+"SearchDataSources"=dword:00000000
+"Spellcheck"=dword:00000000
+"TouchKeyboard_EnableKeyAudioFeedback"=dword:00000000
+"EnableExpressiveInputEmojiMultipleSelection"=dword:00000000
+"EnableHwkbAutocorrection2"=dword:00000000
+
+[HKEY_USERS\.DEFAULT\Software\Microsoft\Input\Settings]
+"AutoAccent"=dword:00000000
+"AutoApostrophe"=dword:00000000
+"AutoCap"=dword:00000000
+"AutoCapAllTokens"=dword:00000000
+"AutoCorrectFirstWord"=dword:00000000
+"AutoCorrection"=dword:00000000
+"AutoCorrectVisualDelay"=dword:00000000
+"AutoswitchAfterEmoji"=dword:00000000
+"ContactPenalty"=dword:00000000
+"DictationEnabled"=dword:00000001
+"DisablePersonalization"=dword:00000001
+"EmojiSuggestion"=dword:00000000
+"EmojiTranslation"=dword:00000001
+"EnableHwkbAutocorrection"=dword:00000000
+"EnableHwkbMode"=dword:00000000
+"EnableHwkbTextPrediction"=dword:00000000
+"HarvestContacts"=dword:00000000
+"HasTrailer"=dword:00000000
+"HTREnabled"=dword:00000000
+"HwkbAutocorrectionAlwaysOffList"=-
+"HwkbInlinePredictionAlwaysOffList"=-
+"HwkbInlinePredictionAlwaysOnList"=-
+"HwkbLayoutMappingTemplate"=-
+"InsightsEnabled"=dword:00000000
+"IsVoiceTypingKeyEnabled"=dword:00000001
+"KeyboardMode"=dword:00000000
+"LMDataLoggerEnabled"=dword:00000000
+"MaxCorrections"=dword:00000000
+"MultilingualEnabled"=dword:00000000
+"NotActiveLanguagePenalty"=dword:00000000
+"NotPredictedLanguagePenalty"=dword:00000000
+"PeriodShortcut"=dword:00000000
+"Prediction"=dword:00000000
+"Private"=dword:00000000
+"ProofDataSources"=dword:00000000
+"SearchDataSources"=dword:00000000
+"Spellcheck"=dword:00000000
+"TouchKeyboard_EnableKeyAudioFeedback"=dword:00000000
+"EnableExpressiveInputEmojiMultipleSelection"=dword:00000000
 "EnableHwkbAutocorrection2"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
@@ -2031,17 +3241,31 @@ Windows Registry Editor Version 5.00
 "NoWebServices"=dword:00000001
 "NoOnlinePrintsWizard"=dword:00000001
 "NoInstrumentation"=dword:00000001
+"NoMSAppLogo5ChannelNotify"=dword:00000001
+"NoRemoteRecursiveEvents"=dword:00000001
+"NoRecentDocsMenu"=dword:00000001
+"NoRecentDocsNetHood"=dword:00000001
+"NoEncryptOnMove"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 "TurnOffSPIAnimations"=dword:00000001
 "HideSCAMeetNow"=dword:00000001
 "NoRecentDocsHistory"=dword:00000001
 "NoThumbnailCache"=dword:00000001
-"DisableThumbnailCache"=dword:00000001 
+"DisableThumbnailCache"=dword:00000001
+"NoRemoteRecursiveEvents"=dword:00000001
+"NoInternetOpenWith"=dword:00000001
+"NoResolveTrack"=dword:00000001
+"NoRecentDocsMenu"=dword:00000001
+"NoRecentDocsNetHood"=dword:00000001
+"ClearRecentDocsOnExit"=-
+"NoInstrumentation"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "EnableTransparency"=dword:00000000
 "ColorPrevalence"=dword:00000001
+"ThemeChangesMousePointers"=dword:00000000
+"ThemeChangesDesktopIcons"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
 "{CA6CC9F1-867A-481E-951E-A28C5E4F01EA}"="Edit in Notepad"
@@ -2076,29 +3300,86 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Search\Preferences]
 "WholeFileSystem"=dword:00000000
 
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\teams]
+"preventfirstlaunchafterinstall"=dword:00000001
+
 [HKEY_USERS\New\Software\Microsoft\InputPersonalization\TrainedDataStore]
 "HarvestContacts"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ClickToRun\OverRide]
+"DisableLogManagement"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\Configuration]
+"TimerInterval"="900000"
+
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common]
-"sendcustomerdata"=dword:00000000
+"sentcostumerdata"=dword:00000000
+"SendCustomerDataOptInReason"=dword:00000000
+"SendCustomerDataOptIn"=dword:00000000
+"qmenable"=dword:00000000
+"updatereliabilitydata"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Feedback]
 "enabled"=dword:00000000
 "includescreenshot"=dword:00000000
 
-[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\Options\Mail]
-"EnableLogging"=dword:00000000
-
 [HKEY_CURRENT_USER\Software\Microsoft\Office\Common\ClientTelemetry]
 "DisableTelemetry"=dword:00000001
+"MotherboardUUID"="-"
+"DisableTelemetry"=dword:00000001
+"VerboseLogging"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\ClientTelemetry]
+"DisableTelemetry"=dword:00027100
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Common\clienttelemetry]
+"sendtelemetry"=dword:00000003
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\Common\clienttelemetry]
+"sendtelemetry"=dword:00000003
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\Common\ptwatson]
+"ptwoptin"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Common\ptwatson]
+"ptwoptin"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\Common]
+"sentcostumerdata"=dword:00000000
+"SendCustomerDataOptInReason"=dword:00000000
+"SendCustomerDataOptIn"=dword:00000000
+"qmenable"=dword:00000000
+"updatereliabilitydata"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Common]
 "qmenable"=dword:00000000
 "updatereliabilitydata"=dword:00000001
+"sentcostumerdata"=dword:00000000
+"SendCustomerDataOptInReason"=dword:00000000
+"SendCustomerDataOptIn"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Common\General]
 "shownfirstrunoptin"=dword:00000000
 "skydrivesigninoption"=dword:00000000
+"PreferCloudSaveLocations"=dword:00000000
+"disablecomingsoon"=dword:00000001
+"disablebackgrounds"=dword:00000001
+"notrack"=dword:00000001
+"optindisable"=dword:00000001
+"signinoptions"=dword:00000003
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\Common\General]
+"skydrivesigninoption"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\Firstrun]
+"disablemovie"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\Common\Graphics]
+"DisableAnimations"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\common\privacy]
+"disconnectedstate"=-
+"usercontentdisabled"=-
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Common\ptwatson]
 "ptwoptin"=dword:00000000
@@ -2107,15 +3388,95 @@ Windows Registry Editor Version 5.00
 "disablemovie"=dword:00000001
 "bootedrtm"=dword:00000001
 
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\dlp]
+"policytipsenabled"=dword:00000000
+
+[HKEY_CURRENT_USER\software\policies\microsoft\shared tools\proofing tools\1.0\office]
+"publisherspellingoptions"=dword:00000000
+"powerpointspellingoptions"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Common\Privacy]
 "downloadcontentdisabled"=dword:00000001
 "usercontentdisabled"=dword:00000001
 "controllerconnectedservicesenabled"=dword:00000001
 "disconnectedstate"=dword:00000001
 
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Word\Security\ProtectedView]
+"DisableAttachementsInPV"=dword:00000001
+"DisableInternetFilesInPV"=dword:00000001
+"DisableUnsafeLocationsInPV"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Excel\Security\ProtectedView]
+"DisableAttachementsInPV"=dword:00000001
+"DisableInternetFilesInPV"=dword:00000001
+"DisableUnsafeLocationsInPV"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Excel\Security\Trusted Documents]
+"disablenetworktrusteddocuments"=dword:00000001
+"disabletrusteddocuments"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\PowerPoint\Security\ProtectedView]
+"DisableAttachementsInPV"=dword:00000001
+"DisableInternetFilesInPV"=dword:00000001
+"DisableUnsafeLocationsInPV"=dword:00000001
+
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\OSM]
 "Enablelogging"=dword:00000000
 "EnableUpload"=dword:00000000
+"enablefileobfuscation"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Lync]
+"disableautomaticsendtracking"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\onenote]
+"dontshowwhatsnew"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\visio]
+"dontshowwhatsnew"=dword:00000001
+
+[HKEY_CURRENT_USER\software\policies\microsoft\office\16.0\publisher\preferences]
+"usestartupdlg"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Access\Options]
+"EnableLogging"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Access]
+"dontshowwhatsnew"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\excel]
+"dontshowwhatsnew"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\word]
+"dontshowwhatsnew"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Powerpoint\Security\Trusted Documents]
+"disablenetworktrusteddocuments"=dword:00000001
+"disabletrusteddocuments"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Word\Security\Trusted Documents]
+"disablenetworktrusteddocuments"=dword:00000001
+"disabletrusteddocuments"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Powerpoint]
+"dontshowwhatsnew"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Outlook]
+"EnableLogging"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Outlook\Security]
+"InitEncrypt"=dword:00000002
+"InitSign"=dword:00000002
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\Options\Calendar]
+"EnableCalendarLogging"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\Options\Mail]
+"BlockExtContent"=dword:00000000
+"UnblockSpecificSenders"=dword:00000000
+"EnableLogging"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Outlook\options\General]
+"DisableOutlookMobileHyperlink"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\OSM\preventedapplications]
 "accesssolution"=dword:00000001
@@ -2135,6 +3496,80 @@ Windows Registry Editor Version 5.00
 "documentfiles"=dword:00000001
 "templatefiles"=dword:00000001
 
+[HKEY_CURRENT_USER\Software\Policies\microsoft\office\15.0\osm\preventedapplications]
+"accesssolution"=dword:00000001
+"olksolution"=dword:00000001
+"onenotesolution"=dword:00000001
+"pptsolution"=dword:00000001
+"projectsolution"=dword:00000001
+"publishersolution"=dword:00000001
+"visiosolution"=dword:00000001
+"wdsolution"=dword:00000001
+"xlsolution"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\microsoft\office\15.0\osm\preventedsolutiontypes]
+"agave"=dword:00000001
+"appaddins"=dword:00000001
+"comaddins"=dword:00000001
+"documentfiles"=dword:00000001
+"templatefiles"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\osm]
+"enablelogging"=dword:00000000
+"enablefileobfuscation"=dword:00000000
+"enableupload"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\15.0\Common\Feedback]
+"enabled"=dword:00000000
+"includescreenshot"=dword:00000000
+"includeemail"=dword:00000000
+"feedbackincludelog"=dword:00000000
+"surveyenabled"=dword:00000000
+"updatereliabilitydata"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\Common\Feedback]
+"enabled"=dword:00000000
+"includescreenshot"=dword:00000000
+"includeemail"=dword:00000000
+"feedbackincludelog"=dword:00000000
+"surveyenabled"=dword:00000000
+"updatereliabilitydata"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\Feedback]
+"enabled"=dword:00000000
+"includescreenshot"=dword:00000000
+"includeemail"=dword:00000000
+"feedbackincludelog"=dword:00000000
+"surveyenabled"=dword:00000000
+"updatereliabilitydata"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Feedback]
+"enabled"=dword:00000000
+"includescreenshot"=dword:00000000
+"includeemail"=dword:00000000
+"feedbackincludelog"=dword:00000000
+"surveyenabled"=dword:00000000
+"updatereliabilitydata"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Common\Feedback]
+"enabled"=dword:00000000
+"includescreenshot"=dword:00000000
+"includeemail"=dword:00000000
+"feedbackincludelog"=dword:00000000
+"surveyenabled"=dword:00000000
+"updatereliabilitydata"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Feedback]
+"enabled"=dword:00000000
+"includescreenshot"=dword:00000000
+"includeemail"=dword:00000000
+"feedbackincludelog"=dword:00000000
+"surveyenabled"=dword:00000000
+"updatereliabilitydata"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Common\signin]
+"signinoptions"=dword:00000003
+
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack]
 "ShowedToastAtLevel"=dword:00000001
 
@@ -2146,6 +3581,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\TextInput]
 "AllowLinguisticDataCollection"=dword:00000000
+"AllowHardwareKeyboardTextSuggestions"=dword:00000000
+"AllowTextInputSuggestionUpdate"=dword:00000000
+"AllowKeyboardTextSuggestions"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization]
 "DODownloadMode"=dword:00000000
@@ -2187,9 +3625,81 @@ Windows Registry Editor Version 5.00
 "SubscribedContent-88000326Enabled"=dword:00000000
 "SubscribedContentEnabled"=dword:00000000
 "SystemPaneSuggestionsEnabled"=dword:00000000
+"IdentityProvider"="0"
+"SubscribedContent-280815Enabled"=dword:00000000
+"SubscribedContent-310091Enabled"=dword:00000000
+"SubscribedContent-314559Enabled"=dword:00000000
+"SubscribedContent-88000045Enabled"=dword:00000000
+"SubscribedContent-88000530Enabled"=dword:00000000
+"SubscribedContent-353698Enabled"=dword:00000000
+"RemediationRequired"=dword:00000000
+"ShowSyncProviderNotifications"=dword:00000000
+"SubscribedContent-314563Enabled"=dword:00000000
+"SubscribedContent-310092Enabled"=dword:00000000
+"SubscribedContent-338380Enabled"=dword:00000000
+"SubscribedContent-338381Enabled"=dword:00000000
+"SubscribedContent-202914Enabled"=dword:00000000
+"SubscribedContent-88000161Enabled"=dword:00000000
+"SubscribedContent-88000163Enabled"=dword:00000000
+"SubscribedContent-88000165Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"FeatureManagementEnabled"=dword:00000000
+"SlideshowEnabled"=dword:00000000
+"OemPreInstalledAppsEnabled"=dword:00000000
+"PreInstalledAppsEnabled"=dword:00000000
+"RotatingLockScreenEnabled"=dword:00000000
+"RotatingLockScreenOverlayEnabled"=dword:00000000
+"SilentInstalledAppsEnabled"=dword:00000000
+"SoftLandingEnabled"=dword:00000000
+"SystemPaneSuggestionsEnabled"=dword:00000000
+"IdentityProvider"="0"
+"SubscribedContent-310093Enabled"=dword:00000000
+"SubscribedContent-338389Enabled"=dword:00000000
+"RotatingLockScreenOverlayEnabled"=dword:00000000
+"SubscribedContent-88000326Enabled"=dword:00000000
+"PreInstalledAppsEverEnabled"=dword:00000000
+"SubscribedContent-280815Enabled"=dword:00000000
+"SubscribedContent-310091Enabled"=dword:00000000
+"SubscribedContent-314559Enabled"=dword:00000000
+"SubscribedContent-338387Enabled"=dword:00000000
+"SubscribedContent-338388Enabled"=dword:00000000
+"SubscribedContent-88000045Enabled"=dword:00000000
+"SubscribedContent-88000530Enabled"=dword:00000000
+"SubscribedContent-338393Enabled"=dword:00000000
+"SubscribedContent-353694Enabled"=dword:00000000
+"SubscribedContent-353696Enabled"=dword:00000000
+"SubscribedContent-353698Enabled"=dword:00000000
+"SubscribedContentEnabled"=dword:00000000
+"RemediationRequired"=dword:00000000
+"ShowSyncProviderNotifications"=dword:00000000
+"SubscribedContent-314563Enabled"=dword:00000000
+"ContentDeliveryAllowed"=dword:00000000
+"SubscribedContent-310092Enabled"=dword:00000000
+"SubscribedContent-338380Enabled"=dword:00000000
+"SubscribedContent-338381Enabled"=dword:00000000
+"SubscribedContent-202914Enabled"=dword:00000000
+"SubscribedContent-88000161Enabled"=dword:00000000
+"SubscribedContent-88000163Enabled"=dword:00000000
+"SubscribedContent-88000165Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowWindowsConsumerFeatures]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\DisableConsumerAccountStateContent]
+"value"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowDeviceDiscovery]
+"value"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowManualMDMUnenrollment]
+"value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Program-Telemetry]
 "Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PenWorkspace]
+"PenWorkspaceAppSuggestionsEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\PushToInstall]
 "DisablePushToInstall"=dword:00000001
@@ -2223,8 +3733,18 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo]
 "Enabled"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo]
+"Enabled"=dword:00000000
+"ID"="null"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo]
+"DisabledByGroupPolicy"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Bluetooth]
 "AllowAdvertising"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Bluetooth\AllowAdvertising]
+"value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\SQM]
 "DisableCustomerImprovementProgram"=dword:00000001
@@ -2245,20 +3765,41 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Privacy]
 "TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
 
+[HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\Privacy]
+"TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowTailoredExperiencesWithDiagnosticData]
+"value"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Microsoft\Lighting]
 "AmbientLightingEnabled"=dword:00000000
+"EffectType"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
 "EnableDynamicContentInWSB"=dword:00000000
 "AllowCloudSearch"=dword:00000000
 "AllowCortana"=dword:00000000
-"AllowCortanaAboveLock"=dword:00000000
+"AboveLock"=dword:00000000
 "ConnectedSearchUseWeb"=dword:00000000
 "DisableWebSearch"=dword:00000001
 "AllowIndexingEncryptedStoresOrItems"=dword:00000000
 "AllowSearchToUseLocation"=dword:00000000
 "AlwaysUseAutoLangDetection"=dword:00000000
- "ConnectedSearchUseWebOverMeteredConnections"=dword:00000000
+"ConnectedSearchUseWebOverMeteredConnections"=dword:00000000
+"AllowCortanaAboveLock"=dword:00000000
+"BingSearchEnabled"=dword:00000000
+"ConnectedSearchPrivacy"=dword:00000003
+"ConnectedSearchSafeSearch"=dword:00000003
+"PreventIndexOnBattery"=dword:00000001
+"PreventIndex"=dword:00000001
+"DisableRemovableDriveIndexing"=dword:00000001
+"BackgroundAppGlobalToggle"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Speech_OneCore\Settings\VoiceActivation\Microsoft.549981C3F5F10_8wekyb3d8bbwe!App]
+"AgentActivationEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowCortana]
+"value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\SearchCompanion]
 "DisableContentFileUpdates"=dword:00000001
@@ -2286,6 +3827,9 @@ Windows Registry Editor Version 5.00
 "DisableWindowsSpotlightOnSettings"=dword:00000001
 "DisableWindowsSpotlightWindowsWelcomeExperience"=dword:00000001
 "IncludeEnterpriseSpotlight"=dword:00000000
+"DisableThirdPartySuggestions"=dword:00000001
+"DisableSoftLanding"=dword:00000001
+"DisableCloudOptimizedContent"=dword:00000001
 
 [HKEY_CURRENT_USER\Policies\Microsoft\Windows\CloudContent]
 "DisableTailoredExperiencesWithDiagnosticData"=dword:00000001
@@ -2340,6 +3884,15 @@ Windows Registry Editor Version 5.00
 "UseNexusForGameBarEnabled"=dword:00000000
 "ShowStartupPanel"=dword:00000000
 "GamePanelStartupTipIndex"=dword:00000003
+"AllowAutoGameMode"=dword:00000000
+"AutoGameModeEnabled"=dword:00000000
+"ShowGameModeNotifications"=dword:00000000
+
+[HKEY_USERS\.DEFAULT\Software\Microsoft\GameBar]
+"AllowAutoGameMode"=dword:00000000
+"AutoGameModeEnabled"=dword:00000000
+"ShowStartupPanel"=dword:00000000
+"ShowGameModeNotifications"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore]
 "AutoDownload"=dword:00000002
@@ -2360,6 +3913,19 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Control Panel\Accessibility]
 "DynamicScrollbars"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Accessibility]
+"Configuration"=""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility]
+"Configuration"=""
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Ease of Access]
+"selfscan"=dword:00000000
+"selfvoice"=dword:00000000
+
+[HKEY_CURRENT_USER\Control Panel\Accessibility\SlateLaunch]
+"LaunchAT"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\OneDrive]
 "DisableFileSyncNGSC"=dword:00000001
@@ -2421,6 +3987,19 @@ Windows Registry Editor Version 5.00
 "DeviceHistoryEnabled"=dword:00000000
 "SearchboxTaskbarMode"=dword:00000000
 "HistoryViewEnabled"=dword:00000000
+"CanCortanaBeEnabled"=dword:00000000
+"CortanaCapabilities"=dword:00000000
+"CortanaCapabilityFlags"=dword:00000000
+"CortanaEnabled"=dword:00000000
+"CortanaInAmbientMode"=dword:00000000
+"WebControlStatus"=dword:00000000
+"WebControlSecondaryStatus"=dword:00000000
+"HasAboveLockTips"=dword:00000000
+"AnyAboveLockAppsActive"=dword:00000000
+"IsAssignedAccess"=dword:00000000
+"IsMicrophoneAvailable"=dword:00000000
+"IsWindowsHelloActive"=dword:00000000
+"ImmersiveSearch"=-
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
 "GlobalUserDisabled"=dword:00000001
@@ -2430,7 +4009,28 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Narrator\NoRoam]
 "WinEnterLaunchEnabled"=dword:00000000
+"DetailedFeedback"=dword:00000000
+"CapsLockAlert"=dword:00000002
 "OnlineServicesEnabled"=dword:00000000
+"ReadingWithIntent"=dword:00000000
+"UserVerbosityLevel"=dword:00000001
+"EchoToggleKeys"=dword:00000000
+"EchoNavigationKeys"=dword:00000000
+"EchoModifierKeys"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Narrator]
+"AutoreadAdvancedInfo"=dword:00000000
+"FastKeyEntryEnabled"=dword:00000000
+"LockNarratorKeys"=dword:00000000
+"IntonationPause"=dword:00000000
+"PlayAudioCues"=dword:00000000
+"ReadHints"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Narrator\NarratorHome]
+"AutoStart"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Narrator\NoRoam]
+"WinEnterLaunchEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global]
 "{41FCC608-8496-4DEF-B43E-7D9BD675A6FF}"=dword:00000001
@@ -2479,6 +4079,17 @@ Windows Registry Editor Version 5.00
 "SmartScreenEnabled"="Off"
 "AlwaysUnloadDLL"=dword:00000001
 "ShowDriveLettersFirst"=dword:00000000
+"MachineOobeUpdates"=dword:00000000
+"ActiveSetupDisabled"=dword:00000001
+"ActiveSetupTaskOverride"=dword:00000001
+"AsyncRunOnce"=dword:00000001
+"AsyncUpdatePCSettings"=dword:00000000
+"DisableAppInstallsOnFirstLogon"=-
+"ThumbnailQuality"=dword:00000024
+"Max Cached Icons"="4096"
+"AutoCheckSelect"=dword:00000000
+"ShowRecent"=dword:00000000
+"ShowFrequent"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Edge\SmartScreenEnabled]
 @=dword:00000000
@@ -2487,7 +4098,7 @@ Windows Registry Editor Version 5.00
 "EnableAutoLayout"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Dfrg\BootOptimizeFunction]
-"Enable"="n"
+"Enable"="N"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\PhishingFilter]
 "EnabledV9"=dword:00000000
@@ -2505,17 +4116,25 @@ Windows Registry Editor Version 5.00
 "PreventOverride"=dword:00000000
 "ContentEvaluation"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Browser\AllowSmartScreen]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\SmartScreen\EnableSmartScreenInShell]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\SmartScreen\EnableAppInstallControl]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\SmartScreen\PreventOverrideForFilesInShell]
+"value"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\Software\Microsoft\PolicyManager\default\WiFi\AllowAutoConnectToWiFiSenseHotspots]
 "value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization]
 "NoLockScreen"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization]
+"AnimateLockScreenBackground"=dword:00000001
 "LockScreenOverlaysDisabled"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity]
-"Enabled"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy]
 "01"=dword:00000000
@@ -2526,6 +4145,23 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\FTS]
 "EnableGR535"=dword:00000001
 "EnableRID61684"=dword:00000001
+"EnableRID73779"=dword:00000001
+"EnableRID73780"=dword:00000001
+"EnableRID74361"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\NVDisplay.ContainerLocalSystem\LocalSystem\NvcDispCorePlugin]
+"DisableLoad"=dword:00000001
+"LogFile"=-
+"LogLevel"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\NvControlPanel2\Client]
+"OptInOrOutPreference"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband\AuxilliaryPins]
+"MailPin"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global\Startup\SendTelemetryData]
+@=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Policy]
 "VerifiedAndReputablePolicyState"=dword:00000000
@@ -2536,6 +4172,9 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People]
 "TaskbarCapacity"=dword:00000000
 "PeopleBand"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People\ShoulderTap]
+"ShoulderTapAudio"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Avalon.Graphics]
 "DisableHWAcceleration"=dword:00000001
@@ -2549,17 +4188,28 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR]
 "AppCaptureEnabled"=dword:00000000
 
+[HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR] 
+"AppCaptureEnabled"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\GameDVR]
 "AllowGameDVR"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowGameDVR]
 "value"=dword:00000000
 
+[HKEY_USERS\.DEFAULT\Software\Microsoft\Games]
+"EnableXBGM"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Graphics]
 "DisableHardwareAcceleration"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Office\15.0\Common\Graphics]
 "DisableHardwareAcceleration"=dword:00000001
+"sentcostumerdata"=dword:00000000
+"SendCustomerDataOptInReason"=dword:00000000
+"SendCustomerDataOptIn"=dword:00000000
+"qmenable"=dword:00000000
+"updatereliabilitydata"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Office\14.0\Common\Graphics]
 "DisableHardwareAcceleration"=dword:00000001
@@ -2602,6 +4252,12 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy]
 "fDisablePowerManagement"=dword:00000001
+"fBlockNonDomain"=dword:00000001
+"fSoftDisconnectConnections"=dword:00000000
+"fMinimizeConnections"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\Local]
+"WCMPresent"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Class\USB\0000]
 "IdleEnable"=dword:00000000
@@ -2702,6 +4358,102 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Class\USB\0032]
 "IdleEnable"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0000]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0001]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0002]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0003]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0004]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0045]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0005]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0006]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0007]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0008]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0009]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0010]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0011]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0012]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0013]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0014]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0015]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0016]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0017]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0018]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0019]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0020]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0021]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0022]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0023]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0024]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0025]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0026]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0027]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0028]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0029]
+"IdleEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}\0030]
+"IdleEnable"=dword:00000000
+
 [HKEY_CLASSES_ROOT\SystemFileAssociations\image\shell\print]
 "ProgrammaticAccessOnly"=""
 
@@ -2761,6 +4513,30 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RemoteComputer\NameSpace\{D6277990-4C6A-11CF-8D87-00AA0060F5BF}]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RemoteComputer\NameSpace\{2227A280-3AEA-1069-A2DE-08002B30309D}]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\DevHomeUpdate]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\OutlookUpdate]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\CrossDeviceUpdate]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\TFLUpdate]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\AeDebug]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AeDebug]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\DefragPath]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\DelegateFolders\{F5FB2C77-0E2F-4A16-A381-3E560C68BC83}]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\DelegateFolders\{F5FB2C77-0E2F-4A16-A381-3E560C68BC83}]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FolderDescriptions\{F5FB2C77-0E2F-4A16-A381-3E560C68BC83}]
 
 [-HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers\BlockList\Kernel]
 
@@ -3348,13 +5124,14 @@ Windows Registry Editor Version 5.00
 "C:\\Windows\\System32\\ShellHost.exe"="GpuPreference=1;"
 "C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_*\\SearchHost.exe"="GpuPreference=1;"
 "C:\\Windows\\System32\\Taskmgr.exe"="GpuPreference=1;"
+"C:\\Windows\\explorer.exe"="GpuPreference=1;"
 "C:\\Program Files\\WindowsApps\\Microsoft.WindowsNotepad_*\\Notepad\\Notepad.exe"="GpuPreference=1;"
-"D:\\Epic Games\\GTAVEnhanced\\GTA5_Enhanced.exe"="GpuPreference=1;"
-"D:\\Epic Games\\GTAVEnhanced\\PlayGTAV.exe"="GpuPreference=1;"
-"F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk\\Binaries\\Win64\\FragPunk.exe"="GpuPreference=1;"
-"F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk.exe"="GpuPreference=1;"
-"G:\\S.T.A.L.K.E.R. 2\\Stalker2\\Binaries\\Win64\\Stalker2-Win64-Shipping.exe"="GpuPreference=1;"
-"G:\\S.T.A.L.K.E.R. 2\\Stalker2.exe"="GpuPreference=1;"
+"D:\\Epic Games\\GTAVEnhanced\\GTA5_Enhanced.exe"="GpuPreference=2;"
+"D:\\Epic Games\\GTAVEnhanced\\PlayGTAV.exe"="GpuPreference=2;"
+"F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk\\Binaries\\Win64\\FragPunk.exe"="GpuPreference=2;"
+"F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk.exe"="GpuPreference=2;"
+"G:\\S.T.A.L.K.E.R. 2\\Stalker2\\Binaries\\Win64\\Stalker2-Win64-Shipping.exe"="GpuPreference=2;"
+"G:\\S.T.A.L.K.E.R. 2\\Stalker2.exe"="GpuPreference=2;"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers]
 "C:\\Program Files (x86)\\Battle.net\\Battle.net Launcher.exe"="~ RUNASADMIN"
