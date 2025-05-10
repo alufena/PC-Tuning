@@ -270,11 +270,14 @@ reg delete "HKEY_CURRENT_USER\Software\Spoon" /f
 ::bcdedit /deletevalue maxproc
 ::bcdedit /deletevalue configaccesspolicy
 ::bcdedit /deletevalue MSI
+::bcdedit /deletevalue onecpu
 bcdedit /set useplatformclock false
 bcdedit /set disabledynamictick yes
-bcdedit /set useplatformtick no
+::bcdedit /set useplatformtick No
+bcdedit /set useplatformtick Yes
 bcdedit /set uselegacyapicmode no
-bcdedit /set x2apicpolicy Disable
+::bcdedit /set x2apicpolicy Disable
+bcdedit /set x2apicpolicy Enable
 bcdedit /set hypervisorlaunchtype off
 ::bcdedit /set tscsyncpolicy legacy
 bcdedit /set tscsyncpolicy enhanced
@@ -296,6 +299,7 @@ bcdedit /set numproc 16
 bcdedit /set maxproc yes
 bcdedit /set configaccesspolicy Default
 bcdedit /set MSI Default
+bcdedit /set onecpu No
 %windir%\system32\lodctr /R
 %windir%\sysWOW64\lodctr /R
 lodctr /e:PerfOS
@@ -332,6 +336,7 @@ taskkill /f /t /im SearchFilterHost.exe
 taskkill /f /t /im SearchApp.exe
 taskkill /f /t /im node.exe
 taskkill /f /t /im powershell.exe
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'High precision event timer' | Disable-PnpDevice -Confirm:$false"
 timeout /t 8 /nobreak
 taskkill /f /t /im conhost.exe
 taskkill /f /t /im cmd.exe
