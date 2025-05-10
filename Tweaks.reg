@@ -26,11 +26,11 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
 "HwSchMode"=dword:00000001
 
-; optimizations for windowed games (só para w11)  = 1 on, 0 off
+; optimizations for windowed games (w11 only)  = 1 on, 0 off
 [HKEY_CURRENT_USER\Software\Microsoft\DirectX\UserGpuPreferences]
 "DirectXUserGlobalSettings"="SwapEffectUpgradeEnable=0;"
 
-; =- padrão, 1 tweak
+; =- default, 1 tweak
 [HKEY_CURRENT_USER\Software\Microsoft\DirectX\GraphicsSettings]
 "SwapEffectUpgradeCache"=dword:00000001
 "SpecificGPUOptionApplicable"=dword:00000001
@@ -116,13 +116,13 @@ Windows Registry Editor Version 5.00
 "SFIO Priority"="Normal"
 "Latency Sensitive"=-
 
-; GameDVR_DSEBehavior =- padrão, 2 tweak
-; GameDVR_DXGIHonorFSEWindowsCompatible 0 padrão, 1 tweak
-; GameDVR_EFSEFeatureFlags 0 padrão
-; GameDVR_Enabled 0 padrão
-; GameDVR_FSEBehavior =- padrão,
-; GameDVR_FSEBehaviorMode 0 padrão, 2 tweak
-; GameDVR_HonorUserFSEBehaviorMode 0 padrão, 1 tweak
+; GameDVR_DSEBehavior =- default, 2 tweak
+; GameDVR_DXGIHonorFSEWindowsCompatible 0 default, 1 tweak
+; GameDVR_EFSEFeatureFlags 0 default
+; GameDVR_Enabled 0 default
+; GameDVR_FSEBehavior =- default,
+; GameDVR_FSEBehaviorMode 0 default, 2 tweak
+; GameDVR_HonorUserFSEBehaviorMode 0 default, 1 tweak
 [HKEY_CURRENT_USER\System\GameConfigStore]
 "GameDVR_DSEBehavior"=dword:00000002
 "GameDVR_DXGIHonorFSEWindowsCompatible"=dword:00000001
@@ -141,29 +141,29 @@ Windows Registry Editor Version 5.00
 "GameDVR_FSEBehaviorMode"=dword:00000000
 "GameDVR_HonorUserFSEBehaviorMode"=dword:00000001
 
-; 00000064 = 100 padrão
+; 00000064 = 100 default
 ; 00000036 = 54
 ; 0000001e = 30
 ; 00000010 = 16
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mouclass\Parameters]
 "MouseDataQueueSize"=dword:00000016
 
-; 00000064 = 100 padrão
+; 00000064 = 100 default
 ; 00000036 = 54
 ; 0000001e = 30
 ; 00000010 = 16
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters]
 "KeyboardDataQueueSize"=dword:00000010
 
-; DisablePagingExecutive 0 padrão, 1 tweak
-; FeatureSettingsOverride =- padrão, 3 tweak
-; FeatureSettingsOverrideMask =- padrão, 3 tweak
-; LargeSystemCache 0 padrão, 1 tweak
-; FeatureSettings 0 padrão, 1 tweak
-; IoPageLockLimit =- padrão, ffffffff tweak
-; DontVerifyRandomDrivers =- padrão, 1 tweak
-; EnablePerVolumeLazyWriter =- padrão, 2 tweak
-; EnableCfg =- padrão, 0 tweak
+; DisablePagingExecutive 0 default, 1 tweak
+; FeatureSettingsOverride =- default, 3 tweak
+; FeatureSettingsOverrideMask =- default, 3 tweak
+; LargeSystemCache 0 default, 1 tweak
+; FeatureSettings 0 default, 1 tweak
+; IoPageLockLimit =- default, ffffffff tweak
+; DontVerifyRandomDrivers =- default, 1 tweak
+; EnablePerVolumeLazyWriter =- default, 2 tweak
+; EnableCfg =- default, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
 "DisablePagingExecutive"=dword:00000001
 "FeatureSettingsOverride"=dword:00000003
@@ -176,61 +176,61 @@ Windows Registry Editor Version 5.00
 "EnableCfg"=dword:00000000
 "SwapfileControl"=dword:00000000
 
-; DpcWatchdogProfileOffset 00002710 padrão, 0 tweak
-; MitigationAuditOptions =- padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
-; MitigationOptions -= padrão, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
-; SerializeTimerExpiration =- padrão, 1 ou 2 tweak (0 auto, 1 force, 2 off)
-; SplitLargeCaches =- padrão, 1 tweak
-; GlobalTimerResolutionRequests =- padrão, 1 tweak
-; ThreadDpcEnable =- padrão, 0 tweak
-; InterruptSteeringDisabled =- padrão, 1 tweak
-; DisableExceptionChainValidation =- padrão, tweak 1
-; KernelSEHOPEnabled =- padrão, 0 tweak
-; DistributeTimers =- padrão, 1 tweak
-; AdjustDpcThreshold =- padrão, 0 tweak
-; BufferSize =- padrão, 00000020 tweak
-; BugCheckUnexpectedInterrupts =- padrão, 0 tweak
-; DebugPollInterval =- padrão, 000003e8 tweak
-; DelayCloseSize =- padrão, 0 tweak
-; DelayDerefKCBLimit =- padrão, 0 tweak
-; DisableAutoBoost =- padrão, 0 tweak
-; DisableBufferedIoInit =- padrão, 1 tweak
-; DisableControlFlowGuardExportSuppression =- padrão, 1 tweak
-; DisableControlFlowGuardXfg =- padrão, 1 tweak
-; DisableLowQosTimerResolution =- padrão, 0 tweak
-; DisableOverlappedExecution =- padrão, 0 tweak
-; DisableTsx =- padrão, 1 tweak
-; DpcCumulativeSoftTimeout =- padrão, 0 tweak
-; DpcQueueDepth =- padrão, 1 tweak
-; DpcTimeout =- padrão, 0 tweak
-; DpcWatchdogPeriod =- padrão, 0 tweak
-; DpcWatchdogProfileBufferSizeBytes =- padrão, 1 tweak
-; DynamicDpcProtocol =- padrão, 1 tweak
-; ExTryQueueWorkItem =- padrão, 00000020 tweak
-; ForceForegroundBoostDecay =- padrão, 0 tweak
-; ForceIdleGracePeriod =- padrão, 0 tweak
-; IdealDpcRate =- padrão, 1 tweak
-; IdleDurationExpirationTimeout =- padrão, 0 tweak
-; IdleScanInterval =- padrão, 0 tweak
-; IoEnqueueIrp =- padrão, 00000020 tweak
-; IoQueueThreadIrp =- padrão, 00000020 tweak
-; IoQueueWorkItem =- padrão, 00000020 tweak
-; IoQueueWorkItemEx =- padrão, 00000020 tweak
-; IoQueueWorkItemToNode =- padrão, 00000020 tweak
-; MaxDynamicTickDuration =- padrão, 0000000a tweak
-; MaximumDpcQueueDepth =- padrão, 0 tweak
-; MaximumDpcRate =- padrão, 1 tweak
-; MaximumSharedReadyQueueSize =- padrão, 1 tweak
-; MinimumDpcRate =- padrão, 1 tweak
-; ObUnsecureGlobalNames =- padrão
-; PassiveWatchdogTimeout =- padrão, 0 tweak
-; PriorityControl =- padrão, 00000032 tweak
-; QuantumLength =- padrão, 00000014 tweak
-; TimeIncrement =- padrão, 0000000f tweak
-; UnlimitDpcQueue =- padrão, 1 tweak
-; WatchdogResumeTimeout =- padrão, 0 tweak
-; WorkerFactoryThreadIdleTimeout =- padrão, 0 tweak
-; XMMIZeroingEnable =- padrão, 0 tweak
+; DpcWatchdogProfileOffset 00002710 default, 0 tweak
+; MitigationAuditOptions =- default, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
+; MitigationOptions -= default, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
+; SerializeTimerExpiration =- default, 1 ou 2 tweak (0 auto, 1 force, 2 off)
+; SplitLargeCaches =- default, 1 tweak
+; GlobalTimerResolutionRequests =- default, 1 tweak
+; ThreadDpcEnable =- default, 0 tweak
+; InterruptSteeringDisabled =- default, 1 tweak
+; DisableExceptionChainValidation =- default, tweak 1
+; KernelSEHOPEnabled =- default, 0 tweak
+; DistributeTimers =- default, 1 tweak
+; AdjustDpcThreshold =- default, 0 tweak
+; BufferSize =- default, 00000020 tweak
+; BugCheckUnexpectedInterrupts =- default, 0 tweak
+; DebugPollInterval =- default, 000003e8 tweak
+; DelayCloseSize =- default, 0 tweak
+; DelayDerefKCBLimit =- default, 0 tweak
+; DisableAutoBoost =- default, 0 tweak
+; DisableBufferedIoInit =- default, 1 tweak
+; DisableControlFlowGuardExportSuppression =- default, 1 tweak
+; DisableControlFlowGuardXfg =- default, 1 tweak
+; DisableLowQosTimerResolution =- default, 0 tweak
+; DisableOverlappedExecution =- default, 0 tweak
+; DisableTsx =- default, 1 tweak
+; DpcCumulativeSoftTimeout =- default, 0 tweak
+; DpcQueueDepth =- default, 1 tweak
+; DpcTimeout =- default, 0 tweak
+; DpcWatchdogPeriod =- default, 0 tweak
+; DpcWatchdogProfileBufferSizeBytes =- default, 1 tweak
+; DynamicDpcProtocol =- default, 1 tweak
+; ExTryQueueWorkItem =- default, 00000020 tweak
+; ForceForegroundBoostDecay =- default, 0 tweak
+; ForceIdleGracePeriod =- default, 0 tweak
+; IdealDpcRate =- default, 1 tweak
+; IdleDurationExpirationTimeout =- default, 0 tweak
+; IdleScanInterval =- default, 0 tweak
+; IoEnqueueIrp =- default, 00000020 tweak
+; IoQueueThreadIrp =- default, 00000020 tweak
+; IoQueueWorkItem =- default, 00000020 tweak
+; IoQueueWorkItemEx =- default, 00000020 tweak
+; IoQueueWorkItemToNode =- default, 00000020 tweak
+; MaxDynamicTickDuration =- default, 0000000a tweak
+; MaximumDpcQueueDepth =- default, 0 tweak
+; MaximumDpcRate =- default, 1 tweak
+; MaximumSharedReadyQueueSize =- default, 1 tweak
+; MinimumDpcRate =- default, 1 tweak
+; ObUnsecureGlobalNames =- default
+; PassiveWatchdogTimeout =- default, 0 tweak
+; PriorityControl =- default, 00000032 tweak
+; QuantumLength =- default, 00000014 tweak
+; TimeIncrement =- default, 0000000f tweak
+; UnlimitDpcQueue =- default, 1 tweak
+; WatchdogResumeTimeout =- default, 0 tweak
+; WorkerFactoryThreadIdleTimeout =- default, 0 tweak
+; XMMIZeroingEnable =- default, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 "DpcWatchdogProfileOffset"=dword:00000000
 "MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
@@ -287,71 +287,71 @@ Windows Registry Editor Version 5.00
 "WorkerFactoryThreadIdleTimeout"=dword:00000000
 "XMMIZeroingEnable"=dword:00000000
 
-; =- padrão, 0 tweak
+; =- default, 0 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Kernel DMA Protection]
 "DeviceEnumerationPolicy"=dword:00000000
 
-; =- padrão, 0 tweak
+; =- default, 0 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Kernel DMA Protection]
 "DeviceEnumerationPolicy"=dword:00000000
 
-; AUDIO_DEVICE_BUFFER_SIZE padrão =-, tweak 512
-; AUDIO_DEVICE_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; AUDIO_DEVICE_PENDING_INTERRUPTS padrão =-, tweak 0
-; AUDIO_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; CPU_BOOST_POLICY padrão =-, tweak 2
-; CPU_IDLE_POLICY padrão =-, tweak 0
-; CPU_INTERRUPT_BALANCE_POLICY padrão =-, tweak 1
-; CPU_MAX_FREQUENCY padrão =-, tweak 100
-; CPU_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; CPU_MAX_PENDING_IO padrão =-, tweak 0
-; CPU_POWER_POLICY padrão =-, tweak 1
-; DEVICE_COMPLETION_POLICY padrão =-, tweak 0
-; DEVICE_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; DEVICE_MAX_PENDING_IO padrão =-, tweak 0
-; DEVICE_PENDING_INTERRUPTS padrão =-, tweak 0
-; DISABLE_DYNAMIC_TICK padrão =-, tweak yes
-; DISK_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; DISK_MAX_PENDING_IO padrão =-, tweak 0
-; DWM_COMPOSITOR_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; DWM_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; GPU_MAX_PENDING_COMPUTE padrão =-, tweak 0
-; GPU_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; GPU_MAX_PENDING_RENDER padrão =-, tweak 0
-; GPU_PENDING_INTERRUPTS padrão =-, tweak 0
-; IO_COMPLETION_POLICY padrão =-, tweak 0
-; IO_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; IO_PRIORITY padrão =-, tweak 0
-; IO_REQUEST_LIMIT padrão =-, tweak 1024
-; MEMORY_LATENCY_POLICY padrão =-, tweak 0
-; MEMORY_MAX_ALLOCATION padrão =-, tweak 0
-; MEMORY_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; MEMORY_PREFETCH_POLICY padrão =-, tweak 2
-; MKL_DEBUG_CPU_TYPE padrão =-, tweak 10
-; NETWORK_ADAPTER_INTERRUPT_MODERATION padrão =-, tweak 0
-; NETWORK_ADAPTER_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; NETWORK_ADAPTER_MAX_PENDING_IO padrão =-, tweak 0
-; NETWORK_ADAPTER_PENDING_INTERRUPTS padrão =-, tweak 0
-; NETWORK_BUFFER_SIZE padrão =-, tweak 512
-; NETWORK_INTERRUPT_COALESCING padrão =-, tweak 0
-; NETWORK_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; PCIE_DEVICE_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; PCIE_DEVICE_MAX_PENDING_IO padrão =-, tweak 0
-; PCIE_DEVICE_PENDING_INTERRUPTS padrão =-, tweak 0
-; PCIE_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; POWER_IDLE_TIMEOUT padrão =-, tweak 0
-; POWER_THROTTLE_POLICY padrão =-, tweak 0
-; STORAGE_DEVICE_COMPLETION_POLICY padrão =-, tweak 0
-; STORAGE_DEVICE_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; STORAGE_DEVICE_MAX_PENDING_IO padrão =-, tweak 0
-; STORAGE_DEVICE_PENDING_INTERRUPTS padrão =-, tweak 0
-; STORAGE_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; THREAD_SCHEDULER_POLICY padrão =-, tweak 0
-; TIMER_RESOLUTION padrão =-, tweak 0
-; USB_DEVICE_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
-; USB_DEVICE_MAX_PENDING_IO padrão =-, tweak 0
-; USB_DEVICE_PENDING_INTERRUPTS padrão =-, tweak 0
-; USB_MAX_PENDING_INTERRUPTS padrão =-, tweak 0
+; AUDIO_DEVICE_BUFFER_SIZE default =-, tweak 512
+; AUDIO_DEVICE_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; AUDIO_DEVICE_PENDING_INTERRUPTS default =-, tweak 0
+; AUDIO_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; CPU_BOOST_POLICY default =-, tweak 2
+; CPU_IDLE_POLICY default =-, tweak 0
+; CPU_INTERRUPT_BALANCE_POLICY default =-, tweak 1
+; CPU_MAX_FREQUENCY default =-, tweak 100
+; CPU_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; CPU_MAX_PENDING_IO default =-, tweak 0
+; CPU_POWER_POLICY default =-, tweak 1
+; DEVICE_COMPLETION_POLICY default =-, tweak 0
+; DEVICE_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; DEVICE_MAX_PENDING_IO default =-, tweak 0
+; DEVICE_PENDING_INTERRUPTS default =-, tweak 0
+; DISABLE_DYNAMIC_TICK default =-, tweak yes
+; DISK_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; DISK_MAX_PENDING_IO default =-, tweak 0
+; DWM_COMPOSITOR_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; DWM_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; GPU_MAX_PENDING_COMPUTE default =-, tweak 0
+; GPU_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; GPU_MAX_PENDING_RENDER default =-, tweak 0
+; GPU_PENDING_INTERRUPTS default =-, tweak 0
+; IO_COMPLETION_POLICY default =-, tweak 0
+; IO_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; IO_PRIORITY default =-, tweak 0
+; IO_REQUEST_LIMIT default =-, tweak 1024
+; MEMORY_LATENCY_POLICY default =-, tweak 0
+; MEMORY_MAX_ALLOCATION default =-, tweak 0
+; MEMORY_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; MEMORY_PREFETCH_POLICY default =-, tweak 2
+; MKL_DEBUG_CPU_TYPE default =-, tweak 10
+; NETWORK_ADAPTER_INTERRUPT_MODERATION default =-, tweak 0
+; NETWORK_ADAPTER_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; NETWORK_ADAPTER_MAX_PENDING_IO default =-, tweak 0
+; NETWORK_ADAPTER_PENDING_INTERRUPTS default =-, tweak 0
+; NETWORK_BUFFER_SIZE default =-, tweak 512
+; NETWORK_INTERRUPT_COALESCING default =-, tweak 0
+; NETWORK_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; PCIE_DEVICE_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; PCIE_DEVICE_MAX_PENDING_IO default =-, tweak 0
+; PCIE_DEVICE_PENDING_INTERRUPTS default =-, tweak 0
+; PCIE_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; POWER_IDLE_TIMEOUT default =-, tweak 0
+; POWER_THROTTLE_POLICY default =-, tweak 0
+; STORAGE_DEVICE_COMPLETION_POLICY default =-, tweak 0
+; STORAGE_DEVICE_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; STORAGE_DEVICE_MAX_PENDING_IO default =-, tweak 0
+; STORAGE_DEVICE_PENDING_INTERRUPTS default =-, tweak 0
+; STORAGE_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; THREAD_SCHEDULER_POLICY default =-, tweak 0
+; TIMER_RESOLUTION default =-, tweak 0
+; USB_DEVICE_MAX_PENDING_INTERRUPTS default =-, tweak 0
+; USB_DEVICE_MAX_PENDING_IO default =-, tweak 0
+; USB_DEVICE_PENDING_INTERRUPTS default =-, tweak 0
+; USB_MAX_PENDING_INTERRUPTS default =-, tweak 0
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]
 "AUDIO_DEVICE_BUFFER_SIZE"="512"
 "AUDIO_DEVICE_MAX_PENDING_INTERRUPTS"="0"
@@ -411,86 +411,87 @@ Windows Registry Editor Version 5.00
 "USB_DEVICE_PENDING_INTERRUPTS"="0"
 "USB_MAX_PENDING_INTERRUPTS"="0"
 
-; 00000023 padrão, =- tweak
+; 00000023 default, =- tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0AABB002-A307-447e-9B81-1D819DF6C6D0}]
 "Pri"=-
 
-; 00000002 padrão, =- tweak
+; 00000002 default, =- tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0c3d5326-944b-4aab-8ad8-fe422a0e50e0}]
 "Pri"=-
 
-; 00000028 padrão, =- tweak
+; 00000028 default, =- tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}]
 "Pri"=-
 
-; 0000001e padrão, =- tweak
+; 0000001e default, =- tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{4569E601-272E-4869-BCAB-1C6C03D7966F}]
 "Pri"=-
 
-; 0000000a padrão, =- tweak
+; 0000000a default, =- tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{8BC6262C-C026-411d-AE3B-7E2F70811A13}]
 "Pri"=-
 
-; 00000001 padrão, =- tweak
+; 00000001 default, =- tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{a4a61b5f-f42c-4d23-b3ab-5c27df9f0f18}]
 "Pri"=-
 
-; 00000000 padrão, =- tweak
+; 00000000 default, =- tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{c04a802d-2205-4910-ae98-3b51e3bb72f2}]
 "Pri"=-
 
-; 00000020 padrão, =- tweak
+; 00000020 default, =- tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{D4140C81-EBBA-4e60-8561-6918290359CD}]
 "Pri"=-
 
-; 00000014 padrão, =- tweak
+; 00000014 default, =- tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{EE1E4F72-E368-46b1-B3C6-5048B11C2DBD}]
 "Pri"=-
 
-; 6 padrão, 1 tweak
+; 6 default, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
 "TimeLimitInSeconds"=dword:00000001
 
-; =- padrão, 5 tweak
+; =- default, 5 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
 "OverlayTestMode"=dword:00000005
 
-; =- padrão, 1 tweak
+; =- default, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
 "KMD_EnableReBarForLegacyASIC"=-
 "KMD_RebarControlMode"=-
 "KMD_RebarControlSupport"=-
 
-; NtfsDisableLastAccessUpdate 80000002 padrão, 80000001 tweak
-; MaximumTunnelEntries =- padrão, 0 tweak
+; NtfsDisableLastAccessUpdate 80000002 default, 80000001 tweak
+; MaximumTunnelEntries =- default, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "NtfsDisableLastAccessUpdate"=dword:80000001
 "LongPathsEnabled"=dword:00000001
 "MaximumTunnelEntries"=dword:00000000
 
-; unpark = tudo abaixo 00000064 padrão, 0 tweak
+; unpark = everything below 00000064 default, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0cc5b647-c1df-4637-891a-dec35c318583]
 "Attributes"=dword:00000002
 "ValueMax"=dword:00000000
 "ValueMin"=dword:00000000
 
-; unpark = tudo abaixo 00000064 padrão, 0 tweak
+; unpark = everything below 00000064 default, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0cc5b647-c1df-4637-891a-dec35c318584]
 "Attributes"=dword:00000002
 "ValueMax"=dword:00000000
 "ValueMin"=dword:00000000
 
-; EnablePrefetch e EnablePrefetcher 3 padrão, 0 tweak
-; EnableSuperfetch =- padrão, 0 tweak, 3 max
-; EnableBootTrace e SfTracingState =- padrão, 0 tweak, 1 on
+; EnablePrefetch e EnablePrefetcher 3 default, 0 tweak
+; EnableSuperfetch =- default, 0 tweak, 3 max
+; EnableBootTrace e SfTracingState =- default, 0 tweak, 1 on
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
 "EnablePrefetch"=dword:00000003
 "EnablePrefetcher"=dword:00000003
 "EnableSuperfetch"=dword:00000003
 "EnableBootTrace"=dword:00000000
 "SfTracingState"=dword:00000000
+"FIPrefetchDelayMs"=dword:00000000
 
-; =- padrão, 1 tweak
+; =- default, 1 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectX]
 "D3D12_ENABLE_UNSAFE_COMMAND_BUFFER_REUSE"=dword:00000001
 "D3D12_ENABLE_RUNTIME_DRIVER_OPTIMIZATIONS"=dword:00000001
@@ -507,96 +508,97 @@ Windows Registry Editor Version 5.00
 "D3D12_MAP_HEAP_ALLOCATIONS"=dword:00000001
 "D3D12_RESIDENCY_MANAGEMENT_ENABLED"=dword:00000001
 
-; SystemResponsiveness 0000000a padrão, 0 ou 1 tweak
-; AlwaysOn e NoLazyMode =- padrão, 1 tweak
+; SystemResponsiveness 0000000a default, 0 or 1 tweak
+; AlwaysOn e NoLazyMode =- default, 1 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
 "AlwaysOn"=dword:00000001
 "NoLazyMode"=dword:00000001
 "NetworkThrottlingIndex"=dword:ffffffff
 "SystemResponsiveness"=dword:00000001
 
-; Tcp1323Opts =- padrão, 3 tweak
+; Tcp1323Opts =- default, 3 tweak
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Tcp1323Opts]
 "DisablePowerManagement"=dword:00000001
 "Tcp1323Opts"=dword:00000003
 
-; =- padrão, 1 tweak
+; =- default, 1 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
 
-; CpuPriorityClass =- padrão, 1 tweak
-; IoPriority e PagePriority =- padrão, 0 tweak
+; CpuPriorityClass =- default, 1 tweak
+; IoPriority e PagePriority =- default, 0 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
 "IoPriority"=dword:00000000
 "PagePriority"=dword:00000000
 
-; CpuPriorityClass =- padrão, 1 tweak
-; IoPriority e PagePriority =- padrão, 0 tweak
+; CpuPriorityClass =- default, 1 tweak
+; IoPriority e PagePriority =- default, 0 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
 "IoPriority"=dword:00000000
 "PagePriority"=dword:00000000
 
-; CpuPriorityClass =- padrão, 4 tweak
-; IoPriority =- padrão, 3 tweak
+; CpuPriorityClass =- default, 4 tweak
+; IoPriority =- default, 3 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000004
 "IoPriority"=dword:00000003
 
-; CpuPriorityClass =- padrão, 4 tweak
-; IoPriority =- padrão, 3 tweak
+; CpuPriorityClass =- default, 4 tweak
+; IoPriority =- default, 3 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000004
 "IoPriority"=dword:00000003
 
-; CpuPriorityClass =- padrão, 4 tweak
-; IoPriority =- padrão, 3 tweak
+; CpuPriorityClass =- default, 4 tweak
+; IoPriority =- default, 3 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000004
 "IoPriority"=dword:00000003
 
-; MaxNumRssCpus =- padrão, 00000008 tweak
-; MaxNumRssThreads =- padrão, 00000010 tweak
-; CheckFwVersion =- padrão, 0 tweak
-; RssBaseCpu =- padrão, 00000004 tweak
+; MaxNumRssCpus =- default, 00000008 tweak
+; MaxNumRssThreads =- default, 00000010 tweak
+; CheckFwVersion =- default, 0 tweak
+; RssBaseCpu =- default, 00000004 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NDIS\Parameters]
 "MaxNumRssCpus"=dword:00000008
 "MaxNumRssThreads"=dword:00000010
 "CheckFwVersion"=dword:00000000
 "RssBaseCpu"=dword:00000004
+"DefaultPnPCapabilities"=dword:00000024
 
-; MaxNumRssCpus =- padrão, 00000008 tweak
-; MaxNumRssThreads =- padrão, 00000010 tweak
+; MaxNumRssCpus =- default, 00000008 tweak
+; MaxNumRssThreads =- default, 00000010 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]
 "MaxNumRssCpus"=dword:00000008
 "MaxNumRssThreads"=dword:00000010
 
-; ProtectionMode e ImageExecutionOptions 1 padrão, 0 tweak
-; AlpcWakePolicy =- padrão, 1 tweak
+; ProtectionMode e ImageExecutionOptions 1 default, 0 tweak
+; AlpcWakePolicy =- default, 1 tweak
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager]
 "ProtectionMode"=dword:00000000
 "AlpcWakePolicy"=dword:00000001
 "ImageExecutionOptions"=dword:00000000
 
-; 0 padrão, 00000010 tweak
+; 0 default, 00000010 tweak
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Executive]
 "AdditionalCriticalWorkerThreads"=dword:00000010
 "AdditionalDelayedWorkerThreads"=dword:00000010
 
-; =- padrão, 00000010 tweak
+; =- default, 00000010 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
 "MaxWorkItems"=dword:00000010
 
-; =- padrão, 00000010 tweak
+; =- default, 00000010 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters]
 "MaxThreads"=dword:00000010
 
-; =- padrão, 00000010 tweak
+; =- default, 00000010 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System]
 "PassiveIntRealTimeWorkerCount"=dword:00000010
 
-; =- padrão, 0 tweak
+; =- default, 0 tweak
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Power]
 "CoalescingTimerInterval"=dword:00000000
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management]
@@ -614,9 +616,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control]
 "CoalescingTimerInterval"=dword:00000000
 
-; D3PCLatency até RMDeepLlEntryLatencyUsec =- padrão, 0 tweak
-; PciLatencyTimerControl =- padrão, 00000020 tweak
-; DisableWriteCombining até UseGpuTimer =- padrão, 1 tweak
+; D3PCLatency up to RMDeepLlEntryLatencyUsec =- default, 0 tweak
+; PciLatencyTimerControl =- default, 00000020 tweak
+; DisableWriteCombining up to UseGpuTimer =- default, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
 "D3PCLatency"=dword:00000000
 "EnableRuntimePowerManagement"=dword:00000000
@@ -634,9 +636,9 @@ Windows Registry Editor Version 5.00
 "PlatformSupportMiracast"=dword:00000001
 "UseGpuTimer"=dword:00000001
 
-; D3PCLatency até RMDeepLlEntryLatencyUsec =- padrão, 0 tweak
-; PciLatencyTimerControl =- padrão, 00000020 tweak
-; LOWLATENCY até TransitionLatency =- padrão, 1 tweak
+; D3PCLatency up to RMDeepLlEntryLatencyUsec =- default, 0 tweak
+; PciLatencyTimerControl =- default, 00000020 tweak
+; LOWLATENCY up to TransitionLatency =- default, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Power]
 "D3PCLatency"=dword:00000000
 "FlTransitionLatency"=dword:00000000
@@ -685,10 +687,10 @@ Windows Registry Editor Version 5.00
 "MonitorRefreshLatencyTolerance"=dword:00000001
 "TransitionLatency"=dword:00000001
 
-; BuffersInFlight =- padrão, 00000080 tweak
-; PciLatencyTimerControl =- padrão, 00000020 tweak
-; AllowDeepCStates até RMDeepLlEntryLatencyUsec =- padrão, 0 tweak
-; DisablePFonDP até UseGpuTimer =- padrão, 1 tweak
+; BuffersInFlight =- default, 00000080 tweak
+; PciLatencyTimerControl =- default, 00000020 tweak
+; AllowDeepCStates up to RMDeepLlEntryLatencyUsec =- default, 0 tweak
+; DisablePFonDP up to UseGpuTimer =- default, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm]
 "BuffersInFlight"=dword:00000080
 "PciLatencyTimerControl"=dword:00000020
@@ -717,17 +719,17 @@ Windows Registry Editor Version 5.00
 "DisablePreemptionOnS3S4"=dword:00000001
 "UseGpuTimer"=dword:00000001
 
-; =- padrão, 1 tweak
+; =- default, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\NVAPI]
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
 
-; RmGpsPsEnablePerCpuCoreDpc =- padrão, 1 tweak
-; DisplayPowerSaving =- padrão, 0 tweak
+; RmGpsPsEnablePerCpuCoreDpc =- default, 1 tweak
+; DisplayPowerSaving =- default, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\Global\NVTweak]
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
 "DisplayPowerSaving"=dword:00000000
 
-; DpiMapIommuContiguous =- padrão, 1 tweak
+; DpiMapIommuContiguous =- default, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
 "TdrLevel"=dword:00000003
 "TdrDelay"=dword:0000000a
@@ -735,9 +737,9 @@ Windows Registry Editor Version 5.00
 "DpiMapIommuContiguous"=dword:00000001
 "DisableCABC"=dword:00000001
 
-; EnableUlps até PP_ThermalAutoThrottlingEnable =- padrão, 0 tweak
-; PreferSystemMemoryContiguous até vrrDeflickerMaxUs =- padrão, 1 tweak
-; PciLatencyTimerControl =- padrão, 00000032 tweak
+; EnableUlps up to PP_ThermalAutoThrottlingEnable =- default, 0 tweak
+; PreferSystemMemoryContiguous up to vrrDeflickerMaxUs =- default, 1 tweak
+; PciLatencyTimerControl =- default, 00000032 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
 "EnableUlps"=dword:00000000
 "DisableBlockWrite"=dword:00000000
@@ -767,8 +769,8 @@ Windows Registry Editor Version 5.00
 "vrrDeflickerMaxUs"=dword:00000001
 "PciLatencyTimerControl"=dword:00000032
 
-; PreferSystemMemoryContiguous até vrrDeflickerMaxUs =- padrão, 1 tweak
-; PciLatencyTimerControl =- padrão, 00000032 tweak
+; PreferSystemMemoryContiguous up to vrrDeflickerMaxUs =- default, 1 tweak
+; PciLatencyTimerControl =- default, 00000032 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001]
 "PreferSystemMemoryContiguous"=dword:00000001
 "D3PCLatency"=dword:00000001
@@ -791,8 +793,8 @@ Windows Registry Editor Version 5.00
 "vrrDeflickerMaxUs"=dword:00000001
 "PciLatencyTimerControl"=dword:00000032
 
-; PreferSystemMemoryContiguous até vrrDeflickerMaxUs =- padrão, 1 tweak
-; PciLatencyTimerControl =- padrão, 00000032 tweak
+; PreferSystemMemoryContiguous up to vrrDeflickerMaxUs =- default, 1 tweak
+; PciLatencyTimerControl =- default, 00000032 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0002]
 "PreferSystemMemoryContiguous"=dword:00000001
 "F1TransitionLatency"=dword:00000001
@@ -814,8 +816,8 @@ Windows Registry Editor Version 5.00
 "vrrDeflickerMaxUs"=dword:00000001
 "PciLatencyTimerControl"=dword:00000032
 
-; PreferSystemMemoryContiguous até vrrDeflickerMaxUs =- padrão, 1 tweak
-; PciLatencyTimerControl =- padrão, 00000032 tweak
+; PreferSystemMemoryContiguous up to vrrDeflickerMaxUs =- default, 1 tweak
+; PciLatencyTimerControl =- default, 00000032 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0003]
 "PreferSystemMemoryContiguous"=dword:00000001
 "D3PCLatency"=dword:00000001
@@ -838,7 +840,7 @@ Windows Registry Editor Version 5.00
 "vrrDeflickerMaxUs"=dword:00000001
 "PciLatencyTimerControl"=dword:00000032
 
-; SvcHostSplitThresholdInKB 01000000 padrão, 04000000 tweak
+; SvcHostSplitThresholdInKB 01000000 default, 04000000 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
 "WaitToKillServiceTimeout"="1000"
 "DisableRemoteScmEndpoints"=dword:00000000
@@ -847,15 +849,15 @@ Windows Registry Editor Version 5.00
 "PortableOperatingSystem"=dword:00000000
 "ServicesPipeTimeout"=dword:00240000
 
-; padrão 1, tweak 0
+; default 1, tweak 0
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
 "TimeLimitInSeconds"=dword:00000000
 
-; padrão 1, tweak 0
+; default 1, tweak 0
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
 "TimeLimitInSeconds"=dword:00000000
 
-; =- padrão, 1 tweak
+; =- default, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
 "IRQ00Priority"=dword:00000001
 "IRQ08Priority"=dword:00000001
@@ -863,7 +865,7 @@ Windows Registry Editor Version 5.00
 "IRQ23Priority"=dword:00000001
 "IRQ8Priority"=dword:00000001
 
-; TimeStampInterval 1 padrão, 0 tweak
+; TimeStampInterval 1 default, 0 tweak
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability]
 "TimeStampInterval"=dword:00000000
 "ShutdownReasonOn"=dword:00000000
@@ -873,7 +875,7 @@ Windows Registry Editor Version 5.00
 "ShutdownReasonOn"=dword:00000000
 "ShutdownReasonUI"=dword:00000000
 
-; =- padrão, 0 tweak
+; =- default, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\iaStor\Parameters\Port0]
 "LPM"=dword:00000000
 "LPMDSTATE"=dword:00000000
@@ -989,6 +991,15 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\pci\Parameters]
 "ASPMOptOut"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Video\{DEB039CC-B704-4F53-B43E-9DD4432FA2E9}\0000]
+"PerfLevelSrc"=dword:00003322
+"PowerMizerEnable"=dword:00000001
+"PowermizerLevel"=dword:00000001
+"PowermizerLevelAC"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters]
+"DisableSmartNameResolution"=dword:00000001
+
 [HKEY_CLASSES_ROOT\Directory\shell\cmdprompt]
 @="Open Command Prompt here"
 "Icon"="cmd.exe"
@@ -1069,6 +1080,11 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.BackupReminder]
 "Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\BackgroundModel\BackgroundAudioPolicy]
+"AllowHeadlessExecution"=dword:00000001
+"AllowMultipleBackgroundTasks"=dword:00000001
+"InactivityTimeoutMs"=dword:FFFFFFFF
 
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Typelib\{8cec5860-07a1-11d9-b15e-000d56bfe6ee}\1.0\0\win32]
 @=""
@@ -1206,7 +1222,7 @@ Windows Registry Editor Version 5.00
 "LogLevel"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Peernet]
-"Disabled"=dword:00000000
+"Disabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\DeviceGuard]
 "EnableVirtualizationBasedSecurity"=dword:00000000
@@ -2646,6 +2662,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows]
 "ShutdownWarningDialogTimeout"=dword:00000001
+"DesktopHeapLogging"=dword:00000000
+"DwmInputUsesIoCompletionPort"=dword:00000000
+"EnableDwmInputProcessing"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Control Panel\Desktop]
 "EnablePerProcessSystemDPI"=dword:00000001
@@ -2789,7 +2808,7 @@ Windows Registry Editor Version 5.00
 "ConsentPromptBehaviorUser"=dword:00000001
 "HideFastUserSwitching"=dword:00000001
 "TypeOfAdminApprovalMode"=dword:00000001
-"VerboseStatus"=dword:00000000
+"VerboseStatus"=dword:00000001
 "PromptOnSecureDesktop"=dword:00000000
 "EnableLUA"=dword:00000000
 "DisableAutomaticRestartSignOn"=dword:00000001
@@ -4630,396 +4649,396 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NMS.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NMS.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4_x64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4_x64.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wow.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wow.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TheForest.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TheForest.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\QuakeChampions.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\QuakeChampions.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\KFGame.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\KFGame.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTAIV.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTAIV.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Launcher.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Launcher.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarService.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarService.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarErrorHandler.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarErrorHandler.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SocialClubHelper.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SocialClubHelper.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlayGTAIV.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlayGTAIV.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forzahorizon5.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forzahorizon5.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\amtrucks.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\amtrucks.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cs2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cs2.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hl2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hl2.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Warframe.x64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Warframe.x64.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfWarships64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfWarships64.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis64.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Ghostrunner-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Ghostrunner-Win64-Shipping.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\left4dead2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\left4dead2.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadByDaylight-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadByDaylight-Win64-Shipping.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DH-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DH-Win64-Shipping.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LANoire.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LANoire.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Dishonored.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Dishonored.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorld.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorld.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorldLauncher.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorldLauncher.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HaloInfinite.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HaloInfinite.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Overwatch.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Overwatch.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LOSTARK.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LOSTARK.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfTanks.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfTanks.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Paladins.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Paladins.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Carmageddon_Max_Damage.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Carmageddon_Max_Damage.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Raft.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Raft.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tiger-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tiger-Win64-Shipping.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HouseFlipper.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HouseFlipper.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tlou-i.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tlou-i.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cyberpunk2077.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cyberpunk2077.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RDR2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RDR2.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tropico6.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tropico6.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GSS2-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GSS2-Win64-Shipping.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlanetCoaster.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlanetCoaster.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cities.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cities.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MadMax.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MadMax.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BorderlandsGOTY.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BorderlandsGOTY.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\VRising.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\VRising.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TPH.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TPH.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dota2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dota2.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SkyrimSE.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SkyrimSE.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ffmpeg.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ffmpeg.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Topaz Video AI.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Topaz Video AI.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\avc_enhance_video.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\avc_enhance_video.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\bf1.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\bf1.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BEService.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BEService.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame_x64_rwdi.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame_x64_rwdi.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\EasyAntiCheat.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\EasyAntiCheat.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout4.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout4.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NarakaBladepoint.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NarakaBladepoint.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NeacClient.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NeacClient.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout76.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout76.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Gw2-64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Gw2-64.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Starfield.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Starfield.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CivilizationVI_DX12.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CivilizationVI_DX12.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forza_gaming.desktop.x64_release_final.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forza_gaming.desktop.x64_release_final.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crossout.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crossout.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BF2042.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BF2042.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AlanWake2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AlanWake2.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Discovery.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Discovery.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\re8.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\re8.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect1.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect1.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WowClassic.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WowClassic.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WolfNewOrder_x64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WolfNewOrder_x64.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\aces.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\aces.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AoE3DE_s.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AoE3DE_s.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod22-cod.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod22-cod.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NeedForSpeedUnbound.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NeedForSpeedUnbound.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tf_win64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tf_win64.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping_EAC_EOS.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping_EAC_EOS.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex_dx12.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex_dx12.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SonsOfTheForest.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SonsOfTheForest.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Back4Blood.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Back4Blood.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\World of Warcraft Launcher.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\World of Warcraft Launcher.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SW3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SW3.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel-Win64-Shipping.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MarvelRivals_Launcher.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MarvelRivals_Launcher.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame_BE.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame_BE.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Obsidian.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Obsidian.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5_Enhanced.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000003
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5_Enhanced.exe\PerfOptions]
 "IoPriority"=dword:00000003
+"UseLargePages"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\DirectX\UserGpuPreferences]
 "C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_retail_\\Wow.exe"="GpuPreference=2;"
