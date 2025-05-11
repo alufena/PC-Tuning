@@ -294,6 +294,7 @@ user_pref("layers.acceleration.disabled", true);
 user_pref("media.hardware-video-decoding.enabled", false);
 user_pref("permissions.default.geo", 0);
 user_pref("browser.download.autohideButton", false);
+user_pref("accessibility.browsewithcaret_shortcut.enabled", false);
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
