@@ -508,7 +508,7 @@ Windows Registry Editor Version 5.00
 "AlwaysOn"=dword:00000001
 "NoLazyMode"=dword:00000001
 "NetworkThrottlingIndex"=dword:ffffffff
-"SystemResponsiveness"=dword:00000001
+"SystemResponsiveness"=dword:00000000
 
 ; Tcp1323Opts =- default, 3 tweak
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Tcp1323Opts]
@@ -954,6 +954,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EnhancedStorageDevices]
 "TCGSecurityActivationDisabled"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting]
+"Value"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\LeapSecondInformation]
 "Enabled"=dword:00000000
 
@@ -978,6 +981,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System]
 "CountOperations"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\System\ControlSet001\Control\Network\SharedAccessConnection]
+"EnableControl"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\fssProv]
 "EncryptProtocol"=dword:00000000
@@ -1171,6 +1177,9 @@ Windows Registry Editor Version 5.00
 "DisableWindowsSpotlightOnSettings"=dword:00000001
 "DisableThirdPartySuggestions"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WorkplaceJoin]
+"BlockAADWorkplaceJoin"=dword:00000001
+
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\creative]
 "Intent"=dword:00000000
 
@@ -1303,6 +1312,9 @@ Windows Registry Editor Version 5.00
 "EnableTextPrediction"=dword:00000000
 "EnablePredictionSpaceInsertion"=dword:00000000
 "EnableDoubleTapSpace"=dword:00000000
+"EnableAutoShiftEngage"=dword:00000000
+"EnableKeyAudioFeedback"=dword:00000000
+"IsKeyBackgroundEnabled"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Control Panel\International]
 "TurnOffAutocorrectMisspelledWords"=dword:00000001
@@ -2310,6 +2322,7 @@ Windows Registry Editor Version 5.00
 "TaskbarAnimations"=dword:00000000
 "AutoSearch"=dword:00000000
 "SearchBoxVisibleInTouchImprovement"=dword:00000001
+"Start_Layout"=dword:00000001
 
 [HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
 "PaddedBorderWidth"="0"
@@ -2524,6 +2537,7 @@ Windows Registry Editor Version 5.00
 "EnableAutoEnhanceDuringPlayback"=dword:00000000
 "EnableHDRForPlayback"=dword:00000001
 "DisableHDROnBattery"=dword:00000000
+"VideoQualityOnBattery"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\BitLocker]
 "PreventDeviceEncryption"=dword:00000001
@@ -2617,6 +2631,11 @@ Windows Registry Editor Version 5.00
 "ExcludeWUDriversInQualityUpdate"=dword:00000001
 "AllowMUUpdateService"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"NoAutoUpdate"=dword:00000001
+"AUOptions"=dword:00000002
+"AutoInstallMinorUpdates"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\PolicyState]
 "ExcludeWUDrivers"=dword:00000001
 
@@ -2627,7 +2646,7 @@ Windows Registry Editor Version 5.00
 "Model"="model"
 
 [HKEY_CURRENT_USER\Control Panel\Desktop]
-"Win8DpiScaling"=dword:00000000
+"Win8DpiScaling"=dword:00000001
 "LogPixels"=dword:00000060
 "JPEGImportQuality"=dword:00000064
 "AutoEndTasks"="1"
@@ -2688,6 +2707,7 @@ Windows Registry Editor Version 5.00
 "SIDUpdatedOnLibraries"=dword:00000000
 "ShowRecent"=dword:00000000
 "ShowFrequent"=dword:00000000
+"ShowCloudFilesInQuickAccess"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\StandardProfile]
 "EnableFirewall"=dword:00000000
@@ -2884,6 +2904,9 @@ Windows Registry Editor Version 5.00
 "AlwaysHibernateThumbnails"=dword:00000000
 "AnimationAttributionEnabled"=dword:00000000
 "AnimationAttributionHashingEnabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SmartActionPlatform\SmartClipboard]
+"Disabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowSyncMySettings]
 "value"=dword:00000000
@@ -3089,6 +3112,7 @@ Windows Registry Editor Version 5.00
 "WindowsWelcomeCenter"=-
 "ctfmon.exe"=-
 "OneDrive"=-
+"OneDriveSetup"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Spynet]
 "SubmitSamplesConsent"=dword:00000002
@@ -3111,8 +3135,8 @@ Windows Registry Editor Version 5.00
 "AutoCorrectVisualDelay"=dword:00000000
 "AutoswitchAfterEmoji"=dword:00000000
 "ContactPenalty"=dword:00000000
-"DictationEnabled"=dword:00000001
-"DisablePersonalization"=dword:00000001
+"DictationEnabled"=dword:00000000
+"DisablePersonalization"=dword:00000000
 "EmojiSuggestion"=dword:00000000
 "EmojiTranslation"=dword:00000001
 "EnableHwkbAutocorrection"=dword:00000000
@@ -3126,7 +3150,7 @@ Windows Registry Editor Version 5.00
 "HwkbInlinePredictionAlwaysOnList"=-
 "HwkbLayoutMappingTemplate"=-
 "InsightsEnabled"=dword:00000000
-"IsVoiceTypingKeyEnabled"=dword:00000001
+"IsVoiceTypingKeyEnabled"=dword:00000000
 "KeyboardMode"=dword:00000000
 "LMDataLoggerEnabled"=dword:00000000
 "MaxCorrections"=dword:00000000
@@ -3153,10 +3177,10 @@ Windows Registry Editor Version 5.00
 "AutoCorrectVisualDelay"=dword:00000000
 "AutoswitchAfterEmoji"=dword:00000000
 "ContactPenalty"=dword:00000000
-"DictationEnabled"=dword:00000001
-"DisablePersonalization"=dword:00000001
+"DictationEnabled"=dword:00000000
+"DisablePersonalization"=dword:00000000
 "EmojiSuggestion"=dword:00000000
-"EmojiTranslation"=dword:00000001
+"EmojiTranslation"=dword:00000000
 "EnableHwkbAutocorrection"=dword:00000000
 "EnableHwkbMode"=dword:00000000
 "EnableHwkbTextPrediction"=dword:00000000
@@ -3168,7 +3192,7 @@ Windows Registry Editor Version 5.00
 "HwkbInlinePredictionAlwaysOnList"=-
 "HwkbLayoutMappingTemplate"=-
 "InsightsEnabled"=dword:00000000
-"IsVoiceTypingKeyEnabled"=dword:00000001
+"IsVoiceTypingKeyEnabled"=dword:00000000
 "KeyboardMode"=dword:00000000
 "LMDataLoggerEnabled"=dword:00000000
 "MaxCorrections"=dword:00000000
@@ -3195,10 +3219,10 @@ Windows Registry Editor Version 5.00
 "AutoCorrectVisualDelay"=dword:00000000
 "AutoswitchAfterEmoji"=dword:00000000
 "ContactPenalty"=dword:00000000
-"DictationEnabled"=dword:00000001
-"DisablePersonalization"=dword:00000001
+"DictationEnabled"=dword:00000000
+"DisablePersonalization"=dword:00000000
 "EmojiSuggestion"=dword:00000000
-"EmojiTranslation"=dword:00000001
+"EmojiTranslation"=dword:00000000
 "EnableHwkbAutocorrection"=dword:00000000
 "EnableHwkbMode"=dword:00000000
 "EnableHwkbTextPrediction"=dword:00000000
@@ -3787,6 +3811,14 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Lighting]
 "AmbientLightingEnabled"=dword:00000000
 "EffectType"=dword:00000000
+"ControlledByForegroundApp"=dword:00000000
+"UseSystemAccentColor"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Windows]
+"LegacyDefaultPrinterMode"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\TabletTip\EmbeddedInkControl]
+"EnableInkingWithTouch"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
 "EnableDynamicContentInWSB"=dword:00000000
@@ -3810,6 +3842,15 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Speech_OneCore\Settings\VoiceActivation\Microsoft.549981C3F5F10_8wekyb3d8bbwe!App]
 "AgentActivationEnabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Settings\VoiceActivation\UserPreferenceForAllApps]
+"AgentActivationEnabled"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Speech_OneCore\Settings\VoiceActivation\UserPreferenceForAllApps]
+"AgentActivationLastUsed"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\bluetoothSync]
+"Value"="Deny"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowCortana]
 "value"=dword:00000000
@@ -3926,6 +3967,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Control Panel\Accessibility]
 "DynamicScrollbars"=dword:00000000
+"Sound on Activation"=dword:00000000
+"Warning Sounds"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Accessibility]
 "Configuration"=""
@@ -3939,6 +3982,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Control Panel\Accessibility\SlateLaunch]
 "LaunchAT"=dword:00000000
+"ATapp"=""
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\OneDrive]
 "DisableFileSyncNGSC"=dword:00000001
@@ -3968,10 +4012,14 @@ Windows Registry Editor Version 5.00
 "TimeToMaximumSpeed"="3000"
 
 [HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys]
-"Flags"=dword:506
+"Flags"="506"
 
 [HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response]
-"Flags"=dword:122
+"AutoRepeatDelay"="200"
+"AutoRepeatRate"="6"
+"DelayBeforeAcceptance"="0"
+"Flags"="58"
+"BounceTime"="0"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons]
 "29"="C:\\Windows\\blank.ico"
@@ -3986,6 +4034,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start]
 "ShowRecentList"=dword:00000000
+"StartAllPinsList"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Biometrics\FacialFeatures]
 "EnhancedAntiSpoofing"=-
@@ -4030,6 +4079,8 @@ Windows Registry Editor Version 5.00
 "EchoToggleKeys"=dword:00000000
 "EchoNavigationKeys"=dword:00000000
 "EchoModifierKeys"=dword:00000000
+"DuckAudio"=dword:00000000
+"ScriptingEnabled"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Narrator]
 "AutoreadAdvancedInfo"=dword:00000000
@@ -4038,12 +4089,15 @@ Windows Registry Editor Version 5.00
 "IntonationPause"=dword:00000000
 "PlayAudioCues"=dword:00000000
 "ReadHints"=dword:00000000
+"NarratorCursorHighlight"=dword:00000000
+"CoupleNarratorCursorKeyboard"=dword:00000000
+"ErrorNotificationType"=dword:00000000
+"EchoChars"=dword:00000000
+"EchoWords"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Narrator\NarratorHome]
 "AutoStart"=dword:00000000
-
-[HKEY_CURRENT_USER\Software\Microsoft\Narrator\NoRoam]
-"WinEnterLaunchEnabled"=dword:00000000
+"MinimizeType"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global]
 "{41FCC608-8496-4DEF-B43E-7D9BD675A6FF}"=dword:00000001
