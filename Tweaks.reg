@@ -53,7 +53,6 @@ Windows Registry Editor Version 5.00
 "Priority"=dword:00000002
 "Scheduling Category"="Medium"
 "SFIO Priority"="High"
-"Latency Sensitive"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing]
 "Affinity"=dword:00000000
@@ -74,47 +73,43 @@ Windows Registry Editor Version 5.00
 "Priority"=dword:00000002
 "Scheduling Category"="High"
 "SFIO Priority"="High"
-"Latency Sensitive"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Capture]
-"Affinity"=dword:00000000
-"Clock Rate"=dword:00002710
-"Background Only"="False"
-"GPU Priority"=dword:00000008
-"Priority"=dword:00000002
 "Scheduling Category"="Medium"
 "SFIO Priority"="Normal"
-"Latency Sensitive"=-
+"Background Only"="True"
+"Priority"=dword:00000005
+"Clock Rate"=dword:00002710
+"GPU Priority"=dword:00000008
+"Affinity"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Distribution]
-"Affinity"=dword:00000000
-"Clock Rate"=dword:00002710
-"Background Only"="False"
-"GPU Priority"=dword:00000008
-"Priority"=dword:00000002
 "Scheduling Category"="Medium"
 "SFIO Priority"="Normal"
-"Latency Sensitive"=-
+"Background Only"="True"
+"Priority"=dword:00000004
+"Clock Rate"=dword:00002710
+"GPU Priority"=dword:00000008
+"Affinity"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Playback]
-"Affinity"=dword:00000000
-"Clock Rate"=dword:00002710
-"Background Only"="False"
-"GPU Priority"=dword:00000008
-"Priority"=dword:00000002
 "Scheduling Category"="Medium"
 "SFIO Priority"="Normal"
-"Latency Sensitive"=-
+"Background Only"="False"
+"Priority"=dword:00000003
+"BackgroundPriority"=dword:00000004
+"Clock Rate"=dword:00002710
+"GPU Priority"=dword:00000008
+"Affinity"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Window Manager]
 "Affinity"=dword:00000000
 "Clock Rate"=dword:00002710
-"Background Only"="False"
+"Background Only"="True"
 "GPU Priority"=dword:00000008
-"Priority"=dword:00000002
+"Priority"=dword:00000005
 "Scheduling Category"="Medium"
 "SFIO Priority"="Normal"
-"Latency Sensitive"=-
 
 ; GameDVR_DSEBehavior =- default, 2 tweak
 ; GameDVR_DXGIHonorFSEWindowsCompatible 0 default, 1 tweak
@@ -2783,6 +2778,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender Security Center\Notifications]
 "DisableNotifications"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Systray]
+"HideSystray"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.SecurityAndMaintenance]
 "Enabled"=dword:00000000
