@@ -1875,7 +1875,6 @@ Windows Registry Editor Version 5.00
 "PreventLiveTileDataCollection"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
 "AlternateErrorPagesEnabled"=dword:00000000
 "AutofillAddressEnabled"=dword:00000000
 "AutofillCreditCardEnabled"=dword:00000000
@@ -2032,7 +2031,7 @@ Windows Registry Editor Version 5.00
 "HeadlessMode"=dword:00000002
 "HideWebStoreIcon"=dword:00000001
 "HistoryClustersVisible"=dword:00000000
-"HttpsUpgradesEnabled"=dword:00000000
+"HttpsUpgradesEnabled"=dword:00000001
 "IntensiveWakeUpThrottlingEnabled"=dword:00000001
 "IntranetRedirectBehavior"=dword:00000002
 "KeyboardFocusableScrollersEnabled"=dword:00000000
