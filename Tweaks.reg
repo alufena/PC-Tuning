@@ -995,6 +995,35 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters]
 "DisableSmartNameResolution"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
+"KiClockTimerPerCpu"=dword:00000001
+"KiClockTimerHighLatency"=dword:00000000
+"KiClockTimerAlwaysOnPresent"=dword:00000001
+"ClockTimerPerCpu"=dword:00000001
+"ClockTimerHighLatency"=dword:00000000
+"ClockTimerAlwaysOnPresent"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\DWM\Schedule]
+"WindowedGsyncGeforceFlag"=dword:00000000
+"FrameRateMin"=dword:ffffffff
+"IgnoreDisplayChangeDuration"=dword:00000000
+"LingerInterval"=dword:00000000
+"LicenseInterval"=dword:00000000
+"RestrictedNvcplUIMode"=dword:00000000
+"DisableSpecificPopups"=dword:00000001
+"DisableExpirationPopups"=dword:00000001
+"EnableForceIgpuDgpuFromUI"=dword:00000001
+"HideXGpuTrayIcon"=dword:00000001
+"ShowTrayIcon"=dword:00000000
+"HideBalloonNotification"=dword:00000001
+"PerformanceState"=dword:00000000
+"Gc6State"=dword:00000000
+"FrameDisplayBaseNegOffsetNS"=dword:ffe17b80
+"FrameDisplayResDivValue"=dword:00000001
+"IgnoreNodeLocked"=dword:00000001
+"IgnoreSP"=dword:00000001
+"DontAskAgain"=dword:00000001
+
 [HKEY_CLASSES_ROOT\Directory\shell\cmdprompt]
 @="Open Command Prompt here"
 "Icon"="cmd.exe"
@@ -2261,6 +2290,7 @@ Windows Registry Editor Version 5.00
 "SuperWetEnabled"=dword:00000000
 "AnimationAttributionEnabled"=dword:00000000
 "AnimationAttributionHashingEnabled"=dword:00000000
+"OverlayMinFPS"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Speech]
 "AllowSpeechModelUpdate"=dword:00000000
