@@ -272,7 +272,8 @@ reg delete "HKEY_CURRENT_USER\Software\Spoon" /f
 ::bcdedit /deletevalue MSI
 ::bcdedit /deletevalue onecpu
 bcdedit /set useplatformclock false
-bcdedit /set disabledynamictick yes
+bcdedit /set disabledynamictick Yes
+::bcdedit /set disabledynamictick No
 ::bcdedit /set useplatformtick No
 bcdedit /set useplatformtick Yes
 bcdedit /set uselegacyapicmode no
@@ -319,7 +320,7 @@ taskkill /f /t /im MoUsoCoreWorker.exe
 taskkill /f /t /im WMIADAP.exe
 taskkill /f /t /im UserOOBEBroker.exe
 taskkill /f /t /im RuntimeBroker.exe
-bcdedit /set nx AlwaysOf
+bcdedit /set nx AlwaysOff
 powershell -Command "Set-ProcessMitigation -System -Disable DEP"
 powershell -Command "Set-ProcessMitigation -System -Disable EmulateAtlThunks"
 bcdedit /deletevalue nointegritychecks
@@ -337,6 +338,8 @@ taskkill /f /t /im SearchApp.exe
 taskkill /f /t /im node.exe
 taskkill /f /t /im powershell.exe
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'High precision event timer' | Disable-PnpDevice -Confirm:$false"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'Microsoft Device Association Root Enumerator' -ErrorAction SilentlyContinue | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$devices = Get-PnpDevice | Where-Object {$_.FriendlyName -like '*Device Association*'}; foreach ($device in $devices) { try { pnputil /remove-device $device.InstanceId; Start-Sleep -Seconds 1; pnputil /remove-device $device.InstanceId /force; } catch {} }"
 timeout /t 8 /nobreak
 taskkill /f /t /im conhost.exe
 taskkill /f /t /im cmd.exe
