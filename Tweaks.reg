@@ -756,6 +756,7 @@ Windows Registry Editor Version 5.00
 "vrrCursorMarginUs"=dword:00000001
 "vrrDeflickerMarginUs"=dword:00000001
 "vrrDeflickerMaxUs"=dword:00000001
+"RMDisableNoncontigAlloc"=dword:00000001
 "PciLatencyTimerControl"=dword:00000032
 
 ; PreferSystemMemoryContiguous up to vrrDeflickerMaxUs =- default, 1 tweak
@@ -780,6 +781,7 @@ Windows Registry Editor Version 5.00
 "vrrCursorMarginUs"=dword:00000001
 "vrrDeflickerMarginUs"=dword:00000001
 "vrrDeflickerMaxUs"=dword:00000001
+"RMDisableNoncontigAlloc"=dword:00000001
 "PciLatencyTimerControl"=dword:00000032
 
 ; PreferSystemMemoryContiguous up to vrrDeflickerMaxUs =- default, 1 tweak
@@ -803,6 +805,7 @@ Windows Registry Editor Version 5.00
 "vrrCursorMarginUs"=dword:00000001
 "vrrDeflickerMarginUs"=dword:00000001
 "vrrDeflickerMaxUs"=dword:00000001
+"RMDisableNoncontigAlloc"=dword:00000001
 "PciLatencyTimerControl"=dword:00000032
 
 ; PreferSystemMemoryContiguous up to vrrDeflickerMaxUs =- default, 1 tweak
@@ -827,6 +830,7 @@ Windows Registry Editor Version 5.00
 "vrrCursorMarginUs"=dword:00000001
 "vrrDeflickerMarginUs"=dword:00000001
 "vrrDeflickerMaxUs"=dword:00000001
+"RMDisableNoncontigAlloc"=dword:00000001
 "PciLatencyTimerControl"=dword:00000032
 
 ; SvcHostSplitThresholdInKB 01000000 default, 04000000 tweak
@@ -2950,6 +2954,14 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WlanSvc\AnqpCache]
 "OsuRegistrationStatus"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig]
+"BypassCPUCheck"=dword:00000001
+"BypassRAMCheck"=dword:00000001
+"BypassTPMCheck"=dword:00000001
+"BypassSecureBootCheck"=dword:00000001
+"BypassStorageCheck"=dword:00000001
+"BypassDiskCheck"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\NvCache]
 "OptimizeBootAndResume"=dword:00000000
