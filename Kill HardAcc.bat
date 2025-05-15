@@ -271,6 +271,11 @@ reg delete "HKEY_CURRENT_USER\Software\Spoon" /f
 ::bcdedit /deletevalue configaccesspolicy
 ::bcdedit /deletevalue MSI
 ::bcdedit /deletevalue onecpu
+::bcdedit /deletevalue firstmegabytepolicy
+::bcdedit /deletevalue avoidlowmemory
+::bcdedit /deletevalue nolowmem
+::bcdedit /deletevalue linearaddress57
+::bcdedit /deletevalue increaseuserva
 bcdedit /set useplatformclock false
 bcdedit /set disabledynamictick Yes
 ::bcdedit /set disabledynamictick No
@@ -282,8 +287,8 @@ bcdedit /set x2apicpolicy Enable
 bcdedit /set hypervisorlaunchtype off
 ::bcdedit /set tscsyncpolicy legacy
 bcdedit /set tscsyncpolicy enhanced
-bcdedit /set usephysicaldestination no
-bcdedit /set usefirmwarepcisettings no
+bcdedit /set usephysicaldestination No
+bcdedit /set usefirmwarepcisettings No
 bcdedit /set tpmbootentropy ForceDisable
 bcdedit /set bootux Disabled
 bcdedit /set vsmlaunchtype off
@@ -301,6 +306,11 @@ bcdedit /set maxproc yes
 bcdedit /set configaccesspolicy Default
 bcdedit /set MSI Default
 bcdedit /set onecpu No
+bcdedit /set firstmegabytepolicy UseAll
+bcdedit /set avoidlowmemory 0x8000000
+bcdedit /set nolowmem Yes
+bcdedit /set linearaddress57 OptOut
+bcdedit /set increaseuserva 268435328
 %windir%\system32\lodctr /R
 %windir%\sysWOW64\lodctr /R
 lodctr /e:PerfOS
@@ -321,8 +331,7 @@ taskkill /f /t /im WMIADAP.exe
 taskkill /f /t /im UserOOBEBroker.exe
 taskkill /f /t /im RuntimeBroker.exe
 bcdedit /set nx AlwaysOff
-powershell -Command "Set-ProcessMitigation -System -Disable DEP"
-powershell -Command "Set-ProcessMitigation -System -Disable EmulateAtlThunks"
+powershell -Command "Set-ProcessMitigation -System -Disable DEP,EmulateAtlThunks,ForceRelocateImages,RequireInfo,BottomUp,HighEntropy,StrictHandle,DisableWin32kSystemCalls,AuditSystemCall,DisableExtensionPoints,BlockDynamicCode,AllowThreadsToOptOut,AuditDynamicCode,CFG,SuppressExports,StrictCFG,MicrosoftSignedOnly,AllowStoreSignedBinaries,AuditMicrosoftSigned,AuditStoreSigned,EnforceModuleDependencySigning,DisableNonSystemFonts,AuditFont,BlockRemoteImageLoads,BlockLowLabelImageLoads,PreferSystem32,AuditRemoteImageLoads,AuditLowLabelImageLoads,AuditPreferSystem32,SEHOP,AuditSEHOP,SEHOPTelemetry,TerminateOnError"
 bcdedit /deletevalue nointegritychecks
 bcdedit /deletevalue loadoptions
 bcdedit /debug off
