@@ -891,17 +891,18 @@ Windows Registry Editor Version 5.00
 "DIPM"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power]
+"AwayModeEnabled"=dword:00000000
+"CoreParkingDisabled"=dword:00000000
 "CsEnabled"=dword:00000000
+"DisableSensorWatchdog"=dword:00000001
 "EcoMode"=dword:00000000
 "EcoModeState"=dword:00000002
+"EnergySaverState"=dword:00000002
+"EventProcessorEnabled"=dword:00000000
+"ExitLatency"=dword:00000001
+"ExitLatencyCheckEnabled"=dword:00000001
 "HibernateEnabled"=dword:00000000
 "HibernateEnabledDefault"=dword:00000000
-"PlatformAoAcOverride"=dword:00000000
-"EnergySaverState"=dword:00000002
-"PowerThrottling"=dword:00000000
-"ExitLatency"=dword:00000001
-"DisableSensorWatchdog"=dword:00000001
-"ExitLatencyCheckEnabled"=dword:00000001
 "Latency"=dword:00000001
 "LatencyToleranceDefault"=dword:00000001
 "LatencyToleranceFSVP"=dword:00000001
@@ -910,11 +911,10 @@ Windows Registry Editor Version 5.00
 "LatencyToleranceScreenOffIR"=dword:00000001
 "LatencyToleranceVSyncEnabled"=dword:000000001
 "MfBufferingThreshold"=dword:00000000
+"PlatformAoAcOverride"=dword:00000000
+"PowerThrottling"=dword:00000000
 "QosManagesIdleProcessors"=dword:00000000
 "SleepReliabilityDetailedDiagnostics"=dword:00000000
-"EventProcessorEnabled"=dword:00000000
-"AwayModeEnabled"=dword:00000000
-"CoreParkingDisabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\HARDWARE\DEVICEMAP\ACPI\HPET]
 "Enable"=dword:00000000
@@ -959,10 +959,10 @@ Windows Registry Editor Version 5.00
 "NVMeDisablePerfThrottling"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\StorPort]
-"TelemetryPerformanceEnabled"=dword:00000000
-"TelemetryErrorDataEnabled"=dword:00000000
-"TelemetryDeviceHealthEnabled"=dword:00000000
 "HmbAllocationPolicy"=dword:00000000
+"TelemetryDeviceHealthEnabled"=dword:00000000
+"TelemetryErrorDataEnabled"=dword:00000000
+"TelemetryPerformanceEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SCMConfig]
 "EnableSvchostMitigationPolicy"=hex(b):00,00,00,00,00,00,00,00
@@ -996,33 +996,33 @@ Windows Registry Editor Version 5.00
 "DisableSmartNameResolution"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
-"KiClockTimerPerCpu"=dword:00000001
-"KiClockTimerHighLatency"=dword:00000000
-"KiClockTimerAlwaysOnPresent"=dword:00000001
-"ClockTimerPerCpu"=dword:00000001
-"ClockTimerHighLatency"=dword:00000000
 "ClockTimerAlwaysOnPresent"=dword:00000001
+"ClockTimerHighLatency"=dword:00000000
+"ClockTimerPerCpu"=dword:00000001
+"KiClockTimerAlwaysOnPresent"=dword:00000001
+"KiClockTimerHighLatency"=dword:00000000
+"KiClockTimerPerCpu"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\DWM\Schedule]
-"WindowedGsyncGeforceFlag"=dword:00000000
-"FrameRateMin"=dword:ffffffff
-"IgnoreDisplayChangeDuration"=dword:00000000
-"LingerInterval"=dword:00000000
-"LicenseInterval"=dword:00000000
-"RestrictedNvcplUIMode"=dword:00000000
-"DisableSpecificPopups"=dword:00000001
 "DisableExpirationPopups"=dword:00000001
+"DisableSpecificPopups"=dword:00000001
+"DontAskAgain"=dword:00000001
 "EnableForceIgpuDgpuFromUI"=dword:00000001
-"HideXGpuTrayIcon"=dword:00000001
-"ShowTrayIcon"=dword:00000000
-"HideBalloonNotification"=dword:00000001
-"PerformanceState"=dword:00000000
-"Gc6State"=dword:00000000
 "FrameDisplayBaseNegOffsetNS"=dword:ffe17b80
 "FrameDisplayResDivValue"=dword:00000001
+"FrameRateMin"=dword:ffffffff
+"Gc6State"=dword:00000000
+"HideBalloonNotification"=dword:00000001
+"HideXGpuTrayIcon"=dword:00000001
+"IgnoreDisplayChangeDuration"=dword:00000000
 "IgnoreNodeLocked"=dword:00000001
 "IgnoreSP"=dword:00000001
-"DontAskAgain"=dword:00000001
+"LicenseInterval"=dword:00000000
+"LingerInterval"=dword:00000000
+"PerformanceState"=dword:00000000
+"RestrictedNvcplUIMode"=dword:00000000
+"ShowTrayIcon"=dword:00000000
+"WindowedGsyncGeforceFlag"=dword:00000000
 
 [HKEY_CLASSES_ROOT\Directory\shell\cmdprompt]
 @="Open Command Prompt here"
@@ -1082,13 +1082,13 @@ Windows Registry Editor Version 5.00
 "DumpFolder"="C:\\dumps"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
-"AutoRestartShell"=dword:00000001
-"WinStationsDisabled"="1"
 "AllowMultipleTSSessions"=dword:00000000
-"SyncForegroundPolicy"=dword:00000000
+"AutoRestartShell"=dword:00000001
 "DisableBkGndGroupPolicy"=dword:00000001
 "EnableFirstLogonAnimation"=dword:00000000
 "PowerdownAfterShutdown"="1"
+"SyncForegroundPolicy"=dword:00000000
+"WinStationsDisabled"="1"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\BamThrottling]
 "DisableWindowHinting"=dword:00000001
@@ -1117,14 +1117,14 @@ Windows Registry Editor Version 5.00
 @=""
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lock Screen\Creative]
-"LockImageFlags"=dword:00000000
 "CreativeId"="0"
-"PortraitAssetPath"="0"
-"LandscapeAssetPath"="0"
-"PlacementId"="0"
-"ImpressionToken"="0"
-"HotspotImageFolderPath"="0"
 "CreativeJson"="0"
+"HotspotImageFolderPath"="0"
+"ImpressionToken"="0"
+"LandscapeAssetPath"="0"
+"LockImageFlags"=dword:00000000
+"PlacementId"="0"
+"PortraitAssetPath"="0"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\OOBE]
 "DisablePrivacyExperience"=dword:00000001
@@ -1169,37 +1169,37 @@ Windows Registry Editor Version 5.00
 "SkipCloudDownload"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System]
-"EnableActivityFeed"=dword:00000000
-"EnableSmartScreen"=dword:00000000
-"ShellSmartScreenLevel"=-
-"UploadUserActivities"=dword:00000000
-"PublishUserActivities"=dword:00000000
-"HiberbootEnabled"=dword:00000000
 "AllowClipboardHistory"=dword:00000000
 "AllowCrossDeviceClipboard"=dword:00000000
-"EnableCdp"=dword:00000000
+"AllowDomainDelayLock"=dword:00000000
+"DisableAcrylicBackgroundOnLogon"=dword:00000001
 "DisableAIDataAnalysis"=dword:00000001
 "DisableAIPoweredFeature"=dword:00000001
 "DisableHHDEP"=dword:00000001
-"AllowDomainDelayLock"=dword:00000000
-"RunAsPPL"=dword:00000000
+"EnableActivityFeed"=dword:00000000
+"EnableCdp"=dword:00000000
+"EnableSmartScreen"=dword:00000000
+"HiberbootEnabled"=dword:00000000
 "NoLocalPasswordResetQuestions"=dword:00000001
-"DisableAcrylicBackgroundOnLogon"=dword:00000001
+"PublishUserActivities"=dword:00000000
+"RunAsPPL"=dword:00000000
+"ShellSmartScreenLevel"=-
 "SlowLinkUIEnabled"=dword:00000000
+"UploadUserActivities"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
+"ConfigureWindowsSpotlight"=dword:00000002
 "DisableCloudOptimizedContent"=dword:00000001
 "DisableConsumerAccountStateContent"=dword:00000001
 "DisableSoftLanding"=dword:00000001
 "DisableTailoredExperiencesWithDiagnosticData"=dword:00000001
+"DisableThirdPartySuggestions"=dword:00000001
 "DisableWindowsConsumerFeatures"=dword:00000001
 "DisableWindowsSpotlightFeatures"=dword:00000001
-"ConfigureWindowsSpotlight"=dword:00000002
-"IncludeEnterpriseSpotlight"=dword:00000000
-"DisableWindowsSpotlightWindowsWelcomeExperience"=dword:00000001
 "DisableWindowsSpotlightOnActionCenter"=dword:00000001
 "DisableWindowsSpotlightOnSettings"=dword:00000001
-"DisableThirdPartySuggestions"=dword:00000001
+"DisableWindowsSpotlightWindowsWelcomeExperience"=dword:00000001
+"IncludeEnterpriseSpotlight"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WorkplaceJoin]
 "BlockAADWorkplaceJoin"=dword:00000001
@@ -1283,61 +1283,61 @@ Windows Registry Editor Version 5.00
 "BypassNRO"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer]
+"DisableGraphRecentItems"=dword:00000001
 "DisableNotificationCenter"=dword:00000001
 "DisableSearchBoxSuggestions"=dword:00000001
+"HideRecentlyAddedApps"=dword:00000001
 "HideRecommendedPersonalizedSites"=dword:00000001
 "HideRecommendedSection"=dword:00000001
-"NoUseStoreOpenWith"=dword:00000001
-"NoNewAppAlert"=dword:00000001
 "HideTaskViewButton"=dword:00000000
 "MultiTaskingAltTabFilter"=dword:00000004
-"ShowOrHideMostUsedApps"=dword:00000000
-"DisableGraphRecentItems"=dword:00000001
+"NoDataExecutionPrevention"=dword:00000001
 "NoHeapTerminationOnCorruption"=dword:00000001
-"NoResolveTrack"=dword:00000001
+"NoNewAppAlert"=dword:00000001
 "NoRecentDocsHistory"=dword:00000001
 "NoRecentDocsMenu"=dword:00000001
 "NoRecentDocsNetHood"=dword:00000001
-"HideRecentlyAddedApps"=dword:00000001
-"NoDataExecutionPrevention"=dword:00000001
+"NoResolveTrack"=dword:00000001
+"NoUseStoreOpenWith"=dword:00000001
+"ShowOrHideMostUsedApps"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
-"HideCopilotButton"=dword:00000001
+"DisableGraphRecentItems"=dword:00000001
+"DisableNotificationCenter"=dword:00000001
 "DisableSearchBoxSuggestions"=dword:00000001
+"DisableThumbsDBOnNetworkFolders"=dword:00000001 
+"EnableLegacyBalloonNotifications"=dword:00000001
+"ExcludedFromStableAnaheimDownloadPromotionSL"=dword:00000001
+"ExplorerStartupTraceRecorded"=dword:00000000
+"HideCopilotButton"=dword:00000001
+"HidePeopleBar"=dword:00000001
+"HideRecentlyAddedApps"=dword:00000001
 "HideRecommendedPersonalizedSites"=dword:00000001
 "HideRecommendedSection"=-
-"DisableNotificationCenter"=dword:00000001
-"NoTileApplicationNotification"=dword:00000001
-"HidePeopleBar"=dword:00000001
-"EnableLegacyBalloonNotifications"=dword:00000001
-"MultiTaskingAltTabFilter"=dword:00000004
-"DisableThumbsDBOnNetworkFolders"=dword:00000001 
-"DisableGraphRecentItems"=dword:00000001
-"NoNewAppAlert"=dword:00000001
-"NoUseStoreOpenWith"=dword:00000001
-"ExcludedFromStableAnaheimDownloadPromotionSL"=dword:00000001
 "IrisClientRefresh"=dword:00000000
-"ExplorerStartupTraceRecorded"=dword:00000000
-"TelemetrySalt"=dword:00000000
-"SIDUpdatedOnLibraries"=dword:00000000
-"NoHeapTerminationOnCorruption"=dword:00000001
-"HideRecentlyAddedApps"=dword:00000001
+"MultiTaskingAltTabFilter"=dword:00000004
 "NoDataExecutionPrevention"=dword:00000001
+"NoHeapTerminationOnCorruption"=dword:00000001
+"NoNewAppAlert"=dword:00000001
+"NoTileApplicationNotification"=dword:00000001
+"NoUseStoreOpenWith"=dword:00000001
+"SIDUpdatedOnLibraries"=dword:00000000
+"TelemetrySalt"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\TabletTip\1.7]
 "EnableDesktopModeAutoInvoke"=dword:00000000
 "DisableNewKeyboardExperience"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\TabletTip\1.7]
-"EnableDesktopModeAutoInvoke"=dword:00000000
 "DisableNewKeyboardExperience"=dword:00000000
 "EnableAutocorrection"=dword:00000000
+"EnableAutoShiftEngage"=dword:00000000
+"EnableDesktopModeAutoInvoke"=dword:00000000
+"EnableDoubleTapSpace"=dword:00000000
+"EnableKeyAudioFeedback"=dword:00000000
+"EnablePredictionSpaceInsertion"=dword:00000000
 "EnableSpellchecking"=dword:00000000
 "EnableTextPrediction"=dword:00000000
-"EnablePredictionSpaceInsertion"=dword:00000000
-"EnableDoubleTapSpace"=dword:00000000
-"EnableAutoShiftEngage"=dword:00000000
-"EnableKeyAudioFeedback"=dword:00000000
 "IsKeyBackgroundEnabled"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Control Panel\International]
@@ -1450,18 +1450,18 @@ Windows Registry Editor Version 5.00
 "webView2EnabledV1"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard]
-"EnableVirtualizationBasedSecurity"=dword:00000000
-"DeployConfigCIPolicy"=dword:00000000
-"HVCIMATRequired"=dword:00000000
-"RequirePlatformSecurityFeature"=dword:00000000
 "CachedDrtmAuthIndex"=dword:00000000
+"ConfigCIPolicyFilePath"="C:\\Windows\\schemas\\CodeIntegrity\\ExamplePolicies\\AllowAll.xml"
+"ConfigureSystemGuardLaunch"=dword:0000000
+"DeployConfigCIPolicy"=dword:00000000
+"EnableVirtualizationBasedSecurity"=dword:00000000
+"HVCIMATRequired"=dword:00000000
+"HypervisorEnforcedCodeIntegrity"=dword:00000000
+"Locked"=dword:00000000
 "LsaCfgFlags"=dword:00000000
 "RequireMicrosoftSignedBootChain"=dword:00000000
+"RequirePlatformSecurityFeature"=dword:00000000
 "RequirePlatformSecurityFeatures"=dword:00000000
-"Locked"=dword:00000000
-"ConfigCIPolicyFilePath"="C:\\Windows\\schemas\\CodeIntegrity\\ExamplePolicies\\AllowAll.xml"
-"HypervisorEnforcedCodeIntegrity"=dword:00000000
-"ConfigureSystemGuardLaunch"=dword:0000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard]
 "Enabled"=dword:00000000
@@ -1523,11 +1523,11 @@ Windows Registry Editor Version 5.00
 "EnableMtcUvc"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DWM]
-"DisallowComposition"=dword:00000001
-"DWMWA_TRANSITIONS_FORCEDISABLED"=dword:00000001
-"DisallowFlip3d"=dword:00000001
-"DisallowColorizationColorChanges"=dword:00000001
 "DisallowAnimations"=dword:00000001
+"DisallowColorizationColorChanges"=dword:00000001
+"DisallowComposition"=dword:00000001
+"DisallowFlip3d"=dword:00000001
+"DWMWA_TRANSITIONS_FORCEDISABLED"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Diagnostics\Performance]
 "DisableDiagnosticTracing"=dword:00000001
@@ -1543,221 +1543,137 @@ Windows Registry Editor Version 5.00
 "DefaultFileTypeRisk"=dword:00001808
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+"AccessibilityImageLabelsEnabled"=dword:00000000
+"AdditionalSearchBoxEnabled"=dword:00000000
+"AddressBarMicrosoftSearchInBingProviderEnabled"=dword:00000000
 "AddressBarTrendingSuggestEnabled"=dword:00000000
+"AdsSettingForIntrusiveAdsSites"=dword:00000002
+"AdsTransparencyEnabled"=dword:00000000
+"AIGenThemesEnabled"=dword:00000001
+"AllowBackForwardCacheForCacheControlNoStorePageEnabled"=dword:00000000
+"AllowCrossOriginAuthPrompt"=dword:00000000
+"AllowDeletingBrowserHistory"=dword:00000001
+"AllowFileSelectionDialogs"=dword:00000001
 "AllowGamesMenu"=dword:00000000
-"AutoDiscardSleepingTabsEnabled"=-
-"BackgroundModeEnabled"=dword:00000000
-"BrowserSignin"=dword:00000001
-"ComposeInlineEnabled"=dword:00000000
-"CopilotPageContextEnabled"=dword:00000000
-"CopilotPageContext"=dword:00000000
-"DefaultBrowserSettingEnabled"=dword:00000000
-"DesktopSharingHubEnabled"=dword:00000000
-"DiagnosticData"=dword:00000000
-"EdgeCollectionsEnabled"=dword:00000000
-"HardwareAccelerationModeEnabled"=dword:00000001
-"HubsSidebarEnabled"=dword:00000000
-"LocalBrowserDataShareEnabled"=dword:00000000
-"NewTabPagePrerenderEnabled"=dword:00000000
-"NonRemovableProfileEnabled"=dword:00000000
-"ScarewareBlockerProtectionEnabled"=dword:00000000
-"SeamlessWebToBrowserSignInEnabled"=dword:00000000
-"SearchbarAllowed"=dword:00000000
-"SearchbarIsEnabledOnStartup"=dword:00000000
-"SearchFiltersEnabled"=dword:00000001
-"SmartScreenPuaEnabled"=dword:00000000
-"StandaloneHubsSidebarEnabled"=dword:00000000
-"StartupBoostEnabled"=dword:00000000
-"TranslateEnabled"=dword:00000000
-"WebToBrowserSignInEnabled"=dword:00000000
-"WebWidgetAllowed"=dword:00000000
-"WebWidgetIsEnabledOnStartup"=dword:00000000
-"EdgeDiscoverEnabled"=dword:00000000
-"EdgeCopilotEnabled"=dword:00000000
-"SmartScreenEnabled"=dword:00000000
-"HideFirstRunExperience"=dword:00000001
-"PreventFirstRunPage"=dword:00000001
 "AllowSurfGame"=dword:00000000
-"TextPredictionEnabled"=dword:00000000
-"CopilotCDPPageContext"=dword:00000000
-"DiscoverPageContextEnabled"=dword:00000000
-"CaretBrowsingEnabled"=dword:00000000
-"NewTabPageHideDefaultTopSites"=dword:00000001
-"EdgeShoppingAssistantEnabled"=dword:00000000
-"ImportOnEachLaunch"=dword:00000000
-"NewTabPageQuickLinksEnabled"=dword:00000000
-"UserFeedbackAllowed"=dword:00000000
-"DefaultGeolocationSetting"=dword:00000002
-"DefaultNotificationsSetting"=dword:00000003
-"DefaultLocalFontsSetting"=dword:00000002
-"DefaultSensorsSetting"=dword:00000001
-"DefaultSerialGuardSetting"=dword:00000003
-"CloudReportingEnabled"=dword:00000000
-"DriveDisabled"=dword:00000001
-"PasswordManagerEnabled"=dword:00000000
-"PasswordSharingEnabled"=dword:00000000
-"PasswordLeakDetectionEnabled"=dword:00000000
-"QuickAnswersEnabled"=dword:00000000
-"SafeBrowsingExtendedReportingEnabled"=dword:00000000
-"SafeBrowsingSurveysEnabled"=dword:00000000
-"SafeBrowsingDeepScanningEnabled"=dword:00000000
-"DeviceActivityHeartbeatEnabled"=dword:00000000
-"DeviceMetricsReportingEnabled"=dword:00000000
-"HeartbeatEnabled"=dword:00000000
-"LogUploadEnabled"=dword:00000000
-"ReportAppInventory"=""
-"ReportDeviceActivityTimes"=dword:00000000
-"ReportDeviceAppInfo"=dword:00000000
-"ReportDeviceSystemInfo"=dword:00000000
-"ReportDeviceUsers"=dword:00000000
-"ReportWebsiteTelemetry"=""
+"AllowSystemNotifications"=dword:00000001
 "AlternateErrorPagesEnabled"=dword:00000000
-"AutofillCreditCardEnabled"=dword:00000001
-"BrowserGuestModeEnabled"=dword:00000000
-"BuiltInDnsClientEnabled"=dword:00000000
-"MetricsReportingEnabled"=dword:00000000
-"ParcelTrackingEnabled"=dword:00000000
-"RelatedWebsiteSetsEnabled"=dword:00000000
-"ShoppingListEnabled"=dword:00000000
-"SyncDisabled"=dword:00000001
-"ExtensionManifestV2Availability"=dword:00000002
-"HttpsUpgradesEnabled"=dword:00000001
-"SpellcheckEnabled"=dword:00000000
-"PreventTyposquattingPromptOverride"=dword:00000000
-"EdgeWorkspacesEnabled"=dword:00000000
-"GamerModeEnabled"=dword:00000000
-"WindowsHelloForHTTPAuthEnabled"=dword:00000001
-"BasicAuthOverHttpEnabled"=dword:00000001
-"GuidedSwitchEnabled"=dword:00000000
-"LinkedAccountEnabled"=dword:00000000
-"ProactiveAuthWorkflowEnabled"=dword:00000000
-"SwitchIntranetSitesToWorkProfile"=dword:00000000
-"SwitchSitesOnIEModeSiteListToWorkProfile"=dword:00000000
-"WAMAuthBelowWin10RS3Enabled"=dword:00000001
-"ImmersiveReaderGrammarToolsEnabled"=dword:00000000
-"ImmersiveReaderPictureDictionaryEnabled"=dword:00000000
-"EdgeManagementUserPolicyOverridesCloudMachinePolicy"=dword:00000000
-"EdgeManagementPolicyOverridesPlatformPolicy"=dword:00000000
-"EdgeManagementExtensionsFeedbackEnabled"=dword:00000000
-"EdgeManagementEnabled"=dword:00000000
-"MAMEnabled"=dword:00000000
-"ZstdContentEncodingEnabled"=dword:00000001
-"CompressionDictionaryTransportEnabled"=dword:00000001
-"BlockTruncatedCookies"=dword:00000000
-"PasswordGeneratorEnabled"=dword:00000000
-"PasswordMonitorAllowed"=dword:00000000
-"PasswordProtectionWarningTrigger"=dword:00000000
-"PrimaryPasswordSetting"=dword:00000003
-"EfficiencyMode"=dword:00000001
-"EfficiencyModeEnabled"=dword:00000000
-"EfficiencyModeOnPowerEnabled"=dword:00000000
-"PerformanceDetectorEnabled"=dword:00000000
-"PinBrowserEssentialsToolbarButton"=dword:00000000
-"PrintingEnabled"=dword:00000001
-"PrintingBackgroundGraphicsDefault"="enabled"
-"PrintStickySettings"=dword:00000001
-"PrintRasterizationMode"=dword:00000000
-"PrintPreviewUseSystemDefaultPrinter"=dword:00000001
-"PrintHeaderFooter"=dword:00000000
-"InsecurePrivateNetworkRequestsAllowed"=dword:00000001
-"SleepingTabsEnabled"=dword:00000001
-"NewSmartScreenLibraryEnabled"=dword:00000000
-"PreventSmartScreenPromptOverride"=dword:00000000
-"PreventSmartScreenPromptOverrideForFiles"=dword:00000000
-"SmartScreenDnsRequestsEnabled"=dword:00000000
-"SmartScreenForTrustedDownloadsEnabled"=dword:00000000
-"NewTabPageCompanyLogoEnabled"=dword:00000000
-"NewTabPageBingChatEnabled"=dword:00000001
-"NewTabPageAppLauncherEnabled"=dword:00000001
+"AlwaysOpenPdfExternally"=dword:00000001
+"AppCacheForceEnabled"=dword:00000000
 "ApplicationGuardFavoritesSyncEnabled"=dword:00000000
 "ApplicationGuardPassiveModeEnabled"=dword:00000001
 "ApplicationGuardTrafficIdentificationEnabled"=dword:00000000
 "ApplicationGuardUploadBlockingEnabled"=dword:00000001
-"EnableMediaRouter"=dword:00000001
-"ShowCastIconInToolbar"=dword:00000001
-"EdgeDisableDialProtocolForCastDiscovery"=dword:00000001
-"DefaultAutomaticDownloadsSetting"=dword:00000001
-"DefaultCookiesSetting"=dword:00000001
-"DefaultFileSystemReadGuardSetting"=dword:00000003
-"DefaultFileSystemWriteGuardSetting"=dword:00000003
-"DefaultImagesSetting"=dword:00000001
-"DefaultInsecureContentSetting"=dword:00000003
-"DefaultJavaScriptJitSetting"=dword:00000001
-"DefaultPluginsSetting"=dword:00000003
-"DefaultPopupsSetting"=dword:00000001
-"DefaultWebBluetoothGuardSetting"=dword:00000003
-"DefaultWebHidGuardSetting"=dword:00000003
-"DefaultWebUsbGuardSetting"=dword:00000003
-"DefaultWindowManagementSetting"=dword:00000003
-"IntranetFileLinksEnabled"=dword:00000001
-"LegacySameSiteCookieBehaviorEnabled"=dword:00000002
-"DefaultSearchProviderEnabled"=dword:00000001
-"DefaultSearchProviderImageURL"="{google:baseURL}searchbyimage/upload"
-"DefaultSearchProviderImageURLPostParams"="encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight}"
-"DefaultSearchProviderSearchURL"="{google:baseURL}search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}ie={inputEncoding}"
-"DefaultSearchProviderSuggestURL"="{google:baseURL}complete/search?output=chrome&q={searchTerms}"
-"NewTabPageSearchBox"="redirect"
-"DefaultSearchProviderName"="Google"
-"DefaultSearchProviderKeyword"="googl"
-"TyposquattingCheckerEnabled"=dword:00000000
-"AIGenThemesEnabled"=dword:00000001
-"AccessibilityImageLabelsEnabled"=dword:00000000
-"AdditionalSearchBoxEnabled"=dword:00000000
-"AddressBarMicrosoftSearchInBingProviderEnabled"=dword:00000000
-"AdsSettingForIntrusiveAdsSites"=dword:00000002
-"AdsTransparencyEnabled"=dword:00000000
-"AllowBackForwardCacheForCacheControlNoStorePageEnabled"=dword:00000000
-"AllowDeletingBrowserHistory"=dword:00000001
-"AllowFileSelectionDialogs"=dword:00000001
-"AllowSystemNotifications"=dword:00000001
-"AlwaysOpenPdfExternally"=dword:00000001
-"AppCacheForceEnabled"=dword:00000000
 "AskBeforeCloseEnabled"=dword:00000000
 "AudioCaptureAllowed"=dword:00000001
 "AudioProcessHighPriorityEnabled"=dword:00000001
 "AudioSandboxEnabled"=dword:00000001
+"AutoDiscardSleepingTabsEnabled"=-
+"AutofillAddressEnabled"=dword:00000001
+"AutofillCreditCardEnabled"=dword:00000001
+"AutofillMembershipsEnabled"=dword:00000001
 "AutoImportAtFirstRun"=dword:00000004
 "AutoLaunchProtocolsComponentEnabled"=dword:00000001
-"AutofillAddressEnabled"=dword:00000001
-"AutofillMembershipsEnabled"=dword:00000001
 "AutomaticHttpsDefault"=dword:00000000
 "AutoplayAllowed"=dword:00000001
+"BackgroundModeEnabled"=dword:00000000
 "BackgroundTemplateListUpdatesEnabled"=dword:00000000
+"BasicAuthOverHttpEnabled"=dword:00000001
 "BeforeunloadEventCancelByPreventDefaultEnabled"=dword:00000000
 "BingAdsSuppression"=dword:00000001
 "BlockThirdPartyCookies"=dword:00000000
+"BlockTruncatedCookies"=dword:00000000
 "BrowserCodeIntegritySetting"=dword:00000000
+"BrowserGuestModeEnabled"=dword:00000000
 "BrowserLegacyExtensionPointsBlockingEnabled"=dword:00000000
 "BrowserNetworkTimeQueriesEnabled"=dword:00000000
+"BrowserSignin"=dword:00000001
+"BuiltInDnsClientEnabled"=dword:00000000
+"CaretBrowsingEnabled"=dword:00000000
 "ClearCachedImagesAndFilesOnExit"=dword:00000001
 "ClickOnceEnabled"=dword:00000001
+"CloudReportingEnabled"=dword:00000000
 "CommandLineFlagSecurityWarningsEnabled"=dword:00000000
 "ComponentUpdatesEnabled"=dword:00000000
+"ComposeInlineEnabled"=dword:00000000
+"CompressionDictionaryTransportEnabled"=dword:00000001
 "ConfigureDoNotTrack"=dword:00000001
 "ConfigureFriendlyURLFormat"=dword:00000001
 "ConfigureOnlineTextToSpeech"=dword:00000000
 "ConfigureShare"=dword:00000001
+"CopilotCDPPageContext"=dword:00000000
+"CopilotPageContext"=dword:00000000
+"CopilotPageContextEnabled"=dword:00000000
 "CrossOriginWebAssemblyModuleSharingEnabled"=dword:00000000
 "CryptoWalletEnabled"=dword:00000000
-"DNSInterceptionChecksEnabled"=dword:00000000
+"DefaultAutomaticDownloadsSetting"=dword:00000001
+"DefaultBrowserSettingEnabled"=dword:00000000
 "DefaultBrowserSettingsCampaignEnabled"=dword:00000000
 "DefaultClipboardSetting"=dword:00000003
+"DefaultCookiesSetting"=dword:00000001
+"DefaultFileSystemReadGuardSetting"=dword:00000003
+"DefaultFileSystemWriteGuardSetting"=dword:00000003
+"DefaultGeolocationSetting"=dword:00000002
+"DefaultImagesSetting"=dword:00000001
+"DefaultInsecureContentSetting"=dword:00000003
+"DefaultJavaScriptJitSetting"=dword:00000001
+"DefaultJavaScriptSetting"=dword:00000001
+"DefaultLocalFontsSetting"=dword:00000002
+"DefaultNotificationsSetting"=dword:00000003
+"DefaultPluginsSetting"=dword:00000003
+"DefaultPopupsSetting"=dword:00000001
 "DefaultSearchProviderContextMenuAccessAllowed"=dword:00000001
+"DefaultSearchProviderEnabled"=dword:00000001
+"DefaultSearchProviderImageURL"="{google:baseURL}searchbyimage/upload"
+"DefaultSearchProviderImageURLPostParams"="encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight}"
+"DefaultSearchProviderKeyword"="googl"
+"DefaultSearchProviderName"="Google"
+"DefaultSearchProviderSearchURL"="{google:baseURL}search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}ie={inputEncoding}"
+"DefaultSearchProviderSuggestURL"="{google:baseURL}complete/search?output=chrome&q={searchTerms}"
+"DefaultSensorsSetting"=dword:00000001
+"DefaultSerialGuardSetting"=dword:00000003
 "DefaultShareAdditionalOSRegionSetting"=dword:00000001
+"DefaultWebBluetoothGuardSetting"=dword:00000003
+"DefaultWebHidGuardSetting"=dword:00000003
+"DefaultWebUsbGuardSetting"=dword:00000003
+"DefaultWindowManagementSetting"=dword:00000003
 "DeleteDataOnMigration"=dword:00000000
+"DesktopSharingHubEnabled"=dword:00000000
+"DeviceActivityHeartbeatEnabled"=dword:00000000
+"DeviceMetricsReportingEnabled"=dword:00000000
+"DiagnosticData"=dword:00000000
 "DirectInvokeEnabled"=dword:00000001
 "Disable3DAPIs"=dword:00000000
+"DisableAuthNegotiateCnameLookup"=dword:00000001
 "DisableScreenshots"=dword:00000000
+"DiscoverPageContextEnabled"=dword:00000000
+"DNSInterceptionChecksEnabled"=dword:00000000
+"DnsOverHttpsMode"="off"
 "DownloadRestrictions"=dword:00000000
+"DriveDisabled"=dword:00000001
 "Edge3PSerpTelemetryEnabled"=dword:00000000
 "EdgeAssetDeliveryServiceEnabled"=dword:00000000
+"EdgeCollectionsEnabled"=dword:00000000
+"EdgeCopilotEnabled"=dword:00000000
+"EdgeDisableDialProtocolForCastDiscovery"=dword:00000001
+"EdgeDiscoverEnabled"=dword:00000000
 "EdgeEDropEnabled"=dword:00000000
 "EdgeEnhanceImagesEnabled"=dword:00000000
 "EdgeFollowEnabled"=dword:00000000
+"EdgeManagementEnabled"=dword:00000000
+"EdgeManagementExtensionsFeedbackEnabled"=dword:00000000
+"EdgeManagementPolicyOverridesPlatformPolicy"=dword:00000000
+"EdgeManagementUserPolicyOverridesCloudMachinePolicy"=dword:00000000
 "EdgeOpenInSidebarEnabled"=dword:00000000
+"EdgeShoppingAssistantEnabled"=dword:00000000
 "EdgeWalletCheckoutEnabled"=dword:00000000
 "EdgeWalletEtreeEnabled"=dword:00000000
+"EdgeWorkspacesEnabled"=dword:00000000
+"EfficiencyMode"=dword:00000001
+"EfficiencyModeEnabled"=dword:00000000
+"EfficiencyModeOnPowerEnabled"=dword:00000000
 "EnableDomainActionsDownload"=dword:00000000
+"EnableMediaRouter"=dword:00000001
 "EnableOnlineRevocationChecks"=dword:00000000
 "EnhanceSecurityModeAllowUserBypass"=dword:00000001
 "EnhanceSecurityModeBypassIntranet"=dword:00000000
@@ -1765,61 +1681,138 @@ Windows Registry Editor Version 5.00
 "EnhanceSecurityModeOptOutUXEnabled"=dword:00000001
 "EnterpriseHardwarePlatformAPIEnabled"=dword:00000001
 "ExperimentationAndConfigurationServiceControl"=dword:00000000
+"ExtensionManifestV2Availability"=dword:00000002
 "FamilySafetySettingsEnabled"=dword:00000000
 "FavoritesBarEnabled"=dword:00000001
 "ForceBingSafeSearch"=dword:00000000
 "ForceBuiltInPushMessagingClient"=dword:00000000
+"ForceEphemeralProfiles"=dword:00000000
 "ForceGoogleSafeSearch"=dword:00000001
 "ForceNetworkInProcess"=dword:00000000
 "ForcePermissionPolicyUnloadDefaultEnabled"=dword:00000000
 "ForceYouTubeRestrict"=dword:00000000
 "FullscreenAllowed"=dword:00000001
+"GamerModeEnabled"=dword:00000000
 "GloballyScopeHTTPAuthCacheEnabled"=dword:00000000
+"GoToIntranetSiteForSingleWordEntryInAddressBar"=dword:00000001
+"GuidedSwitchEnabled"=dword:00000000
+"HardwareAccelerationModeEnabled"=dword:00000001
+"HeartbeatEnabled"=dword:00000000
+"HideFirstRunExperience"=dword:00000001
 "HideInternetExplorerRedirectUXForIncompatibleSitesEnabled"=dword:00000001
 "HideRestoreDialogEnabled"=dword:00000001
+"HomepageLocation"="www.google.com"
+"HttpsUpgradesEnabled"=dword:00000001
+"HubsSidebarEnabled"=dword:00000000
+"ImmersiveReaderGrammarToolsEnabled"=dword:00000000
+"ImmersiveReaderPictureDictionaryEnabled"=dword:00000000
+"ImportOnEachLaunch"=dword:00000000
 "InsecureFormsWarningsEnabled"=dword:00000000
-"InternetExplorerIntegrationEnhancedHangDetection"=dword:00000000
+"InsecurePrivateNetworkRequestsAllowed"=dword:00000001
+"IntensiveWakeUpThrottlingEnabled"=dword:00000000
 "InternetExplorerIntegrationComplexNavDataTypes"=dword:00000000
+"InternetExplorerIntegrationEnhancedHangDetection"=dword:00000000
 "InternetExplorerIntegrationLevel"=dword:00000000
+"InternetExplorerIntegrationLocalFileAllowed"=dword:00000000
 "InternetExplorerIntegrationLocalFileShowContextMenu"=dword:00000001
 "InternetExplorerIntegrationTestingAllowed"=dword:00000000
 "InternetExplorerModeClearDataOnExitEnabled"=dword:00000001
 "InternetExplorerModeEnableSavePageAs"=dword:00000001
+"IntranetFileLinksEnabled"=dword:00000001
 "IntranetRedirectBehavior"=dword:00000002
+"LegacySameSiteCookieBehaviorEnabled"=dword:00000002
+"LinkedAccountEnabled"=dword:00000000
 "LiveCaptionsAllowed"=dword:00000000
+"LocalBrowserDataShareEnabled"=dword:00000000
 "LocalProvidersEnabled"=dword:00000000
+"LogUploadEnabled"=dword:00000000
+"MAMEnabled"=dword:00000000
 "MathSolverEnabled"=dword:00000000
 "MediaRouterCastAllowAllIPs"=dword:00000001
+"MetricsReportingEnabled"=dword:00000000
 "MicrosoftEdgeInsiderPromotionEnabled"=dword:00000000
 "MicrosoftEditorProofingEnabled"=dword:00000000
 "MicrosoftEditorSynonymsEnabled"=dword:00000000
 "MicrosoftOfficeMenuEnabled"=dword:00000000
 "MouseGestureEnabled"=dword:00000001
 "MutationEventsEnabled"=dword:00000000
+"NativeMessagingUserLevelHosts"=dword:00000000
 "NetworkPredictionOptions"=dword:00000002
 "NetworkServiceSandboxEnabled"=dword:00000001
 "NewPDFReaderEnabled"=dword:00000000
+"NewSmartScreenLibraryEnabled"=dword:00000000
+"NewTabPageAllowedBackgroundTypes"=dword:00000003
+"NewTabPageAppLauncherEnabled"=dword:00000001
+"NewTabPageBingChatEnabled"=dword:00000001
+"NewTabPageCompanyLogoEnabled"=dword:00000000
+"NewTabPageContentEnabled"=dword:00000000
+"NewTabPageHideDefaultTopSites"=dword:00000001
+"NewTabPageLocation"="www.google.com"
+"NewTabPagePrerenderEnabled"=dword:00000000
+"NewTabPageQuickLinksEnabled"=dword:00000000
+"NewTabPageSearchBox"="redirect"
+"NonRemovableProfileEnabled"=dword:00000000
 "OutlookHubMenuEnabled"=dword:00000000
+"ParcelTrackingEnabled"=dword:00000000
+"PasswordGeneratorEnabled"=dword:00000000
+"PasswordLeakDetectionEnabled"=dword:00000000
+"PasswordManagerEnabled"=dword:00000000
+"PasswordMonitorAllowed"=dword:00000000
+"PasswordProtectionWarningTrigger"=dword:00000000
+"PasswordSharingEnabled"=dword:00000000
 "PDFXFAEnabled"=dword:00000000
+"PerformanceDetectorEnabled"=dword:00000000
 "PersonalizationReportingEnabled"=dword:00000000
 "PictureInPictureOverlayEnabled"=dword:00000001
+"PinBrowserEssentialsToolbarButton"=dword:00000000
 "PinningWizardAllowed"=dword:00000001
+"PreventFirstRunPage"=dword:00000001
+"PreventSmartScreenPromptOverride"=dword:00000000
+"PreventSmartScreenPromptOverrideForFiles"=dword:00000000
+"PreventTyposquattingPromptOverride"=dword:00000000
+"PrimaryPasswordSetting"=dword:00000003
+"PrintHeaderFooter"=dword:00000000
+"PrintingBackgroundGraphicsDefault"="enabled"
+"PrintingEnabled"=dword:00000001
+"PrintPreviewUseSystemDefaultPrinter"=dword:00000001
+"PrintRasterizationMode"=dword:00000000
+"PrintStickySettings"=dword:00000001
+"ProactiveAuthWorkflowEnabled"=dword:00000000
+"PromotionalTabsEnabled"=dword:00000000
 "QRCodeGeneratorEnabled"=dword:00000001
 "QuicAllowed"=dword:00000001
+"QuickAnswersEnabled"=dword:00000000
 "QuickSearchShowMiniMenu"=dword:00000000
 "QuickViewOfficeFilesEnabled"=dword:00000000
 "ReadAloudEnabled"=dword:00000000
 "RedirectSitesFromInternetExplorerPreventBHOInstall"=dword:00000001
+"RelatedWebsiteSetsEnabled"=dword:00000000
+"RelaunchNotification"=dword:00000000
 "RemoteDebuggingAllowed"=dword:00000000
-"RendererCodeIntegrityEnabled"=dword:00000000
+"RemoveDesktopShortcutDefault"=dword:00000001
 "RendererAppContainerEnabled"=dword:00000000
+"RendererCodeIntegrityEnabled"=dword:00000000
+"ReportAppInventory"=""
+"ReportDeviceActivityTimes"=dword:00000000
+"ReportDeviceAppInfo"=dword:00000000
+"ReportDeviceSystemInfo"=dword:00000000
+"ReportDeviceUsers"=dword:00000000
+"ReportWebsiteTelemetry"=""
 "ResolveNavigationErrorsUseWebService"=dword:00000000
+"RestoreOnStartup"=dword:00000004
 "RestorePdfView"=dword:00000000
 "RoamingProfileSupportEnabled"=dword:00000000
 "RunAllFlashInAllowMode"=dword:00000001
-"SSLErrorOverrideAllowed"=dword:00000000
+"SafeBrowsingDeepScanningEnabled"=dword:00000000
+"SafeBrowsingExtendedReportingEnabled"=dword:00000000
+"SafeBrowsingSurveysEnabled"=dword:00000000
 "SandboxExternalProtocolBlocked"=dword:00000000
+"ScarewareBlockerProtectionEnabled"=dword:00000000
 "ScreenCaptureAllowed"=dword:00000001
+"SeamlessWebToBrowserSignInEnabled"=dword:00000000
+"SearchbarAllowed"=dword:00000000
+"SearchbarIsEnabledOnStartup"=dword:00000000
+"SearchFiltersEnabled"=dword:00000001
 "SearchForImageEnabled"=dword:00000001
 "SearchInSidebarEnabled"=dword:00000002
 "SearchSuggestEnabled"=dword:00000001
@@ -1827,7 +1820,9 @@ Windows Registry Editor Version 5.00
 "SendSiteInfoToImproveServices"=dword:00000000
 "ShadowStackCrashRollbackBehavior"=dword:00000000
 "SharedLinksEnabled"=dword:00000000
+"ShoppingListEnabled"=dword:00000000
 "ShowAcrobatSubscriptionButton"=dword:00000000
+"ShowCastIconInToolbar"=dword:00000001
 "ShowDownloadsToolbarButton"=dword:00000001
 "ShowHistoryThumbnails"=dword:00000000
 "ShowMicrosoftRewards"=dword:00000000
@@ -1835,48 +1830,53 @@ Windows Registry Editor Version 5.00
 "ShowRecommendationsEnabled"=dword:00000000
 "SitePerProcess"=dword:00000000
 "SiteSafetyServicesEnabled"=dword:00000000
+"SleepingTabsEnabled"=dword:00000001
+"SmartScreenDnsRequestsEnabled"=dword:00000000
+"SmartScreenEnabled"=dword:00000000
+"SmartScreenForTrustedDownloadsEnabled"=dword:00000000
+"SmartScreenPuaEnabled"=dword:00000000
 "SpeechRecognitionEnabled"=dword:00000000
+"SpellcheckEnabled"=dword:00000000
+"SpotlightExperiencesAndRecommendationsEnabled"=dword:00000000
+"SSLErrorOverrideAllowed"=dword:00000000
+"StandaloneHubsSidebarEnabled"=dword:00000000
+"StartupBoostEnabled"=dword:00000000
 "SuperDragDropEnabled"=dword:00000000
 "SuppressUnsupportedOSWarning"=dword:00000001
+"SwitchIntranetSitesToWorkProfile"=dword:00000000
+"SwitchSitesOnIEModeSiteListToWorkProfile"=dword:00000000
+"SyncDisabled"=dword:00000001
 "TabFreezingEnabled"=dword:00000000
 "TabServicesEnabled"=dword:00000000
+"TargetBlankImpliesNoOpener"=dword:00000000
 "TaskManagerEndProcessEnabled"=dword:00000001
+"TextPredictionEnabled"=dword:00000000
+"TotalMemoryLimitMb"=dword:00008192
+"TranslateEnabled"=dword:00000000
 "TravelAssistanceEnabled"=dword:00000000
-"U2fSecurityKeyApiEnabled"=dword:00000001
 "TripleDESEnabled"=dword:00000001
+"TyposquattingCheckerEnabled"=dword:00000000
+"U2fSecurityKeyApiEnabled"=dword:00000001
 "UploadFromPhoneEnabled"=dword:00000000
 "UrlDiagnosticDataEnabled"=dword:00000000
 "UserAgentClientHintsGREASEUpdateEnabled"=dword:00000000
 "UserAgentReduction"=dword:00000000
+"UserFeedbackAllowed"=dword:00000000
+"UseSystemPrintDialog"=dword:00000001
+"VerticalTabsAllowed"=dword:00000001
 "VideoCaptureAllowed"=dword:00000001
 "VisualSearchEnabled"=dword:00000001
-"WPADQuickCheckEnabled"=dword:00000000
 "WalletDonationEnabled"=dword:00000000
+"WAMAuthBelowWin10RS3Enabled"=dword:00000001
 "WebRtcRespectOsRoutingTableEnabled"=dword:00000001
-"WinHttpProxyResolverEnabled"=dword:00000001
+"WebToBrowserSignInEnabled"=dword:00000000
+"WebWidgetAllowed"=dword:00000000
+"WebWidgetIsEnabledOnStartup"=dword:00000000
 "WindowOcclusionEnabled"=dword:00000001
-"RemoveDesktopShortcutDefault"=dword:00000001
-"SpotlightExperiencesAndRecommendationsEnabled"=dword:00000000
-"AllowCrossOriginAuthPrompt"=dword:00000000
-"DisableAuthNegotiateCnameLookup"=dword:00000001
-"NativeMessagingUserLevelHosts"=dword:00000000
-"UseSystemPrintDialog"=dword:00000001
-"RestoreOnStartup"=dword:00000004
-"HomepageLocation"="www.google.com"
-"NewTabPageLocation"="www.google.com"
-"InternetExplorerIntegrationLocalFileAllowed"=dword:00000000
-"VerticalTabsAllowed"=dword:00000001
-"IntensiveWakeUpThrottlingEnabled"=dword:00000000
-"DnsOverHttpsMode"="off"
-"TargetBlankImpliesNoOpener"=dword:00000000
-"ForceEphemeralProfiles"=dword:00000000
-"GoToIntranetSiteForSingleWordEntryInAddressBar"=dword:00000001
-"RelaunchNotification"=dword:00000000
-"PromotionalTabsEnabled"=dword:00000000
-"TotalMemoryLimitMb"=dword:00008192
-"DefaultJavaScriptSetting"=dword:00000001
-"NewTabPageContentEnabled"=dword:00000000
-"NewTabPageAllowedBackgroundTypes"=dword:00000003
+"WindowsHelloForHTTPAuthEnabled"=dword:00000001
+"WinHttpProxyResolverEnabled"=dword:00000001
+"WPADQuickCheckEnabled"=dword:00000000
+"ZstdContentEncodingEnabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs]
 "1"="www.google.com"
@@ -1904,204 +1904,204 @@ Windows Registry Editor Version 5.00
 "PreventLiveTileDataCollection"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
+"AbusiveExperienceInterventionEnforce"=dword:00000000
+"AccessCodeCastEnabled"=dword:00000001
+"AccessControlAllowMethodsInCORSPreflightSpecConformant"=dword:00000001
+"AccessibilityImageLabelsEnabled"=dword:00000000
+"AdditionalDnsQueryTypesEnabled"=dword:00000000
+"AdsSettingForIntrusiveAdsSites"=dword:00000002
+"AdvancedProtectionAllowed"=dword:00000000
+"AdvancedProtectionDeepScanningEnabled"=dword:00000000
+"AllowBackForwardCacheForCacheControlNoStorePageEnabled"=dword:00000000
+"AllowDinosaurEasterEgg"=dword:00000000
+"AllowFileSelectionDialogs"=dword:00000001
 "AlternateErrorPagesEnabled"=dword:00000000
+"ApplicationBoundEncryptionEnabled"=dword:00000001
+"AudioCaptureAllowed"=dword:00000001
+"AudioProcessHighPriorityEnabled"=dword:00000001
+"AudioSandboxEnabled"=dword:00000001
 "AutofillAddressEnabled"=dword:00000000
 "AutofillCreditCardEnabled"=dword:00000000
+"AutoplayAllowed"=dword:00000001
 "BackgroundModeEnabled"=dword:00000000
+"BatterySaverModeAvailability"=dword:00000000
 "BrowserGuestModeEnabled"=dword:00000000
+"BrowserGuestModeEnforced"=dword:00000000
+"BrowserLabsEnabled"=dword:00000000
+"BrowserNetworkTimeQueriesEnabled"=dword:00000000
 "BrowserSignin"=dword:00000001
 "BuiltInDnsClientEnabled"=dword:00000000
 "ChromeCleanupEnabled"=dword:00000000
 "ChromeCleanupReportingEnabled"=dword:00000000
+"ChromeForTestingAllowed"=dword:00000000
+"ChromeVariations"=dword:00000002
+"ClickToCallEnabled"=dword:00000000
+"CloudAPAuthEnabled"=dword:00000001
+"CloudManagementEnrollmentMandatory"=dword:00000000
+"CloudPolicyOverridesPlatformPolicy"=dword:00000000
 "CloudPrintProxyEnabled"=dword:00000000
+"CloudProfileReportingEnabled"=dword:00000000
 "CloudReportingEnabled"=dword:00000000
+"CloudUserPolicyMerge"=dword:00000000
+"CloudUserPolicyOverridesCloudMachinePolicy"=dword:00000000
 "CollectStatsConsent"=dword:00000000
+"CommandLineFlagSecurityWarningsEnabled"=dword:00000000
+"ComponentUpdatesEnabled"=dword:00000000
+"CompressionDictionaryTransportEnabled"=dword:00000001
+"CORSNonWildcardRequestHeadersSupport"=dword:00000001
+"CreateThemesSettings"=dword:00000002
+"CSSCustomStateDeprecatedSyntaxEnabled"=dword:00000001
+"DataUrlInSvgUseEnabled"=dword:00000001
 "DefaultBrowserSettingEnabled"=dword:00000000
 "DefaultGeolocationSetting"=dword:00000002
+"DefaultInsecureContentSetting"=dword:00000003
 "DefaultLocalFontsSetting"=dword:00000003
 "DefaultNotificationsSetting"=dword:00000003
+"DefaultPluginsSetting"=dword:00000001
+"DefaultSearchProviderEnabled"=dword:00000001
+"DefaultSearchProviderImageURLPostParams"="content={google:imageThumbnail},url={google:imageURL},sbisrc={google:imageSearchSource}"
+"DefaultSearchProviderKeyword"="googl"
+"DefaultSearchProviderName"="Google"
+"DefaultSearchProviderSearchURL"="{google:baseURL}search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}ie={inputEncoding}"
+"DefaultSearchProviderSearchURLPostParams"="q={searchTerms},ie=utf-8,oe=utf-8"
+"DefaultSearchProviderSuggestURL"="{google:baseURL}complete/search?output=chrome&q={searchTerms}"
+"DefaultSearchProviderSuggestURLPostParams"="q={searchTerms},ie=utf-8,oe=utf-8"
 "DefaultSensorsSetting"=dword:00000002
 "DefaultSerialGuardSetting"=dword:00000003
 "DefaultShareAdditionalOSRegionSetting"=dword:00000002
+"DefaultWebBluetoothGuardSetting"=dword:00000003
+"DefaultWebHidGuardSetting"=dword:00000003
+"DefaultWebUsbGuardSetting"=dword:00000003
+"DefaultWindowManagementSetting"=dword:00000003
+"DefaultWindowPlacementSetting"=dword:00000003
+"DeletingUndecryptablePasswordsEnabled"=dword:00000000
+"DesktopSharingHubEnabled"=dword:00000001
 "DeviceActivityHeartbeatEnabled"=dword:00000000
 "DeviceMetricsReportingEnabled"=dword:00000000
+"DevToolsGenAiSettings"=dword:00000002
+"DisableSafeBrowsingProceedAnyway"=dword:00000001
+"DisableSSLRecordSplitting"=dword:00000001
+"DNSInterceptionChecksEnabled"=dword:00000000
+"DnsPrefetchingEnabled"=dword:00000000
+"DomainReliabilityAllowed"=dword:00000000
+"DownloadRestrictions"=dword:00000000
 "DriveDisabled"=dword:00000001
+"DynamicCodeSettings"=dword:00000000
 "EnableMediaRouter"=dword:00000001
 "ExtensionManifestV2Availability"=dword:00000002
+"ExtensionUnpublishedAvailability"=dword:00000000
+"FeedbackSurveysEnabled"=dword:00000000
+"ForceGoogleSafeSearch"=dword:00000001
+"ForcePermissionPolicyUnloadDefaultEnabled"=dword:00000000
+"ForceYouTubeRestrict"=dword:00000000
+"FullscreenAllowed"=dword:00000001
+"GenAiDefaultSettings"=dword:00000001
+"GenAILocalFoundationalModelSettings"=dword:00000001
+"GloballyScopeHTTPAuthCacheEnabled"=dword:00000000
+"GoogleSearchSidePanelEnabled"=dword:00000000
 "HardwareAccelerationModeEnabled"=dword:00000001
+"HeadlessMode"=dword:00000002
 "HeartbeatEnabled"=dword:00000000
+"HelpMeWriteSettings"=dword:00000001
+"HideWebStoreIcon"=dword:00000001
 "HighEfficiencyModeEnabled"=dword:00000000
+"HistoryClustersVisible"=dword:00000000
+"HistorySearchSettings"=dword:00000002
+"HomepageIsNewTabPage"=dword:00000000
+"HomepageLocation"="google.com"
+"HttpsUpgradesEnabled"=dword:00000001
+"InsecureFormsWarningsEnabled"=dword:00000000
+"IntensiveWakeUpThrottlingEnabled"=dword:00000001
+"IntranetRedirectBehavior"=dword:00000002
+"IPv6ReachabilityOverrideEnabled"=dword:00000001
+"KeyboardFocusableScrollersEnabled"=dword:00000000
+"LensDesktopNTPSearchEnabled"=dword:00000000
+"LensOverlaySettings"=dword:00000000
+"LensRegionSearchEnabled"=dword:00000000
 "LogUploadEnabled"=dword:00000000
+"MediaRecommendationsEnabled"=dword:00000000
+"MediaRouterCastAllowAllIPs"=dword:00000001
 "MetricsReportingEnabled"=dword:00000000
 "NetworkPredictionOptions"=dword:00000002
+"NetworkServiceSandboxEnabled"=dword:00000001
+"NewTabPageLocation"="google.com"
+"NTPCardsVisible"=dword:00000000
+"OptimizationGuideFetchingEnabled"=dword:00000000
 "ParcelTrackingEnabled"=dword:00000000
 "PasswordLeakDetectionEnabled"=dword:00000000
 "PasswordManagerEnabled"=dword:00000000
+"PasswordProtectionWarningTrigger"=dword:00000000
 "PasswordSharingEnabled"=dword:00000000
+"PaymentMethodQueryEnabled"=dword:00000000
+"PrefixedVideoFullscreenApiAvailability"="enabled"
+"PrintHeaderFooter"=dword:00000000
+"PrintingEnabled"=dword:00000001
+"PrintingLPACSandboxEnabled"=dword:00000001
 "PrivacySandboxAdMeasurementEnabled"=dword:00000000
 "PrivacySandboxAdsAPIsEnabled"=dword:00000000
 "PrivacySandboxAdTopicsEnabled"=dword:00000000
 "PrivacySandboxPromptEnabled"=dword:00000000
 "PrivacySandboxSiteEnabledAdsEnabled"=dword:00000000
+"PrivateNetworkAccessRestrictionsEnabled"=dword:00000000
 "PromotionalTabsEnabled"=dword:00000000
+"PromotionsEnabled"=dword:00000000
+"ProxyServerMode"=dword:00000003
+"QRCodeGeneratorEnabled"=dword:00000001
+"QuicAllowed"=dword:00000001
 "QuickAnswersEnabled"=dword:00000000
 "RelatedWebsiteSetsEnabled"=dword:00000000
+"RendererAppContainerEnabled"=dword:00000000
+"RendererCodeIntegrityEnabled"=dword:00000000
 "ReportAppInventory"=""
 "ReportDeviceActivityTimes"=dword:00000000
 "ReportDeviceAppInfo"=dword:00000000
 "ReportDeviceSystemInfo"=dword:00000000
 "ReportDeviceUsers"=dword:00000000
 "ReportWebsiteTelemetry"=""
+"RequireOnlineRevocationChecksForLocalAnchors"=dword:00000000
+"RestoreOnStartup"=dword:00000003
+"RoamingProfileSupportEnabled"=dword:00000000
 "SafeBrowsingDeepScanningEnabled"=dword:00000000
+"SafeBrowsingEnabled"=dword:00000000
 "SafeBrowsingExtendedReportingEnabled"=dword:00000000
+"SafeBrowsingForTrustedSourcesEnabled"=dword:00000000
+"SafeBrowsingProtectionLevel"=dword:00000000
+"SafeBrowsingProxiedRealTimeChecksAllowed"=dword:00000000
 "SafeBrowsingSurveysEnabled"=dword:00000000
+"SafeSitesFilterBehavior"=dword:00000001
+"SandboxExternalProtocolBlocked"=dword:00000000
+"ScreenCaptureAllowed"=dword:00000001
+"ScrollToTextFragmentEnabled"=dword:00000001
 "SearchSuggestEnabled"=dword:00000000
+"SharedClipboardEnabled"=dword:00000000
 "ShoppingListEnabled"=dword:00000000
-"SigninAllowed"=dword:00000000
-"SpellCheckServiceEnabled"=dword:00000000
-"StartupBoostEnabled"=dword:00000000
-"SyncDisabled"=dword:00000001
-"TranslateEnabled"=dword:00000001
-"UrlKeyedAnonymizedDataCollectionEnabled"=dword:00000000
-"UserFeedbackAllowed"=dword:00000000
-"DefaultSearchProviderEnabled"=dword:00000001
-"DefaultSearchProviderImageURLPostParams"="content={google:imageThumbnail},url={google:imageURL},sbisrc={google:imageSearchSource}"
-"DefaultSearchProviderKeyword"="googl"
-"DefaultSearchProviderName"="Google"
-"DefaultSearchProviderSuggestURL"="{google:baseURL}complete/search?output=chrome&q={searchTerms}"
-"DefaultSearchProviderSearchURLPostParams"="q={searchTerms},ie=utf-8,oe=utf-8"
-"DefaultSearchProviderSearchURL"="{google:baseURL}search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}ie={inputEncoding}"
-"DefaultSearchProviderSuggestURLPostParams"="q={searchTerms},ie=utf-8,oe=utf-8"
-"HelpMeWriteSettings"=dword:00000001
-"LensRegionSearchEnabled"=dword:00000000
-"LensOverlaySettings"=dword:00000000
-"HistorySearchSettings"=dword:00000002
-"TabOrganizerSettings"=dword:00000002
-"GenAiDefaultSettings"=dword:00000001
-"CreateThemesSettings"=dword:00000002
-"DevToolsGenAiSettings"=dword:00000002
-"TabCompareSettings"=dword:00000002
-"GenAILocalFoundationalModelSettings"=dword:00000001
-"MediaRouterCastAllowAllIPs"=dword:00000001
 "ShowCastIconInToolbar"=dword:00000001
 "ShowCastSessionsStartedByOtherDevices"=dword:00000001
-"AccessCodeCastEnabled"=dword:00000001
-"CloudAPAuthEnabled"=dword:00000001
-"CompressionDictionaryTransportEnabled"=dword:00000001
-"AccessControlAllowMethodsInCORSPreflightSpecConformant"=dword:00000001
-"IPv6ReachabilityOverrideEnabled"=dword:00000001
-"ZstdContentEncodingEnabled"=dword:00000001
-"DeletingUndecryptablePasswordsEnabled"=dword:00000000
-"PrintHeaderFooter"=dword:00000000
-"PrintingEnabled"=dword:00000001
-"PrintingLPACSandboxEnabled"=dword:00000001
-"ExtensionUnpublishedAvailability"=dword:00000000
-"CloudProfileReportingEnabled"=dword:00000000
-"WPADQuickCheckEnabled"=dword:00000000
+"ShowFullUrlsInAddressBar"=dword:00000001
+"ShowHomeButton"=dword:00000000
+"SideSearchEnabled"=dword:00000000
+"SigninAllowed"=dword:00000000
+"SpellcheckEnabled"=dword:00000000
+"SpellCheckServiceEnabled"=dword:00000000
+"StandardizedBrowserZoomEnabled"=dword:00000000
+"StartupBoostEnabled"=dword:00000000
+"SuppressUnsupportedOSWarning"=dword:00000001
+"SyncDisabled"=dword:00000001
+"TabCompareSettings"=dword:00000002
+"TabOrganizerSettings"=dword:00000002
+"TaskManagerEndProcessEnabled"=dword:00000001
+"ToolbarAvatarLabelSettings"=dword:00000001
+"TranslateEnabled"=dword:00000001
+"UiAutomationProviderEnabled"=dword:00000000
+"UrlKeyedAnonymizedDataCollectionEnabled"=dword:00000000
+"UserAgentReduction"=dword:00000001
+"UserFeedbackAllowed"=dword:00000000
 "WebRtcEventLogCollectionAllowed"=dword:00000000
 "WebRtcIPHandling"="default"
 "WebRtcTextLogCollectionAllowed"=dword:00000000
-"DefaultInsecureContentSetting"=dword:00000003
-"PrivateNetworkAccessRestrictionsEnabled"=dword:00000000
-"AdvancedProtectionDeepScanningEnabled"=dword:00000000
-"DefaultPluginsSetting"=dword:00000001
-"DisableSSLRecordSplitting"=dword:00000001
-"DnsPrefetchingEnabled"=dword:00000000
-"OptimizationGuideFetchingEnabled"=dword:00000000
-"SafeBrowsingProxiedRealTimeChecksAllowed"=dword:00000000
-"SafeBrowsingProtectionLevel"=dword:00000000
-"DisableSafeBrowsingProceedAnyway"=dword:00000001
-"PasswordProtectionWarningTrigger"=dword:00000000
-"HomepageIsNewTabPage"=dword:00000000
-"HomepageLocation"="google.com"
-"NewTabPageLocation"="google.com"
-"RestoreOnStartup"=dword:00000003
-"ShowHomeButton"=dword:00000000
-"AbusiveExperienceInterventionEnforce"=dword:00000000
-"AccessibilityImageLabelsEnabled"=dword:00000000
-"AdditionalDnsQueryTypesEnabled"=dword:00000000
-"AdsSettingForIntrusiveAdsSites"=dword:00000002
-"AdvancedProtectionAllowed"=dword:00000000
-"AllowBackForwardCacheForCacheControlNoStorePageEnabled"=dword:00000000
-"AllowDinosaurEasterEgg"=dword:00000000
-"AllowFileSelectionDialogs"=dword:00000001
-"ApplicationBoundEncryptionEnabled"=dword:00000001
-"AudioCaptureAllowed"=dword:00000001
-"AudioProcessHighPriorityEnabled"=dword:00000001
-"AudioSandboxEnabled"=dword:00000001
-"AutoplayAllowed"=dword:00000001
-"BatterySaverModeAvailability"=dword:00000000
-"BrowserGuestModeEnforced"=dword:00000000
-"BrowserLabsEnabled"=dword:00000000
-"BrowserNetworkTimeQueriesEnabled"=dword:00000000
-"CSSCustomStateDeprecatedSyntaxEnabled"=dword:00000001
-"CORSNonWildcardRequestHeadersSupport"=dword:00000001
-"ChromeForTestingAllowed"=dword:00000000
-"ChromeVariations"=dword:00000002
-"ClickToCallEnabled"=dword:00000000
-"CloudManagementEnrollmentMandatory"=dword:00000000
-"CloudPolicyOverridesPlatformPolicy"=dword:00000000
-"CloudUserPolicyMerge"=dword:00000000
-"CloudUserPolicyOverridesCloudMachinePolicy"=dword:00000000
-"CommandLineFlagSecurityWarningsEnabled"=dword:00000000
-"ComponentUpdatesEnabled"=dword:00000000
-"DNSInterceptionChecksEnabled"=dword:00000000
-"DesktopSharingHubEnabled"=dword:00000001
-"DomainReliabilityAllowed"=dword:00000000
-"DownloadRestrictions"=dword:00000000
-"DynamicCodeSettings"=dword:00000000
-"FeedbackSurveysEnabled"=dword:00000000
-"ForceGoogleSafeSearch"=dword:00000001
-"ForcePermissionPolicyUnloadDefaultEnabled"=dword:00000000
-"ForceYouTubeRestrict"=dword:00000000
-"FullscreenAllowed"=dword:00000001
-"GloballyScopeHTTPAuthCacheEnabled"=dword:00000000
-"GoogleSearchSidePanelEnabled"=dword:00000000
-"HeadlessMode"=dword:00000002
-"HideWebStoreIcon"=dword:00000001
-"HistoryClustersVisible"=dword:00000000
-"HttpsUpgradesEnabled"=dword:00000001
-"IntensiveWakeUpThrottlingEnabled"=dword:00000001
-"IntranetRedirectBehavior"=dword:00000002
-"KeyboardFocusableScrollersEnabled"=dword:00000000
-"LensDesktopNTPSearchEnabled"=dword:00000000
-"MediaRecommendationsEnabled"=dword:00000000
-"NTPCardsVisible"=dword:00000000
-"NetworkServiceSandboxEnabled"=dword:00000001
-"PaymentMethodQueryEnabled"=dword:00000000
-"PrefixedVideoFullscreenApiAvailability"="enabled"
-"PromotionsEnabled"=dword:00000000
-"QRCodeGeneratorEnabled"=dword:00000001
-"QuicAllowed"=dword:00000001
-"RendererAppContainerEnabled"=dword:00000000
-"RequireOnlineRevocationChecksForLocalAnchors"=dword:00000000
-"RoamingProfileSupportEnabled"=dword:00000000
-"SafeBrowsingForTrustedSourcesEnabled"=dword:00000000
-"SandboxExternalProtocolBlocked"=dword:00000000
-"SafeSitesFilterBehavior"=dword:00000001
-"ScrollToTextFragmentEnabled"=dword:00000001
-"SharedClipboardEnabled"=dword:00000000
-"ShowFullUrlsInAddressBar"=dword:00000001
-"SideSearchEnabled"=dword:00000000
-"SpellcheckEnabled"=dword:00000000
-"StandardizedBrowserZoomEnabled"=dword:00000000
-"SuppressUnsupportedOSWarning"=dword:00000001
-"TaskManagerEndProcessEnabled"=dword:00000001
-"ToolbarAvatarLabelSettings"=dword:00000001
-"UserAgentReduction"=dword:00000001
-"SafeBrowsingEnabled"=dword:00000000
-"RendererCodeIntegrityEnabled"=dword:00000000
-"ProxyServerMode"=dword:00000003
-"InsecureFormsWarningsEnabled"=dword:00000000
-"DefaultWindowPlacementSetting"=dword:00000003
-"UiAutomationProviderEnabled"=dword:00000000
-"ScreenCaptureAllowed"=dword:00000001
-"DataUrlInSvgUseEnabled"=dword:00000001
-"DefaultWindowManagementSetting"=dword:00000003
-"DefaultWebUsbGuardSetting"=dword:00000003
-"DefaultWebHidGuardSetting"=dword:00000003
-"DefaultWebBluetoothGuardSetting"=dword:00000003
 "WindowOcclusionEnabled"=dword:00000001
+"WPADQuickCheckEnabled"=dword:00000000
+"ZstdContentEncodingEnabled"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Google\Chrome]
 "AutofillAddressEnabled"=dword:00000000
@@ -2285,12 +2285,12 @@ Windows Registry Editor Version 5.00
 "DisableLogging"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
-"ForceDisableModeChangeAnimation"=dword:00000001
-"EnableAeroPeek"=dword:00000000
-"SuperWetEnabled"=dword:00000000
 "AnimationAttributionEnabled"=dword:00000000
 "AnimationAttributionHashingEnabled"=dword:00000000
+"EnableAeroPeek"=dword:00000000
+"ForceDisableModeChangeAnimation"=dword:00000001
 "OverlayMinFPS"=dword:00000000
+"SuperWetEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Speech]
 "AllowSpeechModelUpdate"=dword:00000000
@@ -2309,44 +2309,44 @@ Windows Registry Editor Version 5.00
 "FolderContentsInfoTip"=dword:00000001 
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
-"Start_TrackDocs"=dword:00000000
-"Start_TrackProgs"=dword:00000000
-"Start_LargeMFUIcons"=dword:00000000
+"AutoSearch"=dword:00000000
+"DisableThumbnailCache"=dword:00000001
+"DisallowShaking"=dword:00000001
+"DontPrettyPath"=dword:00000001
+"EnableSnapAssistFlyout"=dword:00000000
+"EnableSnapBar"=dword:00000000
+"EnableTaskGroups"=dword:00000000
+"ExtendedUIHoverTime"=dword:00000000
+"FolderContentsInfoTip"=dword:00000001
+"Hidden"=dword:00000001
+"HideDrivesWithNoMedia"=dword:00000000
+"HideFileExt"=dword:00000000
+"LaunchTo"=dword:00000001
+"NoNetCrawling"=dword:00000001
+"NoThumbnailCache"=dword:00000001
+"PersistBrowsers"=dword:00000000
+"SearchBoxVisibleInTouchImprovement"=dword:00000001
+"SeparateProcess"=dword:00000000
+"SharingWizardOn"=dword:00000000
+"ShowCopilotButton"=dword:00000000
+"ShowCortanaButton"=dword:00000000
+"ShowInfoTip"=dword:00000001
+"ShowSecondsInSystemClock"=dword:00000000
+"ShowSyncProviderNotifications"=dword:00000000
+"ShowTaskViewButton"=dword:00000000
 "Start_AccountNotifications"=dword:00000000
 "Start_IrisRecommendations"=dword:00000000
-"ShowCopilotButton"=dword:00000000
-"TaskbarDa"=dword:00000000
-"EnableSnapBar"=dword:00000000
-"HideFileExt"=dword:00000000
-"Hidden"=dword:00000001
-"ShowSyncProviderNotifications"=dword:00000000
-"DisallowShaking"=dword:00000001
-"TaskbarAl"=dword:00000000
-"Start_NotifyNewApps"=dword:00000000
-"ShowTaskViewButton"=dword:00000000
-"ShowSecondsInSystemClock"=dword:00000000
-"ExtendedUIHoverTime"=dword:00000000
-"HideDrivesWithNoMedia"=dword:00000000
-"ShowCortanaButton"=dword:00000000
-"FolderContentsInfoTip"=dword:00000001
-"ShowInfoTip"=dword:00000001
-"SharingWizardOn"=dword:00000000
-"TaskbarEndTask"=dword:00000001
-"LaunchTo"=dword:00000001
-"SeparateProcess"=dword:00000000
-"DisableThumbnailCache"=dword:00000001
-"NoThumbnailCache"=dword:00000001
-"EnableSnapAssistFlyout"=dword:00000000
-"ThumbnailLivePreviewHoverTime"=dword:00000001
-"DontPrettyPath"=dword:00000001
-"NoNetCrawling"=dword:00000001
-"PersistBrowsers"=dword:00000000
-"EnableTaskGroups"=dword:00000000
-"UseCompactMode"=dword:00000001
-"TaskbarAnimations"=dword:00000000
-"AutoSearch"=dword:00000000
-"SearchBoxVisibleInTouchImprovement"=dword:00000001
+"Start_LargeMFUIcons"=dword:00000000
 "Start_Layout"=dword:00000001
+"Start_NotifyNewApps"=dword:00000000
+"Start_TrackDocs"=dword:00000000
+"Start_TrackProgs"=dword:00000000
+"TaskbarAl"=dword:00000000
+"TaskbarAnimations"=dword:00000000
+"TaskbarDa"=dword:00000000
+"TaskbarEndTask"=dword:00000001
+"ThumbnailLivePreviewHoverTime"=dword:00000001
+"UseCompactMode"=dword:00000001
 
 [HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
 "PaddedBorderWidth"="-60"
@@ -2444,12 +2444,12 @@ Windows Registry Editor Version 5.00
 "RestrictSendingNTLMTraffic"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
+"fAllowToGetHelp"=dword:00000000
 "fDenyTSConnections"=dword:00000001
-"updateRDStatus"=dword:00000000
 "fSingleSessionPerUser"=dword:00000001
 "StartRCM"=dword:00000000
 "TSUserEnabled"=dword:00000000
-"fAllowToGetHelp"=dword:00000000
+"updateRDStatus"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules]
 "RemoteDesktop-UserMode-In-TCP"="v2.33|Action=Allow|Active=FALSE|Dir=In|Protocol=6|LPort=3389|App=%SystemRoot%\\system32\\svchost.exe|Svc=termservice|Name=@FirewallAPI.dll,-28775|Desc=@FirewallAPI.dll,-28756|EmbedCtxt=@FirewallAPI.dll,-28752|"
@@ -2463,44 +2463,44 @@ Windows Registry Editor Version 5.00
 "{BlockTelemetryIPs}"="v2.33|Action=Block|Active=TRUE|Dir=Out|Name=Block Telemetry IPs|RmtAddr=134.170.30.202,137.116.81.24,157.56.106.189,184.86.53.99,2.22.61.43,2.22.61.66,204.79.197.200,23.218.212.69,65.39.117.230,65.52.108.33,65.55.108.23,64.4.54.254,8.36.80.197,8.36.80.224,8.36.80.252,8.36.113.118,8.36.113.141,8.36.80.230,8.36.80.231,8.36.113.126,8.36.80.195,8.36.80.217,8.36.80.237,8.36.80.246,8.36.113.116,8.36.113.139,8.36.80.244,216.228.121.209|"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\InputPersonalization]
+"AcceptedPrivacyPolicy"=dword:00000000
 "AllowInputPersonalization"=dword:00000000
+"HarvestContacts"=dword:00000000
+"Installed"=dword:00000000
 "RestrictImplicitInkCollection"=dword:00000001
 "RestrictImplicitTextCollection"=dword:00000001
-"Installed"=dword:00000000
 "Shutdown"=dword:00000001
-"AcceptedPrivacyPolicy"=dword:00000000
-"HarvestContacts"=dword:00000000
 
 [HKEY_USERS\New\Software\Microsoft\InputPersonalization]
 "RestrictImplicitTextCollection"=dword:00000001
 "RestrictImplicitInkCollection"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\InputPersonalization]
+"AcceptedPrivacyPolicy"=dword:00000000
 "AllowInputPersonalization"=-
+"HarvestContacts"=dword:00000000
+"Installed"=dword:00000000
 "RestrictImplicitInkCollection"=dword:00000001
 "RestrictImplicitTextCollection"=dword:00000001
-"Installed"=dword:00000000
 "Shutdown"=dword:00000001
-"AcceptedPrivacyPolicy"=dword:00000000
-"HarvestContacts"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\InputPersonalization]
+"AcceptedPrivacyPolicy"=dword:00000000
 "AllowInputPersonalization"=-
+"HarvestContacts"=dword:00000000
+"Installed"=dword:00000000
 "RestrictImplicitInkCollection"=dword:00000001
 "RestrictImplicitTextCollection"=dword:00000001
-"Installed"=dword:00000000
 "Shutdown"=dword:00000001
-"AcceptedPrivacyPolicy"=dword:00000000
-"HarvestContacts"=dword:00000000
 
 [HKEY_USERS\.DEFAULT\Software\Microsoft\InputPersonalization]
+"AcceptedPrivacyPolicy"=dword:00000000
 "AllowInputPersonalization"=-
+"HarvestContacts"=dword:00000000
+"Installed"=dword:00000000
 "RestrictImplicitInkCollection"=dword:00000001
 "RestrictImplicitTextCollection"=dword:00000001
-"Installed"=dword:00000000
 "Shutdown"=dword:00000001
-"AcceptedPrivacyPolicy"=dword:00000000
-"HarvestContacts"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\InputPersonalization\TrainedDataStore]
 "HarvestContacts"=dword:00000000
@@ -2540,11 +2540,11 @@ Windows Registry Editor Version 5.00
 "DefaultValue"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\software\policies\microsoft\ime\shared]
-"UserDict"=dword:00000000
-"UseHistorybasedPredictiveInput"=dword:00000000
 "Enable Cloud Candidate"="0"
 "Enable Lexicon Update"="0"
 "misconvlogging"=dword:00000000
+"UseHistorybasedPredictiveInput"=dword:00000000
+"UserDict"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows Security Health\State]
 "AppAndBrowser_EdgeSmartScreenOff"=dword:00000000
@@ -2560,10 +2560,10 @@ Windows Registry Editor Version 5.00
 "EnableDeviceHealthAttestationService"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\VideoSettings]
-"EnableOutsideModeFeature"=dword:00000000
+"DisableHDROnBattery"=dword:00000000
 "EnableAutoEnhanceDuringPlayback"=dword:00000000
 "EnableHDRForPlayback"=dword:00000001
-"DisableHDROnBattery"=dword:00000000
+"EnableOutsideModeFeature"=dword:00000000
 "VideoQualityOnBattery"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\BitLocker]
@@ -2654,14 +2654,14 @@ Windows Registry Editor Version 5.00
 "VKToggleRecordingIndicator"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
-"FlightSettingsMaxPauseDays"=dword:00001c84
-"ExcludeWUDriversInQualityUpdate"=dword:00000001
 "AllowMUUpdateService"=dword:00000000
+"ExcludeWUDriversInQualityUpdate"=dword:00000001
+"FlightSettingsMaxPauseDays"=dword:00001c84
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
-"NoAutoUpdate"=dword:00000001
 "AUOptions"=dword:00000002
 "AutoInstallMinorUpdates"=dword:00000000
+"NoAutoUpdate"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\PolicyState]
 "ExcludeWUDrivers"=dword:00000001
@@ -2673,38 +2673,38 @@ Windows Registry Editor Version 5.00
 "Model"="model"
 
 [HKEY_CURRENT_USER\Control Panel\Desktop]
-"Win8DpiScaling"=dword:00000001
-"LogPixels"=dword:00000060
-"JPEGImportQuality"=dword:00000064
 "AutoEndTasks"="1"
-"PaintDesktopVersion"=dword:00000001
-"MenuShowDelay"="400"
-"SmoothScroll"=dword:00000000
-"LowLevelHooksTimeout"="100"
-"WaitToKillAppTimeout"="1000"
-"WaitToKillServiceTimeout"="1000"
-"HungAppTimeout"="1000"
-"MouseWheelRouting"=dword:00000002
 "EnablePerProcessSystemDPI"=dword:00000001
-"WindowArrangementActive"="0"
+"ForegroundLockTimeout"=dword:00000000
+"HungAppTimeout"="1000"
+"JPEGImportQuality"=dword:00000064
+"LogPixels"=dword:00000060
+"LowLevelHooksTimeout"="100"
+"MenuShowDelay"="400"
 "MonitorRemovalRecalcBehavior"=dword:00000001
+"MouseWheelRouting"=dword:00000002
+"PaintDesktopVersion"=dword:00000001
 "ScreenSaveTimeOut"=-
 "SCRNSAVE.EXE"=-
-"ForegroundLockTimeout"=dword:00000000
+"SmoothScroll"=dword:00000000
+"WaitToKillAppTimeout"="1000"
+"WaitToKillServiceTimeout"="1000"
+"Win8DpiScaling"=dword:00000001
+"WindowArrangementActive"="0"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control]
-"WaitToKillServiceTimeout"="1000"
 "DisableRemoteScmEndpoints"=dword:00000000
 "HandlerTimeout"=dword:7FFFFFFF
+"WaitToKillServiceTimeout"="1000"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PnP]
 "PollBootPartitionTimeout"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows]
-"ShutdownWarningDialogTimeout"=dword:00000001
 "DesktopHeapLogging"=dword:00000000
 "DwmInputUsesIoCompletionPort"=dword:00000000
 "EnableDwmInputProcessing"=dword:00000000
+"ShutdownWarningDialogTimeout"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Control Panel\Desktop]
 "EnablePerProcessSystemDPI"=dword:00000001
@@ -2722,28 +2722,28 @@ Windows Registry Editor Version 5.00
 "DisablePerProcessSystemDPIForProcesses"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
-"ShowRecommendations"=dword:00000000
-"EnableAutoTray"=dword:00000000
 "AltTabSettings"=dword:00000000
+"EnableAutoTray"=dword:00000000
+"ExcludedFromStableAnaheimDownloadPromotionSL"=dword:00000001
+"ExplorerStartupTraceRecorded"=dword:00000000
+"IrisClientRefresh"=dword:00000000
 "link"=hex:00,00,00,00
 "Reason Setting"=dword:00000000
-"ExcludedFromStableAnaheimDownloadPromotionSL"=dword:00000001
-"IrisClientRefresh"=dword:00000000
-"ExplorerStartupTraceRecorded"=dword:00000000
-"TelemetrySalt"=dword:00000000
-"SIDUpdatedOnLibraries"=dword:00000000
-"ShowRecent"=dword:00000000
-"ShowFrequent"=dword:00000000
 "ShowCloudFilesInQuickAccess"=dword:00000000
+"ShowFrequent"=dword:00000000
+"ShowRecent"=dword:00000000
+"ShowRecommendations"=dword:00000000
+"SIDUpdatedOnLibraries"=dword:00000000
+"TelemetrySalt"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\StandardProfile]
 "EnableFirewall"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa]
+"LmCompatibilityLevel"=-
+"LsaConfigFlags"=dword:00000000
 "RunAsPPL"=dword:00000000
 "RunAsPPLBoot"=dword:00000000
-"LsaConfigFlags"=dword:00000000
-"LmCompatibilityLevel"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Installer]
 "Logging"=dword:00000000
@@ -2822,9 +2822,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsRuntime\WellKnownContracts]
 "Windows.ApplicationModel.SocialInfo.SocialInfoContract"=-
-"Windows.System.Profile.ProfileRetailInfoContract"=-
-"Windows.Services.Maps.GuidanceContract"=-
-"Windows.Services.Maps.LocalSearchContract"=-
 "Windows.Media.AppBroadcasting.AppBroadcastingContract"=-
 "Windows.Media.AppRecording.AppRecordingContract"=-
 "Windows.Media.Capture.AppBroadcastContract"=-
@@ -2832,6 +2829,9 @@ Windows Registry Editor Version 5.00
 "Windows.Media.Capture.AppCaptureMetadataContract"=-
 "Windows.Media.Capture.CameraCaptureUIContract"=-
 "Windows.Media.Capture.GameBarContract"=-
+"Windows.Services.Maps.GuidanceContract"=-
+"Windows.Services.Maps.LocalSearchContract"=-
+"Windows.System.Profile.ProfileRetailInfoContract"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsRuntime\ActivatableClassId\Windows.Gaming.UI.GameBar]
 "ActivationType"=dword:00000000
@@ -2847,30 +2847,30 @@ Windows Registry Editor Version 5.00
 "{2cc5ca98-6485-489a-920e-b3e88a6ccce3}"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
-"NoConnectedUser"=dword:00000003
 "ConsentPromptBehaviorAdmin"=dword:00000000
 "ConsentPromptBehaviorUser"=dword:00000001
-"HideFastUserSwitching"=dword:00000001
-"TypeOfAdminApprovalMode"=dword:00000001
-"VerboseStatus"=dword:00000001
-"PromptOnSecureDesktop"=dword:00000000
-"EnableLUA"=dword:00000000
-"DisableAutomaticRestartSignOn"=dword:00000001
-"MSAOptional"=dword:00000001
 "DelayedDesktopSwitchTimeout"=dword:00000000
-"FilterAdministratorToken"=dword:00000000
-"EnableUIADesktopToggle"=dword:00000000
-"EnableInstallerDetection"=dword:00000000
-"ValidateAdminCodeSignatures"=dword:00000000
-"EnableSecureUIAPaths"=dword:00000000
-"EnableCursorSuppression"=dword:00000000
-"DontDisplayLockedUserId"=-
+"DisableAutomaticRestartSignOn"=dword:00000001
 "DontDisplayLastUserName"=-
+"DontDisplayLockedUserId"=-
+"EnableCursorSuppression"=dword:00000000
+"EnableFirstLogonAnimation"=dword:00000000
+"EnableInstallerDetection"=dword:00000000
+"EnableLUA"=dword:00000000
+"EnableSecureUIAPaths"=dword:00000000
+"EnableUIADesktopToggle"=dword:00000000
 "EnableVirtualization"=dword:00000000
+"FilterAdministratorToken"=dword:00000000
+"HideFastUserSwitching"=dword:00000001
+"MSAOptional"=dword:00000001
+"NoConnectedUser"=dword:00000003
+"NoInternetOpenWith"=dword:00000001
+"PromptOnSecureDesktop"=dword:00000000
 "SynchronousMachineGroupPolicy"=dword:00000000
 "SynchronousUserGroupPolicy"=dword:00000000
-"NoInternetOpenWith"=dword:00000001
-"EnableFirstLogonAnimation"=dword:00000000
+"TypeOfAdminApprovalMode"=dword:00000001
+"ValidateAdminCodeSignatures"=dword:00000000
+"VerboseStatus"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\AppV\Client]
 "Enabled"=dword:00000000
@@ -2927,13 +2927,13 @@ Windows Registry Editor Version 5.00
 "DODownloadMode"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
-"EnableAeroPeek"=dword:00000000
-"UseDpiScaling"=dword:00000000
-"CompositionPolicy"=dword:00000000
-"Composition"=dword:00000000
 "AlwaysHibernateThumbnails"=dword:00000000
 "AnimationAttributionEnabled"=dword:00000000
 "AnimationAttributionHashingEnabled"=dword:00000000
+"Composition"=dword:00000000
+"CompositionPolicy"=dword:00000000
+"EnableAeroPeek"=dword:00000000
+"UseDpiScaling"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SmartActionPlatform\SmartClipboard]
 "Disabled"=dword:00000001
@@ -2987,6 +2987,7 @@ Windows Registry Editor Version 5.00
 "AllowRemoteShellAccess"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Terminal Services]
+"fAllowFullControl"=dword:00000000
 "fAllowToGetHelp"=dword:00000000
 "fAllowUnsolicited"=dword:00000000
 "fAllowUnsolicitedFullControl"=dword:00000000
@@ -2994,13 +2995,12 @@ Windows Registry Editor Version 5.00
 "TSAppCompat"=dword:00000000
 "TSEnabled"=dword:00000000
 "TSUserEnabled"=dword:00000000
-"fAllowFullControl"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services\Client]
+"fClientDisableUDP"=dword:00000001
 "fEnableUsbBlockDeviceBySetupClass"=dword:00000000
 "fEnableUsbNoAckIsochWriteToDevice"=dword:00000000
 "fEnableUsbSelectDeviceByInterface"=dword:00000000
-"fClientDisableUDP"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WMDRM]
 "DisableOnline"=dword:00000001
@@ -3046,13 +3046,13 @@ Windows Registry Editor Version 5.00
 "DisablePCA"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\PCHealth\ErrorReporting]
-"DoReport"=dword:00000000
-"IncludeKernelFaults"=dword:00000000
 "AllOrNone"=dword:00000000
-"IncludeMicrosoftApps"=dword:00000000
-"IncludeWindowsApps"=dword:00000000
-"IncludeShutdownErrs"=dword:00000000
+"DoReport"=dword:00000000
 "ForceQueueMode"=dword:00000000
+"IncludeKernelFaults"=dword:00000000
+"IncludeMicrosoftApps"=dword:00000000
+"IncludeShutdownErrs"=dword:00000000
+"IncludeWindowsApps"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\PCHealth\ErrorReporting\DW]
 "DWFileTreeRoot"="0"
@@ -3062,28 +3062,28 @@ Windows Registry Editor Version 5.00
 "DWReporteeName"="0"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting]
-"Disabled"=dword:00000001
-"DontSendAdditionalData"=dword:00000001
-"LoggingDisabled"=dword:00000001
-"DoReport"=dword:00000000
 "AutoApproveOSDumps"=dword:00000000
+"BypassDataThrottling"=dword:00000000
 "ConfigureArchive"=dword:00000000
 "DisableArchive"=dword:00000001
+"Disabled"=dword:00000001
+"DontSendAdditionalData"=dword:00000001
 "DontShowUI"=dword:00000001
-"BypassDataThrottling"=dword:00000000
+"DoReport"=dword:00000000
+"LoggingDisabled"=dword:00000001
 "OobeCompleted"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting]
-"Disabled"=dword:00000001
-"DontShowUI"=dword:00000001
-"DoReport"=dword:00000000
 "AutoApproveOSDumps"=dword:00000000
+"BypassDataThrottling"=dword:00000000
 "ConfigureArchive"=dword:00000000
 "DisableArchive"=dword:00000001
+"Disabled"=dword:00000001
 "DontSendAdditionalData"=dword:00000001
-"LoggingDisabled"=dword:00000001
 "DontShowUI"=dword:00000001
-"BypassDataThrottling"=dword:00000000
+"DontShowUI"=dword:00000001
+"DoReport"=dword:00000000
+"LoggingDisabled"=dword:00000001
 "OobeCompleted"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting\WMR]
@@ -3107,8 +3107,8 @@ Windows Registry Editor Version 5.00
 "DontSendAdditionalData"=dword:00000001
 "EnableZip"=dword:00000001
 "ErrorPort"=-
-"ServiceTimeout"=-
 "MachineID"="0"
+"ServiceTimeout"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting\Escalation]
 "DisableEscalation"=dword:00000001
@@ -3121,13 +3121,13 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\Windows Error Reporting]
 "AutoApproveOSDumps"=dword:00000000
+"BypassDataThrottling"=dword:00000000
+"ConfigureArchive"=dword:00000000
+"DisableArchive"=dword:00000001
 "Disabled"=dword:00000001
 "DontSendAdditionalData"=dword:00000001
 "DontShowUI"=dword:00000001
 "LoggingDisabled"=dword:00000001
-"ConfigureArchive"=dword:00000000
-"DisableArchive"=dword:00000001
-"BypassDataThrottling"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Windows]
 "ErrorMode"=dword:00000002
@@ -3139,21 +3139,21 @@ Windows Registry Editor Version 5.00
 "WindowsDefender"=-
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run]
-"WindowsWelcomeCenter"=-
 "ctfmon.exe"=-
 "OneDrive"=-
 "OneDriveSetup"=-
+"WindowsWelcomeCenter"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Spynet]
-"SubmitSamplesConsent"=dword:00000002
 "DisableBlockAtFirstSeen"=dword:00000001
 "SpyNetReporting"=dword:00000000
+"SubmitSamplesConsent"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet]
-"SubmitSamplesConsent"=dword:00000002
 "DisableBlockAtFirstSeen"=dword:00000001
-"SpyNetReporting"=dword:00000000
 "LocalSettingOverrideSpynetReporting"=dword:00000001
+"SpyNetReporting"=dword:00000000
+"SubmitSamplesConsent"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Input\Settings]
 "AutoAccent"=dword:00000000
@@ -3169,7 +3169,9 @@ Windows Registry Editor Version 5.00
 "DisablePersonalization"=dword:00000000
 "EmojiSuggestion"=dword:00000000
 "EmojiTranslation"=dword:00000001
+"EnableExpressiveInputEmojiMultipleSelection"=dword:00000000
 "EnableHwkbAutocorrection"=dword:00000000
+"EnableHwkbAutocorrection2"=dword:00000000
 "EnableHwkbMode"=dword:00000000
 "EnableHwkbTextPrediction"=dword:00000000
 "HarvestContacts"=dword:00000000
@@ -3194,8 +3196,6 @@ Windows Registry Editor Version 5.00
 "SearchDataSources"=dword:00000000
 "Spellcheck"=dword:00000000
 "TouchKeyboard_EnableKeyAudioFeedback"=dword:00000000
-"EnableExpressiveInputEmojiMultipleSelection"=dword:00000000
-"EnableHwkbAutocorrection2"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Input\Settings]
 "AutoAccent"=dword:00000000
@@ -3211,7 +3211,9 @@ Windows Registry Editor Version 5.00
 "DisablePersonalization"=dword:00000000
 "EmojiSuggestion"=dword:00000000
 "EmojiTranslation"=dword:00000000
+"EnableExpressiveInputEmojiMultipleSelection"=dword:00000000
 "EnableHwkbAutocorrection"=dword:00000000
+"EnableHwkbAutocorrection2"=dword:00000000
 "EnableHwkbMode"=dword:00000000
 "EnableHwkbTextPrediction"=dword:00000000
 "HarvestContacts"=dword:00000000
@@ -3236,8 +3238,6 @@ Windows Registry Editor Version 5.00
 "SearchDataSources"=dword:00000000
 "Spellcheck"=dword:00000000
 "TouchKeyboard_EnableKeyAudioFeedback"=dword:00000000
-"EnableExpressiveInputEmojiMultipleSelection"=dword:00000000
-"EnableHwkbAutocorrection2"=dword:00000000
 
 [HKEY_USERS\.DEFAULT\Software\Microsoft\Input\Settings]
 "AutoAccent"=dword:00000000
@@ -3253,7 +3253,9 @@ Windows Registry Editor Version 5.00
 "DisablePersonalization"=dword:00000000
 "EmojiSuggestion"=dword:00000000
 "EmojiTranslation"=dword:00000000
+"EnableExpressiveInputEmojiMultipleSelection"=dword:00000000
 "EnableHwkbAutocorrection"=dword:00000000
+"EnableHwkbAutocorrection2"=dword:00000000
 "EnableHwkbMode"=dword:00000000
 "EnableHwkbTextPrediction"=dword:00000000
 "HarvestContacts"=dword:00000000
@@ -3278,68 +3280,66 @@ Windows Registry Editor Version 5.00
 "SearchDataSources"=dword:00000000
 "Spellcheck"=dword:00000000
 "TouchKeyboard_EnableKeyAudioFeedback"=dword:00000000
-"EnableExpressiveInputEmojiMultipleSelection"=dword:00000000
-"EnableHwkbAutocorrection2"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 "AllowOnlineTips"=dword:00000000
-"NoPublishingWizard"=dword:00000001
-"NoInternetOpenWith"=dword:00000001
-"NoLowDiskSpaceChecks"=dword:00000001
 "ClearRecentDocsOnExit"=dword:00000001
-"NoRecentDocsHistory"=dword:00000001
-"LinkResolveIgnoreLinkInfo"=dword:00000001
-"NoResolveSearch"=dword:00000001
-"NoResolveTrack"=dword:00000001
+"DisableBindDirectlyToPropertySetStorage"=dword:00000001
+"DisableThumbnailCache"=dword:00000001
+"DisableThumbnails"=dword:00000000
 "EnforceShellExtensionSecurity"=dword:00000001
-"HideSCAMeetNow"=dword:00000001
-"HideSCAHealth"=dword:00000001
-"NoCustomizeWebView"=dword:00000001
 "ForceActiveDesktopOn"=dword:00000000
+"HideSCAHealth"=dword:00000001
+"HideSCAMeetNow"=dword:00000001
+"LinkResolveIgnoreLinkInfo"=dword:00000001
 "NoActiveDesktop"=dword:00000001
 "NoActiveDesktopChanges"=dword:00000001
-"DisableThumbnails"=dword:00000000
-"NoThumbnailCache"=dword:00000001
-"DisableThumbnailCache"=dword:00000001
-"NoDrivesInSendToMenu"=dword:00000001
-"PreXPSP2ShellProtocolBehavior"=dword:00000000
-"DisableBindDirectlyToPropertySetStorage"=dword:00000001
 "NoCustomizeThisFolder"=dword:00000001
-"NoWebServices"=dword:00000001
-"NoOnlinePrintsWizard"=dword:00000001
+"NoCustomizeWebView"=dword:00000001
+"NoDrivesInSendToMenu"=dword:00000001
+"NoEncryptOnMove"=dword:00000001
 "NoInstrumentation"=dword:00000001
+"NoInternetOpenWith"=dword:00000001
+"NoLowDiskSpaceChecks"=dword:00000001
 "NoMSAppLogo5ChannelNotify"=dword:00000001
-"NoRemoteRecursiveEvents"=dword:00000001
+"NoOnlinePrintsWizard"=dword:00000001
+"NoPublishingWizard"=dword:00000001
+"NoRecentDocsHistory"=dword:00000001
 "NoRecentDocsMenu"=dword:00000001
 "NoRecentDocsNetHood"=dword:00000001
-"NoEncryptOnMove"=dword:00000001
+"NoRemoteRecursiveEvents"=dword:00000001
+"NoResolveSearch"=dword:00000001
+"NoResolveTrack"=dword:00000001
+"NoThumbnailCache"=dword:00000001
+"NoWebServices"=dword:00000001
+"PreXPSP2ShellProtocolBehavior"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
-"TurnOffSPIAnimations"=dword:00000001
-"HideSCAMeetNow"=dword:00000001
-"NoRecentDocsHistory"=dword:00000001
-"NoThumbnailCache"=dword:00000001
+"ClearRecentDocsOnExit"=-
 "DisableThumbnailCache"=dword:00000001
-"NoRemoteRecursiveEvents"=dword:00000001
+"HideLanguageBar"=dword:00000001
+"HideSCAMeetNow"=dword:00000001
+"NoInstrumentation"=dword:00000001
 "NoInternetOpenWith"=dword:00000001
-"NoResolveTrack"=dword:00000001
+"NoRecentDocsHistory"=dword:00000001
 "NoRecentDocsMenu"=dword:00000001
 "NoRecentDocsNetHood"=dword:00000001
-"ClearRecentDocsOnExit"=-
-"NoInstrumentation"=dword:00000001
-"HideLanguageBar"=dword:00000001
+"NoRemoteRecursiveEvents"=dword:00000001
+"NoResolveTrack"=dword:00000001
+"NoThumbnailCache"=dword:00000001
+"TurnOffSPIAnimations"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize]
-"EnableTransparency"=dword:00000000
 "ColorPrevalence"=dword:00000001
-"ThemeChangesMousePointers"=dword:00000000
+"EnableTransparency"=dword:00000000
 "ThemeChangesDesktopIcons"=dword:00000000
+"ThemeChangesMousePointers"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
-"{CA6CC9F1-867A-481E-951E-A28C5E4F01EA}"="Edit in Notepad"
+"{1d27f844-3a1f-4410-85ac-14651078412d}"=""
 "{7AD84985-87B4-4a16-BE58-8B72A5B390F7}"=""
 "{596AB062-B4D2-4215-9F74-E9109B0A8153}"=""
-"{1d27f844-3a1f-4410-85ac-14651078412d}"=""
+"{CA6CC9F1-867A-481E-951E-A28C5E4F01EA}"="Edit in Notepad"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\EventTranscriptKey]
 "EnableEventTranscript"=dword:00000000
@@ -3381,10 +3381,10 @@ Windows Registry Editor Version 5.00
 "TimerInterval"="900000"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common]
-"sentcostumerdata"=dword:00000000
-"SendCustomerDataOptInReason"=dword:00000000
-"SendCustomerDataOptIn"=dword:00000000
 "qmenable"=dword:00000000
+"SendCustomerDataOptIn"=dword:00000000
+"SendCustomerDataOptInReason"=dword:00000000
+"sentcostumerdata"=dword:00000000
 "updatereliabilitydata"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Feedback]
@@ -3394,7 +3394,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Office\Common\ClientTelemetry]
 "DisableTelemetry"=dword:00000001
 "MotherboardUUID"="-"
-"DisableTelemetry"=dword:00000001
 "VerboseLogging"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\ClientTelemetry]
@@ -3413,28 +3412,28 @@ Windows Registry Editor Version 5.00
 "ptwoptin"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\Common]
-"sentcostumerdata"=dword:00000000
-"SendCustomerDataOptInReason"=dword:00000000
-"SendCustomerDataOptIn"=dword:00000000
 "qmenable"=dword:00000000
+"SendCustomerDataOptIn"=dword:00000000
+"SendCustomerDataOptInReason"=dword:00000000
+"sentcostumerdata"=dword:00000000
 "updatereliabilitydata"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Common]
 "qmenable"=dword:00000000
-"updatereliabilitydata"=dword:00000001
-"sentcostumerdata"=dword:00000000
-"SendCustomerDataOptInReason"=dword:00000000
 "SendCustomerDataOptIn"=dword:00000000
+"SendCustomerDataOptInReason"=dword:00000000
+"sentcostumerdata"=dword:00000000
+"updatereliabilitydata"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Common\General]
-"shownfirstrunoptin"=dword:00000000
-"skydrivesigninoption"=dword:00000000
-"PreferCloudSaveLocations"=dword:00000000
-"disablecomingsoon"=dword:00000001
 "disablebackgrounds"=dword:00000001
+"disablecomingsoon"=dword:00000001
 "notrack"=dword:00000001
 "optindisable"=dword:00000001
+"PreferCloudSaveLocations"=dword:00000000
+"shownfirstrunoptin"=dword:00000000
 "signinoptions"=dword:00000003
+"skydrivesigninoption"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\Common\General]
 "skydrivesigninoption"=dword:00000000
@@ -3464,10 +3463,10 @@ Windows Registry Editor Version 5.00
 "powerpointspellingoptions"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Common\Privacy]
-"downloadcontentdisabled"=dword:00000001
-"usercontentdisabled"=dword:00000001
 "controllerconnectedservicesenabled"=dword:00000001
 "disconnectedstate"=dword:00000001
+"downloadcontentdisabled"=dword:00000001
+"usercontentdisabled"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Word\Security\ProtectedView]
 "DisableAttachementsInPV"=dword:00000001
@@ -3660,96 +3659,96 @@ Windows Registry Editor Version 5.00
 "DisableQueryRemoteServer"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
-"AllowTelemetry"=dword:00000000
-"DisableEnterpriseAuthProxy"=dword:00000001
-"DoNotShowFeedbackNotifications"=dword:00000001
-"DisableOneSettingsDownloads"=dword:00000001
 "AllowCommercialDataPipeline"=dword:00000001
 "AllowDesktopAnalyticsProcessing"=dword:00000000
+"AllowDeviceNameInTelemetry"=dword:00000000
+"AllowTelemetry"=dword:00000000
 "AllowUpdateComplianceProcessing"=dword:00000000
 "AllowWUfBCloudProcessing"=dword:00000000
-"AllowDeviceNameInTelemetry"=dword:00000000
-"MaxTelemetryAllowed"=dword:00000000
+"DisableEnterpriseAuthProxy"=dword:00000001
+"DisableOneSettingsDownloads"=dword:00000001
+"DoNotShowFeedbackNotifications"=dword:00000001
 "LimitDiagnosticLogCollection"=dword:00000001
+"MaxTelemetryAllowed"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
 "ContentDeliveryAllowed"=dword:00000000
 "FeatureManagementEnabled"=dword:00000000
+"IdentityProvider"="0"
 "OemPreInstalledAppsEnabled"=dword:00000000
 "PreInstalledAppsEnabled"=dword:00000000
 "PreInstalledAppsEverEnabled"=dword:00000000
+"RemediationRequired"=dword:00000000
 "RotatingLockScreenEnabled"=dword:00000000
 "RotatingLockScreenOverlayEnabled"=dword:00000000
+"ShowSyncProviderNotifications"=dword:00000000
 "SilentInstalledAppsEnabled"=dword:00000000
 "SlideshowEnabled"=dword:00000000
 "SoftLandingEnabled"=dword:00000000
+"SubscribedContent-202914Enabled"=dword:00000000
+"SubscribedContent-280815Enabled"=dword:00000000
+"SubscribedContent-310091Enabled"=dword:00000000
+"SubscribedContent-310092Enabled"=dword:00000000
 "SubscribedContent-310093Enabled"=dword:00000000
+"SubscribedContent-314559Enabled"=dword:00000000
+"SubscribedContent-314563Enabled"=dword:00000000
+"SubscribedContent-338380Enabled"=dword:00000000
+"SubscribedContent-338381Enabled"=dword:00000000
 "SubscribedContent-338387Enabled"=dword:00000000
 "SubscribedContent-338388Enabled"=dword:00000000
 "SubscribedContent-338389Enabled"=dword:00000000
 "SubscribedContent-338393Enabled"=dword:00000000
 "SubscribedContent-353694Enabled"=dword:00000000
 "SubscribedContent-353696Enabled"=dword:00000000
-"SubscribedContent-88000326Enabled"=dword:00000000
-"SubscribedContentEnabled"=dword:00000000
-"SystemPaneSuggestionsEnabled"=dword:00000000
-"IdentityProvider"="0"
-"SubscribedContent-280815Enabled"=dword:00000000
-"SubscribedContent-310091Enabled"=dword:00000000
-"SubscribedContent-314559Enabled"=dword:00000000
-"SubscribedContent-88000045Enabled"=dword:00000000
-"SubscribedContent-88000530Enabled"=dword:00000000
 "SubscribedContent-353698Enabled"=dword:00000000
-"RemediationRequired"=dword:00000000
-"ShowSyncProviderNotifications"=dword:00000000
-"SubscribedContent-314563Enabled"=dword:00000000
-"SubscribedContent-310092Enabled"=dword:00000000
-"SubscribedContent-338380Enabled"=dword:00000000
-"SubscribedContent-338381Enabled"=dword:00000000
-"SubscribedContent-202914Enabled"=dword:00000000
+"SubscribedContent-88000045Enabled"=dword:00000000
 "SubscribedContent-88000161Enabled"=dword:00000000
 "SubscribedContent-88000163Enabled"=dword:00000000
 "SubscribedContent-88000165Enabled"=dword:00000000
+"SubscribedContent-88000326Enabled"=dword:00000000
+"SubscribedContent-88000530Enabled"=dword:00000000
+"SubscribedContentEnabled"=dword:00000000
+"SystemPaneSuggestionsEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"ContentDeliveryAllowed"=dword:00000000
 "FeatureManagementEnabled"=dword:00000000
-"SlideshowEnabled"=dword:00000000
+"IdentityProvider"="0"
 "OemPreInstalledAppsEnabled"=dword:00000000
 "PreInstalledAppsEnabled"=dword:00000000
+"PreInstalledAppsEverEnabled"=dword:00000000
+"RemediationRequired"=dword:00000000
 "RotatingLockScreenEnabled"=dword:00000000
 "RotatingLockScreenOverlayEnabled"=dword:00000000
-"SilentInstalledAppsEnabled"=dword:00000000
-"SoftLandingEnabled"=dword:00000000
-"SystemPaneSuggestionsEnabled"=dword:00000000
-"IdentityProvider"="0"
-"SubscribedContent-310093Enabled"=dword:00000000
-"SubscribedContent-338389Enabled"=dword:00000000
 "RotatingLockScreenOverlayEnabled"=dword:00000000
-"SubscribedContent-88000326Enabled"=dword:00000000
-"PreInstalledAppsEverEnabled"=dword:00000000
+"ShowSyncProviderNotifications"=dword:00000000
+"SilentInstalledAppsEnabled"=dword:00000000
+"SlideshowEnabled"=dword:00000000
+"SoftLandingEnabled"=dword:00000000
+"SubscribedContent-202914Enabled"=dword:00000000
 "SubscribedContent-280815Enabled"=dword:00000000
 "SubscribedContent-310091Enabled"=dword:00000000
+"SubscribedContent-310092Enabled"=dword:00000000
+"SubscribedContent-310093Enabled"=dword:00000000
 "SubscribedContent-314559Enabled"=dword:00000000
+"SubscribedContent-314563Enabled"=dword:00000000
+"SubscribedContent-338380Enabled"=dword:00000000
+"SubscribedContent-338381Enabled"=dword:00000000
 "SubscribedContent-338387Enabled"=dword:00000000
 "SubscribedContent-338388Enabled"=dword:00000000
-"SubscribedContent-88000045Enabled"=dword:00000000
-"SubscribedContent-88000530Enabled"=dword:00000000
+"SubscribedContent-338389Enabled"=dword:00000000
 "SubscribedContent-338393Enabled"=dword:00000000
 "SubscribedContent-353694Enabled"=dword:00000000
 "SubscribedContent-353696Enabled"=dword:00000000
 "SubscribedContent-353698Enabled"=dword:00000000
-"SubscribedContentEnabled"=dword:00000000
-"RemediationRequired"=dword:00000000
-"ShowSyncProviderNotifications"=dword:00000000
-"SubscribedContent-314563Enabled"=dword:00000000
-"ContentDeliveryAllowed"=dword:00000000
-"SubscribedContent-310092Enabled"=dword:00000000
-"SubscribedContent-338380Enabled"=dword:00000000
-"SubscribedContent-338381Enabled"=dword:00000000
-"SubscribedContent-202914Enabled"=dword:00000000
+"SubscribedContent-88000045Enabled"=dword:00000000
 "SubscribedContent-88000161Enabled"=dword:00000000
 "SubscribedContent-88000163Enabled"=dword:00000000
 "SubscribedContent-88000165Enabled"=dword:00000000
+"SubscribedContent-88000326Enabled"=dword:00000000
+"SubscribedContent-88000530Enabled"=dword:00000000
+"SubscribedContentEnabled"=dword:00000000
+"SystemPaneSuggestionsEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowWindowsConsumerFeatures]
 "value"=dword:00000000
@@ -3776,17 +3775,17 @@ Windows Registry Editor Version 5.00
 "ScoobeSystemSettingEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy]
-"LetAppsRunInBackground"=dword:00000002
-"LetAppsRunInBackground_UserInControlOfTheseApps"=-
-"LetAppsRunInBackground_ForceAllowTheseApps"=-
-"LetAppsRunInBackground_ForceDenyTheseApps"=-
 "LetAppsAccessGenerativeAI"=dword:00000002
-"LetAppsAccessGenerativeAI_UserInControlOfTheseApps"=hex(7):00,00
 "LetAppsAccessGenerativeAI_ForceAllowTheseApps"=hex(7):00,00
 "LetAppsAccessGenerativeAI_ForceDenyTheseApps"=hex(7):00,00
-"LetAppsGetDiagnosticInfo"=dword:00000002
-"LetAppsActivateWithVoiceAboveLock"=dword:00000002
+"LetAppsAccessGenerativeAI_UserInControlOfTheseApps"=hex(7):00,00
 "LetAppsActivateWithVoice"=dword:00000002
+"LetAppsActivateWithVoiceAboveLock"=dword:00000002
+"LetAppsGetDiagnosticInfo"=dword:00000002
+"LetAppsRunInBackground"=dword:00000002
+"LetAppsRunInBackground_ForceAllowTheseApps"=-
+"LetAppsRunInBackground_ForceDenyTheseApps"=-
+"LetAppsRunInBackground_UserInControlOfTheseApps"=-
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Mobility]
 "OptedIn"=dword:00000000
@@ -3852,24 +3851,24 @@ Windows Registry Editor Version 5.00
 "EnableInkingWithTouch"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
-"EnableDynamicContentInWSB"=dword:00000000
+"AboveLock"=dword:00000000
 "AllowCloudSearch"=dword:00000000
 "AllowCortana"=dword:00000000
-"AboveLock"=dword:00000000
-"ConnectedSearchUseWeb"=dword:00000000
-"DisableWebSearch"=dword:00000001
+"AllowCortanaAboveLock"=dword:00000000
 "AllowIndexingEncryptedStoresOrItems"=dword:00000000
 "AllowSearchToUseLocation"=dword:00000000
 "AlwaysUseAutoLangDetection"=dword:00000000
-"ConnectedSearchUseWebOverMeteredConnections"=dword:00000000
-"AllowCortanaAboveLock"=dword:00000000
+"BackgroundAppGlobalToggle"=dword:00000000
 "BingSearchEnabled"=dword:00000000
 "ConnectedSearchPrivacy"=dword:00000003
 "ConnectedSearchSafeSearch"=dword:00000003
-"PreventIndexOnBattery"=dword:00000001
-"PreventIndex"=dword:00000001
+"ConnectedSearchUseWeb"=dword:00000000
+"ConnectedSearchUseWebOverMeteredConnections"=dword:00000000
 "DisableRemovableDriveIndexing"=dword:00000001
-"BackgroundAppGlobalToggle"=dword:00000000
+"DisableWebSearch"=dword:00000001
+"EnableDynamicContentInWSB"=dword:00000000
+"PreventIndex"=dword:00000001
+"PreventIndexOnBattery"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Speech_OneCore\Settings\VoiceActivation\Microsoft.549981C3F5F10_8wekyb3d8bbwe!App]
 "AgentActivationEnabled"=dword:00000000
@@ -3904,17 +3903,17 @@ Windows Registry Editor Version 5.00
 "AllowBuildPreview"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CloudContent]
-"DisableTailoredExperiencesWithDiagnosticData"=dword:00000001
-"DisableSpotlightCollectionOnDesktop"=dword:00000001
 "ConfigureWindowsSpotlight"=dword:00000002
+"DisableCloudOptimizedContent"=dword:00000001
+"DisableSoftLanding"=dword:00000001
+"DisableSpotlightCollectionOnDesktop"=dword:00000001
+"DisableTailoredExperiencesWithDiagnosticData"=dword:00000001
+"DisableThirdPartySuggestions"=dword:00000001
 "DisableWindowsSpotlightFeatures"=dword:00000001
 "DisableWindowsSpotlightOnActionCenter"=dword:00000001
 "DisableWindowsSpotlightOnSettings"=dword:00000001
 "DisableWindowsSpotlightWindowsWelcomeExperience"=dword:00000001
 "IncludeEnterpriseSpotlight"=dword:00000000
-"DisableThirdPartySuggestions"=dword:00000001
-"DisableSoftLanding"=dword:00000001
-"DisableCloudOptimizedContent"=dword:00000001
 
 [HKEY_CURRENT_USER\Policies\Microsoft\Windows\CloudContent]
 "DisableTailoredExperiencesWithDiagnosticData"=dword:00000001
@@ -3976,8 +3975,8 @@ Windows Registry Editor Version 5.00
 [HKEY_USERS\.DEFAULT\Software\Microsoft\GameBar]
 "AllowAutoGameMode"=dword:00000000
 "AutoGameModeEnabled"=dword:00000000
-"ShowStartupPanel"=dword:00000000
 "ShowGameModeNotifications"=dword:00000000
+"ShowStartupPanel"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore]
 "AutoDownload"=dword:00000002
@@ -4056,12 +4055,12 @@ Windows Registry Editor Version 5.00
 "29"="C:\\Windows\\blank.ico"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SearchSettings]
-"IsMSACloudSearchEnabled"=dword:00000000
 "IsAADCloudSearchEnabled"=dword:00000000
-"IsDynamicSearchBoxEnabled"=dword:00000000
-"SafeSearchMode"=dword:00000000
 "IsDeviceSearchHistoryEnabled"=dword:00000000
+"IsDynamicSearchBoxEnabled"=dword:00000000
 "IsGlobalFileSearchProviderToggleEnabled"=dword:00000000
+"IsMSACloudSearchEnabled"=dword:00000000
+"SafeSearchMode"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start]
 "ShowRecentList"=dword:00000000
@@ -4074,25 +4073,25 @@ Windows Registry Editor Version 5.00
 "GlobalUserDisabled"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
+"AnyAboveLockAppsActive"=dword:00000000
 "BackgroundAppGlobalToggle"=dword:00000000
 "BingSearchEnabled"=dword:00000000
-"CortanaConsent"=dword:00000000
-"DeviceHistoryEnabled"=dword:00000000
-"SearchboxTaskbarMode"=dword:00000000
-"HistoryViewEnabled"=dword:00000000
 "CanCortanaBeEnabled"=dword:00000000
 "CortanaCapabilities"=dword:00000000
 "CortanaCapabilityFlags"=dword:00000000
+"CortanaConsent"=dword:00000000
 "CortanaEnabled"=dword:00000000
 "CortanaInAmbientMode"=dword:00000000
-"WebControlStatus"=dword:00000000
-"WebControlSecondaryStatus"=dword:00000000
+"DeviceHistoryEnabled"=dword:00000000
 "HasAboveLockTips"=dword:00000000
-"AnyAboveLockAppsActive"=dword:00000000
+"HistoryViewEnabled"=dword:00000000
+"ImmersiveSearch"=-
 "IsAssignedAccess"=dword:00000000
 "IsMicrophoneAvailable"=dword:00000000
 "IsWindowsHelloActive"=dword:00000000
-"ImmersiveSearch"=-
+"SearchboxTaskbarMode"=dword:00000000
+"WebControlSecondaryStatus"=dword:00000000
+"WebControlStatus"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
 "GlobalUserDisabled"=dword:00000001
@@ -4101,30 +4100,30 @@ Windows Registry Editor Version 5.00
 "NewNetworkWindowOff"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Narrator\NoRoam]
-"WinEnterLaunchEnabled"=dword:00000000
-"DetailedFeedback"=dword:00000000
 "CapsLockAlert"=dword:00000002
+"DetailedFeedback"=dword:00000000
+"DuckAudio"=dword:00000000
+"EchoModifierKeys"=dword:00000000
+"EchoNavigationKeys"=dword:00000000
+"EchoToggleKeys"=dword:00000000
 "OnlineServicesEnabled"=dword:00000000
 "ReadingWithIntent"=dword:00000000
-"UserVerbosityLevel"=dword:00000001
-"EchoToggleKeys"=dword:00000000
-"EchoNavigationKeys"=dword:00000000
-"EchoModifierKeys"=dword:00000000
-"DuckAudio"=dword:00000000
 "ScriptingEnabled"=dword:00000000
+"UserVerbosityLevel"=dword:00000001
+"WinEnterLaunchEnabled"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Narrator]
 "AutoreadAdvancedInfo"=dword:00000000
-"FastKeyEntryEnabled"=dword:00000000
-"LockNarratorKeys"=dword:00000000
-"IntonationPause"=dword:00000000
-"PlayAudioCues"=dword:00000000
-"ReadHints"=dword:00000000
-"NarratorCursorHighlight"=dword:00000000
 "CoupleNarratorCursorKeyboard"=dword:00000000
-"ErrorNotificationType"=dword:00000000
 "EchoChars"=dword:00000000
 "EchoWords"=dword:00000000
+"ErrorNotificationType"=dword:00000000
+"FastKeyEntryEnabled"=dword:00000000
+"IntonationPause"=dword:00000000
+"LockNarratorKeys"=dword:00000000
+"NarratorCursorHighlight"=dword:00000000
+"PlayAudioCues"=dword:00000000
+"ReadHints"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Narrator\NarratorHome]
 "AutoStart"=dword:00000000
@@ -4137,14 +4136,14 @@ Windows Registry Editor Version 5.00
 "{41FCC608-8496-4DEF-B43E-7D9BD675A6FF}"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender]
-"DisableAntiSpyware"=dword:00000001
-"DisableRealtimeMonitoring"=dword:00000001
-"DisableAntiVirus"=dword:00000001
-"DisableSpecialRunningModes"=dword:00000001
-"DisableRoutinelyTakingAction"=dword:00000001
-"ServiceKeepAlive"=dword:00000000
-"DisableIOAVProtection"=dword:00000001
 "AllowFastServiceStartup"=dword:00000000
+"DisableAntiSpyware"=dword:00000001
+"DisableAntiVirus"=dword:00000001
+"DisableIOAVProtection"=dword:00000001
+"DisableRealtimeMonitoring"=dword:00000001
+"DisableRoutinelyTakingAction"=dword:00000001
+"DisableSpecialRunningModes"=dword:00000001
+"ServiceKeepAlive"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows Defender\MpEngine]
 "MpEnablePus"=dword:00000000
@@ -4161,33 +4160,33 @@ Windows Registry Editor Version 5.00
 "DisableScanOnRealtimeEnable"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Signature Updates]
-"SignatureDisableNotification"=dword:00000000
-"RealtimeSignatureDelivery"=dword:00000000
-"ForceUpdateFromMU"=dword:00000000
-"DisableScheduledSignatureUpdateOnBattery"=dword:00000001
-"UpdateOnStartUp"=dword:00000000
-"DisableUpdateOnStartupWithoutEngine"=dword:00000001
 "DisableScanOnUpdate"=dword:00000001
+"DisableScheduledSignatureUpdateOnBattery"=dword:00000001
+"DisableUpdateOnStartupWithoutEngine"=dword:00000001
+"ForceUpdateFromMU"=dword:00000000
+"RealtimeSignatureDelivery"=dword:00000000
+"SignatureDisableNotification"=dword:00000000
+"UpdateOnStartUp"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\SmartScreen]
 "ConfigureAppInstallControlEnabled"=dword:00000001
 "ConfigureAppInstallControl"="Anywhere"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
-"SmartScreenEnabled"="Off"
-"AlwaysUnloadDLL"=dword:00000001
-"ShowDriveLettersFirst"=dword:00000000
-"MachineOobeUpdates"=dword:00000000
 "ActiveSetupDisabled"=dword:00000001
 "ActiveSetupTaskOverride"=dword:00000001
+"AlwaysUnloadDLL"=dword:00000001
 "AsyncRunOnce"=dword:00000001
 "AsyncUpdatePCSettings"=dword:00000000
-"DisableAppInstallsOnFirstLogon"=-
-"ThumbnailQuality"=dword:00000024
-"Max Cached Icons"="4096"
 "AutoCheckSelect"=dword:00000000
-"ShowRecent"=dword:00000000
+"DisableAppInstallsOnFirstLogon"=-
+"MachineOobeUpdates"=dword:00000000
+"Max Cached Icons"="4096"
+"ShowDriveLettersFirst"=dword:00000000
 "ShowFrequent"=dword:00000000
+"ShowRecent"=dword:00000000
+"SmartScreenEnabled"="Off"
+"ThumbnailQuality"=dword:00000024
 
 [HKEY_CURRENT_USER\Software\Microsoft\Edge\SmartScreenEnabled]
 @=dword:00000000
@@ -4210,9 +4209,9 @@ Windows Registry Editor Version 5.00
 "UserPreference"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\AppHost]
+"ContentEvaluation"=dword:00000000
 "EnableWebContentEvaluation"=dword:00000000
 "PreventOverride"=dword:00000000
-"ContentEvaluation"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Browser\AllowSmartScreen]
 "value"=dword:00000000
@@ -4303,10 +4302,10 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Office\15.0\Common\Graphics]
 "DisableHardwareAcceleration"=dword:00000001
-"sentcostumerdata"=dword:00000000
-"SendCustomerDataOptInReason"=dword:00000000
-"SendCustomerDataOptIn"=dword:00000000
 "qmenable"=dword:00000000
+"SendCustomerDataOptIn"=dword:00000000
+"SendCustomerDataOptInReason"=dword:00000000
+"sentcostumerdata"=dword:00000000
 "updatereliabilitydata"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Office\14.0\Common\Graphics]
@@ -4349,10 +4348,10 @@ Windows Registry Editor Version 5.00
 "EnableNicAutoPowerSaverInSleepStudy"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\GroupPolicy]
-"fDisablePowerManagement"=dword:00000001
 "fBlockNonDomain"=dword:00000001
-"fSoftDisconnectConnections"=dword:00000000
+"fDisablePowerManagement"=dword:00000001
 "fMinimizeConnections"=dword:00000000
+"fSoftDisconnectConnections"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WcmSvc\Local]
 "WCMPresent"=dword:00000000
@@ -5120,366 +5119,367 @@ Windows Registry Editor Version 5.00
 "UseLargePages"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\DirectX\UserGpuPreferences]
-"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_retail_\\Wow.exe"="GpuPreference=2;"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\No Man's Sky\\Binaries\\NMS.exe"="GpuPreference=2;"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64\\witcher3.exe"="GpuPreference=2;"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64_dx12\\witcher3.exe"="GpuPreference=2;"
-"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping.exe"="GpuPreference=2;"
-"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping_BE.exe"="GpuPreference=2;"
-"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping_EAC.exe"="GpuPreference=2;"
-"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping_EAC_EOS.exe"="GpuPreference=2;"
-"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteLauncher.exe"="GpuPreference=2;"
-"D:\\Epic Games\\GTAV\\GTA5.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\Cities_Skylines\\Cities.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\Grand Theft Auto IV\\GTAIV\\GTAIV.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\POSTAL 4\\Postal4.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\POSTAL 4\\Postal4\\Binaries\\Win64\\Postal4-Win64-Shipping.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\cs2.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\quakechampions\\client\\bin\\pc\\QuakeChampions.exe"="GpuPreference=2;"
-"F:\\Forza Horizon 5\\forzahorizon5.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\American Truck Simulator\\bin\\win_x64\\amtrucks.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Team Fortress 2\\hl2.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Warframe\\Warframe.x64.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\World of Warships\\bin\\8517795\\bin64\\WorldOfWarships64.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Crysis\\Bin32\\Crysis.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Crysis\\Bin32\\Crysis64.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\Dying Light\\DyingLightGame.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Ghostrunner\\Ghostrunner\\Binaries\\Win64\\Ghostrunner-Win64-Shipping.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\Left 4 Dead 2\\left4dead2.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Dead by Daylight\\DeadByDaylight\\Binaries\\Win64\\DeadByDaylight-Win64-Shipping.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Destroy All Humans!\\DH\\Binaries\\Win64\\DH-Win64-Shipping.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\L.A.Noire\\LANoire.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\Dishonored\\Binaries\\Win32\\Dishonored.exe"="GpuPreference=2;"
-"G:\\SteamLibrary\\steamapps\\common\\killingfloor2\\Binaries\\Win64\\KFGame.exe"="GpuPreference=2;"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\New World\\Bin64\\NewWorld.exe"="GpuPreference=2;"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\New World\\NewWorldLauncher.exe"="GpuPreference=2;"
-"G:\\SteamLibrary\\steamapps\\common\\Call of Duty HQ\\cod.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Halo Infinite\\HaloInfinite.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\Overwatch\\Overwatch.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\Lost Ark\\Binaries\\Win64\\LOSTARK.exe"="GpuPreference=2;"
-"F:\\SteamLibrary\\steamapps\\common\\World of Tanks\\na\\win64\\WorldOfTanks.exe"="GpuPreference=2;"
-"C:\\ProgramData\\Wargaming.net\\GameCenter for Steam\\wgc.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\Paladins\\Binaries\\Win64\\Paladins.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\Carmageddon Max Damage\\bin\\Carmageddon_Max_Damage.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Raft\\Raft.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Bloodhunt\\Tiger\\Binaries\\Win64\\Tiger-Win64-Shipping.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Mass Effect\\Binaries\\MassEffect.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\House Flipper\\HouseFlipper.exe"="GpuPreference=2;"
-"F:\\The Last of Us Part I\\tlou-i.exe"="GpuPreference=2;"
-"F:\\SteamLibrary\\steamapps\\common\\The Sims 4\\Game\\Bin\\TS4_x64.exe"="GpuPreference=2;"
-"F:\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="GpuPreference=2;"
-"G:\\SteamLibrary\\steamapps\\common\\Red Dead Redemption 2\\RDR2.exe"="GpuPreference=2;"
-"F:\\Tropico 6\\Tropico6.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\Gas Station Simulator\\GSS2\\Binaries\\Win64\\GSS2-Win64-Shipping.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Planet Coaster\\PlanetCoaster.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Mad Max\\MadMax.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\BorderlandsGOTYEnhanced\\Binaries\\Win64\\BorderlandsGOTY.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\VRising\\VRising.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\TPH\\TPH.exe"="GpuPreference=2;"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\bin\\win64\\dota2.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Skyrim Special Edition\\SkyrimSE.exe"="GpuPreference=2;"
-"C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\Topaz Video AI.exe"="GpuPreference=2;"
-"C:\\Program Files (x86)\\Topaz Video AI\\App\\Topaz Video AI.exe"="GpuPreference=2;"
-"C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\ffmpeg.exe"="GpuPreference=2;"
-"C:\\Program Files (x86)\\Topaz Video AI\\App\\ffmpeg.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Battlefield 1\\bf1.exe"="GpuPreference=2;"
-"F:\\Dying Light 2 Stay Human\\ph\\work\\bin\\x64\\DyingLightGame_x64_rwdi.exe"="GpuPreference=2;"
-"F:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Fallout4.exe"="GpuPreference=2;"
-"G:\\SteamLibrary\\steamapps\\common\\NARAKA BLADEPOINT\\NarakaBladepoint.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\Fallout76\\Fallout76.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\Guild Wars 2\\Gw2-64.exe"="GpuPreference=2;"
-"F:\\SteamLibrary\\steamapps\\common\\Sid Meier's Civilization VI\\Base\\Binaries\\Win64Steam\\CivilizationVI_DX12.exe"="GpuPreference=2;"
-"F:\\Forza Motorsport\\forza_gaming.desktop.x64_release_final.exe"="GpuPreference=2;"
-"F:\\SteamLibrary\\steamapps\\common\\Crossout\\bin\\win64\\Crossout.exe"="GpuPreference=2;"
-"G:\\SteamLibrary\\steamapps\\common\\Battlefield 2042\\BF2042.exe"="GpuPreference=2;"
-"F:\\Alan Wake 2\\AlanWake2.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\The Finals\\Discovery.exe"="GpuPreference=2;"
-"F:\\SteamLibrary\\steamapps\\common\\Resident Evil Village BIOHAZARD VILLAGE\\re8.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Mass Effect Legendary Edition\\Game\\ME1\\Binaries\\Win64\\MassEffect1.exe"="GpuPreference=2;"
-"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_classic_\\WowClassic.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Wolfenstein.The.New.Order.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\AoE3DE\\AoE3DE_s.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\Excalibur\\NeedForSpeedUnbound.exe"="GpuPreference=2;"
-"E:\\SteamLibrary\\steamapps\\common\\Team Fortress 2\\tf_win64.exe"="GpuPreference=2;"
-"G:\\SteamLibrary\\steamapps\\common\\Apex Legends\\r5apex.exe"="GpuPreference=2;"
-"G:\\SteamLibrary\\steamapps\\common\\Apex Legends\\r5apex_dx12.exe"="GpuPreference=2;"
-"F:\\SteamLibrary\\steamapps\\common\\Sons Of The Forest\\SonsOfTheForest.exe"="GpuPreference=2;"
-"F:\\SteamLibrary\\steamapps\\common\\Back 4 Blood\\Gobi\\Binaries\\Win64\\Back4Blood.exe"="GpuPreference=2;"
-"C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win7x64\\steamwebhelper.exe"="GpuPreference=1;"
-"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\World of Warcraft Launcher.exe"="GpuPreference=2;"
-"G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="GpuPreference=2;"
+"C:\\Program Files\\WindowsApps\\Microsoft.WindowsNotepad_*\\Notepad\\Notepad.exe"="GpuPreference=1;"
+"C:\\Program Files (x86)\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicWebHelper.exe"="GpuPreference=1;"
+"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe"="GpuPreference=1;"
 "C:\\Program Files (x86)\\Okular\\okular.exe"="GpuPreference=1;"
-"G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelGame\\Marvel\\Binaries\\Win64\\Marvel-Win64-Shipping.exe"="GpuPreference=2;"
-"G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelGame\\Marvel.exe"="GpuPreference=2;"
-"G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelRivals_Launcher.exe"="GpuPreference=2;"
-"D:\\SteamLibrary\\steamapps\\common\\PUBG\\TslGame\\Binaries\\Win64\\TslGame.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win7x64\\steamwebhelper.exe"="GpuPreference=1;"
+"C:\\Program Files (x86)\\Steam\\steam.exe"="GpuPreference=1;"
+"C:\\Windows\\explorer.exe"="GpuPreference=1;"
+"C:\\Windows\\System32\\dwm.exe"="GpuPreference=1;"
+"C:\\Windows\\System32\\ShellHost.exe"="GpuPreference=1;"
+"C:\\Windows\\System32\\Taskmgr.exe"="GpuPreference=1;"
+"C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_*\\SearchHost.exe"="GpuPreference=1;"
+"C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_*\\TextInputHost.exe"="GpuPreference=1;"
 "C:\\Windows\\SystemApps\\Microsoft.Windows.Search_*\\SearchApp.exe"="GpuPreference=1;"
 "C:\\Windows\\SystemApps\\ShellExperienceHost_*\\ShellExperienceHost.exe"="GpuPreference=1;"
 "C:\\Windows\\SystemApps\\ShellExperienceHost_*\\StartMenuExperienceHost.exe"="GpuPreference=1;"
-"C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_*\\TextInputHost.exe"="GpuPreference=1;"
-"C:\\Program Files (x86)\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicWebHelper.exe"="GpuPreference=1;"
-"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe"="GpuPreference=1;"
-"C:\\Windows\\System32\\ShellHost.exe"="GpuPreference=1;"
-"C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_*\\SearchHost.exe"="GpuPreference=1;"
-"C:\\Windows\\System32\\Taskmgr.exe"="GpuPreference=1;"
-"C:\\Windows\\explorer.exe"="GpuPreference=1;"
-"C:\\Program Files\\WindowsApps\\Microsoft.WindowsNotepad_*\\Notepad\\Notepad.exe"="GpuPreference=1;"
+"C:\\ProgramData\\Wargaming.net\\GameCenter for Steam\\wgc.exe"="GpuPreference=2;"
+"C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\ffmpeg.exe"="GpuPreference=2;"
+"C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\Topaz Video AI.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_classic_\\WowClassic.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_retail_\\Wow.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\World of Warcraft Launcher.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping_BE.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping_EAC_EOS.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping_EAC.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteLauncher.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\bin\\win64\\dota2.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\New World\\Bin64\\NewWorld.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\New World\\NewWorldLauncher.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\No Man's Sky\\Binaries\\NMS.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64_dx12\\witcher3.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64\\witcher3.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Topaz Video AI\\App\\ffmpeg.exe"="GpuPreference=2;"
+"C:\\Program Files (x86)\\Topaz Video AI\\App\\Topaz Video AI.exe"="GpuPreference=2;"
 "D:\\Epic Games\\GTAVEnhanced\\GTA5_Enhanced.exe"="GpuPreference=2;"
 "D:\\Epic Games\\GTAVEnhanced\\PlayGTAV.exe"="GpuPreference=2;"
+"D:\\Epic Games\\GTAV\\GTA5.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\Carmageddon Max Damage\\bin\\Carmageddon_Max_Damage.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\Cities_Skylines\\Cities.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\Dishonored\\Binaries\\Win32\\Dishonored.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\Dying Light\\DyingLightGame.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\Excalibur\\NeedForSpeedUnbound.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\Fallout76\\Fallout76.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\Gas Station Simulator\\GSS2\\Binaries\\Win64\\GSS2-Win64-Shipping.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\Grand Theft Auto IV\\GTAIV\\GTAIV.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\Guild Wars 2\\Gw2-64.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\House Flipper\\HouseFlipper.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\L.A.Noire\\LANoire.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\Left 4 Dead 2\\left4dead2.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\Lost Ark\\Binaries\\Win64\\LOSTARK.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\Overwatch\\Overwatch.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\Paladins\\Binaries\\Win64\\Paladins.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\POSTAL 4\\Postal4\\Binaries\\Win64\\Postal4-Win64-Shipping.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\POSTAL 4\\Postal4.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\PUBG\\TslGame\\Binaries\\Win64\\TslGame.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\The Finals\\Discovery.exe"="GpuPreference=2;"
+"D:\\SteamLibrary\\steamapps\\common\\VRising\\VRising.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\American Truck Simulator\\bin\\win_x64\\amtrucks.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\AoE3DE\\AoE3DE_s.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Battlefield 1\\bf1.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Bloodhunt\\Tiger\\Binaries\\Win64\\Tiger-Win64-Shipping.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\BorderlandsGOTYEnhanced\\Binaries\\Win64\\BorderlandsGOTY.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\cs2.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Crysis\\Bin32\\Crysis64.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Crysis\\Bin32\\Crysis.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Dead by Daylight\\DeadByDaylight\\Binaries\\Win64\\DeadByDaylight-Win64-Shipping.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Destroy All Humans!\\DH\\Binaries\\Win64\\DH-Win64-Shipping.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Ghostrunner\\Ghostrunner\\Binaries\\Win64\\Ghostrunner-Win64-Shipping.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Halo Infinite\\HaloInfinite.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Mad Max\\MadMax.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Mass Effect\\Binaries\\MassEffect.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Mass Effect Legendary Edition\\Game\\ME1\\Binaries\\Win64\\MassEffect1.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Planet Coaster\\PlanetCoaster.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\quakechampions\\client\\bin\\pc\\QuakeChampions.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Raft\\Raft.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Skyrim Special Edition\\SkyrimSE.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Team Fortress 2\\hl2.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Team Fortress 2\\tf_win64.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\TPH\\TPH.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Warframe\\Warframe.x64.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\Wolfenstein.The.New.Order.exe"="GpuPreference=2;"
+"E:\\SteamLibrary\\steamapps\\common\\World of Warships\\bin\\8517795\\bin64\\WorldOfWarships64.exe"="GpuPreference=2;"
+"F:\\Alan Wake 2\\AlanWake2.exe"="GpuPreference=2;"
+"F:\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="GpuPreference=2;"
+"F:\\Dying Light 2 Stay Human\\ph\\work\\bin\\x64\\DyingLightGame_x64_rwdi.exe"="GpuPreference=2;"
+"F:\\Forza Horizon 5\\forzahorizon5.exe"="GpuPreference=2;"
+"F:\\Forza Motorsport\\forza_gaming.desktop.x64_release_final.exe"="GpuPreference=2;"
+"F:\\SteamLibrary\\steamapps\\common\\Back 4 Blood\\Gobi\\Binaries\\Win64\\Back4Blood.exe"="GpuPreference=2;"
+"F:\\SteamLibrary\\steamapps\\common\\Crossout\\bin\\win64\\Crossout.exe"="GpuPreference=2;"
+"F:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Fallout4.exe"="GpuPreference=2;"
 "F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk\\Binaries\\Win64\\FragPunk.exe"="GpuPreference=2;"
 "F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk.exe"="GpuPreference=2;"
+"F:\\SteamLibrary\\steamapps\\common\\Resident Evil Village BIOHAZARD VILLAGE\\re8.exe"="GpuPreference=2;"
+"F:\\SteamLibrary\\steamapps\\common\\Sid Meier's Civilization VI\\Base\\Binaries\\Win64Steam\\CivilizationVI_DX12.exe"="GpuPreference=2;"
+"F:\\SteamLibrary\\steamapps\\common\\Sons Of The Forest\\SonsOfTheForest.exe"="GpuPreference=2;"
+"F:\\SteamLibrary\\steamapps\\common\\The Sims 4\\Game\\Bin\\TS4_x64.exe"="GpuPreference=2;"
+"F:\\SteamLibrary\\steamapps\\common\\World of Tanks\\na\\win64\\WorldOfTanks.exe"="GpuPreference=2;"
+"F:\\The Last of Us Part I\\tlou-i.exe"="GpuPreference=2;"
+"F:\\Tropico 6\\Tropico6.exe"="GpuPreference=2;"
 "G:\\S.T.A.L.K.E.R. 2\\Stalker2\\Binaries\\Win64\\Stalker2-Win64-Shipping.exe"="GpuPreference=2;"
 "G:\\S.T.A.L.K.E.R. 2\\Stalker2.exe"="GpuPreference=2;"
-"C:\\Windows\\System32\\dwm.exe"="GpuPreference=1;"
+"G:\\SteamLibrary\\steamapps\\common\\Apex Legends\\r5apex_dx12.exe"="GpuPreference=2;"
+"G:\\SteamLibrary\\steamapps\\common\\Apex Legends\\r5apex.exe"="GpuPreference=2;"
+"G:\\SteamLibrary\\steamapps\\common\\Battlefield 2042\\BF2042.exe"="GpuPreference=2;"
+"G:\\SteamLibrary\\steamapps\\common\\Call of Duty HQ\\cod.exe"="GpuPreference=2;"
+"G:\\SteamLibrary\\steamapps\\common\\killingfloor2\\Binaries\\Win64\\KFGame.exe"="GpuPreference=2;"
+"G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelGame\\Marvel\\Binaries\\Win64\\Marvel-Win64-Shipping.exe"="GpuPreference=2;"
+"G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelGame\\Marvel.exe"="GpuPreference=2;"
+"G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelRivals_Launcher.exe"="GpuPreference=2;"
+"G:\\SteamLibrary\\steamapps\\common\\NARAKA BLADEPOINT\\NarakaBladepoint.exe"="GpuPreference=2;"
+"G:\\SteamLibrary\\steamapps\\common\\Red Dead Redemption 2\\RDR2.exe"="GpuPreference=2;"
+"G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="GpuPreference=2;"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers]
-"C:\\Program Files (x86)\\Battle.net\\Battle.net Launcher.exe"="~ RUNASADMIN"
-"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_retail_\\Wow.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Common Files\\BattlEye\\BEService.exe"="~ RUNASADMIN"
-"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe"="~ RUNASADMIN"
-"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe"="~ RUNASADMIN"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\No Man's Sky\\Binaries\\NMS.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64\\witcher3.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64_dx12\\witcher3.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\REDprelauncher.exe"="~ RUNASADMIN"
+"C:\\ProgramData\\Wargaming.net\\GameCenter for Steam\\wgc.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files\\All-About-PDF\\All-About-PDF.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files\\Rockstar Games\\Launcher\\Launcher.exe"="~ RUNASADMIN"
 "C:\\Program Files\\Rockstar Games\\Launcher\\LauncherPatcher.exe"="~ RUNASADMIN"
 "C:\\Program Files\\Rockstar Games\\Launcher\\RockstarService.exe"="~ RUNASADMIN "
 "C:\\Program Files\\Rockstar Games\\Launcher\\ThirdParty\\Crashpad\\RockstarErrorHandler.exe"="~ RUNASADMIN"
 "C:\\Program Files\\Rockstar Games\\Social Club\\SocialClubHelper.exe"="~ RUNASADMIN"
-"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\ffmpeg.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\Topaz Video AI.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Battle.net\\Battle.net Launcher.exe"="~ RUNASADMIN"
+"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_classic_\\WowClassic.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_retail_\\Wow.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\World of Warcraft Launcher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Click Fix\\clickfix.exe"="~ RUNASADMIN"
+"C:\\Program Files (x86)\\Common Files\\BattlEye\\BEService.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Common Files\\BattlEye\\BEService.exe"="~ RUNASADMIN"
+"C:\\Program Files (x86)\\DPC Latency Checker\\a.exe"="~ RUNASADMIN"
+"C:\\Program Files (x86)\\EasyAntiCheat_EOS\\EasyAntiCheat_EOS.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping_BE.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping_EAC_EOS.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping_EAC.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteLauncher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\Epic Games\\GTAV\\GTA5.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\Epic Games\\GTAV\\PlayGTAV.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Cities_Skylines\\Cities.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Grand Theft Auto IV\\GTAIV\\GTAIV.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\POSTAL 4\\Postal4.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\POSTAL 4\\Postal4\\Binaries\\Win64\\Postal4-Win64-Shipping.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\cs2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\quakechampions\\client\\bin\\pc\\QuakeChampions.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\Forza Horizon 5\\forzahorizon5.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\Sid Meier's Civilization III Complete\\Conquests\\Civ3Conquests.exe"="~ WIN8RTM RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\American Truck Simulator\\bin\\win_x64\\amtrucks.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Team Fortress 2\\hl2.exe"="~ RUNASADMIN"
-"E:\\SteamLibrary\\steamapps\\common\\Warframe\\Tools\\Launcher.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Warframe\\Warframe.x64.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\World of Warships\\bin\\8517795\\bin64\\WorldOfWarships64.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Crysis\\Bin32\\Crysis.exe"="~ DISABLEDXMAXIMIZEDWINDOWEDMODE RUNASADMIN VISTASP2"
-"E:\\SteamLibrary\\steamapps\\common\\Crysis\\Bin32\\Crysis64.exe"="~ DISABLEDXMAXIMIZEDWINDOWEDMODE RUNASADMIN VISTASP2"
-"D:\\SteamLibrary\\steamapps\\common\\Dying Light\\DyingLightGame.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Ghostrunner\\Ghostrunner\\Binaries\\Win64\\Ghostrunner-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Left 4 Dead 2\\left4dead2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Dead by Daylight\\DeadByDaylight\\Binaries\\Win64\\DeadByDaylight-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Destroy All Humans!\\DH\\Binaries\\Win64\\DH-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\L.A.Noire\\LANoire.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Dishonored\\Binaries\\Win32\\Dishonored.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\killingfloor2\\Binaries\\Win64\\KFGame.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe"="~ RUNASADMIN"
+"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe"="~ RUNASADMIN"
+"C:\\Program Files (x86)\\MAXIS\\The Sims\\Sims.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\bin\\win64\\dota2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Steam\\steamapps\\common\\New World\\Bin64\\NewWorld.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Steam\\steamapps\\common\\New World\\NewWorldLauncher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\Call of Duty HQ\\cod.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Halo Infinite\\HaloInfinite.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Overwatch\\Overwatch.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Lost Ark\\Binaries\\Win64\\LOSTARK.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\World of Tanks\\na\\win64\\WorldOfTanks.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\ProgramData\\Wargaming.net\\GameCenter for Steam\\wgc.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Paladins\\Binaries\\Win64\\Paladins.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Paladins\\Binaries\\Win64\\PaladinsEAC.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Users\\Administrator\\AppData\\Local\\Programs\\CD Projekt Red\\REDlauncher\\REDlauncher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Click Fix\\clickfix.exe"="~ RUNASADMIN"
-"D:\\SteamLibrary\\steamapps\\common\\Carmageddon Max Damage\\bin\\Carmageddon_Max_Damage.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Raft\\Raft.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Bloodhunt\\Tiger\\Binaries\\Win64\\Tiger-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Mass Effect\\Binaries\\MassEffect.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\House Flipper\\HouseFlipper.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\The Last of Us Part I\\tlou-i.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\The Sims 4\\Game\\Bin\\TS4_x64.exe"="~ HIGHDPIAWARE DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\Red Dead Redemption 2\\RDR2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\Tropico 6\\Tropico6.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Gas Station Simulator\\GSS2\\Binaries\\Win64\\GSS2-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Planet Coaster\\PlanetCoaster.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Mad Max\\MadMax.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\BorderlandsGOTYEnhanced\\Binaries\\Win64\\BorderlandsGOTY.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\VRising\\VRising.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\TPH\\TPH.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\bin\\win64\\dota2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Skyrim Special Edition\\SkyrimSE.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\Topaz Video AI.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Topaz Video AI\\App\\Topaz Video AI.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\ffmpeg.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\No Man's Sky\\Binaries\\NMS.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64_dx12\\witcher3.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64\\witcher3.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\REDprelauncher.exe"="~ RUNASADMIN"
 "C:\\Program Files (x86)\\Topaz Video AI\\App\\ffmpeg.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Battlefield 1\\bf1.exe"="~ HIGHDPIAWARE DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Common Files\\BattlEye\\BEService.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\Dying Light 2 Stay Human\\ph\\work\\bin\\x64\\DyingLightGame_x64_rwdi.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\EasyAntiCheat_EOS\\EasyAntiCheat_EOS.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Fallout4.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\NARAKA BLADEPOINT\\NarakaBladepoint.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\NARAKA BLADEPOINT\\NeacClient.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Fallout76\\Fallout76.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Guild Wars 2\\Gw2-64.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\Starfield\\Starfield.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\Sid Meier's Civilization VI\\Base\\Binaries\\Win64Steam\\CivilizationVI_DX12.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\Forza Motorsport\\forza_gaming.desktop.x64_release_final.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\Crossout\\bin\\win64\\Crossout.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\Battlefield 2042\\BF2042.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\Alan Wake 2\\AlanWake2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\The Finals\\Discovery.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\Resident Evil Village BIOHAZARD VILLAGE\\re8.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Mass Effect Legendary Edition\\Game\\ME1\\Binaries\\Win64\\MassEffect1.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_classic_\\WowClassic.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Wolfenstein.The.New.Order"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\War Thunder\\win64\\aces.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\AoE3DE\\AoE3DE_s.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\Call of Duty HQ\\cod22\\cod22-cod.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Topaz Video AI\\App\\Topaz Video AI.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Users\\Administrator\\AppData\\Local\\Programs\\CD Projekt Red\\REDlauncher\\REDlauncher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Users\\Administrator\\AppData\\Local\\Programs\\Obsidian\\Obsidian.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\Epic Games\\GTAVEnhanced\\GTA5_Enhanced.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\Epic Games\\GTAVEnhanced\\PlayGTAV.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\Epic Games\\GTAV\\GTA5.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\Epic Games\\GTAV\\PlayGTAV.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Carmageddon Max Damage\\bin\\Carmageddon_Max_Damage.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Cities_Skylines\\Cities.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Dishonored\\Binaries\\Win32\\Dishonored.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Dying Light\\DyingLightGame.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "D:\\SteamLibrary\\steamapps\\common\\Excalibur\\NeedForSpeedUnbound.exe"="~ HIGHDPIAWARE DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping_EAC_EOS.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Fallout76\\Fallout76.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Gas Station Simulator\\GSS2\\Binaries\\Win64\\GSS2-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Grand Theft Auto IV\\GTAIV\\GTAIV.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Guild Wars 2\\Gw2-64.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\House Flipper\\HouseFlipper.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\L.A.Noire\\LANoire.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Left 4 Dead 2\\left4dead2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Lost Ark\\Binaries\\Win64\\LOSTARK.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Overwatch\\Overwatch.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Paladins\\Binaries\\Win64\\PaladinsEAC.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Paladins\\Binaries\\Win64\\Paladins.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\POSTAL 4\\Postal4\\Binaries\\Win64\\Postal4-Win64-Shipping.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\POSTAL 4\\Postal4.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\PUBG\\TslGame\\Binaries\\Win64\\TslGame_BE.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\PUBG\\TslGame\\Binaries\\Win64\\TslGame.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\The Finals\\Discovery.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\VRising\\VRising.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\Starfield\\Starfield.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\American Truck Simulator\\bin\\win_x64\\amtrucks.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\AoE3DE\\AoE3DE_s.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Battlefield 1\\bf1.exe"="~ HIGHDPIAWARE DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Bloodhunt\\Tiger\\Binaries\\Win64\\Tiger-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\BorderlandsGOTYEnhanced\\Binaries\\Win64\\BorderlandsGOTY.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\cs2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Crysis\\Bin32\\Crysis64.exe"="~ DISABLEDXMAXIMIZEDWINDOWEDMODE RUNASADMIN VISTASP2"
+"E:\\SteamLibrary\\steamapps\\common\\Crysis\\Bin32\\Crysis.exe"="~ DISABLEDXMAXIMIZEDWINDOWEDMODE RUNASADMIN VISTASP2"
+"E:\\SteamLibrary\\steamapps\\common\\Dead by Daylight\\DeadByDaylight\\Binaries\\Win64\\DeadByDaylight-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Destroy All Humans!\\DH\\Binaries\\Win64\\DH-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Ghostrunner\\Ghostrunner\\Binaries\\Win64\\Ghostrunner-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Halo Infinite\\HaloInfinite.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Mad Max\\MadMax.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Mass Effect\\Binaries\\MassEffect.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Mass Effect Legendary Edition\\Game\\ME1\\Binaries\\Win64\\MassEffect1.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Planet Coaster\\PlanetCoaster.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\quakechampions\\client\\bin\\pc\\QuakeChampions.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Raft\\Raft.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Skyrim Special Edition\\SkyrimSE.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Team Fortress 2\\hl2.exe"="~ RUNASADMIN"
 "E:\\SteamLibrary\\steamapps\\common\\Team Fortress 2\\tf_win64.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\Apex Legends\\r5apex.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\Apex Legends\\r5apex_dx12.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\Sons Of The Forest\\SonsOfTheForest.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\TPH\\TPH.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Warframe\\Tools\\Launcher.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Warframe\\Warframe.x64.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\War Thunder\\win64\\aces.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Wolfenstein.The.New.Order"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\World of Warships\\bin\\8517795\\bin64\\WorldOfWarships64.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\Alan Wake 2\\AlanWake2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\Dying Light 2 Stay Human\\ph\\work\\bin\\x64\\DyingLightGame_x64_rwdi.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\Forza Horizon 5\\forzahorizon5.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\Forza Motorsport\\forza_gaming.desktop.x64_release_final.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "F:\\SteamLibrary\\steamapps\\common\\Back 4 Blood\\Gobi\\Binaries\\Win64\\Back4Blood.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\MAXIS\\The Sims\\Sims.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\World of Warcraft Launcher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files\\All-About-PDF\\All-About-PDF.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\Crossout\\bin\\win64\\Crossout.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Fallout4.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk\\Binaries\\Win64\\FragPunk.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\Resident Evil Village BIOHAZARD VILLAGE\\re8.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\Sid Meier's Civilization III Complete\\Conquests\\Civ3Conquests.exe"="~ WIN8RTM RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\Sid Meier's Civilization VI\\Base\\Binaries\\Win64Steam\\CivilizationVI_DX12.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\Sons Of The Forest\\SonsOfTheForest.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\The Sims 4\\Game\\Bin\\TS4_x64.exe"="~ HIGHDPIAWARE DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\World of Tanks\\na\\win64\\WorldOfTanks.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\The Last of Us Part I\\tlou-i.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\Tropico 6\\Tropico6.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\S.T.A.L.K.E.R. 2\\Stalker2\\Binaries\\Win64\\Stalker2-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\S.T.A.L.K.E.R. 2\\Stalker2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Apex Legends\\r5apex_dx12.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Apex Legends\\r5apex.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Battlefield 2042\\BF2042.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Call of Duty HQ\\cod22\\cod22-cod.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Call of Duty HQ\\cod.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\killingfloor2\\Binaries\\Win64\\KFGame.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelGame\\Marvel\\Binaries\\Win64\Marvel-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelGame\\Marvel.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelRivals_Launcher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\DPC Latency Checker\\a.exe"="~ RUNASADMIN"
-"D:\\SteamLibrary\\steamapps\\common\\PUBG\\TslGame\\Binaries\\Win64\\TslGame.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\PUBG\\TslGame\\Binaries\\Win64\\TslGame_BE.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\Epic Games\\GTAVEnhanced\\GTA5_Enhanced.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\Epic Games\\GTAVEnhanced\\PlayGTAV.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk\\Binaries\\Win64\\FragPunk.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\S.T.A.L.K.E.R. 2\\Stalker2\\Binaries\\Win64\\Stalker2-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\S.T.A.L.K.E.R. 2\\Stalker2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Users\\Administrator\\AppData\\Local\\Programs\\Obsidian\\Obsidian.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\NARAKA BLADEPOINT\\NarakaBladepoint.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\NARAKA BLADEPOINT\\NeacClient.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Red Dead Redemption 2\\RDR2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers]
-"C:\\Program Files (x86)\\Battle.net\\Battle.net Launcher.exe"="~ RUNASADMIN"
-"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_retail_\\Wow.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Common Files\\BattlEye\\BEService.exe"="~ RUNASADMIN"
-"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe"="~ RUNASADMIN"
-"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe"="~ RUNASADMIN"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\No Man's Sky\\Binaries\\NMS.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64\\witcher3.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64_dx12\\witcher3.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\REDprelauncher.exe"="~ RUNASADMIN"
+"C:\\ProgramData\\Wargaming.net\\GameCenter for Steam\\wgc.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files\\All-About-PDF\\All-About-PDF.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files\\Rockstar Games\\Launcher\\Launcher.exe"="~ RUNASADMIN"
 "C:\\Program Files\\Rockstar Games\\Launcher\\LauncherPatcher.exe"="~ RUNASADMIN"
 "C:\\Program Files\\Rockstar Games\\Launcher\\RockstarService.exe"="~ RUNASADMIN "
 "C:\\Program Files\\Rockstar Games\\Launcher\\ThirdParty\\Crashpad\\RockstarErrorHandler.exe"="~ RUNASADMIN"
 "C:\\Program Files\\Rockstar Games\\Social Club\\SocialClubHelper.exe"="~ RUNASADMIN"
-"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\ffmpeg.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\Topaz Video AI.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Battle.net\\Battle.net Launcher.exe"="~ RUNASADMIN"
+"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_classic_\\WowClassic.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_retail_\\Wow.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\World of Warcraft Launcher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Click Fix\\clickfix.exe"="~ RUNASADMIN"
+"C:\\Program Files (x86)\\Common Files\\BattlEye\\BEService.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Common Files\\BattlEye\\BEService.exe"="~ RUNASADMIN"
+"C:\\Program Files (x86)\\DPC Latency Checker\\a.exe"="~ RUNASADMIN"
+"C:\\Program Files (x86)\\EasyAntiCheat_EOS\\EasyAntiCheat_EOS.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping_BE.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping_EAC_EOS.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping_EAC.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteLauncher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\Epic Games\\GTAV\\GTA5.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\Epic Games\\GTAV\\PlayGTAV.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Cities_Skylines\\Cities.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Grand Theft Auto IV\\GTAIV\\GTAIV.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\POSTAL 4\\Postal4.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\POSTAL 4\\Postal4\\Binaries\\Win64\\Postal4-Win64-Shipping.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\cs2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\quakechampions\\client\\bin\\pc\\QuakeChampions.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\Forza Horizon 5\\forzahorizon5.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\Sid Meier's Civilization III Complete\\Conquests\\Civ3Conquests.exe"="~ WIN8RTM RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\American Truck Simulator\\bin\\win_x64\\amtrucks.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Team Fortress 2\\hl2.exe"="~ RUNASADMIN"
-"E:\\SteamLibrary\\steamapps\\common\\Warframe\\Tools\\Launcher.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Warframe\\Warframe.x64.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\World of Warships\\bin\\8517795\\bin64\\WorldOfWarships64.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Crysis\\Bin32\\Crysis.exe"="~ DISABLEDXMAXIMIZEDWINDOWEDMODE RUNASADMIN VISTASP2"
-"E:\\SteamLibrary\\steamapps\\common\\Crysis\\Bin32\\Crysis64.exe"="~ DISABLEDXMAXIMIZEDWINDOWEDMODE RUNASADMIN VISTASP2"
-"D:\\SteamLibrary\\steamapps\\common\\Dying Light\\DyingLightGame.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Ghostrunner\\Ghostrunner\\Binaries\\Win64\\Ghostrunner-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Left 4 Dead 2\\left4dead2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Dead by Daylight\\DeadByDaylight\\Binaries\\Win64\\DeadByDaylight-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Destroy All Humans!\\DH\\Binaries\\Win64\\DH-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\L.A.Noire\\LANoire.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Dishonored\\Binaries\\Win32\\Dishonored.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\killingfloor2\\Binaries\\Win64\\KFGame.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe"="~ RUNASADMIN"
+"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe"="~ RUNASADMIN"
+"C:\\Program Files (x86)\\MAXIS\\The Sims\\Sims.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\bin\\win64\\dota2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Steam\\steamapps\\common\\New World\\Bin64\\NewWorld.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Steam\\steamapps\\common\\New World\\NewWorldLauncher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\Call of Duty HQ\\cod.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Halo Infinite\\HaloInfinite.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Overwatch\\Overwatch.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Lost Ark\\Binaries\\Win64\\LOSTARK.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\World of Tanks\\na\\win64\\WorldOfTanks.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\ProgramData\\Wargaming.net\\GameCenter for Steam\\wgc.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Paladins\\Binaries\\Win64\\Paladins.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Paladins\\Binaries\\Win64\\PaladinsEAC.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Users\\Administrator\\AppData\\Local\\Programs\\CD Projekt Red\\REDlauncher\\REDlauncher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Click Fix\\clickfix.exe"="~ RUNASADMIN"
-"D:\\SteamLibrary\\steamapps\\common\\Carmageddon Max Damage\\bin\\Carmageddon_Max_Damage.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Raft\\Raft.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Bloodhunt\\Tiger\\Binaries\\Win64\\Tiger-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Mass Effect\\Binaries\\MassEffect.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\House Flipper\\HouseFlipper.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\The Last of Us Part I\\tlou-i.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\The Sims 4\\Game\\Bin\\TS4_x64.exe"="~ HIGHDPIAWARE DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\Red Dead Redemption 2\\RDR2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\Tropico 6\\Tropico6.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Gas Station Simulator\\GSS2\\Binaries\\Win64\\GSS2-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Planet Coaster\\PlanetCoaster.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Mad Max\\MadMax.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\BorderlandsGOTYEnhanced\\Binaries\\Win64\\BorderlandsGOTY.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\VRising\\VRising.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\TPH\\TPH.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\bin\\win64\\dota2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Skyrim Special Edition\\SkyrimSE.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\Topaz Video AI.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Topaz Video AI\\App\\Topaz Video AI.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\ffmpeg.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\No Man's Sky\\Binaries\\NMS.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64_dx12\\witcher3.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64\\witcher3.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\REDprelauncher.exe"="~ RUNASADMIN"
 "C:\\Program Files (x86)\\Topaz Video AI\\App\\ffmpeg.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Battlefield 1\\bf1.exe"="~ HIGHDPIAWARE DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Common Files\\BattlEye\\BEService.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\Dying Light 2 Stay Human\\ph\\work\\bin\\x64\\DyingLightGame_x64_rwdi.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\EasyAntiCheat_EOS\\EasyAntiCheat_EOS.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Fallout4.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\NARAKA BLADEPOINT\\NarakaBladepoint.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\NARAKA BLADEPOINT\\NeacClient.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Fallout76\\Fallout76.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\Guild Wars 2\\Gw2-64.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\Starfield\\Starfield.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\Sid Meier's Civilization VI\\Base\\Binaries\\Win64Steam\\CivilizationVI_DX12.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\Forza Motorsport\\forza_gaming.desktop.x64_release_final.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\Crossout\\bin\\win64\\Crossout.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\Battlefield 2042\\BF2042.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\Alan Wake 2\\AlanWake2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\The Finals\\Discovery.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\Resident Evil Village BIOHAZARD VILLAGE\\re8.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Mass Effect Legendary Edition\\Game\\ME1\\Binaries\\Win64\\MassEffect1.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_classic_\\WowClassic.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Wolfenstein.The.New.Order"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\War Thunder\\win64\\aces.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\AoE3DE\\AoE3DE_s.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\Call of Duty HQ\\cod22\\cod22-cod.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Topaz Video AI\\App\\Topaz Video AI.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Users\\Administrator\\AppData\\Local\\Programs\\CD Projekt Red\\REDlauncher\\REDlauncher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Users\\Administrator\\AppData\\Local\\Programs\\Obsidian\\Obsidian.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\Epic Games\\GTAVEnhanced\\GTA5_Enhanced.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\Epic Games\\GTAVEnhanced\\PlayGTAV.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\Epic Games\\GTAV\\GTA5.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\Epic Games\\GTAV\\PlayGTAV.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Carmageddon Max Damage\\bin\\Carmageddon_Max_Damage.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Cities_Skylines\\Cities.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Dishonored\\Binaries\\Win32\\Dishonored.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Dying Light\\DyingLightGame.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "D:\\SteamLibrary\\steamapps\\common\\Excalibur\\NeedForSpeedUnbound.exe"="~ HIGHDPIAWARE DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping_EAC_EOS.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Fallout76\\Fallout76.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Gas Station Simulator\\GSS2\\Binaries\\Win64\\GSS2-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Grand Theft Auto IV\\GTAIV\\GTAIV.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Guild Wars 2\\Gw2-64.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\House Flipper\\HouseFlipper.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\L.A.Noire\\LANoire.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Left 4 Dead 2\\left4dead2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Lost Ark\\Binaries\\Win64\\LOSTARK.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Overwatch\\Overwatch.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Paladins\\Binaries\\Win64\\PaladinsEAC.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\Paladins\\Binaries\\Win64\\Paladins.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\POSTAL 4\\Postal4\\Binaries\\Win64\\Postal4-Win64-Shipping.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\POSTAL 4\\Postal4.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\PUBG\\TslGame\\Binaries\\Win64\\TslGame_BE.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\PUBG\\TslGame\\Binaries\\Win64\\TslGame.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\The Finals\\Discovery.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"D:\\SteamLibrary\\steamapps\\common\\VRising\\VRising.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\Starfield\\Starfield.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\American Truck Simulator\\bin\\win_x64\\amtrucks.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\AoE3DE\\AoE3DE_s.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Battlefield 1\\bf1.exe"="~ HIGHDPIAWARE DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Bloodhunt\\Tiger\\Binaries\\Win64\\Tiger-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\BorderlandsGOTYEnhanced\\Binaries\\Win64\\BorderlandsGOTY.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\game\\bin\\win64\\cs2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Crysis\\Bin32\\Crysis64.exe"="~ DISABLEDXMAXIMIZEDWINDOWEDMODE RUNASADMIN VISTASP2"
+"E:\\SteamLibrary\\steamapps\\common\\Crysis\\Bin32\\Crysis.exe"="~ DISABLEDXMAXIMIZEDWINDOWEDMODE RUNASADMIN VISTASP2"
+"E:\\SteamLibrary\\steamapps\\common\\Dead by Daylight\\DeadByDaylight\\Binaries\\Win64\\DeadByDaylight-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Destroy All Humans!\\DH\\Binaries\\Win64\\DH-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Ghostrunner\\Ghostrunner\\Binaries\\Win64\\Ghostrunner-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Halo Infinite\\HaloInfinite.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Mad Max\\MadMax.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Mass Effect\\Binaries\\MassEffect.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Mass Effect Legendary Edition\\Game\\ME1\\Binaries\\Win64\\MassEffect1.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Planet Coaster\\PlanetCoaster.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\quakechampions\\client\\bin\\pc\\QuakeChampions.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Raft\\Raft.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Skyrim Special Edition\\SkyrimSE.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Team Fortress 2\\hl2.exe"="~ RUNASADMIN"
 "E:\\SteamLibrary\\steamapps\\common\\Team Fortress 2\\tf_win64.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\Apex Legends\\r5apex.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\Apex Legends\\r5apex_dx12.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\Sons Of The Forest\\SonsOfTheForest.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\TPH\\TPH.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Warframe\\Tools\\Launcher.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Warframe\\Warframe.x64.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\War Thunder\\win64\\aces.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\Wolfenstein.The.New.Order"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"E:\\SteamLibrary\\steamapps\\common\\World of Warships\\bin\\8517795\\bin64\\WorldOfWarships64.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\Alan Wake 2\\AlanWake2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\Dying Light 2 Stay Human\\ph\\work\\bin\\x64\\DyingLightGame_x64_rwdi.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\Forza Horizon 5\\forzahorizon5.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\Forza Motorsport\\forza_gaming.desktop.x64_release_final.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "F:\\SteamLibrary\\steamapps\\common\\Back 4 Blood\\Gobi\\Binaries\\Win64\\Back4Blood.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\MAXIS\\The Sims\\Sims.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\World of Warcraft Launcher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files\\All-About-PDF\\All-About-PDF.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\Crossout\\bin\\win64\\Crossout.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\Fallout 4\\Fallout4.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk\\Binaries\\Win64\\FragPunk.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\Resident Evil Village BIOHAZARD VILLAGE\\re8.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\Sid Meier's Civilization III Complete\\Conquests\\Civ3Conquests.exe"="~ WIN8RTM RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\Sid Meier's Civilization VI\\Base\\Binaries\\Win64Steam\\CivilizationVI_DX12.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\Sons Of The Forest\\SonsOfTheForest.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\The Sims 4\\Game\\Bin\\TS4_x64.exe"="~ HIGHDPIAWARE DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\SteamLibrary\\steamapps\\common\\World of Tanks\\na\\win64\\WorldOfTanks.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\The Last of Us Part I\\tlou-i.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"F:\\Tropico 6\\Tropico6.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\S.T.A.L.K.E.R. 2\\Stalker2\\Binaries\\Win64\\Stalker2-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\S.T.A.L.K.E.R. 2\\Stalker2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Apex Legends\\r5apex_dx12.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Apex Legends\\r5apex.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Battlefield 2042\\BF2042.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Call of Duty HQ\\cod22\\cod22-cod.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Call of Duty HQ\\cod.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\killingfloor2\\Binaries\\Win64\\KFGame.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelGame\\Marvel\\Binaries\\Win64\\Marvel-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelGame\\Marvel.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\MarvelRivals\\MarvelRivals_Launcher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\DPC Latency Checker\\a.exe"="~ RUNASADMIN"
-"D:\\SteamLibrary\\steamapps\\common\\PUBG\\TslGame\\Binaries\\Win64\\TslGame.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\SteamLibrary\\steamapps\\common\\PUBG\\TslGame\\Binaries\\Win64\\TslGame_BE.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\Epic Games\\GTAVEnhanced\\GTA5_Enhanced.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"D:\\Epic Games\\GTAVEnhanced\\PlayGTAV.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk\\Binaries\\Win64\\FragPunk.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"F:\\SteamLibrary\\steamapps\\common\\FragPunk\\FragPunk.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\S.T.A.L.K.E.R. 2\\Stalker2\\Binaries\\Win64\\Stalker2-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"G:\\S.T.A.L.K.E.R. 2\\Stalker2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Users\\Administrator\\AppData\\Local\\Programs\\Obsidian\\Obsidian.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\NARAKA BLADEPOINT\\NarakaBladepoint.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\NARAKA BLADEPOINT\\NeacClient.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Red Dead Redemption 2\\RDR2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
