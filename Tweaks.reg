@@ -2457,6 +2457,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
 "IgnoreRemoteKeyboardLayout"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Gwx]
+"DisableGwx"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing]
 "DisableRemovePayload"=dword:00000000
 "DisableWerReporting"=dword:00000001
@@ -4353,10 +4356,10 @@ Windows Registry Editor Version 5.00
 "DisableHWAcceleration"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Avalon.Graphics]
-"DisableHWAcceleration"=dword:00000000
+"DisableHWAcceleration"=dword:00000001
 
 [HKEY_USERS\.DEFAULT\Software\Microsoft\Avalon.Graphics]
-"DisableHWAcceleration"=dword:00000000
+"DisableHWAcceleration"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR]
 "AppCaptureEnabled"=dword:00000000
