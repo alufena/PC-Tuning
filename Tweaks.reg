@@ -44,6 +44,7 @@ Windows Registry Editor Version 5.00
 "Priority"=dword:00000006
 "Scheduling Category"="High"
 "SFIO Priority"="High"
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio]
 "Affinity"=dword:00000000
 "Clock Rate"=dword:00002710
@@ -52,6 +53,7 @@ Windows Registry Editor Version 5.00
 "Priority"=dword:00000002
 "Scheduling Category"="Medium"
 "SFIO Priority"="High"
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing]
 "Affinity"=dword:00000000
 "Background Only"="False"
@@ -62,6 +64,7 @@ Windows Registry Editor Version 5.00
 "Priority"=dword:00000008
 "Scheduling Category"="High"
 "SFIO Priority"="High"
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Pro Audio]
 "Affinity"=dword:00000000
 "Background Only"="False"
@@ -70,6 +73,7 @@ Windows Registry Editor Version 5.00
 "Priority"=dword:00000002
 "Scheduling Category"="High"
 "SFIO Priority"="High"
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Capture]
 "Affinity"=dword:00000000
 "Background Only"="True"
@@ -78,6 +82,7 @@ Windows Registry Editor Version 5.00
 "Priority"=dword:00000005
 "Scheduling Category"="Medium"
 "SFIO Priority"="Normal"
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Distribution]
 "Affinity"=dword:00000000
 "Background Only"="True"
@@ -86,6 +91,7 @@ Windows Registry Editor Version 5.00
 "Priority"=dword:00000004
 "Scheduling Category"="Medium"
 "SFIO Priority"="Normal"
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Playback]
 "Affinity"=dword:00000000
 "Background Only"="False"
@@ -95,6 +101,7 @@ Windows Registry Editor Version 5.00
 "Priority"=dword:00000003
 "Scheduling Category"="Medium"
 "SFIO Priority"="Normal"
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Window Manager]
 "Affinity"=dword:00000000
 "Clock Rate"=dword:00002710
@@ -119,6 +126,7 @@ Windows Registry Editor Version 5.00
 "GameDVR_FSEBehavior"=dword:00000002
 "GameDVR_FSEBehaviorMode"=dword:00000000
 "GameDVR_HonorUserFSEBehaviorMode"=dword:00000001
+
 [HKEY_USERS\.DEFAULT\System\GameConfigStore]
 "GameDVR_DSEBehavior"=dword:00000002
 "GameDVR_DXGIHonorFSEWindowsCompatible"=dword:00000001
@@ -1168,7 +1176,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\BackgroundModel\BackgroundAudioPolicy]
 "AllowHeadlessExecution"=dword:00000001
 "AllowMultipleBackgroundTasks"=dword:00000001
-"InactivityTimeoutMs"=dword:FFFFFFFF
+"InactivityTimeoutMs"=dword:ffffffff
 [HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup]
 "AllowUpgradesWithUnsupportedTPMOrCPU"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Search\Gather\Windows\SystemIndex]
@@ -2636,7 +2644,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\WindowsAI]
 "DisableAIDataAnalysis"=dword:00000001
-"DisableClickToDo"=dword:00000001
+"DisableClickToDo"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\MDM]
 "DisableRegistration"=dword:00000001
@@ -2667,6 +2675,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsAI]
 "DisableAIDataAnalysis"=dword:00000001
 "AllowRecallEnablement"=dword:00000000
+"DisableClickToDo"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\ClickToDo]
 "DisableClickToDo"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\CredUI]
@@ -2923,7 +2934,7 @@ Windows Registry Editor Version 5.00
 "EnableCursorSuppression"=dword:00000000
 "EnableFirstLogonAnimation"=dword:00000000
 "EnableInstallerDetection"=dword:00000000
-"EnableLUA"=dword:00000001
+"EnableLUA"=dword:00000000
 "EnableSecureUIAPaths"=dword:00000000
 "EnableUIADesktopToggle"=dword:00000000
 "EnableVirtualization"=dword:00000000
@@ -3403,6 +3414,7 @@ Windows Registry Editor Version 5.00
 "{7AD84985-87B4-4a16-BE58-8B72A5B390F7}"=""
 "{596AB062-B4D2-4215-9F74-E9109B0A8153}"=""
 "{CA6CC9F1-867A-481E-951E-A28C5E4F01EA}"="Edit in Notepad"
+"{CB3B0003-8088-4EDE-8769-8B354AB2FF8C}"="Ask Copilot"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\EventTranscriptKey]
 "EnableEventTranscript"=dword:00000000
@@ -4737,8 +4749,6 @@ Windows Registry Editor Version 5.00
 [-HKEY_CURRENT_USER\System\GameConfigStore\Children]
 
 [-HKEY_CURRENT_USER\System\GameConfigStore\Parents]
-
-[-HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers\BlockList\Kernel]
 
 [-HKEY_CLASSES_ROOT\AppX43hnxtbyyps62jhe9sqpdzxn1790zetc\Shell\ShellCreateVideo]
 
