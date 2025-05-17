@@ -902,6 +902,7 @@ Windows Registry Editor Version 5.00
 "PowerThrottling"=dword:00000000
 "QosManagesIdleProcessors"=dword:00000000
 "SleepReliabilityDetailedDiagnostics"=dword:00000000
+"HibernateEnabledDefaultvalue"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\HARDWARE\DEVICEMAP\ACPI\HPET]
 "Enable"=dword:00000000
@@ -1232,10 +1233,6 @@ Windows Registry Editor Version 5.00
 "UpdateOnlyOnWifi"=dword:00000001
 "AutoUpdateEnabled"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Maps]
-"AutoDownloadAndUpdateMapData"=dword:00000000
-"AllowUntriggeredNetworkTrafficOnSettingsPage"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Maps\AllowOfflineMapsDownloadOverMeteredConnection]
 "value"=dword:00000000
 
@@ -1367,6 +1364,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Appx]
 "AllowAutomaticAppArchiving"=dword:00000000
 "RestrictAppToSystemVolume"=dword:00000001
+"AllowDevelopmentWithoutDevLicense"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE]
 "BypassNRO"=dword:00000001
@@ -1379,7 +1377,7 @@ Windows Registry Editor Version 5.00
 "HideRecommendedPersonalizedSites"=dword:00000001
 "HideRecommendedSection"=dword:00000001
 "HideTaskViewButton"=dword:00000000
-"MultiTaskingAltTabFilter"=dword:00000004
+"MultiTaskingAltTabFilter"=dword:00000003
 "NoDataExecutionPrevention"=dword:00000001
 "NoHeapTerminationOnCorruption"=dword:00000001
 "NoNewAppAlert"=dword:00000001
@@ -1404,7 +1402,7 @@ Windows Registry Editor Version 5.00
 "HideRecommendedPersonalizedSites"=dword:00000001
 "HideRecommendedSection"=-
 "IrisClientRefresh"=dword:00000000
-"MultiTaskingAltTabFilter"=dword:00000004
+"MultiTaskingAltTabFilter"=dword:00000003
 "NoDataExecutionPrevention"=dword:00000001
 "NoHeapTerminationOnCorruption"=dword:00000001
 "NoNewAppAlert"=dword:00000001
@@ -1970,6 +1968,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs]
 "1"="www.google.com"
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate]
+"CreateDesktopShortcutDefault"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\EdgeUI]
 "DisableMFUTracking"=dword:00000001
 
@@ -2367,6 +2368,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Microsoft\PolicyManager\current\device\Accounts]
 "AllowMicrosoftAccountSignInAssistant"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Stickers]
+"EnableStickers"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellTaskScheduler]
 "MaxWorkerThreadsPerScheduler"=dword:000000ff
 
@@ -2413,6 +2417,7 @@ Windows Registry Editor Version 5.00
 "TaskbarEndTask"=dword:00000001
 "ThumbnailLivePreviewHoverTime"=dword:00000001
 "UseCompactMode"=dword:00000001
+"DITest"=dword:00000000
 
 [HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
 "PaddedBorderWidth"="-60"
@@ -2757,6 +2762,9 @@ Windows Registry Editor Version 5.00
 "WaitToKillServiceTimeout"="1000"
 "Win8DpiScaling"=dword:00000001
 "WindowArrangementActive"="0"
+"RestorePreviousStateRecalcBehavior"=dword:00000000
+"DragFromMaximize"="0"
+"DelayLockInterval"=dword:ffffffff
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control]
 "DisableRemoteScmEndpoints"=dword:00000000
@@ -2807,6 +2815,9 @@ Windows Registry Editor Version 5.00
 "ServerMSSNotInstalled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\StandardProfile]
+"EnableFirewall"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile]
 "EnableFirewall"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa]
@@ -2942,6 +2953,7 @@ Windows Registry Editor Version 5.00
 "TypeOfAdminApprovalMode"=dword:00000001
 "ValidateAdminCodeSignatures"=dword:00000000
 "VerboseStatus"=dword:00000001
+"HideUnsupportedHardwareNotifications"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\AppV\Client]
 "Enabled"=dword:00000000
@@ -3005,6 +3017,7 @@ Windows Registry Editor Version 5.00
 "CompositionPolicy"=dword:00000000
 "EnableAeroPeek"=dword:00000000
 "UseDpiScaling"=dword:00000000
+"UseWindowFrameStagingBuffer"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SmartActionPlatform\SmartClipboard]
 "Disabled"=dword:00000001
@@ -3440,6 +3453,9 @@ Windows Registry Editor Version 5.00
 "ShellFeedsTaskbarContentUpdateMode"=dword:00000001
 "ShellFeedsTaskbarOpenOnHover"=dword:00000000
 "ShellFeedsTaskbarViewMode"=dword:00000002
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\BootControl]
+"BootProgressAnimation"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Feeds\DSB]
 "ShowDynamicContent"=dword:00000000
@@ -4080,10 +4096,10 @@ Windows Registry Editor Version 5.00
 "Warning Sounds"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Accessibility]
-"Configuration"=""
+"Configuration"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility]
-"Configuration"=""
+"Configuration"=-
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Ease of Access]
 "selfscan"=dword:00000000
@@ -4112,6 +4128,37 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
 @=""
 
+[HKEY_CURRENT_USER\Software\Classes\CLSID\{2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0}\InProcServer32]
+@="-"
+
+[HKEY_CURRENT_USER\Software\Classes\CLSID\{6480100b-5a83-4d1e-9f69-8ae5a88e9a33}\InProcServer32]
+@="-"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Toolbar\ShellBrowser]
+"ITBar7Layout"=hex:13,00,00,00,00,00,00,00,00,00,00,00,20,00,00,00,10,00,01,00,\
+  00,00,00,00,01,00,00,00,01,07,00,00,5e,01,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB]
 "EnhancedPowerManagementEnabled"=dword:00000000
 
@@ -4130,6 +4177,9 @@ Windows Registry Editor Version 5.00
 "Flags"="58"
 "BounceTime"="0"
 
+[HKEY_USERS\.DEFAULT\Control Panel\Keyboard]
+"InitialKeyboardIndicators"="2147483654"
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons]
 "29"="C:\\Windows\\blank.ico"
 
@@ -4147,9 +4197,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Biometrics\FacialFeatures]
 "EnhancedAntiSpoofing"=-
-
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
-"GlobalUserDisabled"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
 "AnyAboveLockAppsActive"=dword:00000000
