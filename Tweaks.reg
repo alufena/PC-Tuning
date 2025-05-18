@@ -152,6 +152,7 @@ Windows Registry Editor Version 5.00
 ; DontVerifyRandomDrivers =- default, 1 tweak
 ; EnablePerVolumeLazyWriter =- default, 2 tweak
 ; EnableCfg =- default, 0 tweak
+; PoolUsageMaximum =- padrão, 00000028 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
 "DisablePagingExecutive"=dword:00000001
 "FeatureSettingsOverride"=dword:00000003
@@ -163,6 +164,7 @@ Windows Registry Editor Version 5.00
 "EnablePerVolumeLazyWriter"=dword:00000002
 "EnableCfg"=dword:00000000
 "SwapfileControl"=dword:00000000
+"PoolUsageMaximum"=dword:00000028
 
 ; DpcWatchdogProfileOffset 00002710 default, 0 tweak
 ; MitigationAuditOptions =- default, hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 tweak
@@ -447,13 +449,13 @@ Windows Registry Editor Version 5.00
 "LongPathsEnabled"=dword:00000001
 "MaximumTunnelEntries"=dword:00000000
 
-; unpark = everything below 00000064 default, 0 tweak
+; unpark 00000064 default, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0cc5b647-c1df-4637-891a-dec35c318583]
 "Attributes"=dword:00000002
 "ValueMax"=dword:00000000
 "ValueMin"=dword:00000000
 
-; unpark = everything below 00000064 default, 0 tweak
+; unpark 00000064 default, 0 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0cc5b647-c1df-4637-891a-dec35c318584]
 "Attributes"=dword:00000002
 "ValueMax"=dword:00000000
@@ -590,9 +592,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control]
 "CoalescingTimerInterval"=dword:00000000
 
-; D3PCLatency up to RMDeepLlEntryLatencyUsec =- default, 0 tweak
+; D3PCLatency to RMDeepLlEntryLatencyUsec =- default, 0 tweak
 ; PciLatencyTimerControl =- default, 00000020 tweak
-; DisableWriteCombining up to UseGpuTimer =- default, 1 tweak
+; DisableWriteCombining to UseGpuTimer =- default, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
 "D3PCLatency"=dword:00000000
 "EnableRuntimePowerManagement"=dword:00000000
@@ -610,9 +612,9 @@ Windows Registry Editor Version 5.00
 "PlatformSupportMiracast"=dword:00000001
 "UseGpuTimer"=dword:00000001
 
-; D3PCLatency up to RMDeepLlEntryLatencyUsec =- default, 0 tweak
+; D3PCLatency to RMDeepLlEntryLatencyUsec =- default, 0 tweak
 ; PciLatencyTimerControl =- default, 00000020 tweak
-; LOWLATENCY up to TransitionLatency =- default, 1 tweak
+; LOWLATENCY to TransitionLatency =- default, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Power]
 "D3PCLatency"=dword:00000000
 "FlTransitionLatency"=dword:00000000
@@ -663,8 +665,8 @@ Windows Registry Editor Version 5.00
 
 ; BuffersInFlight =- default, 00000080 tweak
 ; PciLatencyTimerControl =- default, 00000020 tweak
-; AllowDeepCStates up to RMDeepLlEntryLatencyUsec =- default, 0 tweak
-; DisablePFonDP up to UseGpuTimer =- default, 1 tweak
+; AllowDeepCStates to RMDeepLlEntryLatencyUsec =- default, 0 tweak
+; DisablePFonDP to UseGpuTimer =- default, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm]
 "BuffersInFlight"=dword:00000080
 "PciLatencyTimerControl"=dword:00000020
@@ -711,14 +713,15 @@ Windows Registry Editor Version 5.00
 "DpiMapIommuContiguous"=dword:00000001
 "DisableCABC"=dword:00000001
 
-; EnableUlps up to PP_ThermalAutoThrottlingEnable =- default, 0 tweak
-; PreferSystemMemoryContiguous up to vrrDeflickerMaxUs =- default, 1 tweak
+; EnableUlps to PP_ThermalAutoThrottlingEnable =- default, 0 tweak
+; PreferSystemMemoryContiguous to vrrDeflickerMaxUs =- default, 1 tweak
 ; PciLatencyTimerControl =- default, 00000032 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
 "EnableUlps"=dword:00000000
 "DisableBlockWrite"=dword:00000000
 "StutterMode"=dword:00000000
 "PP_ThermalAutoThrottlingEnable"=dword:00000000
+"ReportAnalytics"=dword:00000000
 "PreferSystemMemoryContiguous"=dword:00000001
 "DisableDrmdmaPowerGating"=dword:00000001
 "DisableDMACopy"=dword:00000001
@@ -744,7 +747,7 @@ Windows Registry Editor Version 5.00
 "RMDisableNoncontigAlloc"=dword:00000001
 "PciLatencyTimerControl"=dword:00000032
 
-; PreferSystemMemoryContiguous up to vrrDeflickerMaxUs =- default, 1 tweak
+; PreferSystemMemoryContiguous to vrrDeflickerMaxUs =- default, 1 tweak
 ; PciLatencyTimerControl =- default, 00000032 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001]
 "PreferSystemMemoryContiguous"=dword:00000001
@@ -769,7 +772,7 @@ Windows Registry Editor Version 5.00
 "RMDisableNoncontigAlloc"=dword:00000001
 "PciLatencyTimerControl"=dword:00000032
 
-; PreferSystemMemoryContiguous up to vrrDeflickerMaxUs =- default, 1 tweak
+; PreferSystemMemoryContiguous to vrrDeflickerMaxUs =- default, 1 tweak
 ; PciLatencyTimerControl =- default, 00000032 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0002]
 "PreferSystemMemoryContiguous"=dword:00000001
@@ -793,7 +796,7 @@ Windows Registry Editor Version 5.00
 "RMDisableNoncontigAlloc"=dword:00000001
 "PciLatencyTimerControl"=dword:00000032
 
-; PreferSystemMemoryContiguous up to vrrDeflickerMaxUs =- default, 1 tweak
+; PreferSystemMemoryContiguous to vrrDeflickerMaxUs =- default, 1 tweak
 ; PciLatencyTimerControl =- default, 00000032 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0003]
 "PreferSystemMemoryContiguous"=dword:00000001
@@ -904,6 +907,14 @@ Windows Registry Editor Version 5.00
 "QosManagesIdleProcessors"=dword:00000000
 "SleepReliabilityDetailedDiagnostics"=dword:00000000
 "HibernateEnabledDefaultvalue"=dword:00000000
+"PowerThrottlingOff"=dword:00000001
+"Class1InitialUnparkCount"=dword:00000064
+"DisableDynamicProcessorBoost"=dword:00000001
+"EnergyEstimationEnabled"=dword:00000000
+"PerfCalculateActualUtilization"=dword:00000000
+"Class2InitialUnparkCount"=dword:00000064
+"EnergyEstimationDisabled"=dword:00000001
+"DisableVsyncLatencyUpdate"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\HARDWARE\DEVICEMAP\ACPI\HPET]
 "Enable"=dword:00000000
@@ -1277,6 +1288,10 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState]
 "FullPath"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mouhid\Parameters]
+"TreatAbsolutePointerAsAbsolute"=dword:00000001
+"TreatAbsoluteAsRelative"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System]
 "AllowClipboardHistory"=dword:00000000
 "AllowCrossDeviceClipboard"=dword:00000000
@@ -1369,6 +1384,10 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling]
 "PowerThrottlingOff"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers\Scheduler]
+"EnablePreemption"=dword:00000001
+"VsyncIdleTimeout"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore]
 "DisableSR"=-
@@ -2855,6 +2874,7 @@ Windows Registry Editor Version 5.00
 "ExcludeWUDriversInQualityUpdate"=dword:00000001
 "DisableWUfBSafeguards"=dword:00000001
 "AllowTemporaryEnterpriseFeatureControl"=dword:00000000
+"DisableOSUpgrade"=dword:00000001
 
 [HKEY_CURRENT_USER\Control Panel\UnsupportedHardwareNotificationCache]
 "SV1"=dword:00000000
