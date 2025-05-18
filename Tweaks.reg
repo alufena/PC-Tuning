@@ -152,7 +152,7 @@ Windows Registry Editor Version 5.00
 ; DontVerifyRandomDrivers =- default, 1 tweak
 ; EnablePerVolumeLazyWriter =- default, 2 tweak
 ; EnableCfg =- default, 0 tweak
-; PoolUsageMaximum =- padrão, 00000028 tweak
+; PoolUsageMaximum =- default, 00000028 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
 "DisablePagingExecutive"=dword:00000001
 "FeatureSettingsOverride"=dword:00000003
@@ -570,9 +570,12 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters]
 "MaxThreads"=dword:00000010
 
-; =- default, 00000010 tweak
+; PassiveIntRealTimeWorkerCount =- default, 00000010 tweak
+; IoEnableSessionZeroAccessCheck =- default, 1 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System]
 "PassiveIntRealTimeWorkerCount"=dword:00000010
+"CountOperations"=dword:00000000
+"IoEnableSessionZeroAccessCheck"=dword:00000001
 
 ; =- default, 0 tweak
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Power]
@@ -965,15 +968,14 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SCMConfig]
 "EnableSvchostMitigationPolicy"=hex(b):00,00,00,00,00,00,00,00
 
+; Capabilities =- default, 0007e7e6 tweak
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Processor]
 "CPPCEnable"=dword:00000000
 "AllowPepPerfStates"=dword:00000000
+"Capabilities"=dword:0007e7e6
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Quota System]
 "EnableCpuQuota"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System]
-"CountOperations"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\System\ControlSet001\Control\Network\SharedAccessConnection]
 "EnableControl"=dword:00000000
@@ -1192,6 +1194,73 @@ Windows Registry Editor Version 5.00
 "AllowUpgradesWithUnsupportedTPMOrCPU"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Search\Gather\Windows\SystemIndex]
 "RespectPowerModes"=dword:00000001
+
+; CapPercentage 00000064 default, 0 tweak
+; SchedulingType 3 default, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\HardCap0]
+"CapPercentage"=dword:00000000
+"SchedulingType"=dword:00000000
+; CapPercentage 00000064 default, 0 tweak
+; SchedulingType 2 default, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\Paused]
+"CapPercentage"=dword:00000000
+"SchedulingType"=dword:00000000
+; CapPercentage 00000064 default, 0 tweak
+; SchedulingType 2 default, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\SoftCapFull]
+"CapPercentage"=dword:00000000
+"SchedulingType"=dword:00000000
+; CapPercentage 00000064 default, 0 tweak
+; SchedulingType 2 default, 0 tweak
+; PriorityClass 00008000 default, 00000020 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\SoftCapFullAboveNormal]
+"CapPercentage"=dword:00000000
+"PriorityClass"=dword:00000020
+"SchedulingType"=dword:00000000
+; CapPercentage 00000064 default, 0 tweak
+; SchedulingType 2 default, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\SoftCapLow]
+"CapPercentage"=dword:00000000
+"SchedulingType"=dword:00000000
+; CapPercentage 00000064 default, 0 tweak
+; SchedulingType 2 default, 0 tweak
+; PriorityClass 00100000 default, 00000020 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\SoftCapLowBackgroundBegin]
+"CapPercentage"=dword:00000000
+"PriorityClass"=dword:00000020
+"SchedulingType"=dword:00000000
+; CapPercentage 00000064 default, 0 tweak
+; SchedulingType 0 default, 0 tweak
+; PriorityClass 00008000 default, 00000020 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\UnmanagedAboveNormal]
+"CapPercentage"=dword:00000000
+"PriorityClass"=dword:00000020
+"SchedulingType"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\IO\NoCap]
+"IOBandwidth"=dword:00000000
+
+; 1 default, 0 tweak
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\BackgroundDefault]
+"IsLowPriority"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\Frozen]
+"IsLowPriority"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\FrozenDNCS]
+"IsLowPriority"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\FrozenDNK]
+"IsLowPriority"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\FrozenPPLE]
+"IsLowPriority"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\Paused]
+"IsLowPriority"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\PausedDNK]
+"IsLowPriority"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\Pausing]
+"IsLowPriority"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\PrelaunchForeground]
+"IsLowPriority"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Flags\ThrottleGPUInterference]
+"IsLowPriority"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MRT]
 "DontOfferThroughWUAU"=dword:00000001
