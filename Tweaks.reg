@@ -1219,6 +1219,8 @@ Windows Registry Editor Version 5.00
 "AllowUpgradesWithUnsupportedTPMOrCPU"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Search\Gather\Windows\SystemIndex]
 "RespectPowerModes"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\SppComApi.dll]
+"NoGenTicket"=dword:00000001
 
 ; CapPercentage 00000064 default, 0 tweak
 ; SchedulingType 3 default, 0 tweak
@@ -1404,6 +1406,7 @@ Windows Registry Editor Version 5.00
 "ShellSmartScreenLevel"=-
 "SlowLinkUIEnabled"=dword:00000000
 "UploadUserActivities"=dword:00000000
+"EnableAppUriHandlers"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
 "ConfigureWindowsSpotlight"=dword:00000002
@@ -1465,6 +1468,70 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\WUDF]
 "LogEnable"=dword:00000000
 "LogLevel"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{F9C77450-3A41-477E-9310-9ACD617BD9E3}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{728EE579-943C-4519-9EF7-AB56765798ED}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{1A6364EB-776B-4120-ADE1-B63A406A76B5}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{5794DAFD-BE60-433f-88A2-1A31939AC01F}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{0E28E245-9368-4853-AD84-6DA3BA35BB75}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{7150F9BF-48AD-4da4-A49C-29EF4A8369BA}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{A3F3E39B-5D83-4940-B954-28315B82F0A8}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{6232C319-91AC-4931-9385-E70C2B099F0E}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{74EE6C03-5363-4554-B161-627540339CAB}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{E47248BA-94CC-49c4-BBB5-9EB7F05183D0}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{17D89FEC-5C44-4972-B12D-241CAEF74509}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{3A0DBA37-F8B2-4356-83DE-3E90BD5C261F}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{6A4C88C6-C502-4f74-8F60-2CB23EDC24E2}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{E62688F0-25FD-4c90-BFF5-F508B9D2E31F}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{E5094040-C46C-4115-B030-04FB2E545B00}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{B087BE9D-ED37-454f-AF9C-04291E351182}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{AADCED64-746C-4633-A97C-D61349046527}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{91FBB303-0CD5-4055-BF42-E512A681B325}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{C418DD9D-0D14-4efb-8FBF-CFE535C8FAC7}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{E4F48E54-F38D-4884-BFB9-D4D2E5729C18}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{BC75B1ED-5833-4858-9BB8-CBF0B166DF9D}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Peernet]
 "Disabled"=dword:00000001
@@ -1620,8 +1687,12 @@ Windows Registry Editor Version 5.00
 "AITEnable"=dword:00000000
 "DisableInventory"=dword:00000001
 "DisableUAR"=dword:00000001
+"DisablePCA"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\HidePeopleBar]
+"value"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Connectivity\DisallowNetworkConnectivityActiveTests]
 "value"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\EMDMgmt]
@@ -2767,6 +2838,10 @@ Windows Registry Editor Version 5.00
 "IsCopilotAvailable"=dword:00000000
 "CopilotDisabledReason"="FeatureIsDisabled"
 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Shell\Copilot]
+"IsCopilotAvailable"=dword:00000000
+"CopilotDisabledReason"="FeatureIsDisabled"
+
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\Copilot\BingChat]
 "IsUserEligible"=dword:00000000
 
@@ -2775,8 +2850,17 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\MicrosoftWindows.Client.AIX_cw5n1h2txyewy]
 @=""
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\MicrosoftWindows.Client.AIX_cw5n1h2txyewy]
+@=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\Microsoft.Windows.AppRep.ChxApp_cw5n1h2txyewy]
+@=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\Microsoft.Windows.CloudExperienceHost_cw5n1h2txyewy]
+@=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\Microsoft.SecHealthUI_8wekyb3d8bbwe]
+@=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\MicrosoftWindows.Client.CBS_cw5n1h2txyewy]
+@=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\MicrosoftWindows.Client.CoreAI_cw5n1h2txyewy]
 @=""
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\SystemGuard]
@@ -2926,10 +3010,25 @@ Windows Registry Editor Version 5.00
 "LocationNotIndexed"=dword:00000001
 "ServerMSSNotInstalled"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\IPSec\ICFv4]
+"BypassFirewall"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\StandardProfile]
 "EnableFirewall"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile]
+"EnableFirewall"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile]
+"EnableFirewall"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\SharedAccess\Parameters\FirewallPolicy\StandardProfile]
+"EnableFirewall"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\SharedAccess\Parameters\FirewallPolicy\DomainProfile]
+"EnableFirewall"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\SharedAccess\Parameters\FirewallPolicy\PublicProfile]
 "EnableFirewall"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa]
@@ -2996,6 +3095,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WorkFolders]
 "AutoProvision"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\3]
+"2301"=dword:00000003
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Notifications]
 "DisableNotifications"=dword:00000001
 "DisableEnhancedNotifications"=dword:00000001
@@ -3007,6 +3109,9 @@ Windows Registry Editor Version 5.00
 "HideSystray"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.SecurityAndMaintenance]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.SecurityAndMaintenance]
 "Enabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global\NGXCore]
@@ -3210,6 +3315,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\InternetManagement]
 "Customer Experience Improvement Program"=dword:00000001
+"RestrictCommunication"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EventViewer]
 "MicrosoftEventVwrDisableLinks"=dword:00000001
@@ -3333,6 +3439,9 @@ Windows Registry Editor Version 5.00
 "OneDrive"=-
 "OneDriveSetup"=-
 "WindowsWelcomeCenter"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\Network Protection]
+"EnableNetworkProtection"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet]
 "DisableBlockAtFirstSeen"=dword:00000001
@@ -3962,10 +4071,21 @@ Windows Registry Editor Version 5.00
 "ScoobeSystemSettingEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy]
+"LetAppsAccessAccountInfo"=dword:00000002
+"LetAppsAccessBackgroundSpatialPerception"=dword:00000002
+"LetAppsAccessCalendar"=dword:00000002
+"LetAppsAccessCallHistory"=dword:00000002
+"LetAppsAccessContacts"=dword:00000002
+"LetAppsAccessEmail"=dword:00000002
+"LetAppsAccessGazeInput"=dword:00000002
 "LetAppsAccessGenerativeAI"=dword:00000002
 "LetAppsAccessGenerativeAI_ForceAllowTheseApps"=hex(7):00,00
 "LetAppsAccessGenerativeAI_ForceDenyTheseApps"=hex(7):00,00
 "LetAppsAccessGenerativeAI_UserInControlOfTheseApps"=hex(7):00,00
+"LetAppsAccessMessaging"=dword:00000002
+"LetAppsAccessMotion"=dword:00000002
+"LetAppsAccessPhone"=dword:00000002
+"LetAppsAccessRadios"=dword:00000002
 "LetAppsActivateWithVoice"=dword:00000002
 "LetAppsActivateWithVoiceAboveLock"=dword:00000002
 "LetAppsGetDiagnosticInfo"=dword:00000002
@@ -3973,6 +4093,7 @@ Windows Registry Editor Version 5.00
 "LetAppsRunInBackground_ForceAllowTheseApps"=-
 "LetAppsRunInBackground_ForceDenyTheseApps"=-
 "LetAppsRunInBackground_UserInControlOfTheseApps"=-
+"LetAppsSyncWithDevices"=dword:00000002
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Mobility]
 "OptedIn"=dword:00000000
@@ -4061,6 +4182,12 @@ Windows Registry Editor Version 5.00
 "AgentActivationLastUsed"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\bluetoothSync]
+"Value"="Deny"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\cellularData]
+"Value"="Deny"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\wifiData]
 "Value"="Deny"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowCortana]
@@ -4347,6 +4474,7 @@ Windows Registry Editor Version 5.00
 "DisableRoutinelyTakingAction"=dword:00000001
 "DisableSpecialRunningModes"=dword:00000001
 "ServiceKeepAlive"=dword:00000000
+"PUAProtection"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows Defender\MpEngine]
 "MpEnablePus"=dword:00000000
@@ -4358,6 +4486,7 @@ Windows Registry Editor Version 5.00
 "DisableRealtimeMonitoring"=dword:00000001
 "DisableRoutinelyTakingAction"=dword:00000001
 "DisableScanOnRealtimeEnable"=dword:00000001
+"LocalSettingOverrideDisableRealtimeMonitoring"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Signature Updates]
 "DisableScanOnUpdate"=dword:00000001
