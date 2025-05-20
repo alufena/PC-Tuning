@@ -154,6 +154,7 @@ Windows Registry Editor Version 5.00
 "DisablePagingExecutive"=dword:00000001 ; 00000000, 00000001
 "DontVerifyRandomDrivers"=dword:00000001
 "EnableCfg"=dword:00000000
+"EnableCooling"=dword:00000000
 "EnablePerVolumeLazyWriter"=dword:00000002
 "FeatureSettings"=dword:00000001 ; 00000000, 00000001
 "FeatureSettingsOverride"=dword:00000003
@@ -173,7 +174,6 @@ Windows Registry Editor Version 5.00
 "SystemPages"=dword:ffffffff
 "TrackLockedPages"=dword:00000000
 "TrackPtes"=dword:00000000
-"EnableCooling"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 "DpcWatchdogProfileOffset"=dword:00000000 ; 00002710, 00000000
@@ -405,35 +405,50 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000001
+"PagePriority"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000001
+"PagePriority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
-"IoPriority"=dword:00000000
-"PagePriority"=dword:00000000
+"IoPriority"=dword:00000001
+"PagePriority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
-"IoPriority"=dword:00000000
-"PagePriority"=dword:00000000
+"IoPriority"=dword:00000001
+"PagePriority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000004
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006  ; =-, 00000004/00000006
+"IoPriority"=dword:00000006 ; =-, 00000003/00000006
+"PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000004
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006  ; =-, 00000004/00000006
+"IoPriority"=dword:00000006 ; =-, 00000003/00000006
+"PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000004
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006  ; =-, 00000004/00000006
+"IoPriority"=dword:00000006 ; =-, 00000003/00000006
+"PagePriority"=dword:00000006
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NDIS\Parameters]
+"CheckFwVersion"=dword:00000000
+"DefaultPnPCapabilities"=dword:00000024
 "MaxNumRssCpus"=dword:00000008
 "MaxNumRssThreads"=dword:00000010
-"CheckFwVersion"=dword:00000000
 "RssBaseCpu"=dword:00000004
-"DefaultPnPCapabilities"=dword:00000024
 "TrackNblOwner"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]
@@ -441,38 +456,39 @@ Windows Registry Editor Version 5.00
 "MaxNumRssThreads"=dword:00000010
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager]
-"ProtectionMode"=dword:00000000 ; 00000001, 00000000
-"AlpcWakePolicy"=dword:00000001
-"ImageExecutionOptions"=dword:00000000 ; 00000001, 00000000
-"DisablePagingExecutive"=dword:00000001  ; 00000000, 00000001
-"HeapDeCommitFreeBlockThreshold"=dword:00040000
 "AllowProtectedRenames"="0"
+"AlpcWakePolicy"=dword:00000001
 "AuditBaseDirectories"=dword:00000000
 "AuditBaseObjects"=dword:00000000
+"DisablePagingExecutive"=dword:00000001 ; 00000000, 00000001
+"DisableWpbtExecution"=dword:00000001
 "EnableMCA"=dword:00000000
 "EnableMCE"=dword:00000000
+"EnableTimerWatchdog"=dword:00000000
+"HeapDeCommitFreeBlockThreshold"=dword:00040000
+"ImageExecutionOptions"=dword:00000000 ; 00000000, 00000001
+"ProtectionMode"=dword:00000000 ; 00000000, 00000001
 "SafeDllSearchMode"=dword:00000000
 "SafeProcessSearchMode"=dword:00000000
-"DisableWpbtExecution"=dword:00000001
-"EnableTimerWatchdog"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Executive]
 "AdditionalCriticalWorkerThreads"=dword:00000010 ; 00000000, 00000010
 "AdditionalDelayedWorkerThreads"=dword:00000010 ; 00000000, 00000010
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
-"MaxWorkItems"=dword:00000010
-"AutoShareWks"=dword:00000000
 "AutoShareServer"=dword:00000000
+"AutoShareWks"=dword:00000000
+"MaxWorkItems"=dword:00000010
 "RestrictNullSessAccess"=dword:00000001
 "SMB1"=dword:00000000
 "SMB2"=dword:00000000
+"EnableAuthenticateUserSharing"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Configuration Manager]
 "EnablePeriodicBackup"=dword:00000000
-"VirtualizationEnabled"=dword:00000000
-"SelfHealingEnabled"=dword:00000000
 "FastBoot"=dword:00000000
+"SelfHealingEnabled"=dword:00000000
+"VirtualizationEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Monitors\Standard TCP/IP Port\Ports]
 "StatusUpdateEnabled"=dword:00000000
@@ -511,38 +527,38 @@ Windows Registry Editor Version 5.00
 "CoalescingTimerInterval"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
-"WaitToKillServiceTimeout"="1000"
 "DisableRemoteScmEndpoints"=dword:00000000
 "HandlerTimeout"=dword:7FFFFFFF
-"SvcHostSplitThresholdInKB"=dword:04000000 ; 01000000, 04000000
 "PortableOperatingSystem"=dword:00000000
 "ServicesPipeTimeout"=dword:00240000
+"SvcHostSplitThresholdInKB"=dword:04000000 ; 01000000, 04000000
+"WaitToKillServiceTimeout"="1000"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
 "TimeLimitInSeconds"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
-"TimeLimitInSeconds"=dword:00000000 ; 1, 0/2
+"TimeLimitInSeconds"=dword:00000000 ; 00000001, 00000000/00000002
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
 "IRQ00Priority"=dword:00000001
 "IRQ08Priority"=dword:00000001
+"IRQ8Priority"=dword:00000001
 "IRQ16Priority"=dword:00000001
 "IRQ23Priority"=dword:00000001
-"IRQ8Priority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability]
-"TimeStampInterval"=dword:00000000 ; 1, 0
 "ShutdownReasonOn"=dword:00000000
 "ShutdownReasonUI"=dword:00000000
+"TimeStampInterval"=dword:00000000 ; 00000001, 00000000
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Reliability]
+"IncludeShutdownErrs"=dword:00000000
 "ShutdownReasonOn"=dword:00000000
 "ShutdownReasonUI"=dword:00000000
+"SnapShot"=dword:00000000
 "TimeStampEnabled"=dword:00000000
 "TimeStampInterval"=dword:00000000
-"IncludeShutdownErrs"=dword:00000000
-"SnapShot"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Reliability Analysis\WMI]
 "WMIEnable"=dword:00000000
@@ -701,9 +717,9 @@ Windows Registry Editor Version 5.00
 "EnableSvchostMitigationPolicy"=hex(b):00,00,00,00,00,00,00,00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Processor]
-"CPPCEnable"=dword:00000000
 "AllowPepPerfStates"=dword:00000000
 "Capabilities"=dword:0007e7e6
+"CPPCEnable"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Quota System]
 "EnableCpuQuota"=dword:00000000
@@ -718,17 +734,17 @@ Windows Registry Editor Version 5.00
 "ASPMOptOut"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters]
+"DisableParallelAandAAAA"=dword:00000001
 "DisableSmartNameResolution"=dword:00000001
+"EnableMDNS"=dword:00000000
+"EnableNetbios"=dword:00000000
+"MaxCacheTtl"=dword:00000001
+"MaximumUdpPacketSize"=dword:000004c5
 "NegativeCacheTime"=dword:00000000
 "NegativeSOACacheTime"=dword:00000000
 "NetFailureCacheTime"=dword:00000000
-"MaximumUdpPacketSize"=dword:000004c5
-"ServiceDllUnloadOnStop"=dword:00000001
 "QueryIpMatching"=dword:00000001
-"EnableNetbios"=dword:00000000
-"DisableParallelAandAAAA"=dword:00000001
-"EnableMDNS"=dword:00000000
-"MaxCacheTtl"=dword:00000001
+"ServiceDllUnloadOnStop"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 "ClockTimerAlwaysOnPresent"=dword:00000001
@@ -838,24 +854,24 @@ Windows Registry Editor Version 5.00
 "UseWindowFrameStagingBuffer"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\DWM\ExtendedComposition]
-"ExclusiveModeFramerateAveragingPeriodMs"=dword:000000fa ; =-, 000000fa/00000000
-"ExclusiveModeFramerateThresholdPercent"=dword:0000002d ; =-, 0000002d/00000000
 "Compositor"=""
 "enableColorSeparation"=dword:00000000
+"ExclusiveModeFramerateAveragingPeriodMs"=dword:000000fa ; =-, 000000fa/00000000
+"ExclusiveModeFramerateThresholdPercent"=dword:0000002d ; =-, 0000002d/00000000
 "ForwardOnlyOnly"=dword:00000000
 "RemoveSRMeshInShell"=dword:00000000
 "SydneyDownsampleFilterKernelSize"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DWM]
+"AnimationAttributionEnabled"=dword:00000000
+"AnimationAttributionHashingEnabled"=dword:00000000
+"Composition"=dword:00000000
+"DisableAccentGradient"=dword:00000001
 "DisallowAnimations"=dword:00000001
 "DisallowColorizationColorChanges"=dword:00000001
 "DisallowComposition"=dword:00000001
 "DisallowFlip3d"=dword:00000001
 "DWMWA_TRANSITIONS_FORCEDISABLED"=dword:00000001
-"AnimationAttributionEnabled"=dword:00000000
-"AnimationAttributionHashingEnabled"=dword:00000000
-"DisableAccentGradient"=dword:00000001
-"Composition"=dword:00000000
 
 [HKLM\SYSTEM\CurrentControlSet\Services\stornvme\Parameters]
 "ArbitrationBurst"=dword:00000100
@@ -1071,29 +1087,30 @@ Windows Registry Editor Version 5.00
 "UseGpuTimer"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global\System]
-"TurboQueue"=dword:00000001
-"EnableVIASBA"=dword:00000001
-"EnableIrongateSBA"=dword:00000001
-"EnableAGPSBA"=dword:00000001
 "EnableAGPFW"=dword:00000001
+"EnableAGPSBA"=dword:00000001
+"EnableFastCopyPixels"=dword:00000001
+"EnableIrongateSBA"=dword:00000001
+"EnableVIASBA"=dword:00000001
 "FastVram"=dword:00000001
 "ShadowFB"=dword:00000001
 "TexturePrecache"=dword:00000001
-"EnableFastCopyPixels"=dword:00000001
+"TurboQueue"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\GraphicsDrivers]
-"SchedulingDelay"=dword:00000000
 "DisableOverlays"=dword:00000001
-"SupportRuntimePowerManagement"=dword:00000000
-"RuntimePowerManagement"=dword:00000000
+"DriverProtection"=dword:00000000
+"DxgkWaitForIdle"=dword:00000000
+"NumberOfIdleStates"=dword:00000000
+"OPMSetProtectionLevel"=dword:00000000
+"PoFxPowerControl"=dword:00000000
+"PoFxStartDevicePowerManagement"=dword:00000000
 "Protection"=dword:00000000
 "ProtectionLevel"=dword:00000000
-"OPMSetProtectionLevel"=dword:00000000
-"NumberOfIdleStates"=dword:00000000
-"DriverProtection"=dword:00000000
-"PoFxStartDevicePowerManagement"=dword:00000000
-"PoFxPowerControl"=dword:00000000
-"DxgkWaitForIdle"=dword:00000000
+"RuntimePowerManagement"=dword:00000000
+"SchedulingDelay"=dword:00000000
+"SupportRuntimePowerManagement"=dword:00000000
+"EnableRuntimePowerManagement"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
 "PerfLevelSrc"=dword:00002222
@@ -1655,33 +1672,33 @@ Windows Registry Editor Version 5.00
 "DxgkShareSwapChainObject"=dword:00000001
 "DxgkWaitForVerticalBlankEvent"=dword:00000001
 "DxgkWaitForVerticalBlankEvent2"=dword:00000001
-"SwapChainBackBuffer"=dword:00000001
-"TdrResetFromTimeoutAsync"=dword:00000001
 "MonitorLatencyTolerance"=dword:00000000
 "MonitorRefreshLatencyTolerance"=dword:00000000
+"SwapChainBackBuffer"=dword:00000001
+"TdrResetFromTimeoutAsync"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers\Scheduler]
-"VsyncIdleTimeout"=dword:00000000
+"ComputePreemption"=dword:00000000
+"DisableCudaContextPreemption"=dword:00000001
+"DisablePreemptionOnS3S4"=dword:00000001
+"DisableWriteCombining"=dword:00000001
+"EnableAsyncMidBufferPreemption"=dword:00000000
+"EnableCEPreemption"=dword:00000000
+"EnableMidBufferPreemption"=dword:00000000
+"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
+"EnableMidGfxPreemption"=dword:00000000
+"EnableMidGfxPreemptionVGPU"=dword:00000000
+"EnablePreemption"=dword:00000000
+"EnableSCGMidBufferPreemption"=dword:00000000
+"GPUPreemptionLevel"=dword:00000000
+"MonitorLatencyTolerance"=dword:00000000
+"MonitorRefreshLatencyTolerance"=dword:00000000
+"PerfAnalyzeMidBufferPreemption"=dword:00000000
+"PlatformSupportMiracast"=dword:00000000
 "RMDisablePostL2Compression"=dword:00000001
 "RmDisableRegistryCaching"=dword:00000001
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
-"DisableWriteCombining"=dword:00000001
-"EnablePreemption"=dword:00000000
-"GPUPreemptionLevel"=dword:00000000
-"ComputePreemption"=dword:00000000
-"EnableMidGfxPreemptionVGPU"=dword:00000000
-"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
-"EnableAsyncMidBufferPreemption"=dword:00000000
-"EnableSCGMidBufferPreemption"=dword:00000000
-"PerfAnalyzeMidBufferPreemption"=dword:00000000
-"EnableMidGfxPreemption"=dword:00000000
-"EnableMidBufferPreemption"=dword:00000000
-"EnableCEPreemption"=dword:00000000
-"DisableCudaContextPreemption"=dword:00000001
-"DisablePreemptionOnS3S4"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000000
-"MonitorRefreshLatencyTolerance"=dword:00000000
-"PlatformSupportMiracast"=dword:00000000
+"VsyncIdleTimeout"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\NVAPI]
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
@@ -1707,42 +1724,42 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\nvlddmkm]
 "{41FCC608-8496-4DEF-B43E-7D9BD675A6FF}"=dword:00000001
-"LogWarningEntries"=dword:00000000
-"LogPagingEntries"=dword:00000000
-"LogEventEntries"=dword:00000000
-"LogErrorEntries"=dword:00000000
-"DisablePreemption"=dword:00000001
-"DisableCudaContextPreemption"=dword:00000001
-"EnableCEPreemption"=dword:00000000
-"DisablePreemptionOnS3S4"=dword:00000001
 "ComputePreemption"=dword:00000000
+"DisableCudaContextPreemption"=dword:00000001
+"DisablePreemption"=dword:00000001
+"DisablePreemptionOnS3S4"=dword:00000001
+"EnableAsyncMidBufferPreemption"=dword:00000000
+"EnableCEPreemption"=dword:00000000
+"EnableMidBufferPreemption"=dword:00000000
+"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
 "EnableMidGfxPreemption"=dword:00000000
 "EnableMidGfxPreemptionVGPU"=dword:00000000
-"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
-"EnableMidBufferPreemption"=dword:00000000
-"EnableAsyncMidBufferPreemption"=dword:00000000
+"LogErrorEntries"=dword:00000000
+"LogEventEntries"=dword:00000000
+"LogPagingEntries"=dword:00000000
+"LogWarningEntries"=dword:00000000
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\FTS]
+"ComputePreemption"=dword:00000000
+"DisableCudaContextPreemption"=dword:00000001
+"DisablePreemption"=dword:00000001
+"DisablePreemptionOnS3S4"=dword:00000001
+"EnableAsyncMidBufferPreemption"=dword:00000000
+"EnableCEPreemption"=dword:00000000
 "EnableGR535"=dword:00000001
+"EnableMidBufferPreemption"=dword:00000000
+"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
+"EnableMidGfxPreemption"=dword:00000000
+"EnableMidGfxPreemptionVGPU"=dword:00000000
+"EnablePreemption"=dword:00000000
 "EnableRID61684"=dword:00000001
 "EnableRID73779"=dword:00000001
 "EnableRID73780"=dword:00000001
 "EnableRID74361"=dword:00000001
-"EnablePreemption"=dword:00000000
-"GPUPreemptionLevel"=dword:00000000
-"ComputePreemption"=dword:00000000
-"EnableMidGfxPreemptionVGPU"=dword:00000000
-"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
-"EnableAsyncMidBufferPreemption"=dword:00000000
 "EnableSCGMidBufferPreemption"=dword:00000000
+"GPUPreemptionLevel"=dword:00000000
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
-"EnableMidGfxPreemption"=dword:00000000
-"EnableMidBufferPreemption"=dword:00000000
-"EnableCEPreemption"=dword:00000000
-"DisableCudaContextPreemption"=dword:00000001
-"DisablePreemptionOnS3S4"=dword:00000001
-"DisablePreemption"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\NVDisplay.ContainerLocalSystem\LocalSystem\NvcDispCorePlugin]
 "DisableLoad"=dword:00000001
@@ -1932,25 +1949,25 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
 "AllowMultipleTSSessions"=dword:00000000
 "AutoRestartShell"=dword:00000001
+"CachedLogonsCount"=dword:00000000
+"ChkAccDebugLevel"=dword:00000000
+"DebugServerCommand"="no"
+"DeleteRoamingCache"=dword:00000001
 "DisableBkGndGroupPolicy"=dword:00000001
 "EnableFirstLogonAnimation"=dword:00000000
-"PowerdownAfterShutdown"="1"
-"SyncForegroundPolicy"=dword:00000000
-"WinStationsDisabled"="1"
-"CachedLogonsCount"=dword:00000000
-"ShowLogonOptions"=dword:00000001
-"DeleteRoamingCache"=dword:00000001
-"RasDisable"="1"
-"WaitForNetwork"=dword:00000000
-"SFCDisable"=dword:00000001
-"RsopLogging"=dword:00000000
-"NoDebugThread"=dword:00000001
-"RsopDebugLevel"=dword:00000000
 "gpsvcDebugLevel"=dword:00000000
-"ChkAccDebugLevel"=dword:00000000
-"UserEnvDebugLevel"=dword:00000000
-"DebugServerCommand"="no"
 "KeepRASConnections"="0"
+"NoDebugThread"=dword:00000001
+"PowerdownAfterShutdown"="1"
+"RasDisable"="1"
+"RsopDebugLevel"=dword:00000000
+"RsopLogging"=dword:00000000
+"SFCDisable"=dword:00000001
+"ShowLogonOptions"=dword:00000001
+"SyncForegroundPolicy"=dword:00000000
+"UserEnvDebugLevel"=dword:00000000
+"WaitForNetwork"=dword:00000000
+"WinStationsDisabled"="1"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EventLog\ProtectedEventLogging]
 "EnableProtectedEventLogging"=dword:00000000
@@ -2020,34 +2037,35 @@ Windows Registry Editor Version 5.00
 "TreatAbsoluteAsRelative"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System]
+"AllowBlockingAppsAtShutdown"=dword:00000000
 "AllowClipboardHistory"=dword:00000000
 "AllowCrossDeviceClipboard"=dword:00000000
 "AllowDomainDelayLock"=dword:00000000
+"CompatibleRUPSecurity"=dword:00000001
+"CopyFileBufferedSynchronousIo"=dword:00000040
+"CopyFileChunkSize"=dword:00008000
+"CopyFileOverlappedCount"=dword:00000020
+"DeleteRoamingCache"=dword:00000001
 "DisableAcrylicBackgroundOnLogon"=dword:00000001
 "DisableAIDataAnalysis"=dword:00000001
 "DisableAIPoweredFeature"=dword:00000001
+"DisableForceUnload"=dword:00000001
 "DisableHHDEP"=dword:00000001
+"DisableLogonBackgroundImage"=dword:00000001
 "EnableActivityFeed"=dword:00000000
+"EnableAppUriHandlers"=dword:00000000
 "EnableCdp"=dword:00000000
+"EnableMmx"=dword:00000000
 "EnableSmartScreen"=dword:00000000
 "HiberbootEnabled"=dword:00000000
 "NoLocalPasswordResetQuestions"=dword:00000000
 "PublishUserActivities"=dword:00000000
+"RSoPLogging"=dword:00000000
 "RunAsPPL"=dword:00000000
 "ShellSmartScreenLevel"=-
 "SlowLinkUIEnabled"=dword:00000000
 "UploadUserActivities"=dword:00000000
-"EnableAppUriHandlers"=dword:00000000
-"CopyFileBufferedSynchronousIo"=dword:00000040
-"CopyFileChunkSize"=dword:00008000
-"CopyFileOverlappedCount"=dword:00000020
-"EnableMmx"=dword:00000000
-"DisableLogonBackgroundImage"=dword:00000001
-"DisableForceUnload"=dword:00000001
-"DeleteRoamingCache"=dword:00000001
-"RSoPLogging"=dword:00000000
-"CompatibleRUPSecurity"=dword:00000001
-"AllowBlockingAppsAtShutdown"=dword:00000000
+"WaitForNetwork"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
 "ConfigureWindowsSpotlight"=dword:00000002
@@ -2218,12 +2236,12 @@ Windows Registry Editor Version 5.00
 "Disabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\DeviceGuard]
+"CachedDrtmAuthIndex"=dword:00000000
 "EnableVirtualizationBasedSecurity"=dword:00000000
 "HVCIMATRequired"=dword:00000000
-"CachedDrtmAuthIndex"=dword:00000000
+"Locked"=dword:00000000
 "RequireMicrosoftSignedBootChain"=dword:00000000
 "RequirePlatformSecurityFeatures"=dword:00000000
-"Locked"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows]
 "NonBestEffortLimit"=dword:00000000
@@ -2247,8 +2265,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Appx]
 "AllowAutomaticAppArchiving"=dword:00000000
-"RestrictAppToSystemVolume"=dword:00000001
 "AllowDevelopmentWithoutDevLicense"=dword:00000001
+"RestrictAppToSystemVolume"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowAutomaticAppArchiving]
 "value"=dword:00000000
@@ -2257,9 +2275,11 @@ Windows Registry Editor Version 5.00
 "BypassNRO"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer]
+"CheckSameSourceAndTargetForFRAndDFS"=dword:00000000
 "DisableGraphRecentItems"=dword:00000001
 "DisableNotificationCenter"=dword:00000001
 "DisableSearchBoxSuggestions"=dword:00000001
+"EnableShellShortcutIconRemotePath"=dword:00000000
 "HideRecentlyAddedApps"=dword:00000001
 "HideRecommendedPersonalizedSites"=dword:00000001
 "HideRecommendedSection"=dword:00000001
@@ -2272,21 +2292,21 @@ Windows Registry Editor Version 5.00
 "NoRecentDocsMenu"=dword:00000001
 "NoRecentDocsNetHood"=dword:00000001
 "NoResolveTrack"=dword:00000001
-"NoUseStoreOpenWith"=dword:00000001
-"ShowOrHideMostUsedApps"=dword:00000002
 "NoStartMenuMFUprogramsList"=dword:00000001
+"NoUseStoreOpenWith"=dword:00000001
+"NoWindowMinimizingShortcuts"=dword:00000001
 "ServerAdminUI"=dword:00000000
 "ShellViewReentered"=dword:00000001
-"CheckSameSourceAndTargetForFRAndDFS"=dword:00000000
-"EnableShellShortcutIconRemotePath"=dword:00000000
-"NoWindowMinimizingShortcuts"=dword:00000001
+"ShowOrHideMostUsedApps"=dword:00000002
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
+"CheckSameSourceAndTargetForFRAndDFS"=dword:00000000
 "DisableGraphRecentItems"=dword:00000001
 "DisableNotificationCenter"=dword:00000001
 "DisableSearchBoxSuggestions"=dword:00000001
 "DisableThumbsDBOnNetworkFolders"=dword:00000001 
 "EnableLegacyBalloonNotifications"=dword:00000001
+"EnableShellShortcutIconRemotePath"=dword:00000000
 "ExcludedFromStableAnaheimDownloadPromotionSL"=dword:00000001
 "ExplorerStartupTraceRecorded"=dword:00000000
 "HideCopilotButton"=dword:00000001
@@ -2296,44 +2316,42 @@ Windows Registry Editor Version 5.00
 "HideRecommendedSection"=-
 "IrisClientRefresh"=dword:00000000
 "MultiTaskingAltTabFilter"=dword:00000003
+"NoBalloonFeatureAdvertisements"=dword:00000001
 "NoDataExecutionPrevention"=dword:00000001
 "NoHeapTerminationOnCorruption"=dword:00000001
 "NoNewAppAlert"=dword:00000001
-"NoTileApplicationNotification"=dword:00000001
-"NoUseStoreOpenWith"=dword:00000001
-"SIDUpdatedOnLibraries"=dword:00000000
-"TelemetrySalt"=dword:00000000
-"CheckSameSourceAndTargetForFRAndDFS"=dword:00000000
-"EnableShellShortcutIconRemotePath"=dword:00000000
-"ShowOrHideMostUsedApps"=-
-"NoStartMenuHomegroup"=dword:00000001
 "NoRemoteDestinations"=dword:00000001
 "NoSearchEverywhereLinkInStartMenu"=dword:00000001
-"NoBalloonFeatureAdvertisements"=dword:00000001
+"NoStartMenuHomegroup"=dword:00000001
 "NoStartMenuRecordedTV"=dword:00000001
+"NoTileApplicationNotification"=dword:00000001
+"NoUseStoreOpenWith"=dword:00000001
 "NoWindowMinimizingShortcuts"=dword:00000001
+"ShowOrHideMostUsedApps"=-
+"SIDUpdatedOnLibraries"=dword:00000000
+"TelemetrySalt"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\TabletTip\1.7]
 "EnableDesktopModeAutoInvoke"=dword:00000000
 "DisableNewKeyboardExperience"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\TabletTip\1.7]
+"DisableACIntegration"=dword:00000001
+"DisableEdgeTarget"=dword:00000001
 "DisableNewKeyboardExperience"=dword:00000000
 "EnableAutocorrection"=dword:00000000
 "EnableAutoShiftEngage"=dword:00000000
 "EnableDesktopModeAutoInvoke"=dword:00000000
 "EnableDoubleTapSpace"=dword:00000000
+"EnableInkingWithTouch"=dword:00000000
 "EnableKeyAudioFeedback"=dword:00000000
 "EnablePredictionSpaceInsertion"=dword:00000000
 "EnableSpellchecking"=dword:00000000
 "EnableTextPrediction"=dword:00000000
-"IsKeyBackgroundEnabled"=dword:00000000
 "HideIPTIPTarget"=dword:00000001
 "HideIPTIPTouchTarget"=dword:00000001
 "IncludeRareChar"=dword:00000000
-"DisableEdgeTarget"=dword:00000001
-"DisableACIntegration"=dword:00000001
-"EnableInkingWithTouch"=dword:00000000
+"IsKeyBackgroundEnabled"=dword:00000000
 "TipbandDesiredVisibility"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Control Panel\International]
@@ -2347,9 +2365,9 @@ Windows Registry Editor Version 5.00
 "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\mscorsvw.exe"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell]
-"TabletMode"=dword:00000000
-"SignInMode"=dword:00000001
 "ConvertibleSlateModePromptPreference"=dword:00000000
+"SignInMode"=dword:00000001
+"TabletMode"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ImmersiveShell\Launcher]
 "DisableLightDismiss"=-
@@ -2394,13 +2412,13 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat]
 "AITEnable"=dword:00000000
-"DisableInventory"=dword:00000001
-"DisableUAR"=dword:00000001
-"DisablePCA"=dword:00000001
-"VDMDisallowed"=dword:00000001
-"DisableEngine"=dword:00000001
-"SbEnable"=dword:00000000
 "AllowTelemetry"=dword:00000000
+"DisableEngine"=dword:00000001
+"DisableInventory"=dword:00000001
+"DisablePCA"=dword:00000001
+"DisableUAR"=dword:00000001
+"SbEnable"=dword:00000000
+"VDMDisallowed"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\EMDMgmt]
 "GroupPolicyDisallowCaches"=dword:00000001
@@ -2480,12 +2498,12 @@ Windows Registry Editor Version 5.00
 "Enabled"=dword:00000000
 
 [HKEY_CURRENT_USER\Control Panel\International\User Profile]
+"DiagTrackAuthorization"=dword:00000000
 "HttpAcceptLanguageOptOut"=dword:00000001
 "ShowAutoCorrection"=dword:00000000
-"ShowTextPrediction"=dword:00000000
 "ShowCasing"=dword:00000000
 "ShowShiftLock"=dword:00000000
-"DiagTrackAuthorization"=dword:00000000
+"ShowTextPrediction"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp]
 "DisableBranchCache"=dword:00000001
@@ -3362,19 +3380,27 @@ Windows Registry Editor Version 5.00
 "ShortcutNameTemplate"="%s"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"AutoCheckSelect"=dword:00000000
 "AutoSearch"=dword:00000000
 "DisableThumbnailCache"=dword:00000001
+"DisableThumbsDBOnNetworkFolders"=dword:00000001
 "DisallowShaking"=dword:00000001
+"DITest"=dword:00000000
 "DontPrettyPath"=dword:00000001
 "EnableSnapAssistFlyout"=dword:00000000
 "EnableSnapBar"=dword:00000000
 "EnableTaskGroups"=dword:00000000
 "ExtendedUIHoverTime"=dword:00000000
+"FileExplorerInTouchImprovement"=dword:00000001
 "FolderContentsInfoTip"=dword:00000001
 "Hidden"=dword:00000001
 "HideDrivesWithNoMedia"=dword:00000000
 "HideFileExt"=dword:00000000
+"JointResize"=dword:00000000
 "LaunchTo"=dword:00000001
+"ListviewShadow"=dword:00000000
+"ListviewWatermark"=dword:00000000
+"MapNetDrvBtn"=dword:00000000
 "NoNetCrawling"=dword:00000001
 "NoThumbnailCache"=dword:00000001
 "PersistBrowsers"=dword:00000000
@@ -3385,8 +3411,12 @@ Windows Registry Editor Version 5.00
 "ShowCortanaButton"=dword:00000000
 "ShowInfoTip"=dword:00000001
 "ShowSecondsInSystemClock"=dword:00000000
+"ShowStatusBar"=dword:00000001
 "ShowSyncProviderNotifications"=dword:00000000
 "ShowTaskViewButton"=dword:00000000
+"ShowTypeOverlay"=dword:00000001
+"SnapAssist"=dword:00000000
+"SnapFill"=dword:00000000
 "Start_AccountNotifications"=dword:00000000
 "Start_IrisRecommendations"=dword:00000000
 "Start_LargeMFUIcons"=dword:00000000
@@ -3396,28 +3426,16 @@ Windows Registry Editor Version 5.00
 "Start_TrackProgs"=dword:00000000
 "TaskbarAl"=dword:00000000
 "TaskbarAnimations"=dword:00000000
+"TaskbarAutoHideInTabletMode"=dword:00000000
 "TaskbarDa"=dword:00000000
 "TaskbarEndTask"=dword:00000001
-"ThumbnailLivePreviewHoverTime"=dword:00000001
-"UseCompactMode"=dword:00000001
-"DITest"=dword:00000000
-"DisableThumbsDBOnNetworkFolders"=dword:00000001
-"ListviewShadow"=dword:00000000
 "TaskbarMn"=dword:00000000
 "TaskbarSn"=dword:00000000
-"JointResize"=dword:00000000
-"SnapAssist"=dword:00000000
-"SnapFill"=dword:00000000
-"WebView"=dword:00000000
-"ShowStatusBar"=dword:00000001
-"ShowTypeOverlay"=dword:00000001
-"VirtualDesktopTaskbarFilter"=dword:00000000
+"ThumbnailLivePreviewHoverTime"=dword:00000001
+"UseCompactMode"=dword:00000001
 "VirtualDesktopAltTabFilter"=dword:00000000
-"AutoCheckSelect"=dword:00000000
-"MapNetDrvBtn"=dword:00000000
-"ListviewWatermark"=dword:00000000
-"FileExplorerInTouchImprovement"=dword:00000001
-"TaskbarAutoHideInTabletMode"=dword:00000000
+"VirtualDesktopTaskbarFilter"=dword:00000000
+"WebView"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "CopyBufferSize"=dword:00100000
@@ -3715,13 +3733,13 @@ Windows Registry Editor Version 5.00
 "DisableBranchCache"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient]
-"RegistrationEnabled"=dword:00000000
-"PreferLocalOverLowerBindingDNS"=dword:00000001
+"DisableIdnEncoding"=dword:00000001
 "DisableSmartProtocolReordering"=dword:00000001
 "EnableDdr"=dword:00000000
-"DisableIdnEncoding"=dword:00000001
 "EnableIdnMapping"=dword:00000000
 "EnableMulticast"=dword:00000000
+"PreferLocalOverLowerBindingDNS"=dword:00000001
+"RegistrationEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\StorageSense]
 "AllowStorageSenseTemporaryFilesCleanup"=dword:00000000
@@ -3749,16 +3767,16 @@ Windows Registry Editor Version 5.00
 "AllowFailFastOnAnyFailure"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
+"fAllowFullControl"=dword:00000000
 "fAllowToGetHelp"=dword:00000000
 "fDenyTSConnections"=dword:00000001
+"fDisableCdm"=dword:00000001
+"fEncryptRPCTraffic"=dword:00000001
 "fSingleSessionPerUser"=dword:00000001
+"RDPVGCInstalled"=dword:00000000
 "StartRCM"=dword:00000000
 "TSUserEnabled"=dword:00000000
 "updateRDStatus"=dword:00000000
-"fAllowFullControl"=dword:00000000
-"fDisableCdm"=dword:00000001
-"fEncryptRPCTraffic"=dword:00000001
-"RDPVGCInstalled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\COM3]
 "RemoteAccessEnabled"=dword:00000000
@@ -3827,24 +3845,24 @@ Windows Registry Editor Version 5.00
 "LMDataLoggerEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\NetCache]
-"Enabled"=dword:00000000
 "BackgroundSyncEnabled"=dword:00000000
-"NoMakeAvailableOffline"=dword:00000001
-"WorkOfflineDisabled"=dword:00000001
-"SyncAtLogoff"=dword:00000000
-"SyncAtLogon"=dword:00000000
+"Enabled"=dword:00000000
 "EventLoggingLevel"=dword:00000000
 "NoCacheViewer"=dword:00000001
 "NoConfigCache"=dword:00000001
+"NoMakeAvailableOffline"=dword:00000001
+"SyncAtLogoff"=dword:00000000
+"SyncAtLogon"=dword:00000000
+"WorkOfflineDisabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\LLTD]
-"EnableLLTDIO"=dword:00000000
-"EnableRspndr"=dword:00000000
 "AllowLLTDIOOnDomain"=dword:00000000
 "AllowLLTDIOOnPublicNet"=dword:00000000
-"ProhibitLLTDIOOnPrivateNet"=dword:00000001
 "AllowRspndrOnDomain"=dword:00000000
 "AllowRspndrOnPublicNet"=dword:00000000
+"EnableLLTDIO"=dword:00000000
+"EnableRspndr"=dword:00000000
+"ProhibitLLTDIOOnPrivateNet"=dword:00000001
 "ProhibitRspndrOnPrivateNet"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowHardwareKeyboardTextSuggestions]
@@ -3887,9 +3905,9 @@ Windows Registry Editor Version 5.00
 "Enable Cloud Candidate"="0"
 "Enable Lexicon Update"="0"
 "misconvlogging"=dword:00000000
+"OpenExtendedDict"=dword:00000000
 "UseHistorybasedPredictiveInput"=dword:00000000
 "UserDict"=dword:00000000
-"OpenExtendedDict"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows Security Health\State]
 "AppAndBrowser_EdgeSmartScreenOff"=dword:00000000
@@ -4056,16 +4074,16 @@ Windows Registry Editor Version 5.00
 "VKToggleRecordingIndicator"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
+"ActiveHoursEnd"=dword:00000000
+"ActiveHoursStart"=dword:00000006
 "AllowMUUpdateService"=dword:00000000
+"AutoRebootLimitInDays"=dword:0000016d
 "ExcludeWUDriversInQualityUpdate"=dword:00000001
 "FlightSettingsMaxPauseDays"=dword:00001c84
 "SmartActiveHoursState"=dword:00000000
-"ActiveHoursEnd"=dword:00000000
-"ActiveHoursStart"=dword:00000006
+"SnoozeRebootHours"=dword:0000ffff
 "UserChoiceActiveHoursEnd"=dword:00000000
 "UserChoiceActiveHoursStart"=dword:00000006
-"AutoRebootLimitInDays"=dword:0000016d
-"SnoozeRebootHours"=dword:0000ffff
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
 "AUOptions"=dword:00000002
@@ -4087,8 +4105,11 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 "AutoEndTasks"="1"
+"DelayLockInterval"=dword:ffffffff
+"DragFromMaximize"="0"
 "EnablePerProcessSystemDPI"=dword:00000001
 "ForegroundLockTimeout"=dword:00000000
+"GestureExecutionDelay"=dword:00000000
 "HungAppTimeout"="1000"
 "JPEGImportQuality"=dword:00000064
 "LogPixels"=dword:00000060
@@ -4097,18 +4118,15 @@ Windows Registry Editor Version 5.00
 "MonitorRemovalRecalcBehavior"=dword:00000001
 "MouseWheelRouting"=dword:00000002
 "PaintDesktopVersion"=dword:00000001
+"RestorePreviousStateRecalcBehavior"=dword:00000000
 "ScreenSaveTimeOut"=-
 "SCRNSAVE.EXE"=-
 "SmoothScroll"=dword:00000000
+"SnapSizing"="0"
 "WaitToKillAppTimeout"="1000"
 "WaitToKillServiceTimeout"="1000"
 "Win8DpiScaling"=dword:00000001
 "WindowArrangementActive"="0"
-"RestorePreviousStateRecalcBehavior"=dword:00000000
-"DragFromMaximize"="0"
-"DelayLockInterval"=dword:ffffffff
-"GestureExecutionDelay"=dword:00000000
-"SnapSizing"="0"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control]
 "DisableRemoteScmEndpoints"=dword:00000000
@@ -4125,8 +4143,8 @@ Windows Registry Editor Version 5.00
 "DesktopHeapLogging"=dword:00000000
 "DwmInputUsesIoCompletionPort"=dword:00000000
 "EnableDwmInputProcessing"=dword:00000000
-"ShutdownWarningDialogTimeout"=dword:00000001
 "RequireSignedAppInit_DLLs"=dword:00000000
+"ShutdownWarningDialogTimeout"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Printers]
 "DisableWebPnPDownload"=dword:00000001
@@ -4195,25 +4213,25 @@ Windows Registry Editor Version 5.00
 "EnableFirewall"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa]
-"LmCompatibilityLevel"=dword:00000005 ; =-, 00000005
-"LsaConfigFlags"=dword:00000000
-"RunAsPPL"=dword:00000000
-"RunAsPPLBoot"=dword:00000000
-"RestrictAnonymous"=dword:00000002 ; 00000001/00000002
-"RestrictAnonymousSAM"=dword:00000001
-"everyoneincludeanonymous"=dword:00000000
+"AnonymousNameLookup"=dword:00000000
 "DisableDomainCreds"=dword:00000001
 "DisableRestrictedAdmin"=dword:00000000
 "DisableRestrictedAdminOutboundCreds"=dword:00000001
+"everyoneincludeanonymous"=dword:00000000
 "EveryoneIncludesAnonymous"=dword:00000000
-"RestrictRemoteSAM"="O:BAG:BAD:(A;;RC;;;BA)"
-"UseMachineId"=dword:00000001
-"LimitBlankPasswordUse"=dword:00000001
-"TurnOffAnonymousBlock"=dword:00000000
-"SCENoApplyLegacyAuditPolicy"=dword:00000000
 "IsPplAutoEnabled"=dword:00000000
+"LimitBlankPasswordUse"=dword:00000001
+"LmCompatibilityLevel"=dword:00000005 ; =-, 00000005
+"LsaConfigFlags"=dword:00000000
 "LsaLookupRestrictIsolatedNameLevel"=dword:00000001
-"AnonymousNameLookup"=dword:00000000
+"RestrictAnonymous"=dword:00000002 ; 00000001/00000002
+"RestrictAnonymousSAM"=dword:00000001
+"RestrictRemoteSAM"="O:BAG:BAD:(A;;RC;;;BA)"
+"RunAsPPL"=dword:00000000
+"RunAsPPLBoot"=dword:00000000
+"SCENoApplyLegacyAuditPolicy"=dword:00000000
+"TurnOffAnonymousBlock"=dword:00000000
+"UseMachineId"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\VxD\BIOS]
 "CPUPriority"=dword:00000001
@@ -4243,10 +4261,10 @@ Windows Registry Editor Version 5.00
 "value"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
-"ExcludeWUDriversInQualityUpdate"=dword:00000001
-"DisableWUfBSafeguards"=dword:00000001
 "AllowTemporaryEnterpriseFeatureControl"=dword:00000000
 "DisableOSUpgrade"=dword:00000001
+"DisableWUfBSafeguards"=dword:00000001
+"ExcludeWUDriversInQualityUpdate"=dword:00000001
 
 [HKEY_CURRENT_USER\Control Panel\UnsupportedHardwareNotificationCache]
 "SV1"=dword:00000000
@@ -4259,14 +4277,14 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SettingSync]
 "DisableApplicationSettingSync"=dword:00000002
 "DisableAppSyncSettingSync"=dword:00000002
-"DisableWebBrowserSettingSync"=dword:00000002
-"DisableDesktopThemeSettingSync"=dword:00000002
-"DisableSettingSync"=dword:00000002
-"DisableWindowsSettingSync"=dword:00000002
 "DisableCredentialsSettingSync"=dword:00000002
+"DisableDesktopThemeSettingSync"=dword:00000002
 "DisablePersonalizationSettingSync"=dword:00000002
-"DisableStartLayoutSettingSync"=dword:00000002
+"DisableSettingSync"=dword:00000002
 "DisableSettingSyncUserOverride"=dword:00000001
+"DisableStartLayoutSettingSync"=dword:00000002
+"DisableWebBrowserSettingSync"=dword:00000002
+"DisableWindowsSettingSync"=dword:00000002
 "EnableBackupForWin8Apps"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SettingSync]
@@ -4334,37 +4352,37 @@ Windows Registry Editor Version 5.00
 "ConsentPromptBehaviorUser"=dword:00000001
 "DelayedDesktopSwitchTimeout"=dword:00000000
 "DisableAutomaticRestartSignOn"=dword:00000001
+"DisableStartupSound"=dword:00000001
 "DontDisplayLastUserName"=-
 "DontDisplayLockedUserId"=-
+"DSCAutomationHostEnabled"=dword:00000000
 "EnableCursorSuppression"=dword:00000000
 "EnableFirstLogonAnimation"=dword:00000000
 "EnableInstallerDetection"=dword:00000000
+"EnableLinkedConnections"=dword:00000000
 "EnableLUA"=dword:00000000
 "EnableSecureUIAPaths"=dword:00000000
 "EnableUIADesktopToggle"=dword:00000000
+"EnableUwpStartupTasks"=dword:00000000
 "EnableVirtualization"=dword:00000000
 "FilterAdministratorToken"=dword:00000000
 "HideFastUserSwitching"=dword:00000001
+"HideUnsupportedHardwareNotifications"=dword:00000001
+"LocalAccountTokenFilterPolicy"=dword:00000000
 "MSAOptional"=dword:00000001
 "NoConnectedUser"=dword:00000003
 "NoInternetOpenWith"=dword:00000001
+"NoLocalPasswordResetQuestions"=dword:00000000
 "PromptOnSecureDesktop"=dword:00000000
+"RunStartupScriptSync"=dword:00000000
+"scforceoption"=dword:00000000
+"shutdownwithoutlogon"=dword:00000001
 "SynchronousMachineGroupPolicy"=dword:00000000
 "SynchronousUserGroupPolicy"=dword:00000000
 "TypeOfAdminApprovalMode"=dword:00000001
+"undockwithoutlogon"=dword:00000001
 "ValidateAdminCodeSignatures"=dword:00000000
 "VerboseStatus"=dword:00000001
-"HideUnsupportedHardwareNotifications"=dword:00000001
-"DisableStartupSound"=dword:00000001
-"RunStartupScriptSync"=dword:00000000
-"LocalAccountTokenFilterPolicy"=dword:00000000
-"EnableUwpStartupTasks"=dword:00000000
-"NoLocalPasswordResetQuestions"=dword:00000000
-"EnableLinkedConnections"=dword:00000000
-"DSCAutomationHostEnabled"=dword:00000000
-"scforceoption"=dword:00000000
-"shutdownwithoutlogon"=dword:00000001
-"undockwithoutlogon"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\AppV\Client]
 "Enabled"=dword:00000000
@@ -4373,13 +4391,13 @@ Windows Registry Editor Version 5.00
 "AutoCleanupEnabled"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\EVR]
-"ForceThrottleOutput"=dword:00000001
-"ForceHalfInterlace"=dword:00000001
-"ForceBob"=dword:00000000
-"ForceAllowDropToBob"=dword:00000001
 "DisableBobWorkaround"=dword:00000001
+"ForceAllowDropToBob"=dword:00000001
 "ForceAllowDropToHalfInterlace"=dword:00000001
 "ForceAllowThrottleOutput"=dword:00000001
+"ForceBob"=dword:00000000
+"ForceHalfInterlace"=dword:00000001
+"ForceThrottleOutput"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\Audit]
 "ProcessCreationIncludeCmdLine_Enabled"=dword:00000000
@@ -4507,9 +4525,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\UEV\Agent\Configuration\WindowsSettings]
 "DesktopSettings"=dword:00000000
 "EaseOfAccessSettings"=dword:00000000
-"ThemeSettings"=dword:00000000
-"RoamingCredentialSettings"=dword:00000000
 "NetworkPrinters"=dword:00000000
+"RoamingCredentialSettings"=dword:00000000
+"ThemeSettings"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\DoNotSyncBrowserSettings]
 "value"=dword:00000000
@@ -4548,29 +4566,29 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig]
 "BypassCPUCheck"=dword:00000001
+"BypassDiskCheck"=dword:00000001
 "BypassRAMCheck"=dword:00000001
-"BypassTPMCheck"=dword:00000001
 "BypassSecureBootCheck"=dword:00000001
 "BypassStorageCheck"=dword:00000001
-"BypassDiskCheck"=dword:00000001
+"BypassTPMCheck"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\UEV\Agent]
 "Enabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\UEV\Agent\Configuration]
+"CustomerExperienceImprovementProgram"=dword:00000000
 "DontSyncWindows8AppSettings"=dword:00000001
+"SyncEnabled"=dword:00000000
 "SyncProviderPingEnabled"=dword:00000000
 "SyncUnlistedWindows8Apps"=dword:00000000
-"SyncEnabled"=dword:00000000
-"CustomerExperienceImprovementProgram"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\SCM\Regular]
 "TracingDisabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\NvCache]
-"OptimizeBootAndResume"=dword:00000000
-"EnablePowerModeState"=dword:00000000
 "EnableNvCache"=dword:00000000
+"EnablePowerModeState"=dword:00000000
+"OptimizeBootAndResume"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\Credential Providers\{8AF662BF-65A0-4D0A-A540-A338A999D36F}]
 "Disabled"=dword:00000001
@@ -5017,24 +5035,24 @@ Windows Registry Editor Version 5.00
 "EnableEventTranscript"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\TraceManager]
+"alternativeTraceIsAutoLogger"=dword:00000000
+"alternativeTraceIsExclusive"=dword:00000000
+"alternativeTracePriority"=dword:00000000
+"alternativeTraceRequiredBufferSpace"=dword:00000000
+"aotIsAutoLogger"=dword:00000000
+"aotIsExclusive"=dword:00000000
+"aotPriority"=dword:00000000
+"aotRequiredBufferSpace"=dword:00000000
+"diagIsAutoLogger"=dword:00000000
+"diagIsExclusive"=dword:00000000
+"diagPriority"=dword:00000000
+"diagRequiredBufferSpace"=dword:00000000
+"miniTraceIsAutoLogger"=dword:00000000
+"miniTraceIsExclusive"=dword:00000000
+"miniTracePriority"=dword:00000000
+"miniTraceRequiredBufferSpace"=dword:00000000
 "MiniTraceSlotContentPermitted"=dword:00000000
 "MiniTraceSlotEnabled"=dword:00000000
-"alternativeTracePriority"=dword:00000000
-"alternativeTraceIsExclusive"=dword:00000000
-"alternativeTraceIsAutoLogger"=dword:00000000
-"alternativeTraceRequiredBufferSpace"=dword:00000000
-"aotPriority"=dword:00000000
-"aotIsExclusive"=dword:00000000
-"aotIsAutoLogger"=dword:00000000
-"aotRequiredBufferSpace"=dword:00000000
-"miniTracePriority"=dword:00000000
-"miniTraceIsExclusive"=dword:00000000
-"miniTraceIsAutoLogger"=dword:00000000
-"miniTraceRequiredBufferSpace"=dword:00000000
-"diagPriority"=dword:00000000
-"diagIsExclusive"=dword:00000000
-"diagIsAutoLogger"=dword:00000000
-"diagRequiredBufferSpace"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack]
 "DisableAutomaticTelemetryKeywordReporting"=dword:00000001
@@ -5419,36 +5437,36 @@ Windows Registry Editor Version 5.00
 "NoActiveHelp"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"AllowCommercialDataPipeline"=dword:00000000
 "AllowDesktopAnalyticsProcessing"=dword:00000000
 "AllowDeviceNameInTelemetry"=dword:00000000
 "AllowTelemetry"=dword:00000000
+"Allow Telemetry"=dword:00000000
 "AllowUpdateComplianceProcessing"=dword:00000000
 "AllowWUfBCloudProcessing"=dword:00000000
+"DisableDeviceDelete"=dword:00000001
+"DisableDiagnosticDataViewer"=dword:00000001
 "DisableEnterpriseAuthProxy"=dword:00000001
 "DisableOneSettingsDownloads"=dword:00000001
-"DoNotShowFeedbackNotifications"=dword:00000001
-"LimitDiagnosticLogCollection"=dword:00000001
-"MaxTelemetryAllowed"=dword:00000000
 "DisableTelemetryOptInChangeNotification"=dword:00000001
 "DisableTelemetryOptInSettingsUx"=dword:00000001
-"Allow Telemetry"=dword:00000000
-"DisableDiagnosticDataViewer"=dword:00000001
-"MicrosoftEdgeDataOptIn"=dword:00000000
-"LimitEnhancedDiagnosticDataWindowsAnalytics"=dword:00000001
-"AllowCommercialDataPipeline"=dword:00000000
-"LimitDumpCollection"=dword:00000000
-"EnableExtendedBooksTelemetry"=dword:00000000
-"DisableDeviceDelete"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Policies\DataCollection]
-"AllowTelemetry"=dword:00000000
-"AllowDesktopAnalyticsProcessing"=dword:00000000
-"AllowUpdateComplianceProcessing"=dword:00000000
-"AllowWUfBCloudProcessing"=dword:00000000
-"LimitDumpCollection"=dword:00000000
-"MaxTelemetryAllowed"=dword:00000000
+"DoNotShowFeedbackNotifications"=dword:00000001
 "EnableExtendedBooksTelemetry"=dword:00000000
 "LimitDiagnosticLogCollection"=dword:00000001
+"LimitDumpCollection"=dword:00000000
+"LimitEnhancedDiagnosticDataWindowsAnalytics"=dword:00000001
+"MaxTelemetryAllowed"=dword:00000000
+"MicrosoftEdgeDataOptIn"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Policies\DataCollection]
+"AllowDesktopAnalyticsProcessing"=dword:00000000
+"AllowTelemetry"=dword:00000000
+"AllowUpdateComplianceProcessing"=dword:00000000
+"AllowWUfBCloudProcessing"=dword:00000000
+"EnableExtendedBooksTelemetry"=dword:00000000
+"LimitDiagnosticLogCollection"=dword:00000001
+"LimitDumpCollection"=dword:00000000
+"MaxTelemetryAllowed"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
 "ContentDeliveryAllowed"=dword:00000000
@@ -5726,11 +5744,11 @@ Windows Registry Editor Version 5.00
 "ConnectedSearchUseWeb"=dword:00000000
 "ConnectedSearchUseWebOverMeteredConnections"=dword:00000000
 "DisableRemovableDriveIndexing"=dword:00000001
+"DisableSearchBoxSuggestions"=dword:00000001
 "DisableWebSearch"=dword:00000001
 "EnableDynamicContentInWSB"=dword:00000000
 "PreventIndex"=dword:00000001
 "PreventIndexOnBattery"=dword:00000001
-"DisableSearchBoxSuggestions"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Settings\VoiceActivation\Microsoft.549981C3F5F10_8wekyb3d8bbwe!App]
 "AgentActivationEnabled"=dword:00000000
@@ -5852,12 +5870,12 @@ Windows Registry Editor Version 5.00
 "UpgradeAvailable"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\GameBar]
-"UseNexusForGameBarEnabled"=dword:00000000
-"ShowStartupPanel"=dword:00000000
-"GamePanelStartupTipIndex"=dword:00000003
 "AllowAutoGameMode"=dword:00000000
 "AutoGameModeEnabled"=dword:00000000
+"GamePanelStartupTipIndex"=dword:00000003
 "ShowGameModeNotifications"=dword:00000000
+"ShowStartupPanel"=dword:00000000
+"UseNexusForGameBarEnabled"=dword:00000000
 
 [HKEY_USERS\.DEFAULT\Software\Microsoft\GameBar]
 "AllowAutoGameMode"=dword:00000000
@@ -6013,6 +6031,7 @@ Windows Registry Editor Version 5.00
 "CortanaEnabled"=dword:00000000
 "CortanaInAmbientMode"=dword:00000000
 "DeviceHistoryEnabled"=dword:00000000
+"DisableSearchBoxSuggestions"=dword:00000001
 "HasAboveLockTips"=dword:00000000
 "HistoryViewEnabled"=dword:00000000
 "ImmersiveSearch"=-
@@ -6020,11 +6039,10 @@ Windows Registry Editor Version 5.00
 "IsMicrophoneAvailable"=dword:00000000
 "IsWindowsHelloActive"=dword:00000000
 "SearchboxTaskbarMode"=dword:00000000
-"WebControlSecondaryStatus"=dword:00000000
-"WebControlStatus"=dword:00000000
 "Start_TrackDocs"=dword:00000000
 "Start_TrackProgs"=dword:00000000
-"DisableSearchBoxSuggestions"=dword:00000001
+"WebControlSecondaryStatus"=dword:00000000
+"WebControlStatus"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
 "GlobalUserDisabled"=dword:00000001
@@ -7855,396 +7873,999 @@ Windows Registry Editor Version 5.00
 [HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe]
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NMS.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4_x64.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wow.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TheForest.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\QuakeChampions.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\KFGame.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTAIV.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Launcher.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarService.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarErrorHandler.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SocialClubHelper.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlayGTAIV.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forzahorizon5.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\amtrucks.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
-"UseLargePages"=dword:00000001
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cs2.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hl2.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Warframe.x64.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfWarships64.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis64.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Ghostrunner-Win64-Shipping.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\left4dead2.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadByDaylight-Win64-Shipping.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DH-Win64-Shipping.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LANoire.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Dishonored.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorld.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorldLauncher.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HaloInfinite.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Overwatch.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LOSTARK.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfTanks.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Paladins.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Carmageddon_Max_Damage.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Raft.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tiger-Win64-Shipping.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HouseFlipper.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tlou-i.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cyberpunk2077.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RDR2.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tropico6.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GSS2-Win64-Shipping.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlanetCoaster.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cities.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MadMax.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BorderlandsGOTY.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\VRising.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TPH.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dota2.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SkyrimSE.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ffmpeg.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Topaz Video AI.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\avc_enhance_video.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\bf1.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BEService.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame_x64_rwdi.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\EasyAntiCheat.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout4.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NarakaBladepoint.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NeacClient.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout76.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Gw2-64.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Starfield.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CivilizationVI_DX12.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forza_gaming.desktop.x64_release_final.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crossout.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BF2042.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AlanWake2.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Discovery.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\re8.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect1.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WowClassic.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WolfNewOrder_x64.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\aces.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AoE3DE_s.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod22-cod.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NeedForSpeedUnbound.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tf_win64.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping_EAC_EOS.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex_dx12.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SonsOfTheForest.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Back4Blood.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\World of Warcraft Launcher.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SW3.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel-Win64-Shipping.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MarvelRivals_Launcher.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame_BE.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Obsidian.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5_Enhanced.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cs2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteLauncher.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe\PerfOptions]
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe\PerfOptions]
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NMS.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4_x64.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wow.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TheForest.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\QuakeChampions.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\KFGame.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTAIV.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Launcher.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarService.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarErrorHandler.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SocialClubHelper.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlayGTAIV.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forzahorizon5.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\amtrucks.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hl2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Warframe.x64.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfWarships64.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis64.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Ghostrunner-Win64-Shipping.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\left4dead2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadByDaylight-Win64-Shipping.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DH-Win64-Shipping.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LANoire.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Dishonored.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorld.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorldLauncher.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HaloInfinite.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Overwatch.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LOSTARK.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfTanks.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Paladins.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Carmageddon_Max_Damage.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Raft.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tiger-Win64-Shipping.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HouseFlipper.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tlou-i.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cyberpunk2077.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RDR2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tropico6.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GSS2-Win64-Shipping.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlanetCoaster.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cities.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MadMax.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BorderlandsGOTY.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\VRising.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TPH.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dota2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SkyrimSE.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ffmpeg.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Topaz Video AI.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\avc_enhance_video.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\bf1.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BEService.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame_x64_rwdi.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\EasyAntiCheat.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout4.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NarakaBladepoint.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NeacClient.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout76.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Gw2-64.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Starfield.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CivilizationVI_DX12.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forza_gaming.desktop.x64_release_final.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crossout.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BF2042.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AlanWake2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Discovery.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\re8.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect1.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WowClassic.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WolfNewOrder_x64.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\aces.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AoE3DE_s.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod22-cod.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NeedForSpeedUnbound.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tf_win64.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+ MONTES DE "PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping_EAC_EOS.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex_dx12.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SonsOfTheForest.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Back4Blood.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\World of Warcraft Launcher.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SW3.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel-Win64-Shipping.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MarvelRivals_Launcher.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame_BE.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Obsidian.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5_Enhanced.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cs2.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteLauncher.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\DirectX\UserGpuPreferences]
