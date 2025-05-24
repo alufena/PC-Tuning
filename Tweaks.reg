@@ -332,10 +332,10 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
 "OverlayTestMode"=dword:00000005 ; =-, 00000005
 
-[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
-"KMD_EnableReBarForLegacyASIC"=-
-"KMD_RebarControlMode"=-
-"KMD_RebarControlSupport"=-
+; [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
+; "KMD_EnableReBarForLegacyASIC"=-
+; "KMD_RebarControlMode"=-
+; "KMD_RebarControlSupport"=-
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "DontVerifyRandomDrivers"=dword:00000001
@@ -549,23 +549,20 @@ Windows Registry Editor Version 5.00
 "TimeLimitInSeconds"=dword:00000002 ; 00000006, 00000002
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
-"IRQ00Priority"=dword:00000001
-"IRQ08Priority"=dword:00000001
-"IRQ8Priority"=dword:00000001
-"IRQ16Priority"=dword:00000001
-"IRQ23Priority"=dword:00000001
-"ConvertibilityEnabled"=dword:00000000
 "AdjustDpcThreshold"=dword:00000001
+"ConvertibilityEnabled"=dword:00000000
 "DeepIoCoalescingEnabled"=dword:00000000
-"IdealDpcRate"=dword:00000001
 "ForegroundBoost"=dword:00000000
-"SchedulerAssistThreadFlagOverride"=dword:00000000
-"ThreadBoostType"=dword:00000001
-"ThreadSchedulingModel"=dword:00000001
+"IdealDpcRate"=dword:00000001
+"IRQ00Priority"=dword:00000001
 "IRQ0Priority"=dword:00000001
 "IRQ1Priority"=dword:00000001
 "IRQ6Priority"=dword:00000001
 "IRQ7Priority"=dword:00000001
+"IRQ08Priority"=dword:00000001
+"IRQ8Priority"=dword:00000001
+"IRQ16Priority"=dword:00000001
+"IRQ23Priority"=dword:00000001
 "IRQ25Priority"=dword:00000001
 "IRQ36Priority"=dword:00000001
 "IRQ39Priority"=dword:00000001
@@ -589,6 +586,9 @@ Windows Registry Editor Version 5.00
 "IRQ4294967292Priority"=dword:00000001
 "IRQ4294967293Priority"=dword:00000001
 "IRQ4294967294Priority"=dword:00000001
+"SchedulerAssistThreadFlagOverride"=dword:00000000
+"ThreadBoostType"=dword:00000001
+"ThreadSchedulingModel"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability]
 "ShutdownReasonOn"=dword:00000000
