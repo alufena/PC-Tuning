@@ -1,3 +1,5 @@
+sc start "TabletInputService"
+sc config "TabletInputService" start= auto
 taskkill /f /t /im acrotray.exe
 taskkill /f /t /im adb.exe
 taskkill /f /t /im AdobeIPCBroker.exe
@@ -93,8 +95,6 @@ sc start "SysMain"
 ::sc stop "SysMain"
 sc config "SysMain" start= auto
 ::sc config "SysMain" start= disabled
-sc start "TabletInputService"
-sc config "TabletInputService" start= auto
 sc config "wlidsvc" start= auto
 sc stop "ClickToRunSvc"
 sc config "ClickToRunSvc" start= manual
@@ -311,26 +311,44 @@ bcdedit /set vm no
 ::bcdedit /deletevalue vm
 bcdedit /set vsmlaunchtype off
 ::bcdedit /deletevalue vsmlaunchtype
+::bcdedit /set bootdebug Off
 bcdedit /bootdebug Off
-bcdedit /bootems Off
+::bcdedit /deletevalue /bootdebug
+bdedit /bootems Off
+::bcdedit /deletevalue /bootems
 bcdedit /debug Off
+::bcdedit /debug On
 bcdedit /ems Off
-bcdedit /set bootdebug Off
+::bcdedit /deletevalue /ems
 bcdedit /set bootlog No
+::bcdedit /deletevalue /bootlog
 bcdedit /set bootmenupolicy Legacy
+::bcdedit /deletevalue /bootmenupolicy
 bcdedit /set debugstart Disable
+::bcdedit /deletevalue /debugstart
 bcdedit /set extendedinput Yes
+::bcdedit /deletevalue /extendedinput
 bcdedit /set forcefipscrypto No
-bcdedit /set {globalsettings} custom:16000067 true
-bcdedit /set graphicsmodedisabled No
+::bcdedit /deletevalue /forcefipscrypto
+::bcdedit /set {globalsettings} custom:16000067 true
+::bcdedit /set graphicsmodedisabled No
+bcdedit /deletevalue graphicsmodedisabled
 bcdedit /set halbreakpoint No
+::bcdedit /deletevalue halbreakpoint
 bcdedit /set highestmode Yes
+::bcdedit /deletevalue highestmode
 bcdedit /set noumex Yes
+::bcdedit /deletevalue noumex
 bcdedit /set pae ForceEnable
+::bcdedit /deletevalue pae
 bcdedit /set sos On
+::bcdedit /deletevalue sos
 bcdedit /timeout 0
+::bcdedit /deletevalue timeout
 %windir%\system32\lodctr /R
 %windir%\sysWOW64\lodctr /R
+C:\Windows\SysWOW64\wbem\winmgmt.exe /RESYNCPERF
+C:\Windows\System32\wbem\winmgmt.exe /RESYNCPERF
 lodctr /e:PerfOS
 taskkill /f /t /im OfficeClickToRun.exe
 taskkill /f /t /im ShellHost.exe
@@ -366,15 +384,15 @@ taskkill /f /t /im SearchApp.exe
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'High precision event timer' | Disable-PnpDevice -Confirm:$false"
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'Microsoft Device Association Root Enumerator' -ErrorAction SilentlyContinue | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue"
 powershell -NoProfile -ExecutionPolicy Bypass -Command "$devices = Get-PnpDevice | Where-Object {$_.FriendlyName -like '*Device Association*'}; foreach ($device in $devices) { try { pnputil /remove-device $device.InstanceId; Start-Sleep -Seconds 1; pnputil /remove-device $device.InstanceId /force; } catch {} }"
-::powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'Microsoft GS Wavetable Synth' | Disable-PnpDevice -Confirm:$false"
-::powershell -NoProfile -ExecutionPolicy Bypass -Command "$device = Get-PnpDevice | Where-Object {$_.FriendlyName -like '*RRAS*'}; if ($device) { $device | Disable-PnpDevice -Confirm:$false }"
-::powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'Composite Bus Enumerator' | Disable-PnpDevice -Confirm:$false"
-::powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'Microsoft Virtual Drive Enumerator' | Disable-PnpDevice -Confirm:$false"
-::powershell -NoProfile -ExecutionPolicy Bypass -Command "$device = Get-PnpDevice | Where-Object {$_.FriendlyName -like '*Remote Desktop*'}; if ($device) { try { $device | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue } catch {} }"
-::powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'UMBus Root Bus Enumerator' | Disable-PnpDevice -Confirm:$false"
-::powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'NDIS Virtual Network Adapter Enumerator' | Disable-PnpDevice -Confirm:$false"
-::powershell -NoProfile -ExecutionPolicy Bypass -Command "$device = Get-PnpDevice | Where-Object {$_.FriendlyName -like '*AMD PSP*' -or $_.FriendlyName -like '*Platform Security Processor*'}; if ($device) { try { $device | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue } catch {} }"
-timeout /t 8 /nobreak
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'Microsoft GS Wavetable Synth' | Disable-PnpDevice -Confirm:$false"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$device = Get-PnpDevice | Where-Object {$_.FriendlyName -like '*RRAS*'}; if ($device) { $device | Disable-PnpDevice -Confirm:$false }"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'Composite Bus Enumerator' | Disable-PnpDevice -Confirm:$false"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'Microsoft Virtual Drive Enumerator' | Disable-PnpDevice -Confirm:$false"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$device = Get-PnpDevice | Where-Object {$_.FriendlyName -like '*Remote Desktop*'}; if ($device) { try { $device | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue } catch {} }"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'UMBus Root Bus Enumerator' | Disable-PnpDevice -Confirm:$false"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'NDIS Virtual Network Adapter Enumerator' | Disable-PnpDevice -Confirm:$false"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$device = Get-PnpDevice | Where-Object {$_.FriendlyName -like '*AMD PSP*' -or $_.FriendlyName -like '*Platform Security Processor*'}; if ($device) { try { $device | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue } catch {} }"
+::timeout /t 8 /nobreak
 taskkill /f /t /im node.exe
 taskkill /f /t /im powershell.exe
 taskkill /f /t /im conhost.exe
