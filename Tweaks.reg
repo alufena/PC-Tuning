@@ -1,18 +1,10 @@
-Windows Registry Editor Version 5.00
+	Registry Editor Version 5.00
 
-; hex dec quantum type boost
 ; 02 = 02 short variable foreground (default)
 ; 26 = 38 short variable foreground (programs)
 ; 18 = 24 long fixed none (background services)
-; 14 = 20 long variable none
-; 15 = 21 long variable mild
 ; 16 = 22 long variable high (calypto tweak)
-; 19 = 25 long fixed mild
-; 1A = 26 long fixed high
-; 24 = 36 short variable none
-; 25 = 37 short variable mild
 ; 28 = 40 short fixed none (disables foreground boost)
-; 29 = 41 short fixed mild
 ; 2A = 42 short fixed high (maximum foreground boost)
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
 "Win32PrioritySeparation"=dword:00000028
@@ -35,7 +27,7 @@ Windows Registry Editor Version 5.00
 "Affinity"=dword:00000000
 "Background Only"="False"
 "Clock Rate"=dword:00002710
-"GPU Priority"=dword:00000008
+"GPU Priority"=dword:00000012
 "Latency Sensitive"="True"
 "Priority"=dword:00000006
 "Scheduling Category"="High"
@@ -64,10 +56,11 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Pro Audio]
 "Affinity"=dword:00000000
-"Background Only"="False"
 "Clock Rate"=dword:00002710
-"GPU Priority"=dword:00000001
-"Priority"=dword:00000002
+"Background Only"="False"
+"GPU Priority"=dword:00000008
+"Latency Sensitive"="True"
+"Priority"=dword:00000006
 "Scheduling Category"="High"
 "SFIO Priority"="High"
 
@@ -81,42 +74,42 @@ Windows Registry Editor Version 5.00
 "SFIO Priority"="High"
 "Latency Sensitive"="True"
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Capture]
-"Affinity"=dword:00000000
-"Background Only"="True"
-"Clock Rate"=dword:00002710
-"GPU Priority"=dword:00000008
-"Priority"=dword:00000005
-"Scheduling Category"="Medium"
-"SFIO Priority"="Normal"
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Capture]
+; "Affinity"=dword:00000000
+; "Background Only"="True"
+; "Clock Rate"=dword:00002710
+; "GPU Priority"=dword:00000008
+; "Priority"=dword:00000005
+; "Scheduling Category"="Medium"
+; "SFIO Priority"="Normal"
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Distribution]
-"Affinity"=dword:00000000
-"Background Only"="True"
-"Clock Rate"=dword:00002710
-"GPU Priority"=dword:00000008
-"Priority"=dword:00000004
-"Scheduling Category"="Medium"
-"SFIO Priority"="Normal"
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Distribution]
+; "Affinity"=dword:00000000
+; "Background Only"="True"
+; "Clock Rate"=dword:00002710
+; "GPU Priority"=dword:00000008
+; "Priority"=dword:00000004
+; "Scheduling Category"="Medium"
+; "SFIO Priority"="Normal"
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Playback]
-"Affinity"=dword:00000000
-"Background Only"="False"
-"BackgroundPriority"=dword:00000004
-"Clock Rate"=dword:00002710
-"GPU Priority"=dword:00000008
-"Priority"=dword:00000003
-"Scheduling Category"="Medium"
-"SFIO Priority"="Normal"
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Playback]
+; "Affinity"=dword:00000000
+; "Background Only"="False"
+; "BackgroundPriority"=dword:00000004
+; "Clock Rate"=dword:00002710
+; "GPU Priority"=dword:00000008
+; "Priority"=dword:00000003
+; "Scheduling Category"="Medium"
+; "SFIO Priority"="Normal"
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Window Manager]
-"Affinity"=dword:00000000
-"Clock Rate"=dword:00002710
-"Background Only"="True"
-"GPU Priority"=dword:00000008
-"Priority"=dword:00000005
-"Scheduling Category"="Medium"
-"SFIO Priority"="Normal"
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Window Manager]
+; "Affinity"=dword:00000000
+; "Clock Rate"=dword:00002710
+; "Background Only"="True"
+; "GPU Priority"=dword:00000008
+; "Priority"=dword:00000005
+; "Scheduling Category"="Medium"
+; "SFIO Priority"="Normal"
 
 [HKEY_CURRENT_USER\System\GameConfigStore]
 "GameDVR_DSEBehavior"=dword:00000002 ; =-, 00000002
@@ -200,6 +193,7 @@ Windows Registry Editor Version 5.00
 "DisableLowQosTimerResolution"=dword:00000000
 "DisableOverlappedExecution"=dword:00000000
 "DisableTsx"=dword:00000001 ; =-, 00000000/00000001
+"EnableTsx"=dword:00000000
 "DpcCumulativeSoftTimeout"=dword:00000000
 "DpcQueueDepth"=dword:00000001
 "DpcTimeout"=dword:00000000
@@ -324,9 +318,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{EE1E4F72-E368-46b1-B3C6-5048B11C2DBD}]
 "Pri"=- ; 00000014, =-
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
-"TimeLimitInSeconds"=dword:00000001 ; 00000006, 00000001
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
 "OverlayTestMode"=dword:00000005 ; =-, 00000005
 
@@ -403,15 +394,15 @@ Windows Registry Editor Version 5.00
 "DisablePowerManagement"=dword:00000001
 "Tcp1323Opts"=dword:00000003; =-, 00000003
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000001
-"IoPriority"=dword:00000001
-"PagePriority"=dword:00000001
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
+; "CpuPriorityClass"=dword:00000001
+; "IoPriority"=dword:00000001
+; "PagePriority"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000001
-"IoPriority"=dword:00000001
-"PagePriority"=dword:00000001
+; [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
+; "CpuPriorityClass"=dword:00000001
+; "IoPriority"=dword:00000001
+; "PagePriority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
@@ -472,8 +463,8 @@ Windows Registry Editor Version 5.00
 "SafeProcessSearchMode"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Executive]
-"AdditionalCriticalWorkerThreads"=dword:00000010 ; 00000000, 00000010
-"AdditionalDelayedWorkerThreads"=dword:00000010 ; 00000000, 00000010
+"AdditionalCriticalWorkerThreads"=dword:00000040 ; 00000000, 00000010
+"AdditionalDelayedWorkerThreads"=dword:00000040 ; 00000000, 00000010
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
 "AutoShareServer"=dword:00000000
@@ -535,10 +526,10 @@ Windows Registry Editor Version 5.00
 "WaitToKillServiceTimeout"="1000"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
-"TimeLimitInSeconds"=dword:00000000
+"TimeLimitInSeconds"=dword:00000002 ; 00000006, 00000002
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
-"TimeLimitInSeconds"=dword:00000000 ; 00000001, 00000000/00000002
+"TimeLimitInSeconds"=dword:00000002 ; 00000006, 00000002
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
 "IRQ00Priority"=dword:00000001
@@ -598,7 +589,7 @@ Windows Registry Editor Version 5.00
 "AwayModeEnabled"=dword:00000000
 "Class1InitialUnparkCount"=dword:00000064
 "Class2InitialUnparkCount"=dword:00000064
-"CoreParkingDisabled"=dword:00000000
+"CoreParkingDisabled"=dword:00000001
 "CsEnabled"=dword:00000000
 "CustomizeDuringSetup"=dword:00000001
 "DefaultD3TransitionLatencyActivelyUsed"=dword:00000000
@@ -664,7 +655,6 @@ Windows Registry Editor Version 5.00
 "PpmMfBufferingThreshold"=dword:00000000
 "PpmMfOverridesDisabled"=dword:00000001
 "QosManagesIdleProcessors"=dword:00000000
-"QosManagesIdleProcessors"=dword:00000000
 "RtlCapabilityCheckLatency"=dword:00000001
 "SleepReliabilityDetailedDiagnostics"=dword:00000000
 "TimerRebaseThresholdOnDripsExit"=dword:0000001e
@@ -713,13 +703,81 @@ Windows Registry Editor Version 5.00
 "TelemetryErrorDataEnabled"=dword:00000000
 "TelemetryPerformanceEnabled"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SCMConfig]
-"EnableSvchostMitigationPolicy"=hex(b):00,00,00,00,00,00,00,00
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SCMConfig]
+; "EnableSvchostMitigationPolicy"=hex(b):00,00,00,00,00,00,00,00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Processor]
 "AllowPepPerfStates"=dword:00000000
 "Capabilities"=dword:0007e7e6
 "CPPCEnable"=dword:00000000
+"Cstates"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Policy\Settings\Processor]
+"PerfEnergyPreference"=dword:00000000
+"CPMinCores"=dword:00000000
+"CPMaxCores"=dword:00000000
+"CPMinCores1"=dword:00000000
+"CPMaxCores1"=dword:00000000
+"CpLatencyHintUnpark1"=dword:00000064
+"CPDistribution"=dword:00000000
+"CpLatencyHintUnpark"=dword:00000064
+"MaxPerformance1"=dword:00000064
+"MaxPerformance"=dword:00000064
+"CPDistribution1"=dword:00000000
+"CPHEADROOM"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Processor]
+"CpuDebuggingEnabled"=dword:00000000
+"CpuIdle"=dword:00000000
+"CpuIdleScrubDelay"=dword:00000000
+"CpuIdleScrubInterval"=dword:00000000
+"CpuIdleScrubPower"=dword:00000000
+; "CpuIdleScrubPower"=dword:00000012
+"CpuIdleScrubPower"=dword:00000064
+"CpuIdleScrubThreshold"=dword:00000000
+"CpuIdleScrubType"=dword:00000002
+"CpuIdleScrubValue"=dword:00000064
+"CpuIdleScrubValueAuto"=dword:00000001
+"CpuIdleScrubValueAutomatic"=dword:00000001
+"CpuIdleScrubValueCount"=dword:00000064
+"CpuIdleScrubValueCurrent"=dword:00000000
+"CpuIdleScrubValueCustom"=dword:00000000
+"CpuIdleScrubValueDefault"=dword:00000000
+"CpuIdleScrubValueDefaultAuto"=dword:00000001
+"CpuIdleScrubValueDefaultDisabled"=dword:00000001
+"CpuIdleScrubValueDefaultEnabled"=dword:00000000
+"CpuIdleScrubValueDefaultManual"=dword:00000000
+"CpuIdleScrubValueDescription"=dword:00000000
+"CpuIdleScrubValueDisabled"=dword:00000000
+"CpuIdleScrubValueDisabled"=dword:00000001
+"CpuIdleScrubValueDisabledByDefault"=dword:00000001
+"CpuIdleScrubValueEnabled"=dword:00000000
+"CpuIdleScrubValueEnabledByDefault"=dword:00000000
+"CpuIdleScrubValueExecute"=dword:00000000
+"CpuIdleScrubValueFirst"=dword:00000000
+"CpuIdleScrubValueHidden"=dword:00000000
+; "CpuIdleScrubValueIndex"=dword:0000002a
+"CpuIdleScrubValueLast"=dword:00000000
+"CpuIdleScrubValueManual"=dword:00000000
+"CpuIdleScrubValueMaximum"=dword:00000064
+"CpuIdleScrubValueMinimum"=dword:00000064
+"CpuIdleScrubValueName"=dword:00000000
+"CpuIdleScrubValueNext"=dword:00000000
+"CpuIdleScrubValueNoExecute"=dword:00000000
+"CpuIdleScrubValuenv11Only"=dword:00000000
+"CpuIdleScrubValuePrevious"=dword:00000000
+"CpuIdleScrubValueReadnv11"=dword:00000000
+"CpuIdleScrubValueReadOnly"=dword:00000000
+"CpuIdleScrubValueStep"=dword:00000000
+"CpuIdleScrubValueSystem"=dword:00000000
+"CpuIdleScrubValueUser"=dword:00000000
+"CpuIdleScrubValueVisible"=dword:00000001
+"CpuIdleThreshold"=dword:00000001
+"CpuLatencyTimer"=dword:00000000
+"CpuSlowdown"=dword:00000000
+"ProccesorLatencyThrottlingEnabled"=dword:00000000
+"ProccesorThrottlingEnabled"=dword:00000000
+"Threshold"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Quota System]
 "EnableCpuQuota"=dword:00000000
@@ -781,8 +839,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
 "AlwaysHibernateThumbnails"=dword:00000000
-"AnimationAttributionEnabled"=dword:00000000
-"AnimationAttributionHashingEnabled"=dword:00000000
+"AnimationAttributionEnabled"=dword:00000000 ; 00000001, 00000000
+"AnimationAttributionHashingEnabled"=dword:00000000 ; 00000001, 00000000
 "AnimationsShiftKey"=dword:00000000
 "Blur"=dword:00000000
 "Composition"=dword:00000000
@@ -791,23 +849,25 @@ Windows Registry Editor Version 5.00
 "DebugFailFast"=dword:00000000
 "DisableAdvancedDirectFlip"=dword:00000001
 "DisableDeviceBitmaps"=dword:00000001
+"DisableDeviceBitmapsForMultiAdapter"=dword:00000001
 "DisableDrawListCaching"=dword:00000001
+"DisableDynamicShutdownUI"=dword:00000001
 "DisableHologramCompositor"=dword:00000001
 "DisableIndependentFlip"=dword:00000001
 "DisableLockingMemory"=dword:00000001
 "DisableProjectedShadows"=dword:00000001
 "DisableProjectedShadowsRendering"=dword:00000001
+"DisallowColorizationColorChanges"=dword:00000001
 "DisallowComposition"=dword:00000001
 "DisallowNonDrawListRendering"=dword:00000001
-"EnableAeroPeek"=dword:00000000
+"EnableAeroPeek"=dword:00000000 ; 00000000/00000001
 "EnableCommonSuperSets"=dword:00000001
 "EnableCpuClipping"=dword:00000001
 "EnableDesktopOverlays"=dword:00000000
-"EnableDesktopOverlays"=dword:00000000
-"EnableDrawToBackbuffer"=dword:00000001
+"EnableDrawToBackbuffer"=dword:00000001 ; 00000000/00000001
 "EnableEffectCaching"=dword:00000001
 "EnableFrontBufferRenderChecks"=dword:00000000
-"EnableImageProcessing"=dword:00000001
+"EnableImageProcessing"=dword:00000000 ; 00000000/00000001
 "EnableMegaRects"=dword:00000001
 "EnableMPCPerfCounter"=dword:00000000
 "EnablePrimitiveReordering"=dword:00000000
@@ -819,15 +879,17 @@ Windows Registry Editor Version 5.00
 "ForceDirectDrawSync"=dword:00000000
 "ForceDisableModeChangeAnimation"=dword:00000001
 "ForceEffectMode"=dword:00000000 ; =-, 00000000/00000001
-"FrameLatency"=dword:00000002
+"FrameLatency"=dword:00000001 ; 00000001/00000002
 "HighColor"=dword:00000000
-"ImageProcessing8bit"=dword:00000001
-"InkGPUAccelOverrideVendorWhitelist"="1"
+"ImageProcessing8bit"=dword:00000000 ; 00000000/00000001
+"InkGPUAccelOverrideVendorWhitelist"=dword:00000001
 "InteractionOutputPredictionDisabled"=dword:00000001
+"LogExpressionPerfStats"=dword:00000000
 "MaxD3DFeatureLevel"=dword:00000000
 "MaxQueuedPresentBuffers"=dword:00000001
+"MouseWheelScrollingMode"=dword:00000001
 "MPCInputRouterWaitForDebugger"=dword:00000000
-"OneCoreNoBootDWM"=dword:00000000
+"OneCoreNoBootDWM"=dword:00000001 ; 00000000, 00000001
 "OneCoreNoDWMRawGameController"=dword:00000000
 "OverlayDisqualifyCount"=dword:00000000
 "OverlayMinFPS"=dword:00000000
@@ -840,27 +902,25 @@ Windows Registry Editor Version 5.00
 "ResizeTimeoutModern"=dword:00000000
 "SDRBoostPercentOverride"=dword:00000001
 "SuperWetEnabled"=dword:00000001
-"TelemetryFramesSequenceMaximumPeriodMilliseconds"=dword:000001f4
+"TelemetryFramesSequenceMaximumPeriodMilliseconds"=dword:000001f4 ; =-, 00000000/000001f4
 "UseHWDrawListEntriesOnWARP"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
 "AlwaysHibernateThumbnails"=dword:00000000
 "AnimationAttributionEnabled"=dword:00000000
 "AnimationAttributionHashingEnabled"=dword:00000000
+"Blur"=dword:00000000
 "Composition"=dword:00000000
 "CompositionPolicy"=dword:00000000
+"DisableAccentGradient"=dword:00000001
+"DisallowAnimations"=dword:00000001
+"DisallowColorizationColorChanges"=dword:00000001
+"DisallowFlip3d"=dword:00000001
+"DWMWA_TRANSITIONS_FORCEDISABLED"=dword:00000001
 "EnableAeroPeek"=dword:00000000
+"OneCoreNoBootDWM"=dword:00000001
 "UseDpiScaling"=dword:00000000
 "UseWindowFrameStagingBuffer"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\DWM\ExtendedComposition]
-"Compositor"=""
-"enableColorSeparation"=dword:00000000
-"ExclusiveModeFramerateAveragingPeriodMs"=dword:000000fa ; =-, 000000fa/00000000
-"ExclusiveModeFramerateThresholdPercent"=dword:0000002d ; =-, 0000002d/00000000
-"ForwardOnlyOnly"=dword:00000000
-"RemoveSRMeshInShell"=dword:00000000
-"SydneyDownsampleFilterKernelSize"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DWM]
 "AnimationAttributionEnabled"=dword:00000000
@@ -873,7 +933,23 @@ Windows Registry Editor Version 5.00
 "DisallowFlip3d"=dword:00000001
 "DWMWA_TRANSITIONS_FORCEDISABLED"=dword:00000001
 
-[HKLM\SYSTEM\CurrentControlSet\Services\stornvme\Parameters]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\DWM\ExtendedComposition]
+"Compositor"=""
+"enableColorSeparation"=dword:00000000
+"ExclusiveModeFramerateAveragingPeriodMs"=dword:000003e8 ; =-, 000000fa/000003e8/00000000
+"ExclusiveModeFramerateThresholdPercent"=dword:00000064 ; =-, 00000000/0000002d/00000064
+"ForwardOnlyOnly"=dword:00000000
+"RemoveSRMeshInShell"=dword:00000000
+"SydneyDownsampleFilterKernelSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows]
+"DesktopHeapLogging"=dword:00000000
+"DwmInputUsesIoCompletionPort"=dword:00000000
+"EnableDwmInputProcessing"=dword:00000000
+"RequireSignedAppInit_DLLs"=dword:00000000
+"ShutdownWarningDialogTimeout"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\stornvme\Parameters]
 "ArbitrationBurst"=dword:00000100
 "ForceEagerWrites"=dword:00000001
 "ForceFlush"=dword:00000001
@@ -890,7 +966,7 @@ Windows Registry Editor Version 5.00
 "NvmeMaxWriteSplit"=dword:00000004
 "QueueDepth"=dword:00000040
 
-[HKLM\SYSTEM\CurrentControlSet\Control\StorNVMe\Parameters\Device]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\StorNVMe\Parameters\Device]
 "ArbitrationBurst"=dword:00000100
 "ForceEagerWrites"=dword:00000001
 "ForceFlush"=dword:00000001
@@ -1165,423 +1241,12 @@ Windows Registry Editor Version 5.00
 "EnableCoreSlowdown"=dword:00000000
 "EnableDirectFlip"=dword:00000001
 "EnableIndependentFlip"=dword:00000001
-"EnableMClkSlowdown"=dword:00000000
+; "EnableMClkSlowdown"=dword:00000000
 "EnableMidBufferPreemption"=dword:00000000
 "EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
 "EnableMidGfxPreemption"=dword:00000000
 "EnableMidGfxPreemptionVGPU"=dword:00000000
-"EnableNVClkSlowdown"=dword:00000000
-"ENABLE_OCA_LOGGING"=dword:00000000
-"EnablePerformanceMode"=dword:00000001
-"EnablePreemption"=dword:00000000
-"EnableRuntimePowerManagement"=dword:00000000
-"EnableSCGMidBufferPreemption"=dword:00000000
-"EnableSystemMemoryTiling"=dword:00000000
-"EnableTiledDisplay"=dword:00000000
-"EnableUlps"=dword:00000000
-"EnableVCNPreemption"=dword:00000000
-"F1TransitionLatency"=dword:00000001
-"FeatureControl"=dword:00000004
-"FlTransitionLatency"=dword:00000000
-"GPUPreemptionLevel"=dword:00000000
-"KMD_EnableComputePreemption"=dword:00000000
-"KMD_EnableGDIAcceleration"=dword:00000001
-"KMD_EnableGfxMidCmdPreemption"=dword:00000000
-"KMD_EnablePreemptionLogging"=dword:00000000
-"KMD_EnableSDMAPreemption"=dword:00000000
-"KMD_PreemptionLevelLimit"=dword:00000000
-"LOWLATENCY"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000000
-"MonitorRefreshLatencyTolerance"=dword:00000000
-"Node3DLowLatency"=dword:00000001
-"NoFastLinkTrainingForeDP"=dword:00000000
-"NVDeviceSupportKFilter"=dword:00000000
-"PCIEPowerControl"=dword:00000000
-"PCIEPowerControl_8086191f50001458"=dword:00000000
-"PciLatencyTimerControl"=dword:00000032
-"PerfAnalyzeMidBufferPreemption"=dword:00000000
-"Power schemizerLevelAC"=dword:00000001
-"PowerSavingTweaks"=dword:00000000
-"PP_SclkDeepSleepDisable"=dword:00000001
-"PP_ThermalAutoThrottlingEnable"=dword:00000000
-"PreferSystemMemoryContiguous"=dword:00000001
-"PrimaryPushBufferSize"=dword:00000001
-"ReportAnalytics"=dword:00000000
-"RmCacheLoc"=dword:00000000
-"RmClkPowerOffDramPllWhenUnused"=dword:00000000
-"RMClkSlowDown"=dword:00000000
-"RMDeepL1EntryLatencyUsec"=dword:00000001
-"RMDeepLlEntryLatencyUsec"=dword:00000000
-"RMDisableGpuASPMFlags"=dword:00000001
-"RmDisableHdcp22"=dword:00000001
-"RmDisableHwFaultBuffer"=dword:00000001
-"RmDisableInst2Sys"=dword:00000000
-"RMDisableNoncontigAlloc"=dword:00000001
-"RMDisablePostL2Compression"=dword:00000001
-"RmDisableRegistryCaching"=dword:00000001
-"RMEnableASPMAtLoad"=dword:00000000
-"RMEnableASPMDT"=dword:00000000
-"RmFbsrPagedDMA"=dword:00000001
-"RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
-"RMGpuId"=dword:00000100
-"RmGspcMaxFtuS"=dword:00000001
-"RmGspcMinFtuS"=dword:00000001
-"RmGspcPerioduS"=dword:00000001
-"RMLpwrEiIdleThresholdUs"=dword:00000001
-"RMLpwrGrIdleThresholdUs"=dword:00000001
-"RMLpwrGrRgIdleThresholdUs"=dword:00000001
-"RMLpwrMsIdleThresholdUs"=dword:00000001
-"RmMIONoPowerOff"=dword:00000001
-"RmPerfRatedTdpLimit"=dword:00000000
-"RmProfilingAdminOnly"=dword:00000000
-"RMSkipHdcp22Init"=dword:00000001
-"RmWotHdcpEnable"=dword:00000000
-"StutterMode"=dword:00000000
-"TCCSupported"=dword:00000000
-"TrackResetEngine"=dword:00000000
-"UseBestResolution"=dword:00000001
-"UseGpuTimer"=dword:00000001
-"ValidateBlitSubRects"=dword:00000000
-"VRDirectFlipDPCDelayUs"=dword:00000001
-"VRDirectFlipTimingMarginUs"=dword:00000001
-"VRDirectJITFlipMsHybridFlipDelayUs"=dword:00000001
-"vrrCursorMarginUs"=dword:00000001
-"vrrDeflickerMarginUs"=dword:00000001
-"vrrDeflickerMaxUs"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001]
-"PerfLevelSrc"=dword:00002222
-"PowerMizerEnable"=dword:00000000
-"PowermizerLevel"=dword:00000001
-"PowermizerLevelAC"=dword:00000000
-"Acceleration.Level"=dword:00000000
-"AllowDeepCStates"=dword:00000000
-"BuffersInFlight"=dword:00001000
-"ComputePreemption"=dword:00000000
-"ComputePreemptionLevel"=dword:00000000
-"D3PCLatency"=dword:00000001
-"DesktopStereoShortcuts"=dword:00000000
-"DisableAcpPowerGating"=dword:00000001
-"DisableAllClockGating"=dword:00000001
-"DisableAsyncPstates"=dword:00000001
-"DisableBlockWrite"=dword:00000000
-"DisableCpPowerGating"=dword:00000001
-"DisableCudaContextPreemption"=dword:00000001
-"DisableDMACopy"=dword:00000001
-"DisableDrmdmaPowerGating"=dword:00000001
-"DisableDynamicPstate"=dword:00000001
-"DisableGDIAcceleration"=dword:00000000
-"DisableGDSPowerGating"=dword:00000001
-"DisableGfxCGPowerGating"=dword:00000001
-"DisableGfxClockGating"=dword:00000001
-"DisableGFXPipelinePowerGating"=dword:00000001
-"DisableGmcPowerGating"=dword:00000001
-"DisableHdpClockPowerGating"=dword:00000001
-"DisableHdpMGClockGating"=dword:00000001
-"DisableKmRender"=dword:00000000
-"DisableKmRenderBoost"=dword:00000000
-"DisableOverclockedPstates"=dword:00000001
-"DisableOverlay"=dword:00000001
-"Disable_OverlayDSQualityEnhancement"=dword:00000001
-"DisablePFonDP"=dword:00000001
-"DisablePowerGating"=dword:00000001
-"DisablePreemption"=dword:00000001
-"DisablePreemptionOnS3S4"=dword:00000001
-"DisableSamuClockGating"=dword:00000001
-"DisableSysClockGating"=dword:00000001
-"DisableUVDPowerGating"=dword:00000001
-"DisableVceClockGating"=dword:00000001
-"DisableWriteCombining"=dword:00000001
-"DisableXdmaPowerGating"=dword:00000001
-"DisableXdmaSclkGating"=dword:00000001
-"DpiMapIommuContiguous"=dword:00000001
-"EnableAggressivePStateBoost"=dword:00000001
-"EnableAggressivePStateOnly"=dword:00000001
-"EnableAsyncMidBufferPreemption"=dword:00000000
-"EnableCEPreemption"=dword:00000000
-"EnableCoreSlowdown"=dword:00000000
-"EnableDirectFlip"=dword:00000001
-"EnableIndependentFlip"=dword:00000001
-"EnableMClkSlowdown"=dword:00000000
-"EnableMidBufferPreemption"=dword:00000000
-"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
-"EnableMidGfxPreemption"=dword:00000000
-"EnableMidGfxPreemptionVGPU"=dword:00000000
-"EnableNVClkSlowdown"=dword:00000000
-"ENABLE_OCA_LOGGING"=dword:00000000
-"EnablePerformanceMode"=dword:00000001
-"EnablePreemption"=dword:00000000
-"EnableRuntimePowerManagement"=dword:00000000
-"EnableSCGMidBufferPreemption"=dword:00000000
-"EnableSystemMemoryTiling"=dword:00000000
-"EnableTiledDisplay"=dword:00000000
-"EnableUlps"=dword:00000000
-"EnableVCNPreemption"=dword:00000000
-"F1TransitionLatency"=dword:00000001
-"FeatureControl"=dword:00000004
-"FlTransitionLatency"=dword:00000000
-"GPUPreemptionLevel"=dword:00000000
-"KMD_EnableComputePreemption"=dword:00000000
-"KMD_EnableGDIAcceleration"=dword:00000001
-"KMD_EnableGfxMidCmdPreemption"=dword:00000000
-"KMD_EnablePreemptionLogging"=dword:00000000
-"KMD_EnableSDMAPreemption"=dword:00000000
-"KMD_PreemptionLevelLimit"=dword:00000000
-"LOWLATENCY"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000000
-"MonitorRefreshLatencyTolerance"=dword:00000000
-"Node3DLowLatency"=dword:00000001
-"NoFastLinkTrainingForeDP"=dword:00000000
-"NVDeviceSupportKFilter"=dword:00000000
-"PCIEPowerControl"=dword:00000000
-"PCIEPowerControl_8086191f50001458"=dword:00000000
-"PciLatencyTimerControl"=dword:00000032
-"PerfAnalyzeMidBufferPreemption"=dword:00000000
-"Power schemizerLevelAC"=dword:00000001
-"PowerSavingTweaks"=dword:00000000
-"PP_SclkDeepSleepDisable"=dword:00000001
-"PP_ThermalAutoThrottlingEnable"=dword:00000000
-"PreferSystemMemoryContiguous"=dword:00000001
-"PrimaryPushBufferSize"=dword:00000001
-"ReportAnalytics"=dword:00000000
-"RmCacheLoc"=dword:00000000
-"RmClkPowerOffDramPllWhenUnused"=dword:00000000
-"RMClkSlowDown"=dword:00000000
-"RMDeepL1EntryLatencyUsec"=dword:00000001
-"RMDeepLlEntryLatencyUsec"=dword:00000000
-"RMDisableGpuASPMFlags"=dword:00000001
-"RmDisableHdcp22"=dword:00000001
-"RmDisableHwFaultBuffer"=dword:00000001
-"RmDisableInst2Sys"=dword:00000000
-"RMDisableNoncontigAlloc"=dword:00000001
-"RMDisablePostL2Compression"=dword:00000001
-"RmDisableRegistryCaching"=dword:00000001
-"RMEnableASPMAtLoad"=dword:00000000
-"RMEnableASPMDT"=dword:00000000
-"RmFbsrPagedDMA"=dword:00000001
-"RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
-"RMGpuId"=dword:00000100
-"RmGspcMaxFtuS"=dword:00000001
-"RmGspcMinFtuS"=dword:00000001
-"RmGspcPerioduS"=dword:00000001
-"RMLpwrEiIdleThresholdUs"=dword:00000001
-"RMLpwrGrIdleThresholdUs"=dword:00000001
-"RMLpwrGrRgIdleThresholdUs"=dword:00000001
-"RMLpwrMsIdleThresholdUs"=dword:00000001
-"RmMIONoPowerOff"=dword:00000001
-"RmPerfRatedTdpLimit"=dword:00000000
-"RmProfilingAdminOnly"=dword:00000000
-"RMSkipHdcp22Init"=dword:00000001
-"RmWotHdcpEnable"=dword:00000000
-"StutterMode"=dword:00000000
-"TCCSupported"=dword:00000000
-"TrackResetEngine"=dword:00000000
-"UseBestResolution"=dword:00000001
-"UseGpuTimer"=dword:00000001
-"ValidateBlitSubRects"=dword:00000000
-"VRDirectFlipDPCDelayUs"=dword:00000001
-"VRDirectFlipTimingMarginUs"=dword:00000001
-"VRDirectJITFlipMsHybridFlipDelayUs"=dword:00000001
-"vrrCursorMarginUs"=dword:00000001
-"vrrDeflickerMarginUs"=dword:00000001
-"vrrDeflickerMaxUs"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0002]
-"PerfLevelSrc"=dword:00002222
-"PowerMizerEnable"=dword:00000000
-"PowermizerLevel"=dword:00000001
-"PowermizerLevelAC"=dword:00000000
-"Acceleration.Level"=dword:00000000
-"AllowDeepCStates"=dword:00000000
-"BuffersInFlight"=dword:00001000
-"ComputePreemption"=dword:00000000
-"ComputePreemptionLevel"=dword:00000000
-"D3PCLatency"=dword:00000001
-"DesktopStereoShortcuts"=dword:00000000
-"DisableAcpPowerGating"=dword:00000001
-"DisableAllClockGating"=dword:00000001
-"DisableAsyncPstates"=dword:00000001
-"DisableBlockWrite"=dword:00000000
-"DisableCpPowerGating"=dword:00000001
-"DisableCudaContextPreemption"=dword:00000001
-"DisableDMACopy"=dword:00000001
-"DisableDrmdmaPowerGating"=dword:00000001
-"DisableDynamicPstate"=dword:00000001
-"DisableGDIAcceleration"=dword:00000000
-"DisableGDSPowerGating"=dword:00000001
-"DisableGfxCGPowerGating"=dword:00000001
-"DisableGfxClockGating"=dword:00000001
-"DisableGFXPipelinePowerGating"=dword:00000001
-"DisableGmcPowerGating"=dword:00000001
-"DisableHdpClockPowerGating"=dword:00000001
-"DisableHdpMGClockGating"=dword:00000001
-"DisableKmRender"=dword:00000000
-"DisableKmRenderBoost"=dword:00000000
-"DisableOverclockedPstates"=dword:00000001
-"DisableOverlay"=dword:00000001
-"Disable_OverlayDSQualityEnhancement"=dword:00000001
-"DisablePFonDP"=dword:00000001
-"DisablePowerGating"=dword:00000001
-"DisablePreemption"=dword:00000001
-"DisablePreemptionOnS3S4"=dword:00000001
-"DisableSamuClockGating"=dword:00000001
-"DisableSysClockGating"=dword:00000001
-"DisableUVDPowerGating"=dword:00000001
-"DisableVceClockGating"=dword:00000001
-"DisableWriteCombining"=dword:00000001
-"DisableXdmaPowerGating"=dword:00000001
-"DisableXdmaSclkGating"=dword:00000001
-"DpiMapIommuContiguous"=dword:00000001
-"EnableAggressivePStateBoost"=dword:00000001
-"EnableAggressivePStateOnly"=dword:00000001
-"EnableAsyncMidBufferPreemption"=dword:00000000
-"EnableCEPreemption"=dword:00000000
-"EnableCoreSlowdown"=dword:00000000
-"EnableDirectFlip"=dword:00000001
-"EnableIndependentFlip"=dword:00000001
-"EnableMClkSlowdown"=dword:00000000
-"EnableMidBufferPreemption"=dword:00000000
-"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
-"EnableMidGfxPreemption"=dword:00000000
-"EnableMidGfxPreemptionVGPU"=dword:00000000
-"EnableNVClkSlowdown"=dword:00000000
-"ENABLE_OCA_LOGGING"=dword:00000000
-"EnablePerformanceMode"=dword:00000001
-"EnablePreemption"=dword:00000000
-"EnableRuntimePowerManagement"=dword:00000000
-"EnableSCGMidBufferPreemption"=dword:00000000
-"EnableSystemMemoryTiling"=dword:00000000
-"EnableTiledDisplay"=dword:00000000
-"EnableUlps"=dword:00000000
-"EnableVCNPreemption"=dword:00000000
-"F1TransitionLatency"=dword:00000001
-"FeatureControl"=dword:00000004
-"FlTransitionLatency"=dword:00000000
-"GPUPreemptionLevel"=dword:00000000
-"KMD_EnableComputePreemption"=dword:00000000
-"KMD_EnableGDIAcceleration"=dword:00000001
-"KMD_EnableGfxMidCmdPreemption"=dword:00000000
-"KMD_EnablePreemptionLogging"=dword:00000000
-"KMD_EnableSDMAPreemption"=dword:00000000
-"KMD_PreemptionLevelLimit"=dword:00000000
-"LOWLATENCY"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000000
-"MonitorRefreshLatencyTolerance"=dword:00000000
-"Node3DLowLatency"=dword:00000001
-"NoFastLinkTrainingForeDP"=dword:00000000
-"NVDeviceSupportKFilter"=dword:00000000
-"PCIEPowerControl"=dword:00000000
-"PCIEPowerControl_8086191f50001458"=dword:00000000
-"PciLatencyTimerControl"=dword:00000032
-"PerfAnalyzeMidBufferPreemption"=dword:00000000
-"Power schemizerLevelAC"=dword:00000001
-"PowerSavingTweaks"=dword:00000000
-"PP_SclkDeepSleepDisable"=dword:00000001
-"PP_ThermalAutoThrottlingEnable"=dword:00000000
-"PreferSystemMemoryContiguous"=dword:00000001
-"PrimaryPushBufferSize"=dword:00000001
-"ReportAnalytics"=dword:00000000
-"RmCacheLoc"=dword:00000000
-"RmClkPowerOffDramPllWhenUnused"=dword:00000000
-"RMClkSlowDown"=dword:00000000
-"RMDeepL1EntryLatencyUsec"=dword:00000001
-"RMDeepLlEntryLatencyUsec"=dword:00000000
-"RMDisableGpuASPMFlags"=dword:00000001
-"RmDisableHdcp22"=dword:00000001
-"RmDisableHwFaultBuffer"=dword:00000001
-"RmDisableInst2Sys"=dword:00000000
-"RMDisableNoncontigAlloc"=dword:00000001
-"RMDisablePostL2Compression"=dword:00000001
-"RmDisableRegistryCaching"=dword:00000001
-"RMEnableASPMAtLoad"=dword:00000000
-"RMEnableASPMDT"=dword:00000000
-"RmFbsrPagedDMA"=dword:00000001
-"RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
-"RMGpuId"=dword:00000100
-"RmGspcMaxFtuS"=dword:00000001
-"RmGspcMinFtuS"=dword:00000001
-"RmGspcPerioduS"=dword:00000001
-"RMLpwrEiIdleThresholdUs"=dword:00000001
-"RMLpwrGrIdleThresholdUs"=dword:00000001
-"RMLpwrGrRgIdleThresholdUs"=dword:00000001
-"RMLpwrMsIdleThresholdUs"=dword:00000001
-"RmMIONoPowerOff"=dword:00000001
-"RmPerfRatedTdpLimit"=dword:00000000
-"RmProfilingAdminOnly"=dword:00000000
-"RMSkipHdcp22Init"=dword:00000001
-"RmWotHdcpEnable"=dword:00000000
-"StutterMode"=dword:00000000
-"TCCSupported"=dword:00000000
-"TrackResetEngine"=dword:00000000
-"UseBestResolution"=dword:00000001
-"UseGpuTimer"=dword:00000001
-"ValidateBlitSubRects"=dword:00000000
-"VRDirectFlipDPCDelayUs"=dword:00000001
-"VRDirectFlipTimingMarginUs"=dword:00000001
-"VRDirectJITFlipMsHybridFlipDelayUs"=dword:00000001
-"vrrCursorMarginUs"=dword:00000001
-"vrrDeflickerMarginUs"=dword:00000001
-"vrrDeflickerMaxUs"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0003]
-"PerfLevelSrc"=dword:00002222
-"PowerMizerEnable"=dword:00000000
-"PowermizerLevel"=dword:00000001
-"PowermizerLevelAC"=dword:00000000
-"Acceleration.Level"=dword:00000000
-"AllowDeepCStates"=dword:00000000
-"BuffersInFlight"=dword:00001000
-"ComputePreemption"=dword:00000000
-"ComputePreemptionLevel"=dword:00000000
-"D3PCLatency"=dword:00000001
-"DesktopStereoShortcuts"=dword:00000000
-"DisableAcpPowerGating"=dword:00000001
-"DisableAllClockGating"=dword:00000001
-"DisableAsyncPstates"=dword:00000001
-"DisableBlockWrite"=dword:00000000
-"DisableCpPowerGating"=dword:00000001
-"DisableCudaContextPreemption"=dword:00000001
-"DisableDMACopy"=dword:00000001
-"DisableDrmdmaPowerGating"=dword:00000001
-"DisableDynamicPstate"=dword:00000001
-"DisableGDIAcceleration"=dword:00000000
-"DisableGDSPowerGating"=dword:00000001
-"DisableGfxCGPowerGating"=dword:00000001
-"DisableGfxClockGating"=dword:00000001
-"DisableGFXPipelinePowerGating"=dword:00000001
-"DisableGmcPowerGating"=dword:00000001
-"DisableHdpClockPowerGating"=dword:00000001
-"DisableHdpMGClockGating"=dword:00000001
-"DisableKmRender"=dword:00000000
-"DisableKmRenderBoost"=dword:00000000
-"DisableOverclockedPstates"=dword:00000001
-"DisableOverlay"=dword:00000001
-"Disable_OverlayDSQualityEnhancement"=dword:00000001
-"DisablePFonDP"=dword:00000001
-"DisablePowerGating"=dword:00000001
-"DisablePreemption"=dword:00000001
-"DisablePreemptionOnS3S4"=dword:00000001
-"DisableSamuClockGating"=dword:00000001
-"DisableSysClockGating"=dword:00000001
-"DisableUVDPowerGating"=dword:00000001
-"DisableVceClockGating"=dword:00000001
-"DisableWriteCombining"=dword:00000001
-"DisableXdmaPowerGating"=dword:00000001
-"DisableXdmaSclkGating"=dword:00000001
-"DpiMapIommuContiguous"=dword:00000001
-"EnableAggressivePStateBoost"=dword:00000001
-"EnableAggressivePStateOnly"=dword:00000001
-"EnableAsyncMidBufferPreemption"=dword:00000000
-"EnableCEPreemption"=dword:00000000
-"EnableCoreSlowdown"=dword:00000000
-"EnableDirectFlip"=dword:00000001
-"EnableIndependentFlip"=dword:00000001
-"EnableMClkSlowdown"=dword:00000000
-"EnableMidBufferPreemption"=dword:00000000
-"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
-"EnableMidGfxPreemption"=dword:00000000
-"EnableMidGfxPreemptionVGPU"=dword:00000000
-"EnableNVClkSlowdown"=dword:00000000
+; "EnableNVClkSlowdown"=dword:00000000
 "ENABLE_OCA_LOGGING"=dword:00000000
 "EnablePerformanceMode"=dword:00000001
 "EnablePreemption"=dword:00000000
@@ -1863,12 +1528,22 @@ Windows Registry Editor Version 5.00
 "RespectPowerModes"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\SppComApi.dll]
 "NoGenTicket"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ResourceTimers]
+"EnableResourceAwareTimers"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Diagnostics\Performance\BootCKCLSettings]
 "Start"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Diagnostics\Performance\ShutdownCKCLSettings]
 "Start"=dword:00000000
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ResourceTimers]
-"EnableResourceAwareTimers"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdFilter]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdBoot]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdNisSvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinDefend]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdNisDrv]
+"Start"=dword:00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\HardCap0]
 "CapPercentage"=dword:00000000
@@ -2577,7 +2252,7 @@ Windows Registry Editor Version 5.00
 "AutofillMembershipsEnabled"=dword:00000001
 "AutoImportAtFirstRun"=dword:00000004
 "AutoLaunchProtocolsComponentEnabled"=dword:00000001
-"AutomaticHttpsDefault"=dword:00000000
+; "AutomaticHttpsDefault"=dword:00000000
 "AutoplayAllowed"=dword:00000001
 "BackgroundModeEnabled"=dword:00000000
 "BackgroundTemplateListUpdatesEnabled"=dword:00000000
@@ -2884,6 +2559,10 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs]
 "1"="www.google.com"
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main]
+"AllowPrelaunch"=dword:00000000
+"PreventLiveTileDataCollection"=dword:00000001
+
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\MicrosoftEdge\Main]
 "AllowPrelaunch"=dword:00000000
 
@@ -2906,9 +2585,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\TabPreloader]
 "AllowTabPreloading"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main]
-"PreventLiveTileDataCollection"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
 "AbusiveExperienceInterventionEnforce"=dword:00000000
@@ -3187,8 +2863,6 @@ Windows Registry Editor Version 5.00
 "DisableCocreator"=dword:00000001
 "DisableImageCreator"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\LicenseManager]
-"Start"=dword:00000003
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Ndu]
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MicrosoftEdgeElevationService]
@@ -3209,19 +2883,12 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\gupdatem]
 "Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdFilter]
-"Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdBoot]
-"Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdNisSvc]
-"Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdNisDrv]
-"Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Sense]
 "Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinDefend]
-"Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wscsvc]
+"Start"=dword:00000004
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\MDCoreSvc]
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\Circular Kernel Context Logger]
 "Start"=dword:00000000
@@ -3230,9 +2897,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\SQMLogger]
 "Start"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Diagtrack-Listener]
-"Start"=dword:00000000
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\MDCoreSvc]
-"Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\AutoLogger-Diagtrack-Listener]
 "Start"=dword:00000000
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\DiagLog]
@@ -3299,9 +2963,12 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\WinPhoneCritical]
 "Start"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Perflib]
-"Disable Performance Counters"=dword:00000000
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LicenseManager]
+; "Start"=dword:00000004
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\sppsvc]
+; "Start"=dword:00000004
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Appinfo]
+; "Start"=dword:00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\PerfNet\Performance]
 "Collect Supports Metadata"=dword:00000000
@@ -3939,11 +3606,11 @@ Windows Registry Editor Version 5.00
 "EnableOutsideModeFeature"=dword:00000000
 "VideoQualityOnBattery"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Audio]
-"DisableSpatialOnComboEndpoints"=dword:00000001
-"DisableProtectedAudioDG"=dword:00000001
-"EnableCaptureMonitor"=dword:00000000
-"EnableLogonHIDControls"=dword:00000000
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Audio]
+; "DisableSpatialOnComboEndpoints"=dword:00000000 ; 00000000, 00000001
+; "DisableProtectedAudioDG"=- ; =-, 00000001
+; "EnableCaptureMonitor"=dword:00000001 ; 00000001, 00000000
+; "EnableLogonHIDControls"=dword:00000001 ; 00000001, 00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\iSCSI]
 "RestrictAdditionalLogins"=dword:00000001
@@ -4139,13 +3806,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PnP]
 "PollBootPartitionTimeout"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows]
-"DesktopHeapLogging"=dword:00000000
-"DwmInputUsesIoCompletionPort"=dword:00000000
-"EnableDwmInputProcessing"=dword:00000000
-"RequireSignedAppInit_DLLs"=dword:00000000
-"ShutdownWarningDialogTimeout"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Printers]
 "DisableWebPnPDownload"=dword:00000001
 "DisableHTTPPrinting"=dword:00000001
@@ -4314,6 +3974,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.SecurityAndMaintenance]
 "Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowIOAVProtection]
+"value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsRuntime\WellKnownContracts]
 "Windows.ApplicationModel.SocialInfo.SocialInfoContract"=-
@@ -4812,14 +4475,23 @@ Windows Registry Editor Version 5.00
 "OneDriveSetup"=-
 "WindowsWelcomeCenter"=-
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet]
+"DisableBlockAtFirstSeen"=dword:00000001
+"LocalSettingOverrideSpynetReporting"=dword:00000000
+"SpynetReporting"=dword:00000000
+"SubmitSamplesConsent"=dword:00000002
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\UX Configuration]
+"SuppressRebootNotification"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\Controlled Folder Access]
+"EnableControlledFolderAccess"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\Network Protection]
 "EnableNetworkProtection"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet]
-"DisableBlockAtFirstSeen"=dword:00000001
-"LocalSettingOverrideSpynetReporting"=dword:00000001
-"SpyNetReporting"=dword:00000000
-"SubmitSamplesConsent"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Policies\Microsoft\Windows Defender]
+"DisableRoutinelyTakingAction"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Input\Settings]
 "AutoAccent"=dword:00000000
@@ -5870,16 +5542,12 @@ Windows Registry Editor Version 5.00
 "UpgradeAvailable"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\GameBar]
-"AllowAutoGameMode"=dword:00000000
-"AutoGameModeEnabled"=dword:00000000
 "GamePanelStartupTipIndex"=dword:00000003
 "ShowGameModeNotifications"=dword:00000000
 "ShowStartupPanel"=dword:00000000
 "UseNexusForGameBarEnabled"=dword:00000000
 
 [HKEY_USERS\.DEFAULT\Software\Microsoft\GameBar]
-"AllowAutoGameMode"=dword:00000000
-"AutoGameModeEnabled"=dword:00000000
 "ShowGameModeNotifications"=dword:00000000
 "ShowStartupPanel"=dword:00000000
 
@@ -6100,9 +5768,132 @@ Windows Registry Editor Version 5.00
 "DisableSpecialRunningModes"=dword:00000001
 "ServiceKeepAlive"=dword:00000000
 "PUAProtection"=dword:00000000
+"DisableLocalAdminMerge"=dword:00000001
+"RandomizeScheduleTaskTimes"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows Defender\MpEngine]
 "MpEnablePus"=dword:00000000
+"MpCloudBlockLevel"=dword:00000000
+"MpBafsExtendedTimeout"=dword:00000000
+"EnableFileHashComputation"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\NIS\Consumers\IPS]
+"ThrottleDetectionEventsRate"=dword:00000000
+"DisableSignatureRetirement"=dword:00000001
+"DisableProtocolRecognition"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Policy Manager]
+"DisableScanningNetworkFiles"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Exclusions]
+"DisableAutoExclusions"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowArchiveScanning]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowBehaviorMonitoring]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowCloudProtection]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowEmailScanning]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowFullScanOnMappedNetworkDrives]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowFullScanRemovableDriveScanning]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowIntrusionPreventionSystem]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowOnAccessProtection]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowRealtimeMonitoring]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowScanningNetworkFiles]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowScriptScanning]
+"value"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowUserUIAccess]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AvgCPULoadFactor]
+"value"=dword:00000032
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\CheckForSignaturesBeforeRunningScan]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\CloudBlockLevel]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\CloudExtendedTimeout]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\DaysToRetainCleanedMalware]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\DisableCatchupFullScan]
+"value"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\DisableCatchupQuickScan]
+"value"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\EnableControlledFolderAccess]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\EnableLowCPUPriority]
+"value"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\EnableNetworkProtection]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\PUAProtection]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\RealTimeScanDirection]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\ScanParameter]
+"value"=dword:00000002
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\ScheduleScanDay]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\ScheduleScanTime]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\SignatureUpdateInterval]
+"value"=dword:00000018
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\SubmitSamplesConsent]
+"value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsDefenderSecurityCenter\DisableEnhancedNotifications]
+"value"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsDefenderSecurityCenter\DisableNotifications]
+"value"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsDefenderSecurityCenter\HideWindowsSecurityNotificationAreaControl]
+"value"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Microsoft Antimalware]
+"ServiceKeepAlive"=dword:00000000
+"AllowFastServiceStartup"=dword:00000000
+"DisableRoutinelyTakingAction"=dword:00000001
+"DisableAntiSpyware"=dword:00000001
+"DisableAntiVirus"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Microsoft Antimalware\SpyNet]
+"SpyNetReporting"=dword:00000000
+"LocalSettingOverrideSpyNetReporting"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection]
 "DisableBehaviorMonitoring"=dword:00000001
@@ -6111,7 +5902,28 @@ Windows Registry Editor Version 5.00
 "DisableRealtimeMonitoring"=dword:00000001
 "DisableRoutinelyTakingAction"=dword:00000001
 "DisableScanOnRealtimeEnable"=dword:00000001
-"LocalSettingOverrideDisableRealtimeMonitoring"=dword:00000001
+"LocalSettingOverrideDisableOnAccessProtection"=dword:00000000
+"LocalSettingOverrideRealtimeScanDirection"=dword:00000000
+"LocalSettingOverrideDisableIOAVProtection"=dword:00000000
+"LocalSettingOverrideDisableBehaviorMonitoring"=dword:00000000
+"LocalSettingOverrideDisableIntrusionPreventionSystem"=dword:00000000
+"LocalSettingOverrideDisableRealtimeMonitoring"=dword:00000000
+"RealtimeScanDirection"=dword:00000002
+"DisableInformationProtectionControl"=dword:00000001
+"DisableIntrusionPreventionSystem"=dword:00000001
+"DisableRawWriteNotification"=dword:00000001
+"IOAVMaxSize"=dword:00000512
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Scan]
+"LowCpuPriority"=dword:00000001
+"DisableRestorePoint"=dword:00000001
+"DisableArchiveScanning"=dword:00000000
+"DisableScanningNetworkFiles"=dword:00000000
+"DisableCatchupFullScan"=dword:00000000
+"DisableCatchupQuickScan"=dword:00000001
+"DisableEmailScanning"=dword:00000000
+"DisableHeuristics"=dword:00000001
+"DisableReparsePointScanning"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Signature Updates]
 "DisableScanOnUpdate"=dword:00000001
@@ -6119,8 +5931,10 @@ Windows Registry Editor Version 5.00
 "DisableUpdateOnStartupWithoutEngine"=dword:00000001
 "ForceUpdateFromMU"=dword:00000000
 "RealtimeSignatureDelivery"=dword:00000000
-"SignatureDisableNotification"=dword:00000000
 "UpdateOnStartUp"=dword:00000000
+"SignatureDisableNotification"=dword:00000001
+"SignatureUpdateCatchupInterval"=dword:00000002
+"ScheduleTime"=dword:00001440
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\SmartScreen]
 "ConfigureAppInstallControlEnabled"=dword:00000001
@@ -6234,11 +6048,11 @@ Windows Registry Editor Version 5.00
 "LockScreenOverlaysDisabled"=dword:00000001
 "NoLockScreenSlideshow"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\intelppm\Parameters]
-"AcpiFirmwareWatchDog"=dword:00000000
-"AmliWatchdogAction"=dword:00000000
-"AmliWatchdogTimeout"=dword:00000001
-"WatchdogTimeout"=dword:00000000
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\intelppm\Parameters]
+; "AcpiFirmwareWatchDog"=dword:00000000
+; "AmliWatchdogAction"=dword:00000000
+; "AmliWatchdogTimeout"=dword:00000001
+; "WatchdogTimeout"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\JreMetrics]
 "DisableSponsors"="Y"
@@ -6351,6 +6165,15 @@ Windows Registry Editor Version 5.00
 "fDisablePowerManagement"=dword:00000001
 "fMinimizeConnections"=dword:00000001
 "fSoftDisconnectConnections"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PDC\Activators\Default\VetoPolicy]
+"EA:EnergySaverEngaged"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PDC\Activators\28\VetoPolicy]
+"EA:PowerStateDischarging"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Policy\Settings\Misc]
+"DeviceIdlePolicy"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\HotspotAuthentication]
 "Enabled"=dword:00000000
@@ -7868,9 +7691,9 @@ Windows Registry Editor Version 5.00
 
 [-HKEY_CLASSES_ROOT\UserLibraryFolder\shellex\ContextMenuHandlers\SendTo]
 
-[HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe]
 "UseLargePages"=dword:00000001
-[HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe]
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
@@ -8785,7 +8608,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tf_win64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
 "IoPriority"=dword:00000006
- MONTES DE "PagePriority"=dword:00000006
+"PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping_EAC_EOS.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
@@ -9107,6 +8930,7 @@ Windows Registry Editor Version 5.00
 "G:\\SteamLibrary\\steamapps\\common\\NARAKA BLADEPOINT\\NeacClient.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\Red Dead Redemption 2\\RDR2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Rainmeter\\Rainmeter.exe"="~ DISABLEDXMAXIMIZEDWINDOWEDMODE RUNASADMIN WIN7RTM"
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers]
 "C:\\ProgramData\\Wargaming.net\\GameCenter for Steam\\wgc.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
@@ -9233,3 +9057,4 @@ Windows Registry Editor Version 5.00
 "G:\\SteamLibrary\\steamapps\\common\\NARAKA BLADEPOINT\\NeacClient.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\Red Dead Redemption 2\\RDR2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"C:\\Program Files (x86)\\Rainmeter\\Rainmeter.exe"="~ DISABLEDXMAXIMIZEDWINDOWEDMODE RUNASADMIN WIN7RTM"
