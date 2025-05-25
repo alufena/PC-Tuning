@@ -9452,3 +9452,61 @@ Windows Registry Editor Version 5.00
 "G:\\SteamLibrary\\steamapps\\common\\Red Dead Redemption 2\\RDR2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Rainmeter\\Rainmeter.exe"="~ DISABLEDXMAXIMIZEDWINDOWEDMODE RUNASADMIN WIN7RTM"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectDraw]
+"DisableAGPSupport"=dword:00000000
+"UseNonLocalVidMem"=dword:00000001
+"DisableDDSCAPSInDDSD"=dword:00000000
+"EmulationOnly"=dword:00000000
+"EmulatePointSprites"=dword:00000000
+"DisableMMX"=dword:00000000
+"ForceNoSysLock"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\DirectDraw]
+"DisableAGPSupport"=dword:00000000
+"UseNonLocalVidMem"=dword:00000001
+"DisableDDSCAPSInDDSD"=dword:00000000
+"EmulationOnly"=dword:00000000
+"EmulatePointSprites"=dword:00000000
+"DisableMMX"=dword:00000000
+"ForceNoSysLock"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D]
+"UseNonLocalVidMem"=dword:00000001
+"EnableDebugging"=dword:00000000
+"FullDebug"=dword:00000000
+"DisableDM"=dword:00000001
+"EnableMultimonDebugging"=dword:00000000
+"LoadDebugRuntime"=dword:00000000
+"FewVertices"=dword:00000001
+"DisableVidMemVBs"=dword:00000000
+"MMX Fast Path"=dword:00000001
+"MMXFastPath"=dword:00000001
+"UseMMXForRGB"=dword:00000001
+"FlipNoVsync"=dword:00000001
+"DisableMMX"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Direct3D]
+"UseNonLocalVidMem"=dword:00000001
+"FewVertices"=dword:00000001
+"MMX Fast Path"=dword:00000001
+"MMXFastPath"=dword:00000001
+"UseMMXForRGB"=dword:00000001
+"DisableMMX"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D\Drivers]
+"ForceRgbRasterizer"=dword:00000000
+"EnumReference"=dword:00000001
+"EnumSeparateMMX"=dword:00000001
+"EnumRamp"=dword:00000001
+"EnumNullDevice"=dword:00000001
+"UseMMXForRGB"=dword:00000001
+"SoftwareOnly"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Direct3D\Drivers]
+"ForceRgbRasterizer"=dword:00000000
+"EnumReference"=dword:00000001
+"EnumSeparateMMX"=dword:00000001
+"EnumRamp"=dword:00000001
+"EnumNullDevice"=dword:00000001
+"UseMMXForRGB"=dword:00000001
