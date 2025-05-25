@@ -1,5 +1,7 @@
 SC config trustedinstaller start=auto
 chkdsk /scan
+::chkdsk c: /sdcleanup /offlinescanandfix
+::chkdsk c: /f /r /x /b
 net stop bits
 net stop wuauserv
 net stop msiserver
@@ -16,8 +18,8 @@ regsvr32.exe /s urlmon.dll
 regsvr32.exe /s mshtml.dll
 rundll32.exe pnpclean.dll,RunDLL_PnpClean /DRIVERS /MAXCLEAN
 vssadmin delete shadows /for=c: /all /quiet
-DISM /Online /Cleanup-Image /ScanHealth
-DISM /Online /Cleanup-Image /CheckHealth
+::DISM /Online /Cleanup-Image /ScanHealth
+::DISM /Online /Cleanup-Image /CheckHealth
 DISM /Online /Cleanup-Image /RestoreHealth
 DISM /Online /Cleanup-Image /StartComponentCleanup
 DISM /Online /Cleanup-Image /StartComponentCleanup /ResetBase
