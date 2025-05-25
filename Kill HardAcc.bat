@@ -242,6 +242,8 @@ sc stop "KtmRm"
 sc config "KtmRm" start= disabled
 sc stop "WSAIFabricSvc"
 sc config WSAIFabricSvc start= disabled
+sc config winmgmt start= auto
+net start GraphicsPerfSvc
 ie4uinit.exe -ClearIconCache
 powercfg.exe hibernate off
 reg delete "HKEY_CURRENT_USER\Software\Spoon" /f
