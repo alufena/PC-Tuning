@@ -40,10 +40,10 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing]
 "Affinity"=dword:00000000
-"Background Only"="False"
+"Background Only"="False" ; False/True
 "BackgroundPriority"=dword:00000018
 "Clock Rate"=dword:00002710
-"GPU Priority"=dword:00000008
+"GPU Priority"=dword:00000008 ; 00000008/00000012
 "Latency Sensitive"="True"
 "Priority"=dword:00000008
 "Scheduling Category"="High"
@@ -722,7 +722,7 @@ Windows Registry Editor Version 5.00
 "DefaultMemoryRefreshLatencyToleranceNoContext"=dword:00000001
 "DisableDynamicProcessorBoost"=dword:00000001
 "DisableSensorWatchdog"=dword:00000001
-"DisableVsyncLatencyUpdate"=dword:00000001 ; 00000000/00000001
+"DisableVsyncLatencyUpdate"=dword:00000000 ; 00000000/00000001
 "EcoMode"=dword:00000000
 "EcoModeState"=dword:00000002
 "EnergyEstimationDisabled"=dword:00000001
@@ -747,6 +747,7 @@ Windows Registry Editor Version 5.00
 "LatencyTolerancePerfOverride"=dword:00000001
 "LatencyToleranceScreenOffIR"=dword:00000001
 "LatencyToleranceVSyncEnabled"=dword:000000001
+"LatencyToleranceVSyncEnabled"=dword:00000001
 "LowLatencyScalingPercentage"=dword:00000064
 "MaxIAverageGraphicsLatencyInOneBucket"=dword:00000001
 "MaximumPerformancePercent"=dword:00000064
@@ -755,8 +756,8 @@ Windows Registry Editor Version 5.00
 "MfOverridesDisabled"=dword:00000001
 "MinimumThrottlePercent"=dword:00000000
 "MiracastPerfTrackGraphicsLatency"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000001  ; =-, 00000000/00000001/000003e8
-"MonitorRefreshLatencyTolerance"=dword:00000001  ; =-, 00000000/00000001/00000a96
+"MonitorLatencyTolerance"=dword:00000000  ; =-, 00000000/00000001/000003e8
+"MonitorRefreshLatencyTolerance"=dword:00000000  ; =-, 00000000/00000001/00000a96
 "PerfBoostAtGuaranteed"=dword:00000001
 "PerfCalculateActualUtilization"=dword:00000000 ; 00000000/00000001
 "PlatformAoAcOverride"=dword:00000000
@@ -824,28 +825,38 @@ Windows Registry Editor Version 5.00
 "AllowPepPerfStates"=dword:00000000
 "Capabilities"=dword:0007e7e6
 "CPPCEnable"=dword:00000000
+"CpuDebuggingEnabled"=dword:00000000
+"CpuIdle"=dword:00000000
+"CpuIdleThreshold"=dword:00000001
+"CpuLatencyTimer"=dword:00000000
+"CpuSlowdown"=dword:00000000
 "Cstates"=dword:00000000
+"DedicatedSegmentSize"=dword:00000512
+"ProccesorLatencyThrottlingEnabled"=dword:00000000
+"ProccesorThrottlingEnabled"=dword:00000000
+"Threshold"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Policy\Settings\Processor]
-"PerfEnergyPreference"=dword:00000000
-"CPMinCores"=dword:00000000
-"CPMaxCores"=dword:00000000
-"CPMinCores1"=dword:00000000
-"CPMaxCores1"=dword:00000000
-"CpLatencyHintUnpark1"=dword:00000064
+"CPCONCURRENCY"=dword:00000000
 "CPDistribution"=dword:00000000
-"CpLatencyHintUnpark"=dword:00000064
-"MaxPerformance1"=dword:00000064
-"MaxPerformance"=dword:00000064
 "CPDistribution1"=dword:00000000
 "CPHEADROOM"=dword:00000000
+"CpLatencyHintUnpark"=dword:00000064
+"CpLatencyHintUnpark1"=dword:00000064
+"CPMaxCores"=dword:00000000
+"CPMaxCores1"=dword:00000000
+"CPMinCores"=dword:00000000
+"CPMinCores1"=dword:00000000
+"MaxPerformance"=dword:00000064
+"MaxPerformance1"=dword:00000064
+"PerfEnergyPreference"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Processor]
 "CpuDebuggingEnabled"=dword:00000000
 "CpuIdle"=dword:00000000
 "CpuIdleScrubDelay"=dword:00000000
 "CpuIdleScrubInterval"=dword:00000000
-"CpuIdleScrubPower"=dword:00000000 ; 00000000/00000012/00000064
+"CpuIdleScrubPower"=dword:00000012 ; 00000000/00000012/00000064
 "CpuIdleScrubThreshold"=dword:00000000
 "CpuIdleScrubType"=dword:00000002
 "CpuIdleScrubValue"=dword:00000064
@@ -889,6 +900,9 @@ Windows Registry Editor Version 5.00
 "ProccesorLatencyThrottlingEnabled"=dword:00000000
 "ProccesorThrottlingEnabled"=dword:00000000
 "Threshold"=dword:00000001
+
+[HKEY_CURRENT_USER\Control Panel\PowerCfg\GlobalPowerPolicy]
+"Policies"=hex:01,00,00,00,02,00,00,00,01,00,00,00,00,00,00,00,02,00,00,00,00,00,00,00,00,00,00,00,2c,01,00,00,32,32,03,03,04,00,00,00,04,00,00,00,00,00,00,00,00,00,00,00,84,03,00,00,2c,01,00,00,00,00,00,00,84,03,00,00,00,01,64,64,64,64,00,00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Quota System]
 "EnableCpuQuota"=dword:00000000
@@ -1117,7 +1131,7 @@ Windows Registry Editor Version 5.00
 "DisableOverlays"=dword:00000000 ; 00000001/00000000
 "DisablePFonDP"=dword:00000001
 "DisablePreemption"=dword:00000001
-"DisablePreemptionOnS3S4"=dword:00000001
+"DisablePreemptionOnS3S4"=dword:00000001 ; 00000001/00000000
 "DisableVersionMismatchCheck"=dword:00000001
 "DisableWriteCombining"=dword:00000001
 "DpiMapIommuContiguous"=dword:00000001
@@ -1145,8 +1159,8 @@ Windows Registry Editor Version 5.00
 "HwSchTreatExperimentalAsStable"=dword:00000001
 "KnownProcessBoostMode"=dword:00000000
 "LOWLATENCY"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000001
-"MonitorRefreshLatencyTolerance"=dword:00000001
+"MonitorLatencyTolerance"=dword:00000000
+"MonitorRefreshLatencyTolerance"=dword:00000000
 "Node3DLowLatency"=dword:00000001
 "PciLatencyTimerControl"=dword:00000020 ; =-, 00000014/00000020/00000032
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
@@ -1163,7 +1177,7 @@ Windows Registry Editor Version 5.00
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
 "TdrDdiDelay"=dword:00000000 ; 0000000a, 00000000
 "TdrDebugMode"=dword:00000000
-"TdrDelay"=dword:00000000 ; 0000000a, 00000000
+"TdrDelay"=dword:0000003c ; 0000000a/00000000/0000003c
 "TdrDodPresentDelay"=dword:00000000
 "TdrDodVSyncDelay"=dword:00000000
 "TdrLevel"=dword:00000000 ; 00000003, 00000000
@@ -1219,8 +1233,8 @@ Windows Registry Editor Version 5.00
 "LOWLATENCY"=dword:00000001
 "MaxIAverageGraphicsLatencyInOneBucket"=dword:00000001
 "MiracastPerfTrackGraphicsLatency"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000001
-"MonitorRefreshLatencyTolerance"=dword:00000001
+"MonitorLatencyTolerance"=dword:00000000
+"MonitorRefreshLatencyTolerance"=dword:00000000
 "Node3DLowLatency"=dword:00000001
 "PciLatencyTimerControl"=dword:00000020
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
@@ -1318,8 +1332,8 @@ Windows Registry Editor Version 5.00
 "KMD_EnableSDMAPreemption"=dword:00000000
 "KMD_PreemptionLevelLimit"=dword:00000000
 "LOWLATENCY"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000001
-"MonitorRefreshLatencyTolerance"=dword:00000001
+"MonitorLatencyTolerance"=dword:00000000
+"MonitorRefreshLatencyTolerance"=dword:00000000
 "Node3DLowLatency"=dword:00000001
 "NoFastLinkTrainingForeDP"=dword:00000000
 "NVDeviceSupportKFilter"=dword:00000000
@@ -1484,8 +1498,8 @@ Windows Registry Editor Version 5.00
 "KMD_EnableSDMAPreemption"=dword:00000000
 "KMD_PreemptionLevelLimit"=dword:00000000
 "LOWLATENCY"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000001
-"MonitorRefreshLatencyTolerance"=dword:00000001
+"MonitorLatencyTolerance"=dword:00000000
+"MonitorRefreshLatencyTolerance"=dword:00000000
 "Node3DLowLatency"=dword:00000001
 "NoFastLinkTrainingForeDP"=dword:00000000
 "NVDeviceSupportKFilter"=dword:00000000
@@ -1564,8 +1578,8 @@ Windows Registry Editor Version 5.00
 "DxgkShareSwapChainObject"=dword:00000001
 "DxgkWaitForVerticalBlankEvent"=dword:00000001
 "DxgkWaitForVerticalBlankEvent2"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000001
-"MonitorRefreshLatencyTolerance"=dword:00000001
+"MonitorLatencyTolerance"=dword:00000000
+"MonitorRefreshLatencyTolerance"=dword:00000000
 "SwapChainBackBuffer"=dword:00000001
 "TdrResetFromTimeoutAsync"=dword:00000001
 
@@ -1574,8 +1588,11 @@ Windows Registry Editor Version 5.00
 "AudioDgAutoBoostPriority"=dword:00000000
 "AutoSyncToCPUPriority"=dword:00000000
 "ComputePreemption"=dword:00000000
+"ComputePreemptionLevel"=dword:00000000
 "DebugLargeSmoothenedDuration"=dword:00000000
+"DisableCudaContextPreemption"=dword:00000000
 "DisableCudaContextPreemption"=dword:00000001
+"DisablePreemption"=dword:00000001
 "DisablePreemptionOnS3S4"=dword:00000001
 "DisableWriteCombining"=dword:00000001
 "EnableAsyncMidBufferPreemption"=dword:00000000
@@ -1589,8 +1606,8 @@ Windows Registry Editor Version 5.00
 "ForegroundPriorityBoost"=dword:00000000
 "FrameServerAutoBoostPriority"=dword:00000000
 "GPUPreemptionLevel"=dword:00000000
-"MonitorLatencyTolerance"=dword:00000001
-"MonitorRefreshLatencyTolerance"=dword:00000001
+"MonitorLatencyTolerance"=dword:00000000
+"MonitorRefreshLatencyTolerance"=dword:00000000
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
 "PlatformSupportMiracast"=dword:00000000
 "QueuedPresentLimit"=dword:00000001
@@ -1617,6 +1634,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DXGKrnl\Parameters]
 "ThreadPriority"=dword:0000000f
+"MonitorLatencyTolerance"=dword:00000000
+"MonitorRefreshLatencyTolerance"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global]
 "{41FCC608-8496-4DEF-B43E-7D9BD675A6FF}"=dword:00000001
@@ -1953,6 +1972,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Input\Settings\ControllerProcessor\CursorSpeed]
 "CursorUpdateInterval"=dword:00000001
+"CursorSensitivity"=dword:00002710
+"IRRemoteNavigationDelta"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Input\Settings\ControllerProcessor\CursorMagnetism]
 "AttractionRectInsetInDIPS"=dword:00000000
@@ -2093,6 +2114,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Wisp\Touch]
 "PalmCheck"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Wisp\Touch]
+"TouchGate"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Config]
 "VulnerableDriverBlocklistEnable"=dword:00000000
@@ -4102,7 +4126,7 @@ Windows Registry Editor Version 5.00
 "Win8DpiScaling"=dword:00000000 ; 00000001/00000000
 "WindowArrangementActive"="0"
 "DpiScalingVer"=-
-"KeyboardSpeed"=dword:00000000
+"KeyboardSpeed"="31"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control]
 "DisableRemoteScmEndpoints"=dword:00000000
@@ -4213,7 +4237,7 @@ Windows Registry Editor Version 5.00
 "CPUPriority"=dword:00000001
 "FastDRAM"=dword:00000001
 "AGPConcur"=dword:00000001
-"PCIConcur"=dword:0000000
+"PCIConcur"=dword:00000001 ; 00000000/00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Rpc]
 "RestrictRemoteClients"=dword:00000002 ; 00000001/00000002
@@ -5977,16 +6001,16 @@ Windows Registry Editor Version 5.00
 "Flags"="506"
 
 [HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response]
-"AutoRepeatDelay"="0" ; 200/0
-"AutoRepeatRate"="0" ; 6/0
+"AutoRepeatDelay"="200" ; 200/0
+"AutoRepeatRate"="6" ; 6/0
 "DelayBeforeAcceptance"="0"
 "Flags"="58"
 "BounceTime"="0"
 
 [HKEY_CURRENT_USER\Control Panel\Keyboard]
 "InitialKeyboardIndicators"=dword:00000002
-"KeyboardSpeed"=dword:00000000
-"KeyboardDelay"=dword:00000000
+"KeyboardSpeed"="31"
+"KeyboardDelay"="0"
 "TypematicDelay"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters]
