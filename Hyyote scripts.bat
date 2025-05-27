@@ -82,7 +82,7 @@ POWERSHELL -Command "Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\Cu
 POWERSHELL -Command "$groups = @('Accessibility','AppSync','BrowserSettings','Credentials','DesktopTheme','Language','PackageState','Personalization','StartLayout','Windows'); foreach ($group in $groups) { $path = 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\' + $group; New-Item -Path $path -Force -ErrorAction SilentlyContinue | Out-Null; Set-ItemProperty -Path $path -Name 'Enabled' -Value 0 -ErrorAction SilentlyContinue }" >NUL 2>&1
 
 setlocal EnableDelayedExpansion
-ECHO Removendo SystemApps com telemetria...
+ECHO Removing SystemApps telemetry...
 set key=HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\InboxApplications
 for %%i in (
 AppRep.ChxApp
