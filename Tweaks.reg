@@ -12,7 +12,7 @@ Windows Registry Editor Version 5.00
 "HwSchedMode"=dword:00000001 ; HAGS 00000002 on, 00000001 off
 
 [HKEY_CURRENT_USER\Software\Microsoft\DirectX\UserGpuPreferences]
-"DirectXUserGlobalSettings"="SwapEffectUpgradeEnable=0;" ; optimizations for windowed games (w11) 00000001 on, 00000000 off
+"DirectXUserGlobalSettings"="SwapEffectUpgradeEnable=0;" ; optimizations for windowed games (w11) 1 on, 0 off
 
 [HKEY_CURRENT_USER\Software\Microsoft\DirectX\GraphicsSettings]
 "SwapEffectUpgradeCache"=dword:00000001
@@ -1131,7 +1131,7 @@ Windows Registry Editor Version 5.00
 "DisableBoostedVSyncVirtualization"=dword:00000001
 "DisableCABC"=dword:00000001
 "DisableCudaContextPreemption"=dword:00000001
-"DisableDynamicPstate"=dword:00000001
+"DisableDynamicPstate"=dword:00000001 ; 00000000, 00000001
 "DisableGDIAcceleration"=dword:00000000
 "DisableIndependentVidPnVSync"=dword:00000001
 "DisableKmRender"=dword:00000000
@@ -1431,6 +1431,7 @@ Windows Registry Editor Version 5.00
 "SupportRuntimePowerManagement"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
+"EnableGpuFirmware"=dword:00000000 ; 00000000, 00000001
 "AllowSnapshot"=dword:00000000
 "AllowSubscription"=dword:00000000
 "Acceleration.Level"=dword:00000000
@@ -3176,7 +3177,7 @@ Windows Registry Editor Version 5.00
 "value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsAI\DisableImageCreator]
-"Behavior"=dword:00102020
+"Behavior"=dword:00101c00
 "highrange"=dword:00000001
 "lowrange"=dword:00000000
 "mergealgorithm"=dword:00000001
@@ -4426,6 +4427,7 @@ Windows Registry Editor Version 5.00
 "DisableStartupSound"=dword:00000001
 "DontDisplayLastUserName"=-
 "DontDisplayLockedUserId"=-
+"EnableActivityFeed"=dword:00000000
 "DSCAutomationHostEnabled"=dword:00000000
 "EnableCursorSuppression"=dword:00000000
 "EnableFirstLogonAnimation"=dword:00000000
@@ -5070,6 +5072,7 @@ Windows Registry Editor Version 5.00
 "NoWelcomeScreen"=dword:00000001
 "StartMenuFavorites"=dword:00000000
 "Start_ShowHelp"=dword:00000000
+"SettingsPageVisibility"="hide:aicomponents;"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 "NoDriveTypeAutoRun"=-
@@ -5842,6 +5845,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\VxD\MSTCP]
 "NameSrvQueryTimeout"=dword:00000000
 
+[HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+"AllowCortana"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
 "AboveLock"=dword:00000000
 "AllowCloudSearch"=dword:00000000
@@ -6004,8 +6010,18 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\FileHistory]
 "Disabled"=dword:00000001
 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel]
+"StartupPage"=dword:00000001
+"AllItemsIconView"=dword:00000001
+
 [HKEY_CURRENT_USER\Software\Microsoft\Notepad]
+"fWrap"=dword:00000001
+"fWrapAround"=dword:00000000
+"iPointSize"=dword:00000064
+"lfFaceName"="Verdana"
+"lfWeight"=dword:00000190
 "ShowStoreBanner"=dword:00000000
+"StatusBar"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CDP]
 "CdpSessionUserAuthzPolicy"=dword:00000000
@@ -8063,6 +8079,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
 
+[-HKEY_CURRENT_USER\AppEvents\Schemes\Apps]
+
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\NvBackend]
 
 [-HKEY_CLASSES_ROOT\WOW6432Node\AppID\{cd93979b-c14e-4c29-87a4-75e4f9fa5e0a}]
@@ -9615,6 +9633,38 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TaskbarAnimations]
 "DefaultApplied"=dword:00000000 ; 00000001, 00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax]
+"DefaultApplied"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ComboBoxAnimation]
+"DefaultApplied"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ControlAnimations]
+"DefaultApplied"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\CursorShadow]
+"DefaultApplied"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DragFullWindows]
+"DefaultApplied"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DropShadow]
+"DefaultApplied"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMAeroPeekEnabled]
+"DefaultApplied"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMSaveThumbnailEnabled]
+"DefaultApplied"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListBoxSmoothScrolling]
+"DefaultApplied"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListviewShadow]
+"DefaultApplied"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\MenuAnimation]
+"DefaultApplied"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\SelectionFade]
+"DefaultApplied"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TaskbarAnimations]
+"DefaultApplied"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\Themes]
+"DefaultApplied"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TooltipAnimation]
+"DefaultApplied"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\WordWheelQuery]
+"DefaultApplied"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\GSM60B216843009_01_07DC_0E^3D9A69AD1C84EAB2AAF1FC3855733BB4]
 "Scaling"=dword:00000002
