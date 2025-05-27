@@ -1,4 +1,4 @@
-﻿# disable_services.ps1
+# disable_services.ps1
 
 $partialNames = @(
     "Battle.net Update Helper",
@@ -41,4 +41,4 @@ foreach ($partial in $partialNames) {
 }
 
 Write-Host "`nDone. All matched services have been disabled." -ForegroundColor Cyan
-Pause
+Exit
