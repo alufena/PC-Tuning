@@ -161,7 +161,7 @@ Windows Registry Editor Version 5.00
 "PagedPoolSize"=dword:ffffffff ; 00000000/ffffffff
 "PhysicalAddressExtension"=dword:00000001
 "PoolUsageMaximum"=dword:00000028 ; 00000028/00000060
-"SecondLevelDataCache"=dword:00000000
+"SecondLevelDataCache"=dword:00000000 ; 00000000/00000400
 "SessionPoolSize"=dword:000000c0 ; 00000040/000000c0
 "SessionViewSize"=dword:00000088 ; 00000088/000000c0
 "SimulateCommitSavings"=dword:00000000
@@ -504,6 +504,7 @@ Windows Registry Editor Version 5.00
 "TcpMaxDupAcks"=dword:00000002
 "TcpTimedWaitDelay"=dword:00000020
 "TcpWindowSize"=dword:000016d0
+"DisableIPSourceRouting"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Tcp1323Opts]
 "DisablePowerManagement"=dword:00000001
@@ -544,6 +545,7 @@ Windows Registry Editor Version 5.00
 "SMB1"=dword:00000000
 "SMB2"=dword:00000000
 "EnableAuthenticateUserSharing"=dword:00000000
+"DisableCompression"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Configuration Manager]
 "EnablePeriodicBackup"=dword:00000000
@@ -2265,6 +2267,7 @@ Windows Registry Editor Version 5.00
 "BypassNRO"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer]
+"NoAutoplayfornonVolume"=dword:00000001
 "CheckSameSourceAndTargetForFRAndDFS"=dword:00000000
 "DisableGraphRecentItems"=dword:00000001
 "DisableNotificationCenter"=dword:00000001
@@ -2290,6 +2293,7 @@ Windows Registry Editor Version 5.00
 "ShowOrHideMostUsedApps"=dword:00000002
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
+"NoAutoplayfornonVolume"=-
 "CheckSameSourceAndTargetForFRAndDFS"=dword:00000000
 "DisableGraphRecentItems"=dword:00000001
 "DisableNotificationCenter"=dword:00000001
@@ -2320,6 +2324,9 @@ Windows Registry Editor Version 5.00
 "ShowOrHideMostUsedApps"=-
 "SIDUpdatedOnLibraries"=dword:00000000
 "TelemetrySalt"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers]
+"DisableAutoplay"=dword:00000001 
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\TabletTip\1.7]
 "EnableDesktopModeAutoInvoke"=dword:00000000
@@ -2494,6 +2501,24 @@ Windows Registry Editor Version 5.00
 "ShowCasing"=dword:00000000
 "ShowShiftLock"=dword:00000000
 "ShowTextPrediction"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\0]
+"1001"=dword:00000003
+"1004"=dword:00000003
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\1]
+"1001"=dword:00000003
+"1004"=dword:00000003
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2]
+"1001"=dword:00000003
+"1004"=dword:00000003
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3]
+"1001"=dword:00000003
+"1004"=dword:00000003
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_ENABLE_PRINT_INFO_DISCLOSURE_FIX]
+"iexplore.exe"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_ENABLE_PRINT_INFO_DISCLOSURE_FIX]
+"iexplore.exe"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp]
 "DisableBranchCache"=dword:00000001
@@ -3962,6 +3987,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Netlogon\Parameters]
 "TryNextClosestSite"=dword:00000000
+"FullSecureChannelProtection"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel]
 "Enabled"=dword:00000000
@@ -5006,6 +5032,8 @@ Windows Registry Editor Version 5.00
 "TouchKeyboard_EnableKeyAudioFeedback"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoAutorun"=dword:00000001
+"NoDriveTypeAutoRun"=dword:000000ff
 "AllowOnlineTips"=dword:00000000
 "ClearRecentDocsOnExit"=dword:00000001
 "DisableBindDirectlyToPropertySetStorage"=dword:00000001
@@ -5044,6 +5072,7 @@ Windows Registry Editor Version 5.00
 "Start_ShowHelp"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoDriveTypeAutoRun"=-
 "ClearRecentDocsOnExit"=dword:00000001
 "DisableThumbnailCache"=dword:00000001
 "HideLanguageBar"=dword:00000001
@@ -9584,8 +9613,13 @@ Windows Registry Editor Version 5.00
 "FpsStatusGamesAll"=dword:00000004
 "GameFluidity"=dword:00000001
 
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TaskbarAnimations]
+"DefaultApplied"=dword:00000000 ; 00000001, 00000000
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\GSM60B216843009_01_07DC_0E^3D9A69AD1C84EAB2AAF1FC3855733BB4]
 "Scaling"=dword:00000002
+[HKEY_CURRENT_USER\SOFTWARE\NVIDIA Corporation\Global\NVTweak\Devices\3772562448-0\Color]
+"NvCplUseColorCorrection"=dword:00000000
 
 [HKEY_CURRENT_USER\System\GameConfigStore]
 "Win32_AutoGameModeDefaultProfile"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,\
