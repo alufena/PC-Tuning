@@ -151,22 +151,24 @@ Windows Registry Editor Version 5.00
 "FeatureSettings"=dword:00000001 ; 00000000, 00000001
 "FeatureSettingsOverride"=dword:00000003
 "FeatureSettingsOverrideMask"=dword:00000003
-"IoPageLockLimit"=dword:ffffffff ; =-, ffffffff/00100000
+"IoPageLockLimit"=dword:ffffffff ; =-, ffffffff/00100000/00ff0000
 "LargeSystemCache"=dword:00000001 ; 00000000, 00000001
 "ModifiedWriteMaximum"=dword:00000014 ; 00000014/00000080
+"MoveImages"=dword:00000000
 "NonPagedPoolQuota"=dword:00000000
 "NonPagedPoolSize"=dword:00000400 ; 00000000/00000400
 "PagedPoolQuota"=dword:00000000
 "PagedPoolSize"=dword:ffffffff ; 00000000/ffffffff
 "PhysicalAddressExtension"=dword:00000001
-"PoolUsageMaximum"=dword:00000028
+"PoolUsageMaximum"=dword:00000028 ; 00000028/00000060
 "SecondLevelDataCache"=dword:00000000
+"SessionPoolSize"=dword:000000c0 ; 00000040/000000c0
+"SessionViewSize"=dword:00000088 ; 00000088/000000c0
 "SimulateCommitSavings"=dword:00000000
 "SwapfileControl"=dword:00000000
 "SystemPages"=dword:ffffffff
 "TrackLockedPages"=dword:00000000
 "TrackPtes"=dword:00000000
-"MoveImages"=dword:00000000
 "UseLargePages"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\Memory Management]
@@ -212,7 +214,6 @@ Windows Registry Editor Version 5.00
 "DpcTimeout"=dword:00000000
 "DpcWatchdogPeriod"=dword:00000000
 "DpcWatchdogProfileBufferSizeBytes"=dword:00000001
-"DpcWatchdogProfileOffset"=dword:00000000
 "DpcWatchdogProfileOffset"=dword:00000000 ; 00002710, 00000000
 "DynamicDpcProtocol"=dword:00000001
 "EnablePerCpuClockTickScheduling"=dword:00000000
@@ -390,7 +391,7 @@ Windows Registry Editor Version 5.00
 "NtfsDisableSpotCorruptionHandling"=dword:00000001
 "NtfsEncryptPagingFile"=dword:00000000
 "NtfsForceNonPagedPoolAllocation"=dword:00000000
-"NtfsMemoryUsage"=dword:00000000
+"NtfsMemoryUsage"=dword:00000002 ; 00000000/00000002
 "NtfsMftZoneReservation"=dword:00000004
 "PathCache"=dword:00000080
 "RefsDisableLastAccessUpdate"=dword:00000001
@@ -437,10 +438,6 @@ Windows Registry Editor Version 5.00
 "NoLazyMode"=dword:00000001
 "NetworkThrottlingIndex"=dword:ffffffff
 "SystemResponsiveness"=dword:00000000 ; 00000014, 00000000/00000001/0000000a
-
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Tcp1323Opts]
-"DisablePowerManagement"=dword:00000001
-"Tcp1323Opts"=dword:00000000; =-, 00000003/00000000
 
 ; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
 ; "CpuPriorityClass"=dword:00000001
@@ -503,10 +500,14 @@ Windows Registry Editor Version 5.00
 "MaxNumRssThreads"=dword:00000010 ; 00000010/00000020
 "MaxUserPort"=dword:0000fffe
 "SackOpts"=dword:00000000
-"Tcp1323Opts"=dword:00000000
+"Tcp1323Opts"=dword:00000001
 "TcpMaxDupAcks"=dword:00000002
 "TcpTimedWaitDelay"=dword:00000020
 "TcpWindowSize"=dword:000016d0
+
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Tcp1323Opts]
+"DisablePowerManagement"=dword:00000001
+"Tcp1323Opts"=dword:00000001 ; =-, 00000000/00000001/00000003
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Winsock]
 "UseDelayedAcceptance"=dword:00000000
@@ -533,6 +534,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Executive]
 "AdditionalCriticalWorkerThreads"=dword:00000040 ; 00000000, 00000010
 "AdditionalDelayedWorkerThreads"=dword:00000040 ; 00000000, 00000010
+"PriorityQuantumMatrix"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
 "AutoShareServer"=dword:00000000
@@ -600,18 +602,24 @@ Windows Registry Editor Version 5.00
 "SvcHostSplitThresholdInKB"=dword:000f4240 ; 01000000, 04000000/000f4240
 "WaitToKillServiceTimeout"="1000"
 
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control]
+"DisableRemoteScmEndpoints"=dword:00000000
+"HandlerTimeout"=dword:7FFFFFFF
+"SvcHostSplitThresholdInKB"=dword:000f4240
+"WaitToKillServiceTimeout"="1000"
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
-"TimeLimitInSeconds"=dword:00000002 ; 00000006, 00000002
+"TimeLimitInSeconds"=dword:00000002 ; 00000006, 00000002/00000000/00000012
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
-"TimeLimitInSeconds"=dword:00000002 ; 00000006, 00000002
+"TimeLimitInSeconds"=dword:00000002 ; 00000006, 00000002/00000000/00000012
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
-"AdjustDpcThreshold"=dword:00000001
+"AdjustDpcThreshold"=dword:00000000 ; 00000000/00000001/00000320
 "ConvertibilityEnabled"=dword:00000000
-"DeepIoCoalescingEnabled"=dword:00000000
-"ForegroundBoost"=dword:00000000
-"IdealDpcRate"=dword:00000001
+"DeepIoCoalescingEnabled"=dword:00000000 ; 00000000/00000001
+"ForegroundBoost"=dword:00000000 ; 00000000/00000001
+"IdealDpcRate"=dword:00000001 ; 00000001/00000320
 "IRQ00Priority"=dword:00000001
 "IRQ0Priority"=dword:00000001
 "IRQ1Priority"=dword:00000001
@@ -644,14 +652,15 @@ Windows Registry Editor Version 5.00
 "IRQ4294967292Priority"=dword:00000001
 "IRQ4294967293Priority"=dword:00000001
 "IRQ4294967294Priority"=dword:00000001
-"SchedulerAssistThreadFlagOverride"=dword:00000000
-"ThreadBoostType"=dword:00000001
+"SchedulerAssistThreadFlagOverride"=dword:00000001 ; 00000000/00000001
+"ThreadBoostType"=dword:00000002 ; 00000001/00000002
 "ThreadSchedulingModel"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability]
 "ShutdownReasonOn"=dword:00000000
 "ShutdownReasonUI"=dword:00000000
 "TimeStampInterval"=dword:00000000 ; 00000001, 00000000
+"IoPriority"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\Reliability]
 "IncludeShutdownErrs"=dword:00000000
@@ -1420,6 +1429,8 @@ Windows Registry Editor Version 5.00
 "SupportRuntimePowerManagement"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
+"AllowSnapshot"=dword:00000000
+"AllowSubscription"=dword:00000000
 "Acceleration.Level"=dword:00000000
 "AdaptiveVsyncEnable"=dword:00000000
 "AllowDeepCStates"=dword:00000000
@@ -1618,10 +1629,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\NVAPI]
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\nvlddmkm\Global\NVTweak]
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\Global\NVTweak]
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
 "DisplayPowerSaving"=dword:00000000
@@ -2426,9 +2435,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Steps-Recorder]
 "Enabled"=dword:00000000
-
-[HKEY_USERS\.DEFAULT\Control Panel\Desktop]
-"AutoEndTasks"="1"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ReserveManager]
 "MiscPolicyInfo"=dword:00000002
@@ -3280,6 +3286,10 @@ Windows Registry Editor Version 5.00
 ; "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GraphicsPerfSvc]
 "Start"=dword:00000002
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\bam]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\dam]
+"Start"=dword:00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\PerfNet\Performance]
 "Collect Supports Metadata"=dword:00000000
@@ -4101,20 +4111,28 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation]
 "Model"="model"
 
+[HKEY_USERS\.DEFAULT\Control Panel\Desktop]
+"AutoEndTasks"="1"
+
 [HKEY_CURRENT_USER\Control Panel\Desktop]
 "AutoEndTasks"="1"
 "DelayLockInterval"=dword:ffffffff
+"DpiScalingVer"=-
 "DragFromMaximize"="0"
 "EnablePerProcessSystemDPI"=dword:00000000 ; 00000001/00000000
 "ForegroundLockTimeout"=dword:00000000
 "GestureExecutionDelay"=dword:00000000
 "HungAppTimeout"="1000"
 "JPEGImportQuality"=dword:00000064
+"KeyboardSpeed"="31"
 "LogPixels"=- ; 00000060/=-
 "LowLevelHooksTimeout"="1000"
+"MaxAnimate"="0"
 "MenuShowDelay"="400"
+"MinAnimate"="0"
 "MonitorRemovalRecalcBehavior"=dword:00000001
-"MouseWheelRouting"=dword:00000002
+"MouseWheelRouting"=dword:	
+"PaddedBorderWidth"="0"
 "PaintDesktopVersion"=dword:00000001
 "RestorePreviousStateRecalcBehavior"=dword:00000000
 "ScreenSaveTimeOut"=-
@@ -4125,14 +4143,6 @@ Windows Registry Editor Version 5.00
 "WaitToKillServiceTimeout"="1000"
 "Win8DpiScaling"=dword:00000000 ; 00000001/00000000
 "WindowArrangementActive"="0"
-"DpiScalingVer"=-
-"KeyboardSpeed"="31"
-
-[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control]
-"DisableRemoteScmEndpoints"=dword:00000000
-"HandlerTimeout"=dword:7FFFFFFF
-"WaitToKillServiceTimeout"="1000"
-"SvcHostSplitThresholdInKB"=dword:000f4240
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TSFairShare\NetFS]
 "EnableFairShare"=dword:00000000
@@ -4274,6 +4284,36 @@ Windows Registry Editor Version 5.00
 "SV3"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\FTH]
+"Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Accessibility]
+"Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\AppSync]
+"Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\BrowserSettings]
+"Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Credentials]
+"Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\DesktopTheme]
+"Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Language]
+"Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\PackageState]
+"Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Personalization]
+"Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\StartLayout]
+"Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Windows]
 "Enabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SettingSync]
@@ -5131,6 +5171,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\Mail]
 "EnableLogging"=dword:00000000
+"BlockExtContent"=dword:00000000
+"UnblockSpecificSenders"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\15.0\Outlook\Options\Calendar]
 "EnableCalendarLogging"=dword:00000000
@@ -5150,15 +5192,21 @@ Windows Registry Editor Version 5.00
 "SendCustomerDataOptInReason"=dword:00000000
 "sentcostumerdata"=dword:00000000
 "updatereliabilitydata"=dword:00000000
+"sendcustomerdata"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Feedback]
 "enabled"=dword:00000000
 "includescreenshot"=dword:00000000
+"includeemail"=dword:00000000
+"feedbackincludelog"=dword:00000000
+"surveyenabled"=dword:00000000
+"updatereliabilitydata"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Office\Common\ClientTelemetry]
 "DisableTelemetry"=dword:00000001
 "MotherboardUUID"="-"
 "VerboseLogging"=dword:00000000
+"SendTelemetry"=dword:00000003
 
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\ClientTelemetry]
 "DisableTelemetry"=dword:00000001
@@ -5222,6 +5270,39 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\dlp]
 "policytipsenabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\General]
+"shownfirstrunoptin"=dword:00000001
+"skydrivesigninoption"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\ptwatson]
+"ptwoptin"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Firstrun]
+"disablemovie"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\OSM]
+"Enablelogging"=dword:00000000
+"EnableUpload"=dword:00000000
+"EnableFileObfuscation"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\OSM\preventedapplications]
+"accesssolution"=dword:00000001
+"olksolution"=dword:00000001
+"onenotesolution"=dword:00000001
+"pptsolution"=dword:00000001
+"projectsolution"=dword:00000001
+"publishersolution"=dword:00000001
+"visiosolution"=dword:00000001
+"wdsolution"=dword:00000001
+"xlsolution"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\OSM\preventedsolutiontypes]
+"agave"=dword:00000001
+"appaddins"=dword:00000001
+"comaddins"=dword:00000001
+"documentfiles"=dword:00000001
+"templatefiles"=dword:00000001
 
 [HKEY_CURRENT_USER\software\policies\microsoft\shared tools\proofing tools\1.0\office]
 "publisherspellingoptions"=dword:00000000
@@ -5302,11 +5383,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\Options\Calendar]
 "EnableCalendarLogging"=dword:00000000
 
-[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\Options\Mail]
-"BlockExtContent"=dword:00000000
-"UnblockSpecificSenders"=dword:00000000
-"EnableLogging"=dword:00000000
-
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Outlook\options\General]
 "DisableOutlookMobileHyperlink"=dword:00000001
 
@@ -5368,14 +5444,6 @@ Windows Registry Editor Version 5.00
 "updatereliabilitydata"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\Feedback]
-"enabled"=dword:00000000
-"includescreenshot"=dword:00000000
-"includeemail"=dword:00000000
-"feedbackincludelog"=dword:00000000
-"surveyenabled"=dword:00000000
-"updatereliabilitydata"=dword:00000000
-
-[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Feedback]
 "enabled"=dword:00000000
 "includescreenshot"=dword:00000000
 "includeemail"=dword:00000000
@@ -5533,7 +5601,6 @@ Windows Registry Editor Version 5.00
 "PreInstalledAppsEverEnabled"=dword:00000000
 "RemediationRequired"=dword:00000000
 "RotatingLockScreenEnabled"=dword:00000000
-"RotatingLockScreenOverlayEnabled"=dword:00000000
 "RotatingLockScreenOverlayEnabled"=dword:00000000
 "ShowSyncProviderNotifications"=dword:00000000
 "SilentInstalledAppsEnabled"=dword:00000000
@@ -6466,7 +6533,7 @@ Windows Registry Editor Version 5.00
 "QMEnable"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Common]
-"QMEnable"=dword:00000000
+
 
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Graphics]
 "DisableHardwareAcceleration"=dword:00000001
@@ -9472,41 +9539,81 @@ Windows Registry Editor Version 5.00
 "ForceNoSysLock"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D]
-"UseNonLocalVidMem"=dword:00000001
-"EnableDebugging"=dword:00000000
-"FullDebug"=dword:00000000
 "DisableDM"=dword:00000001
-"EnableMultimonDebugging"=dword:00000000
-"LoadDebugRuntime"=dword:00000000
-"FewVertices"=dword:00000001
+"DisableMMX"=dword:00000000
 "DisableVidMemVBs"=dword:00000000
+"EnableDebugging"=dword:00000000
+"EnableMultimonDebugging"=dword:00000000
+"FewVertices"=dword:00000001
+"FlipNoVsync"=dword:00000001
+"FullDebug"=dword:00000000
+"LoadDebugRuntime"=dword:00000000
 "MMX Fast Path"=dword:00000001
 "MMXFastPath"=dword:00000001
 "UseMMXForRGB"=dword:00000001
-"FlipNoVsync"=dword:00000001
-"DisableMMX"=dword:00000000
+"UseNonLocalVidMem"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Direct3D]
-"UseNonLocalVidMem"=dword:00000001
+"DisableMMX"=dword:00000000
 "FewVertices"=dword:00000001
 "MMX Fast Path"=dword:00000001
 "MMXFastPath"=dword:00000001
 "UseMMXForRGB"=dword:00000001
-"DisableMMX"=dword:00000000
+"UseNonLocalVidMem"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D\Drivers]
-"ForceRgbRasterizer"=dword:00000000
+"EnumNullDevice"=dword:00000001
+"EnumRamp"=dword:00000001
 "EnumReference"=dword:00000001
 "EnumSeparateMMX"=dword:00000001
-"EnumRamp"=dword:00000001
-"EnumNullDevice"=dword:00000001
-"UseMMXForRGB"=dword:00000001
+"ForceRgbRasterizer"=dword:00000000
 "SoftwareOnly"=dword:00000000
+"UseMMXForRGB"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Direct3D\Drivers]
-"ForceRgbRasterizer"=dword:00000000
+"EnumNullDevice"=dword:00000001
+"EnumRamp"=dword:00000001
 "EnumReference"=dword:00000001
 "EnumSeparateMMX"=dword:00000001
-"EnumRamp"=dword:00000001
-"EnumNullDevice"=dword:00000001
+"ForceRgbRasterizer"=dword:00000000
 "UseMMXForRGB"=dword:00000001
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Games]
+"FpsAll"=dword:00000001
+"FpsStatusGames"=dword:0000000a
+"FpsStatusGamesAll"=dword:00000004
+"GameFluidity"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\GSM60B216843009_01_07DC_0E^3D9A69AD1C84EAB2AAF1FC3855733BB4]
+"Scaling"=dword:00000002
+
+[HKEY_CURRENT_USER\System\GameConfigStore]
+"Win32_AutoGameModeDefaultProfile"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00
+"Win32_GameModeRelatedProcesses"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00
