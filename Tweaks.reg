@@ -4198,7 +4198,7 @@ Windows Registry Editor Version 5.00
 "MenuShowDelay"="400"
 "MinAnimate"="0"
 "MonitorRemovalRecalcBehavior"=dword:00000001
-"MouseWheelRouting"=dword:	
+"MouseWheelRouting"=dword:00000002
 "PaddedBorderWidth"="0"
 "PaintDesktopVersion"=dword:00000001
 "RestorePreviousStateRecalcBehavior"=dword:00000000
