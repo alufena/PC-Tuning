@@ -376,7 +376,7 @@ bcdedit /deletevalue loadoptions
 ::bcdedit /debug off
 ::bcdedit /deletevalue nx
 taskkill /f /t /im CompPkgSrv.exe
-reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&0&UID37124\Device Parameters" /v EDID /f
+reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&1&UID37124\Device Parameters" /v EDID /f
 reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\IrisService" /f
 w32tm /resync
 taskkill /f /t /im SearchProtocolHost.exe
@@ -394,6 +394,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command "$device = Get-PnpDevice 
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'UMBus Root Bus Enumerator' | Disable-PnpDevice -Confirm:$false"
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'NDIS Virtual Network Adapter Enumerator' | Disable-PnpDevice -Confirm:$false"
 powershell -NoProfile -ExecutionPolicy Bypass -Command "$device = Get-PnpDevice | Where-Object {$_.FriendlyName -like '*AMD PSP*' -or $_.FriendlyName -like '*Platform Security Processor*'}; if ($device) { try { $device | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue } catch {} }"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$device = Get-PnpDevice | Where-Object { $_.FriendlyName -like '*ISA*Bridge*' }; if ($device) { try { $device | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue } catch {} }"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$device = Get-PnpDevice | Where-Object { $_.FriendlyName -like '*RAM Controller*' }; if ($device) { try { $device | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue } catch {} }"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'Microsoft System Management BIOS Driver' | Disable-PnpDevice -Confirm:$false"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$devices = Get-PnpDevice | Where-Object {$_.FriendlyName -like 'PCI Device'}; foreach ($device in $devices) { try { $device | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue } catch {} }"
 ::timeout /t 8 /nobreak
 taskkill /f /t /im node.exe
 taskkill /f /t /im powershell.exe
