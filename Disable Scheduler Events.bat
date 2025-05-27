@@ -97,6 +97,7 @@ schtasks /change /tn "microsoft\windows\user profile service\hiveuploadtask" /di
 schtasks /change /tn "microsoft\windows\wcm\wifitask" /disable
 schtasks /change /tn "microsoft\windows\wdi\resolutionhost" /disable
 schtasks /change /tn "microsoft\windows\windows error reporting\queuereporting" /disable
+schtasks /Change /TN "Microsoft\Windows\ErrorDetails\EnableErrorDetailsUpdate" /Disable
 schtasks /change /tn "microsoft\windows\windows filtering platform\bfeonservicestarttypechange" /disable
 schtasks /change /tn "microsoft\windows\windowsupdate\scheduled start" /disable
 schtasks /change /tn "microsoft\windows\wlansvc\cdssync" /disable
@@ -128,6 +129,16 @@ schtasks /change /tn "MSIAfterburner" /disable
 schtasks /change /tn "Microsoft\Windows\SoftwareProtectionPlatform\SvcRestartTask" /disable
 schtasks /change /tn "Microsoft\Windows\SettingSync\NetworkStateChangeTask" /disable
 schtasks /change /tn "Microsoft\VisualStudio\Updates\BackgroundDownload" /disable
+schtasks /change /tn "\Microsoft\Windows\Shell\FamilySafetyUpload" /disable
+schtasks /change /tn "\Microsoft\Windows\Customer Experience Improvement Program\BthSQM" /disable
+schtasks /change /tn "\Microsoft\Windows\Customer Experience Improvement Program\Uploader" /disable
+schtasks /change /tn "\Microsoft\Windows\Application Experience\AitAgent" /disable
+schtasks /change /tn "\Microsoft\Windows\CloudExperienceHost\CreateObjectTask" /disable
+schtasks /change /tn "\Microsoft\Windows\AppID\SmartScreenSpecific" /disable
+schtasks /change /tn "\Microsoft\Office\OfficeTelemetryAgentFallBack2016" /disable
+schtasks /change /tn "\Microsoft\Office\OfficeTelemetryAgentLogOn2016" /disable
+schtasks /change /TN "\Microsoft\Office\Office 15 Subscription Heartbeat" /disable
+schtasks /change /TN "\Microsoft\Windows\WindowsUpdate\Automatic App Update" /disable
 echo Desativando tarefas do MEGAsync...
 powershell -Command "Get-ScheduledTask | Where-Object { $_.TaskName -like 'MEGAsync Update Task*' } | ForEach-Object { Disable-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath }"
 echo Desativando tarefas do Google Updater...
