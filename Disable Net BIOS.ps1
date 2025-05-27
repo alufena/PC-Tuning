@@ -16,4 +16,4 @@ $nicall.enablewins($false,$false)
 Set-Service -Name "lmhosts" -StartupType Disabled
 Stop-Service -Name "lmhosts"
 
-cmd /k 'pause'
+cmd /k 'exit'
