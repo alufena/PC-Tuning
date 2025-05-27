@@ -1226,12 +1226,12 @@ Windows Registry Editor Version 5.00
 "RmDisableRegistryCaching"=dword:00000001
 "RmFbsrPagedDMA"=dword:00000001 ; =-, 00000000/00000001
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
-"TdrDdiDelay"=dword:00000000 ; 0000000a, 00000000
+"TdrDdiDelay"=dword:00000000 ; 00000000, 0000000a
 "TdrDebugMode"=dword:00000000
-"TdrDelay"=dword:0000003c ; 0000000a/00000000/0000003c
+"TdrDelay"=dword:00000000 ; 00000000/0000000a/0000003c
 "TdrDodPresentDelay"=dword:00000000
 "TdrDodVSyncDelay"=dword:00000000
-"TdrLevel"=dword:00000000 ; 00000003, 00000000
+"TdrLevel"=dword:00000000 ; 00000000, 00000003
 "TdrLimitCount"=dword:00000000
 "TdrLimitTime"=dword:00000000
 "UnsupportedMonitorModesAllowed"=dword:00000001
@@ -3356,6 +3356,8 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\dam]
 "Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GpuEnergyDrv]
+"Start"=dword:00000004 ; 00000001, 00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\PerfNet\Performance]
 "Collect Supports Metadata"=dword:00000000
@@ -3666,9 +3668,6 @@ Windows Registry Editor Version 5.00
 "ExtraIconsOnMinimized"=dword:00000000
 "Transparency"=dword:000000ff
 "Label"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell\Update\Packages]
-"UndockingDisabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\ScriptedDiagnostics]
 "EnableDiagnostics"=dword:00000001
@@ -4250,6 +4249,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
 "AltTabSettings"=dword:00000000
+"DesktopProcess"=dword:00000000
 "EnableAutoTray"=dword:00000000
 "ExcludedFromStableAnaheimDownloadPromotionSL"=dword:00000001
 "ExplorerStartupTraceRecorded"=dword:00000000
@@ -4261,8 +4261,8 @@ Windows Registry Editor Version 5.00
 "ShowRecent"=dword:00000000
 "ShowRecommendations"=dword:00000000
 "SIDUpdatedOnLibraries"=dword:00000000
-"TelemetrySalt"=dword:00000000
 "TabletPostureTaskbar"=dword:00000000
+"TelemetrySalt"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\InfoBarsDisabled]
 "LocationNotIndexed"=dword:00000001
@@ -5082,8 +5082,6 @@ Windows Registry Editor Version 5.00
 "TouchKeyboard_EnableKeyAudioFeedback"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
-"NoAutorun"=dword:00000001
-"NoDriveTypeAutoRun"=dword:000000ff
 "AllowOnlineTips"=dword:00000000
 "ClearRecentDocsOnExit"=dword:00000001
 "DisableBindDirectlyToPropertySetStorage"=dword:00000001
@@ -5096,10 +5094,14 @@ Windows Registry Editor Version 5.00
 "LinkResolveIgnoreLinkInfo"=dword:00000001
 "NoActiveDesktop"=dword:00000001
 "NoActiveDesktopChanges"=dword:00000001
+"NoAutorun"=dword:00000001
 "NoCustomizeThisFolder"=dword:00000001
 "NoCustomizeWebView"=dword:00000001
+"NoDesktop"=dword:00000000
 "NoDrivesInSendToMenu"=dword:00000001
+"NoDriveTypeAutoRun"=dword:000000ff
 "NoEncryptOnMove"=dword:00000001
+"NoInstrumentation"=dword:00000001
 "NoInternetOpenWith"=dword:00000001
 "NoLowDiskSpaceChecks"=dword:00000001
 "NoMSAppLogo5ChannelNotify"=dword:00000001
@@ -5111,45 +5113,43 @@ Windows Registry Editor Version 5.00
 "NoRemoteRecursiveEvents"=dword:00000001
 "NoResolveSearch"=dword:00000001
 "NoResolveTrack"=dword:00000001
+"NoStartMenuMFUprogramsList"=-
 "NoThumbnailCache"=dword:00000001
 "NoWebServices"=dword:00000001
-"PreXPSP2ShellProtocolBehavior"=dword:00000000
-"NoDesktop"=dword:00000000
-"NoStartMenuMFUprogramsList"=-
-"NoInstrumentation"=dword:00000001
 "NoWelcomeScreen"=dword:00000001
+"PreXPSP2ShellProtocolBehavior"=dword:00000000
+"SettingsPageVisibility"="hide:aicomponents;"
 "StartMenuFavorites"=dword:00000000
 "Start_ShowHelp"=dword:00000000
-"SettingsPageVisibility"="hide:aicomponents;"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
-"NoDriveTypeAutoRun"=-
 "ClearRecentDocsOnExit"=dword:00000001
+"ClearRecentProgForNewUserInStartMenu"=dword:00000001
 "DisableThumbnailCache"=dword:00000001
+"GreyMSIAds"=dword:00000000
 "HideLanguageBar"=dword:00000001
 "HideSCAMeetNow"=dword:00000001
+"LinkResolveIgnoreLinkInfo"=dword:00000001
+"NoDriveTypeAutoRun"=-
+"NoInstrumentation"=dword:00000001
 "NoInternetOpenWith"=dword:00000001
+"NoLowDiskSpaceChecks"=dword:00000001
+"NoNetConnectDisconnect"=dword:00000001
 "NoRecentDocsHistory"=dword:00000001
 "NoRecentDocsMenu"=dword:00000001
 "NoRecentDocsNetHood"=dword:00000001
 "NoRemoteRecursiveEvents"=dword:00000001
-"NoResolveTrack"=dword:00000001
-"NoThumbnailCache"=dword:00000001
-"TurnOffSPIAnimations"=dword:00000001
-"NoLowDiskSpaceChecks"=dword:00000001
-"NoStartMenuMFUprogramsList"=-
-"NoInstrumentation"=dword:00000001
-"LinkResolveIgnoreLinkInfo"=dword:00000001
 "NoResolveSearch"=dword:00000001
+"NoResolveTrack"=dword:00000001
 "NoSearchCommInStartMenu"=dword:00000001
 "NoSearchInternetInStartMenu"=dword:00000001
-"ClearRecentProgForNewUserInStartMenu"=dword:00000001
+"NoSimpleNetIDList"=dword:00000001
 "NoSMHelp"=dword:00000001
 "NoStartMenuEjectPC"=dword:00000001
-"NoSimpleNetIDList"=dword:00000001
-"NoNetConnectDisconnect"=dword:00000001
-"GreyMSIAds"=dword:00000000
+"NoStartMenuMFUprogramsList"=-
 "NoSystraySystemPromotion"=dword:00000001
+"NoThumbnailCache"=dword:00000001
+"TurnOffSPIAnimations"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\QuietHours]
 "AllowCalls"=dword:00000000
@@ -6455,22 +6455,22 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
 "ActiveSetupDisabled"=dword:00000001
 "ActiveSetupTaskOverride"=dword:00000001
+"AicEnabled"="Anywhere"
 "AlwaysUnloadDLL"=dword:00000001
 "AsyncRunOnce"=dword:00000001
 "AsyncUpdatePCSettings"=dword:00000000
 "AutoCheckSelect"=dword:00000000
 "DisableAppInstallsOnFirstLogon"=-
+"DisableResolveStoreCategories"=dword:00000001
+"DisableUpgradeCleanup"=dword:00000000
 "MachineOobeUpdates"=dword:00000000
 "Max Cached Icons"="4096"
+"NoWaitOnRoamingPayloads"=dword:00000001
 "ShowDriveLettersFirst"=dword:00000000
 "ShowFrequent"=dword:00000000
 "ShowRecent"=dword:00000000
 "SmartScreenEnabled"="Off"
 "ThumbnailQuality"=dword:00000024
-"AicEnabled"="Anywhere"
-"DisableResolveStoreCategories"=dword:00000001
-"DisableUpgradeCleanup"=dword:00000000
-"NoWaitOnRoamingPayloads"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Edge\SmartScreenEnabled]
 @=dword:00000000
@@ -9714,8 +9714,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\WordWheelQuery]
 "DefaultApplied"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\GSM60B216843009_01_07DC_0E^3D9A69AD1C84EAB2AAF1FC3855733BB4]
-"Scaling"=dword:00000002
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\GSM60B216843009_01_07DC_0E^3D9A69AD1C84EAB2AAF1FC3855733BB4\00\00]
+"Scaling"=dword:00000002 ; 00000003, 00000002
 [HKEY_CURRENT_USER\SOFTWARE\NVIDIA Corporation\Global\NVTweak\Devices\3772562448-0\Color]
 "NvCplUseColorCorrection"=dword:00000000
 
