@@ -91,6 +91,7 @@ taskkill /f /t /im WmiApSrv.exe
 taskkill /f /t /im WmiPrvSE.exe
 taskkill /f /t /im WUDFHost.exe
 taskkill /f /t /im yourphone.exe
+taskkill /f /t /im crashhelper.exe
 sc start "SysMain"
 ::sc stop "SysMain"
 sc config "SysMain" start= auto
@@ -370,11 +371,10 @@ taskkill /f /t /im RuntimeBroker.exe
 taskkill /f /t /im UserOOBEBroker.exe
 taskkill /f /t /im WMIADAP.exe
 bcdedit /set nx AlwaysOff
+::bcdedit /deletevalue nx
 powershell -Command "Set-ProcessMitigation -System -Disable DEP,EmulateAtlThunks,ForceRelocateImages,RequireInfo,BottomUp,HighEntropy,StrictHandle,DisableWin32kSystemCalls,AuditSystemCall,DisableExtensionPoints,BlockDynamicCode,AllowThreadsToOptOut,AuditDynamicCode,CFG,SuppressExports,StrictCFG,MicrosoftSignedOnly,AllowStoreSignedBinaries,AuditMicrosoftSigned,AuditStoreSigned,EnforceModuleDependencySigning,DisableNonSystemFonts,AuditFont,BlockRemoteImageLoads,BlockLowLabelImageLoads,PreferSystem32,AuditRemoteImageLoads,AuditLowLabelImageLoads,AuditPreferSystem32,SEHOP,AuditSEHOP,SEHOPTelemetry,TerminateOnError"
 bcdedit /deletevalue nointegritychecks
 bcdedit /deletevalue loadoptions
-::bcdedit /debug off
-::bcdedit /deletevalue nx
 taskkill /f /t /im CompPkgSrv.exe
 reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&1&UID37124\Device Parameters" /v EDID /f
 reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\IrisService" /f
@@ -383,21 +383,51 @@ taskkill /f /t /im SearchProtocolHost.exe
 taskkill /f /t /im SearchIndexer.exe
 taskkill /f /t /im SearchFilterHost.exe
 taskkill /f /t /im SearchApp.exe
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'High precision event timer' | Disable-PnpDevice -Confirm:$false"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'Microsoft Device Association Root Enumerator' -ErrorAction SilentlyContinue | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$devices = Get-PnpDevice | Where-Object {$_.FriendlyName -like '*Device Association*'}; foreach ($device in $devices) { try { pnputil /remove-device $device.InstanceId; Start-Sleep -Seconds 1; pnputil /remove-device $device.InstanceId /force; } catch {} }"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'Microsoft GS Wavetable Synth' | Disable-PnpDevice -Confirm:$false"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$device = Get-PnpDevice | Where-Object {$_.FriendlyName -like '*RRAS*'}; if ($device) { $device | Disable-PnpDevice -Confirm:$false }"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'Composite Bus Enumerator' | Disable-PnpDevice -Confirm:$false"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'Microsoft Virtual Drive Enumerator' | Disable-PnpDevice -Confirm:$false"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$device = Get-PnpDevice | Where-Object {$_.FriendlyName -like '*Remote Desktop*'}; if ($device) { try { $device | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue } catch {} }"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'UMBus Root Bus Enumerator' | Disable-PnpDevice -Confirm:$false"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'NDIS Virtual Network Adapter Enumerator' | Disable-PnpDevice -Confirm:$false"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$device = Get-PnpDevice | Where-Object {$_.FriendlyName -like '*AMD PSP*' -or $_.FriendlyName -like '*Platform Security Processor*'}; if ($device) { try { $device | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue } catch {} }"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$device = Get-PnpDevice | Where-Object { $_.FriendlyName -like '*ISA*Bridge*' }; if ($device) { try { $device | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue } catch {} }"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$device = Get-PnpDevice | Where-Object { $_.FriendlyName -like '*RAM Controller*' }; if ($device) { try { $device | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue } catch {} }"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-PnpDevice -FriendlyName 'Microsoft System Management BIOS Driver' | Disable-PnpDevice -Confirm:$false"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$devices = Get-PnpDevice | Where-Object {$_.FriendlyName -like 'PCI Device'}; foreach ($device in $devices) { try { $device | Disable-PnpDevice -Confirm:$false -ErrorAction SilentlyContinue } catch {} }"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'High precision event timer'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'Microsoft Device Association Root Enumerator'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -like '*Device Association*'} | Select-Object -ExpandProperty InstanceId"') do (
+    pnputil /disable-device "%%i"
+)
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'Microsoft GS Wavetable Synth'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -like '*RRAS*'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'Composite Bus Enumerator'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'Microsoft Virtual Drive Enumerator'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -like '*Remote Desktop*'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'UMBus Root Bus Enumerator'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'NDIS Virtual Network Adapter Enumerator'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object { $_.FriendlyName -like '*AMD PSP*' -or $_.FriendlyName -like '*Platform Security Processor*' } | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object { $_.FriendlyName -like '*ISA*Bridge*' } | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object { $_.FriendlyName -like '*RAM Controller*' } | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'Microsoft System Management BIOS Driver'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+pnputil /disable-device "ROOT\AMDLOG\0000"
+pnputil /disable-device "ROOT\AMDSAFD&FUN_01&REV_01\0000"
+pnputil /disable-device "ROOT\KDNIC\0000"
+pnputil /disable-device "ROOT\VID\0000"
+pnputil /disable-device "SWD\DRIVERENUM\AMDWIN&7&3675a230&0"
+pnputil /disable-device "SWD\MSRRAS\{5e259276-bc7e-40e3-b93b-8f89b5f3abc0}"
+pnputil /disable-device "SWD\MSRRAS\MS_AGILEVPNMINIPORT"
+pnputil /disable-device "SWD\MSRRAS\MS_L2TPMINIPORT"
+pnputil /disable-device "SWD\MSRRAS\MS_NDISWANBH"
+pnputil /disable-device "SWD\MSRRAS\MS_NDISWANIP"
+pnputil /disable-device "SWD\MSRRAS\MS_NDISWANIPV6"
+pnputil /disable-device "SWD\MSRRAS\MS_PPPOEMINIPORT"
+pnputil /disable-device "SWD\MSRRAS\MS_PPTPMINIPORT"
+pnputil /disable-device "SWD\MSRRAS\MS_SSTPMINIPORT"
+pnputil /disable-device "SWD\PRINTENUM\{8C9B425C-5DD5-4DC1-AFDE-4EDFD21FFDAE}"
+pnputil /disable-device "SWD\PRINTENUM\PrintQueues"
+pnputil /disable-device "SWD\RADIO\{3DB5895D-CC28-44B3-AD3D-6F01A782B8D2}"
+takeown /f %SystemRoot%\System32\drivers\Acpidev.sys
+takeown /f %SystemRoot%\System32\drivers\Acpipagr.sys
+takeown /f %SystemRoot%\System32\drivers\Acpitime.sys
+takeown /f %SystemRoot%\System32\drivers\Acpipmi.sys
+icacls %SystemRoot%\System32\drivers\Acpidev.sys /grant %username%:F
+icacls %SystemRoot%\System32\drivers\Acpipagr.sys /grant %username%:F
+icacls %SystemRoot%\System32\drivers\Acpitime.sys /grant %username%:F
+icacls %SystemRoot%\System32\drivers\Acpipmi.sys /grant %username%:F
+del /f /q %SystemRoot%\System32\drivers\Acpidev.sys
+del /f /q %SystemRoot%\System32\drivers\Acpipagr.sys
+del /f /q %SystemRoot%\System32\drivers\Acpitime.sys
+del /f /q %SystemRoot%\System32\drivers\Acpipmi.sys
 ::timeout /t 8 /nobreak
 taskkill /f /t /im node.exe
 taskkill /f /t /im powershell.exe
