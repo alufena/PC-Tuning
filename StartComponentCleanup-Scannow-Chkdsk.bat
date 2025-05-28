@@ -48,5 +48,18 @@ taskkill /f /t /im CompPkgSrv.exe
 taskkill /f /t /im TiWorker.exe
 taskkill /f /t /im TrustedInstaller.exe
 taskkill /f /t /im MoUsoCoreWorker.exe
+takeown /f %SystemRoot%\System32\drivers\Acpidev.sys
+takeown /f %SystemRoot%\System32\drivers\Acpipagr.sys
+takeown /f %SystemRoot%\System32\drivers\Acpitime.sys
+takeown /f %SystemRoot%\System32\drivers\Acpipmi.sys
+icacls %SystemRoot%\System32\drivers\Acpidev.sys /grant %username%:F
+icacls %SystemRoot%\System32\drivers\Acpipagr.sys /grant %username%:F
+icacls %SystemRoot%\System32\drivers\Acpitime.sys /grant %username%:F
+icacls %SystemRoot%\System32\drivers\Acpipmi.sys /grant %username%:F
+del /f /q %SystemRoot%\System32\drivers\Acpidev.sys
+del /f /q %SystemRoot%\System32\drivers\Acpipagr.sys
+del /f /q %SystemRoot%\System32\drivers\Acpitime.sys
+del /f /q %SystemRoot%\System32\drivers\Acpipmi.sys
 taskkill /f /t /im conhost.exe
 taskkill /f /t /im cmd.exe
+exit
