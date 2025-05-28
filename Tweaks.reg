@@ -189,7 +189,7 @@ Windows Registry Editor Version 5.00
 "WriteWatch"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
-"AdjustDpcThreshold"=dword:00000000 ; 00000000/00000001
+"AdjustDpcThreshold"=dword:00000000 ; 00000000/00000001/00000320
 "BufferSize"=dword:00000020
 "BugCheckUnexpectedInterrupts"=dword:00000000
 "CacheAwareScheduling"=dword:00000007
@@ -252,8 +252,8 @@ Windows Registry Editor Version 5.00
 "MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "PassiveWatchdogTimeout"=dword:00000000
 "PowerOffFrozenProcessors"=dword:00000000
-"PriorityControl"=dword:00000020 ; 00000032/00000020
-"QuantumLength"=dword:0000000e ; 00000014/0000000e
+"PriorityControl"=dword:00000020 ; 00000020/00000032
+"QuantumLength"=dword:0000000e ; 0000000e/00000014
 "RebalanceMinPriority"=dword:00000001
 "SerializeTimerExpiration"=dword:00000002 ; 00000001/00000002
 "SplitLargeCaches"=dword:00000001
@@ -340,31 +340,40 @@ Windows Registry Editor Version 5.00
 "POWERSHELL_TELEMETRY_OPTOUT"="1"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0AABB002-A307-447e-9B81-1D819DF6C6D0}]
-"Pri"=- ; 00000023, =-
+"Name"="SustainedPerf"
+"Pri"=-
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0c3d5326-944b-4aab-8ad8-fe422a0e50e0}]
-"Pri"=- ; 00000002, =-
+"Name"="MultimediaQos"
+"Pri"=-
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}]
-"Pri"=- ; 00000028, =-
+"Name"="LowLatency"
+"Pri"=-
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{4569E601-272E-4869-BCAB-1C6C03D7966F}]
-"Pri"=- ; 0000001e, =-
+"Name"="LowPower"
+"Pri"=-
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{8BC6262C-C026-411d-AE3B-7E2F70811A13}]
-"Pri"=- ; 0000000a, =-
+"Name"="Standby"
+"Pri"=-
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{a4a61b5f-f42c-4d23-b3ab-5c27df9f0f18}]
-"Pri"=- ; 00000001, =-
+"Name"="EntryLevelPerf"
+"Pri"=-
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{c04a802d-2205-4910-ae98-3b51e3bb72f2}]
-"Pri"=- ; 00000000, =-
+"Name"="Background"
+"Pri"=-
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{D4140C81-EBBA-4e60-8561-6918290359CD}]
-"Pri"=- ; 00000020, =-
+"Name"="GameMode"
+"Pri"=-
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{EE1E4F72-E368-46b1-B3C6-5048B11C2DBD}]
-"Pri"=- ; 00000014, =-
+"Name"="Constrained"
+"Pri"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
 "OverlayTestMode"=dword:00000005 ; =-, 00000005
@@ -644,10 +653,10 @@ Windows Registry Editor Version 5.00
 "WaitToKillServiceTimeout"="1000"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
-"TimeLimitInSeconds"=dword:00000002 ; 00000006, 00000002/00000000/00000012
+"TimeLimitInSeconds"=dword:00000001 ; 00000006, 00000000/00000001/00000002/00000012
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
-"TimeLimitInSeconds"=dword:00000002 ; 00000006, 00000002/00000000/00000012
+"TimeLimitInSeconds"=dword:00000001 ; 00000006, 00000002/00000000/00000012
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
 "AdjustDpcThreshold"=dword:00000000 ; 00000000/00000001/00000320
@@ -1179,7 +1188,8 @@ Windows Registry Editor Version 5.00
 "DisableMultiSourceMPOCheck"=dword:00000001
 "DisableOverclockedPstates"=dword:00000001
 "Disable_OverlayDSQualityEnhancement"=dword:00000001
-"DisableOverlays"=dword:00000000 ; 00000001/00000000
+"DisableOverlay"=dword:00000001 ; 00000001/00000000
+"DisableOverlays"=dword:00000001 ; 00000001/00000000
 "DisablePFonDP"=dword:00000001
 "DisablePreemption"=dword:00000001
 "DisablePreemptionOnS3S4"=dword:00000001 ; 00000001/00000000
@@ -1333,6 +1343,7 @@ Windows Registry Editor Version 5.00
 "DisableMshybridNvsrSwitch"=dword:00000001
 "DisableOverclockedPstates"=dword:00000001
 "DisableOverlay"=dword:00000001
+"DisableOverlays"=dword:00000001
 "Disable_OverlayDSQualityEnhancement"=dword:00000001
 "DisablePFonDP"=dword:00000001
 "DisablePowerGating"=dword:00000001
@@ -1456,7 +1467,8 @@ Windows Registry Editor Version 5.00
 "TurboQueue"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\GraphicsDrivers]
-"DisableOverlays"=dword:00000000
+"DisableOverlay"=dword:00000001
+"DisableOverlays"=dword:00000001
 "DriverProtection"=dword:00000000
 "DxgkWaitForIdle"=dword:00000000
 "EnableRuntimePowerManagement"=dword:00000000
@@ -1503,6 +1515,7 @@ Windows Registry Editor Version 5.00
 "DisableKmRenderBoost"=dword:00000000
 "DisableOverclockedPstates"=dword:00000001
 "DisableOverlay"=dword:00000001
+"DisableOverlays"=dword:00000001
 "Disable_OverlayDSQualityEnhancement"=dword:00000001
 "DisablePFonDP"=dword:00000001
 "DisablePowerGating"=dword:00000001
@@ -1853,6 +1866,8 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinDefend]
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdNisDrv]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TrkWks]
 "Start"=dword:00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\CPU\HardCap0]
@@ -2308,17 +2323,19 @@ Windows Registry Editor Version 5.00
 "BypassNRO"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer]
-"NoAutoplayfornonVolume"=dword:00000001
 "CheckSameSourceAndTargetForFRAndDFS"=dword:00000000
 "DisableGraphRecentItems"=dword:00000001
 "DisableNotificationCenter"=dword:00000001
 "DisableSearchBoxSuggestions"=dword:00000001
 "EnableShellShortcutIconRemotePath"=dword:00000000
+"ExplorerRibbonStartsMinimized"=dword:00000002
 "HideRecentlyAddedApps"=dword:00000001
 "HideRecommendedPersonalizedSites"=dword:00000001
 "HideRecommendedSection"=dword:00000001
 "HideTaskViewButton"=dword:00000000
+"LockedStartLayout"=-
 "MultiTaskingAltTabFilter"=dword:00000003
+"NoAutoplayfornonVolume"=dword:00000001
 "NoDataExecutionPrevention"=dword:00000001
 "NoHeapTerminationOnCorruption"=dword:00000001
 "NoNewAppAlert"=dword:00000001
@@ -2334,7 +2351,6 @@ Windows Registry Editor Version 5.00
 "ShowOrHideMostUsedApps"=dword:00000002
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
-"NoAutoplayfornonVolume"=-
 "CheckSameSourceAndTargetForFRAndDFS"=dword:00000000
 "DisableGraphRecentItems"=dword:00000001
 "DisableNotificationCenter"=dword:00000001
@@ -2348,9 +2364,11 @@ Windows Registry Editor Version 5.00
 "HidePeopleBar"=dword:00000001
 "HideRecentlyAddedApps"=dword:00000001
 "HideRecommendedPersonalizedSites"=dword:00000001
-"HideRecommendedSection"=-
+"HideRecommendedSection"=dword:00000001
 "IrisClientRefresh"=dword:00000000
+"LockedStartLayout"=-
 "MultiTaskingAltTabFilter"=dword:00000003
+"NoAutoplayfornonVolume"=dword:00000001
 "NoBalloonFeatureAdvertisements"=dword:00000001
 "NoDataExecutionPrevention"=dword:00000001
 "NoHeapTerminationOnCorruption"=dword:00000001
@@ -2362,7 +2380,7 @@ Windows Registry Editor Version 5.00
 "NoTileApplicationNotification"=dword:00000001
 "NoUseStoreOpenWith"=dword:00000001
 "NoWindowMinimizingShortcuts"=dword:00000001
-"ShowOrHideMostUsedApps"=-
+"ShowOrHideMostUsedApps"=dword:00000002
 "SIDUpdatedOnLibraries"=dword:00000000
 "TelemetrySalt"=dword:00000000
 
@@ -3358,6 +3376,123 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GpuEnergyDrv]
 "Start"=dword:00000004 ; 00000001, 00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\amdpsp]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\amdfendr]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\amdfendrmgr]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AMD Crash Defender Service]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AMD External Events Utility]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AMDXE]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AMDSAFD]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AUEPLauncher]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\amdlog]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AJRouter]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ALG]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dfsc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\dmwappushsvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EapHost]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\icssvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\IpxlatCfgSvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\KtmRm]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\lfsvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\lltdsvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MSDTC]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MsLldp]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NcaSvc]
+"Start"=dword:00000004
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NcbService]
+; "Start"=dword:00000003
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NcdAutoSetup]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NdisCap]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NetBT]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon]
+"Start"=dword:00000004
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NlaSvc]
+; "Start"=dword:00000003
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\p2pimsvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\p2psvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\P9Rdr]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\P9RdrService]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PNRPAutoReg]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PNRPsvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Psched]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasAcd]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasAuto]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Rasl2tp]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasPppoe]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasSstp]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\rdpbus]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SessionEnv]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\smphost]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SmsRouter]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SNMPTrap]
+"Start"=dword:00000004
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ssh-agent]
+; "Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TapiSrv]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\tcpipreg]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\UmRdpService]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\vwififlt]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wanarp]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wanarpv4]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wanarpv6]
+"Start"=dword:00000004
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Wcmsvc]
+; "Start"=dword:00000002
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WFDSConMgrSvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WwanSvc]
+"Start"=dword:00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\PerfNet\Performance]
 "Collect Supports Metadata"=dword:00000000
@@ -5095,6 +5230,7 @@ Windows Registry Editor Version 5.00
 "NoActiveDesktop"=dword:00000001
 "NoActiveDesktopChanges"=dword:00000001
 "NoAutorun"=dword:00000001
+"NoChangeStartMenu"=-
 "NoCustomizeThisFolder"=dword:00000001
 "NoCustomizeWebView"=dword:00000001
 "NoDesktop"=dword:00000000
@@ -5113,7 +5249,8 @@ Windows Registry Editor Version 5.00
 "NoRemoteRecursiveEvents"=dword:00000001
 "NoResolveSearch"=dword:00000001
 "NoResolveTrack"=dword:00000001
-"NoStartMenuMFUprogramsList"=-
+"NoStartMenuMFUprogramsList"=dword:00000001
+"NoStartMenuMorePrograms"=dword:00000002
 "NoThumbnailCache"=dword:00000001
 "NoWebServices"=dword:00000001
 "NoWelcomeScreen"=dword:00000001
@@ -5130,7 +5267,8 @@ Windows Registry Editor Version 5.00
 "HideLanguageBar"=dword:00000001
 "HideSCAMeetNow"=dword:00000001
 "LinkResolveIgnoreLinkInfo"=dword:00000001
-"NoDriveTypeAutoRun"=-
+"NoChangeStartMenu"=-
+"NoDriveTypeAutoRun"=dword:000000ff
 "NoInstrumentation"=dword:00000001
 "NoInternetOpenWith"=dword:00000001
 "NoLowDiskSpaceChecks"=dword:00000001
@@ -5146,7 +5284,8 @@ Windows Registry Editor Version 5.00
 "NoSimpleNetIDList"=dword:00000001
 "NoSMHelp"=dword:00000001
 "NoStartMenuEjectPC"=dword:00000001
-"NoStartMenuMFUprogramsList"=-
+"NoStartMenuMFUprogramsList"=dword:00000001
+"NoStartMenuMorePrograms"=dword:00000002
 "NoSystraySystemPromotion"=dword:00000001
 "NoThumbnailCache"=dword:00000001
 "TurnOffSPIAnimations"=dword:00000001
@@ -6460,7 +6599,7 @@ Windows Registry Editor Version 5.00
 "AsyncRunOnce"=dword:00000001
 "AsyncUpdatePCSettings"=dword:00000000
 "AutoCheckSelect"=dword:00000000
-"DisableAppInstallsOnFirstLogon"=-
+"DisableAppInstallsOnFirstLogon"=dword:00000001 
 "DisableResolveStoreCategories"=dword:00000001
 "DisableUpgradeCleanup"=dword:00000000
 "MachineOobeUpdates"=dword:00000000
@@ -6581,6 +6720,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Dsh]
 "IsPrelaunchEnabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband]
+"NumThumbnails"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband\AuxilliaryPins]
 "MailPin"=dword:00000000
