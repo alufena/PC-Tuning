@@ -2,13 +2,13 @@ SC config trustedinstaller start=auto
 chkdsk /scan
 ::chkdsk c: /sdcleanup /offlinescanandfix
 ::chkdsk c: /f /r /x /b
-net stop bits
+::net stop bits
 net stop wuauserv
 net stop msiserver
-net stop cryptsvc
+::net stop cryptsvc
 net stop appidsvc
 net stop winmgmt
-net stop pla
+::net stop pla
 Ren %Systemroot%\SoftwareDistribution SoftwareDistribution.old
 Ren %Systemroot%\System32\catroot2 catroot2.old
 netsh winsock reset
@@ -27,16 +27,23 @@ DISM /Online /Cleanup-Image /StartComponentCleanup /SPSuperseded
 DISM /Online /Cleanup-Image /AnalyzeComponentStore
 DISM /Online /Set-ReservedStorageState /State:Disabled
 dism.exe /online /disable-feature /FeatureName:recall /noRestart
+dism.exe /online /disable-feature:MediaPlayback
+dism.exe /online /disable-feature:SearchEngine-Client-Package
+dism.exe /online /disable-feature:Windows-Defender-Default-Definitions
+dism.exe /online /disable-feature:WindowsMediaPlayer
+dism.exe /online /Remove-Capability /CapabilityName:Browser.InternetExplorer~~~~0.0.11.0
+dism.exe /online /Remove-Capability /CapabilityName:Media.WindowsMediaPlayer~~~~0.0.12.0
+dism.exe /online /disable-feature:Internet-Explorer-Optional-amd64
 DISM /Cleanup-Wim
 DISM /Cleanup-Mountpoints
 sfc /scannow
-net start bits
+::net start bits
 net start wuauserv
 net start msiserver
-net start cryptsvc
+::net start cryptsvc
 net start appidsvc
 net start winmgmt
-net start pla
+::net start pla
 bcdedit /deletevalue nointegritychecks
 bcdedit /deletevalue loadoptions
 bcdedit /debug off
