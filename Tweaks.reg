@@ -15,8 +15,8 @@ Windows Registry Editor Version 5.00
 "DirectXUserGlobalSettings"="SwapEffectUpgradeEnable=0;" ; optimizations for windowed games (w11) 1 on, 0 off
 
 [HKEY_CURRENT_USER\Software\Microsoft\DirectX\GraphicsSettings]
-"SwapEffectUpgradeCache"=dword:00000001
-"SpecificGPUOptionApplicable"=dword:00000001
+"SwapEffectUpgradeCache"=dword:00000000 ; optimizations for windowed games (w11) 1 on, 0 off
+"SpecificGPUOptionApplicable"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games]
 "Affinity"=dword:00000000
@@ -410,20 +410,20 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0cc5b647-c1df-4637-891a-dec35c318583]
 "Attributes"=dword:00000002
-"ValueMax"=dword:00000000 ; unpark 00000064, 00000000
-"ValueMin"=dword:00000000 ; unpark 00000064, 00000000
+"ValueMax"=dword:00000000 ; unpark 00000064, park 00000000
+"ValueMin"=dword:00000000 ; unpark 00000064, park 00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0cc5b647-c1df-4637-891a-dec35c318584]
 "Attributes"=dword:00000002
-"ValueMax"=dword:00000000 ; unpark 00000064, 00000000
-"ValueMin"=dword:00000000 ; unpark 00000064, 00000000
+"ValueMax"=dword:00000000 ; unpark 00000064, park 00000000
+"ValueMin"=dword:00000000 ; unpark 00000064, park 00000000
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
 "EnablePrefetch"=dword:00000003 ; 00000003, 00000000
 "EnablePrefetcher"=dword:00000003 ; 00000003, 00000000
 "EnableSuperfetch"=dword:00000003 ; =-, 00000003
-"EnableBootTrace"=dword:00000000 ; =-, 00000000 off/00000001 on
-"SfTracingState"=dword:00000000 ; =-, 00000000 off/00000001 on
+"EnableBootTrace"=dword:00000000 ; =-, 00000000/00000001
+"SfTracingState"=dword:00000000 ; =-, 00000000/00000001
 "FIPrefetchDelayMs"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectX]
@@ -1188,8 +1188,8 @@ Windows Registry Editor Version 5.00
 "DisableMultiSourceMPOCheck"=dword:00000001
 "DisableOverclockedPstates"=dword:00000001
 "Disable_OverlayDSQualityEnhancement"=dword:00000001
-"DisableOverlay"=dword:00000001 ; 00000001/00000000
-"DisableOverlays"=dword:00000001 ; 00000001/00000000
+"DisableOverlay"=dword:00000000 ; 00000001/00000000
+"DisableOverlays"=dword:00000000 ; 00000001/00000000
 "DisablePFonDP"=dword:00000001
 "DisablePreemption"=dword:00000001
 "DisablePreemptionOnS3S4"=dword:00000001 ; 00000001/00000000
@@ -1342,8 +1342,8 @@ Windows Registry Editor Version 5.00
 "DisableKmRenderBoost"=dword:00000000
 "DisableMshybridNvsrSwitch"=dword:00000001
 "DisableOverclockedPstates"=dword:00000001
-"DisableOverlay"=dword:00000001
-"DisableOverlays"=dword:00000001
+"DisableOverlay"=dword:00000000
+"DisableOverlays"=dword:00000000
 "Disable_OverlayDSQualityEnhancement"=dword:00000001
 "DisablePFonDP"=dword:00000001
 "DisablePowerGating"=dword:00000001
@@ -1467,8 +1467,8 @@ Windows Registry Editor Version 5.00
 "TurboQueue"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\GraphicsDrivers]
-"DisableOverlay"=dword:00000001
-"DisableOverlays"=dword:00000001
+"DisableOverlay"=dword:00000000
+"DisableOverlays"=dword:00000000
 "DriverProtection"=dword:00000000
 "DxgkWaitForIdle"=dword:00000000
 "EnableRuntimePowerManagement"=dword:00000000
@@ -1514,8 +1514,8 @@ Windows Registry Editor Version 5.00
 "DisableKmRender"=dword:00000000
 "DisableKmRenderBoost"=dword:00000000
 "DisableOverclockedPstates"=dword:00000001
-"DisableOverlay"=dword:00000001
-"DisableOverlays"=dword:00000001
+"DisableOverlay"=dword:00000000
+"DisableOverlays"=dword:00000000
 "Disable_OverlayDSQualityEnhancement"=dword:00000001
 "DisablePFonDP"=dword:00000001
 "DisablePowerGating"=dword:00000001
@@ -2481,13 +2481,13 @@ Windows Registry Editor Version 5.00
 "AllowNewCachesByDefault"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CompatTelRunner.exe]
-"Debugger"="%windir%\\System32\\systray.exe"
+"Debugger"="c:\\Windows\\System32\\systray.exe"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeviceCensus.exe]
-"Debugger"="%windir%\\System32\\systray.exe"
+"Debugger"="c:\\Windows\\System32\\systray.exe"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wsqmcons.exe]
-"Debugger"="%windir%\\System32\\systray.exe"
+"Debugger"="c:\\Windows\\System32\\systray.exe"
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WDI\{9c5a40da-b965-4fc3-8781-88dd50a6299d}]
 "ScenarioExecutionEnabled"=dword:00000000
@@ -3245,17 +3245,21 @@ Windows Registry Editor Version 5.00
 "value"=dword:00000000
 
 [HKEY_CURRENT_USER\Control Panel\Mouse]
-"SnapToDefaultButton"="0"
+"DoubleClickSpeed"="900"
+"LowLevelHooksTimeout"="1000"
+"MouseAccel"="0"
+"MouseAccel_Max"="0"
+"MouseAccel_Scale"="0"
+"MouseSensitivity"="10"
 "MouseSpeed"="0"
 "MouseThreshold1"="0"
 "MouseThreshold2"="0"
-"DoubleClickSpeed"="900"
-"MouseSensitivity"="10"
-"LowLevelHooksTimeout"="1000"
+"RawInput"="1"
+"RawMouseThrottleDuration"=dword:00000000
 "RawMouseThrottleEnabled"=dword:00000000
 "RawMouseThrottleForced"=dword:00000000
-"RawMouseThrottleDuration"=dword:00000000
 "RawMouseThrottleLeeway"=dword:00000000
+"SnapToDefaultButton"="0"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Paint]
 "DisableGenerativeFill"=dword:00000001
@@ -3296,6 +3300,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\SQMLogger]
 "Start"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Diagtrack-Listener]
+"Start"=dword:00000000
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\AutoLogger-Diagtrack-Listener]
 "Start"=dword:00000000
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\DiagLog]
@@ -3492,6 +3497,19 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WFDSConMgrSvc]
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WwanSvc]
+"Start"=dword:00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\UsoSvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wisvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DsmSvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PushToInstall]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\OSRSS]
 "Start"=dword:00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\PerfNet\Performance]
@@ -4294,10 +4312,14 @@ Windows Registry Editor Version 5.00
 "UserChoiceActiveHoursEnd"=dword:00000000
 "UserChoiceActiveHoursStart"=dword:00000006
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Orchestrator]
+"EnableUUPScan"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
 "AUOptions"=dword:00000002
 "AutoInstallMinorUpdates"=dword:00000000
 "NoAutoUpdate"=dword:00000001
+"UseWUServer"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\AU]
 "NoAutorebootWithLoggedOnUser"=dword:00000001
@@ -4479,6 +4501,16 @@ Windows Registry Editor Version 5.00
 "DisableOSUpgrade"=dword:00000001
 "DisableWUfBSafeguards"=dword:00000001
 "ExcludeWUDriversInQualityUpdate"=dword:00000001
+"TargetGroup"="Workstations"
+"TargetGroupEnabled"=dword:00000000
+"DisableWindowsUpdateAccess"=dword:00000001
+"SetAutoRestartNotificationDisable"=dword:00000001
+"DoNotConnectToWindowsUpdateInternetLocations"=dword:00000001
+"DisableDualScan"=dword:00000001
+"SetDisableUXWUAccess"=dword:00000001
+"WUServer"=""
+"WUStatusServer"=""
+"UpdateServiceUrlAlternate"=""
 
 [HKEY_CURRENT_USER\Control Panel\UnsupportedHardwareNotificationCache]
 "SV1"=dword:00000000
@@ -4593,6 +4625,69 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\EditionOverrides]
 "UserSetting_DisableStartupSound"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers]
+"authenticodeenabled"=dword:00000000
+"DefaultLevel"=dword:00040000
+"TransparentEnabled"=dword:00000001
+"PolicyScope"=dword:00000000
+"ExecutableTypes"=hex(7):41,00,44,00,45,00,00,00,41,00,44,00,50,00,00,00,42,00,41,\
+  00,53,00,00,00,42,00,41,00,54,00,00,00,43,00,48,00,4d,00,00,00,43,00,4d,00,44,\
+  00,00,00,43,00,4f,00,4d,00,00,00,43,00,50,00,4c,00,00,00,43,00,52,00,54,00,00,\
+  00,45,00,58,00,45,00,00,00,48,00,4c,00,50,00,00,00,48,00,54,00,41,00,00,00,49,\
+  00,4e,00,46,00,00,00,49,00,4e,00,53,00,00,00,49,00,53,00,50,00,00,00,4c,00,4e,\
+  00,4b,00,00,00,4d,00,44,00,42,00,00,00,4d,00,44,00,45,00,00,00,4d,00,53,00,43,\
+  00,00,00,4d,00,53,00,49,00,00,00,4d,00,53,00,50,00,00,00,4d,00,53,00,54,00,00,\
+  00,4f,00,43,00,58,00,00,00,50,00,43,00,44,00,00,00,50,00,49,00,46,00,00,00,52,\
+  00,45,00,47,00,00,00,53,00,43,00,52,00,00,00,53,00,48,00,53,00,00,00,55,00,52,\
+  00,4c,00,00,00,56,00,42,00,00,00,57,00,53,00,43,00,00,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\0\Paths\{32a1661a-6479-425a-ab56-0a88213a31a2}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CoreAI_cw5n1h2txyewy"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\0\Paths\{4a9abca6-5931-4688-85ec-45151b74d564}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\0\Paths\{cb7dea17-be21-49e1-8bab-477c3762313c}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SystemApps\\MicrosoftWindows.Client.AIX_cw5n1h2txyewy"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\0\Paths\{cba2b0e5-48cd-432e-b99e-e1911230fa4c}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SystemApps\\Microsoft.Windows.CloudExperienceHost_cw5n1h2txyewy"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\0\Paths\{eba85572-f7f5-4a16-8462-b1e14f3c9767}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SystemApps\\Microsoft.Windows.AppRep.ChxApp_cw5n1h2txyewy"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\262144\Paths\{191cd7fa-f240-4a17-8986-94d480a6c8ca}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,48,00,4b,00,45,00,59,00,5f,00,4c,00,4f,00,43,00,41,00,4c,\
+  00,5f,00,4d,00,41,00,43,00,48,00,49,00,4e,00,45,00,5c,00,53,00,4f,00,46,00,54,\
+  00,57,00,41,00,52,00,45,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,6f,00,66,\
+  00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,20,00,4e,00,54,00,5c,\
+  00,43,00,75,00,72,00,72,00,65,00,6e,00,74,00,56,00,65,00,72,00,73,00,69,00,6f,\
+  00,6e,00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,00,\
+  00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\262144\Paths\{d2c34ab2-529a-46b2-b293-fc853fce72ea}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,48,00,4b,00,45,00,59,00,5f,00,4c,00,4f,00,43,00,41,00,4c,\
+  00,5f,00,4d,00,41,00,43,00,48,00,49,00,4e,00,45,00,5c,00,53,00,4f,00,46,00,54,\
+  00,57,00,41,00,52,00,45,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,6f,00,66,\
+  00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,00,43,00,75,00,72,\
+  00,72,00,65,00,6e,00,74,00,56,00,65,00,72,00,73,00,69,00,6f,00,6e,00,5c,00,50,\
+  00,72,00,6f,00,67,00,72,00,61,00,6d,00,46,00,69,00,6c,00,65,00,73,00,44,00,69,\
+  00,72,00,00,00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
 "ConsentPromptBehaviorAdmin"=dword:00000000
@@ -5217,6 +5312,7 @@ Windows Registry Editor Version 5.00
 "TouchKeyboard_EnableKeyAudioFeedback"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoWindowsUpdate"=dword:00000001
 "AllowOnlineTips"=dword:00000000
 "ClearRecentDocsOnExit"=dword:00000001
 "DisableBindDirectlyToPropertySetStorage"=dword:00000001
@@ -8268,6 +8364,131 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\DusmSvc]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\wercplsupport]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\WerSvc]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\diagnosticshub.standardcollector.service]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\dmwappushservice]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\pla]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\PNRPAutoReg]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\BcastDVRUserService]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\OneSyncSvc]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\UnistoreSvc]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\UserDataSvc]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\SecurityHealthService]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Sense]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\WdBoot]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\WdFilter]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\WdNisDrv]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\WdNisSvc]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\WinDefend]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\wscsvc]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\DiagTrack]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\DPS]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\WdiServiceHost]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\WdiSystemHost]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\wisvc]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\XblAuthManager]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\XblGameSave]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\xboxgip]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\XboxGipSvc]
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\XboxNetApiSvc]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\AppID]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Application Experience]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\AppxDeploymentClient]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Autochk]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\CloudExperienceHost]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Customer Experience 
+Improvement Program]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Device Information]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Diagnosis]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\DiskDiagnostic]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\DiskFootprint]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Feedback]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Flighting]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Location]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Maintenance]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Maps]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\MemoryDiagnostic]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\NetTrace]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Offline Files]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Power Efficiency Diagnostics]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\PushToInstall]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Ras]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Registry]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Time Synchronization]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Time Zone]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\User Profile Service]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Windows Defender]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Windows Error Reporting]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Windows Filtering Platform]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\WindowsUpdate]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\UpdateOrchestrator]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\WaaSMedic]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\XblGameSave]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\SecurityHealth]
 
 [-HKEY_CURRENT_USER\AppEvents\Schemes\Apps]
 
