@@ -92,6 +92,9 @@ taskkill /f /t /im WmiPrvSE.exe
 taskkill /f /t /im WUDFHost.exe
 taskkill /f /t /im yourphone.exe
 taskkill /f /t /im crashhelper.exe
+reg delete "HKEY_CURRENT_USER\Software\Spoon" /f
+reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&1&UID37124\Device Parameters" /v EDID /f
+reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\IrisService" /f
 sc start "SysMain"
 ::sc stop "SysMain"
 sc config "SysMain" start= auto
@@ -244,10 +247,19 @@ sc config "KtmRm" start= disabled
 sc stop "WSAIFabricSvc"
 sc config WSAIFabricSvc start= disabled
 sc config winmgmt start= auto
+net stop UsoSvc
+net stop wisvc
+net stop BITS
+net stop WaaSMedicSvc
+net stop cryptsvc
+net stop DsmSvc
+net stop PushToInstall
+net stop LicenseManager
+net stop sppsvc
+net stop OSRSS
 net start GraphicsPerfSvc
 ie4uinit.exe -ClearIconCache
 powercfg.exe hibernate off
-reg delete "HKEY_CURRENT_USER\Software\Spoon" /f
 bcdedit /set disabledynamictick Yes
 ::bcdedit /set disabledynamictick No
 ::bcdedit /deletevalue disabledynamictick
@@ -260,8 +272,8 @@ bcdedit /set uselegacyapicmode No
 ::bcdedit /deletevalue uselegacyapicmode
 bcdedit /set useplatformclock false
 ::bcdedit /deletevalue useplatformclock
-bcdedit /set useplatformtick Yes
-::bcdedit /set useplatformtick No
+::bcdedit /set useplatformtick Yes
+bcdedit /set useplatformtick No
 ::bcdedit /deletevalue useplatformtick
 bcdedit /set x2apicpolicy Enable
 ::bcdedit /set x2apicpolicy Disable
@@ -376,8 +388,6 @@ powershell -Command "Set-ProcessMitigation -System -Disable DEP,EmulateAtlThunks
 bcdedit /deletevalue nointegritychecks
 bcdedit /deletevalue loadoptions
 taskkill /f /t /im CompPkgSrv.exe
-reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&1&UID37124\Device Parameters" /v EDID /f
-reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\IrisService" /f
 w32tm /resync
 taskkill /f /t /im SearchProtocolHost.exe
 taskkill /f /t /im SearchIndexer.exe
@@ -428,6 +438,31 @@ del /f /q %SystemRoot%\System32\drivers\Acpidev.sys
 del /f /q %SystemRoot%\System32\drivers\Acpipagr.sys
 del /f /q %SystemRoot%\System32\drivers\Acpitime.sys
 del /f /q %SystemRoot%\System32\drivers\Acpipmi.sys
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /va /f
+reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths" /va /f
+reg delete "HKCU\Software\Microsoft\Direct3D\MostRecentApplication" /va /f
+reg delete "HKLM\SOFTWARE\Microsoft\Direct3D\MostRecentApplication" /va /f
+reg delete "HKCU\Software\Microsoft\MediaPlayer\Player\RecentFileList" /va /f
+reg delete "HKCU\Software\Microsoft\MediaPlayer\Player\RecentURLList" /va /f
+reg delete "HKLM\SOFTWARE\Microsoft\MediaPlayer\Player\RecentFileList" /va /f
+reg delete "HKLM\SOFTWARE\Microsoft\MediaPlayer\Player\RecentURLList" /va /f
+reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs" /va /f
+reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs" /va /f
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSaveMRU" /va /f
+reg delete "HKCU\Software\Microsoft\Search Assistant\ACMru" /va /f
+reg delete "HKCU\Software\Adobe\MediaBrowser\MRU" /va /f
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\Paint\Recent File List" /va /f
+reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Paint\Recent File List" /va /f
+reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Wordpad\Recent File List" /va /f
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Map Network Drive MRU" /va /f
+reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Map Network Drive MRU" /va /f
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU" /va /f
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRULegacy" /va /f
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit" /va /f
+reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Regedit" /va /f
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit\Favorites" /va /f
+reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Regedit\Favorites" /va /f
+bitsadmin.exe /reset /allusers
 ::timeout /t 8 /nobreak
 taskkill /f /t /im node.exe
 taskkill /f /t /im powershell.exe
