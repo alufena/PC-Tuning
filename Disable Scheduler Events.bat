@@ -139,10 +139,7 @@ schtasks /change /tn "\Microsoft\Office\OfficeTelemetryAgentFallBack2016" /disab
 schtasks /change /tn "\Microsoft\Office\OfficeTelemetryAgentLogOn2016" /disable
 schtasks /change /TN "\Microsoft\Office\Office 15 Subscription Heartbeat" /disable
 schtasks /change /TN "\Microsoft\Windows\WindowsUpdate\Automatic App Update" /disable
-echo Desativando tarefas do MEGAsync...
 powershell -Command "Get-ScheduledTask | Where-Object { $_.TaskName -like 'MEGAsync Update Task*' } | ForEach-Object { Disable-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath }"
-echo Desativando tarefas do Google Updater...
 powershell -Command "Get-ScheduledTask | Where-Object { $_.TaskName -like 'GoogleUpdaterTaskSystem*' } | ForEach-Object { Disable-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath }"
-echo Desativando tarefas do Firefox Default Browser Agent...
 powershell -Command "Get-ScheduledTask | Where-Object { $_.TaskName -like 'Firefox Default Browser Agent*' } | ForEach-Object { Disable-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath }"
 exit
