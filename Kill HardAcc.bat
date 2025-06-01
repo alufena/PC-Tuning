@@ -252,16 +252,16 @@ net start GraphicsPerfSvc
 bitsadmin.exe /reset /allusers
 ie4uinit.exe -ClearIconCache
 w32tm /resync
-net stop UsoSvc
-net stop wisvc
-net stop BITS
-net stop WaaSMedicSvc
-net stop cryptsvc
-net stop DsmSvc
-net stop PushToInstall
-net stop LicenseManager
-net stop sppsvc
-net stop OSRSS
+sc stop UsoSvc
+sc stop wisvc
+sc stop BITS
+sc stop WaaSMedicSvc
+sc stop cryptsvc
+sc stop DsmSvc
+sc stop PushToInstall
+sc stop LicenseManager
+sc stop sppsvc
+sc stop OSRSS
 powercfg.exe hibernate off
 bcdedit /set disabledynamictick Yes
 ::bcdedit /set disabledynamictick No
