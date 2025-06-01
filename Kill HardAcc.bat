@@ -1,5 +1,8 @@
 sc start "TabletInputService"
 sc config "TabletInputService" start= auto
+reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&1&UID37124\Device Parameters" /v EDID /f
+reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\IrisService" /f
+reg delete "HKEY_CURRENT_USER\Software\Spoon" /f
 taskkill /f /t /im acrotray.exe
 taskkill /f /t /im adb.exe
 taskkill /f /t /im AdobeIPCBroker.exe
@@ -92,9 +95,7 @@ taskkill /f /t /im WmiPrvSE.exe
 taskkill /f /t /im WUDFHost.exe
 taskkill /f /t /im yourphone.exe
 taskkill /f /t /im crashhelper.exe
-reg delete "HKEY_CURRENT_USER\Software\Spoon" /f
-reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&1&UID37124\Device Parameters" /v EDID /f
-reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\IrisService" /f
+taskkill /f /t /im SystemSettingsAdminFlows.exe
 sc start "SysMain"
 ::sc stop "SysMain"
 sc config "SysMain" start= auto
@@ -247,6 +248,10 @@ sc config "KtmRm" start= disabled
 sc stop "WSAIFabricSvc"
 sc config WSAIFabricSvc start= disabled
 sc config winmgmt start= auto
+net start GraphicsPerfSvc
+bitsadmin.exe /reset /allusers
+ie4uinit.exe -ClearIconCache
+w32tm /resync
 net stop UsoSvc
 net stop wisvc
 net stop BITS
@@ -257,8 +262,6 @@ net stop PushToInstall
 net stop LicenseManager
 net stop sppsvc
 net stop OSRSS
-net start GraphicsPerfSvc
-ie4uinit.exe -ClearIconCache
 powercfg.exe hibernate off
 bcdedit /set disabledynamictick Yes
 ::bcdedit /set disabledynamictick No
@@ -288,31 +291,27 @@ bcdedit /set bootux Disabled
 ::bcdedit /deletevalue bootux
 bcdedit /set configaccesspolicy Default
 ::bcdedit /deletevalue configaccesspolicy
-bcdedit /set debug No
-::bcdedit /deletevalue debug
 bcdedit /set disableelamdrivers Yes
 ::bcdedit /deletevalue disableelamdrivers
+bcdedit /set debug No
+::bcdedit /deletevalue debug
 bcdedit /set ems No
 ::bcdedit /deletevalue ems
-bcdedit /set firstmegabytepolicy UseAll
-::bcdedit /deletevalue firstmegabytepolicy
 bcdedit /set increaseuserva 268435328
 ::bcdedit /deletevalue increaseuserva
-bcdedit /set integrityservices disable
-::bcdedit /deletevalue integrityservices
 bcdedit /set isolatedcontext No
 ::bcdedit /deletevalue isolatedcontext
 bcdedit /set linearaddress57 OptOut
 ::bcdedit /deletevalue linearaddress57
 bcdedit /set maxproc yes
 ::bcdedit /deletevalue maxproc
-bcdedit /set MSI Default
-::bcdedit /deletevalue MSI
 bcdedit /set nolowmem Yes
 ::bcdedit /deletevalue nolowmem
 bcdedit /set numproc 16
 ::bcdedit /deletevalue numproc
-bcdedit /set onecpu No
+bcdedit /set MSI Default
+::bcdedit /deletevalue MSI
+:bcdedit /set onecpu No
 ::bcdedit /deletevalue onecpu
 bcdedit /set quietboot yes
 ::bcdedit /deletevalue quietboot
@@ -326,7 +325,7 @@ bcdedit /set vm no
 ::bcdedit /deletevalue vm
 bcdedit /set vsmlaunchtype off
 ::bcdedit /deletevalue vsmlaunchtype
-::bcdedit /set bootdebug Off
+bcdedit /set bootdebug Off
 bcdedit /bootdebug Off
 ::bcdedit /deletevalue /bootdebug
 bdedit /bootems Off
@@ -345,9 +344,6 @@ bcdedit /set extendedinput Yes
 ::bcdedit /deletevalue /extendedinput
 bcdedit /set forcefipscrypto No
 ::bcdedit /deletevalue /forcefipscrypto
-::bcdedit /set {globalsettings} custom:16000067 true
-::bcdedit /set graphicsmodedisabled No
-bcdedit /deletevalue graphicsmodedisabled
 bcdedit /set halbreakpoint No
 ::bcdedit /deletevalue halbreakpoint
 bcdedit /set highestmode Yes
@@ -360,6 +356,13 @@ bcdedit /set sos On
 ::bcdedit /deletevalue sos
 bcdedit /timeout 0
 ::bcdedit /deletevalue timeout
+::bcdedit /set {globalsettings} custom:16000067 true
+::bcdedit /set graphicsmodedisabled No
+::bcdedit /deletevalue graphicsmodedisabled
+::bcdedit /set integrityservices disable
+::bcdedit /deletevalue integrityservices
+::bcdedit /set firstmegabytepolicy UseAll
+::bcdedit /deletevalue firstmegabytepolicy
 %windir%\system32\lodctr /R
 %windir%\sysWOW64\lodctr /R
 C:\Windows\SysWOW64\wbem\winmgmt.exe /RESYNCPERF
@@ -384,11 +387,10 @@ taskkill /f /t /im UserOOBEBroker.exe
 taskkill /f /t /im WMIADAP.exe
 bcdedit /set nx AlwaysOff
 ::bcdedit /deletevalue nx
-powershell -Command "Set-ProcessMitigation -System -Disable DEP,EmulateAtlThunks,ForceRelocateImages,RequireInfo,BottomUp,HighEntropy,StrictHandle,DisableWin32kSystemCalls,AuditSystemCall,DisableExtensionPoints,BlockDynamicCode,AllowThreadsToOptOut,AuditDynamicCode,CFG,SuppressExports,StrictCFG,MicrosoftSignedOnly,AllowStoreSignedBinaries,AuditMicrosoftSigned,AuditStoreSigned,EnforceModuleDependencySigning,DisableNonSystemFonts,AuditFont,BlockRemoteImageLoads,BlockLowLabelImageLoads,PreferSystem32,AuditRemoteImageLoads,AuditLowLabelImageLoads,AuditPreferSystem32,SEHOP,AuditSEHOP,SEHOPTelemetry,TerminateOnError"
 bcdedit /deletevalue nointegritychecks
 bcdedit /deletevalue loadoptions
+powershell -Command "Set-ProcessMitigation -System -Disable DEP,EmulateAtlThunks,ForceRelocateImages,RequireInfo,BottomUp,HighEntropy,StrictHandle,DisableWin32kSystemCalls,AuditSystemCall,DisableExtensionPoints,BlockDynamicCode,AllowThreadsToOptOut,AuditDynamicCode,CFG,SuppressExports,StrictCFG,MicrosoftSignedOnly,AllowStoreSignedBinaries,AuditMicrosoftSigned,AuditStoreSigned,EnforceModuleDependencySigning,DisableNonSystemFonts,AuditFont,BlockRemoteImageLoads,BlockLowLabelImageLoads,PreferSystem32,AuditRemoteImageLoads,AuditLowLabelImageLoads,AuditPreferSystem32,SEHOP,AuditSEHOP,SEHOPTelemetry,TerminateOnError"
 taskkill /f /t /im CompPkgSrv.exe
-w32tm /resync
 taskkill /f /t /im SearchProtocolHost.exe
 taskkill /f /t /im SearchIndexer.exe
 taskkill /f /t /im SearchFilterHost.exe
@@ -462,7 +464,6 @@ reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit" /va 
 reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Regedit" /va /f
 reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit\Favorites" /va /f
 reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Regedit\Favorites" /va /f
-bitsadmin.exe /reset /allusers
 ::timeout /t 8 /nobreak
 taskkill /f /t /im node.exe
 taskkill /f /t /im powershell.exe
