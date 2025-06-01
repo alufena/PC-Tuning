@@ -9,17 +9,16 @@ net stop msiserver
 net stop appidsvc
 net stop winmgmt
 ::net stop pla
-Ren %Systemroot%\SoftwareDistribution SoftwareDistribution.old
-Ren %Systemroot%\System32\catroot2 catroot2.old
 netsh winsock reset
 netsh winsock reset proxy
 regsvr32.exe /s atl.dll
 regsvr32.exe /s urlmon.dll
 regsvr32.exe /s mshtml.dll
+regsvr32.exe /s quartz.dll
 rundll32.exe pnpclean.dll,RunDLL_PnpClean /DRIVERS /MAXCLEAN
 vssadmin delete shadows /for=c: /all /quiet
-::DISM /Online /Cleanup-Image /ScanHealth
-::DISM /Online /Cleanup-Image /CheckHealth
+DISM /Online /Cleanup-Image /ScanHealth
+DISM /Online /Cleanup-Image /CheckHealth
 DISM /Online /Cleanup-Image /RestoreHealth
 DISM /Online /Cleanup-Image /StartComponentCleanup
 DISM /Online /Cleanup-Image /StartComponentCleanup /ResetBase
@@ -27,13 +26,6 @@ DISM /Online /Cleanup-Image /StartComponentCleanup /SPSuperseded
 DISM /Online /Cleanup-Image /AnalyzeComponentStore
 DISM /Online /Set-ReservedStorageState /State:Disabled
 dism.exe /online /disable-feature /FeatureName:recall /noRestart
-dism.exe /online /disable-feature:MediaPlayback
-dism.exe /online /disable-feature:SearchEngine-Client-Package
-dism.exe /online /disable-feature:Windows-Defender-Default-Definitions
-dism.exe /online /disable-feature:WindowsMediaPlayer
-dism.exe /online /Remove-Capability /CapabilityName:Browser.InternetExplorer~~~~0.0.11.0
-dism.exe /online /Remove-Capability /CapabilityName:Media.WindowsMediaPlayer~~~~0.0.12.0
-dism.exe /online /disable-feature:Internet-Explorer-Optional-amd64
 DISM /Cleanup-Wim
 DISM /Cleanup-Mountpoints
 sfc /scannow
