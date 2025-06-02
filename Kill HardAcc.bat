@@ -311,7 +311,7 @@ bcdedit /set numproc 16
 ::bcdedit /deletevalue numproc
 bcdedit /set MSI Default
 ::bcdedit /deletevalue MSI
-:bcdedit /set onecpu No
+bcdedit /set onecpu No
 ::bcdedit /deletevalue onecpu
 bcdedit /set quietboot yes
 ::bcdedit /deletevalue quietboot
@@ -400,6 +400,7 @@ for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_
 for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -like '*Device Association*'} | Select-Object -ExpandProperty InstanceId"') do (
     pnputil /disable-device "%%i"
 )
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object { $_.FriendlyName -like '*PCI Device*' -and $_.Status -eq 'Error' } | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
 for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'Microsoft GS Wavetable Synth'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
 for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -like '*RRAS*'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
 for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'Composite Bus Enumerator'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
