@@ -449,15 +449,15 @@ Windows Registry Editor Version 5.00
 "NetworkThrottlingIndex"=dword:ffffffff
 "SystemResponsiveness"=dword:00000000 ; 00000014, 00000000/00000001/0000000a
 
-; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
-; "CpuPriorityClass"=dword:00000001
-; "IoPriority"=dword:00000001
-; "PagePriority"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000001
+"PagePriority"=dword:00000001
 
-; [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
-; "CpuPriorityClass"=dword:00000001
-; "IoPriority"=dword:00000001
-; "PagePriority"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000001
+"PagePriority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
@@ -470,24 +470,24 @@ Windows Registry Editor Version 5.00
 "PagePriority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006  ; =-, 00000004/00000006
-"IoPriority"=dword:00000006 ; =-, 00000003/00000006
-"PagePriority"=dword:00000006
+"CpuPriorityClass"=dword:00000001  ; =-, 00000004/00000006
+"IoPriority"=dword:00000001 ; =-, 00000003/00000006
+"PagePriority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006  ; =-, 00000004/00000006
-"IoPriority"=dword:00000006 ; =-, 00000003/00000006
-"PagePriority"=dword:00000006
+"CpuPriorityClass"=dword:00000001  ; =-, 00000004/00000006
+"IoPriority"=dword:00000001 ; =-, 00000003/00000006
+"PagePriority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000004  ; =-, 00000004/00000006
 "IoPriority"=dword:00000003 ; =-, 00000003/00000006
-"PagePriority"=dword:00000006
+"PagePriority"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000004
 "IoPriority"=dword:00000003
-"PagePriority"=dword:00000006
+"PagePriority"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NDIS\Parameters]
 "CheckFwVersion"=dword:00000000
@@ -651,7 +651,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control]
 "DisableRemoteScmEndpoints"=dword:00000000
 "HandlerTimeout"=dword:7FFFFFFF
-"SvcHostSplitThresholdInKB"=dword:000f4240
+"SvcHostSplitThresholdInKB"=dword:1000000
 "WaitToKillServiceTimeout"="1000"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
@@ -1014,13 +1014,23 @@ Windows Registry Editor Version 5.00
 "WindowedGsyncGeforceFlag"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
+"DwmProcessPriority"=dword:00000004
+"UseCopyOnPresent"=dword:00000001
+"DiscardSurfaceOnMinimize"=dword:00000001
+"AlwaysOffscreenComposition"=dword:00000001
+"ForceGdiComposition"=dword:00000001
+"DisableHardwareComposition"=dword:00000001
+"ForceModeEnumeration"=dword:00000001
+"BufferAgingTimeout"=dword:00000000
+"EnableAcrylicBlur"=dword:00000000
+"EnableBackdropBrush"=dword:00000000
 "AlwaysHibernateThumbnails"=dword:00000000
 "AnimationAttributionEnabled"=dword:00000000 ; 00000001, 00000000
 "AnimationAttributionHashingEnabled"=dword:00000000 ; 00000001, 00000000
 "AnimationsShiftKey"=dword:00000000
 "Blur"=dword:00000000
 "Composition"=dword:00000000
-"CompositionPolicy"=dword:00000000
+"CompositionPolicy"=dword:00000001 ; 00000000/00000001
 "DDisplayTestMode"=dword:00000000
 "DebugFailFast"=dword:00000000
 "DisableAdvancedDirectFlip"=dword:00000001
@@ -1080,7 +1090,6 @@ Windows Registry Editor Version 5.00
 "SuperWetEnabled"=dword:00000001
 "TelemetryFramesSequenceMaximumPeriodMilliseconds"=dword:00000000 ; 00000000/000001f4
 "UseHWDrawListEntriesOnWARP"=dword:00000001
-"ForceModeEnumeration"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
 "AlwaysHibernateThumbnails"=dword:00000000
@@ -4116,6 +4125,8 @@ Windows Registry Editor Version 5.00
 "ShortcutNameTemplate"="%s"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarAcrylicOpacity"=dword:00000000
+"DisableBackdropEffect"=dword:00000001
 "AutoCheckSelect"=dword:00000000
 "AutoSearch"=dword:00000000
 "DisableThumbnailCache"=dword:00000001
@@ -4943,6 +4954,7 @@ Windows Registry Editor Version 5.00
 "WaitToKillServiceTimeout"="1000"
 "Win8DpiScaling"=dword:00000000 ; 00000001/00000000
 "WindowArrangementActive"="0"
+"PreferredRefreshRate"="60"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TSFairShare\NetFS]
 "EnableFairShare"=dword:00000000
@@ -6802,6 +6814,9 @@ Windows Registry Editor Version 5.00
 "Sound on Activation"=dword:00000000
 "Warning Sounds"=dword:00000000
 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Accessibility]
+"AnimationFilter"=dword:00000003
+
 [HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Accessibility]
 "Configuration"=-
 
@@ -6918,6 +6933,7 @@ Windows Registry Editor Version 5.00
 "Enabled"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
+"ImmersiveSearch"=dword:00000000
 "AnyAboveLockAppsActive"=dword:00000000
 "BackgroundAppGlobalToggle"=dword:00000000
 "BingSearchEnabled"=dword:00000000
@@ -7330,6 +7346,7 @@ Windows Registry Editor Version 5.00
 "PixelStructure"=dword:00000001
 "TextContrastLevel"=dword:00000006
 "UseReferenceRasterizer"=dword:00000000
+"RenderTier"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Avalon.Graphics]
 "ClearTypeLevel"=dword:00000064
@@ -7341,6 +7358,7 @@ Windows Registry Editor Version 5.00
 "PixelStructure"=dword:00000001
 "TextContrastLevel"=dword:00000006
 "UseReferenceRasterizer"=dword:00000000
+"RenderTier"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Avalon.Graphics]
 "DisableHWAcceleration"=dword:00000001
@@ -7352,11 +7370,13 @@ Windows Registry Editor Version 5.00
 "PixelStructure"=dword:00000001
 "TextContrastLevel"=dword:00000006
 "UseReferenceRasterizer"=dword:00000000
+"RenderTier"=dword:00000000
 
 [HKEY_USERS\.DEFAULT\Software\Microsoft\Avalon.Graphics]
 "DisableHWAcceleration"=dword:00000001
 "MaxMultisampleSize"=dword:00000000
 "UseReferenceRasterizer"=dword:00000000
+"RenderTier"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR]
 "AppCaptureEnabled"=dword:00000000
@@ -9021,6 +9041,10 @@ Windows Registry Editor Version 5.00
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe]
 "UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\EasyAntiCheat_EOS.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000001
+"PagePriority"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
 "IoPriority"=dword:00000006
@@ -9521,6 +9545,10 @@ Windows Registry Editor Version 5.00
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe\PerfOptions]
 "UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\EasyAntiCheat_EOS.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000001
+"PagePriority"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
 "IoPriority"=dword:00000006
@@ -10393,7 +10421,7 @@ Windows Registry Editor Version 5.00
 "EmulatePointSprites"=dword:00000000
 "DisableMMX"=dword:00000000
 "ForceNoSysLock"=dword:00000000
-"ForceRefreshRate"=dword:0000003c
+"ForceRefreshRate"=dword:00000060
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\DirectDraw]
 "DisableAGPSupport"=dword:00000000
@@ -10403,7 +10431,7 @@ Windows Registry Editor Version 5.00
 "EmulatePointSprites"=dword:00000000
 "DisableMMX"=dword:00000000
 "ForceNoSysLock"=dword:00000000
-"ForceRefreshRate"=dword:0000003c
+"ForceRefreshRate"=dword:00000060
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D]
 "DisableDM"=dword:00000001
