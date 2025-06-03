@@ -129,12 +129,12 @@ Windows Registry Editor Version 5.00
 "GameDVR_HonorUserDSEBehaviorMode"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mouclass\Parameters]
-"MouseDataQueueSize"=dword:00000010 ; 00000064, 00000016/00000010
+"MouseDataQueueSize"=dword:00000010 ; 00000064, 00000010/00000014/00000016
 "ThreadPriority"=dword:0000001f
 "WppRecorder_UseTimeStamp"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters]
-"KeyboardDataQueueSize"=dword:00000003 ; 00000064, 00000010/00000003
+"KeyboardDataQueueSize"=dword:00000003 ; 00000064, 00000003/00000010/00000014
 "ThreadPriority"=dword:0000001f
 "WppRecorder_UseTimeStamp"=dword:00000000
 
@@ -256,7 +256,7 @@ Windows Registry Editor Version 5.00
 "PriorityControl"=dword:00000020 ; 00000020/00000032
 "QuantumLength"=dword:0000000e ; 0000000e/00000014
 "RebalanceMinPriority"=dword:00000001
-"SerializeTimerExpiration"=dword:00000002 ; 00000001/00000002
+"SerializeTimerExpiration"=dword:00000000 ; 00000000/00000001/00000002
 "SplitLargeCaches"=dword:00000001
 "StackSubSystemStackSize"=dword:00010000
 "ThreadDpcEnable"=dword:00000000
@@ -480,8 +480,8 @@ Windows Registry Editor Version 5.00
 "PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006  ; =-, 00000004/00000006
-"IoPriority"=dword:00000006 ; =-, 00000003/00000006
+"CpuPriorityClass"=dword:00000004  ; =-, 00000004/00000006
+"IoPriority"=dword:00000003 ; =-, 00000003/00000006
 "PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
@@ -645,7 +645,7 @@ Windows Registry Editor Version 5.00
 "HandlerTimeout"=dword:7FFFFFFF
 "PortableOperatingSystem"=dword:00000000
 "ServicesPipeTimeout"=dword:00240000
-"SvcHostSplitThresholdInKB"=dword:000f4240 ; 01000000, 04000000/000f4240
+"SvcHostSplitThresholdInKB"=dword:1000000 ; 380000, 000f4240/1000000/4000000
 "WaitToKillServiceTimeout"="1000"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control]
@@ -664,7 +664,7 @@ Windows Registry Editor Version 5.00
 "AdjustDpcThreshold"=dword:00000000 ; 00000000/00000001/00000320
 "ConvertibilityEnabled"=dword:00000000
 "DeepIoCoalescingEnabled"=dword:00000000 ; 00000000/00000001
-"ForegroundBoost"=dword:00000000 ; 00000000/00000001
+"ForegroundBoost"=dword:00000001 ; 00000000/00000001
 "IdealDpcRate"=dword:00000001 ; 00000001/00000320
 "IRQ00Priority"=dword:00000001
 "IRQ0Priority"=dword:00000001
@@ -1080,6 +1080,7 @@ Windows Registry Editor Version 5.00
 "SuperWetEnabled"=dword:00000001
 "TelemetryFramesSequenceMaximumPeriodMilliseconds"=dword:00000000 ; 00000000/000001f4
 "UseHWDrawListEntriesOnWARP"=dword:00000001
+"ForceModeEnumeration"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
 "AlwaysHibernateThumbnails"=dword:00000000
@@ -1131,6 +1132,7 @@ Windows Registry Editor Version 5.00
 "UseTdx"=dword:00000001
 "UseThreadedOptimization"=dword:00000001
 "UseWddmForFullscreenVideo"=dword:00000001
+"DisplayVersion"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\stornvme\Parameters]
 "ArbitrationBurst"=dword:00000100
@@ -1149,6 +1151,7 @@ Windows Registry Editor Version 5.00
 "NvmeMaxWriteSplit"=dword:00000004
 "QueueDepth"=dword:00000040
 "ThreadPriority"=dword:00000000
+"StorNVMeAllowZeroLatency"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\StorNVMe\Parameters\Device]
 "ArbitrationBurst"=dword:00000100
@@ -1166,6 +1169,7 @@ Windows Registry Editor Version 5.00
 "NvmeMaxReadSplit"=dword:00000004
 "NvmeMaxWriteSplit"=dword:00000004
 "QueueDepth"=dword:00000040
+"StorNVMeAllowZeroLatency"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
 "AdaptiveVsyncEnable"=dword:00000000
@@ -1487,6 +1491,308 @@ Windows Registry Editor Version 5.00
 "SupportRuntimePowerManagement"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
+"Acceleration.Level"=dword:00000000
+"AdaptiveVsyncEnable"=dword:00000000
+"AllowDeepCStates"=dword:00000000
+"AllowSnapshot"=dword:00000000
+"AllowSubscription"=dword:00000000
+"BuffersInFlight"=dword:00001000
+"ComputePreemption"=dword:00000000
+"ComputePreemptionLevel"=dword:00000000
+"D3PCLatency"=dword:00000001
+"DesktopStereoShortcuts"=dword:00000000
+"DisableAcpPowerGating"=dword:00000001
+"DisableAllClockGating"=dword:00000001
+"DisableAsyncPstates"=dword:00000001
+"DisableBlockWrite"=dword:00000000
+"DisableBugcheckCallback"=dword:00000001
+"DisableCpPowerGating"=dword:00000001
+"DisableCudaContextPreemption"=dword:00000001
+"DisableDMACopy"=dword:00000001
+"DisableDrmdmaPowerGating"=dword:00000001
+"DisableDynamicPstate"=dword:00000001
+"DisableGDIAcceleration"=dword:00000000
+"DisableGDSPowerGating"=dword:00000001
+"DisableGfxCGPowerGating"=dword:00000001
+"DisableGfxClockGating"=dword:00000001
+"DisableGFXPipelinePowerGating"=dword:00000001
+"DisableGmcPowerGating"=dword:00000001
+"DisableHdpClockPowerGating"=dword:00000001
+"DisableHdpMGClockGating"=dword:00000001
+"DisableKmRender"=dword:00000000
+"DisableKmRenderBoost"=dword:00000000
+"DisableOverclockedPstates"=dword:00000001
+"DisableOverlay"=dword:00000000
+"DisableOverlays"=dword:00000000
+"Disable_OverlayDSQualityEnhancement"=dword:00000001
+"DisablePFonDP"=dword:00000001
+"DisablePowerGating"=dword:00000001
+"DisablePreemption"=dword:00000001
+"DisablePreemptionOnS3S4"=dword:00000001
+"DisableSamuClockGating"=dword:00000001
+"DisableSysClockGating"=dword:00000001
+"DisableUVDPowerGating"=dword:00000001
+"DisableVceClockGating"=dword:00000001
+"DisableWriteCombining"=dword:00000001
+"DisableXdmaPowerGating"=dword:00000001
+"DisableXdmaSclkGating"=dword:00000001
+"DpiMapIommuContiguous"=dword:00000001
+"EnableAggressivePStateBoost"=dword:00000001
+"EnableAggressivePStateOnly"=dword:00000001
+"EnableAsyncMidBufferPreemption"=dword:00000000
+"EnableCEPreemption"=dword:00000000
+"EnableCoreSlowdown"=dword:00000000
+"EnableDirectFlip"=dword:00000001
+"EnableGpuFirmware"=dword:00000000 ; 00000000, 00000001
+"EnableHDAudioD3Cold"=dword:00000000
+"EnableIndependentFlip"=dword:00000001
+; "EnableMClkSlowdown"=dword:00000000
+"EnableMidBufferPreemption"=dword:00000000
+"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
+"EnableMidGfxPreemption"=dword:00000000
+"EnableMidGfxPreemptionVGPU"=dword:00000000
+"EnableMidGfxpSharedBuffer"=dword:00000001
+; "EnableNVClkSlowdown"=dword:00000000
+"ENABLE_OCA_LOGGING"=dword:00000000
+"EnablePerformanceMode"=dword:00000001
+"EnablePreemption"=dword:00000000
+"EnableRuntimePowerManagement"=dword:00000000
+"EnableSCGMidBufferPreemption"=dword:00000000
+"EnableSystemMemoryTiling"=dword:00000000
+"EnableTiledDisplay"=dword:00000000
+"EnableUlps"=dword:00000000
+"EnableVCNPreemption"=dword:00000000
+"F1TransitionLatency"=dword:00000001
+"FeatureControl"=dword:00000004
+"FlTransitionLatency"=dword:00000001
+"GPUPreemptionLevel"=dword:00000000
+"KMD_EnableComputePreemption"=dword:00000000
+"KMD_EnableGDIAcceleration"=dword:00000001
+"KMD_EnableGfxMidCmdPreemption"=dword:00000000
+"KMD_EnablePreemptionLogging"=dword:00000000
+"KMD_EnableSDMAPreemption"=dword:00000000
+"KMD_PreemptionLevelLimit"=dword:00000000
+"LOWLATENCY"=dword:00000001
+"MonitorLatencyTolerance"=dword:00000000
+"MonitorRefreshLatencyTolerance"=dword:00000000
+"Node3DLowLatency"=dword:00000001
+"NoFastLinkTrainingForeDP"=dword:00000000
+"NVDeviceSupportKFilter"=dword:00000000
+"NVFBCEnable"=dword:00000001
+"PCIEPowerControl"=dword:00000000
+"PCIEPowerControl_8086191f50001458"=dword:00000000
+"PciLatencyTimerControl"=dword:00000020
+"PerfAnalyzeMidBufferPreemption"=dword:00000000
+"PerfLevelSrc"=dword:00002222
+"PowerMizerEnable"=dword:00000000
+"PowerMizerLevel"=dword:00000000
+"PowerMizerLevelAC"=dword:00000000
+"PowerSavingTweaks"=dword:00000000
+"Power schemizerLevelAC"=dword:00000001
+"PP_SclkDeepSleepDisable"=dword:00000001
+"PP_ThermalAutoThrottlingEnable"=dword:00000000
+"PreferSystemMemoryContiguous"=dword:00000001
+"PrimaryPushBufferSize"=dword:00000001
+"ReportAnalytics"=dword:00000000
+"RmCacheLoc"=dword:00000000
+"RmClkPowerOffDramPllWhenUnused"=dword:00000000
+"RMClkSlowDown"=dword:00000000
+"RMCtxswLog"=dword:00000000
+"RMDeepL1EntryLatencyUsec"=dword:00000001
+"RMDeepLlEntryLatencyUsec"=dword:00000001
+"RMDisableGpuASPMFlags"=dword:00000001
+"RmDisableHdcp22"=dword:00000001
+"RmDisableHwFaultBuffer"=dword:00000001
+"RmDisableInst2Sys"=dword:00000000
+"RMDisableNoncontigAlloc"=dword:00000001
+"RMDisablePostL2Compression"=dword:00000001
+"RmDisableRegistryCaching"=dword:00000001
+"RMEnableASPMAtLoad"=dword:00000000
+"RMEnableASPMDT"=dword:00000000
+"RmEnableHda"=dword:00000000
+"RmFbsrPagedDMA"=dword:00000000
+"RmFbsrPagedDMA"=dword:00000001
+"RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
+"RMGpuId"=dword:00000100
+"RmGspcMaxFtuS"=dword:00000001
+"RmGspcMinFtuS"=dword:00000001
+"RmGspcPerioduS"=dword:00000001
+"RMHdcpKeyglobZero"=dword:00000001
+"RMLpwrEiIdleThresholdUs"=dword:00000001
+"RMLpwrGrIdleThresholdUs"=dword:00000001
+"RMLpwrGrRgIdleThresholdUs"=dword:00000001
+"RMLpwrMsIdleThresholdUs"=dword:00000001
+"RmMIONoPowerOff"=dword:00000001
+"RmPerfRatedTdpLimit"=dword:00000000
+"RmProfilingAdminOnly"=dword:00000000
+"RmRcWatchdog"=dword:00000000
+"RMSkipHdcp22Init"=dword:00000001
+"RmWotHdcpEnable"=dword:00000000
+"StutterMode"=dword:00000000
+"TCCSupported"=dword:00000000
+"TrackResetEngine"=dword:00000000
+"UseBestResolution"=dword:00000001
+"UseGpuTimer"=dword:00000001
+"ValidateBlitSubRects"=dword:00000000
+"VRDirectFlipDPCDelayUs"=dword:00000001
+"VRDirectFlipTimingMarginUs"=dword:00000001
+"VRDirectJITFlipMsHybridFlipDelayUs"=dword:00000001
+"vrrCursorMarginUs"=dword:00000001
+"vrrDeflickerMarginUs"=dword:00000001
+"vrrDeflickerMaxUs"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001]
+"Acceleration.Level"=dword:00000000
+"AdaptiveVsyncEnable"=dword:00000000
+"AllowDeepCStates"=dword:00000000
+"AllowSnapshot"=dword:00000000
+"AllowSubscription"=dword:00000000
+"BuffersInFlight"=dword:00001000
+"ComputePreemption"=dword:00000000
+"ComputePreemptionLevel"=dword:00000000
+"D3PCLatency"=dword:00000001
+"DesktopStereoShortcuts"=dword:00000000
+"DisableAcpPowerGating"=dword:00000001
+"DisableAllClockGating"=dword:00000001
+"DisableAsyncPstates"=dword:00000001
+"DisableBlockWrite"=dword:00000000
+"DisableBugcheckCallback"=dword:00000001
+"DisableCpPowerGating"=dword:00000001
+"DisableCudaContextPreemption"=dword:00000001
+"DisableDMACopy"=dword:00000001
+"DisableDrmdmaPowerGating"=dword:00000001
+"DisableDynamicPstate"=dword:00000001
+"DisableGDIAcceleration"=dword:00000000
+"DisableGDSPowerGating"=dword:00000001
+"DisableGfxCGPowerGating"=dword:00000001
+"DisableGfxClockGating"=dword:00000001
+"DisableGFXPipelinePowerGating"=dword:00000001
+"DisableGmcPowerGating"=dword:00000001
+"DisableHdpClockPowerGating"=dword:00000001
+"DisableHdpMGClockGating"=dword:00000001
+"DisableKmRender"=dword:00000000
+"DisableKmRenderBoost"=dword:00000000
+"DisableOverclockedPstates"=dword:00000001
+"DisableOverlay"=dword:00000000
+"DisableOverlays"=dword:00000000
+"Disable_OverlayDSQualityEnhancement"=dword:00000001
+"DisablePFonDP"=dword:00000001
+"DisablePowerGating"=dword:00000001
+"DisablePreemption"=dword:00000001
+"DisablePreemptionOnS3S4"=dword:00000001
+"DisableSamuClockGating"=dword:00000001
+"DisableSysClockGating"=dword:00000001
+"DisableUVDPowerGating"=dword:00000001
+"DisableVceClockGating"=dword:00000001
+"DisableWriteCombining"=dword:00000001
+"DisableXdmaPowerGating"=dword:00000001
+"DisableXdmaSclkGating"=dword:00000001
+"DpiMapIommuContiguous"=dword:00000001
+"EnableAggressivePStateBoost"=dword:00000001
+"EnableAggressivePStateOnly"=dword:00000001
+"EnableAsyncMidBufferPreemption"=dword:00000000
+"EnableCEPreemption"=dword:00000000
+"EnableCoreSlowdown"=dword:00000000
+"EnableDirectFlip"=dword:00000001
+"EnableGpuFirmware"=dword:00000000 ; 00000000, 00000001
+"EnableHDAudioD3Cold"=dword:00000000
+"EnableIndependentFlip"=dword:00000001
+; "EnableMClkSlowdown"=dword:00000000
+"EnableMidBufferPreemption"=dword:00000000
+"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
+"EnableMidGfxPreemption"=dword:00000000
+"EnableMidGfxPreemptionVGPU"=dword:00000000
+"EnableMidGfxpSharedBuffer"=dword:00000001
+; "EnableNVClkSlowdown"=dword:00000000
+"ENABLE_OCA_LOGGING"=dword:00000000
+"EnablePerformanceMode"=dword:00000001
+"EnablePreemption"=dword:00000000
+"EnableRuntimePowerManagement"=dword:00000000
+"EnableSCGMidBufferPreemption"=dword:00000000
+"EnableSystemMemoryTiling"=dword:00000000
+"EnableTiledDisplay"=dword:00000000
+"EnableUlps"=dword:00000000
+"EnableVCNPreemption"=dword:00000000
+"F1TransitionLatency"=dword:00000001
+"FeatureControl"=dword:00000004
+"FlTransitionLatency"=dword:00000001
+"GPUPreemptionLevel"=dword:00000000
+"KMD_EnableComputePreemption"=dword:00000000
+"KMD_EnableGDIAcceleration"=dword:00000001
+"KMD_EnableGfxMidCmdPreemption"=dword:00000000
+"KMD_EnablePreemptionLogging"=dword:00000000
+"KMD_EnableSDMAPreemption"=dword:00000000
+"KMD_PreemptionLevelLimit"=dword:00000000
+"LOWLATENCY"=dword:00000001
+"MonitorLatencyTolerance"=dword:00000000
+"MonitorRefreshLatencyTolerance"=dword:00000000
+"Node3DLowLatency"=dword:00000001
+"NoFastLinkTrainingForeDP"=dword:00000000
+"NVDeviceSupportKFilter"=dword:00000000
+"NVFBCEnable"=dword:00000001
+"PCIEPowerControl"=dword:00000000
+"PCIEPowerControl_8086191f50001458"=dword:00000000
+"PciLatencyTimerControl"=dword:00000020
+"PerfAnalyzeMidBufferPreemption"=dword:00000000
+"PerfLevelSrc"=dword:00002222
+"PowerMizerEnable"=dword:00000000
+"PowerMizerLevel"=dword:00000000
+"PowerMizerLevelAC"=dword:00000000
+"PowerSavingTweaks"=dword:00000000
+"Power schemizerLevelAC"=dword:00000001
+"PP_SclkDeepSleepDisable"=dword:00000001
+"PP_ThermalAutoThrottlingEnable"=dword:00000000
+"PreferSystemMemoryContiguous"=dword:00000001
+"PrimaryPushBufferSize"=dword:00000001
+"ReportAnalytics"=dword:00000000
+"RmCacheLoc"=dword:00000000
+"RmClkPowerOffDramPllWhenUnused"=dword:00000000
+"RMClkSlowDown"=dword:00000000
+"RMCtxswLog"=dword:00000000
+"RMDeepL1EntryLatencyUsec"=dword:00000001
+"RMDeepLlEntryLatencyUsec"=dword:00000001
+"RMDisableGpuASPMFlags"=dword:00000001
+"RmDisableHdcp22"=dword:00000001
+"RmDisableHwFaultBuffer"=dword:00000001
+"RmDisableInst2Sys"=dword:00000000
+"RMDisableNoncontigAlloc"=dword:00000001
+"RMDisablePostL2Compression"=dword:00000001
+"RmDisableRegistryCaching"=dword:00000001
+"RMEnableASPMAtLoad"=dword:00000000
+"RMEnableASPMDT"=dword:00000000
+"RmEnableHda"=dword:00000000
+"RmFbsrPagedDMA"=dword:00000000
+"RmFbsrPagedDMA"=dword:00000001
+"RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
+"RMGpuId"=dword:00000100
+"RmGspcMaxFtuS"=dword:00000001
+"RmGspcMinFtuS"=dword:00000001
+"RmGspcPerioduS"=dword:00000001
+"RMHdcpKeyglobZero"=dword:00000001
+"RMLpwrEiIdleThresholdUs"=dword:00000001
+"RMLpwrGrIdleThresholdUs"=dword:00000001
+"RMLpwrGrRgIdleThresholdUs"=dword:00000001
+"RMLpwrMsIdleThresholdUs"=dword:00000001
+"RmMIONoPowerOff"=dword:00000001
+"RmPerfRatedTdpLimit"=dword:00000000
+"RmProfilingAdminOnly"=dword:00000000
+"RmRcWatchdog"=dword:00000000
+"RMSkipHdcp22Init"=dword:00000001
+"RmWotHdcpEnable"=dword:00000000
+"StutterMode"=dword:00000000
+"TCCSupported"=dword:00000000
+"TrackResetEngine"=dword:00000000
+"UseBestResolution"=dword:00000001
+"UseGpuTimer"=dword:00000001
+"ValidateBlitSubRects"=dword:00000000
+"VRDirectFlipDPCDelayUs"=dword:00000001
+"VRDirectFlipTimingMarginUs"=dword:00000001
+"VRDirectJITFlipMsHybridFlipDelayUs"=dword:00000001
+"vrrCursorMarginUs"=dword:00000001
+"vrrDeflickerMarginUs"=dword:00000001
+"vrrDeflickerMaxUs"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0002]
 "Acceleration.Level"=dword:00000000
 "AdaptiveVsyncEnable"=dword:00000000
 "AllowDeepCStates"=dword:00000000
@@ -2294,9 +2600,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows]
 "NonBestEffortLimit"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling]
-"PowerThrottlingOff"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore]
 "DisableSR"=-
 "DisableConfig"=-
@@ -2315,6 +2618,7 @@ Windows Registry Editor Version 5.00
 "AllowAutomaticAppArchiving"=dword:00000000
 "AllowDevelopmentWithoutDevLicense"=dword:00000001
 "RestrictAppToSystemVolume"=dword:00000001
+"MdmHosts"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowAutomaticAppArchiving]
 "value"=dword:00000000
@@ -2549,6 +2853,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity]
 "Enabled"=dword:00000000
+"ChangedInBootCycle"=hex(b):40,76,a1,c4,e6,10,db,01
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.ActionCenter.SmartOptOut]
 "Enabled"=dword:00000000
@@ -2989,6 +3294,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Edge\SmartScreenPuaEnabled]
 @=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsRuntime\ActivatableClassId\Windows.Internal.Security.SmartScreen.AppReputationService]
+"ActivationType"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\MicrosoftEdge\TabPreloader]
 "AllowTabPreloading"=dword:00000000
@@ -3724,6 +4032,13 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WindowsTrustedRTProxy]
 "Start"=dword:00000004
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\midisrv]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SgrmBroker]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SgrmAgent]
+"Start"=dword:00000004
+
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\PerfNet\Performance]
 "Collect Supports Metadata"=dword:00000000
 "Collect Timeout"=dword:00000000
@@ -4382,7 +4697,7 @@ Windows Registry Editor Version 5.00
 "value"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\VideoSettings]
-"DisableHDROnBattery"=dword:00000000
+"DisableHDROnBattery"=dword:00000001
 "EnableAutoEnhanceDuringPlayback"=dword:00000000
 "EnableHDRForPlayback"=dword:00000001
 "EnableOutsideModeFeature"=dword:00000000
@@ -4526,6 +4841,10 @@ Windows Registry Editor Version 5.00
 "VKToggleRecording"=-
 "VKToggleRecordingIndicator"=-
 
+[HKEY_CURRENT_USER\Software\Classes\ms-gamebar]
+"URL Protocol"=""
+@="URL:ms-gamebar"
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
 "ActiveHoursEnd"=dword:00000000
 "ActiveHoursStart"=dword:00000006
@@ -4663,7 +4982,7 @@ Windows Registry Editor Version 5.00
 "DisableHomeGroup"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
-"AltTabSettings"=dword:00000000
+"AltTabSettings"=dword:00000001 ; 00000000/00000001
 "DesktopProcess"=dword:00000000
 "EnableAutoTray"=dword:00000000
 "ExcludedFromStableAnaheimDownloadPromotionSL"=dword:00000001
@@ -4972,7 +5291,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PlayToReceiver]
 "AutoEnabled"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerThrottlinge]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling]
 "PowerThrottlingOff"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\TCPIP\v6Transition]
@@ -6863,12 +7182,14 @@ Windows Registry Editor Version 5.00
 "DisableUpgradeCleanup"=dword:00000000
 "MachineOobeUpdates"=dword:00000000
 "Max Cached Icons"="4096"
+"MaxCachedIcons"="4096"
 "NoWaitOnRoamingPayloads"=dword:00000001
 "ShowDriveLettersFirst"=dword:00000000
 "ShowFrequent"=dword:00000000
 "ShowRecent"=dword:00000000
 "SmartScreenEnabled"="Off"
 "ThumbnailQuality"=dword:00000024
+
 
 [HKEY_CURRENT_USER\Software\Microsoft\Edge\SmartScreenEnabled]
 @=dword:00000000
@@ -10131,11 +10452,14 @@ Windows Registry Editor Version 5.00
 "GameFluidity"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\GraphicsDrivers\Configuration\GSM60B216843009_01_07DC_0E^3D9A69AD1C84EAB2AAF1FC3855733BB4\00\00]
-"Scaling"=dword:00000000 ; 00000003, 00000002/00000000
+"Scaling"=dword:00000000 ; 00000003, 00000000/00000002
 ; "ScanlineOrdering"=dword:00000000
 ; "Rotation"=dword:00000000
 [HKEY_CURRENT_USER\SOFTWARE\NVIDIA Corporation\Global\NVTweak\Devices\3772562448-0\Color]
 "NvCplUseColorCorrection"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\DirectX\UserGpuPreferences]
+"DirectXUserGlobalSettings"="HighPerfAdapter=10DE&2182&3FBE1458;AutoHDREnable=0;VRROptimizeEnable=0"
 
 [HKEY_CURRENT_USER\System\GameConfigStore]
 "Win32_AutoGameModeDefaultProfile"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,\
