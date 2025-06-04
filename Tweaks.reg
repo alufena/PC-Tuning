@@ -170,6 +170,7 @@ Windows Registry Editor Version 5.00
 "TrackLockedPages"=dword:00000000
 "TrackPtes"=dword:00000000
 "UseLargePages"=dword:00000001
+"DisableDynamicBoost"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\Memory Management]
 "DontVerifyRandomDrivers"=dword:00000001
@@ -254,7 +255,7 @@ Windows Registry Editor Version 5.00
 "PassiveWatchdogTimeout"=dword:00000000
 "PowerOffFrozenProcessors"=dword:00000000
 "PriorityControl"=dword:00000020 ; 00000020/00000032
-"QuantumLength"=dword:0000000e ; 0000000e/00000014
+"QuantumLength"=dword:0000000e ; 00000002/0000000e/00000014
 "RebalanceMinPriority"=dword:00000001
 "SerializeTimerExpiration"=dword:00000000 ; 00000000/00000001/00000002
 "SplitLargeCaches"=dword:00000001
@@ -269,6 +270,7 @@ Windows Registry Editor Version 5.00
 "WatchdogResumeTimeout"=dword:00000000
 "WorkerFactoryThreadIdleTimeout"=dword:00000000
 "XMMIZeroingEnable"=dword:00000000
+"ForceMaximumTimerResolution"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM]
 "InterruptSteeringDisabled"=dword:00000001
@@ -453,11 +455,13 @@ Windows Registry Editor Version 5.00
 "CpuPriorityClass"=dword:00000005
 "IoPriority"=dword:00000005
 "PagePriority"=dword:00000005
+"AuditLevel"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000005
 "IoPriority"=dword:00000005
 "PagePriority"=dword:00000005
+"AuditLevel"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
@@ -1014,6 +1018,12 @@ Windows Registry Editor Version 5.00
 "WindowedGsyncGeforceFlag"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
+"UseStaticComposition"=dword:00000001 ; =-, 00000001
+"RetryFrameOnDrop"=dword:00000000
+"EnableInputPrediction"=dword:00000000
+"UseStaticComposition"=dword:00000001
+"DisableDComp"=dword:00000001
+"UseLegacyDisplayFrameBuffer"=dword:00000001
 "DwmProcessPriority"=dword:00000004
 "UseCopyOnPresent"=dword:00000001
 "DiscardSurfaceOnMinimize"=dword:00000001
@@ -7723,6 +7733,11 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\storahci\Parameters]
 "ThreadPriority"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\storahci\Parameters\Device]
+"SingleIO"=dword:00000001
+"DisableNCQ"=dword:00000001
+"EnableAggressiveLinkPowerManagement"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Importance\Critical]
 "BasePriority"=dword:00000052
 "OverTargetPriority"=dword:00000032
@@ -9329,21 +9344,6 @@ Windows Registry Editor Version 5.00
 "IoPriority"=dword:00000006
 "PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Launcher.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
-"UseLargePages"=dword:00000001
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarService.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
-"UseLargePages"=dword:00000001
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarErrorHandler.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
-"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SocialClubHelper.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
 "IoPriority"=dword:00000006
@@ -9804,26 +9804,6 @@ Windows Registry Editor Version 5.00
 "IoPriority"=dword:00000006
 "PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
-[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Launcher.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
-"UseLargePages"=dword:00000001
-[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarService.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
-"UseLargePages"=dword:00000001
-[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarErrorHandler.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
-"UseLargePages"=dword:00000001
-[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SocialClubHelper.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
-"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlayGTAIV.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
 "IoPriority"=dword:00000006
@@ -10226,6 +10206,9 @@ Windows Registry Editor Version 5.00
 "UseLargePages"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\DirectX\UserGpuPreferences]
+"C:\\Program Files\\Electronic Arts\\EA Desktop\\EA Desktop\\EADesktop.exe"="GpuPreference=1;"
+"C:\\Program Files\\Electronic Arts\\EA Desktop\\EA Desktop\\EACefSubProcess.exe"="GpuPreference=1;"
+"‪C:\\Program Files\\Notepad++\\notepad++.exe"="GpuPreference=1;"
 "C:\\Program Files\\WindowsApps\\Microsoft.WindowsNotepad_*\\Notepad\\Notepad.exe"="GpuPreference=1;"
 "C:\\Program Files (x86)\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicWebHelper.exe"="GpuPreference=1;"
 "C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe"="GpuPreference=1;"
@@ -10339,14 +10322,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers]
 "C:\\ProgramData\\Wargaming.net\\GameCenter for Steam\\wgc.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files\\All-About-PDF\\All-About-PDF.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files\\Rockstar Games\\Launcher\\Launcher.exe"="~ RUNASADMIN"
-"C:\\Program Files\\Rockstar Games\\Launcher\\LauncherPatcher.exe"="~ RUNASADMIN"
-"C:\\Program Files\\Rockstar Games\\Launcher\\RockstarService.exe"="~ RUNASADMIN "
-"C:\\Program Files\\Rockstar Games\\Launcher\\ThirdParty\\Crashpad\\RockstarErrorHandler.exe"="~ RUNASADMIN"
-"C:\\Program Files\\Rockstar Games\\Social Club\\SocialClubHelper.exe"="~ RUNASADMIN"
 "C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\ffmpeg.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\Topaz Video AI.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Battle.net\\Battle.net Launcher.exe"="~ RUNASADMIN"
 "C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_classic_\\WowClassic.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_retail_\\Wow.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\World of Warcraft Launcher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
@@ -10354,8 +10331,6 @@ Windows Registry Editor Version 5.00
 "C:\\Program Files (x86)\\DPC Latency Checker\\a.exe"="~ RUNASADMIN"
 "C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteLauncher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe"="~ RUNASADMIN"
-"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe"="~ RUNASADMIN"
 "C:\\Program Files (x86)\\MAXIS\\The Sims\\Sims.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Rainmeter\\Rainmeter.exe"="~ DISABLEDXMAXIMIZEDWINDOWEDMODE RUNASADMIN WIN7RTM"
 "C:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\bin\\win64\\dota2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
@@ -10364,10 +10339,8 @@ Windows Registry Editor Version 5.00
 "C:\\Program Files (x86)\\Steam\\steamapps\\common\\No Man's Sky\\Binaries\\NMS.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64_dx12\\witcher3.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64\\witcher3.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\REDprelauncher.exe"="~ RUNASADMIN"
 "C:\\Program Files (x86)\\Topaz Video AI\\App\\ffmpeg.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Topaz Video AI\\App\\Topaz Video AI.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Users\\Administrator\\AppData\\Local\\Programs\\CD Projekt Red\\REDlauncher\\REDlauncher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Obsidian\\Obsidian.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "D:\\Epic Games\\GTAVEnhanced\\GTA5_Enhanced.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "D:\\Epic Games\\GTAVEnhanced\\PlayGTAV.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
@@ -10416,7 +10389,6 @@ Windows Registry Editor Version 5.00
 "E:\\SteamLibrary\\steamapps\\common\\Team Fortress 2\\hl2.exe"="~ RUNASADMIN"
 "E:\\SteamLibrary\\steamapps\\common\\Team Fortress 2\\tf_win64.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "E:\\SteamLibrary\\steamapps\\common\\TPH\\TPH.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Warframe\\Tools\\Launcher.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "E:\\SteamLibrary\\steamapps\\common\\Warframe\\Warframe.x64.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "E:\\SteamLibrary\\steamapps\\common\\War Thunder\\win64\\aces.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "E:\\SteamLibrary\\steamapps\\common\\Wolfenstein.The.New.Order"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
@@ -10457,14 +10429,8 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers]
 "C:\\ProgramData\\Wargaming.net\\GameCenter for Steam\\wgc.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files\\All-About-PDF\\All-About-PDF.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files\\Rockstar Games\\Launcher\\Launcher.exe"="~ RUNASADMIN"
-"C:\\Program Files\\Rockstar Games\\Launcher\\LauncherPatcher.exe"="~ RUNASADMIN"
-"C:\\Program Files\\Rockstar Games\\Launcher\\RockstarService.exe"="~ RUNASADMIN "
-"C:\\Program Files\\Rockstar Games\\Launcher\\ThirdParty\\Crashpad\\RockstarErrorHandler.exe"="~ RUNASADMIN"
-"C:\\Program Files\\Rockstar Games\\Social Club\\SocialClubHelper.exe"="~ RUNASADMIN"
 "C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\ffmpeg.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\Topaz Video AI.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Battle.net\\Battle.net Launcher.exe"="~ RUNASADMIN"
 "C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_classic_\\WowClassic.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\_retail_\\Wow.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Battle.net\\World of Warcraft\\World of Warcraft Launcher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
@@ -10472,8 +10438,6 @@ Windows Registry Editor Version 5.00
 "C:\\Program Files (x86)\\DPC Latency Checker\\a.exe"="~ RUNASADMIN"
 "C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteClient-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Epic Games\\Fortnite\\FortniteGame\\Binaries\\Win64\\FortniteLauncher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win32\\EpicGamesLauncher.exe"="~ RUNASADMIN"
-"C:\\Program Files (x86)\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe"="~ RUNASADMIN"
 "C:\\Program Files (x86)\\MAXIS\\The Sims\\Sims.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Rainmeter\\Rainmeter.exe"="~ DISABLEDXMAXIMIZEDWINDOWEDMODE RUNASADMIN WIN7RTM"
 "C:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\bin\\win64\\dota2.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
@@ -10482,10 +10446,8 @@ Windows Registry Editor Version 5.00
 "C:\\Program Files (x86)\\Steam\\steamapps\\common\\No Man's Sky\\Binaries\\NMS.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64_dx12\\witcher3.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\bin\\x64\\witcher3.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Witcher 3\\REDprelauncher.exe"="~ RUNASADMIN"
 "C:\\Program Files (x86)\\Topaz Video AI\\App\\ffmpeg.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\Topaz Video AI\\App\\Topaz Video AI.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"C:\\Users\\Administrator\\AppData\\Local\\Programs\\CD Projekt Red\\REDlauncher\\REDlauncher.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Obsidian\\Obsidian.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "D:\\Epic Games\\GTAVEnhanced\\GTA5_Enhanced.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "D:\\Epic Games\\GTAVEnhanced\\PlayGTAV.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
@@ -10534,7 +10496,6 @@ Windows Registry Editor Version 5.00
 "E:\\SteamLibrary\\steamapps\\common\\Team Fortress 2\\hl2.exe"="~ RUNASADMIN"
 "E:\\SteamLibrary\\steamapps\\common\\Team Fortress 2\\tf_win64.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "E:\\SteamLibrary\\steamapps\\common\\TPH\\TPH.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
-"E:\\SteamLibrary\\steamapps\\common\\Warframe\\Tools\\Launcher.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "E:\\SteamLibrary\\steamapps\\common\\Warframe\\Warframe.x64.exe"="~ RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "E:\\SteamLibrary\\steamapps\\common\\War Thunder\\win64\\aces.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "E:\\SteamLibrary\\steamapps\\common\\Wolfenstein.The.New.Order"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
@@ -10606,6 +10567,7 @@ Windows Registry Editor Version 5.00
 "MMXFastPath"=dword:00000001
 "UseMMXForRGB"=dword:00000001
 "UseNonLocalVidMem"=dword:00000001
+"ForceWARP"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Direct3D]
 "DisableMMX"=dword:00000000
