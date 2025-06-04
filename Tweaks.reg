@@ -170,7 +170,6 @@ Windows Registry Editor Version 5.00
 "TrackLockedPages"=dword:00000000
 "TrackPtes"=dword:00000000
 "UseLargePages"=dword:00000001
-"DisableDynamicBoost"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\Memory Management]
 "DontVerifyRandomDrivers"=dword:00000001
