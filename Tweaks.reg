@@ -577,8 +577,8 @@ Windows Registry Editor Version 5.00
 "ObjectSecurityMode"=dword:00000001 ; 00000001/00000000
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Executive]
-"AdditionalCriticalWorkerThreads"=dword:00000040 ; 00000000, 00000010
-"AdditionalDelayedWorkerThreads"=dword:00000040 ; 00000000, 00000010
+"AdditionalCriticalWorkerThreads"=dword:00000010 ; 00000000, 00000010/00000040
+"AdditionalDelayedWorkerThreads"=dword:00000010 ; 00000000, 00000010
 "PriorityQuantumMatrix"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
@@ -587,7 +587,7 @@ Windows Registry Editor Version 5.00
 "DisableCompression"=dword:00000001
 "EnableAuthenticateUserSharing"=dword:00000000
 "IRPStackSize"=dword:00000020
-"MaxWorkItems"=dword:00000010
+"MaxWorkItems"=dword:00000010 ; 00000010/00000040
 "RestrictNullSessAccess"=dword:00000001
 "Size"=dword:00000003
 "SizReqBuf"=dword:00004000
@@ -612,12 +612,12 @@ Windows Registry Editor Version 5.00
 "Beamforming"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters]
-"MaxThreads"=dword:00000010
+"MaxThreads"=dword:00000010 ; 00000010/00000040
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System]
 "CountOperations"=dword:00000000
 "IoEnableSessionZeroAccessCheck"=dword:00000001
-"PassiveIntRealTimeWorkerCount"=dword:00000010
+"PassiveIntRealTimeWorkerCount"=dword:00000010 ; 00000010/00000040
 "PassiveIntRealTimeWorkerPriority"=dword:00000012
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\KernelVelocity]
