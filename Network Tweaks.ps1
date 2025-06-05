@@ -38,10 +38,10 @@ Disable-NetAdapterPowerManagement *
 Disable-NetAdapterLso -Name *
 Disable-NetAdapterBinding -Name * -ComponentID ms_pacer
 
-# Se você compartilha arquivos na rede, NÃO desative o cliente abaixo
+# If you share files on the network, DO NOT disable the client below
 Disable-NetAdapterBinding -Name * -ComponentID ms_msclient
 
-# Offload Settings — alguns ativados para performance de rede, outros desativados por estabilidade
+# Offload Settings — some enabled for network performance, others disabled for stability
 Set-NetOffloadGlobalSetting -PacketCoalescingFilter disabled -Chimney Disabled -Taskoffload Enabled -ReceiveSideScaling Enabled -ReceiveSegmentCoalescing Disabled
 
 Set-NetAdapterRdma -Name "*" -Enabled $True
@@ -73,7 +73,7 @@ function Set-RegKey {
     }
 }
 
-# Desativar Nagle e ACK delay
+# Disable Nagle and ACK delay
 $tcpipPath = "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces"
 $tcpInterfaces = Get-ChildItem -Path $tcpipPath
 foreach ($interface in $tcpInterfaces) {
@@ -82,7 +82,7 @@ foreach ($interface in $tcpInterfaces) {
     Set-RegKey -path $interface.PSPath -name "TcpDelAckTicks" -value 0
 }
 
-# NetBIOS: Desativar para menor overhead local
+# NetBIOS: Disable for reduced local overhead
 $netbtPath = "HKLM:\SYSTEM\CurrentControlSet\services\NetBT\Parameters\Interfaces"
 $interfaces = Get-ChildItem -Path $netbtPath
 foreach ($interface in $interfaces) {
@@ -108,7 +108,7 @@ foreach ($interface in $networkInterfaces) {
     # Interrupt Moderation
     Set-RegKey -path $interface.PSPath -name "*InterruptModeration" -value "0" -type "String"
 
-    # Green Ethernet e power-saving
+    # Green Ethernet and power-saving
     Set-RegKey -path $interface.PSPath -name "*EEE" -value "0" -type "String"
     Set-RegKey -path $interface.PSPath -name "AdvancedEEE" -value "0" -type "String"
     Set-RegKey -path $interface.PSPath -name "AutoPowerSaveModeEnabled" -value "0" -type "String"
@@ -119,6 +119,6 @@ foreach ($interface in $networkInterfaces) {
 }
 
 # ------------------------------
-# OPCIONAL: ATIVA PERFIS DCTCP
+# OPTIONAL: ENABLE DCTCP PROFILES
 # ------------------------------
 # netsh int tcp set supplemental internet congestionprovider=dctcp
