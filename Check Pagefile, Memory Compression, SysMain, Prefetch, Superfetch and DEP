@@ -6,11 +6,11 @@ function Write-Section {
 # === PAGEFILE ===
 Write-Section "PAGEFILE"
 
-# Verifica se o gerenciamento automático do Pagefile está ativado
+# Check if automatic pagefile management is enabled
 $autoPagefile = (Get-WmiObject -Class Win32_ComputerSystem).AutomaticManagedPagefile
 $pagefiles = Get-WmiObject Win32_PageFileUsage
 
-# Determina se pelo menos um Pagefile está em "System Managed Size"
+# Determine if at least one Pagefile is "System Managed Size"
 $hasSystemManaged = $false
 foreach ($pagefile in $pagefiles) {
     if ($pagefile.AllocatedBaseSize -eq 0) { 
@@ -19,46 +19,46 @@ foreach ($pagefile in $pagefiles) {
     }
 }
 
-# Detecta se todos os Pagefiles estão desativados
+# Detect if all Pagefiles are disabled
 $allPagefilesDisabled = $pagefiles.Count -eq 0 -or ($pagefiles | Where-Object { $_.AllocatedBaseSize -gt 0 }).Count -eq 0
 
-# Define o texto correto para exibir
+# Set the appropriate output text
 if ($autoPagefile) {
-    Write-Host "Gerenciamento do Pagefile: Automático (todos os discos)"
+    Write-Host "Pagefile management: Automatic (all drives)"
 } elseif ($allPagefilesDisabled) {
-    Write-Host "Gerenciamento do Pagefile: Desativado (nenhum arquivo de paginação configurado)"
+    Write-Host "Pagefile management: Disabled (no paging file configured)"
 } elseif ($hasSystemManaged) {
-    Write-Host "Gerenciamento do Pagefile: Tamanho gerenciado pelo sistema"
+    Write-Host "Pagefile management: System managed size"
 } else {
-    Write-Host "Gerenciamento do Pagefile: Tamanho personalizado"
+    Write-Host "Pagefile management: Custom size"
 }
 
-# Exibe o estado do Pagefile
+# Display current Pagefile state
 if ($pagefiles) {
-    Write-Host "`nEstado atual do Pagefile:"
+    Write-Host "`nCurrent Pagefile status:"
     $pagefiles | ForEach-Object {
-        Write-Host ("{0,-15} | Usado: {1,7} MB | Padrão Máximo: {2,7} MB" -f $_.Name, $_.CurrentUsage, $_.AllocatedBaseSize)
+        Write-Host ("{0,-15} | Used: {1,7} MB | Allocated Max: {2,7} MB" -f $_.Name, $_.CurrentUsage, $_.AllocatedBaseSize)
     }
 } else {
-    Write-Host "Nenhum Pagefile detectado no sistema."
+    Write-Host "No Pagefile detected on the system."
 }
 
 # === MEMORY COMPRESSION ===
 Write-Section "MEMORY COMPRESSION"
 $mc = (Get-MMAgent).MemoryCompression
-Write-Host "Estado: $($mc -replace 'True','Ativado' -replace 'False','Desativado')"
+Write-Host "Status: $($mc -replace 'True','Enabled' -replace 'False','Disabled')"
 
 # === SYSMAIN (Superfetch) ===
 Write-Section "SUPERFETCH (SysMain)"
 $sysMain = Get-Service -Name "SysMain" -ErrorAction SilentlyContinue
 if ($sysMain) {
-    Write-Host "Status do serviço: $($sysMain.Status)"
+    Write-Host "Service status: $($sysMain.Status)"
 } else {
-    Write-Host "Serviço SysMain não encontrado."
+    Write-Host "SysMain service not found."
 }
 
-# === PREFETCH & SUPERFETCH (REGISTRO) ===
-Write-Section "PREFETCH & SUPERFETCH (Registro)"
+# === PREFETCH & SUPERFETCH (REGISTRY) ===
+Write-Section "PREFETCH & SUPERFETCH (Registry)"
 try {
     $regPath = "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\PrefetchParameters"
     if (Test-Path $regPath) {
@@ -66,32 +66,32 @@ try {
 
         # Prefetch
         $prefetchStatus = switch ($params.EnablePrefetcher) {
-            0 { "Desativado" }
-            1 { "Somente aplicativos" }
-            2 { "Somente boot" }
-            3 { "Aplicativos e boot (padrão)" }
-            Default { "Desconhecido ($($params.EnablePrefetcher))" }
+            0 { "Disabled" }
+            1 { "Application launch only" }
+            2 { "Boot only" }
+            3 { "Applications and boot (default)" }
+            Default { "Unknown ($($params.EnablePrefetcher))" }
         }
         Write-Host "Prefetch:  $prefetchStatus"
 
-        # Superfetch (se existir)
+        # Superfetch (if present)
         if ($params.PSObject.Properties.Name -contains "EnableSuperfetch") {
             $superfetchStatus = switch ($params.EnableSuperfetch) {
-                0 { "Desativado" }
-                1 { "Somente aplicativos" }
-                2 { "Somente boot" }
-                3 { "Aplicativos e boot (padrão)" }
-                Default { "Desconhecido ($($params.EnableSuperfetch))" }
+                0 { "Disabled" }
+                1 { "Application launch only" }
+                2 { "Boot only" }
+                3 { "Applications and boot (default)" }
+                Default { "Unknown ($($params.EnableSuperfetch))" }
             }
             Write-Host "Superfetch: $superfetchStatus"
         } else {
-            Write-Host "Superfetch: Não configurado no registro."
+            Write-Host "Superfetch: Not configured in registry."
         }
     } else {
-        Write-Host "Chave de registro de Prefetch/Superfetch não encontrada."
+        Write-Host "Prefetch/Superfetch registry key not found."
     }
 } catch {
-    Write-Host "Erro ao acessar o registro de Prefetch/Superfetch."
+    Write-Host "Error accessing Prefetch/Superfetch registry settings."
 }
 
 # === DEP (Data Execution Prevention) ===
@@ -100,15 +100,15 @@ try {
     $depPolicy = wmic OS Get DataExecutionPrevention_SupportPolicy /value | Out-String
     $depPolicyValue = ($depPolicy -split "=")[1] -as [int]
     $depStatus = switch ($depPolicyValue) {
-        0 { "Desativado para todos os processos" }
-        1 { "Ativado para todos os processos" }
-        2 { "Ativado apenas para componentes e serviços do sistema (padrão)" }
-        3 { "Ativado para todos os processos" }
-        Default { "Valor desconhecido ($depPolicyValue)" }
+        0 { "Disabled for all processes" }
+        1 { "Enabled for all processes" }
+        2 { "Enabled only for essential Windows programs and services (default)" }
+        3 { "Enabled for all processes" }
+        Default { "Unknown value ($depPolicyValue)" }
     }
-    Write-Host "Estado atual do DEP: $depStatus"
+    Write-Host "Current DEP status: $depStatus"
 } catch {
-    Write-Host "Erro ao consultar o estado do DEP."
+    Write-Host "Error querying DEP status."
 }
 
 pause
