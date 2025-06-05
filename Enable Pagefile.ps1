@@ -1,18 +1,18 @@
-﻿# Ativa o Pagefile como "System Managed Size" em TODOS os discos
+# Enables the Pagefile as "System Managed Size" on ALL drives
 
-Write-Output "Ativando Pagefile como 'System Managed Size' para todos os discos..."
+Write-Output "Enabling Pagefile as 'System Managed Size' for all drives..."
 
-# Desativa a opção global "Automatically manage paging file size for all drives"
+# Disables the global option "Automatically manage paging file size for all drives"
 wmic computersystem where "name='$env:COMPUTERNAME'" set AutomaticManagedPagefile=False
 
-# Obtém a lista de discos rígidos
+# Gets the list of hard drives
 $drives = Get-WmiObject Win32_LogicalDisk | Where-Object { $_.DriveType -eq 3 }
 
 foreach ($drive in $drives) {
     $driveLetter = $drive.DeviceID
-    Write-Output "Ativando Pagefile em: $driveLetter"
+    Write-Output "Enabling Pagefile on: $driveLetter"
 
-    # Verifica se o pagefile já existe para evitar erro
+    # Checks if the pagefile already exists to avoid errors
     $exists = Get-WmiObject Win32_PageFileSetting | Where-Object { $_.Name -eq "$driveLetter\pagefile.sys" }
 
     if (-not $exists) {
@@ -22,4 +22,4 @@ foreach ($drive in $drives) {
     wmic pagefileset where "name='$driveLetter\\pagefile.sys'" set InitialSize=0,MaximumSize=0
 }
 
-Write-Output "Pagefile foi ativado como 'System Managed Size' para todos os discos."
+Write-Output "Pagefile has been enabled as 'System Managed Size' for all drives."
