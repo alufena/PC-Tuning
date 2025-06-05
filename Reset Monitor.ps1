@@ -1,4 +1,4 @@
-﻿# Script para simular Shift+Ctrl+Windows+B
+# Script to simulate Shift+Ctrl+Windows+B
 $source = @"
 using System;
 using System.Runtime.InteropServices;
@@ -19,13 +19,13 @@ public class KeyboardSend
         byte VK_LWIN = 0x5B;      // Left Windows key
         byte VK_B = 0x42;         // B key
 
-        // Pressionar todas as teclas
+        // Press all keys
         keybd_event(VK_LSHIFT, 0, KEYEVENTF_KEYDOWN, 0);
         keybd_event(VK_LCONTROL, 0, KEYEVENTF_KEYDOWN, 0);
         keybd_event(VK_LWIN, 0, KEYEVENTF_KEYDOWN, 0);
         keybd_event(VK_B, 0, KEYEVENTF_KEYDOWN, 0);
 
-        // Soltar todas as teclas
+        // Release all keys
         keybd_event(VK_B, 0, KEYEVENTF_KEYUP, 0);
         keybd_event(VK_LWIN, 0, KEYEVENTF_KEYUP, 0);
         keybd_event(VK_LCONTROL, 0, KEYEVENTF_KEYUP, 0);
@@ -36,5 +36,5 @@ public class KeyboardSend
 
 Add-Type -TypeDefinition $source -Language CSharp
 
-# Executar a simulação das teclas
+# Execute the key simulation
 [KeyboardSend]::SendKeys()
