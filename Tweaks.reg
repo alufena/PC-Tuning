@@ -269,7 +269,6 @@ Windows Registry Editor Version 5.00
 "WatchdogResumeTimeout"=dword:00000000
 "WorkerFactoryThreadIdleTimeout"=dword:00000000
 "XMMIZeroingEnable"=dword:00000000
-"ForceMaximumTimerResolution"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM]
 "InterruptSteeringDisabled"=dword:00000001
@@ -693,6 +692,8 @@ Windows Registry Editor Version 5.00
 "IRQ4294967260Priority"=dword:00000001
 "IRQ4294967261Priority"=dword:00000001
 "IRQ4294967262Priority"=dword:00000001
+"IRQ4294967267Priority"=dword:00000001
+"IRQ4294967286Priority"=dword:00000002
 "IRQ4294967287Priority"=dword:00000001
 "IRQ4294967288Priority"=dword:00000001
 "IRQ4294967289Priority"=dword:00000001
@@ -814,8 +815,8 @@ Windows Registry Editor Version 5.00
 "MfOverridesDisabled"=dword:00000001
 "MinimumThrottlePercent"=dword:00000000
 "MiracastPerfTrackGraphicsLatency"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000000  ; =-, 00000000/00000001/000003e8
-"MonitorRefreshLatencyTolerance"=dword:00000000  ; =-, 00000000/00000001/00000a96
+"MonitorLatencyTolerance"=dword:00000001  ; =-, 00000000/00000001/000003e8
+"MonitorRefreshLatencyTolerance"=dword:00000001  ; =-, 00000000/00000001/00000a96
 "PerfBoostAtGuaranteed"=dword:00000001
 "PerfCalculateActualUtilization"=dword:00000000 ; 00000000/00000001
 "PlatformAoAcOverride"=dword:00000000
@@ -1021,36 +1022,24 @@ Windows Registry Editor Version 5.00
 "WindowedGsyncGeforceFlag"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
-"UseStaticComposition"=dword:00000001 ; =-, 00000001
-"RetryFrameOnDrop"=dword:00000000
-"EnableInputPrediction"=dword:00000000
-"UseStaticComposition"=dword:00000001
-"DisableDComp"=dword:00000001
-"UseLegacyDisplayFrameBuffer"=dword:00000001
-"DwmProcessPriority"=dword:00000004
-"UseCopyOnPresent"=dword:00000001
-"DiscardSurfaceOnMinimize"=dword:00000001
-"AlwaysOffscreenComposition"=dword:00000001
-"ForceGdiComposition"=dword:00000001
-"DisableHardwareComposition"=dword:00000001
-"ForceModeEnumeration"=dword:00000001
-"BufferAgingTimeout"=dword:00000000
-"EnableAcrylicBlur"=dword:00000000
-"EnableBackdropBrush"=dword:00000000
 "AlwaysHibernateThumbnails"=dword:00000000
+"AlwaysOffscreenComposition"=dword:00000000 ; 00000000/00000001
 "AnimationAttributionEnabled"=dword:00000000 ; 00000001, 00000000
 "AnimationAttributionHashingEnabled"=dword:00000000 ; 00000001, 00000000
 "AnimationsShiftKey"=dword:00000000
 "Blur"=dword:00000000
+"BufferAgingTimeout"=dword:00000000
 "Composition"=dword:00000000
-"CompositionPolicy"=dword:00000001 ; 00000000/00000001
+"CompositionPolicy"=dword:00000001 ; 00000000/00000001/00000002
 "DDisplayTestMode"=dword:00000000
 "DebugFailFast"=dword:00000000
 "DisableAdvancedDirectFlip"=dword:00000001
+"DisableDComp"=dword:00000001
 "DisableDeviceBitmaps"=dword:00000001
 "DisableDeviceBitmapsForMultiAdapter"=dword:00000001
 "DisableDrawListCaching"=dword:00000001
 "DisableDynamicShutdownUI"=dword:00000001
+"DisableHardwareComposition"=dword:00000001
 "DisableHologramCompositor"=dword:00000001
 "DisableIndependentFlip"=dword:00000001
 "DisableLockingMemory"=dword:00000001
@@ -1059,14 +1048,18 @@ Windows Registry Editor Version 5.00
 "DisallowColorizationColorChanges"=dword:00000001
 "DisallowComposition"=dword:00000001
 "DisallowNonDrawListRendering"=dword:00000001
+"DiscardSurfaceOnMinimize"=dword:00000001
+"EnableAcrylicBlur"=dword:00000000
 "EnableAeroPeek"=dword:00000000 ; 00000000/00000001
+"EnableBackdropBrush"=dword:00000000
 "EnableCommonSuperSets"=dword:00000001
 "EnableCpuClipping"=dword:00000001
 "EnableDesktopOverlays"=dword:00000000
 "EnableDrawToBackbuffer"=dword:00000000 ; 00000000/00000001
-"EnableEffectCaching"=dword:00000001
+"EnableEffectCaching"=dword:00000000 ; 00000000/00000001
 "EnableFrontBufferRenderChecks"=dword:00000000
 "EnableImageProcessing"=dword:00000000 ; 00000000/00000001
+"EnableInputPrediction"=dword:00000000
 "EnableMegaRects"=dword:00000001
 "EnableMPCPerfCounter"=dword:00000000
 "EnablePrimitiveReordering"=dword:00000000
@@ -1078,6 +1071,9 @@ Windows Registry Editor Version 5.00
 "ForceDirectDrawSync"=dword:00000000
 "ForceDisableModeChangeAnimation"=dword:00000001
 "ForceEffectMode"=dword:00000000 ; 00000000/00000001
+"ForceGdiComposition"=dword:00000001
+"ForceModeEnumeration"=dword:00000001
+"ForceSoftwareD3D"=dword:00000001
 "FrameLatency"=dword:00000001 ; 00000001/00000002
 "HighColor"=dword:00000000
 "ImageProcessing8bit"=dword:00000000 ; 00000000/00000001
@@ -1093,16 +1089,21 @@ Windows Registry Editor Version 5.00
 "OverlayDisqualifyCount"=dword:00000000
 "OverlayMinFPS"=dword:00000000
 "OverlayQualifyCount"=dword:00000000
-"ParallelModePolicy"=dword:00000001
+"ParallelModePolicy"=dword:00000000 ; 00000000/00000001
 "RenderThreadWatchdogTimeoutMilliseconds"=dword:00000000
-"ResampleInLinearSpace"=dword:00000001
-"ResampleModeOverride"=dword:00000001
+"ResampleInLinearSpace"=dword:00000000 ; 00000000/00000001
+"ResampleModeOverride"=dword:00000000 ; 00000000/00000001
 "ResizeTimeoutGdi"=dword:00000000
 "ResizeTimeoutModern"=dword:00000000
+"RetryFrameOnDrop"=dword:00000000
 "SDRBoostPercentOverride"=dword:00000001
-"SuperWetEnabled"=dword:00000001
+"SuperWetEnabled"=dword:00000000 ; 00000000/00000001
 "TelemetryFramesSequenceMaximumPeriodMilliseconds"=dword:00000000 ; 00000000/000001f4
+"UseCopyOnPresent"=dword:00000001
 "UseHWDrawListEntriesOnWARP"=dword:00000001
+"UseLegacyDisplayFrameBuffer"=dword:00000001
+"UseMachineCheck"=dword:00000000
+"UseStaticComposition"=dword:00000001 ; =-, 00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
 "AlwaysHibernateThumbnails"=dword:00000000
@@ -1148,8 +1149,8 @@ Windows Registry Editor Version 5.00
 "EnableDwmInputProcessing"=dword:00000000
 "RequireSignedAppInit_DLLs"=dword:00000000
 "ShutdownWarningDialogTimeout"=dword:00000001
-"UseDx"=dword:00000001
-"UseGpuForRender"=dword:00000001
+"UseDx"=dword:00000000 ; 00000000/00000001
+"UseGpuForRender"=dword:00000000 ; 00000000/00000001
 "UseSoftwareRender"=dword:00000001 ; 00000000/00000001
 "UseTdx"=dword:00000001
 "UseThreadedOptimization"=dword:00000001
@@ -1250,8 +1251,8 @@ Windows Registry Editor Version 5.00
 "HwSchTreatExperimentalAsStable"=dword:00000001
 "KnownProcessBoostMode"=dword:00000000
 "LOWLATENCY"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000000
-"MonitorRefreshLatencyTolerance"=dword:00000000
+"MonitorLatencyTolerance"=dword:00000001
+"MonitorRefreshLatencyTolerance"=dword:00000001
 "Node3DLowLatency"=dword:00000001
 "PciLatencyTimerControl"=dword:00000020 ; =-, 00000014/00000020/00000032
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
@@ -1324,8 +1325,8 @@ Windows Registry Editor Version 5.00
 "LOWLATENCY"=dword:00000001
 "MaxIAverageGraphicsLatencyInOneBucket"=dword:00000001
 "MiracastPerfTrackGraphicsLatency"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000000
-"MonitorRefreshLatencyTolerance"=dword:00000000
+"MonitorLatencyTolerance"=dword:00000001
+"MonitorRefreshLatencyTolerance"=dword:00000001
 "Node3DLowLatency"=dword:00000001
 "PciLatencyTimerControl"=dword:00000020
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
@@ -1424,8 +1425,8 @@ Windows Registry Editor Version 5.00
 "KMD_EnableSDMAPreemption"=dword:00000000
 "KMD_PreemptionLevelLimit"=dword:00000000
 "LOWLATENCY"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000000
-"MonitorRefreshLatencyTolerance"=dword:00000000
+"MonitorLatencyTolerance"=dword:00000001
+"MonitorRefreshLatencyTolerance"=dword:00000001
 "Node3DLowLatency"=dword:00000001
 "NoFastLinkTrainingForeDP"=dword:00000000
 "NVDeviceSupportKFilter"=dword:00000000
@@ -1595,8 +1596,8 @@ Windows Registry Editor Version 5.00
 "KMD_EnableSDMAPreemption"=dword:00000000
 "KMD_PreemptionLevelLimit"=dword:00000000
 "LOWLATENCY"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000000
-"MonitorRefreshLatencyTolerance"=dword:00000000
+"MonitorLatencyTolerance"=dword:00000001
+"MonitorRefreshLatencyTolerance"=dword:00000001
 "Node3DLowLatency"=dword:00000001
 "NoFastLinkTrainingForeDP"=dword:00000000
 "NVDeviceSupportKFilter"=dword:00000000
@@ -1746,8 +1747,8 @@ Windows Registry Editor Version 5.00
 "KMD_EnableSDMAPreemption"=dword:00000000
 "KMD_PreemptionLevelLimit"=dword:00000000
 "LOWLATENCY"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000000
-"MonitorRefreshLatencyTolerance"=dword:00000000
+"MonitorLatencyTolerance"=dword:00000001
+"MonitorRefreshLatencyTolerance"=dword:00000001
 "Node3DLowLatency"=dword:00000001
 "NoFastLinkTrainingForeDP"=dword:00000000
 "NVDeviceSupportKFilter"=dword:00000000
@@ -1897,8 +1898,8 @@ Windows Registry Editor Version 5.00
 "KMD_EnableSDMAPreemption"=dword:00000000
 "KMD_PreemptionLevelLimit"=dword:00000000
 "LOWLATENCY"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000000
-"MonitorRefreshLatencyTolerance"=dword:00000000
+"MonitorLatencyTolerance"=dword:00000001
+"MonitorRefreshLatencyTolerance"=dword:00000001
 "Node3DLowLatency"=dword:00000001
 "NoFastLinkTrainingForeDP"=dword:00000000
 "NVDeviceSupportKFilter"=dword:00000000
@@ -1977,8 +1978,8 @@ Windows Registry Editor Version 5.00
 "DxgkShareSwapChainObject"=dword:00000001
 "DxgkWaitForVerticalBlankEvent"=dword:00000001
 "DxgkWaitForVerticalBlankEvent2"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000000
-"MonitorRefreshLatencyTolerance"=dword:00000000
+"MonitorLatencyTolerance"=dword:00000001
+"MonitorRefreshLatencyTolerance"=dword:00000001
 "SwapChainBackBuffer"=dword:00000001
 "TdrResetFromTimeoutAsync"=dword:00000001
 
@@ -2005,8 +2006,8 @@ Windows Registry Editor Version 5.00
 "ForegroundPriorityBoost"=dword:00000000
 "FrameServerAutoBoostPriority"=dword:00000000
 "GPUPreemptionLevel"=dword:00000000
-"MonitorLatencyTolerance"=dword:00000000
-"MonitorRefreshLatencyTolerance"=dword:00000000
+"MonitorLatencyTolerance"=dword:00000001
+"MonitorRefreshLatencyTolerance"=dword:00000001
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
 "PlatformSupportMiracast"=dword:00000000
 "QueuedPresentLimit"=dword:00000001
@@ -2031,8 +2032,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DXGKrnl\Parameters]
 "ThreadPriority"=dword:0000000f
-"MonitorLatencyTolerance"=dword:00000000
-"MonitorRefreshLatencyTolerance"=dword:00000000
+"MonitorLatencyTolerance"=dword:00000001
+"MonitorRefreshLatencyTolerance"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global]
 "{41FCC608-8496-4DEF-B43E-7D9BD675A6FF}"=dword:00000001
@@ -4295,6 +4296,8 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SgrmBroker]
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SgrmAgent]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Ndu]
 "Start"=dword:00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\PerfNet\Performance]
@@ -7465,7 +7468,6 @@ Windows Registry Editor Version 5.00
 "SmartScreenEnabled"="Off"
 "ThumbnailQuality"=dword:00000024
 
-
 [HKEY_CURRENT_USER\Software\Microsoft\Edge\SmartScreenEnabled]
 @=dword:00000000
 
@@ -7667,6 +7669,9 @@ Windows Registry Editor Version 5.00
 "updatereliabilitydata"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Office\14.0\Common\Graphics]
+"DisableHardwareAcceleration"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\Common\Graphics]
 "DisableHardwareAcceleration"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USB\Parameters]
