@@ -1,6 +1,6 @@
 @echo off
 chcp 65001 > nul
-echo Desativando modo de segurança...
+echo Disabling safe mode...
 bcdedit /deletevalue {current} safeboot
-echo O sistema voltará ao modo normal na próxima inicialização.
+echo The system will return to normal mode on the next startup.
 pause
