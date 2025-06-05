@@ -1,13 +1,13 @@
-﻿$processo = "dpclat.exe"
+$processo = "dpclat.exe"
 
-# Obtém o ID do processo
+# Gets the process ID
 $proc = Get-Process -Name ($processo -replace ".exe","") -ErrorAction SilentlyContinue
 if (-not $proc) {
-    Write-Output "Processo $processo não encontrado."
+    Write-Output "Process $processo not found."
     exit
 }
 
-# Define a função para suspender o processo
+# Defines the function to suspend the process
 $signature = @"
 using System;
 using System.Runtime.InteropServices;
@@ -27,12 +27,12 @@ public class PInvoke {
 
 Add-Type -TypeDefinition $signature -Language CSharp
 
-# Obtém o handle do processo e o suspende
+# Gets the process handle and suspends it
 $handle = [PInvoke]::OpenProcess(0x001F0FFF, $false, $proc.Id)
 if ($handle -ne [IntPtr]::Zero) {
     [PInvoke]::NtSuspendProcess($handle) | Out-Null
     [PInvoke]::CloseHandle($handle)
-    Write-Output "Processo $processo suspenso."
+    Write-Output "Process $processo suspended."
 } else {
-    Write-Output "Erro ao obter handle do processo."
+    Write-Output "Error obtaining process handle."
 }
