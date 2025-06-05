@@ -262,6 +262,8 @@ sc stop PushToInstall
 sc stop LicenseManager
 sc stop sppsvc
 sc stop OSRSS
+sc stop SgrmBroker
+sc stop SgrmAgent
 powercfg.exe hibernate off
 bcdedit /set disabledynamictick Yes
 ::bcdedit /set disabledynamictick No
@@ -272,6 +274,7 @@ bcdedit /set tscsyncpolicy enhanced
 ::bcdedit /set tscsyncpolicy legacy
 ::bcdedit /deletevalue tscsyncpolicy
 bcdedit /set uselegacyapicmode No
+::bcdedit /set uselegacyapicmode Yes
 ::bcdedit /deletevalue uselegacyapicmode
 bcdedit /set useplatformclock false
 ::bcdedit /deletevalue useplatformclock
@@ -303,7 +306,7 @@ bcdedit /set isolatedcontext No
 ::bcdedit /deletevalue isolatedcontext
 bcdedit /set linearaddress57 OptOut
 ::bcdedit /deletevalue linearaddress57
-bcdedit /set maxproc yes
+bcdedit /set maxproc Yes
 ::bcdedit /deletevalue maxproc
 bcdedit /set nolowmem Yes
 ::bcdedit /deletevalue nolowmem
@@ -313,7 +316,7 @@ bcdedit /set MSI Default
 ::bcdedit /deletevalue MSI
 bcdedit /set onecpu No
 ::bcdedit /deletevalue onecpu
-bcdedit /set quietboot yes
+bcdedit /set quietboot Yes
 ::bcdedit /deletevalue quietboot
 bcdedit /set tpmbootentropy ForceDisable
 ::bcdedit /deletevalue tpmbootentropy
@@ -323,38 +326,33 @@ bcdedit /set usephysicaldestination No
 ::bcdedit /deletevalue usephysicaldestination
 bcdedit /set vm no
 ::bcdedit /deletevalue vm
-bcdedit /set vsmlaunchtype off
+bcdedit /set vsmlaunchtype Off
 ::bcdedit /deletevalue vsmlaunchtype
 bcdedit /set bootdebug Off
-bcdedit /bootdebug Off
-::bcdedit /deletevalue /bootdebug
-bdedit /bootems Off
-::bcdedit /deletevalue /bootems
-bcdedit /debug Off
-::bcdedit /debug On
-bcdedit /ems Off
-::bcdedit /deletevalue /ems
+::bcdedit /deletevalue bootdebug
 bcdedit /set bootlog No
-::bcdedit /deletevalue /bootlog
+::bcdedit /deletevalue bootlog
 bcdedit /set bootmenupolicy Legacy
-::bcdedit /deletevalue /bootmenupolicy
+::bcdedit /deletevalue bootmenupolicy
 bcdedit /set debugstart Disable
-::bcdedit /deletevalue /debugstart
+::bcdedit /deletevalue debugstart
 bcdedit /set extendedinput Yes
-::bcdedit /deletevalue /extendedinput
+::bcdedit /deletevalue extendedinput
 bcdedit /set forcefipscrypto No
-::bcdedit /deletevalue /forcefipscrypto
+::bcdedit /deletevalue forcefipscrypto
 bcdedit /set halbreakpoint No
 ::bcdedit /deletevalue halbreakpoint
 bcdedit /set highestmode Yes
 ::bcdedit /deletevalue highestmode
 bcdedit /set noumex Yes
 ::bcdedit /deletevalue noumex
-bcdedit /set pae ForceEnable
+bcdedit /set pae ForceDisable
+::bcdedit /set pae ForceEnable
 ::bcdedit /deletevalue pae
-bcdedit /set sos On
+bcdedit /set sos No
+::bcdedit /set sos On
 ::bcdedit /deletevalue sos
-bcdedit /timeout 0
+bcdedit /set timeout 0
 ::bcdedit /deletevalue timeout
 ::bcdedit /set {globalsettings} custom:16000067 true
 ::bcdedit /set graphicsmodedisabled No
@@ -376,8 +374,8 @@ wmic process where name="MpDefenderCoreService.exe" CALL terminate
 wmic process where name="OfficeClickToRun.exe" CALL terminate
 wmic process where name="taskhostw.exe" CALL terminate
 wmic process where name="WmiPrvSvc.exe" CALL terminate
-wmic process where name="dwm.exe" CALL setpriority 32768
-::wmic process where name="dwm.exe" CALL setpriority 64
+::wmic process where name="dwm.exe" CALL setpriority 32768
+wmic process where name="dwm.exe" CALL setpriority 64
 wmic process where name="dllhost.exe" CALL setpriority 64
 wmic process where name="fontdrvhost.exe" CALL setpriority 64
 wmic process where name="winlogon.exe" CALL setpriority 64
@@ -429,6 +427,11 @@ pnputil /disable-device "SWD\MSRRAS\MS_SSTPMINIPORT"
 pnputil /disable-device "SWD\PRINTENUM\{8C9B425C-5DD5-4DC1-AFDE-4EDFD21FFDAE}"
 pnputil /disable-device "SWD\PRINTENUM\PrintQueues"
 pnputil /disable-device "SWD\RADIO\{3DB5895D-CC28-44B3-AD3D-6F01A782B8D2}"
+pnputil /disable-device "SWD\MIDISRV\MIDIU_APP_TRANSPORT"
+pnputil /disable-device "SWD\MIDISRV\MIDIU_DIAG_PING"
+pnputil /disable-device "SWD\MIDISRV\MIDIU_DIAG_LOOPBACK_B"
+pnputil /disable-device "SWD\MIDISRV\MIDIU_DIAG_LOOPBACK_A"
+pnputil /disable-device "SWD\MIDISRV\MIDIU_DIAG_TRANSPORT"
 takeown /f %SystemRoot%\System32\drivers\Acpidev.sys
 takeown /f %SystemRoot%\System32\drivers\Acpipagr.sys
 takeown /f %SystemRoot%\System32\drivers\Acpitime.sys
