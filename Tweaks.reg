@@ -2777,6 +2777,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\Current\Device\Education]
 "IsEducationEnvironment"=dword:00000001
+"EnableEduThemes"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments]
 "SaveZoneInformation"=dword:00000001
@@ -2818,13 +2819,30 @@ Windows Registry Editor Version 5.00
 "AllowNewCachesByDefault"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CompatTelRunner.exe]
-"Debugger"="c:\\Windows\\System32\\systray.exe"
+"Debugger"="blocked"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeviceCensus.exe]
-"Debugger"="c:\\Windows\\System32\\systray.exe"
+"Debugger"="blocked"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wsqmcons.exe]
-"Debugger"="c:\\Windows\\System32\\systray.exe"
+"Debugger"="blocked"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\smartscreen.exe]
+"Debugger"="blocked"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LicensingUi.exe]
+"Debugger"="blocked"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wlms.exe]
+"Debugger"="blocked"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun]
+"1"="wlms.exe"
+"2"="LicensingUi.exe"
+"3"="CompatTelRunner.exe"
+"4"="smartscreen.exe"
+"5"="DeviceCensus.exe"
+"6"="wsqmcons.exe"
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WDI\{9c5a40da-b965-4fc3-8781-88dd50a6299d}]
 "ScenarioExecutionEnabled"=dword:00000000
@@ -3789,6 +3807,9 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Google\Chrome\Callbacks]
 "CollectStatsConsent"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Mozilla\Firefox]
+"DisableTelemetry"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\BraveSoftware\Brave]
 "UiAutomationProviderEnabled"=dword:00000000
 "ScreenCaptureAllowed"=dword:00000001
@@ -4298,6 +4319,10 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SgrmAgent]
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Ndu]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WerSvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wercplsupport]
 "Start"=dword:00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\PerfNet\Performance]
@@ -6061,6 +6086,7 @@ Windows Registry Editor Version 5.00
 "TouchKeyboard_EnableKeyAudioFeedback"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"DisallowRun"=dword:00000001
 "AllowOnlineTips"=dword:00000000
 "ClearRecentDocsOnExit"=dword:00000001
 "DisableBindDirectlyToPropertySetStorage"=dword:00000001
@@ -6105,6 +6131,7 @@ Windows Registry Editor Version 5.00
 "Start_ShowHelp"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"DisallowRun"=dword:00000001
 "ClearRecentDocsOnExit"=dword:00000001
 "ClearRecentProgForNewUserInStartMenu"=dword:00000001
 "DisableThumbnailCache"=dword:00000001
@@ -6539,6 +6566,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsSelfHost\UI\Visibility]
 "DiagnosticErrorText"=-
+"HideInsiderPage"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection]
 "AllowTelemetry"=dword:00000000
@@ -6551,6 +6579,7 @@ Windows Registry Editor Version 5.00
 "LimitDumpCollection"=dword:00000000
 "EnableExtendedBooksTelemetry"=dword:00000000
 "LimitDiagnosticLogCollection"=dword:00000001
+"ConfigureTelemetryForMicrosoft365Analytics"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\DataCollection]
 "AllowTelemetry"=dword:00000000
@@ -6823,6 +6852,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo]
 "DisabledByGroupPolicy"=dword:00000001
 "Enabled"=dword:00000000
+"DisableAdvertisingId"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo]
 "Enabled"=dword:00000000
@@ -6830,9 +6860,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo]
 "Enabled"=dword:00000000
 "ID"="null"
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo]
-"DisabledByGroupPolicy"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Bluetooth]
 "AllowAdvertising"=dword:00000000
@@ -6926,6 +6953,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\Device\System]
 "AllowExperimentation"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\TenantDefinedTelemetry]
+"CustomTelemetryId"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PreviewBuilds]
 "EnableConfigFlighting"=dword:00000000
@@ -7574,6 +7604,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy]
 "01"=dword:00000000
+"32"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Dsh]
 "IsPrelaunchEnabled"=dword:00000000
@@ -7653,6 +7684,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_USERS\.DEFAULT\Software\Microsoft\Games]
 "EnableXBGM"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Common\Graphics]
+"Disableanimations"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\15.0\Common]
 "QMEnable"=dword:00000000
