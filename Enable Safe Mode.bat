@@ -1,9 +1,9 @@
 @echo off
 chcp 65001 > nul
-echo Ativando modo de segurança...
+echo Enabling safe mode...
 bcdedit /set {current} safeboot minimal
-echo Modo de segurança será ativado na próxima inicialização.
-echo O computador será desligado em 5 segundos.
-echo Pressione CTRL+C para cancelar.
+echo Safe mode will be enabled on the next startup.
+echo The computer will shut down in 5 seconds.
+echo Press CTRL+C to cancel.
 timeout /t 5
 shutdown /s /t 0
