@@ -4,7 +4,7 @@ $folders = @(
     "C:\Users\Administrator\AppData\Local\D3DSCache",
     "C:\Users\Administrator\AppData\LocalLow\NVIDIA\PerDriverVersion\DXCache",
     "C:\Users\Administrator\AppData\LocalLow\NVIDIA\PerDriverVersion\GLCache",
-    "C:\Users\Administrator\AppData\Local\NVIDIA\DX遵
+    "C:\Users\Administrator\AppData\Local\NVIDIA\DXCache",
     "C:\Users\Administrator\AppData\Local\NVIDIA\GLCache",
     "D:\SteamLibrary\steamapps\shadercache",
     "E:\SteamLibrary\steamapps\shadercache",
