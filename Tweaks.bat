@@ -2389,6 +2389,7 @@ Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\FlightedFeatures" /v
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Shell\ActionCenter\Quick Actions" /v "PinnedQuickActionSlotCount" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\Current\Device\Start" /v "HideRecommendedSection" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\Current\Device\Education" /v "IsEducationEnvironment" /t REG_DWORD /d "1" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\Current\Device\Education" /v "EnableEduThemes" /t REG_DWORD /d "1" /f
 Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments" /v "SaveZoneInformation" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Attachments" /v "SaveZoneInformation" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Attachments" /v "ScanWithAntiVirus" /t REG_DWORD /d "0" /f
@@ -2408,9 +2409,18 @@ Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppCompat" /v "SbEnable" /
 Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppCompat" /v "VDMDisallowed" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\EMDMgmt" /v "GroupPolicyDisallowCaches" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\EMDMgmt" /v "AllowNewCachesByDefault" /t REG_DWORD /d "0" /f
-Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CompatTelRunner.exe" /v "Debugger" /t REG_SZ /d "c:\Windows\System32\systray.exe" /f
-Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeviceCensus.exe" /v "Debugger" /t REG_SZ /d "c:\Windows\System32\systray.exe" /f
-Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wsqmcons.exe" /v "Debugger" /t REG_SZ /d "c:\Windows\System32\systray.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CompatTelRunner.exe" /v "Debugger" /t REG_SZ /d "blocked" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeviceCensus.exe" /v "Debugger" /t REG_SZ /d "blocked" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wsqmcons.exe" /v "Debugger" /t REG_SZ /d "blocked" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\smartscreen.exe" /v "Debugger" /t REG_SZ /d "blocked" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LicensingUi.exe" /v "Debugger" /t REG_SZ /d "blocked" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wlms.exe" /v "Debugger" /t REG_SZ /d "blocked" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "1" /t REG_SZ /d "wlms.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "2" /t REG_SZ /d "LicensingUi.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "3" /t REG_SZ /d "CompatTelRunner.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "4" /t REG_SZ /d "smartscreen.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "5" /t REG_SZ /d "DeviceCensus.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "6" /t REG_SZ /d "wsqmcons.exe" /f
 Reg.exe add "HKLM\Software\Policies\Microsoft\Windows\WDI\{9c5a40da-b965-4fc3-8781-88dd50a6299d}" /v "ScenarioExecutionEnabled" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Internet Explorer\Main" /v "DEPOff" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\Software\Microsoft\RemovalTools\MpGears" /v "HeartbeatTrackingIndex" /t REG_DWORD /d "0" /f
@@ -3260,6 +3270,7 @@ Reg.exe add "HKLM\SOFTWARE\Policies\Google\Update" /v "AutoUpdateCheckPeriodMinu
 Reg.exe add "HKLM\SOFTWARE\Policies\Google\Update" /v "UpdateDefault" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SOFTWARE\Policies\Google\Update" /v "DisableAutoUpdateChecksCheckboxValue" /t REG_DWORD /d "0" /f
 Reg.exe add "HKCU\SOFTWARE\Google\Chrome\Callbacks" /v "CollectStatsConsent" /t REG_DWORD /d "0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Mozilla\Firefox" /v "DisableTelemetry" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SOFTWARE\Policies\BraveSoftware\Brave" /v "UiAutomationProviderEnabled" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Policies\BraveSoftware\Brave" /v "ScreenCaptureAllowed" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SOFTWARE\Policies\BraveSoftware\Brave" /v "DataUrlInSvgUseEnabled" /t REG_DWORD /d "1" /f
@@ -3623,6 +3634,8 @@ Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\midisrv" /v "Start" /t REG_D
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\SgrmBroker" /v "Start" /t REG_DWORD /d "4" /f
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\SgrmAgent" /v "Start" /t REG_DWORD /d "4" /f
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\Ndu" /v "Start" /t REG_DWORD /d "4" /f
+Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\WerSvc" /v "Start" /t REG_DWORD /d "4" /f
+Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\wercplsupport" /v "Start" /t REG_DWORD /d "4" /f
 Reg.exe add "HKLM\SYSTEM\ControlSet001\Services\PerfNet\Performance" /v "Collect Supports Metadata" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SYSTEM\ControlSet001\Services\PerfNet\Performance" /v "Collect Timeout" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\PerfNet\Performance" /v "Collect Supports Metadata" /t REG_DWORD /d "0" /f
@@ -4666,6 +4679,7 @@ Reg.exe add "HKU\.DEFAULT\Software\Microsoft\Input\Settings" /v "ProofDataSource
 Reg.exe add "HKU\.DEFAULT\Software\Microsoft\Input\Settings" /v "SearchDataSources" /t REG_DWORD /d "0" /f
 Reg.exe add "HKU\.DEFAULT\Software\Microsoft\Input\Settings" /v "Spellcheck" /t REG_DWORD /d "0" /f
 Reg.exe add "HKU\.DEFAULT\Software\Microsoft\Input\Settings" /v "TouchKeyboard_EnableKeyAudioFeedback" /t REG_DWORD /d "0" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "DisallowRun" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "AllowOnlineTips" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "ClearRecentDocsOnExit" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "DisableBindDirectlyToPropertySetStorage" /t REG_DWORD /d "1" /f
@@ -4708,6 +4722,7 @@ Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "SettingsPageVisibility" /t REG_SZ /d "hide:aicomponents;" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "StartMenuFavorites" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "Start_ShowHelp" /t REG_DWORD /d "0" /f
+Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "DisallowRun" /t REG_DWORD /d "1" /f
 Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "ClearRecentDocsOnExit" /t REG_DWORD /d "1" /f
 Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "ClearRecentProgForNewUserInStartMenu" /t REG_DWORD /d "1" /f
 Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "DisableThumbnailCache" /t REG_DWORD /d "1" /f
@@ -4971,7 +4986,7 @@ Reg.exe add "HKCU\Software\Policies\Microsoft\Office\16.0\Feedback" /v "updatere
 Reg.exe add "HKCU\Software\Policies\Microsoft\Office\16.0\Common\signin" /v "signinoptions" /t REG_DWORD /d "3" /f
 Reg.exe add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack" /v "ShowedToastAtLevel" /t REG_DWORD /d "1" /f
 Reg.exe delete "HKLM\SOFTWARE\Microsoft\WindowsSelfHost\UI\Visibility" /v "DiagnosticErrorText" /f
-Reg.exe add "HKLM\SOFTWARE\Microsoft\WindowsSelfHost\UI\Visibility" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\WindowsSelfHost\UI\Visibility" /v "HideInsiderPage" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" /v "AllowTelemetry" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" /v "MaxTelemetryAllowed" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" /v "AllowDeviceNameInTelemetry" /t REG_DWORD /d "0" /f
@@ -4982,6 +4997,7 @@ Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollect
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" /v "LimitDumpCollection" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" /v "EnableExtendedBooksTelemetry" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" /v "LimitDiagnosticLogCollection" /t REG_DWORD /d "1" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" /v "ConfigureTelemetryForMicrosoft365Analytics" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\DataCollection" /v "AllowTelemetry" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\TextInput" /v "AllowLinguisticDataCollection" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\TextInput" /v "AllowHardwareKeyboardTextSuggestions" /t REG_DWORD /d "0" /f
@@ -5162,10 +5178,10 @@ Reg.exe add "HKLM\software\microsoft\wcmsvc\wifinetworkmanager" /v "wifisenseope
 Reg.exe add "HKLM\SOFTWARE\Microsoft\WcmSvc\wifinetworkmanager\config" /v "AutoConnectAllowedOEM" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" /v "DisabledByGroupPolicy" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" /v "Enabled" /t REG_DWORD /d "0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" /v "DisableAdvertisingId" /t REG_DWORD /d "1" /f
 Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo" /v "Enabled" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo" /v "Enabled" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo" /v "ID" /t REG_SZ /d "null" /f
-Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" /v "DisabledByGroupPolicy" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Bluetooth" /v "AllowAdvertising" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\default\Bluetooth\AllowAdvertising" /v "value" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\SmartGlass" /v "BluetoothPolicy" /t REG_DWORD /d "0" /f
@@ -5213,6 +5229,7 @@ Reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\nvlddmkm\Global\Startup\SendTelemetryData" /ve /t REG_SZ /d "0" /f
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\nvlddmkm\Global\Startup" /v "SendTelemetryData" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\current\Device\System" /v "AllowExperimentation" /t REG_DWORD /d "0" /f
+Reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\TenantDefinedTelemetry" /v "CustomTelemetryId" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\PreviewBuilds" /v "EnableConfigFlighting" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\PreviewBuilds" /v "EnableExperimentation" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\PreviewBuilds" /v "AllowBuildPreview" /t REG_DWORD /d "0" /f
@@ -5582,6 +5599,7 @@ REM ; "WatchdogTimeout"=dword:00000000
 Reg.exe add "HKLM\SOFTWARE\JreMetrics" /v "DisableSponsors" /t REG_SZ /d "Y" /f
 Reg.exe add "HKLM\SOFTWARE\WOW6432Node\JreMetrics" /v "DisableSponsors" /t REG_SZ /d "Y" /f
 Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy" /v "01" /t REG_DWORD /d "0" /f
+Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy" /v "32" /t REG_DWORD /d "0" /f
 Reg.exe add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Dsh" /v "IsPrelaunchEnabled" /t REG_DWORD /d "0" /f
 Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /v "NumThumbnails" /t REG_DWORD /d "1" /f
 Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband\AuxilliaryPins" /v "MailPin" /t REG_DWORD /d "0" /f
@@ -5629,6 +5647,7 @@ Reg.exe add "HKU\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR" /v 
 Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\GameDVR" /v "AllowGameDVR" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowGameDVR" /v "value" /t REG_DWORD /d "0" /f
 Reg.exe add "HKU\.DEFAULT\Software\Microsoft\Games" /v "EnableXBGM" /t REG_DWORD /d "0" /f
+Reg.exe add "HKCU\Software\Policies\Microsoft\Office\16.0\Common\Graphics" /v "Disableanimations" /t REG_DWORD /d "1" /f
 Reg.exe add "HKCU\SOFTWARE\Microsoft\Office\15.0\Common" /v "QMEnable" /t REG_DWORD /d "0" /f
 Reg.exe add "HKCU\Software\Microsoft\Office\16.0\Common\Graphics" /v "DisableHardwareAcceleration" /t REG_DWORD /d "1" /f
 Reg.exe add "HKCU\Software\Microsoft\Office\15.0\Common\Graphics" /v "DisableHardwareAcceleration" /t REG_DWORD /d "1" /f
