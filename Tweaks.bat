@@ -602,7 +602,6 @@ REM 00000006,00000000/00000001/00000002/00000012
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}" /v "TimeLimitInSeconds" /t REG_DWORD /d "1" /f
 REM 00000006,00000002/00000000/00000012
 Reg.exe add "HKLM\SYSTEM\ControlSet001\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}" /v "TimeLimitInSeconds" /t REG_DWORD /d "1" /f
-REM 00000000/00000001/00000320
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\PriorityControl" /v "AdjustDpcThreshold" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\PriorityControl" /v "ConvertibilityEnabled" /t REG_DWORD /d "0" /f
 REM 00000000/00000001
@@ -4984,6 +4983,17 @@ Reg.exe add "HKCU\Software\Policies\Microsoft\Office\16.0\Feedback" /v "feedback
 Reg.exe add "HKCU\Software\Policies\Microsoft\Office\16.0\Feedback" /v "surveyenabled" /t REG_DWORD /d "0" /f
 Reg.exe add "HKCU\Software\Policies\Microsoft\Office\16.0\Feedback" /v "updatereliabilitydata" /t REG_DWORD /d "0" /f
 Reg.exe add "HKCU\Software\Policies\Microsoft\Office\16.0\Common\signin" /v "signinoptions" /t REG_DWORD /d "3" /f
+Reg.exe add "HKCU\Software\Policies\Microsoft\Office\16.0\Common\Graphics" /v "Disableanimations" /t REG_DWORD /d "1" /f
+Reg.exe add "HKCU\SOFTWARE\Microsoft\Office\15.0\Common" /v "QMEnable" /t REG_DWORD /d "0" /f
+Reg.exe add "HKCU\Software\Microsoft\Office\16.0\Common\Graphics" /v "DisableHardwareAcceleration" /t REG_DWORD /d "1" /f
+Reg.exe add "HKCU\Software\Microsoft\Office\15.0\Common\Graphics" /v "DisableHardwareAcceleration" /t REG_DWORD /d "1" /f
+Reg.exe add "HKCU\Software\Microsoft\Office\15.0\Common\Graphics" /v "qmenable" /t REG_DWORD /d "0" /f
+Reg.exe add "HKCU\Software\Microsoft\Office\15.0\Common\Graphics" /v "SendCustomerDataOptIn" /t REG_DWORD /d "0" /f
+Reg.exe add "HKCU\Software\Microsoft\Office\15.0\Common\Graphics" /v "SendCustomerDataOptInReason" /t REG_DWORD /d "0" /f
+Reg.exe add "HKCU\Software\Microsoft\Office\15.0\Common\Graphics" /v "sentcostumerdata" /t REG_DWORD /d "0" /f
+Reg.exe add "HKCU\Software\Microsoft\Office\15.0\Common\Graphics" /v "updatereliabilitydata" /t REG_DWORD /d "0" /f
+Reg.exe add "HKCU\Software\Microsoft\Office\14.0\Common\Graphics" /v "DisableHardwareAcceleration" /t REG_DWORD /d "1" /f
+Reg.exe add "HKCU\Software\Microsoft\Office\Common\Graphics" /v "DisableHardwareAcceleration" /t REG_DWORD /d "1" /f
 Reg.exe add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack" /v "ShowedToastAtLevel" /t REG_DWORD /d "1" /f
 Reg.exe delete "HKLM\SOFTWARE\Microsoft\WindowsSelfHost\UI\Visibility" /v "DiagnosticErrorText" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\WindowsSelfHost\UI\Visibility" /v "HideInsiderPage" /t REG_DWORD /d "1" /f
@@ -5647,17 +5657,6 @@ Reg.exe add "HKU\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR" /v 
 Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\GameDVR" /v "AllowGameDVR" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowGameDVR" /v "value" /t REG_DWORD /d "0" /f
 Reg.exe add "HKU\.DEFAULT\Software\Microsoft\Games" /v "EnableXBGM" /t REG_DWORD /d "0" /f
-Reg.exe add "HKCU\Software\Policies\Microsoft\Office\16.0\Common\Graphics" /v "Disableanimations" /t REG_DWORD /d "1" /f
-Reg.exe add "HKCU\SOFTWARE\Microsoft\Office\15.0\Common" /v "QMEnable" /t REG_DWORD /d "0" /f
-Reg.exe add "HKCU\Software\Microsoft\Office\16.0\Common\Graphics" /v "DisableHardwareAcceleration" /t REG_DWORD /d "1" /f
-Reg.exe add "HKCU\Software\Microsoft\Office\15.0\Common\Graphics" /v "DisableHardwareAcceleration" /t REG_DWORD /d "1" /f
-Reg.exe add "HKCU\Software\Microsoft\Office\15.0\Common\Graphics" /v "qmenable" /t REG_DWORD /d "0" /f
-Reg.exe add "HKCU\Software\Microsoft\Office\15.0\Common\Graphics" /v "SendCustomerDataOptIn" /t REG_DWORD /d "0" /f
-Reg.exe add "HKCU\Software\Microsoft\Office\15.0\Common\Graphics" /v "SendCustomerDataOptInReason" /t REG_DWORD /d "0" /f
-Reg.exe add "HKCU\Software\Microsoft\Office\15.0\Common\Graphics" /v "sentcostumerdata" /t REG_DWORD /d "0" /f
-Reg.exe add "HKCU\Software\Microsoft\Office\15.0\Common\Graphics" /v "updatereliabilitydata" /t REG_DWORD /d "0" /f
-Reg.exe add "HKCU\Software\Microsoft\Office\14.0\Common\Graphics" /v "DisableHardwareAcceleration" /t REG_DWORD /d "1" /f
-Reg.exe add "HKCU\Software\Microsoft\Office\Common\Graphics" /v "DisableHardwareAcceleration" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\USB\Parameters" /v "DisableSelectiveSuspend" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\USB\Parameters" /v "ForceHCResetOnResume" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\HidUsb\Parameters" /v "SelectiveSuspendEnabled" /t REG_DWORD /d "0" /f
