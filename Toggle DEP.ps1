@@ -1,4 +1,3 @@
-﻿# Verifica status atual do DEP via bcdedit
 $depStatusRaw = bcdedit /enum | Select-String -Pattern "nx"
 
 if ($depStatusRaw -match "AlwaysOff") {
