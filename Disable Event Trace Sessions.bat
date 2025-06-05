@@ -1,6 +1,5 @@
 @echo off
 chcp 65001 >nul
-:: Disable Event Trace Sessions (ETS) - Ultra rápido, sem consultar antes
 
 for %%X in (
     "NT Kernel Logger"
@@ -41,7 +40,7 @@ for %%X in (
     "RzPresentMon"
 ) do (
     start "" /b cmd /c ^
-    "logman stop %%X -ets >nul 2>&1 && echo [OK] Sessão %%X parada."
+    "logman stop %%X -ets >nul 2>&1 && echo [OK] Session %%X stopped."
 )
 
 timeout /t 2 /nobreak
