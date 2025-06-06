@@ -134,7 +134,7 @@ Windows Registry Editor Version 5.00
 "WppRecorder_UseTimeStamp"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters]
-"KeyboardDataQueueSize"=dword:00000003 ; 00000064, 00000003/00000010/00000014
+"KeyboardDataQueueSize"=dword:00000010 ; 00000064, 00000003/00000010/00000014
 "ThreadPriority"=dword:0000001f
 "WppRecorder_UseTimeStamp"=dword:00000000
 
@@ -148,7 +148,7 @@ Windows Registry Editor Version 5.00
 "EnableCfg"=dword:00000000
 "EnableCooling"=dword:00000000
 "EnablePerVolumeLazyWriter"=dword:00000002
-"FeatureSettings"=dword:00000001 ; 00000000, 00000001
+"FeatureSettings"=dword:00000003 ; 00000000, 00000001/00000003
 "FeatureSettingsOverride"=dword:00000003
 "FeatureSettingsOverrideMask"=dword:00000003
 "IoPageLockLimit"=dword:ffffffff ; =-, ffffffff/00100000/00ff0000
@@ -261,7 +261,7 @@ Windows Registry Editor Version 5.00
 "MaxDynamicTickDurationSize"=dword:ffffffff
 "MaximumDpcQueueDepth"=dword:00000001 ; 00000000/00000001
 "MaximumDpcRate"=dword:00000001
-"MaximumSharedReadyQueueSize"=dword:00000080 ; 00000001/00000080
+"MaximumSharedReadyQueueSize"=- ; =-, 00000001/00000080
 "MinDynamicTickDuration"=dword:000003e8
 "MinimumDpcRate"=dword:00000001
 "MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,\
@@ -437,9 +437,9 @@ Windows Registry Editor Version 5.00
 "ValueMin"=dword:00000000 ; unpark 00000064 on, park 00000000 off
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
-"EnablePrefetch"=dword:00000003 ; 00000003 on, 00000000 off
-"EnablePrefetcher"=dword:00000003 ; 00000003 on, 00000000 off
-"EnableSuperfetch"=dword:00000003 ; =- off, 00000003 on
+"EnablePrefetch"=dword:00000000 ; 00000003 on, 00000000 off
+"EnablePrefetcher"=dword:00000000 ; 00000003 on, 00000000 off
+"EnableSuperfetch"=dword:00000000 ; =-, 00000003
 "EnableBootTrace"=dword:00000000 ; =-, 00000000/00000001
 "SfTracingState"=dword:00000000 ; =-, 00000000/00000001
 "FIPrefetchDelayMs"=dword:00000000
@@ -5029,8 +5029,8 @@ Windows Registry Editor Version 5.00
 ; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Audio]
 ; "DisableSpatialOnComboEndpoints"=dword:00000000 ; 00000000, 00000001
 ; "DisableProtectedAudioDG"=- ; =-, 00000001
-; "EnableCaptureMonitor"=dword:00000001 ; 00000001, 00000000
-; "EnableLogonHIDControls"=dword:00000001 ; 00000001, 00000000
+; "EnableCaptureMonitor"=dword:00000001 ; 00000000, 00000001
+; "EnableLogonHIDControls"=dword:00000001 ; 00000000, 00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\iSCSI]
 "RestrictAdditionalLogins"=dword:00000001
@@ -7236,8 +7236,8 @@ Windows Registry Editor Version 5.00
 "Flags"="506"
 
 [HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response]
-"AutoRepeatDelay"="200" ; 200/0
-"AutoRepeatRate"="6" ; 6/0
+"AutoRepeatDelay"="0" ; 200/0
+"AutoRepeatRate"="0" ; 6/0
 "DelayBeforeAcceptance"="0"
 "Flags"="58" ; 58/59
 "BounceTime"="0"
