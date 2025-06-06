@@ -438,9 +438,9 @@ Windows Registry Editor Version 5.00
 "ValueMin"=dword:00000000 ; unpark 00000064 on, park 00000000 off
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
-"EnablePrefetch"=dword:00000000 ; 00000003 on, 00000000 off
-"EnablePrefetcher"=dword:00000000 ; 00000003 on, 00000000 off
-"EnableSuperfetch"=dword:00000000 ; =-, 00000003
+"EnablePrefetch"=dword:00000003 ; 00000003 on, 00000000 off
+"EnablePrefetcher"=dword:00000003 ; 00000003 on, 00000000 off
+"EnableSuperfetch"=dword:00000003 ; =-, 00000003
 "EnableBootTrace"=dword:00000000 ; =-, 00000000/00000001
 "SfTracingState"=dword:00000000 ; =-, 00000000/00000001
 "FIPrefetchDelayMs"=dword:00000000
@@ -2027,7 +2027,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\Parameters]
 "ThreadPriority"=dword:0000001f
-"DmaRemappingCompatible"=dword:00000000 ; 00000003, 00000000/00000001
+"DmaRemappingCompatible"=dword:00000003 ; 00000003, 00000000/00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DXGKrnl\Parameters]
 "ThreadPriority"=dword:0000000f
@@ -4032,6 +4032,14 @@ Windows Registry Editor Version 5.00
 "RawMouseThrottleForced"=dword:00000000
 "RawMouseThrottleLeeway"=dword:00000000
 "SnapToDefaultButton"="0"
+"SmoothMouseXCurve"=hex:00,00,00,00,00,00,00,00,15,6e,00,00,00,00,00,00,00,40,\
+  01,00,00,00,00,00,29,dc,03,00,00,00,00,00,00,00,28,00,00,00,00,00
+"SmoothMouseYCurve"=hex:00,00,00,00,00,00,00,00,fd,11,01,00,00,00,00,00,00,24,\
+  04,00,00,00,00,00,00,fc,12,00,00,00,00,00,00,c0,bb,01,00,00,00,00
+; "SmoothMouseXCurve"=hex:00,00,00,00,00,00,00,00,15,6e,00,00,00,00,00,00,00,40, \
+;  01,00,00,00,00,00,29,dc,03,00,00,00,00,00,00,00,28,00,00,00,00,00
+; "SmoothMouseYCurve"=hex:00,00,00,00,00,00,00,00,fd,11,01,00,00,00,00,00,00,24, \
+;  04,00,00,00,00,00,00,fc,12,00,00,00,00,00,00,c0,bb,01,00,00,00,00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Paint]
 "DisableGenerativeFill"=dword:00000001
@@ -4430,6 +4438,8 @@ Windows Registry Editor Version 5.00
 "ShortcutNameTemplate"="%s"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"LastActiveClick"=dword:00000000 ; 00000000, 00000001
+"Start_SearchFiles"=dword:00000001
 "TaskbarAcrylicOpacity"=dword:00000000
 "DisableBackdropEffect"=dword:00000001
 "AutoCheckSelect"=dword:00000000
@@ -4503,9 +4513,11 @@ Windows Registry Editor Version 5.00
 "MaxAnimate"="0"
 "ActiveWndTrackTimeout"=dword:00000000
 "AppliedDPI"=-
+"BorderWidth"="0"
 
 [HKEY_USERS\.DEFAULT\Control Panel\Desktop\WindowMetrics]
 "PaddedBorderWidth"="0"
+"BorderWidth"="0"
 "MinAnimate"="0"
 "MaxAnimate"="0"
 
@@ -5565,6 +5577,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\AppV\Client\Virtualization]
 "EnableDynamicVirtualization"=dword:00000000
 "ProcessesUsingVirtualComponents"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization]
+"MinVmVersionForCpuBasedMitigations"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\AppV\CEIP]
 "CEIPEnable"=dword:00000000
@@ -10664,6 +10679,7 @@ Windows Registry Editor Version 5.00
 "MMXFastPath"=dword:00000001
 "UseMMXForRGB"=dword:00000001
 "UseNonLocalVidMem"=dword:00000001
+"MaxPreRenderedFrames"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D\Drivers]
 "EnumNullDevice"=dword:00000001
