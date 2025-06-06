@@ -3,7 +3,7 @@ fsutil behavior set DisableCompression 1
 fsutil behavior set disableencryption 1
 fsutil behavior set disablelastaccess 1
 fsutil behavior set encryptpagingfile 0
-fsutil behavior set memoryusage 2
+fsutil behavior set memoryusage 0
 fsutil behavior set mftzone 4
 manage-bde -off C:
 manage-bde -off D:
