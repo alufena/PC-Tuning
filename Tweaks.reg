@@ -153,7 +153,7 @@ Windows Registry Editor Version 5.00
 "FeatureSettingsOverrideMask"=dword:00000003
 "IoPageLockLimit"=dword:ffffffff ; =-, ffffffff/00100000/00ff0000
 "LargeSystemCache"=dword:00000001 ; 00000000, 00000001
-"ModifiedWriteMaximum"=dword:00000014 ; 00000014/00000080
+"ModifiedWriteMaximum"=dword:00000080 ; 00000014/00000080
 "MoveImages"=dword:00000000
 "NonPagedPoolQuota"=dword:00000000
 "NonPagedPoolSize"=dword:00000400 ; 00000000/00000400
@@ -162,7 +162,7 @@ Windows Registry Editor Version 5.00
 "PhysicalAddressExtension"=dword:00000001
 "PoolUsageMaximum"=dword:00000028 ; 00000028/40/00000060
 "SecondLevelDataCache"=dword:00000000 ; 00000000/00000400
-"SessionPoolSize"=dword:000000c0 ; 00000040/000000c0
+"SessionPoolSize"=dword:00000040 ; 00000040/000000c0
 "SessionViewSize"=dword:00000088 ; 00000088/000000c0
 "SimulateCommitSavings"=dword:00000000
 "SwapfileControl"=dword:00000000
@@ -182,7 +182,7 @@ Windows Registry Editor Version 5.00
 "Mirroring"=dword:00000000
 "NonPagedPoolSize"=dword:00000400
 "PagedPoolSize"=dword:ffffffff
-"SessionPoolSize"=dword:000000c0
+"SessionPoolSize"=dword:00000040
 "SessionSpaceLimit"=dword:00000000
 "SessionViewSize"=dword:00000088
 "SnapUnloads"=dword:00000001
@@ -645,16 +645,16 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
 "DisableRemoteScmEndpoints"=dword:00000000
-"HandlerTimeout"=dword:7FFFFFFF
+"HandlerTimeout"=dword:7fffffff
 "PortableOperatingSystem"=dword:00000000
 "ServicesPipeTimeout"=dword:00240000
-"SvcHostSplitThresholdInKB"=dword:4000000 ; 380000, 1000000/4000000
+"SvcHostSplitThresholdInKB"=dword:04000000 ; 00380000, 01000000/04000000
 "WaitToKillServiceTimeout"="1000"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control]
 "DisableRemoteScmEndpoints"=dword:00000000
-"HandlerTimeout"=dword:7FFFFFFF
-"SvcHostSplitThresholdInKB"=dword:4000000
+"HandlerTimeout"=dword:7fffffff
+"SvcHostSplitThresholdInKB"=dword:04000000
 "WaitToKillServiceTimeout"="1000"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
@@ -1135,9 +1135,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\DWM\ExtendedComposition]
 "Compositor"=""
-"enableColorSeparation"=dword:00000000
-"ExclusiveModeFramerateAveragingPeriodMs"=dword:000003e8 ; 000000fa/000003e8/00000000
-"ExclusiveModeFramerateThresholdPercent"=dword:00000064 ; 00000000/0000002d/00000064
+"EnableColorSeparation"=dword:00000000
+"ExclusiveModeFramerateAveragingPeriodMs"=dword:000003e8 ; 000003e8, 00000000/00000064/000000fa/000001f4/000002ee
+"ExclusiveModeFramerateThresholdPercent"=dword:00000064 ; 0000002d, 00000000/00000001/00000064
 "ForwardOnlyOnly"=dword:00000000
 "RemoveSRMeshInShell"=dword:00000000
 "SydneyDownsampleFilterKernelSize"=dword:00000000
@@ -4815,8 +4815,8 @@ Windows Registry Editor Version 5.00
 "DefaultSendWindow"=dword:00004000
 "DisableRawSecurity"=dword:00000001
 "DynamicSendBufferDisable"=dword:00000000
-"FastCopyReceiveThreshold"=dword:00004000
-"FastSendDatagramThreshold"=dword:00004000
+; "FastCopyReceiveThreshold"=dword:000005b8 ; 00004000/000005b8 (MTU)
+; "FastSendDatagramThreshold"=dword:000005b8 ; 00004000/000005b8 (MTU)
 "IgnorePushBitOnReceives"=dword:00000001
 "NonBlockingSendSpecialBuffering"=dword:00000001
 "ThreadPriority"=dword:00000000
@@ -10644,7 +10644,7 @@ Windows Registry Editor Version 5.00
 "EmulatePointSprites"=dword:00000000
 "DisableMMX"=dword:00000000
 "ForceNoSysLock"=dword:00000000
-"ForceRefreshRate"=dword:00000060
+"ForceRefreshRate"=dword:0000003c ; 0000003c/00000060
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\DirectDraw]
 "DisableAGPSupport"=dword:00000000
@@ -10654,7 +10654,7 @@ Windows Registry Editor Version 5.00
 "EmulatePointSprites"=dword:00000000
 "DisableMMX"=dword:00000000
 "ForceNoSysLock"=dword:00000000
-"ForceRefreshRate"=dword:00000060
+"ForceRefreshRate"=dword:0000003c
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D]
 "DisableDM"=dword:00000001
