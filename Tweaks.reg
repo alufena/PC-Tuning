@@ -1136,7 +1136,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\DWM\ExtendedComposition]
 "Compositor"=""
 "EnableColorSeparation"=dword:00000000
-"ExclusiveModeFramerateAveragingPeriodMs"=dword:000000fa ; 000003e8, 00000000/00000064/000000fa/000001f4/000002ee
+"ExclusiveModeFramerateAveragingPeriodMs"=dword:000003e8 ; 000003e8, 00000000/00000064/000000fa/000001f4/000002ee
 "ExclusiveModeFramerateThresholdPercent"=dword:00000064 ; 0000002d, 00000000/00000001/00000064
 "ForwardOnlyOnly"=dword:00000000
 "RemoveSRMeshInShell"=dword:00000000
@@ -4356,6 +4356,11 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BthLEEnum]
 "Start"=dword:00000004
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DiagTrack]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\msisadrv]
+"Start"=dword:00000004 ; 00000000, 00000004
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters]
 "AllowInteractiveConnect"=dword:00000000
 
@@ -6176,7 +6181,7 @@ Windows Registry Editor Version 5.00
 "NoWelcomeScreen"=dword:00000001
 "NoWindowsUpdate"=dword:00000001
 "PreXPSP2ShellProtocolBehavior"=dword:00000000
-"SettingsPageVisibility"="hide:aicomponents;"
+"SettingsPageVisibility"="hide:aicomponents;hide:home"
 "StartMenuFavorites"=dword:00000000
 "Start_ShowHelp"=dword:00000000
 
