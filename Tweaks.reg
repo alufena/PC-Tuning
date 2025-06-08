@@ -427,6 +427,7 @@ Windows Registry Editor Version 5.00
 "Win31FileSystem"=dword:00000000
 "Win95TruncatedExtensions"=dword:00000000
 
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0cc5b647-c1df-4637-891a-dec35c318583]
 "Attributes"=dword:00000002
 "ValueMax"=dword:00000000 ; unpark 00000064 on, park 00000000 off
@@ -580,6 +581,7 @@ Windows Registry Editor Version 5.00
 "AdditionalCriticalWorkerThreads"=dword:00000010 ; 00000000, 00000010/00000040
 "AdditionalDelayedWorkerThreads"=dword:00000010 ; 00000000, 00000010
 "PriorityQuantumMatrix"=dword:00000000
+"MaxTimeSeparationBeforeCorrect"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
 "AutoShareServer"=dword:00000000
@@ -619,6 +621,8 @@ Windows Registry Editor Version 5.00
 "IoEnableSessionZeroAccessCheck"=dword:00000001
 "PassiveIntRealTimeWorkerCount"=dword:00000010 ; 00000010/00000040
 "PassiveIntRealTimeWorkerPriority"=dword:00000012
+"DisableDiskCounters"=dword:00000001
+"RequireDeviceAccessCheck"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\KernelVelocity]
 "DisableFGBoostDecay"=dword:00000001
@@ -734,26 +738,53 @@ Windows Registry Editor Version 5.00
 "LPM"=dword:00000000
 "LPMDSTATE"=dword:00000000
 "DIPM"=dword:00000000
+"HIPM"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\iaStor\Parameters\Port1]
 "LPM"=dword:00000000
 "LPMDSTATE"=dword:00000000
 "DIPM"=dword:00000000
+"HIPM"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\iaStor\Parameters\Port2]
 "LPM"=dword:00000000
 "LPMDSTATE"=dword:00000000
 "DIPM"=dword:00000000
+"HIPM"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\iaStor\Parameters\Port3]
 "LPM"=dword:00000000
 "LPMDSTATE"=dword:00000000
 "DIPM"=dword:00000000
+"HIPM"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\iaStor\Parameters\Port4]
 "LPM"=dword:00000000
 "LPMDSTATE"=dword:00000000
 "DIPM"=dword:00000000
+"HIPM"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\iaStor\Parameters\Port5]
 "LPM"=dword:00000000
 "LPMDSTATE"=dword:00000000
 "DIPM"=dword:00000000
+"HIPM"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\Storage\SD\IdleState\1]
+"IdleExitEnergyMicroJoules"=dword:00000000
+"IdleExitLatencyMs"=dword:00000000
+"IdlePowerMw"=dword:00000000
+"IdleTimeLengthMs"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\Storage\SSD\IdleState\1]
+"IdleExitEnergyMicroJoules"=dword:00000000
+"IdleExitLatencyMs"=dword:00000000
+"IdlePowerMw"=dword:00000000
+"IdleTimeLengthMs"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\Storage\SSD\IdleState\2]
+"IdleExitEnergyMicroJoules"=dword:00000000
+"IdleExitLatencyMs"=dword:00000000
+"IdlePowerMw"=dword:00000000
+"IdleTimeLengthMs"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\Storage\SSD\IdleState\3]
+"IdleExitEnergyMicroJoules"=dword:00000000
+"IdleExitLatencyMs"=dword:00000000
+"IdlePowerMw"=dword:00000000
+"IdleTimeLengthMs"=dword:ffffffff
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power]
 "AwayModeEnabled"=dword:00000000
@@ -877,7 +908,7 @@ Windows Registry Editor Version 5.00
 "NVMeDisablePerfThrottling"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\StorPort]
-"HmbAllocationPolicy"=dword:00000000
+"HmbAllocationPolicy"=dword:00000000 ; 00000000/00000002
 "TelemetryDeviceHealthEnabled"=dword:00000000
 "TelemetryErrorDataEnabled"=dword:00000000
 "TelemetryPerformanceEnabled"=dword:00000000
