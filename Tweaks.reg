@@ -427,7 +427,6 @@ Windows Registry Editor Version 5.00
 "Win31FileSystem"=dword:00000000
 "Win95TruncatedExtensions"=dword:00000000
 
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0cc5b647-c1df-4637-891a-dec35c318583]
 "Attributes"=dword:00000002
 "ValueMax"=dword:00000000 ; unpark 00000064 on, park 00000000 off
@@ -912,6 +911,7 @@ Windows Registry Editor Version 5.00
 "TelemetryDeviceHealthEnabled"=dword:00000000
 "TelemetryErrorDataEnabled"=dword:00000000
 "TelemetryPerformanceEnabled"=dword:00000000
+"LogControlEnable"=qword:0000000000000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SCMConfig]
 "EnableSvchostMitigationPolicy"=dword:00000000
@@ -1442,7 +1442,7 @@ Windows Registry Editor Version 5.00
 "EnableRuntimePowerManagement"=dword:00000000
 "EnableSCGMidBufferPreemption"=dword:00000000
 "EnableSystemMemoryTiling"=dword:00000000
-"EnableTiledDisplay"=dword:00000000
+"EnableTiledDisplay"=dword:00000000  ; =-, 00000000/00000001
 "EnableUlps"=dword:00000000
 "EnableVCNPreemption"=dword:00000000
 "F1TransitionLatency"=dword:00000001
@@ -6248,6 +6248,7 @@ Windows Registry Editor Version 5.00
 "NoSystraySystemPromotion"=dword:00000001
 "NoThumbnailCache"=dword:00000001
 "TurnOffSPIAnimations"=dword:00000001
+; "HideClock"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\QuietHours]
 "AllowCalls"=dword:00000000
@@ -7699,6 +7700,8 @@ Windows Registry Editor Version 5.00
 "AnimateLockScreenBackground"=dword:00000001
 "LockScreenOverlaysDisabled"=dword:00000001
 "NoLockScreenSlideshow"=dword:00000001
+"NoChangingLockScreen"=dword:00000001 
+"NoLockScreenCamera"=dword:00000001 
 
 ; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\intelppm\Parameters]
 ; "AcpiFirmwareWatchDog"=dword:00000000
