@@ -152,7 +152,5 @@ for %%a in (
 )
 
 echo info: done
-echo info: press any key to continue
-pause > nul 2>&1
 
 exit
