@@ -1470,9 +1470,10 @@ Windows Registry Editor Version 5.00
 "PCIEPowerControl_8086191f50001458"=dword:00000000
 "PciLatencyTimerControl"=dword:00000020
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
-"PowerMizerEnable"=dword:00000000
-"PowerMizerLevel"=dword:00000000
-"PowerMizerLevelAC"=dword:00000000
+"PerfLevelSrc"=dword:00002222
+"PowerMizerEnable"=dword:00000001
+"PowerMizerLevel"=dword:00000001
+"PowerMizerLevelAC"=dword:00000001
 "PowerSavingTweaks"=dword:00000000
 "PP_SclkDeepSleepDisable"=dword:00000001
 "PP_ThermalAutoThrottlingEnable"=dword:00000000
@@ -1641,9 +1642,9 @@ Windows Registry Editor Version 5.00
 "PciLatencyTimerControl"=dword:00000020
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
 "PerfLevelSrc"=dword:00002222
-"PowerMizerEnable"=dword:00000000
-"PowerMizerLevel"=dword:00000000
-"PowerMizerLevelAC"=dword:00000000
+"PowerMizerEnable"=dword:00000001
+"PowerMizerLevel"=dword:00000001
+"PowerMizerLevelAC"=dword:00000001
 "PowerSavingTweaks"=dword:00000000
 "Power schemizerLevelAC"=dword:00000001
 "PP_SclkDeepSleepDisable"=dword:00000001
@@ -1791,9 +1792,9 @@ Windows Registry Editor Version 5.00
 "PciLatencyTimerControl"=dword:00000020
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
 "PerfLevelSrc"=dword:00002222
-"PowerMizerEnable"=dword:00000000
-"PowerMizerLevel"=dword:00000000
-"PowerMizerLevelAC"=dword:00000000
+"PowerMizerEnable"=dword:00000001
+"PowerMizerLevel"=dword:00000001
+"PowerMizerLevelAC"=dword:00000001
 "PowerSavingTweaks"=dword:00000000
 "Power schemizerLevelAC"=dword:00000001
 "PP_SclkDeepSleepDisable"=dword:00000001
@@ -1942,9 +1943,9 @@ Windows Registry Editor Version 5.00
 "PciLatencyTimerControl"=dword:00000020
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
 "PerfLevelSrc"=dword:00002222
-"PowerMizerEnable"=dword:00000000
-"PowerMizerLevel"=dword:00000000
-"PowerMizerLevelAC"=dword:00000000
+"PowerMizerEnable"=dword:00000001
+"PowerMizerLevel"=dword:00000001
+"PowerMizerLevelAC"=dword:00000001
 "PowerSavingTweaks"=dword:00000000
 "Power schemizerLevelAC"=dword:00000001
 "PP_SclkDeepSleepDisable"=dword:00000001
@@ -2172,9 +2173,9 @@ Windows Registry Editor Version 5.00
 "DisableBackOffOnUser"=dword:00000001
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Video\{DEB039CC-B704-4F53-B43E-9DD4432FA2E9}\0000]
 "PerfLevelSrc"=dword:00002222 ; =-, 00002222/00003322
-"PowerMizerEnable"=dword:00000000 ; =-, 00000000/00000001
-"PowermizerLevel"=dword:00000000 ; =-, 00000000/00000001
-"PowermizerLevelAC"=dword:00000000 ; =-, 00000000/00000001
+"PowerMizerEnable"=dword:00000001 ; =-, 00000000/00000001
+"PowermizerLevel"=dword:00000001 ; =-, 00000000/00000001
+"PowermizerLevelAC"=dword:00000001 ; =-, 00000000/00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Features]
 "TamperProtection"=dword:00000000
 [HKEY_CLASSES_ROOT\CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\ShellFolder]
@@ -4397,8 +4398,8 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\msisadrv]
 "Start"=dword:00000004 ; 00000000, 00000004
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Power]
-"Start"=dword:00000004 ; 00000002, 00000004
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Power]
+; "Start"=dword:00000002 ; 00000002, 00000004
 ; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\pcw]
 ; "Start"=dword:00000000 ; 00000000, 00000004
 
