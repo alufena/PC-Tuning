@@ -191,7 +191,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager]
 "AllowProtectedRenames"="0"
-"AlpcWakePolicy"=dword:00000001
+"AlpcWakePolicy"=dword:00000001 ; 00000000/00000001
 "AlpcMessageLog"=dword:00000000
 "AuditBaseDirectories"=dword:00000000
 "AuditBaseObjects"=dword:00000000
@@ -503,13 +503,13 @@ Windows Registry Editor Version 5.00
 "PagePriority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006  ; =-, 00000004/00000006
-"IoPriority"=dword:00000006 ; =-, 00000003/00000006
+"CpuPriorityClass"=dword:00000004  ; =-, 00000004/00000006
+"IoPriority"=dword:00000003 ; =-, 00000003/00000006
 "PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
+"CpuPriorityClass"=dword:00000004
+"IoPriority"=dword:00000003
 "PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NDIS\Parameters]
@@ -4399,8 +4399,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Power]
 "Start"=dword:00000004 ; 00000002, 00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\pcw]
-"Start"=dword:00000004 ; 00000000, 00000004
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\pcw]
+; "Start"=dword:00000000 ; 00000000, 00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters]
 "AllowInteractiveConnect"=dword:00000000
@@ -4482,6 +4482,7 @@ Windows Registry Editor Version 5.00
 "ShortcutNameTemplate"="%s"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"DisablePreviewDesktop"=dword:00000001
 "LastActiveClick"=dword:00000000 ; 00000000, 00000001
 "Start_SearchFiles"=dword:00000001
 "TaskbarAcrylicOpacity"=dword:00000000
