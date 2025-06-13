@@ -247,23 +247,24 @@ sc stop "KtmRm"
 sc config "KtmRm" start= disabled
 sc stop "WSAIFabricSvc"
 sc config WSAIFabricSvc start= disabled
-sc config winmgmt start= auto
-net start GraphicsPerfSvc
+sc config "winmgmt" start= auto
+sc config "BTHUSB" start= disabled
+sc start "GraphicsPerfSvc"
 bitsadmin.exe /reset /allusers
 ie4uinit.exe -ClearIconCache
 w32tm /resync
-sc stop UsoSvc
-sc stop wisvc
-sc stop BITS
-sc stop WaaSMedicSvc
-sc stop cryptsvc
-sc stop DsmSvc
-sc stop PushToInstall
-sc stop LicenseManager
-sc stop sppsvc
-sc stop OSRSS
-sc stop SgrmBroker
-sc stop SgrmAgent
+sc stop "UsoSvc"
+sc stop "wisvc"
+sc stop "BITS"
+sc stop "WaaSMedicSvc"
+sc stop "cryptsvc"
+sc stop "DsmSvc"
+sc stop "PushToInstall"
+sc stop "LicenseManager"
+sc stop "sppsvc"
+sc stop "OSRSS"
+sc stop "SgrmBroker"
+sc stop "SgrmAgent"
 powercfg.exe hibernate off
 bcdedit /set disabledynamictick Yes
 ::bcdedit /set disabledynamictick No
@@ -410,6 +411,8 @@ for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object { $
 for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object { $_.FriendlyName -like '*ISA*Bridge*' } | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
 for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object { $_.FriendlyName -like '*RAM Controller*' } | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
 for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'Microsoft System Management BIOS Driver'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'System Speaker'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'AMD SMBus'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
 pnputil /disable-device "ROOT\AMDLOG\0000"
 pnputil /disable-device "ROOT\AMDSAFD&FUN_01&REV_01\0000"
 pnputil /disable-device "ROOT\KDNIC\0000"
