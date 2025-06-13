@@ -298,6 +298,21 @@ user_pref("media.hardware-video-decoding.enabled", false);
 user_pref("permissions.default.geo", 0);
 user_pref("browser.download.autohideButton", false);
 user_pref("accessibility.browsewithcaret_shortcut.enabled", false);
+user_pref("media.gpu-process-decoder", false);
+user_pref("network.dns.disableIPv6", false);
+user_pref("image.mem.shared.unmap.min_expiration_ms", 120000);
+user_pref("network.http.max-persistent-connections-per-proxy", 48);
+user_pref("network.http.pacing.requests.min-parallelism", 10);
+user_pref("network.http.pacing.requests.burst", 14);
+user_pref("network.dnsCacheEntries", 1000);
+user_pref("network.dnsCacheExpirationGracePeriod", 240);
+user_pref("dom.prefetch_dns_for_anchor_http_document", false);
+user_pref("dom.prefetch_dns_for_anchor_https_document", false);
+user_pref("network.predictor.max-resources-per-entry", 250);
+user_pref("network.predictor.max-uri-length", 1000);
+user_pref("dom.enable_web_task_scheduling", true);
+user_pref("dom.ipc.processCount.webIsolated", 1);
+user_pref("dom.ipc.processPrelaunch.fission.number", 1);
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
