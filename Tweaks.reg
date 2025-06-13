@@ -217,7 +217,7 @@ Windows Registry Editor Version 5.00
 "ClockTimerAlwaysOnPresent"=dword:00000001
 "ClockTimerHighLatency"=dword:00000000
 "ClockTimerPerCpu"=dword:00000001
-"DebugPollInterval"=dword:000003e8 ; 000003e8/000000fa
+"DebugPollInterval"=dword:00000000 ; 00000000/000003e8/000000fa
 "DelayCloseSize"=dword:00000000
 "DelayDerefKCBLimit"=dword:00000000
 "DisableAutoBoost"=dword:00000001
@@ -503,13 +503,13 @@ Windows Registry Editor Version 5.00
 "PagePriority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000004  ; =-, 00000004/00000006
-"IoPriority"=dword:00000003 ; =-, 00000003/00000006
+"CpuPriorityClass"=dword:00000006  ; =-, 00000004/00000006
+"IoPriority"=dword:00000006 ; =-, 00000003/00000006
 "PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000004
-"IoPriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
 "PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NDIS\Parameters]
@@ -3244,6 +3244,8 @@ Windows Registry Editor Version 5.00
 "DefaultFileTypeRisk"=dword:00001808
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+"EdgeHistoryAISearchEnabled"=dword:00000000
+"BuiltInAIAPIsEnabled"=dword:00000000
 "AccessibilityImageLabelsEnabled"=dword:00000000
 "AdditionalSearchBoxEnabled"=dword:00000000
 "AddressBarMicrosoftSearchInBingProviderEnabled"=dword:00000000
@@ -3594,6 +3596,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate]
 "CreateDesktopShortcutDefault"=dword:00000000
+"RemoveDesktopShortcutDefault"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\EdgeUI]
 "DisableMFUTracking"=dword:00000001
@@ -3803,7 +3806,7 @@ Windows Registry Editor Version 5.00
 "TabOrganizerSettings"=dword:00000002
 "TaskManagerEndProcessEnabled"=dword:00000001
 "ToolbarAvatarLabelSettings"=dword:00000001
-"TranslateEnabled"=dword:00000001
+"TranslateEnabled"=dword:00000000
 "UiAutomationProviderEnabled"=dword:00000000
 "UrlKeyedAnonymizedDataCollectionEnabled"=dword:00000000
 "UserAgentReduction"=dword:00000001
@@ -4003,7 +4006,7 @@ Windows Registry Editor Version 5.00
 "SuppressUnsupportedOSWarning"=dword:00000001
 "TaskManagerEndProcessEnabled"=dword:00000001
 "ToolbarAvatarLabelSettings"=dword:00000001
-"TranslateEnabled"=dword:00000001
+"TranslateEnabled"=dword:00000000
 "UrlKeyedAnonymizedDataCollectionEnabled"=dword:00000000
 "UserAgentReduction"=dword:00000001
 "UserFeedbackAllowed"=dword:00000000
@@ -4402,6 +4405,9 @@ Windows Registry Editor Version 5.00
 ; "Start"=dword:00000002 ; 00000002, 00000004
 ; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\pcw]
 ; "Start"=dword:00000000 ; 00000000, 00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\whesvc]
+"Start"=dword:00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters]
 "AllowInteractiveConnect"=dword:00000000
@@ -5690,6 +5696,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling]
 "PowerThrottlingOff"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Power Throttling]
+"PowerThrottlingOff"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\TCPIP\v6Transition]
 "Disabled"=dword:00000001
 "Teredo_State"="Disabled"
@@ -6075,7 +6084,7 @@ Windows Registry Editor Version 5.00
 "DictationEnabled"=dword:00000000
 "DisablePersonalization"=dword:00000000
 "EmojiSuggestion"=dword:00000000
-"EmojiTranslation"=dword:00000001
+"EmojiTranslation"=dword:00000000
 "EnableExpressiveInputEmojiMultipleSelection"=dword:00000000
 "EnableHwkbAutocorrection"=dword:00000000
 "EnableHwkbAutocorrection2"=dword:00000000
@@ -7344,6 +7353,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start]
 "ShowRecentList"=dword:00000000
 "StartAllPinsList"=dword:00000000
+"ShowAllPinsList"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Biometrics\FacialFeatures]
 "EnhancedAntiSpoofing"=-
