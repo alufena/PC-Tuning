@@ -11,7 +11,7 @@ netsh int tcp set global rss=enabled
 netsh int tcp set global rsc=disabled
 netsh int tcp set global pacingprofile=always
 netsh int tcp set global hystart=enabled
-netsh int tcp set global autotuninglevel=disabled
+netsh int tcp set global autotuninglevel=normal
 netsh int tcp set supplemental internet enablecwndrestart=enabled
 netsh int tcp set supplemental internet congestionprovider=ctcp
 netsh int tcp set security mpp=enabled
@@ -122,3 +122,12 @@ foreach ($interface in $networkInterfaces) {
 # OPTIONAL: ENABLE DCTCP PROFILES
 # ------------------------------
 # netsh int tcp set supplemental internet congestionprovider=dctcp
+
+Disable-NetAdapterBinding -Name * -DisplayName 'Client for Microsoft Networks'
+Disable-NetAdapterBinding -Name * -DisplayName 'File and Printer Sharing for Microsoft Networks'
+Disable-NetAdapterQos -Name *
+Disable-NetAdapterBinding -Name * -DisplayName 'Microsoft Network Adapter Multiplexor Protocol'
+Disable-NetAdapterBinding -Name * -DisplayName 'Microsoft LLDP Protocol Driver'
+Disable-NetAdapterBinding -Name * -ComponentID ms_tcpip6
+Disable-NetAdapterBinding -Name * -DisplayName 'Link-Layer Topology Discovery Responder'
+Disable-NetAdapterBinding -Name * -DisplayName 'Link-Layer Topology Discovery Mapper I/O Driver'
