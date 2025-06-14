@@ -59,3 +59,5 @@ https://www.oo-software.com/en/shutup10
 https://forums.mydigitallife.net/forums/windows-10.54/
 
 https://forums.mydigitallife.net/forums/windows-11.64/
+
+https://github.com/ancel1x/Ancels-Performance-Batch
