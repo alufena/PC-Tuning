@@ -1,4 +1,4 @@
-Credits:
+Credits, source, good links
 
 https://community.amd.com/t5/discussions/input-lag-and-mouse-movement-tweaks-for-gaming-v3-2020-edition
 
@@ -87,4 +87,6 @@ https://github.com/ionuttbara/windows-defender-remover
 https://github.com/zoicware/RemoveWindowsAI
 
 https://winaero.com
+
+https://www.tweakhound.com
 
