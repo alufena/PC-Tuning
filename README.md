@@ -91,3 +91,7 @@ https://winaero.com
 https://www.tweakhound.com
 
 https://github.com/henrypp/memreduct
+
+https://www.ntlite.com/community/index.php?forums/questions-and-reports.4
+
+https://forums.flightsimulator.com/c/user-support-hub/install-perf-graphics-user/407
