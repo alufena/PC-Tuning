@@ -1,17 +1,31 @@
 Credits:
 
-https://github.com/Hyyote/files-
-
-https://github.com/shoober420/windows11-scripts
-
-https://www.tenforums.com/tutorials/
-
-https://www.elevenforum.com/tutorials/
-
-https://forums.blurbusters.com/viewforum.php?f=10
-
-https://github.com/ionuttbara/melody_windows
+https://community.amd.com/t5/discussions/input-lag-and-mouse-movement-tweaks-for-gaming-v3-2020-edition/m-p/373595
 
 https://docs.google.com/document/d/1c2-lUJq74wuYK1WrA_bIvgb89dUN0sj8-hO3vqmrau4/
 
 https://docs.google.com/document/d/1ILugrwtHfmisYzI1MdCOhSzBPuLJPi5D7xYJgQ4sxDM/
+
+https://forums.blurbusters.com/viewforum.php?f=10
+
+https://github.com/AlchemyTweaks/Experimental-Tweaks
+
+https://github.com/AlchemyTweaks/Officially-Verified
+
+https://github.com/AlchemyTweaks/Verified-Tweaks
+
+https://github.com/Hyyote/files-
+
+https://github.com/ionuttbara/melody_windows
+
+https://github.com/shoober420/windows11-scripts
+
+https://github.com/valleyofdoom/PC-Tuning
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=476760198
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=3439639950
+
+https://www.elevenforum.com/tutorials/
+
+https://www.tenforums.com/tutorials/
