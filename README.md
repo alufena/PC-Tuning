@@ -83,3 +83,5 @@ https://github.com/ChrisTitusTech/winutil
 https://www.youtube.com/@eastcoasthandle
 
 https://github.com/ionuttbara/windows-defender-remover
+
+https://github.com/zoicware/RemoveWindowsAI
