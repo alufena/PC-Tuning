@@ -65,3 +65,8 @@ https://github.com/ancel1x/Ancels-Performance-Batch
 https://github.com/TairikuOokami/Windows
 
 https://www.youtube.com/@khorvietech
+
+https://www.w10privacy.de
+
+https://wpd.app
+
