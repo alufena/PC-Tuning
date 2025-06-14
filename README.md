@@ -75,3 +75,7 @@ https://someonewhocares.org/hosts
 https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/hosts/native.winoffice.txt
 
 https://www.youtube.com/@pcsecuritychannel
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=1123728480
+
+https://github.com/ChrisTitusTech/winutil
