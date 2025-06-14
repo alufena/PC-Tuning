@@ -31,3 +31,5 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3439639950
 https://www.elevenforum.com/tutorials/
 
 https://www.tenforums.com/tutorials/
+
+https://www.reddit.com/r/Windows11/comments/12yghi6/eliminating_high_dpc_latency_and_getting_kernel
