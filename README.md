@@ -22,6 +22,8 @@ https://github.com/shoober420/windows11-scripts
 
 https://github.com/valleyofdoom/PC-Tuning
 
+https://github.com/yokoffing/Betterfox
+
 https://steamcommunity.com/sharedfiles/filedetails/?id=476760198
 
 https://steamcommunity.com/sharedfiles/filedetails/?id=3439639950
