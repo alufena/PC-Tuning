@@ -39,3 +39,12 @@ https://www.reddit.com/r/Windows11/comments/12yghi6/eliminating_high_dpc_latency
 https://github.com/BoringBoredom/PC-Optimization-Hub
 
 https://sites.google.com/view/melodystweaks/
+
+https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts-msi-tool.378044/
+
+https://steamcommunity.com/app/1364780/discussions/0/4626979978390549499
+
+https://www.overclock.net/threads/gaming-and-mouse-response-bios-optimization-guide-for-modern-pc-hardware.1433882/
+
+https://www.techpowerup.com/forums/threads/revisiting-hpet-bcdedit-tweaks-what-are-your-timer-bench-results-and-settings.326187/
+
