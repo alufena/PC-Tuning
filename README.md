@@ -71,3 +71,7 @@ https://www.w10privacy.de
 https://wpd.app
 
 https://someonewhocares.org/hosts
+
+https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/hosts/native.winoffice.txt
+
+https://www.youtube.com/@pcsecuritychannel
