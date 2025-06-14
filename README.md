@@ -40,15 +40,15 @@ https://github.com/BoringBoredom/PC-Optimization-Hub
 
 https://sites.google.com/view/melodystweaks/
 
-https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts-msi-tool.378044/
+https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts-msi-tool.378044
 
 https://steamcommunity.com/app/1364780/discussions/0/4626979978390549499
 
-https://www.overclock.net/threads/gaming-and-mouse-response-bios-optimization-guide-for-modern-pc-hardware.1433882/
+https://www.overclock.net/threads/gaming-and-mouse-response-bios-optimization-guide-for-modern-pc-hardware.1433882
 
-https://www.techpowerup.com/forums/threads/revisiting-hpet-bcdedit-tweaks-what-are-your-timer-bench-results-and-settings.326187/
+https://www.techpowerup.com/forums/threads/revisiting-hpet-bcdedit-tweaks-what-are-your-timer-bench-results-and-settings.326187
 
-https://www.bluecataudio.com/Blog/tip-of-the-day/solving-audio-dropouts-dpc-latency-issues-with-nvidia-drivers-on-windows/
+https://www.bluecataudio.com/Blog/tip-of-the-day/solving-audio-dropouts-dpc-latency-issues-with-nvidia-drivers-on-windows
 
 https://www.tenforums.com/gaming/117377-share-gaming-tweaks-chec-my-comprehensive-list-will-blow-your-mind.html
 
