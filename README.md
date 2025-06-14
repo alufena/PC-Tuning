@@ -70,3 +70,4 @@ https://www.w10privacy.de
 
 https://wpd.app
 
+https://someonewhocares.org/hosts
