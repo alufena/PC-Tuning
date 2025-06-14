@@ -95,3 +95,7 @@ https://github.com/henrypp/memreduct
 https://www.ntlite.com/community/index.php?forums/questions-and-reports.4
 
 https://forums.flightsimulator.com/c/user-support-hub/install-perf-graphics-user/407
+
+https://github.com/dubbyOW/BCDEditTweaks
+
+https://github.com/Hyyote/In-depth-Windows-tweaking
