@@ -48,3 +48,14 @@ https://www.overclock.net/threads/gaming-and-mouse-response-bios-optimization-gu
 
 https://www.techpowerup.com/forums/threads/revisiting-hpet-bcdedit-tweaks-what-are-your-timer-bench-results-and-settings.326187/
 
+https://www.bluecataudio.com/Blog/tip-of-the-day/solving-audio-dropouts-dpc-latency-issues-with-nvidia-drivers-on-windows/
+
+https://www.tenforums.com/gaming/117377-share-gaming-tweaks-chec-my-comprehensive-list-will-blow-your-mind.html
+
+https://github.com/Sophia-Community/SophiApp
+
+https://www.oo-software.com/en/shutup10
+
+https://forums.mydigitallife.net/forums/windows-10.54/
+
+https://forums.mydigitallife.net/forums/windows-11.64/
