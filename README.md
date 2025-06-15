@@ -133,3 +133,13 @@ https://massgrave.dev/windows_11_links
 https://github.com/emadadel4/itt
 
 https://rufus.ie
+
+https://github.com/letsdoautomation/powershell
+
+https://github.com/Xiseous/PC-Tuning
+
+https://github.com/miniant-git/REAL
+
+https://www.elevenforum.com/t/restore-default-services-in-windows-11.3109
+
+https://github.com/Invertex/RemoveRazerGameManager
