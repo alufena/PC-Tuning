@@ -129,3 +129,7 @@ https://schneegans.de/windows/unattend-generator
 https://massgrave.dev/windows_10_links
 
 https://massgrave.dev/windows_11_links
+
+https://github.com/emadadel4/itt
+
+https://rufus.ie
