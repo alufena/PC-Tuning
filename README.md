@@ -149,3 +149,5 @@ https://windowsxlite.com
 https://www.youtube.com/c/GHOSTSPECTRE
 
 https://www.overclock.net/threads/electrical-issue-causing-input-de-synchronization-or-input-loss.1744698
+
+https://greasyfork.org/en/scripts/473972-youtube-js-engine-tamer
