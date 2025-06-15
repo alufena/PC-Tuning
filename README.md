@@ -143,3 +143,7 @@ https://github.com/miniant-git/REAL
 https://www.elevenforum.com/t/restore-default-services-in-windows-11.3109
 
 https://github.com/Invertex/RemoveRazerGameManager
+
+https://windowsxlite.com
+
+https://www.youtube.com/c/GHOSTSPECTRE
