@@ -123,3 +123,9 @@ https://github.com/Raphire/Win11Debloat
 https://www.youtube.com/@pcsecuritychannel
 
 https://www.youtube.com/watch?v=sbXzM60ad8I
+
+https://schneegans.de/windows/unattend-generator
+
+https://massgrave.dev/windows_10_links
+
+https://massgrave.dev/windows_11_links
