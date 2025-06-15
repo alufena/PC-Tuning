@@ -147,3 +147,5 @@ https://github.com/Invertex/RemoveRazerGameManager
 https://windowsxlite.com
 
 https://www.youtube.com/c/GHOSTSPECTRE
+
+https://www.overclock.net/threads/electrical-issue-causing-input-de-synchronization-or-input-loss.1744698
