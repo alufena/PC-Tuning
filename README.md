@@ -153,3 +153,6 @@ https://www.overclock.net/threads/electrical-issue-causing-input-de-synchronizat
 https://greasyfork.org/en/scripts/473972-youtube-js-engine-tamer
 
 https://github.com/MarcoRavich/Opendows/blob/main/Tweakers.md
+
+https://greasyfork.org/en/scripts/469878-youtube-super-fast-chat
+
