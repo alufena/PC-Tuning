@@ -5,10 +5,20 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 function Run-Trusted([String]$command) {
 
-    Stop-Service -Name TrustedInstaller -Force -ErrorAction SilentlyContinue
+    try {
+        Stop-Service -Name TrustedInstaller -Force -ErrorAction Stop -WarningAction Stop
+    }
+    catch {
+        taskkill /im trustedinstaller.exe /f >$null
+    }
     #get bin path to revert later
     $service = Get-WmiObject -Class Win32_Service -Filter "Name='TrustedInstaller'"
     $DefaultBinPath = $service.PathName
+    #make sure path is valid and the correct location
+    $trustedInstallerPath = "$env:SystemRoot\servicing\TrustedInstaller.exe"
+    if ($DefaultBinPath -ne $trustedInstallerPath) {
+        $DefaultBinPath = $trustedInstallerPath
+    }
     #convert command to base64 to avoid errors with spaces
     $bytes = [System.Text.Encoding]::Unicode.GetBytes($command)
     $base64Command = [Convert]::ToBase64String($bytes)
@@ -18,8 +28,13 @@ function Run-Trusted([String]$command) {
     sc.exe start TrustedInstaller | Out-Null
     #set bin back to default
     sc.exe config TrustedInstaller binpath= "`"$DefaultBinPath`"" | Out-Null
-    Stop-Service -Name TrustedInstaller -Force -ErrorAction SilentlyContinue
-
+    try {
+        Stop-Service -Name TrustedInstaller -Force -ErrorAction Stop -WarningAction Stop
+    }
+    catch {
+        taskkill /im trustedinstaller.exe /f >$null
+    }
+    
 }
 
 function Write-Status {
@@ -47,6 +62,7 @@ foreach ($hive in $hives) {
     Reg.exe add "$hive\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" /v 'TurnOffWindowsCopilot' /t REG_DWORD /d '1' /f *>$null
     Reg.exe add "$hive\SOFTWARE\Policies\Microsoft\Windows\WindowsAI" /v 'DisableAIDataAnalysis' /t REG_DWORD /d '1' /f *>$null
     Reg.exe add "$hive\SOFTWARE\Policies\Microsoft\Windows\WindowsAI" /v 'AllowRecallEnablement' /t REG_DWORD /d '0' /f *>$null
+    Reg.exe add "$hive\SOFTWARE\Policies\Microsoft\Windows\WindowsAI" /v 'DisableClickToDo' /t REG_DWORD /d '1' /f *>$null
 }
 Reg.exe add 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' /v 'ShowCopilotButton' /t REG_DWORD /d '0' /f *>$null
 Reg.exe add 'HKCU\Software\Microsoft\input\Settings' /v 'InsightsEnabled' /t REG_DWORD /d '0' /f *>$null
@@ -64,6 +80,7 @@ Reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\Shell\Copilot\BingChat' /v 'IsUserE
 Reg.exe add 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings' /v 'AutoOpenCopilotLargeScreens' /t REG_DWORD /d '0' /f *>$null
 Reg.exe add 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\generativeAI' /v 'Value' /t REG_SZ /d 'Deny' /f *>$null
 Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy' /v 'LetAppsAccessGenerativeAI' /t REG_DWORD /d '2' /f *>$null
+Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy' /v 'LetAppsAccessSystemAIModels' /t REG_DWORD /d '2' /f *>$null
 #disable ai image creator in paint
 Write-Status -msg 'Disabling Image Creator In Paint...'
 #policy manager keys prob not neccessary 
@@ -176,6 +193,26 @@ $aipackages = @(
     'Microsoft.Copilot'
     'Microsoft.MicrosoftOfficeHub'
     'MicrosoftWindows.Client.CoreAI'
+    #ai component packages installed on copilot+ pcs
+    'WindowsWorkload.Data.Analysis.Stx.1'
+    'WindowsWorkload.Manager.1'
+    'WindowsWorkload.PSOnnxRuntime.Stx.2.7'
+    'WindowsWorkload.PSTokenizer.Stx.2.7'
+    'WindowsWorkload.QueryBlockList.1'
+    'WindowsWorkload.QueryProcessor.Data.1'
+    'WindowsWorkload.QueryProcessor.Stx.1'
+    'WindowsWorkload.SemanticText.Data.1'
+    'WindowsWorkload.SemanticText.Stx.1'
+    'WindowsWorkload.Data.ContentExtraction.Stx.1'
+    'WindowsWorkload.ScrRegDetection.Data.1'
+    'WindowsWorkload.ScrRegDetection.Stx.1'
+    'WindowsWorkload.TextRecognition.Stx.1'
+    'WindowsWorkload.Data.ImageSearch.Stx.1'
+    'WindowsWorkload.ImageContentModeration.1'
+    'WindowsWorkload.ImageContentModeration.Data.1'
+    'WindowsWorkload.ImageSearch.Data.3'
+    'WindowsWorkload.ImageSearch.Stx.2'
+    'WindowsWorkload.ImageSearch.Stx.3'
 )
 
 $code = @'
@@ -187,11 +224,29 @@ $aipackages = @(
     'Microsoft.Copilot'
     'Microsoft.MicrosoftOfficeHub'
     'MicrosoftWindows.Client.CoreAI'
+    'WindowsWorkload.Data.Analysis.Stx.1'
+    'WindowsWorkload.Manager.1'
+    'WindowsWorkload.PSOnnxRuntime.Stx.2.7'
+    'WindowsWorkload.PSTokenizer.Stx.2.7'
+    'WindowsWorkload.QueryBlockList.1'
+    'WindowsWorkload.QueryProcessor.Data.1'
+    'WindowsWorkload.QueryProcessor.Stx.1'
+    'WindowsWorkload.SemanticText.Data.1'
+    'WindowsWorkload.SemanticText.Stx.1'
+    'WindowsWorkload.Data.ContentExtraction.Stx.1'
+    'WindowsWorkload.ScrRegDetection.Data.1'
+    'WindowsWorkload.ScrRegDetection.Stx.1'
+    'WindowsWorkload.TextRecognition.Stx.1'
+    'WindowsWorkload.Data.ImageSearch.Stx.1'
+    'WindowsWorkload.ImageContentModeration.1'
+    'WindowsWorkload.ImageContentModeration.Data.1'
+    'WindowsWorkload.ImageSearch.Data.3'
+    'WindowsWorkload.ImageSearch.Stx.2'
+    'WindowsWorkload.ImageSearch.Stx.3'
 )
 
 $provisioned = get-appxprovisionedpackage -online 
 $appxpackage = get-appxpackage -allusers
-$eol = @()
 $store = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore'
 $users = @('S-1-5-18'); if (test-path $store) { $users += $((Get-ChildItem $store -ea 0 | Where-Object { $_ -like '*S-1-5-21*' }).PSChildName) }
 
@@ -209,7 +264,6 @@ foreach ($choice in $aipackages) {
         foreach ($sid in $users) { 
             New-Item "$store\EndOfLife\$sid\$PackageName" -force
         }  
-        $eol += $PackageName
         remove-appxprovisionedpackage -packagename $PackageName -online -allusers
     }
     foreach ($appx in $($appxpackage | Where-Object { $_.PackageFullName -like "*$choice*" })) {
@@ -233,14 +287,23 @@ foreach ($choice in $aipackages) {
             New-Item "$store\EndOfLife\$sid\$PackageFullName" -force
             remove-appxpackage -package $PackageFullName -User $sid 
         } 
-        $eol += $PackageFullName
         remove-appxpackage -package $PackageFullName -allusers
     }
 }
 '@
 Set-Content -Path $packageRemovalPath -Value $code -Force 
 #allow removal script to run
-Set-ExecutionPolicy Unrestricted -Force
+try {
+    Set-ExecutionPolicy Unrestricted -Force -ErrorAction Stop
+}
+catch {
+    #user has set powershell execution policy via group policy, to change it we need to update the registry 
+    $ogExecutionPolicy = Get-ItemPropertyValue -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\PowerShell' -Name 'ExecutionPolicy' -ErrorAction SilentlyContinue
+    Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell' /v 'EnableScripts' /t REG_DWORD /d '1' /f >$null
+    Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell' /v 'ExecutionPolicy' /t REG_SZ /d 'Unrestricted' /f >$null
+}
+
+
 Write-Status -msg 'Removing AI Appx Packages...'
 $command = "&$env:TEMP\aiPackageRemoval.ps1"
 Run-Trusted -command $command
@@ -249,11 +312,9 @@ Run-Trusted -command $command
 do {
     Start-Sleep 1
     $packages = get-appxpackage -AllUsers | Where-Object { $aipackages -contains $_.Name }
-    foreach ($package in $packages) {
-        if ($package.PackageUserInformation -like '*pending removal*') {
-            $ProgressPreference = 'SilentlyContinue'
-            &$env:TEMP\aiPackageRemoval.ps1 *>$null
-        }
+    if ($packages) {
+        $command = "&$env:TEMP\aiPackageRemoval.ps1"
+        Run-Trusted -command $command
     }
     
 }while ($packages)
@@ -261,6 +322,10 @@ do {
 Write-Status -msg 'Packages Removed Sucessfully...'
 #cleanup code
 Remove-Item $packageRemovalPath -Force
+#set executionpolicy back to what it was
+if ($ogExecutionPolicy) {
+    Reg.exe add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell' /v 'ExecutionPolicy' /t REG_SZ /d $ogExecutionPolicy /f >$null
+}
 
 ## undo eol unblock trick to prevent latest cumulative update (LCU) failing 
 $eolPath = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\EndOfLife'
@@ -317,6 +382,26 @@ foreach ($Path in $packagesPath) {
         $command = "Remove-item ""$Path"" -force -recurse"
         Run-Trusted -command $command
         Start-Sleep 1
+    }
+}
+
+#remove machine learning dlls
+$paths = @(
+    "$env:SystemRoot\System32\Windows.AI.MachineLearning.dll"
+    "$env:SystemRoot\SysWOW64\Windows.AI.MachineLearning.dll"
+    "$env:SystemRoot\System32\Windows.AI.MachineLearning.Preview.dll"
+    "$env:SystemRoot\SysWOW64\Windows.AI.MachineLearning.Preview.dll"
+)
+foreach ($path in $paths) {
+    takeown /f $path *>$null
+    icacls $path /grant administrators:F /t *>$null
+    try {
+        Remove-Item -Path $path -Force -ErrorAction Stop
+    }
+    catch {
+        #takeown didnt work remove file with system priv
+        $command = "Remove-Item -Path $path -Force"
+        Run-Trusted -command $command 
     }
 }
 
@@ -380,6 +465,8 @@ regedit.exe /s "$env:TEMP\DisableRewrite.reg"
 Start-Sleep 1
 reg unload HKU\TEMP >$null
 Remove-Item "$env:TEMP\DisableRewrite.reg" -Force -ErrorAction SilentlyContinue
+#above is old method before this policy to disable ai in notepad, leaving older method just incase 
+Reg.exe add 'HKLM\SOFTWARE\Policies\WindowsNotepad' /v 'DisableAIFeatures' /t REG_DWORD /d '1' /f *>$null
 
 #remove any screenshots from recall
 Write-Status -msg 'Removing Any Screenshots By Recall...'
