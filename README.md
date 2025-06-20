@@ -114,13 +114,13 @@ https://www.tweakhound.com
 
 https://www.w10privacy.de
 
-https://www.youtube.com/@eastcoasthandle
+https://www.youtube.com/@eastcoasthandle/videos
 
-https://www.youtube.com/@khorvietech
+https://www.youtube.com/@khorvietech/videos
 
 https://github.com/Raphire/Win11Debloat
 
-https://www.youtube.com/@pcsecuritychannel
+https://www.youtube.com/@pcsecuritychannel/videos
 
 https://www.youtube.com/watch?v=sbXzM60ad8I
 
@@ -146,7 +146,7 @@ https://github.com/Invertex/RemoveRazerGameManager
 
 https://windowsxlite.com
 
-https://www.youtube.com/c/GHOSTSPECTRE
+https://www.youtube.com/c/GHOSTSPECTRE/videos
 
 https://www.overclock.net/threads/electrical-issue-causing-input-de-synchronization-or-input-loss.1744698
 
@@ -156,3 +156,4 @@ https://github.com/MarcoRavich/Opendows/blob/main/Tweakers.md
 
 https://greasyfork.org/en/scripts/469878-youtube-super-fast-chat
 
+https://github.com/Khorvie-Tech/khorvie-tech.github.io
