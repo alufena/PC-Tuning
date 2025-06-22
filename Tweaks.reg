@@ -1708,6 +1708,13 @@ Windows Registry Editor Version 5.00
 "vrrCursorMarginUs"=dword:00000001
 "vrrDeflickerMarginUs"=dword:00000001
 "vrrDeflickerMaxUs"=dword:00000001
+"RmPowerFeature"=dword:00000040
+"RmPowerFeature2"=dword:05555555
+"RmEnableNoiseAwarePll"=dword:00000000
+"RMOPSB"=dword:00002aa2
+"RmCeUseGen4Mapping"=dword:00000001
+"UseUncachedPCIMappings"=dword:00000001
+"RmForceDisableIomapWC"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001]
 "Acceleration.Level"=dword:00000000
@@ -1829,7 +1836,6 @@ Windows Registry Editor Version 5.00
 "RMEnableASPMAtLoad"=dword:00000000
 "RMEnableASPMDT"=dword:00000000
 "RmEnableHda"=dword:00000000
-"RmFbsrPagedDMA"=dword:00000000
 "RmFbsrPagedDMA"=dword:00000001
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
 "RMGpuId"=dword:00000100
@@ -1859,6 +1865,13 @@ Windows Registry Editor Version 5.00
 "vrrCursorMarginUs"=dword:00000001
 "vrrDeflickerMarginUs"=dword:00000001
 "vrrDeflickerMaxUs"=dword:00000001
+"RmPowerFeature"=dword:00000040
+"RmPowerFeature2"=dword:05555555
+"RmEnableNoiseAwarePll"=dword:00000000
+"RMOPSB"=dword:00002aa2
+"RmCeUseGen4Mapping"=dword:00000001
+"UseUncachedPCIMappings"=dword:00000001
+"RmForceDisableIomapWC"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0002]
 "Acceleration.Level"=dword:00000000
@@ -1980,7 +1993,6 @@ Windows Registry Editor Version 5.00
 "RMEnableASPMAtLoad"=dword:00000000
 "RMEnableASPMDT"=dword:00000000
 "RmEnableHda"=dword:00000000
-"RmFbsrPagedDMA"=dword:00000000
 "RmFbsrPagedDMA"=dword:00000001
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
 "RMGpuId"=dword:00000100
@@ -2010,6 +2022,13 @@ Windows Registry Editor Version 5.00
 "vrrCursorMarginUs"=dword:00000001
 "vrrDeflickerMarginUs"=dword:00000001
 "vrrDeflickerMaxUs"=dword:00000001
+"RmPowerFeature"=dword:00000040
+"RmPowerFeature2"=dword:05555555
+"RmEnableNoiseAwarePll"=dword:00000000
+"RMOPSB"=dword:00002aa2
+"RmCeUseGen4Mapping"=dword:00000001
+"UseUncachedPCIMappings"=dword:00000001
+"RmForceDisableIomapWC"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DXGKrnl]
 "CreateGdiPrimaryOnSlaveGPU"=dword:00000001
@@ -2153,6 +2172,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global\NGXCore]
 "ShowDlssIndicator"=dword:00000000
 
+; w10 only
 [HKEY_CLASSES_ROOT\Directory\shell\cmdprompt]
 @="Open Command Prompt here"
 "Icon"="cmd.exe"
@@ -2862,6 +2882,7 @@ Windows Registry Editor Version 5.00
 "DisableUAR"=dword:00000001
 "SbEnable"=dword:00000000
 "VDMDisallowed"=dword:00000001
+"DisablePropPage"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\EMDMgmt]
 "GroupPolicyDisallowCaches"=dword:00000001
@@ -3276,7 +3297,7 @@ Windows Registry Editor Version 5.00
 "AllowSurfGame"=dword:00000000
 "AllowSystemNotifications"=dword:00000001
 "AlternateErrorPagesEnabled"=dword:00000000
-"AlwaysOpenPdfExternally"=dword:00000001
+"AlwaysOpenPdfExternally"=dword:00000000
 "AppCacheForceEnabled"=dword:00000000
 "ApplicationGuardFavoritesSyncEnabled"=dword:00000000
 "ApplicationGuardPassiveModeEnabled"=dword:00000001
@@ -5816,6 +5837,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Settings]
 "DownloadMode"="0"
 
+[HKEY_USERS\S-1-5-20\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Settings]
+"DownloadMode"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config]
 "DownloadMode"=dword:00000000
 "DODownloadMode"=dword:00000000
@@ -7308,6 +7332,12 @@ Windows Registry Editor Version 5.00
 "BluetoothLastDisabledNearShare"=dword:00000000
 "NearShareChannelUserAuthzPolicy"=dword:00000000
 
+[HKEY_CURRENT_USER\Control Panel\Accessibility\SoundSentry]
+"Flags"="0"
+"FSTextEffect"="0"
+"TextEffect"="0"
+"WindowsEffect"="0"
+
 [HKEY_CURRENT_USER\Control Panel\Accessibility]
 "DynamicScrollbars"=dword:00000000
 "Sound on Activation"=dword:00000000
@@ -7402,6 +7432,7 @@ Windows Registry Editor Version 5.00
 "KeyboardSpeed"="31"
 "KeyboardDelay"="0"
 "TypematicDelay"=dword:00000000
+"PrintScreenKeyForSnippingEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters]
 "CrashOnCtrlScroll"=dword:00000000
