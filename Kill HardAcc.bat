@@ -96,6 +96,8 @@ taskkill /f /t /im WUDFHost.exe
 taskkill /f /t /im yourphone.exe
 taskkill /f /t /im crashhelper.exe
 taskkill /f /t /im SystemSettingsAdminFlows.exe
+taskkill /f /t /im steamerrorreporter.exe
+taskkill /f /t /im UnityCrashHandler64.exe
 sc start "SysMain"
 ::sc stop "SysMain"
 sc config "SysMain" start= auto
@@ -282,8 +284,8 @@ bcdedit /set useplatformclock false
 ::bcdedit /set useplatformtick Yes
 bcdedit /set useplatformtick No
 ::bcdedit /deletevalue useplatformtick
-bcdedit /set x2apicpolicy Enable
-::bcdedit /set x2apicpolicy Disable
+::bcdedit /set x2apicpolicy Enable
+bcdedit /set x2apicpolicy Disable
 ::bcdedit /deletevalue x2apicpolicy
 bcdedit /set allowedinmemorysettings 0x0
 ::bcdedit /deletevalue allowedinmemorysettings
