@@ -159,3 +159,5 @@ https://greasyfork.org/en/scripts/469878-youtube-super-fast-chat
 https://github.com/Khorvie-Tech/khorvie-tech.github.io
 
 https://github.com/FR33THYFR33THY/Ultimate-Windows-Optimization-Guide
+
+https://www.youtube.com/@Savitarax
