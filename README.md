@@ -160,4 +160,4 @@ https://github.com/Khorvie-Tech/khorvie-tech.github.io
 
 https://github.com/FR33THYFR33THY/Ultimate-Windows-Optimization-Guide
 
-https://www.youtube.com/@Savitarax
+https://www.youtube.com/@Savitarax/videos
