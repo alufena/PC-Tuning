@@ -171,3 +171,5 @@ https://www.youtube.com/@FrameSyncLabs/videos
 https://www.youtube.com/@Panjno/videos
 
 https://github.com/spddl/LowAudioLatency
+
+https://x.com/jerry05259307
