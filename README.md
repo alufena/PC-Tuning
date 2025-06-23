@@ -165,3 +165,7 @@ https://www.youtube.com/@Savitarax/videos
 https://x.com/honestzin
 
 https://x.com/Realperfguy
+
+https://www.youtube.com/@FrameSyncLabs/videos
+
+https://www.youtube.com/@Panjno/videos
