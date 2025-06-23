@@ -173,3 +173,5 @@ https://www.youtube.com/@Panjno/videos
 https://github.com/spddl/LowAudioLatency
 
 https://x.com/jerry05259307
+
+https://github.com/Aetopia/NoSteamWebHelper
