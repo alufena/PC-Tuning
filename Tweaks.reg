@@ -374,35 +374,27 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0AABB002-A307-447e-9B81-1D819DF6C6D0}]
 "Name"="SustainedPerf"
 "Pri"=-
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0c3d5326-944b-4aab-8ad8-fe422a0e50e0}]
 "Name"="MultimediaQos"
 "Pri"=-
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}]
 "Name"="LowLatency"
 "Pri"=-
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{4569E601-272E-4869-BCAB-1C6C03D7966F}]
 "Name"="LowPower"
 "Pri"=-
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{8BC6262C-C026-411d-AE3B-7E2F70811A13}]
 "Name"="Standby"
 "Pri"=-
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{a4a61b5f-f42c-4d23-b3ab-5c27df9f0f18}]
 "Name"="EntryLevelPerf"
 "Pri"=-
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{c04a802d-2205-4910-ae98-3b51e3bb72f2}]
 "Name"="Background"
 "Pri"=-
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{D4140C81-EBBA-4e60-8561-6918290359CD}]
 "Name"="GameMode"
 "Pri"=-
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{EE1E4F72-E368-46b1-B3C6-5048B11C2DBD}]
 "Name"="Constrained"
 "Pri"=-
@@ -1264,7 +1256,7 @@ Windows Registry Editor Version 5.00
 "DisableBoostedVSyncVirtualization"=dword:00000001
 "DisableCABC"=dword:00000001
 "DisableCudaContextPreemption"=dword:00000001
-; "DisableDynamicPstate"=dword:00000001 ; 00000000, 00000001
+; "DisableDynamicPstate"=dword:00000001 ;
 "DisableGDIAcceleration"=dword:00000000
 "DisableIndependentVidPnVSync"=dword:00000001
 "DisableKmRender"=dword:00000000
@@ -2209,7 +2201,7 @@ Windows Registry Editor Version 5.00
 "EnableFindMyFiles"=dword:00000000 ; 00000000 classic, 00000001 enhanced
 "SetupCompletedSuccessfully"=dword:00000001
 
-; require special permissions
+; requires special permissions
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Search\Gathering Manager]
 "DisableBackOff"=dword:00000001
 "DisableBackOffOnCPU"=dword:00000001
