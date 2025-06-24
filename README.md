@@ -175,3 +175,5 @@ https://github.com/spddl/LowAudioLatency
 https://x.com/jerry05259307
 
 https://github.com/Aetopia/NoSteamWebHelper
+
+https://www.reddit.com/r/MouseReview/comments/zgbrk3/i_finally_found_a_fix_to_all_my_mouse/
