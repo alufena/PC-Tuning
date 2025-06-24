@@ -263,7 +263,7 @@ Windows Registry Editor Version 5.00
 "MaxDynamicTickDurationSize"=dword:ffffffff
 "MaximumDpcQueueDepth"=dword:00000001 ; 00000000/00000001
 "MaximumDpcRate"=dword:00000001
-"MaximumSharedReadyQueueSize"=- ; =-, 00000001/00000080
+"MaximumSharedReadyQueueSize"=- ; 00000001/00000080
 "MinDynamicTickDuration"=dword:000003e8
 "MinimumDpcRate"=dword:00000001 ; 00000000/00000001
 "obcaseinsensitive"=dword:00000001
@@ -412,7 +412,7 @@ Windows Registry Editor Version 5.00
 "FileNameCache"=dword:00000400
 "FilterSupportedFeaturesMode"=dword:00000000 ; 00000000/00000001
 "LongPathsEnabled"=dword:00000001
-"MaximumTunnelEntries"=dword:00000000 ; =-, 00000000
+"MaximumTunnelEntries"=dword:00000000
 "MaximumTunnelEntryAgeInSeconds"=dword:00000005
 "NtfsAllowExtendedCharacter8dot3Rename"=dword:00000000
 "NtfsBugcheckOnCorrupt"=dword:00000000
@@ -853,8 +853,8 @@ Windows Registry Editor Version 5.00
 "MfOverridesDisabled"=dword:00000001
 "MinimumThrottlePercent"=dword:00000000
 "MiracastPerfTrackGraphicsLatency"=dword:00000001
-"MonitorLatencyTolerance"=dword:00000001  ; =-, 00000000/00000001/000003e8
-"MonitorRefreshLatencyTolerance"=dword:00000001  ; =-, 00000000/00000001/00000a96
+"MonitorLatencyTolerance"=dword:00000001  ; 00000000/00000001/000003e8
+"MonitorRefreshLatencyTolerance"=dword:00000001  ; 00000000/00000001/00000a96
 "MSDisabled"=dword:00000001
 "PerfBoostAtGuaranteed"=dword:00000001
 "PerfCalculateActualUtilization"=dword:00000000 ; 00000000/00000001
@@ -1245,7 +1245,7 @@ Windows Registry Editor Version 5.00
 "BuffersInFlight"=dword:00001000 ; 00001000/00000080
 "ComputePreemption"=dword:00000000
 "ComputePreemptionLevel"=dword:00000000
-"D3PCLatency"=dword:00000001  ; =-, 00000000/00000001
+"D3PCLatency"=dword:00000001  ; 00000000/00000001
 "DefaultD3TransitionLatencyActivelyUsed"=dword:00000001
 "DefaultD3TransitionLatencyIdleNoContext"=dword:00000001
 "DefaultLatencyToleranceIdle0"=dword:00000001
@@ -1256,7 +1256,7 @@ Windows Registry Editor Version 5.00
 "DisableBoostedVSyncVirtualization"=dword:00000001
 "DisableCABC"=dword:00000001
 "DisableCudaContextPreemption"=dword:00000001
-; "DisableDynamicPstate"=dword:00000001 ;
+"DisableDynamicPstate"=dword:00000001 ; =-, 00000000/00000001
 "DisableGDIAcceleration"=dword:00000000
 "DisableIndependentVidPnVSync"=dword:00000001
 "DisableKmRender"=dword:00000000
@@ -1274,7 +1274,7 @@ Windows Registry Editor Version 5.00
 "DpiMapIommuContiguous"=dword:00000001
 "EnableAggressivePStateBoost"=dword:00000001
 "EnableAggressivePStateOnly"=dword:00000001
-"EnableAsyncMidBufferPreemption"=dword:00000000  ; =-, 00000000/00000001
+"EnableAsyncMidBufferPreemption"=dword:00000000  ; 00000000/00000001
 "EnableCEPreemption"=dword:00000000
 "EnableDirectFlip"=dword:00000001
 "EnableFbrValidation"=dword:00000000
@@ -1299,7 +1299,7 @@ Windows Registry Editor Version 5.00
 "MonitorLatencyTolerance"=dword:00000001
 "MonitorRefreshLatencyTolerance"=dword:00000001
 "Node3DLowLatency"=dword:00000001
-"PciLatencyTimerControl"=dword:00000020 ; =-, 00000014/00000020/00000032
+"PciLatencyTimerControl"=dword:00000020 ; 00000014/00000020/00000032
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
 "PlatformSupportMiracast"=dword:00000000 ; 00000000/00000001
 "PowerSavingTweaks"=dword:00000000
@@ -1405,7 +1405,7 @@ Windows Registry Editor Version 5.00
 "DisableCudaContextPreemption"=dword:00000001
 "DisableDMACopy"=dword:00000001
 "DisableDrmdmaPowerGating"=dword:00000001
-; "DisableDynamicPstate"=dword:00000001
+"DisableDynamicPstate"=dword:00000001
 "DisableGDIAcceleration"=dword:00000000
 "DisableGDSPowerGating"=dword:00000001
 "DisableGfxCGPowerGating"=dword:00000001
@@ -1479,10 +1479,10 @@ Windows Registry Editor Version 5.00
 "PCIEPowerControl_8086191f50001458"=dword:00000000
 "PciLatencyTimerControl"=dword:00000020
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
-; "PerfLevelSrc"=dword:00002222
-; "PowerMizerEnable"=dword:00000001
-; "PowerMizerLevel"=dword:00000001
-; "PowerMizerLevelAC"=dword:00000001
+"PerfLevelSrc"=dword:00002222
+"PowerMizerEnable"=dword:00000001
+"PowerMizerLevel"=dword:00000001
+"PowerMizerLevelAC"=dword:00000001
 "PowerSavingTweaks"=dword:00000000
 "PP_SclkDeepSleepDisable"=dword:00000001
 "PP_ThermalAutoThrottlingEnable"=dword:00000000
@@ -1584,7 +1584,7 @@ Windows Registry Editor Version 5.00
 "DisableCudaContextPreemption"=dword:00000001
 "DisableDMACopy"=dword:00000001
 "DisableDrmdmaPowerGating"=dword:00000001
-; "DisableDynamicPstate"=dword:00000001
+"DisableDynamicPstate"=dword:00000001
 "DisableGDIAcceleration"=dword:00000000
 "DisableGDSPowerGating"=dword:00000001
 "DisableGfxCGPowerGating"=dword:00000001
@@ -1657,10 +1657,10 @@ Windows Registry Editor Version 5.00
 "PCIEPowerControl_8086191f50001458"=dword:00000000
 "PciLatencyTimerControl"=dword:00000020
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
-; "PerfLevelSrc"=dword:00002222
-; "PowerMizerEnable"=dword:00000001
-; "PowerMizerLevel"=dword:00000001
-; "PowerMizerLevelAC"=dword:00000001
+"PerfLevelSrc"=dword:00002222
+"PowerMizerEnable"=dword:00000001
+"PowerMizerLevel"=dword:00000001
+"PowerMizerLevelAC"=dword:00000001
 "PowerSavingTweaks"=dword:00000000
 "Power schemizerLevelAC"=dword:00000001
 "PP_SclkDeepSleepDisable"=dword:00000001
@@ -1741,7 +1741,7 @@ Windows Registry Editor Version 5.00
 "DisableCudaContextPreemption"=dword:00000001
 "DisableDMACopy"=dword:00000001
 "DisableDrmdmaPowerGating"=dword:00000001
-; "DisableDynamicPstate"=dword:00000001
+"DisableDynamicPstate"=dword:00000001
 "DisableGDIAcceleration"=dword:00000000
 "DisableGDSPowerGating"=dword:00000001
 "DisableGfxCGPowerGating"=dword:00000001
@@ -1814,10 +1814,10 @@ Windows Registry Editor Version 5.00
 "PCIEPowerControl_8086191f50001458"=dword:00000000
 "PciLatencyTimerControl"=dword:00000020
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
-; "PerfLevelSrc"=dword:00002222
-; "PowerMizerEnable"=dword:00000001
-; "PowerMizerLevel"=dword:00000001
-; "PowerMizerLevelAC"=dword:00000001
+"PerfLevelSrc"=dword:00002222
+"PowerMizerEnable"=dword:00000001
+"PowerMizerLevel"=dword:00000001
+"PowerMizerLevelAC"=dword:00000001
 "PowerSavingTweaks"=dword:00000000
 "Power schemizerLevelAC"=dword:00000001
 "PP_SclkDeepSleepDisable"=dword:00000001
@@ -1898,7 +1898,7 @@ Windows Registry Editor Version 5.00
 "DisableCudaContextPreemption"=dword:00000001
 "DisableDMACopy"=dword:00000001
 "DisableDrmdmaPowerGating"=dword:00000001
-; "DisableDynamicPstate"=dword:00000001
+"DisableDynamicPstate"=dword:00000001
 "DisableGDIAcceleration"=dword:00000000
 "DisableGDSPowerGating"=dword:00000001
 "DisableGfxCGPowerGating"=dword:00000001
@@ -1971,10 +1971,10 @@ Windows Registry Editor Version 5.00
 "PCIEPowerControl_8086191f50001458"=dword:00000000
 "PciLatencyTimerControl"=dword:00000020
 "PerfAnalyzeMidBufferPreemption"=dword:00000000
-; "PerfLevelSrc"=dword:00002222
-; "PowerMizerEnable"=dword:00000001
-; "PowerMizerLevel"=dword:00000001
-; "PowerMizerLevelAC"=dword:00000001
+"PerfLevelSrc"=dword:00002222
+"PowerMizerEnable"=dword:00000001
+"PowerMizerLevel"=dword:00000001
+"PowerMizerLevelAC"=dword:00000001
 "PowerSavingTweaks"=dword:00000000
 "Power schemizerLevelAC"=dword:00000001
 "PP_SclkDeepSleepDisable"=dword:00000001
@@ -2207,11 +2207,11 @@ Windows Registry Editor Version 5.00
 "DisableBackOffOnCPU"=dword:00000001
 "DisableBackOffOnIO"=dword:00000001
 "DisableBackOffOnUser"=dword:00000001
-; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Video\{DEB039CC-B704-4F53-B43E-9DD4432FA2E9}\0000]
-; "PerfLevelSrc"=dword:00002222 ; =-, 00002222/00003322
-; "PowerMizerEnable"=dword:00000001 ; =-, 00000000/00000001
-; "PowerMizerLevel"=dword:00000001 ; =-, 00000000/00000001
-; "PowerMizerLevelAC"=dword:00000001 ; =-, 00000000/00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Video\{DEB039CC-B704-4F53-B43E-9DD4432FA2E9}\0000]
+"PerfLevelSrc"=dword:00002222 ; =-, 00002222/00003322
+"PowerMizerEnable"=dword:00000001 ; =-, 00000000/00000001
+"PowerMizerLevel"=dword:00000001 ; =-, 00000000/00000001
+"PowerMizerLevelAC"=dword:00000001 ; =-, 00000000/00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Features]
 "TamperProtection"=dword:00000000
 [HKEY_CLASSES_ROOT\CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\ShellFolder]
