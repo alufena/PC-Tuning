@@ -149,8 +149,8 @@ Windows Registry Editor Version 5.00
 "EnableCooling"=dword:00000000
 "EnablePerVolumeLazyWriter"=dword:00000002
 "FeatureSettings"=dword:00000003 ; 00000000, 00000001/00000003
-"FeatureSettingsOverride"=dword:00000003 ; 00000000/00000003 security option for anticheats
-"FeatureSettingsOverrideMask"=dword:00000003 ; 00000000/00000003 security option for anticheats
+"FeatureSettingsOverride"=dword:00000003 ; 00000000, 00000003 security option for anticheats
+"FeatureSettingsOverrideMask"=dword:00000003 ; 00000000, 00000003 security option for anticheats
 "IoPageLockLimit"=dword:ffffffff ; ffffffff/00100000/00ff0000/08000000
 "LargeSystemCache"=dword:00000001 ; 00000000, 00000001
 "ModifiedWriteMaximum"=dword:00000080 ; 00000014/00000080
@@ -222,7 +222,7 @@ Windows Registry Editor Version 5.00
 "DisableBufferedIoInit"=dword:00000001
 "DisableControlFlowGuardExportSuppression"=dword:00000001
 "DisableControlFlowGuardXfg"=dword:00000001
-"DisableExceptionChainValidation"=dword:00000001 ; 00000000/00000001 security option for anticheats
+"DisableExceptionChainValidation"=- ; =-, 00000000/00000001 security option for anticheats
 ; "DisableLowQosTimerResolution"=dword:00000000 ; 00000000/00000001 (w10 only. breaks w11 24h2)
 "DisableOverlappedExecution"=dword:00000000
 "DisableTsx"=dword:00000001 ; 00000000/00000001
@@ -254,7 +254,7 @@ Windows Registry Editor Version 5.00
 "IoQueueWorkItem"=dword:00000020
 "IoQueueWorkItemEx"=dword:00000020
 "IoQueueWorkItemToNode"=dword:00000020
-"KernelSEHOPEnabled"=dword:00000000 ; =-, 00000000/00000001 security option for anticheats
+"KernelSEHOPEnabled"=- ; =-, 00000000/00000001 security option for anticheats
 "KiClockTimerAlwaysOnPresent"=dword:00000001
 "KiClockTimerHighLatency"=dword:00000000
 "KiClockTimerPerCpu"=dword:00000001
