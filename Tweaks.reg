@@ -145,16 +145,16 @@ Windows Registry Editor Version 5.00
 "DisablePagingCombining"=dword:00000001
 "DisablePagingExecutive"=dword:00000001 ; 00000000, 00000001
 "DontVerifyRandomDrivers"=dword:00000001 ; 00000000/00000001
-"EnableCfg"=dword:00000000
+"EnableCfg"=dword:00000000 ; =-, 00000000 security option for anticheats
 "EnableCooling"=dword:00000000
 "EnablePerVolumeLazyWriter"=dword:00000002
 "FeatureSettings"=dword:00000003 ; 00000000, 00000001/00000003
-"FeatureSettingsOverride"=dword:00000003
-"FeatureSettingsOverrideMask"=dword:00000003
+"FeatureSettingsOverride"=dword:00000003 ; 00000000/00000003 security option for anticheats
+"FeatureSettingsOverrideMask"=dword:00000003 ; 00000000/00000003 security option for anticheats
 "IoPageLockLimit"=dword:ffffffff ; ffffffff/00100000/00ff0000/08000000
 "LargeSystemCache"=dword:00000001 ; 00000000, 00000001
 "ModifiedWriteMaximum"=dword:00000080 ; 00000014/00000080
-"MoveImages"=dword:00000000
+"MoveImages"=dword:00000000 ; 00000001, 00000000 security option for anticheats
 "NonPagedPoolQuota"=dword:00000000
 "NonPagedPoolSize"=dword:00000400 ; 00000000, 00000400/000000c0
 "PagedPoolQuota"=dword:00000000
@@ -203,7 +203,7 @@ Windows Registry Editor Version 5.00
 "HeapDeCommitFreeBlockThreshold"=dword:00040000
 "ImageExecutionOptions"=dword:00000000 ; 00000000, 00000001
 "ObjectSecurityMode"=dword:00000001 ; 00000000/00000001
-"ProtectionMode"=dword:00000000 ; 00000001, 00000000
+"ProtectionMode"=dword:00000000 ; =-, 00000000 security option for anticheats
 "SafeDllSearchMode"=dword:00000000
 "SafeProcessSearchMode"=dword:00000000
 
@@ -222,7 +222,7 @@ Windows Registry Editor Version 5.00
 "DisableBufferedIoInit"=dword:00000001
 "DisableControlFlowGuardExportSuppression"=dword:00000001
 "DisableControlFlowGuardXfg"=dword:00000001
-"DisableExceptionChainValidation"=dword:00000000 ; 00000000/00000001
+"DisableExceptionChainValidation"=dword:00000001 ; 00000000/00000001 security option for anticheats
 ; "DisableLowQosTimerResolution"=dword:00000000 ; 00000000/00000001 (w10 only. breaks w11 24h2)
 "DisableOverlappedExecution"=dword:00000000
 "DisableTsx"=dword:00000001 ; 00000000/00000001
@@ -254,7 +254,7 @@ Windows Registry Editor Version 5.00
 "IoQueueWorkItem"=dword:00000020
 "IoQueueWorkItemEx"=dword:00000020
 "IoQueueWorkItemToNode"=dword:00000020
-"KernelSEHOPEnabled"=dword:00000001 ; 00000000/00000001
+"KernelSEHOPEnabled"=dword:00000000 ; =-, 00000000/00000001 security option for anticheats
 "KiClockTimerAlwaysOnPresent"=dword:00000001
 "KiClockTimerHighLatency"=dword:00000000
 "KiClockTimerPerCpu"=dword:00000001
@@ -268,10 +268,8 @@ Windows Registry Editor Version 5.00
 "MinimumDpcRate"=dword:00000001 ; 00000000/00000001
 "obcaseinsensitive"=dword:00000001
 "SeTokenSingletonAttributesConfig"=dword:00000003
-"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,\
-  22,22,22,22,22,22,22,22
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,\
-  22,22,22,22,22,22
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 ; security option for anticheats
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 ; security option for anticheats
 "PassiveWatchdogTimeout"=dword:00000000
 "PowerOffFrozenProcessors"=dword:00000000
 "PriorityControl"=dword:00000020 ; 00000020/00000032
@@ -2097,7 +2095,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\Parameters]
 "ThreadPriority"=dword:0000001f
-"DmaRemappingCompatible"=dword:00000003 ; 00000003, 00000000/00000001
+"DmaRemappingCompatible"=dword:00000003 ; 00000003, 00000000/00000001 security option for anticheats
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DXGKrnl\Parameters]
 "ThreadPriority"=dword:0000000f
@@ -2468,7 +2466,7 @@ Windows Registry Editor Version 5.00
 "DisableAIDataAnalysis"=dword:00000001
 "DisableAIPoweredFeature"=dword:00000001
 "DisableForceUnload"=dword:00000001
-"DisableHHDEP"=dword:00000001
+"DisableHHDEP"=dword:00000001 ; 00000001, 00000000 security option for anticheats
 "DisableLogonBackgroundImage"=dword:00000001
 "EnableActivityFeed"=dword:00000000
 "EnableAppUriHandlers"=dword:00000000
@@ -2739,7 +2737,7 @@ Windows Registry Editor Version 5.00
 "LockedStartLayout"=-
 "MultiTaskingAltTabFilter"=dword:00000003
 "NoAutoplayfornonVolume"=dword:00000001
-"NoDataExecutionPrevention"=dword:00000001
+"NoDataExecutionPrevention"=dword:00000001 ; 00000000, 00000001 security option for anticheats
 "NoHeapTerminationOnCorruption"=dword:00000001
 "NoNewAppAlert"=dword:00000001
 "NoRecentDocsHistory"=dword:00000001
@@ -2827,6 +2825,9 @@ Windows Registry Editor Version 5.00
 "ConvertibleSlateModePromptPreference"=dword:00000000
 "SignInMode"=dword:00000001
 "TabletMode"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Adobe\Adobe Acrobat Reader DC\FeatureState]
+"bUpdater"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ImmersiveShell\Launcher]
 "DisableLightDismiss"=-
@@ -2923,7 +2924,7 @@ Windows Registry Editor Version 5.00
 "ScenarioExecutionEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Main]
-"DEPOff"=dword:00000001
+"DEPOff"=dword:00000001 ; 00000000, 00000001 security option for anticheats
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\RemovalTools\MpGears]
 "HeartbeatTrackingIndex"=dword:00000000
@@ -10509,6 +10510,7 @@ Windows Registry Editor Version 5.00
 "C:\\Windows\\SystemApps\\Microsoft.Windows.Search_*\\SearchApp.exe"="GpuPreference=1;"
 "C:\\Windows\\SystemApps\\ShellExperienceHost_*\\ShellExperienceHost.exe"="GpuPreference=1;"
 "C:\\Windows\\SystemApps\\ShellExperienceHost_*\\StartMenuExperienceHost.exe"="GpuPreference=1;"
+"C:\\ProgramData\\Adobe Photoshop 2022\\Photoshop\\PROG\\%Program Files%\\Adobe\\Adobe Photoshop 2022\\Photoshop.exe"="GpuPreference=1;"
 "C:\\ProgramData\\Wargaming.net\\GameCenter for Steam\\wgc.exe"="GpuPreference=2;"
 "C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\ffmpeg.exe"="GpuPreference=2;"
 "C:\\Program Files\\Topaz Labs LLC\\Topaz Video AI\\Topaz Video AI.exe"="GpuPreference=2;"
