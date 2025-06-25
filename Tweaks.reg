@@ -222,7 +222,7 @@ Windows Registry Editor Version 5.00
 "DisableBufferedIoInit"=dword:00000001
 "DisableControlFlowGuardExportSuppression"=dword:00000001
 "DisableControlFlowGuardXfg"=dword:00000001
-"DisableExceptionChainValidation"=- ; =-, 00000000/00000001 security option for anticheats
+; "DisableExceptionChainValidation"=- ; 00000000, 00000001 security option for anticheats
 ; "DisableLowQosTimerResolution"=dword:00000000 ; 00000000/00000001 (w10 only. breaks w11 24h2)
 "DisableOverlappedExecution"=dword:00000000
 "DisableTsx"=dword:00000001 ; 00000000/00000001
@@ -254,7 +254,7 @@ Windows Registry Editor Version 5.00
 "IoQueueWorkItem"=dword:00000020
 "IoQueueWorkItemEx"=dword:00000020
 "IoQueueWorkItemToNode"=dword:00000020
-"KernelSEHOPEnabled"=- ; =-, 00000000/00000001 security option for anticheats
+; "KernelSEHOPEnabled"=- ; 00000000, 00000001 security option for anticheats
 "KiClockTimerAlwaysOnPresent"=dword:00000001
 "KiClockTimerHighLatency"=dword:00000000
 "KiClockTimerPerCpu"=dword:00000001
@@ -493,23 +493,23 @@ Windows Registry Editor Version 5.00
 "PagePriority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000001  ; =-, 00000004/00000006
-"IoPriority"=dword:00000001 ; =-, 00000003/00000006
-"PagePriority"=dword:00000001
+"CpuPriorityClass"=dword:00000004  ; =-, 00000004/00000006
+"IoPriority"=dword:00000003 ; =-, 00000003/00000006
+"PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000001  ; =-, 00000004/00000006
-"IoPriority"=dword:00000001 ; =-, 00000003/00000006
-"PagePriority"=dword:00000001
+"CpuPriorityClass"=dword:00000004  ; =-, 00000004/00000006
+"IoPriority"=dword:00000003 ; =-, 00000003/00000006
+"PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006  ; =-, 00000004/00000006
-"IoPriority"=dword:00000006 ; =-, 00000003/00000006
+"CpuPriorityClass"=dword:00000004  ; =-, 00000004/00000006
+"IoPriority"=dword:00000003 ; =-, 00000003/00000006
 "PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
+"CpuPriorityClass"=dword:00000004
+"IoPriority"=dword:00000003
 "PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NDIS\Parameters]
@@ -10927,11 +10927,11 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\DirectX\UserGpuPreferences]
 "DirectXUserGlobalSettings"="HighPerfAdapter=10DE&2182&3FBE1458;AutoHDREnable=0;VRROptimizeEnable=0"
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96f-e325-11ce-bfc1-08002be10318}\0000]
-"DriverDateData"=hex:00,80,07,84,f2,74,d6,00 ; 00,80,07,84,f2,74,d6,01, 00,80,07,84,f2,74,d6,00
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96f-e325-11ce-bfc1-08002be10318}\0000]
+; "DriverDateData"=hex:00,80,07,84,f2,74,d6,00 ; 00,80,07,84,f2,74,d6,01, 00,80,07,84,f2,74,d6,00
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96b-e325-11ce-bfc1-08002be10318}\0000]
-"DriverDateData"=hex:00,80,8c,a3,c5,94,c6,00 ; 00,80,8c,a3,c5,94,c6,01, 00,80,8c,a3,c5,94,c6,00
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96b-e325-11ce-bfc1-08002be10318}\0000]
+; "DriverDateData"=hex:00,80,8c,a3,c5,94,c6,00 ; 00,80,8c,a3,c5,94,c6,01, 00,80,8c,a3,c5,94,c6,00
 
 [HKEY_CURRENT_USER\System\GameConfigStore]
 "Win32_AutoGameModeDefaultProfile"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,\
