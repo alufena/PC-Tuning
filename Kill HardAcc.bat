@@ -98,6 +98,7 @@ taskkill /f /t /im crashhelper.exe
 taskkill /f /t /im SystemSettingsAdminFlows.exe
 taskkill /f /t /im steamerrorreporter.exe
 taskkill /f /t /im UnityCrashHandler64.exe
+taskkill /f /t /im CrashMailer_64.exe
 sc start "SysMain"
 ::sc stop "SysMain"
 sc config "SysMain" start= auto
@@ -378,7 +379,8 @@ wmic process where name="OfficeClickToRun.exe" CALL terminate
 wmic process where name="taskhostw.exe" CALL terminate
 wmic process where name="WmiPrvSvc.exe" CALL terminate
 ::wmic process where name="dwm.exe" CALL setpriority 32768
-wmic process where name="dwm.exe" CALL setpriority 64
+::wmic process where name="dwm.exe" CALL setpriority 64
+wmic process where name="dwm.exe" CALL setpriority 256
 wmic process where name="dllhost.exe" CALL setpriority 64
 wmic process where name="fontdrvhost.exe" CALL setpriority 64
 wmic process where name="winlogon.exe" CALL setpriority 64
