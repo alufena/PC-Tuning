@@ -12,3 +12,7 @@ start explorer.exe
 if defined restart_firefox start firefox.exe
 if defined restart_chrome start chrome.exe
 if defined restart_edge start msedge.exe
+::wmic process where name="dwm.exe" CALL setpriority 32768
+::wmic process where name="dwm.exe" CALL setpriority 64
+wmic process where name="dwm.exe" CALL setpriority 256
+exit
