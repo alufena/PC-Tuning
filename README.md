@@ -87,4 +87,5 @@ https://x.com/Realperfguy
 https://x.com/honestzin  
 https://x.com/jerry05259307  
 https://www.reddit.com/r/uBlockOrigin/comments/1jbv1xn/youtube_ads_detection_breakages_2025_megathread  
-https://khorvie.tech/library/  
+https://khorvie.tech/library  
+https://www.overclock.net/threads/usb-polling-precision.1550666  
