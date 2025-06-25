@@ -32,6 +32,7 @@ https://github.com/ancel1x/Ancels-Performance-Batch
 https://github.com/dubbyOW/BCDEditTweaks  
 https://github.com/emadadel4/itt  
 https://github.com/henrypp/memreduct  
+https://www.reddit.com/r/uBlockOrigin/comments/1jbv1xn/youtube_ads_detection_breakages_2025_megathread  
 https://github.com/ionuttbara/melody_windows  
 https://github.com/ionuttbara/windows-defender-remover  
 https://github.com/letsdoautomation/powershell  
