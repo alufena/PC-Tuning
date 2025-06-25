@@ -86,3 +86,4 @@ https://www.youtube.com/watch?v=sbXzM60ad8I
 https://x.com/Realperfguy  
 https://x.com/honestzin  
 https://x.com/jerry05259307  
+https://www.reddit.com/r/uBlockOrigin/comments/1jbv1xn/youtube_ads_detection_breakages_2025_megathread  
