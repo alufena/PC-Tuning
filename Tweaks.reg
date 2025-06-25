@@ -495,22 +495,22 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000004  ; =-, 00000004/00000006
 "IoPriority"=dword:00000003 ; =-, 00000003/00000006
-"PagePriority"=dword:00000006
+"PagePriority"=dword:00000003 ; =-, 00000003/00000006
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000004  ; =-, 00000004/00000006
-"IoPriority"=dword:00000003 ; =-, 00000003/00000006
-"PagePriority"=dword:00000006
+"CpuPriorityClass"=dword:00000004
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000004  ; =-, 00000004/00000006
 "IoPriority"=dword:00000003 ; =-, 00000003/00000006
-"PagePriority"=dword:00000006
+"PagePriority"=dword:00000003 ; =-, 00000003/00000006
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000004
 "IoPriority"=dword:00000003
-"PagePriority"=dword:00000006
+"PagePriority"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NDIS\Parameters]
 "CheckFwVersion"=dword:00000000
