@@ -148,7 +148,7 @@ Windows Registry Editor Version 5.00
 "EnableCfg"=dword:00000000 ; =-, 00000000 security option for anticheats
 "EnableCooling"=dword:00000000
 "EnablePerVolumeLazyWriter"=dword:00000002
-"FeatureSettings"=dword:00000003 ; 00000000, 00000001/00000003
+"FeatureSettings"=dword:00000001 ; 00000000, 00000001/00000003
 "FeatureSettingsOverride"=dword:00000003 ; 00000000, 00000003 security option for anticheats
 "FeatureSettingsOverrideMask"=dword:00000003 ; 00000000, 00000003 security option for anticheats
 "IoPageLockLimit"=dword:ffffffff ; ffffffff/00100000/00ff0000/08000000
@@ -161,7 +161,7 @@ Windows Registry Editor Version 5.00
 "PagedPoolSize"=dword:ffffffff ; 00000000, 000000c0/ffffffff
 "PhysicalAddressExtension"=dword:00000001
 "PoolUsageMaximum"=dword:00000040 ; 00000028/00000040/00000060
-"SecondLevelDataCache"=dword:00000400 ; 00000000/00000400
+"SecondLevelDataCache"=dword:00000400 ; 00000000/00000200/00000400
 "SessionPoolSize"=dword:00000040 ; 00000004, 00000040/000000c0
 "SessionViewSize"=dword:00000088 ; 00000030, 00000088/000000c0
 "SimulateCommitSavings"=dword:00000000
@@ -171,6 +171,7 @@ Windows Registry Editor Version 5.00
 "TrackLockedPages"=dword:00000000
 "TrackPtes"=dword:00000000
 "UseLargePages"=dword:00000001 ; 00000000/00000001
+"LargePageMinimum"=dword:00000000 ; ffffffff/00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\Memory Management]
 "DontVerifyRandomDrivers"=dword:00000001
@@ -222,7 +223,7 @@ Windows Registry Editor Version 5.00
 "DisableBufferedIoInit"=dword:00000001
 "DisableControlFlowGuardExportSuppression"=dword:00000001
 "DisableControlFlowGuardXfg"=dword:00000001
-; "DisableExceptionChainValidation"=- ; 00000000, 00000001 security option for anticheats
+; "DisableExceptionChainValidation"=dword:00000001 ; 00000000, 00000001 security option for anticheats
 ; "DisableLowQosTimerResolution"=dword:00000000 ; 00000000/00000001 (w10 only. breaks w11 24h2)
 "DisableOverlappedExecution"=dword:00000000
 "DisableTsx"=dword:00000001 ; 00000000/00000001
@@ -254,7 +255,7 @@ Windows Registry Editor Version 5.00
 "IoQueueWorkItem"=dword:00000020
 "IoQueueWorkItemEx"=dword:00000020
 "IoQueueWorkItemToNode"=dword:00000020
-; "KernelSEHOPEnabled"=- ; 00000000, 00000001 security option for anticheats
+; "KernelSEHOPEnabled"=dword:00000000 ; 00000000, 00000001 security option for anticheats
 "KiClockTimerAlwaysOnPresent"=dword:00000001
 "KiClockTimerHighLatency"=dword:00000000
 "KiClockTimerPerCpu"=dword:00000001
@@ -418,7 +419,7 @@ Windows Registry Editor Version 5.00
 "NtfsDisable8dot3NameCreation"=dword:00000001
 "NtfsDisableCompression"=dword:00000001
 "NtfsDisableEncryption"=dword:00000001
-"NtfsDisableLastAccessUpdate"=dword:80000001 ; 80000000, 80000001
+"NtfsDisableLastAccessUpdate"=dword:80000001 ; 80000000, 80000001/00000001
 "NtfsDisableSpotCorruptionHandling"=dword:00000001
 "NtfsEncryptPagingFile"=dword:00000000
 "NtfsForceNonPagedPoolAllocation"=dword:00000000
@@ -466,7 +467,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
 "AlwaysOn"=dword:00000001
-"NetworkThrottlingIndex"=dword:ffffffff
+"NetworkThrottlingIndex"=dword:ffffffff ; 0000000a/00000014/ffffffff
 "NoLazyMode"=dword:00000001
 "SystemResponsiveness"=dword:00000000 ; 00000014, 00000000/00000001/0000000a
 
@@ -493,24 +494,24 @@ Windows Registry Editor Version 5.00
 "PagePriority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000004  ; =-, 00000004/00000006
-"IoPriority"=dword:00000003 ; =-, 00000003/00000006
-"PagePriority"=dword:00000003 ; =-, 00000003/00000006
+"CpuPriorityClass"=dword:00000001  ; =-, 00000001/00000004/00000006
+"IoPriority"=dword:00000001 ; =-, 00000001/00000003/00000006
+"PagePriority"=dword:00000001 ; =-, 00000001/00000003/00000006
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000004
-"IoPriority"=dword:00000003
-"PagePriority"=dword:00000003
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000001
+"PagePriority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000004  ; =-, 00000004/00000006
-"IoPriority"=dword:00000003 ; =-, 00000003/00000006
-"PagePriority"=dword:00000003 ; =-, 00000003/00000006
+"CpuPriorityClass"=dword:00000006  ; =-, 00000004/00000006
+"IoPriority"=dword:00000006 ; =-, 00000003/00000006
+"PagePriority"=dword:00000006 ; =-, 00000003/00000006
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000004
-"IoPriority"=dword:00000003
-"PagePriority"=dword:00000003
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NDIS\Parameters]
 "CheckFwVersion"=dword:00000000
@@ -623,7 +624,7 @@ Windows Registry Editor Version 5.00
 "DisableDiskCounters"=dword:00000001
 "IoEnableSessionZeroAccessCheck"=dword:00000001
 "PassiveIntRealTimeWorkerCount"=dword:00000010 ; 00000010/00000040
-"PassiveIntRealTimeWorkerPriority"=dword:00000012
+"PassiveIntRealTimeWorkerPriority"=dword:00000012 ; 00000012/00000018
 "RequireDeviceAccessCheck"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\KernelVelocity]
@@ -682,7 +683,7 @@ Windows Registry Editor Version 5.00
 "IRQ7Priority"=dword:00000001
 "IRQ08Priority"=dword:00000001
 "IRQ8Priority"=dword:00000001
-"IRQ16Priority"=dword:00000001
+"IRQ16Priority"=dword:00000001 ; 00000001/00000002
 "IRQ23Priority"=dword:00000001
 "IRQ25Priority"=dword:00000001
 "IRQ36Priority"=dword:00000001
@@ -1312,7 +1313,7 @@ Windows Registry Editor Version 5.00
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
 "TdrDdiDelay"=dword:00000000 ; 00000000, 0000000a
 "TdrDebugMode"=dword:00000000
-"TdrDelay"=dword:0000003c ; 00000000/0000000a/0000003c
+"TdrDelay"=dword:00000000 ; 00000000/0000000a/0000003c
 "TdrDodPresentDelay"=dword:00000000
 "TdrDodVSyncDelay"=dword:00000000
 "TdrLevel"=dword:00000000 ; 00000000, 00000003
@@ -2458,9 +2459,9 @@ Windows Registry Editor Version 5.00
 "AllowCrossDeviceClipboard"=dword:00000000
 "AllowDomainDelayLock"=dword:00000000
 "CompatibleRUPSecurity"=dword:00000001
-"CopyFileBufferedSynchronousIo"=dword:00000040
-"CopyFileChunkSize"=dword:00008000
-"CopyFileOverlappedCount"=dword:00000020
+"CopyFileBufferedSynchronousIo"=dword:00000040 ; 00000001/00000040
+"CopyFileChunkSize"=dword:00008000 ; 00004000/00008000
+"CopyFileOverlappedCount"=dword:00000020 ; 00000010/00000020
 "DeleteRoamingCache"=dword:00000001
 "DisableAcrylicBackgroundOnLogon"=dword:00000001
 "DisableAIDataAnalysis"=dword:00000001
@@ -2548,7 +2549,7 @@ Windows Registry Editor Version 5.00
 "AllowOfflineFilesforCAShares"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\FVE]
-"DisableExternalDMAUnderLock"=dword:00000001 ; 00000001/00000000
+"DisableExternalDMAUnderLock"=dword:00000000 ; 00000000/00000001
 "EnableBDEWithNoTPM"=dword:00000001
 "EnableNonTPM"=dword:00000001
 "FDVNoBitLockerToGoReader"=dword:00000001
@@ -2572,6 +2573,24 @@ Windows Registry Editor Version 5.00
 "UseTPMKey"=dword:00000000
 "UseTPMKeyPIN"=dword:00000000
 "UseTPMPIN"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\DmaGuard\DeviceEnumerationPolicy]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\pci\Parameters]
+"DmaRemappingCompatible"=dword:00000000
+"DmaRemappingOnHiberPath"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\storahci\Parameters]
+"DmaRemappingCompatible"=dword:00000000
+"DmaRemappingOnHiberPath"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\stornvme\Parameters]
+"DmaRemappingCompatible"=dword:00000000
+"DmaRemappingOnHiberPath"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\USBXHCI\Parameters]
+"DmaRemappingCompatibleSelfhost"=dword:00000000
+"DmaRemappingCompatible"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"legalnoticecaption"=""
+"legalnoticetext"=""
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE\PlatformValidation]
 "Enabled"=dword:00000000
@@ -4189,7 +4208,6 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wscsvc]
 "Start"=dword:00000004
-"Start"=dword:00000000
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\MDCoreSvc]
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\WMI\Autologger\Circular Kernel Context Logger]
@@ -4280,6 +4298,8 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000002
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GpuEnergyDrv]
 "Start"=dword:00000004 ; 00000001, 00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GpuEnergyDr]
+"Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\amdpsp]
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\amdfendr]
@@ -4938,6 +4958,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\QoS]
 "Do not use NLA"="1"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown]
+"bUpdater"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\BITS]
 "EnablePeercaching"=dword:00000000
@@ -10031,6 +10054,7 @@ Windows Registry Editor Version 5.00
 "PagePriority"=dword:00000006
 "UseLargePages"=dword:00000001
 
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe\PerfOptions]
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe\PerfOptions]
@@ -10606,6 +10630,7 @@ Windows Registry Editor Version 5.00
 "G:\\SteamLibrary\\steamapps\\common\\Red Dead Redemption 2\\RDR2.exe"="GpuPreference=2;"
 "G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="GpuPreference=2;"
 "G:\\DeadIsland2\\DeadIsland\\Binaries\\Win64\\DeadIsland-Win64-Shipping.exe"="GpuPreference=2;"
+"G:\\SteamLibrary\\steamapps\\common\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="GpuPreference=2;"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers]
 "C:\\ProgramData\\Wargaming.net\\GameCenter for Steam\\wgc.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
@@ -10715,6 +10740,7 @@ Windows Registry Editor Version 5.00
 "G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\memreduct\\memreduct.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\DeadIsland2\\DeadIsland\\Binaries\\Win64\\DeadIsland-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers]
 "C:\\ProgramData\\Wargaming.net\\GameCenter for Steam\\wgc.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
@@ -10824,6 +10850,7 @@ Windows Registry Editor Version 5.00
 "G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "C:\\Program Files (x86)\\memreduct\\memreduct.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\DeadIsland2\\DeadIsland\\Binaries\\Win64\\DeadIsland-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\SteamLibrary\\steamapps\\common\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectDraw]
 "DisableAGPSupport"=dword:00000000
@@ -10918,7 +10945,7 @@ Windows Registry Editor Version 5.00
 "GameFluidity"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\GraphicsDrivers\Configuration\GSM60B216843009_01_07DC_0E^3D9A69AD1C84EAB2AAF1FC3855733BB4\00\00]
-"Scaling"=dword:00000002 ; 00000003, 00000000/00000002
+"Scaling"=dword:00000000 ; 00000003, 00000000/00000002
 ; "ScanlineOrdering"=dword:00000000
 ; "Rotation"=dword:00000000
 [HKEY_CURRENT_USER\SOFTWARE\NVIDIA Corporation\Global\NVTweak\Devices\3772562448-0\Color]
@@ -10929,9 +10956,10 @@ Windows Registry Editor Version 5.00
 
 ; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96f-e325-11ce-bfc1-08002be10318}\0000]
 ; "DriverDateData"=hex:00,80,07,84,f2,74,d6,00 ; 00,80,07,84,f2,74,d6,01, 00,80,07,84,f2,74,d6,00
-
 ; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96b-e325-11ce-bfc1-08002be10318}\0000]
 ; "DriverDateData"=hex:00,80,8c,a3,c5,94,c6,00 ; 00,80,8c,a3,c5,94,c6,01, 00,80,8c,a3,c5,94,c6,00
+; HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96b-e325-11ce-bfc1-08002be10318}\0001
+; HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96b-e325-11ce-bfc1-08002be10318}\0002
 
 [HKEY_CURRENT_USER\System\GameConfigStore]
 "Win32_AutoGameModeDefaultProfile"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,\
