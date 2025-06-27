@@ -86,6 +86,7 @@ https://www.youtube.com/@khorvietech/videos
 https://www.youtube.com/@Panjno/videos  
 https://www.youtube.com/@pcsecuritychannel/videos  
 https://www.youtube.com/@Savitarax/videos  
+https://www.youtube.com/@SHYX_TWEAKS/videos  
 https://www.youtube.com/watch?v=sbXzM60ad8I  
 https://x.com/honestzin  
 https://x.com/jerry05259307  
