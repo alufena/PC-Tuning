@@ -151,7 +151,7 @@ Windows Registry Editor Version 5.00
 "FeatureSettings"=dword:00000001 ; 00000000, 00000001/00000003
 "FeatureSettingsOverride"=dword:00000003 ; 00000000, 00000003 security option for anticheats
 "FeatureSettingsOverrideMask"=dword:00000003 ; 00000000, 00000003 security option for anticheats
-"IoPageLockLimit"=dword:ffffffff ; ffffffff/00100000/00ff0000/08000000
+"IoPageLockLimit"=dword:ffffffff ; ffffffff/00100000/00ff0000/08000000/000f0000
 "LargeSystemCache"=dword:00000001 ; 00000000, 00000001
 "ModifiedWriteMaximum"=dword:00000080 ; 00000014/00000080
 "MoveImages"=dword:00000000 ; 00000001, 00000000 security option for anticheats
@@ -160,7 +160,7 @@ Windows Registry Editor Version 5.00
 "PagedPoolQuota"=dword:00000000
 "PagedPoolSize"=dword:ffffffff ; 00000000, 000000c0/ffffffff
 "PhysicalAddressExtension"=dword:00000001
-"PoolUsageMaximum"=dword:00000040 ; 00000028/00000040/00000060
+"PoolUsageMaximum"=dword:00000060 ; 00000028/00000040/00000060
 "SecondLevelDataCache"=dword:00000400 ; 00000000/00000200/00000400
 "SessionPoolSize"=dword:00000040 ; 00000004, 00000040/000000c0
 "SessionViewSize"=dword:00000088 ; 00000030, 00000088/000000c0
@@ -172,6 +172,8 @@ Windows Registry Editor Version 5.00
 "TrackPtes"=dword:00000000
 "UseLargePages"=dword:00000001 ; 00000000/00000001
 "LargePageMinimum"=dword:00000000 ; ffffffff/00000000
+"WorkingSetMaxSize"=dword:ffffffff
+"WorkingSetMinSize"=dword:ffffffff
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\Memory Management]
 "DontVerifyRandomDrivers"=dword:00000001
@@ -196,7 +198,7 @@ Windows Registry Editor Version 5.00
 "AlpcWakePolicy"=dword:00000001 ; 00000000/00000001
 "AuditBaseDirectories"=dword:00000000
 "AuditBaseObjects"=dword:00000000
-"DisablePagingExecutive"=dword:00000000
+"DisablePagingExecutive"=dword:00000001
 "DisableWpbtExecution"=dword:00000001
 "EnableMCA"=dword:00000000
 "EnableMCE"=dword:00000000
@@ -223,8 +225,8 @@ Windows Registry Editor Version 5.00
 "DisableBufferedIoInit"=dword:00000001
 "DisableControlFlowGuardExportSuppression"=dword:00000001
 "DisableControlFlowGuardXfg"=dword:00000001
-; "DisableExceptionChainValidation"=dword:00000001 ; 00000000, 00000001 security option for anticheats
-; "DisableLowQosTimerResolution"=dword:00000000 ; 00000000/00000001 (w10 only. breaks w11 24h2)
+; "DisableExceptionChainValidation"=dword:00000001 ; =-, 00000001 security option for anticheats
+; "DisableLowQosTimerResolution"=dword:00000000 ; =-, 00000000/00000001 (w10 only. breaks w11 24h2)
 "DisableOverlappedExecution"=dword:00000000
 "DisableTsx"=dword:00000001 ; 00000000/00000001
 "DistributeTimers"=dword:00000001 ; 00000000/00000001
@@ -255,7 +257,7 @@ Windows Registry Editor Version 5.00
 "IoQueueWorkItem"=dword:00000020
 "IoQueueWorkItemEx"=dword:00000020
 "IoQueueWorkItemToNode"=dword:00000020
-; "KernelSEHOPEnabled"=dword:00000000 ; 00000000, 00000001 security option for anticheats
+; "KernelSEHOPEnabled"=dword:00000000 ; =-, 00000001 security option for anticheats
 "KiClockTimerAlwaysOnPresent"=dword:00000001
 "KiClockTimerHighLatency"=dword:00000000
 "KiClockTimerPerCpu"=dword:00000001
@@ -290,6 +292,7 @@ Windows Registry Editor Version 5.00
 "WorkerFactoryThreadIdleTimeout"=dword:00000000
 "XMMIZeroingEnable"=dword:00000000
 "IdealNodeRandomized"=dword:00000001
+"DisableDynamicTick"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM]
 "InterruptSteeringDisabled"=dword:00000001
@@ -430,6 +433,7 @@ Windows Registry Editor Version 5.00
 "UdfsSoftwareDefectManagement"=dword:00000000
 "Win31FileSystem"=dword:00000000
 "Win95TruncatedExtensions"=dword:00000000
+"ContigFileAllocSize"=dword:00000600
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\0cc5b647-c1df-4637-891a-dec35c318583]
 "Attributes"=dword:00000002
@@ -445,7 +449,7 @@ Windows Registry Editor Version 5.00
 "EnableBootTrace"=dword:00000000 ; =-, 00000000/00000001
 "EnablePrefetch"=dword:00000003 ; 00000003 on, 00000000 off
 "EnablePrefetcher"=dword:00000003 ; 00000003 on, 00000000 off
-"EnableSuperfetch"=dword:00000003 ; =-, 00000003
+"EnableSuperfetch"=dword:00000003 ; =-, 00000000/00000003
 "FIPrefetchDelayMs"=dword:00000000
 "SfTracingState"=dword:00000000 ; =-, 00000000/00000001
 
@@ -470,6 +474,8 @@ Windows Registry Editor Version 5.00
 "NetworkThrottlingIndex"=dword:ffffffff ; 0000000a/00000014/ffffffff
 "NoLazyMode"=dword:00000001
 "SystemResponsiveness"=dword:00000000 ; 00000014, 00000000/00000001/0000000a
+"IdleDetectionCycles"=dword:00000001
+"MaxThreadsPerProcess"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
 "AuditLevel"=dword:00000000
@@ -504,13 +510,13 @@ Windows Registry Editor Version 5.00
 "PagePriority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006  ; =-, 00000004/00000006
-"IoPriority"=dword:00000006 ; =-, 00000003/00000006
+"CpuPriorityClass"=dword:00000003  ; =-, 00000004/00000006
+"IoPriority"=dword:00000003 ; =-, 00000003/00000006
 "PagePriority"=dword:00000006 ; =-, 00000003/00000006
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
+"CpuPriorityClass"=dword:00000003
+"IoPriority"=dword:00000003
 "PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NDIS\Parameters]
@@ -651,7 +657,7 @@ Windows Registry Editor Version 5.00
 "CoalescingTimerInterval"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
-"DisableRemoteScmEndpoints"=dword:00000000
+"DisableRemoteScmEndpoints"=dword:00000001 ; 00000000/00000001
 "HandlerTimeout"=dword:7fffffff
 "PortableOperatingSystem"=dword:00000000
 "ServicesPipeTimeout"=dword:00240000
@@ -659,7 +665,7 @@ Windows Registry Editor Version 5.00
 "WaitToKillServiceTimeout"="1000"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control]
-"DisableRemoteScmEndpoints"=dword:00000000
+"DisableRemoteScmEndpoints"=dword:00000001
 "HandlerTimeout"=dword:7fffffff
 "SvcHostSplitThresholdInKB"=dword:04000000
 "WaitToKillServiceTimeout"="1000"
@@ -683,7 +689,7 @@ Windows Registry Editor Version 5.00
 "IRQ7Priority"=dword:00000001
 "IRQ08Priority"=dword:00000001
 "IRQ8Priority"=dword:00000001
-"IRQ16Priority"=dword:00000001 ; 00000001/00000002
+"IRQ16Priority"=dword:00000002 ; 00000001/00000002
 "IRQ23Priority"=dword:00000001
 "IRQ25Priority"=dword:00000001
 "IRQ36Priority"=dword:00000001
@@ -737,6 +743,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\stornvme\Parameters\Device]
 "IdlePowerMode"=dword:00000000
+"IoTimeoutValue"=dword:000001f4
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\iaStor\Parameters\Port0]
 "LPM"=dword:00000000
@@ -882,6 +889,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\usbhub\hubg]
 "DisableOnSoftRemove"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USBHUB\Hub]
+"DisablePowerDown"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\xusb22\Parameters]
 "IoQueueWorkItem"=dword:0000000a
 
@@ -895,6 +905,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\usbhub\Parameters]
 "IoQueueWorkItem"=dword:0000000a
 "ThreadPriority"=dword:0000000f
+"DisableOnSoftRemove"=dword:00000001
+"EnableAggressiveSuspend"=dword:00000000
+"SelectiveSuspendTimeout"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB]
 "AllowIdleIrpInD3"=dword:00000001
@@ -907,6 +920,7 @@ Windows Registry Editor Version 5.00
 "fid_D1Latency"=dword:00000000
 "fid_D2Latency"=dword:00000000
 "fid_D3Latency"=dword:00000000
+"IgnoreHWSerNum"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EnhancedStorageDevices]
 "TCGSecurityActivationDisabled"=dword:00000001
@@ -1108,7 +1122,7 @@ Windows Registry Editor Version 5.00
 "EnableRenderPathTestMode"=dword:00000000
 "EnableResizeOptimization"=dword:00000001
 "EnableShadow"=dword:00000000
-"EnableWindowColorization"=dword:00000001
+"EnableWindowColorization"=dword:00000000 ; 00000000/00000001
 "FlattenVirtualSurfaceEffectInput"=dword:00000001
 "ForceDirectDrawSync"=dword:00000000
 "ForceDisableModeChangeAnimation"=dword:00000001
@@ -4692,6 +4706,9 @@ Windows Registry Editor Version 5.00
 "MachineAccessRestriction"=-
 "MachineLaunchRestriction"=-
 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Ole\AppCompat]
+"RequireIntegrityActivationAuthenticationLevel"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.Suggested]
 "Enabled"=dword:00000000
 
@@ -4710,6 +4727,27 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Syncmgr]
 "Installed"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Windows\Win32kWPP\Parameters]
+"LogPages"=dword:00000000
+[HKEY_LOCAL_MACHINE\Software\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Windows\Win32kWPP\Parameters]
+"LogPages"=dword:00000000
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Windows\Win32knsWPP\Parameters]
+"LogPages"=dword:00000000
+[HKEY_LOCAL_MACHINE\Software\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Windows\Win32knsWPP\Parameters]
+"LogPages"=dword:00000000
+[HKEY_LOCAL_MACHINE\System\ControlSet001\Services\USBHUB3\Parameters]
+"LogPages"=dword:00000000
+[HKEY_LOCAL_MACHINE\System\ControlSet001\Services\USBHUB3\Parameters\Wdf]
+"LogPages"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\kbdhid\Parameters]
+"LogPages"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters]
+"LogPages"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mouclass\Parameters]
+"LogPages"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mouhid\Parameters]
+"LogPages"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Diagtrack-Listener\{FBDC4594-A4A9-5F04-AF86-7BD18A7938B9}]
 "Start"=dword:00000000
@@ -5011,15 +5049,14 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96c-e325-11ce-bfc1-08002be10318}]
 "UpperFilters"=hex(7):
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e967-e325-11ce-bfc1-08002be10318}]
 "LowerFilters"=hex(7):
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{6bdd1fc6-810f-11d0-bec7-08002be2092f}]
 "UpperFilters"=hex(7):
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{71a27cdd-812a-11d0-bec7-08002be2092f}]
 "LowerFilters"=hex(7):
+"EnableUltraIO"=dword:00000001
+"EnableIOResponder"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl\StorageTelemetry]
 "StorageTCCode_0"=dword:00000000
@@ -5030,6 +5067,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\StorageDevicePolicies]
 "WriteProtect"=dword:00000000
+"WriteCache"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Xaml]
 "AllowFailFastOnAnyFailure"=dword:00000000
@@ -5045,6 +5083,7 @@ Windows Registry Editor Version 5.00
 "StartRCM"=dword:00000000
 "TSUserEnabled"=dword:00000000
 "updateRDStatus"=dword:00000000
+"TSEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\COM3]
 "RemoteAccessEnabled"=dword:00000000
@@ -5549,7 +5588,7 @@ Windows Registry Editor Version 5.00
 "LmCompatibilityLevel"=dword:00000005 ; =-, 00000005
 "LsaConfigFlags"=dword:00000000
 "LsaLookupRestrictIsolatedNameLevel"=dword:00000001
-"RestrictAnonymous"=dword:00000002 ; 00000001/00000002
+"RestrictAnonymous"=dword:00000001 ; 00000001/00000002
 "RestrictAnonymousSAM"=dword:00000001
 "RestrictRemoteSAM"="O:BAG:BAD:(A;;RC;;;BA)"
 "RunAsPPL"=dword:00000000
@@ -7032,6 +7071,15 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Program-Telemetry]
 "Enabled"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Program-Inventory]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Program-Compatibility-Troubleshooter]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Kernel-EventTracing/Admin]
+"Enabled"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\HidePeopleBar]
 "value"=dword:00000001
 
@@ -7775,7 +7823,7 @@ Windows Registry Editor Version 5.00
 "CleanShutdown"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\OptimalLayout]
-"EnableAutoLayout"=dword:00000000
+"EnableAutoLayout"=dword:00000000 ; 00000000/00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\TPM]
 "OSManagedAuthLevel"=dword:00000000
@@ -7960,6 +8008,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USB\Parameters]
 "DisableSelectiveSuspend"=dword:00000001
 "ForceHCResetOnResume"=dword:00000001
+"DisableZeroLengthControlTransfers"=dword:00000001
+"MaxIrpSize"=dword:00010000
+"DisableSelectiveSuspendTimeout"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HidUsb\Parameters]
 "SelectiveSuspendEnabled"=dword:00000000
@@ -7976,6 +8027,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USB]
 "DisableSelectiveSuspend"=dword:00000001
+"DisablePowerDown"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\NDIS\Parameters]
 "EnableNicAutoPowerSaverInSleepStudy"=dword:00000000
@@ -8031,6 +8083,9 @@ Windows Registry Editor Version 5.00
 "ThreadPriority"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\storahci\Parameters]
 "ThreadPriority"=dword:00000000
+"EnableHIPM"=dword:00000000
+"EnableDIPM"=dword:00000000
+"EnableHDDParking"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\storahci\Parameters\Device]
 "SingleIO"=dword:00000001
@@ -8277,6 +8332,7 @@ Windows Registry Editor Version 5.00
 "BasePriority"=dword:000000c8
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{36fc9e60-c465-11cf-8056-444553540000}]
 "BasePriority"=dword:000000c8
+"IdleEnable"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{2db15374-706e-4131-a0c7-d7c78eb0289a}]
 "BasePriority"=dword:000000c8
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{268c95a1-edfe-11d3-95c3-0010dc4050a5}]
