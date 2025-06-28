@@ -97,3 +97,5 @@ https://github.com/Teramanbr/TerabyteTweaker
 https://github.com/QuakedK/Scripting-Station  
 https://github.com/QuakedK/Oneclick  
 https://discord.com/invite/SweaeZqpFg  
+https://www.techpowerup.com/download/techpowerup-nvcleanstall    
+https://www.wagnardsoft.com/display-driver-uninstaller-ddu-  
