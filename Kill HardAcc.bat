@@ -358,6 +358,8 @@ bcdedit /set sos No
 ::bcdedit /deletevalue sos
 bcdedit /set timeout 0
 ::bcdedit /deletevalue timeout
+bcdedit /set testsigning No
+::bcdedit /deletevalue testsigning
 ::bcdedit /set {globalsettings} custom:16000067 true
 ::bcdedit /set graphicsmodedisabled No
 ::bcdedit /deletevalue graphicsmodedisabled
@@ -380,7 +382,8 @@ wmic process where name="taskhostw.exe" CALL terminate
 wmic process where name="WmiPrvSvc.exe" CALL terminate
 ::wmic process where name="dwm.exe" CALL setpriority 32768
 ::wmic process where name="dwm.exe" CALL setpriority 64
-wmic process where name="dwm.exe" CALL setpriority 256
+::wmic process where name="dwm.exe" CALL setpriority 256
+wmic process where name="dwm.exe" CALL setpriority 128
 wmic process where name="dllhost.exe" CALL setpriority 64
 wmic process where name="fontdrvhost.exe" CALL setpriority 64
 wmic process where name="winlogon.exe" CALL setpriority 64
@@ -451,6 +454,10 @@ del /f /q %SystemRoot%\System32\drivers\Acpidev.sys
 del /f /q %SystemRoot%\System32\drivers\Acpipagr.sys
 del /f /q %SystemRoot%\System32\drivers\Acpitime.sys
 del /f /q %SystemRoot%\System32\drivers\Acpipmi.sys
+takeown /f "C:\Windows\System32\mcupdate_GenuineIntel.dll"
+takeown /f "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
+del "C:\Windows\System32\mcupdate_GenuineIntel.dll"
+del "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
 reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /va /f
 reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths" /va /f
 reg delete "HKCU\Software\Microsoft\Direct3D\MostRecentApplication" /va /f
