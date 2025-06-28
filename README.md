@@ -94,3 +94,5 @@ https://x.com/Realperfguy
 https://systeminformer.sourceforge.io  
 https://www.resplendence.com/latencymon  
 https://github.com/Teramanbr/TerabyteTweaker  
+https://github.com/QuakedK/Scripting-Station  
+https://github.com/QuakedK/Oneclick  
