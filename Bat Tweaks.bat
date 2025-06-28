@@ -3,8 +3,8 @@ fsutil behavior set DisableCompression 1
 fsutil behavior set disableencryption 1
 fsutil behavior set disablelastaccess 1
 fsutil behavior set encryptpagingfile 0
-::fsutil behavior set memoryusage 2
-fsutil behavior set memoryusage 0
+fsutil behavior set memoryusage 2
+::fsutil behavior set memoryusage 1
 fsutil behavior set mftzone 4
 manage-bde -off C:
 manage-bde -off D:
@@ -24,6 +24,10 @@ del /f /q %SystemRoot%\System32\drivers\Acpidev.sys
 del /f /q %SystemRoot%\System32\drivers\Acpipagr.sys
 del /f /q %SystemRoot%\System32\drivers\Acpitime.sys
 del /f /q %SystemRoot%\System32\drivers\Acpipmi.sys
+takeown /f "C:\Windows\System32\mcupdate_GenuineIntel.dll"
+takeown /f "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
+del "C:\Windows\System32\mcupdate_GenuineIntel.dll"
+del "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
 powercfg -change monitor-timeout-ac 0
 powercfg -change standby-timeout-ac 0
 powercfg -change hibernate-timeout-ac 0
