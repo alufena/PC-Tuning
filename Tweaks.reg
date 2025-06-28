@@ -965,7 +965,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Processor]
 "AllowPepPerfStates"=dword:00000000
-"Capabilities"=dword:0007e7e6 ; 0007e0c6/0007e7e6
+"Capabilities"=dword:0007e7e6 ; 0007e0c6/0007e7e6/0007e066
 "CPPCEnable"=dword:00000000
 "CpuDebuggingEnabled"=dword:00000000
 "CpuIdle"=dword:00000000
@@ -1181,7 +1181,7 @@ Windows Registry Editor Version 5.00
 "UseHWDrawListEntriesOnWARP"=dword:00000001
 "UseLegacyDisplayFrameBuffer"=dword:00000001
 "UseMachineCheck"=dword:00000000
-"UseStaticComposition"=dword:00000001 ; 00000001
+"UseStaticComposition"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
 "AlwaysHibernateThumbnails"=dword:00000000
@@ -1758,6 +1758,14 @@ Windows Registry Editor Version 5.00
 "RmForceDisableIomapWC"=dword:00000001
 "RMPcieLinkSpeed"=dword:00000010
 "RMMaximizeBattery"=dword:00000000
+"DisableSAMUPowerGating"=dword:00000001
+"DisableUVDPowerGatingDynamic"=dword:00000001
+"DisableVCEPowerGating"=dword:00000001
+"EnableVceSwClockGating"=dword:00000000
+"EnableUvdClockGating"=dword:00000000
+"EnableUlps_NA"="0"
+"EnableAspmL0s"=dword:00000000
+"EnableAspmL1"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001]
 "Acceleration.Level"=dword:00000000
@@ -1917,6 +1925,14 @@ Windows Registry Editor Version 5.00
 "RmForceDisableIomapWC"=dword:00000001
 "RMPcieLinkSpeed"=dword:00000010
 "RMMaximizeBattery"=dword:00000000
+"DisableSAMUPowerGating"=dword:00000001
+"DisableUVDPowerGatingDynamic"=dword:00000001
+"DisableVCEPowerGating"=dword:00000001
+"EnableVceSwClockGating"=dword:00000000
+"EnableUvdClockGating"=dword:00000000
+"EnableUlps_NA"="0"
+"EnableAspmL0s"=dword:00000000
+"EnableAspmL1"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0002]
 "Acceleration.Level"=dword:00000000
@@ -2076,6 +2092,14 @@ Windows Registry Editor Version 5.00
 "RmForceDisableIomapWC"=dword:00000001
 "RMPcieLinkSpeed"=dword:00000010
 "RMMaximizeBattery"=dword:00000000
+"DisableSAMUPowerGating"=dword:00000001
+"DisableUVDPowerGatingDynamic"=dword:00000001
+"DisableVCEPowerGating"=dword:00000001
+"EnableVceSwClockGating"=dword:00000000
+"EnableUvdClockGating"=dword:00000000
+"EnableUlps_NA"="0"
+"EnableAspmL0s"=dword:00000000
+"EnableAspmL1"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DXGKrnl]
 "CreateGdiPrimaryOnSlaveGPU"=dword:00000001
