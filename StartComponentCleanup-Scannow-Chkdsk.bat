@@ -59,6 +59,10 @@ del /f /q %SystemRoot%\System32\drivers\Acpidev.sys
 del /f /q %SystemRoot%\System32\drivers\Acpipagr.sys
 del /f /q %SystemRoot%\System32\drivers\Acpitime.sys
 del /f /q %SystemRoot%\System32\drivers\Acpipmi.sys
+takeown /f "C:\Windows\System32\mcupdate_GenuineIntel.dll"
+takeown /f "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
+del "C:\Windows\System32\mcupdate_GenuineIntel.dll"
+del "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
 taskkill /f /t /im conhost.exe
 taskkill /f /t /im cmd.exe
 exit
