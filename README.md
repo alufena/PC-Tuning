@@ -1,4 +1,4 @@
-Credits, source, good links  
+# Credits, source, good links  
 https://bbs.c3.wuyou.net/forum.php?mod=viewthread&tid=437913  
 https://community.amd.com/t5/discussions/input-lag-and-mouse-movement-tweaks-for-gaming-v3-2020-edition  
 https://community.amd.com/t5/gaming-discussions/amd-input-lag-reduction-competitive-e-sports-optimization-guide  
@@ -96,3 +96,4 @@ https://www.resplendence.com/latencymon
 https://github.com/Teramanbr/TerabyteTweaker  
 https://github.com/QuakedK/Scripting-Station  
 https://github.com/QuakedK/Oneclick  
+https://discord.com/invite/SweaeZqpFg  
