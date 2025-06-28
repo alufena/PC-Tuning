@@ -21,6 +21,7 @@ schtasks /change /tn "microsoft\windows\application experience\pcapatchdbtask" /
 schtasks /change /tn "microsoft\windows\application experience\programdataupdater" /disable
 schtasks /change /tn "microsoft\windows\application experience\sdbinstmergedbtask" /disable
 schtasks /change /tn "microsoft\windows\application experience\startupapptask" /disable
+schtasks /Change /TN "Microsoft\Windows\Application Experience\MareBackup" /Disable
 schtasks /change /tn "microsoft\windows\appxdeploymentclient\ucpd velocity" /disable
 schtasks /change /tn "microsoft\windows\autochk\proxy" /disable
 schtasks /change /tn "\Microsoft\Windows\CloudExperienceHost\CreateObjectTask" /disable
