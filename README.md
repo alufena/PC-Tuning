@@ -101,3 +101,4 @@ https://www.techpowerup.com/download/techpowerup-nvcleanstall
 https://www.wagnardsoft.com/display-driver-uninstaller-ddu-  
 https://github.com/xHybred/NvidiaProfileInspectorRevamped  
 https://github.com/Orbmu2k/nvidiaProfileInspector  
+https://github.com/ShadowWhisperer/Remove-MS-Edge  
