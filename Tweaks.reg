@@ -4,8 +4,8 @@ Windows Registry Editor Version 5.00
 "Win32PrioritySeparation"=dword:00000028 ; 00000002, 00000016/00000024/00000026/00000028
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\GameBar] 
-"AllowAutoGameMode"=dword:00000000 ; game mode 00000001 on, 00000000 off
-"AutoGameModeEnabled"=dword:00000000 ; game mode 00000001 on, 00000000 off
+"AllowAutoGameMode"=dword:00000001 ; game mode 00000001 on, 00000000 off
+"AutoGameModeEnabled"=dword:00000001 ; game mode 00000001 on, 00000000 off
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
 "HwSchMode"=dword:00000001 ; HAGS 00000002 on, 00000001 off
@@ -10786,6 +10786,187 @@ Windows Registry Editor Version 5.00
 "C:\\Program Files (x86)\\memreduct\\memreduct.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\DeadIsland2\\DeadIsland\\Binaries\\Win64\\DeadIsland-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite]
+"Version"="1.0"
+"Application Name"="FortniteClient-Win64-Shipping.exe"
+"Protocol"="*"
+"Local Port"="*"
+"Local IP"="*"
+"Local IP Prefix Length"="*"
+"Remote Port"="*"
+"Remote IP"="*"
+"Remote IP Prefix Length"="*"
+"DSCP Value"=dword:0000002e
+"Throttle Rate"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\cs2]
+"Version"="1.0"
+"Application Name"="cs2.exe"
+"Protocol"="*"
+"Local Port"="*"
+"Local IP"="*"
+"Local IP Prefix Length"="*"
+"Remote Port"="*"
+"Remote IP"="*"
+"Remote IP Prefix Length"="*"
+"DSCP Value"=dword:0000002e
+"Throttle Rate"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\bf1]
+"Version"="1.0"
+"Application Name"="bf1.exe"
+"Protocol"="*"
+"Local Port"="*"
+"Local IP"="*"
+"Local IP Prefix Length"="*"
+"Remote Port"="*"
+"Remote IP"="*"
+"Remote IP Prefix Length"="*"
+"DSCP Value"=dword:0000002e
+"Throttle Rate"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\quakechampions]
+"Version"="1.0"
+"Application Name"="QuakeChampions.exe"
+"Protocol"="*"
+"Local Port"="*"
+"Local IP"="*"
+"Local IP Prefix Length"="*"
+"Remote Port"="*"
+"Remote IP"="*"
+"Remote IP Prefix Length"="*"
+"DSCP Value"=dword:0000002e
+"Throttle Rate"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\kf2]
+"Version"="1.0"
+"Application Name"="KFGame.exe"
+"Protocol"="*"
+"Local Port"="*"
+"Local IP"="*"
+"Local IP Prefix Length"="*"
+"Remote Port"="*"
+"Remote IP"="*"
+"Remote IP Prefix Length"="*"
+"DSCP Value"=dword:0000002e
+"Throttle Rate"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\ow]
+"Version"="1.0"
+"Application Name"="Overwatch.exe"
+"Protocol"="*"
+"Local Port"="*"
+"Local IP"="*"
+"Local IP Prefix Length"="*"
+"Remote Port"="*"
+"Remote IP"="*"
+"Remote IP Prefix Length"="*"
+"DSCP Value"=dword:0000002e
+"Throttle Rate"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\wow]
+"Version"="1.0"
+"Application Name"="Wow.exe"
+"Protocol"="*"
+"Local Port"="*"
+"Local IP"="*"
+"Local IP Prefix Length"="*"
+"Remote Port"="*"
+"Remote IP"="*"
+"Remote IP Prefix Length"="*"
+"DSCP Value"=dword:0000002e
+"Throttle Rate"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\marvelrivals]
+"Version"="1.0"
+"Application Name"="Marvel-Win64-Shipping.exe"
+"Protocol"="*"
+"Local Port"="*"
+"Local IP"="*"
+"Local IP Prefix Length"="*"
+"Remote Port"="*"
+"Remote IP"="*"
+"Remote IP Prefix Length"="*"
+"DSCP Value"=dword:0000002e
+"Throttle Rate"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\gta5enhanced]
+"Version"="1.0"
+"Application Name"="GTA5_Enhanced.exe"
+"Protocol"="*"
+"Local Port"="*"
+"Local IP"="*"
+"Local IP Prefix Length"="*"
+"Remote Port"="*"
+"Remote IP"="*"
+"Remote IP Prefix Length"="*"
+"DSCP Value"=dword:0000002e
+"Throttle Rate"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\rdr2]
+"Version"="1.0"
+"Application Name"="RDR2.exe"
+"Protocol"="*"
+"Local Port"="*"
+"Local IP"="*"
+"Local IP Prefix Length"="*"
+"Remote Port"="*"
+"Remote IP"="*"
+"Remote IP Prefix Length"="*"
+"DSCP Value"=dword:0000002e
+"Throttle Rate"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\warframe]
+"Version"="1.0"
+"Application Name"="Warframe.x64.exe"
+"Protocol"="*"
+"Local Port"="*"
+"Local IP"="*"
+"Local IP Prefix Length"="*"
+"Remote Port"="*"
+"Remote IP"="*"
+"Remote IP Prefix Length"="*"
+"DSCP Value"=dword:0000002e
+"Throttle Rate"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\valve]
+"Version"="1.0"
+"Application Name"="hl2.exe"
+"Protocol"="*"
+"Local Port"="*"
+"Local IP"="*"
+"Local IP Prefix Length"="*"
+"Remote Port"="*"
+"Remote IP"="*"
+"Remote IP Prefix Length"="*"
+"DSCP Value"=dword:0000002e
+"Throttle Rate"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\tf2]
+"Version"="1.0"
+"Application Name"="tf_win64.exe"
+"Protocol"="*"
+"Local Port"="*"
+"Local IP"="*"
+"Local IP Prefix Length"="*"
+"Remote Port"="*"
+"Remote IP"="*"
+"Remote IP Prefix Length"="*"
+"DSCP Value"=dword:0000002e
+"Throttle Rate"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\haloinfinite]
+"Version"="1.0"
+"Application Name"="HaloInfinite.exe"
+"Protocol"="*"
+"Local Port"="*"
+"Local IP"="*"
+"Local IP Prefix Length"="*"
+"Remote Port"="*"
+"Remote IP"="*"
+"Remote IP Prefix Length"="*"
+"DSCP Value"=dword:0000002e
+"Throttle Rate"=dword:ffffffff
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\nomanssky]
+"Version"="1.0"
+"Application Name"="NMS.exe"
+"Protocol"="*"
+"Local Port"="*"
+"Local IP"="*"
+"Local IP Prefix Length"="*"
+"Remote Port"="*"
+"Remote IP"="*"
+"Remote IP Prefix Length"="*"
+"DSCP Value"=dword:0000002e
+"Throttle Rate"=dword:ffffffff
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectDraw]
 "DisableAGPSupport"=dword:00000000
