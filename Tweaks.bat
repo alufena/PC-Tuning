@@ -6,9 +6,9 @@ call :IsAdmin
 REM 00000002,00000016/00000024/00000026/00000028
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\PriorityControl" /v "Win32PrioritySeparation" /t REG_DWORD /d "40" /f
 REM gamemode00000001on,00000000off
-Reg.exe add "HKCU\SOFTWARE\Microsoft\GameBar" /v "AllowAutoGameMode" /t REG_DWORD /d "0" /f
+Reg.exe add "HKCU\SOFTWARE\Microsoft\GameBar" /v "AllowAutoGameMode" /t REG_DWORD /d "1" /f
 REM gamemode00000001on,00000000off
-Reg.exe add "HKCU\SOFTWARE\Microsoft\GameBar" /v "AutoGameModeEnabled" /t REG_DWORD /d "0" /f
+Reg.exe add "HKCU\SOFTWARE\Microsoft\GameBar" /v "AutoGameModeEnabled" /t REG_DWORD /d "1" /f
 REM HAGS00000002on,00000001off
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v "HwSchMode" /t REG_DWORD /d "1" /f
 REM HAGS00000002on,00000001off
@@ -7865,6 +7865,171 @@ Reg.exe add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\La
 Reg.exe add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "C:\Program Files (x86)\memreduct\memreduct.exe" /t REG_SZ /d "~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE" /f
 Reg.exe add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "G:\DeadIsland2\DeadIsland\Binaries\Win64\DeadIsland-Win64-Shipping.exe" /t REG_SZ /d "~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE" /f
 Reg.exe add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "G:\SteamLibrary\steamapps\common\Cyberpunk 2077\bin\x64\Cyberpunk2077.exe" /t REG_SZ /d "~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite" /v "Version" /t REG_SZ /d "1.0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite" /v "Application Name" /t REG_SZ /d "FortniteClient-Win64-Shipping.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite" /v "Protocol" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite" /v "Local Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite" /v "Local IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite" /v "Local IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite" /v "Remote Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite" /v "Remote IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite" /v "Remote IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite" /v "DSCP Value" /t REG_DWORD /d "46" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite" /v "Throttle Rate" /t REG_DWORD /d "4294967295" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\cs2" /v "Version" /t REG_SZ /d "1.0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\cs2" /v "Application Name" /t REG_SZ /d "cs2.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\cs2" /v "Protocol" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\cs2" /v "Local Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\cs2" /v "Local IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\cs2" /v "Local IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\cs2" /v "Remote Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\cs2" /v "Remote IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\cs2" /v "Remote IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\cs2" /v "DSCP Value" /t REG_DWORD /d "46" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\cs2" /v "Throttle Rate" /t REG_DWORD /d "4294967295" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\bf1" /v "Version" /t REG_SZ /d "1.0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\bf1" /v "Application Name" /t REG_SZ /d "bf1.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\bf1" /v "Protocol" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\bf1" /v "Local Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\bf1" /v "Local IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\bf1" /v "Local IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\bf1" /v "Remote Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\bf1" /v "Remote IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\bf1" /v "Remote IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\bf1" /v "DSCP Value" /t REG_DWORD /d "46" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\bf1" /v "Throttle Rate" /t REG_DWORD /d "4294967295" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\quakechampions" /v "Version" /t REG_SZ /d "1.0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\quakechampions" /v "Application Name" /t REG_SZ /d "QuakeChampions.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\quakechampions" /v "Protocol" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\quakechampions" /v "Local Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\quakechampions" /v "Local IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\quakechampions" /v "Local IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\quakechampions" /v "Remote Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\quakechampions" /v "Remote IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\quakechampions" /v "Remote IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\quakechampions" /v "DSCP Value" /t REG_DWORD /d "46" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\quakechampions" /v "Throttle Rate" /t REG_DWORD /d "4294967295" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\kf2" /v "Version" /t REG_SZ /d "1.0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\kf2" /v "Application Name" /t REG_SZ /d "KFGame.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\kf2" /v "Protocol" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\kf2" /v "Local Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\kf2" /v "Local IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\kf2" /v "Local IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\kf2" /v "Remote Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\kf2" /v "Remote IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\kf2" /v "Remote IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\kf2" /v "DSCP Value" /t REG_DWORD /d "46" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\kf2" /v "Throttle Rate" /t REG_DWORD /d "4294967295" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\ow" /v "Version" /t REG_SZ /d "1.0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\ow" /v "Application Name" /t REG_SZ /d "Overwatch.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\ow" /v "Protocol" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\ow" /v "Local Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\ow" /v "Local IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\ow" /v "Local IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\ow" /v "Remote Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\ow" /v "Remote IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\ow" /v "Remote IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\ow" /v "DSCP Value" /t REG_DWORD /d "46" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\ow" /v "Throttle Rate" /t REG_DWORD /d "4294967295" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\wow" /v "Version" /t REG_SZ /d "1.0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\wow" /v "Application Name" /t REG_SZ /d "Wow.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\wow" /v "Protocol" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\wow" /v "Local Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\wow" /v "Local IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\wow" /v "Local IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\wow" /v "Remote Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\wow" /v "Remote IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\wow" /v "Remote IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\wow" /v "DSCP Value" /t REG_DWORD /d "46" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\wow" /v "Throttle Rate" /t REG_DWORD /d "4294967295" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\marvelrivals" /v "Version" /t REG_SZ /d "1.0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\marvelrivals" /v "Application Name" /t REG_SZ /d "Marvel-Win64-Shipping.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\marvelrivals" /v "Protocol" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\marvelrivals" /v "Local Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\marvelrivals" /v "Local IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\marvelrivals" /v "Local IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\marvelrivals" /v "Remote Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\marvelrivals" /v "Remote IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\marvelrivals" /v "Remote IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\marvelrivals" /v "DSCP Value" /t REG_DWORD /d "46" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\marvelrivals" /v "Throttle Rate" /t REG_DWORD /d "4294967295" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\gta5enhanced" /v "Version" /t REG_SZ /d "1.0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\gta5enhanced" /v "Application Name" /t REG_SZ /d "GTA5_Enhanced.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\gta5enhanced" /v "Protocol" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\gta5enhanced" /v "Local Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\gta5enhanced" /v "Local IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\gta5enhanced" /v "Local IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\gta5enhanced" /v "Remote Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\gta5enhanced" /v "Remote IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\gta5enhanced" /v "Remote IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\gta5enhanced" /v "DSCP Value" /t REG_DWORD /d "46" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\gta5enhanced" /v "Throttle Rate" /t REG_DWORD /d "4294967295" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\rdr2" /v "Version" /t REG_SZ /d "1.0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\rdr2" /v "Application Name" /t REG_SZ /d "RDR2.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\rdr2" /v "Protocol" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\rdr2" /v "Local Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\rdr2" /v "Local IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\rdr2" /v "Local IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\rdr2" /v "Remote Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\rdr2" /v "Remote IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\rdr2" /v "Remote IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\rdr2" /v "DSCP Value" /t REG_DWORD /d "46" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\rdr2" /v "Throttle Rate" /t REG_DWORD /d "4294967295" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\warframe" /v "Version" /t REG_SZ /d "1.0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\warframe" /v "Application Name" /t REG_SZ /d "Warframe.x64.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\warframe" /v "Protocol" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\warframe" /v "Local Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\warframe" /v "Local IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\warframe" /v "Local IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\warframe" /v "Remote Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\warframe" /v "Remote IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\warframe" /v "Remote IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\warframe" /v "DSCP Value" /t REG_DWORD /d "46" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\warframe" /v "Throttle Rate" /t REG_DWORD /d "4294967295" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\valve" /v "Version" /t REG_SZ /d "1.0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\valve" /v "Application Name" /t REG_SZ /d "hl2.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\valve" /v "Protocol" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\valve" /v "Local Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\valve" /v "Local IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\valve" /v "Local IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\valve" /v "Remote Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\valve" /v "Remote IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\valve" /v "Remote IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\valve" /v "DSCP Value" /t REG_DWORD /d "46" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\valve" /v "Throttle Rate" /t REG_DWORD /d "4294967295" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\tf2" /v "Version" /t REG_SZ /d "1.0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\tf2" /v "Application Name" /t REG_SZ /d "tf_win64.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\tf2" /v "Protocol" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\tf2" /v "Local Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\tf2" /v "Local IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\tf2" /v "Local IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\tf2" /v "Remote Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\tf2" /v "Remote IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\tf2" /v "Remote IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\tf2" /v "DSCP Value" /t REG_DWORD /d "46" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\tf2" /v "Throttle Rate" /t REG_DWORD /d "4294967295" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\haloinfinite" /v "Version" /t REG_SZ /d "1.0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\haloinfinite" /v "Application Name" /t REG_SZ /d "HaloInfinite.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\haloinfinite" /v "Protocol" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\haloinfinite" /v "Local Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\haloinfinite" /v "Local IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\haloinfinite" /v "Local IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\haloinfinite" /v "Remote Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\haloinfinite" /v "Remote IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\haloinfinite" /v "Remote IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\haloinfinite" /v "DSCP Value" /t REG_DWORD /d "46" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\haloinfinite" /v "Throttle Rate" /t REG_DWORD /d "4294967295" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\nomanssky" /v "Version" /t REG_SZ /d "1.0" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\nomanssky" /v "Application Name" /t REG_SZ /d "NMS.exe" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\nomanssky" /v "Protocol" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\nomanssky" /v "Local Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\nomanssky" /v "Local IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\nomanssky" /v "Local IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\nomanssky" /v "Remote Port" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\nomanssky" /v "Remote IP" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\nomanssky" /v "Remote IP Prefix Length" /t REG_SZ /d "*" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\nomanssky" /v "DSCP Value" /t REG_DWORD /d "46" /f
+Reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\nomanssky" /v "Throttle Rate" /t REG_DWORD /d "4294967295" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\DirectDraw" /v "DisableAGPSupport" /t REG_DWORD /d "0" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\DirectDraw" /v "UseNonLocalVidMem" /t REG_DWORD /d "1" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\DirectDraw" /v "DisableDDSCAPSInDDSD" /t REG_DWORD /d "0" /f
