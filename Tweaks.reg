@@ -4950,6 +4950,9 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\CTF\MSUTB]
 "ShowDeskBand"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings]
+"AutoOpenCopilotLargeScreens"=dword:00000000
+
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\activity]
 "Value"="Deny"
 
@@ -5345,7 +5348,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\WindowsAI]
 "DisableAIDataAnalysis"=dword:00000001
-"DisableClickToDo"=-
+"AllowRecallEnablement"=dword:00000000
+"DisableClickToDo"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\MDM]
 "DisableRegistration"=dword:00000001
@@ -5452,6 +5456,11 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Classes\ms-gamebar]
 "URL Protocol"=""
 @="URL:ms-gamebar"
+
+[HKEY_CLASSES_ROOT\ms-gamebar]
+@="URL:ms-gamebar"
+"NoOpenWith"=""
+"URL Protocol"=""
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
 "ActiveHoursEnd"=dword:00000000
@@ -7214,6 +7223,9 @@ Windows Registry Editor Version 5.00
 "LetAppsSyncWithDevices"=dword:00000002
 "LetAppsAccessSystemAIModels"=dword:00000002
 
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsCopilot]
+"AllowCopilotRuntime"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Mobility]
 "OptedIn"=dword:00000000
 "CrossDeviceEnabled"=dword:00000000
@@ -8162,6 +8174,7 @@ Windows Registry Editor Version 5.00
 "SingleIO"=dword:00000001
 "DisableNCQ"=dword:00000001
 "EnableAggressiveLinkPowerManagement"=dword:00000000
+"IdleTimeoutInMS"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ResourcePolicyStore\ResourceSets\Policies\Importance\Critical]
 "BasePriority"=dword:00000052
