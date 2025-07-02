@@ -105,3 +105,4 @@ https://github.com/ShadowWhisperer/Remove-MS-Edge
 https://community.acer.com/en/discussion/724763/ultimate-laptop-cooling-optimization-guide  
 https://community.acer.com/en/discussion/612495/windows-10-optimization-guide-for-gaming  
 https://www.reddit.com/r/AMDHelp/comments/1lnxb8o/ultimate_amd_performance_fix_guide_stop_lag_fps  
+https://www.youtube.com/@FR33THY/videos  
