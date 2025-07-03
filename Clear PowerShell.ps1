@@ -1,15 +1,15 @@
-﻿# Script para limpar completamente o historico do PowerShell - compativel com todas as codificacoes
-# Remove sessoes antigas, historicos e arquivos temporarios sem interatividade
+# Script to completely clear PowerShell history - compatible with all encodings
+# Removes old sessions, histories, and temporary files without interactivity
 
-# Caminhos padrao de historicos
+# Default history paths
 $PSReadlinePath = "$ENV:USERPROFILE\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt"
 $ISEHistoryPath = "$ENV:USERPROFILE\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\PSReadline_history.txt"
 $ISEHistoryPath2 = "$ENV:USERPROFILE\Documents\WindowsPowerShell\PSReadline_history.xml"
 $PS7HistoryPath = "$ENV:USERPROFILE\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\PowerShell_history.txt"
 
-# Locais adicionais para sessoes antigas e arquivos temporarios
+# Additional locations for old sessions and temp files
 $AdditionalLocations = @(
-    # Sessoes do ISE e arquivos temporarios
+    # ISE sessions and temporary files
     "$ENV:USERPROFILE\AppData\Local\Microsoft_Corporation\powershell_ise.exe*"
     "$ENV:USERPROFILE\AppData\Local\Microsoft\Windows\PowerShell\*"
     "$ENV:USERPROFILE\AppData\Roaming\Microsoft\Windows\PowerShell\*"
@@ -17,152 +17,152 @@ $AdditionalLocations = @(
     "$ENV:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\*"
     "$ENV:LOCALAPPDATA\Microsoft\Windows\PowerShell\*"
     
-    # Historicos salvos em outras possiveis localizacoes
+    # Histories saved in other possible locations
     "$ENV:USERPROFILE\AppData\Roaming\Microsoft\PowerShell\PSReadLine\*history*.txt"
     "$ENV:USERPROFILE\AppData\Local\Temp\*powershell*"
     "$ENV:USERPROFILE\AppData\Local\Microsoft\Windows\PowerShell\*"
     
-    # Caminhos para arquivos .psxml (dados de sessao)
+    # Paths to .psxml files (session data)
     "$ENV:TEMP\*PowerShell*.psxml"
     "$ENV:TEMP\*ISE*.psxml"
     "$ENV:USERPROFILE\Documents\WindowsPowerShell\Sessions\*"
     
-    # Arquivos relacionados ao PowerShell ISE
+    # Files related to PowerShell ISE
     "$ENV:USERPROFILE\AppData\Roaming\Microsoft\Windows\PowerShell ISE\*"
     "$ENV:APPDATA\Microsoft\Windows\PowerShell ISE\*"
     "$ENV:LOCALAPPDATA\Microsoft\Windows\PowerShell ISE\*"
 )
 
-# Funcao para limpar arquivos com tratamento de erro
+# Function to clear files with error handling
 function Clear-HistoryFile {
     param($Path)
     if (Test-Path -Path $Path) {
         try {
-            Write-Output "Limpando arquivo de historico: $Path"
-            # Usando conjunto vazio para limpar o arquivo
+            Write-Output "Clearing history file: $Path"
+            # Use empty set to clear the file
             Set-Content -Path $Path -Value $null -Force -ErrorAction Stop
-            Write-Output "Arquivo de historico limpo com sucesso: $Path"
+            Write-Output "History file successfully cleared: $Path"
         }
         catch {
-            Write-Output "Erro ao limpar arquivo: $Path - $_"
-            # Tenta uma abordagem alternativa se a primeira falhar
+            Write-Output "Error clearing file: $Path - $_"
+            # Try alternative approach if first fails
             try {
                 Remove-Item -Path $Path -Force -ErrorAction Stop
-                Write-Output "Arquivo removido: $Path"
+                Write-Output "File removed: $Path"
             }
             catch {
-                Write-Output "Falha ao remover arquivo: $Path - $_"
+                Write-Output "Failed to remove file: $Path - $_"
             }
         }
     }
 }
 
-# Funcao para limpar todos os arquivos em um padrao
+# Function to clear all files in a pattern
 function Clear-HistoryPattern {
     param($Pattern)
     try {
         $files = Get-ChildItem -Path $Pattern -File -ErrorAction SilentlyContinue
         if ($files) {
-            Write-Output "Limpando $($files.Count) arquivos em: $Pattern"
+            Write-Output "Clearing $($files.Count) files in: $Pattern"
             foreach ($file in $files) {
                 try {
                     if ($file.Extension -eq ".xml" -or $file.Extension -eq ".psxml") {
-                        # Remove arquivos XML/PSXML completamente
+                        # Completely remove XML/PSXML files
                         Remove-Item -Path $file.FullName -Force -ErrorAction Stop
                     }
                     else {
-                        # Limpa conteudo de outros arquivos
+                        # Clear content of other files
                         Set-Content -Path $file.FullName -Value $null -Force -ErrorAction Stop
                     }
-                    Write-Output "  Processado: $($file.Name)"
+                    Write-Output "  Processed: $($file.Name)"
                 }
                 catch {
-                    Write-Output "  Erro ao processar $($file.Name): $_"
-                    # Tenta remover se nao conseguir limpar
+                    Write-Output "  Error processing $($file.Name): $_"
+                    # Try to remove if unable to clear
                     Remove-Item -Path $file.FullName -Force -ErrorAction SilentlyContinue
                 }
             }
         }
     }
     catch {
-        Write-Output "Erro ao processar padrao: $Pattern - $_"
+        Write-Output "Error processing pattern: $Pattern - $_"
     }
 }
 
-# Limpa o registro do ISE
+# Clear ISE registry
 function Clear-ISERegistry {
     try {
-        Write-Output "Limpando registro do PowerShell ISE..."
-        
-        # Caminho para as chaves de registro do ISE
+        Write-Output "Clearing PowerShell ISE registry..."
+
+        # Registry paths for ISE
         $regPaths = @(
             'HKCU:\Software\Microsoft\PowerShell\3\ISE',
             'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU'
         )
-        
+
         foreach ($path in $regPaths) {
             if (Test-Path -Path $path) {
-                # Limpa as chaves relacionadas a historico e arquivos recentes
+                # Clear keys related to history and recent files
                 $keys = Get-Item -Path $path | Select-Object -ExpandProperty Property
                 foreach ($key in $keys) {
                     if ($key -like "*MRU*" -or $key -like "*Recent*" -or $key -like "*History*") {
                         Remove-ItemProperty -Path $path -Name $key -Force -ErrorAction SilentlyContinue
-                        Write-Output "  Removida chave de registro: $path\$key"
+                        Write-Output "  Removed registry key: $path\$key"
                     }
                 }
             }
         }
     }
     catch {
-        Write-Output "Erro ao limpar registro: $_"
+        Write-Output "Error clearing registry: $_"
     }
 }
 
-# Limpar arquivos de historico principais
-Write-Output "=== Limpando arquivos de historico principais ==="
+# Clear main history files
+Write-Output "=== Clearing main history files ==="
 Clear-HistoryFile -Path $PSReadlinePath
 Clear-HistoryFile -Path $ISEHistoryPath
 Clear-HistoryFile -Path $ISEHistoryPath2
 Clear-HistoryFile -Path $PS7HistoryPath
 
-# Limpar historico da sessao atual
+# Clear current session history
 if (Get-Command "Clear-History" -ErrorAction SilentlyContinue) {
-    Write-Output "=== Limpando historico da sessao atual ==="
+    Write-Output "=== Clearing current session history ==="
     Clear-History -ErrorAction SilentlyContinue
 }
 
-# Limpar arquivos em localizacoes adicionais
-Write-Output "=== Limpando sessoes antigas e arquivos temporarios ==="
+# Clear files in additional locations
+Write-Output "=== Clearing old sessions and temporary files ==="
 foreach ($location in $AdditionalLocations) {
     Clear-HistoryPattern -Pattern $location
 }
 
-# Limpar cache de modulos
-Write-Output "=== Limpando cache de modulos ==="
+# Clear module cache
+Write-Output "=== Clearing module cache ==="
 $ModuleCache = "$ENV:USERPROFILE\Documents\WindowsPowerShell\Modules"
 if (Test-Path -Path $ModuleCache) {
     Get-ChildItem -Path $ModuleCache -Recurse -Filter "*.cache" | 
     ForEach-Object {
         Remove-Item -Path $_.FullName -Force -ErrorAction SilentlyContinue
-        Write-Output "Removido cache: $($_.FullName)"
+        Write-Output "Removed cache: $($_.FullName)"
     }
 }
 
-# Limpar o registro do ISE
+# Clear ISE registry
 Clear-ISERegistry
 
-# Limpar pastas de sessoes temporarias do ISE
+# Clear temporary ISE session folders
 $TempISEFolders = Get-ChildItem -Path $ENV:TEMP -Directory -Filter "*ISE*" -ErrorAction SilentlyContinue
 foreach ($folder in $TempISEFolders) {
-    Write-Output "Removendo pasta temporaria do ISE: $($folder.FullName)"
+    Write-Output "Removing temporary ISE folder: $($folder.FullName)"
     Remove-Item -Path $folder.FullName -Recurse -Force -ErrorAction SilentlyContinue
 }
 
-# Limpar arquivos temporarios relacionados ao PowerShell no %TEMP%
+# Clear temporary PowerShell-related files in %TEMP%
 Get-ChildItem -Path $ENV:TEMP -File -Filter "*PowerShell*" -ErrorAction SilentlyContinue |
 ForEach-Object {
     Remove-Item -Path $_.FullName -Force -ErrorAction SilentlyContinue
-    Write-Output "Removido arquivo temporario: $($_.FullName)"
+    Write-Output "Removed temporary file: $($_.FullName)"
 }
 
-Write-Output "=== Limpeza completa do historico do PowerShell concluida! ==="
+Write-Output "=== PowerShell history cleanup complete! ==="
