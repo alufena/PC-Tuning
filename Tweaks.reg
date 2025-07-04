@@ -4,8 +4,8 @@ Windows Registry Editor Version 5.00
 "Win32PrioritySeparation"=dword:00000028 ; 00000002, 00000016/00000024/00000026/00000028
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\GameBar] 
-"AllowAutoGameMode"=dword:00000001 ; game mode 00000001 on, 00000000 off
-"AutoGameModeEnabled"=dword:00000001 ; game mode 00000001 on, 00000000 off
+"AllowAutoGameMode"=dword:00000000 ; game mode 00000001 on, 00000000 off
+"AutoGameModeEnabled"=dword:00000000 ; game mode 00000001 on, 00000000 off
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
 "HwSchMode"=dword:00000001 ; HAGS 00000002 on, 00000001 off
@@ -132,11 +132,14 @@ Windows Registry Editor Version 5.00
 "MouseDataQueueSize"=dword:00000010 ; 00000064, 00000010/00000014/00000016
 "ThreadPriority"=dword:0000001f
 "WppRecorder_UseTimeStamp"=dword:00000000
+"SendOutputToAllPorts"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters]
-"KeyboardDataQueueSize"=dword:00000010 ; 00000064, 00000003/00000010/00000014
+"KeyboardDataQueueSize"=dword:00000003 ; 00000064, 00000003/00000010/00000014
 "ThreadPriority"=dword:0000001f
 "WppRecorder_UseTimeStamp"=dword:00000000
+"MaximumPortsServiced"=dword:00000001
+"SendOutputToAllPorts"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
 "CacheUnmapBehindLengthInMB"=dword:00000400 ; 00000064/00000400
@@ -170,7 +173,7 @@ Windows Registry Editor Version 5.00
 "SystemPtesLimit"=dword:00000000
 "TrackLockedPages"=dword:00000000
 "TrackPtes"=dword:00000000
-; "UseLargePages"=dword:00000001 ; 00000000/00000001
+"UseLargePages"=dword:00000001 ; 00000000/00000001
 "LargePageMinimum"=dword:00000000 ; ffffffff/00000000
 ; "WorkingSetMaxSize"=dword:ffffffff
 ; "WorkingSetMinSize"=dword:ffffffff
@@ -304,7 +307,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM]
 "InterruptSteeringDisabled"=dword:00000001
-; "UseLargePages"=dword:00000001
+"UseLargePages"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Kernel DMA Protection]
 "DeviceEnumerationPolicy"=dword:00000000
@@ -965,7 +968,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Processor]
 "AllowPepPerfStates"=dword:00000000
-"Capabilities"=dword:0007e7e6 ; 0007e0c6/0007e7e6/0007e066
+"Capabilities"=dword:0007e066 ; 0007e0c6/0007e7e6/0007e066
 "CPPCEnable"=dword:00000000
 "CpuDebuggingEnabled"=dword:00000000
 "CpuIdle"=dword:00000000
@@ -1236,6 +1239,9 @@ Windows Registry Editor Version 5.00
 "UseTdx"=dword:00000001
 "UseThreadedOptimization"=dword:00000001
 "UseWddmForFullscreenVideo"=dword:00000001
+"TimerCoalescing"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+"RITdemonTimerPowerSaveElapse"=dword:00000000
+"RITdemonTimerPowerSaveCoalescing"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\stornvme\Parameters]
 "ArbitrationBurst"=dword:00000100
@@ -9729,6 +9735,10 @@ Windows Registry Editor Version 5.00
 
 [-HKEY_CLASSES_ROOT\UserLibraryFolder\shellex\ContextMenuHandlers\SendTo]
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe]
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe]
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
 "IoPriority"=dword:00000006
@@ -10097,6 +10107,10 @@ Windows Registry Editor Version 5.00
 "CpuPriorityClass"=dword:00000006
 "IoPriority"=dword:00000006
 "PagePriority"=dword:00000006
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
@@ -10462,6 +10476,10 @@ Windows Registry Editor Version 5.00
 "CpuPriorityClass"=dword:00000006
 "IoPriority"=dword:00000006
 "PagePriority"=dword:00000006
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000006
+"PagePriority"=dword:00000006
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\DirectX\UserGpuPreferences]
 "C:\\Program Files\\Electronic Arts\\EA Desktop\\EA Desktop\\EADesktop.exe"="GpuPreference=1;"
@@ -10579,6 +10597,7 @@ Windows Registry Editor Version 5.00
 "G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="GpuPreference=2;"
 "G:\\DeadIsland2\\DeadIsland\\Binaries\\Win64\\DeadIsland-Win64-Shipping.exe"="GpuPreference=2;"
 "G:\\SteamLibrary\\steamapps\\common\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="GpuPreference=2;"
+"G:\\DeadIsland2\\DeadIsland.exe"="GpuPreference=2;"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers]
 "C:\\ProgramData\\Wargaming.net\\GameCenter for Steam\\wgc.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
@@ -10689,6 +10708,7 @@ Windows Registry Editor Version 5.00
 "C:\\Program Files (x86)\\memreduct\\memreduct.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\DeadIsland2\\DeadIsland\\Binaries\\Win64\\DeadIsland-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\DeadIsland2\\DeadIsland.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers]
 "C:\\ProgramData\\Wargaming.net\\GameCenter for Steam\\wgc.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
@@ -10799,6 +10819,7 @@ Windows Registry Editor Version 5.00
 "C:\\Program Files (x86)\\memreduct\\memreduct.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\DeadIsland2\\DeadIsland\\Binaries\\Win64\\DeadIsland-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+"G:\\DeadIsland2\\DeadIsland.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite]
 "Version"="1.0"
@@ -10981,6 +11002,97 @@ Windows Registry Editor Version 5.00
 "DSCP Value"=dword:0000002e
 "Throttle Rate"=dword:ffffffff
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0000]
+"AdvancedEEE"="0"
+"ASPM"="0"
+"AutoPowerSaveModeEnabled"="0"
+"CLKREQ"="0"
+"*DeviceSleepOnDisconnect"="0"
+"DisableDelayedPowerUp"="1"
+"DisableIntelRST"="1"
+"DisablePhyReset"="1"
+"DMACoalescing"="0"
+"DynamicLTR"="0"
+"*EEE"="0"
+"EEELinkAdvertisement"="0"
+"EEEPlus"="0"
+"EnableAspm"="0"
+"EnableD0PHYFlexibleSpeed"="0"
+"EnableD3ColdInS0"="0"
+"EnableDisconnectedStandby"="0"
+"*EnableDynamicPowerGating"="0"
+"EnableETW"="0"
+"EnableGreenEthernet"="0"
+"EnableModernStandby"="0"
+"EnablePHYFlexibleSpeed"="0"
+"EnablePHYWakeUp"="0"
+"EnablePME"="0"
+"EnablePowerManagement"="0"
+"EnableSavePowerNow"="0"
+"EnableWakeOnManagmentOnTCO"="0"
+"*FlowControl"="0"
+"ForceHostExitUlp"="1"
+"ForceLtrValue"="0"
+"ForceWakeFromMagicPacketOnModernStandby"="0"
+"GigaLite"="0"
+"HwOption"=dword:00C00000
+"HwOptionV2"=dword:00000004
+"HwOptionV3"=dword:00040000
+"I218DisablePLLShut"="1"
+"I218DisablePLLShutGiga"="1"
+"I219DisableK1Off"="1"
+"*IdleRestriction"="1"
+"*InterruptModeration"="0"
+"LatencyToleranceReporting"="0"
+"LinkNegotiationProcess"="0"
+"LTROBFF"="0"
+"*NicAutoPowerSaver"="0"
+"OBFFEnabled"="0"
+"PowerDownPll"="0"
+"PowerSavingMode"="0"
+"*PriorityVLANTag"="0"
+"ReduceSpeedOnPowerDown"="0"
+"S0MgcPkt"="0"
+"S5WakeOnLan"="0"
+"*SelectiveSuspend"="0"
+"SipsEnabled"="0"
+"SleepWhileWaiting"="0"
+"*SSIdleTimeout"="1"
+"SSIdleTimeoutMS"="1"
+"*SSIdleTimeoutScreenOff"="1"
+"ULPMode"="0"
+"WaitAutoNegComplete"="0"
+"WaitForValidPhyIDRead"="0"
+"WakeFromS5"="0"
+"WakeOn"="0"
+"WakeOnFastStartup"="0"
+"WakeOnLink"="0"
+"*WakeOnMagicPacket"="0"
+"*WakeOnPattern"="0"
+"WolShutdownLinkSpeed"="2"
+"AutoDisableGigabit"="0"
+"EnableTss"="0"
+"ITR"="0"
+"*JumboPacket"="1415"
+"LogLinkStateEvent"="51"
+"*LsoV1IPv4"="1"
+"*LsoV2IPv4"="1"
+"*LsoV2IPv6"="1"
+"MasterSlave"="0"
+"*ModernStandbyWoLMagicPacket"="0"
+"*NumRssQueues"="1"
+"*PMARPOffload"="0"
+"*PMNSOffload"="0"
+"*RSS"="1"
+"*RssBaseProcNumber"="1"
+"*RssMaxProcNumber"="1"
+"*SpeedDuplex"="0"
+"*TCPChecksumOffloadIPv4"="0"
+"*TCPChecksumOffloadIPv6"="0"
+"*TransmitBuffers"="80"
+"TxIntDelay"="5"
+"WakeOnSlot"="0"
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0001]
 "AdvancedEEE"="0"
 "ASPM"="0"
@@ -11049,6 +11161,28 @@ Windows Registry Editor Version 5.00
 "*WakeOnMagicPacket"="0"
 "*WakeOnPattern"="0"
 "WolShutdownLinkSpeed"="2"
+"AutoDisableGigabit"="0"
+"EnableTss"="0"
+"ITR"="0"
+"*JumboPacket"="1415"
+"LogLinkStateEvent"="51"
+"*LsoV1IPv4"="1"
+"*LsoV2IPv4"="1"
+"*LsoV2IPv6"="1"
+"MasterSlave"="0"
+"*ModernStandbyWoLMagicPacket"="0"
+"*NumRssQueues"="1"
+"*PMARPOffload"="0"
+"*PMNSOffload"="0"
+"*RSS"="1"
+"*RssBaseProcNumber"="1"
+"*RssMaxProcNumber"="1"
+"*SpeedDuplex"="0"
+"*TCPChecksumOffloadIPv4"="0"
+"*TCPChecksumOffloadIPv6"="0"
+"*TransmitBuffers"="80"
+"TxIntDelay"="5"
+"WakeOnSlot"="0"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectDraw]
 "DisableAGPSupport"=dword:00000000
