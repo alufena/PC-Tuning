@@ -1,28 +1,114 @@
 @ECHO OFF
-SET Dir0=C:\Windows\System32\DriverStore\FileRepository
-SET Dir1=\Display.NvContainer\plugins\LocalSystem
-SET Dir2=\Display.NvContainer\plugins\Session
 
-net stop NVDisplay.ContainerLocalSystem
+echo Stopping NVIDIA processes...
+taskkill /f /im nvcontainer.exe 2>nul
+taskkill /f /im NVDisplay.Container.exe 2>nul
+taskkill /f /im nvidia*.exe 2>nul
 
-FOR /F "tokens=*" %%G in ('DIR /B "%Dir0%\nv_dispig.inf_amd64_*"') DO (
-takeown /F "%Dir0%\%%G%Dir1%\_DisplayDriverRAS.dll" /A
-takeown /F "%Dir0%\%%G%Dir1%\_NvMsgBusBroadcast.dll" /A
-takeown /F "%Dir0%\%%G%Dir1%\_nvtopps.dll" /A
-takeown /F "%Dir0%\%%G%Dir2%\_NvGSTPlugin.dll" /A
-takeown /F "%Dir0%\%%G%Dir2%\nvprofileupdaterplugin.dll" /A
-del /F /Q "%Dir0%\%%G%Dir1%\_DisplayDriverRAS.dll"
-del /F /Q "%Dir0%\%%G%Dir1%\_NvMsgBusBroadcast.dll"
-del /F /Q "%Dir0%\%%G%Dir1%\_nvtopps.dll"
-del /F /Q "%Dir0%\%%G%Dir2%\_NvGSTPlugin.dll"
-del /F /Q "%Dir0%\%%G%Dir2%\nvprofileupdaterplugin.dll"
+echo Stopping NVIDIA services...
+net stop NVDisplay.ContainerLocalSystem 2>nul
+net stop NvContainerLocalSystem 2>nul
+net stop NVDisplay.Container 2>nul
+net stop NvContainerNetworkService 2>nul
+net stop NvTelemetryContainer 2>nul
+
+echo Waiting for services to stop...
+timeout /t 3 /nobreak >nul
+
+echo Searching and removing telemetry files...
+
+FOR /F "delims=" %%i IN ('DIR /B /S "%WINDIR%\System32\DriverStore\FileRepository\*NvGSTPlugin*" 2^>nul') DO (
+    echo Processing: %%i
+    takeown /F "%%i" /A >nul 2>&1
+    icacls "%%i" /grant administrators:F >nul 2>&1
+    attrib -s -h -r "%%i" >nul 2>&1
+    del /F /Q "%%i" >nul 2>&1
+    if exist "%%i" (
+        echo File locked, renaming: %%i
+        ren "%%i" "%%i.disabled" >nul 2>&1
+    ) else (
+        echo Deleted: %%i
+    )
 )
 
-RMDIR /S /Q "C:\ProgramData\NVIDIA Corporation\DisplayDriverRAS"
-RMDIR /S /Q "C:\ProgramData\NVIDIA Corporation\GameSessionTelemetry"
-RMDIR /S /Q "C:\ProgramData\NVIDIA Corporation\NvProfileUpdaterPlugin"
-RMDIR /S /Q "C:\ProgramData\NVIDIA Corporation\nvtopps"
+FOR /F "delims=" %%i IN ('DIR /B /S "%WINDIR%\System32\DriverStore\FileRepository\*DisplayDriverRA*" 2^>nul') DO (
+    echo Processing: %%i
+    takeown /F "%%i" /A >nul 2>&1
+    icacls "%%i" /grant administrators:F >nul 2>&1
+    attrib -s -h -r "%%i" >nul 2>&1
+    del /F /Q "%%i" >nul 2>&1
+    if exist "%%i" (
+        echo File locked, renaming: %%i
+        ren "%%i" "%%i.disabled" >nul 2>&1
+    ) else (
+        echo Deleted: %%i
+    )
+)
 
-net start NVDisplay.ContainerLocalSystem
-timeout 8
+FOR /F "delims=" %%i IN ('DIR /B /S "%WINDIR%\System32\DriverStore\FileRepository\*NvMsgBusBroadcast*" 2^>nul') DO (
+    echo Processing: %%i
+    takeown /F "%%i" /A >nul 2>&1
+    icacls "%%i" /grant administrators:F >nul 2>&1
+    attrib -s -h -r "%%i" >nul 2>&1
+    del /F /Q "%%i" >nul 2>&1
+    if exist "%%i" (
+        echo File locked, renaming: %%i
+        ren "%%i" "%%i.disabled" >nul 2>&1
+    ) else (
+        echo Deleted: %%i
+    )
+)
+
+FOR /F "delims=" %%i IN ('DIR /B /S "%WINDIR%\System32\DriverStore\FileRepository\nvtopps.dll" 2^>nul') DO (
+    echo Processing: %%i
+    takeown /F "%%i" /A >nul 2>&1
+    icacls "%%i" /grant administrators:F >nul 2>&1
+    attrib -s -h -r "%%i" >nul 2>&1
+    del /F /Q "%%i" >nul 2>&1
+    if exist "%%i" (
+        echo File locked, renaming: %%i
+        ren "%%i" "%%i.disabled" >nul 2>&1
+    ) else (
+        echo Deleted: %%i
+    )
+)
+
+FOR /F "delims=" %%i IN ('DIR /B /S "%WINDIR%\System32\DriverStore\FileRepository\*nvprofileupdaterplugin*" 2^>nul') DO (
+    echo Processing: %%i
+    takeown /F "%%i" /A >nul 2>&1
+    icacls "%%i" /grant administrators:F >nul 2>&1
+    attrib -s -h -r "%%i" >nul 2>&1
+    del /F /Q "%%i" >nul 2>&1
+    if exist "%%i" (
+        echo File locked, renaming: %%i
+        ren "%%i" "%%i.disabled" >nul 2>&1
+    ) else (
+        echo Deleted: %%i
+    )
+)
+
+echo Removing telemetry directories...
+
+RMDIR /S /Q "C:\ProgramData\NVIDIA Corporation\DisplayDriverRAS" 2>nul
+RMDIR /S /Q "C:\ProgramData\NVIDIA Corporation\GameSessionTelemetry" 2>nul
+RMDIR /S /Q "C:\ProgramData\NVIDIA Corporation\NvProfileUpdaterPlugin" 2>nul
+RMDIR /S /Q "C:\ProgramData\NVIDIA Corporation\nvtopps" 2>nul
+
+echo Checking and starting services...
+sc query NVDisplay.ContainerLocalSystem | find "STOPPED" >nul
+if %errorlevel% equ 0 (
+    echo Starting NVDisplay.ContainerLocalSystem...
+    net start NVDisplay.ContainerLocalSystem >nul 2>&1
+)
+
+sc query NvContainerLocalSystem | find "STOPPED" >nul
+if %errorlevel% equ 0 (
+    echo Starting NvContainerLocalSystem...
+    net start NvContainerLocalSystem >nul 2>&1
+)
+
+echo.
+echo Process completed.
+echo.
+timeout /t 5
 exit
