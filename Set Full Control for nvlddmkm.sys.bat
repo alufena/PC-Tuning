@@ -12,6 +12,7 @@ exit /b 1
 
 :Apply
 takeown /F "%Target%" /A
-icacls   "%Target%" /grant *S-1-5-32-544:F
+icacls "%Target%" /grant *S-1-5-32-544:F
+icacls "%Target%" /grant *S-1-5-32-545:F
 timeout 3
 exit
