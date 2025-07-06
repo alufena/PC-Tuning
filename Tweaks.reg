@@ -433,7 +433,7 @@ Windows Registry Editor Version 5.00
 "NtfsDisable8dot3NameCreation"=dword:00000001
 "NtfsDisableCompression"=dword:00000001
 "NtfsDisableEncryption"=dword:00000001
-"NtfsDisableLastAccessUpdate"=dword:80000001 ; 80000000, 80000001/00000001
+"NtfsDisableLastAccessUpdate"=dword:80000001 ; 80000000, 80000001/80000003/00000001
 "NtfsDisableSpotCorruptionHandling"=dword:00000001
 "NtfsEncryptPagingFile"=dword:00000000
 "NtfsForceNonPagedPoolAllocation"=dword:00000000
@@ -1498,7 +1498,7 @@ Windows Registry Editor Version 5.00
 "EnableRuntimePowerManagement"=dword:00000000
 "EnableSCGMidBufferPreemption"=dword:00000000
 "EnableSystemMemoryTiling"=dword:00000000
-"EnableTiledDisplay"=dword:00000000  ; =-, 00000000/00000001
+"EnableTiledDisplay"=dword:00000000 ; 00000000/00000001
 "EnableUlps"=dword:00000000
 "EnableVCNPreemption"=dword:00000000
 "F1TransitionLatency"=dword:00000001
@@ -2589,6 +2589,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Credssp]
 "DebugLogLevel"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\FipsAlgorithmPolicy]
+"Enabled"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowClipboardHistory]
 "value"=dword:00000000
 
@@ -3387,6 +3390,11 @@ Windows Registry Editor Version 5.00
 "DefaultFileTypeRisk"=dword:00001808
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+"SplitScreenEnabled"=dword:00000000
+"TrackingPrevention"=dword:00000000
+"AADWebSiteSSOUsingThisProfileEnabled"=dword:00000000
+"InternetExplorerIntegrationReloadInIEModeAllowed"=dword:00000000
+"RedirectSitesFromInternetExplorerRedirectMode"=dword:00000000
 "EdgeHistoryAISearchEnabled"=dword:00000000
 "BuiltInAIAPIsEnabled"=dword:00000000
 "AccessibilityImageLabelsEnabled"=dword:00000000
@@ -3433,7 +3441,7 @@ Windows Registry Editor Version 5.00
 "BrowserGuestModeEnabled"=dword:00000000
 "BrowserLegacyExtensionPointsBlockingEnabled"=dword:00000000
 "BrowserNetworkTimeQueriesEnabled"=dword:00000000
-"BrowserSignin"=dword:00000001
+"BrowserSignin"=dword:00000000
 "BuiltInDnsClientEnabled"=dword:00000000
 "CaretBrowsingEnabled"=dword:00000000
 "ClearCachedImagesAndFilesOnExit"=dword:00000001
@@ -3478,7 +3486,7 @@ Windows Registry Editor Version 5.00
 "DefaultSearchProviderSuggestURL"="{google:baseURL}complete/search?output=chrome&q={searchTerms}"
 "DefaultSensorsSetting"=dword:00000001
 "DefaultSerialGuardSetting"=dword:00000003
-"DefaultShareAdditionalOSRegionSetting"=dword:00000001
+"DefaultShareAdditionalOSRegionSetting"=dword:00000002
 "DefaultWebBluetoothGuardSetting"=dword:00000003
 "DefaultWebHidGuardSetting"=dword:00000003
 "DefaultWebUsbGuardSetting"=dword:00000003
@@ -3580,7 +3588,7 @@ Windows Registry Editor Version 5.00
 "MicrosoftEditorProofingEnabled"=dword:00000000
 "MicrosoftEditorSynonymsEnabled"=dword:00000000
 "MicrosoftOfficeMenuEnabled"=dword:00000000
-"MouseGestureEnabled"=dword:00000001
+"MouseGestureEnabled"=dword:00000000
 "MutationEventsEnabled"=dword:00000000
 "NativeMessagingUserLevelHosts"=dword:00000000
 "NetworkPredictionOptions"=dword:00000002
@@ -3718,7 +3726,7 @@ Windows Registry Editor Version 5.00
 "WebToBrowserSignInEnabled"=dword:00000000
 "WebWidgetAllowed"=dword:00000000
 "WebWidgetIsEnabledOnStartup"=dword:00000000
-"WindowOcclusionEnabled"=dword:00000001
+"WindowOcclusionEnabled"=dword:00000000
 "WindowsHelloForHTTPAuthEnabled"=dword:00000001
 "WinHttpProxyResolverEnabled"=dword:00000001
 "WPADQuickCheckEnabled"=dword:00000000
@@ -3819,7 +3827,7 @@ Windows Registry Editor Version 5.00
 "BrowserGuestModeEnforced"=dword:00000000
 "BrowserLabsEnabled"=dword:00000000
 "BrowserNetworkTimeQueriesEnabled"=dword:00000000
-"BrowserSignin"=dword:00000001
+"BrowserSignin"=dword:00000000
 "BuiltInDnsClientEnabled"=dword:00000000
 "ChromeCleanupEnabled"=dword:00000000
 "ChromeCleanupReportingEnabled"=dword:00000000
@@ -3901,7 +3909,7 @@ Windows Registry Editor Version 5.00
 "HomepageLocation"="google.com"
 "HttpsUpgradesEnabled"=dword:00000001
 "InsecureFormsWarningsEnabled"=dword:00000000
-"IntensiveWakeUpThrottlingEnabled"=dword:00000001
+"IntensiveWakeUpThrottlingEnabled"=dword:00000000
 "IntranetRedirectBehavior"=dword:00000002
 "IPv6ReachabilityOverrideEnabled"=dword:00000001
 "KeyboardFocusableScrollersEnabled"=dword:00000000
@@ -3989,7 +3997,7 @@ Windows Registry Editor Version 5.00
 "WebRtcEventLogCollectionAllowed"=dword:00000000
 "WebRtcIPHandling"="default"
 "WebRtcTextLogCollectionAllowed"=dword:00000000
-"WindowOcclusionEnabled"=dword:00000001
+"WindowOcclusionEnabled"=dword:00000000
 "WPADQuickCheckEnabled"=dword:00000000
 "ZstdContentEncodingEnabled"=dword:00000001
 
@@ -4117,7 +4125,7 @@ Windows Registry Editor Version 5.00
 "BrowserGuestModeEnforced"=dword:00000000
 "BrowserLabsEnabled"=dword:00000000
 "BrowserNetworkTimeQueriesEnabled"=dword:00000000
-"BrowserSignin"=dword:00000001
+"BrowserSignin"=dword:00000000
 "BuiltInDnsClientEnabled"=dword:00000000
 "CSSCustomStateDeprecatedSyntaxEnabled"=dword:00000001
 "CORSNonWildcardRequestHeadersSupport"=dword:00000001
@@ -4191,7 +4199,7 @@ Windows Registry Editor Version 5.00
 "WebRtcEventLogCollectionAllowed"=dword:00000000
 "WebRtcIPHandling"="default"
 "WebRtcTextLogCollectionAllowed"=dword:00000000
-"WindowOcclusionEnabled"=dword:00000001
+"WindowOcclusionEnabled"=dword:00000000
 "IPFSEnabled"=dword:00000001
 "BraveWalletDisabled"=dword:00000001
 "BraveVPNDisabled"=dword:00000001
