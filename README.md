@@ -114,3 +114,4 @@ https://www.reddit.com/r/Windows11/comments/1kgp7ar/cause_and_solution_to_window
 https://www.youtube.com/@Jayztwocents/videos  
 https://www.youtube.com/@anceltweaks/videos  
 https://github.com/SLStyler/Dithering-for-Windows-Simple-BAT-  
+https://www.reddit.com/r/GlobalOffensive/comments/1luj08w/nvidia_drivers_53758_performance_increase  
