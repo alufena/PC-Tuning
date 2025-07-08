@@ -107,7 +107,7 @@ https://www.youtube.com/watch?v=sbXzM60ad8I
 https://x.com/honestzin  
 https://x.com/jerry05259307  
 https://x.com/Realperfguy  
-https://www.techpowerup.com/download/microsoft-interrupt-affinity-tool
+https://www.techpowerup.com/download/microsoft-interrupt-affinity-tool  
 https://github.com/spddl/GoInterruptPolicy  
 https://www.reddit.com/r/techsupport/comments/13avw59/fix_for_high_dpc_latency_wdf01000_ntoskrnl  
 https://www.reddit.com/r/Windows11/comments/1kgp7ar/cause_and_solution_to_windows_24h2_related  
