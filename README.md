@@ -113,3 +113,4 @@ https://www.reddit.com/r/techsupport/comments/13avw59/fix_for_high_dpc_latency_w
 https://www.reddit.com/r/Windows11/comments/1kgp7ar/cause_and_solution_to_windows_24h2_related  
 https://www.youtube.com/@Jayztwocents/videos  
 https://www.youtube.com/@anceltweaks/videos  
+https://github.com/SLStyler/Dithering-for-Windows-Simple-BAT-  
