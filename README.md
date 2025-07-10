@@ -115,3 +115,4 @@ https://www.youtube.com/@Jayztwocents/videos
 https://www.youtube.com/@anceltweaks/videos  
 https://github.com/SLStyler/Dithering-for-Windows-Simple-BAT-  
 https://www.reddit.com/r/GlobalOffensive/comments/1luj08w/nvidia_drivers_53758_performance_increase  
+https://sageinfinity.github.io/docs/Guides/start  
