@@ -129,7 +129,7 @@ Windows Registry Editor Version 5.00
 "GameDVR_HonorUserDSEBehaviorMode"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mouclass\Parameters]
-"MouseDataQueueSize"=dword:00000010 ; 00000064, 00000010/00000014/00000016
+"MouseDataQueueSize"=dword:00000010 ; 00000064, 00000010/00000014/00000016/00000032
 "ThreadPriority"=dword:0000001f
 "WppRecorder_UseTimeStamp"=dword:00000000
 "SendOutputToAllPorts"=dword:00000000
@@ -138,8 +138,9 @@ Windows Registry Editor Version 5.00
 "KeyboardDataQueueSize"=dword:00000003 ; 00000064, 00000003/00000010/00000014
 "ThreadPriority"=dword:0000001f
 "WppRecorder_UseTimeStamp"=dword:00000000
-"MaximumPortsServiced"=dword:00000001
+"MaximumPortsServiced"=dword:00000001 ; 00000000/00000001
 "SendOutputToAllPorts"=dword:00000000
+"ConnectMultiplePorts"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
 "CacheUnmapBehindLengthInMB"=dword:00000400 ; 00000064/00000400
@@ -248,7 +249,7 @@ Windows Registry Editor Version 5.00
 "DpcWatchdogProfileBufferSizeBytes"=dword:00000001
 "DpcWatchdogProfileOffset"=dword:00000000 ; 00002710, 00000000
 "DynamicDpcProtocol"=dword:00000001
-"EnablePerCpuClockTickScheduling"=dword:00000000
+"EnablePerCpuClockTickScheduling"=dword:00000001 ; 00000000/00000001
 "EnableTsx"=dword:00000000
 "EnableWerUserReporting"=dword:00000000
 "ExQueueWorkItem"=dword:00000020
@@ -304,6 +305,7 @@ Windows Registry Editor Version 5.00
 "XMMIZeroingEnable"=dword:00000000
 "IdealNodeRandomized"=dword:00000001
 "DisableDynamicTick"=dword:00000001
+"EnableTickAccumulationFromAccountingPeriods"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM]
 "InterruptSteeringDisabled"=dword:00000001
@@ -629,6 +631,7 @@ Windows Registry Editor Version 5.00
 "SizReqBuf"=dword:00004000
 "SMB1"=dword:00000000
 "SMB2"=dword:00000000
+"SizeReqBuf"=dword:00001104
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Configuration Manager]
 "EnablePeriodicBackup"=dword:00000000
@@ -1134,7 +1137,7 @@ Windows Registry Editor Version 5.00
 "EnableAeroPeek"=dword:00000000 ; 00000000/00000001
 "EnableBackdropBrush"=dword:00000000
 "EnableCommonSuperSets"=dword:00000001
-"EnableCpuClipping"=dword:00000001
+"EnableCpuClipping"=dword:00000001 ; 00000000/00000001
 "EnableDesktopOverlays"=dword:00000000
 "EnableDrawToBackbuffer"=dword:00000000 ; 00000000/00000001
 "EnableEffectCaching"=dword:00000000 ; 00000000/00000001
@@ -1148,7 +1151,7 @@ Windows Registry Editor Version 5.00
 "EnableResizeOptimization"=dword:00000001
 "EnableShadow"=dword:00000000
 "EnableWindowColorization"=dword:00000000 ; 00000000/00000001
-"FlattenVirtualSurfaceEffectInput"=dword:00000001
+"FlattenVirtualSurfaceEffectInput"=dword:00000001 ; 00000000/00000001
 "ForceDirectDrawSync"=dword:00000000
 "ForceDisableModeChangeAnimation"=dword:00000001
 "ForceEffectMode"=dword:00000000 ; 00000000/00000001
@@ -1159,7 +1162,7 @@ Windows Registry Editor Version 5.00
 "HighColor"=dword:00000000
 "ImageProcessing8bit"=dword:00000000 ; 00000000/00000001
 "InkGPUAccelOverrideVendorWhitelist"=dword:00000001
-"InteractionOutputPredictionDisabled"=dword:00000001
+"InteractionOutputPredictionDisabled"=dword:00000001 ; 00000000/00000001
 "LogExpressionPerfStats"=dword:00000000
 "MaxD3DFeatureLevel"=dword:00000000
 "MaxQueuedPresentBuffers"=dword:00000001
@@ -1185,6 +1188,17 @@ Windows Registry Editor Version 5.00
 "UseLegacyDisplayFrameBuffer"=dword:00000001
 "UseMachineCheck"=dword:00000000
 "UseStaticComposition"=dword:00000001
+"BackdropBlurCachingThrottleMs"=dword:000003E8
+"CustomRefreshRateMode"=dword:00000001
+"CpuClipFlatteningTolerance"=dword:00000000
+"ShowDirtyRegions"=dword:00000000
+"CompositorClockPolicy"=dword:00000001
+"MegaRectSearchCount"=dword:00000001
+"CpuClipAASinkEnableOcclusion"=dword:00000001
+"CpuClipAASinkEnableIntermediates"=dword:00000000
+"CpuClipAASinkEnableRender"=dword:00000000
+"EnableDDisplayScanoutCaching"=dword:00000001
+"MegaRectSize"=dword:0007A120
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
 "AlwaysHibernateThumbnails"=dword:00000000
@@ -1224,6 +1238,10 @@ Windows Registry Editor Version 5.00
 "ForwardOnlyOnly"=dword:00000000
 "RemoveSRMeshInShell"=dword:00000000
 "SydneyDownsampleFilterKernelSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm\Scene]
+"MsaaQualityMode"=dword:00000000
+"EnableDrawToBackbuffer"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows]
 "AllowDelayedFlips"=dword:00000000
@@ -2275,6 +2293,8 @@ Windows Registry Editor Version 5.00
 "SetupCompletedSuccessfully"=dword:00000001
 
 ; requires special permissions
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\State\DisplayDatabase\GSM60B216843009_01_07DC_0E]
+"DitherRegistryKey"=hex:db,01,00,00,10,00,00,00,01,01,00,04,f2,00,00,00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Search\Gathering Manager]
 "DisableBackOff"=dword:00000001
 "DisableBackOffOnCPU"=dword:00000001
@@ -2458,10 +2478,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
 "UseSWRender"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main]
 "UseSWRender"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Internet Explorer\Main]
 "UseSWRender"=dword:00000001
 
@@ -2473,6 +2491,46 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Typelib\{8cec5860-07a1-11d9-b15e-000d56bfe6ee}\1.0\0\win64]
 @=""
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\ACPI]
+"AMLIGlobalHeapSize"=dword:00008000
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Control\ACPI]
+"AMLIGlobalHeapSize"=dword:00008000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ACPI]
+"AMLIGlobalHeapSize"=dword:00008000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hiddll]
+"DisableAsyncIOForAsyncHandle"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows]
+"DCEInUseTelemetryDisabled"=dword:00000001
+"DesktopHeapLogging"=dword:00000000
+"DwmInputUsesIoCompletionPort"=dword:00000000
+"EnableDwmInputProcessing"=dword:00000000
+"EnableRIMPnpThreadDelayBugcheck"=dword:00000000
+"IsVailContainer"=dword:00000000
+"RimObserverQueueSize"=dword:0000FA00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ACPI\Parameters]
+"AmliWatchdogTimeout"=dword:00000000
+"APEIOSCGranted"=hex:01,00,00,00
+"BatteryFeaturesGranted"=hex:00,00,00,00
+"CPPCRevisionGranted"=hex:01,00,00,00
+"EMcaL1DirectoryBase"=hex:00,00,00,00,00,00,00,00
+"EMcaLoggingSupport"=hex:00
+"ForcePCIBootConfig"=dword:0000000A
+"IRQDistribution"=dword:00000002
+"NotifyOsShutdownCritical"=dword:00000000
+"NotifyOsShutdownEnabled"=dword:00000000
+"PnpAsyncNewDevices"=dword:00000001
+"PrmSupportGranted"=hex:00,00,00,00
+"ProcDevAsyncStart"=dword:00000001
+"StorageSupportedFeatures"=dword:00000001
+"StrictS4CheckSupport"=dword:00000000
+"Usb4ControlGranted"=hex:00,00,00,00
+"USB4OSNativeCMPresent"=dword:00000000
+"UseFlexibleOscHandoff"=dword:00000001
+"WHEAOSCImplemented"=hex:01,00,00,00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lock Screen\Creative]
 "CreativeId"="0"
@@ -2520,6 +2578,9 @@ Windows Registry Editor Version 5.00
 "TreatAbsolutePointerAsAbsolute"=dword:00000001
 "TreatAbsoluteAsRelative"=dword:00000000
 "ThreadPriority"=dword:0000000f
+"UseOnlyMice"=dword:00000001
+"WorkNicely"=dword:00000001
+"WppRecorder_UseTimeStamp"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Input\Settings\ControllerProcessor\CursorSpeed]
 "CursorUpdateInterval"=dword:00000001
@@ -2597,22 +2658,16 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\creative]
 "Intent"=dword:00000000
-
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\entertainment]
 "Intent"=dword:00000000
-
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\family]
 "Intent"=dword:00000000
-
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\gaming]
 "Intent"=dword:00000000
-
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\schoolwork]
 "Intent"=dword:00000000
-
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\business]
 "Intent"=dword:00000000
-
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\development]
 "Intent"=dword:00000000
 
@@ -4601,6 +4656,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\whesvc]
 "Start"=dword:00000004
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MMCSS]
+"Start"=dword:00000004 ; 00000002
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters]
 "AllowInteractiveConnect"=dword:00000000
 
@@ -5966,6 +6024,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSMQ\Parameters\Security]
 "SecureDSCommunication"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Spelling\Options]
+"UserDictionaryMerged"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Connectivity\DisallowNetworkConnectivityActiveTests]
 "value"="1"
@@ -7608,6 +7669,8 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\kbdhid\Parameters]
 "CrashOnCtrlScroll"=dword:00000000
 "ThreadPriority"=dword:0000000f
+"WorkNicely"=dword:00000001
+"WppRecorder_UseTimeStamp"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons]
 "29"="C:\\Windows\\blank.ico"
@@ -11296,8 +11359,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\GraphicsDrivers\Configuration\MSNILNOEDID_1414_008D_FFFFFFFF_FFFFFFFF_0^030B4FCE00727AC1593E5B6FD18648D6\00\00]
 "Scaling"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\State\DisplayDatabase\GSM60B216843009_01_07DC_0E]
-"DitherRegistryKey"=hex:db,01,00,00,10,00,00,00,01,01,00,04,f2,00,00,00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\DisplayDatabase\GSM60B216843009_01_07DC_0E]
 "DitherRegistryKey"=hex:db,01,00,00,10,00,00,00,01,01,00,04,f2,00,00,00
 
