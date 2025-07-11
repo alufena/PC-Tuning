@@ -99,6 +99,9 @@ taskkill /f /t /im SystemSettingsAdminFlows.exe
 taskkill /f /t /im steamerrorreporter.exe
 taskkill /f /t /im UnityCrashHandler64.exe
 taskkill /f /t /im CrashMailer_64.exe
+taskkill /f /t /im EpicOnlineServicesUserHelper.exe
+taskkill /f /t /im SndVol.exe
+taskkill /f /t /im nvcplui.exe
 sc start "SysMain"
 ::sc stop "SysMain"
 sc config "SysMain" start= auto
@@ -358,7 +361,7 @@ bcdedit /set sos No
 ::bcdedit /deletevalue sos
 bcdedit /set timeout 0
 ::bcdedit /deletevalue timeout
-bcdedit /set testsigning No
+::bcdedit /set testsigning No
 ::bcdedit /deletevalue testsigning
 ::bcdedit /set {globalsettings} custom:16000067 true
 ::bcdedit /set graphicsmodedisabled No
@@ -456,6 +459,8 @@ del /f /q %SystemRoot%\System32\drivers\Acpitime.sys
 del /f /q %SystemRoot%\System32\drivers\Acpipmi.sys
 takeown /f "C:\Windows\System32\mcupdate_GenuineIntel.dll"
 takeown /f "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
+icacls %SystemRoot%\System32\mcupdate_GenuineIntel.dll /grant %username%:F
+icacls %SystemRoot%\System32\mcupdate_AuthenticAMD.dll /grant %username%:F
 del "C:\Windows\System32\mcupdate_GenuineIntel.dll"
 del "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
 reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /va /f
