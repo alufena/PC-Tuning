@@ -15,7 +15,7 @@ regsvr32.exe /s atl.dll
 regsvr32.exe /s urlmon.dll
 regsvr32.exe /s mshtml.dll
 regsvr32.exe /s quartz.dll
-rundll32.exe pnpclean.dll,RunDLL_PnpClean /DRIVERS /MAXCLEAN
+rundll32.exe pnpclean.dll,RunDLL_PnpClean /drivers/maxclean
 vssadmin delete shadows /for=c: /all /quiet
 DISM /Online /Cleanup-Image /ScanHealth
 DISM /Online /Cleanup-Image /CheckHealth
@@ -61,6 +61,8 @@ del /f /q %SystemRoot%\System32\drivers\Acpitime.sys
 del /f /q %SystemRoot%\System32\drivers\Acpipmi.sys
 takeown /f "C:\Windows\System32\mcupdate_GenuineIntel.dll"
 takeown /f "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
+icacls %SystemRoot%\System32\mcupdate_GenuineIntel.dll /grant %username%:F
+icacls %SystemRoot%\System32\mcupdate_AuthenticAMD.dll /grant %username%:F
 del "C:\Windows\System32\mcupdate_GenuineIntel.dll"
 del "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
 taskkill /f /t /im conhost.exe
