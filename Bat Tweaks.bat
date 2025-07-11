@@ -38,6 +38,8 @@ powercfg -change hibernate-timeout-dc 0
 powercfg -change disk-timeout-dc 0
 powercfg -setacvalueindex SCHEME_CURRENT SUB_SLEEP STANDBYIDLE 0
 powercfg -setdcvalueindex SCHEME_CURRENT SUB_SLEEP STANDBYIDLE 0
+powercfg setdcvalueindex scheme_current sub_sleep hybridsleep 0
+powercfg setacvalueindex scheme_current sub_sleep hybridsleep 0
 powercfg -setacvalueindex SCHEME_CURRENT SUB_PCIEXPRESS ee12f906-d277-404b-b6da-e5fa1a576df5 0
 powercfg -setdcvalueindex SCHEME_CURRENT SUB_PCIEXPRESS ee12f906-d277-404b-b6da-e5fa1a576df5 0
 ::powercfg -setacvalueindex SCHEME_CURRENT SUB_PROCESSOR 0cc5b647-c1df-4637-891a-dec35c318583 0
@@ -61,4 +63,6 @@ powercfg /SETACVALUEINDEX SCHEME_CURRENT 48672f38-7a9a-4bb2-8bf8-3d85be19de4e 2b
 powercfg /SETACVALUEINDEX SCHEME_CURRENT 238c9fa8-0aad-41ed-83f4-97be242c8f20 94ac6d29-73ce-41a6-809f-6363ba21b47e 0
 powercfg /SETACVALUEINDEX SCHEME_CURRENT 238c9fa8-0aad-41ed-83f4-97be242c8f20 25dfa149-5dd1-4736-b5ab-e8a37b5b8187 0
 powercfg /SETACVALUEINDEX SCHEME_CURRENT 238c9fa8-0aad-41ed-83f4-97be242c8f20 bd3b718a-0680-4d9d-8ab2-e1d2b4ac806d 0
+powercfg -setactive SCHEME_CURRENT
+timeout /t 4
 exit
