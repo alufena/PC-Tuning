@@ -26,6 +26,8 @@ del /f /q %SystemRoot%\System32\drivers\Acpitime.sys
 del /f /q %SystemRoot%\System32\drivers\Acpipmi.sys
 takeown /f "C:\Windows\System32\mcupdate_GenuineIntel.dll"
 takeown /f "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
+icacls %SystemRoot%\System32\mcupdate_GenuineIntel.dll /grant %username%:F
+icacls %SystemRoot%\System32\mcupdate_AuthenticAMD.dll /grant %username%:F
 del "C:\Windows\System32\mcupdate_GenuineIntel.dll"
 del "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
 powercfg -change monitor-timeout-ac 0
@@ -64,5 +66,4 @@ powercfg /SETACVALUEINDEX SCHEME_CURRENT 238c9fa8-0aad-41ed-83f4-97be242c8f20 94
 powercfg /SETACVALUEINDEX SCHEME_CURRENT 238c9fa8-0aad-41ed-83f4-97be242c8f20 25dfa149-5dd1-4736-b5ab-e8a37b5b8187 0
 powercfg /SETACVALUEINDEX SCHEME_CURRENT 238c9fa8-0aad-41ed-83f4-97be242c8f20 bd3b718a-0680-4d9d-8ab2-e1d2b4ac806d 0
 powercfg -setactive SCHEME_CURRENT
-timeout /t 4
-exit
+pause
