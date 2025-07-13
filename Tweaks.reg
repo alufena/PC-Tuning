@@ -506,6 +506,26 @@ Windows Registry Editor Version 5.00
 "PagePriority"=dword:00000005
 "MinimumStackCommitInBytes"=dword:00008000
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000001
+"PagePriority"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000001
+"PagePriority"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\fontdrvhost.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000001
+"PagePriority"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\fontdrvhost.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000001
+"PagePriority"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
 "IoPriority"=dword:00000001
@@ -586,6 +606,7 @@ Windows Registry Editor Version 5.00
 "TcpTimedWaitDelay"=dword:0000001e ; 00000020/0000001e
 "TcpWindowSize"=dword:000016d0
 "ThreadPriority"=dword:0000000f
+"DisablePowerManagement"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces]
 "DefaultTTL"=dword:00000040
@@ -603,6 +624,7 @@ Windows Registry Editor Version 5.00
 "TcpMaxDataRetransmissions"=dword:00000005
 "TCPNoDelay"=dword:00000001
 "TcpTimedWaitDelay"=dword:0000001e
+"DisableTaskOffload"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Tcp1323Opts]
 "DisablePowerManagement"=dword:00000001
@@ -677,6 +699,7 @@ Windows Registry Editor Version 5.00
 "EnableDeadGwdTimers"=dword:00000001
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Power\ModernSleep]
 "CoalescingTimerInterval"=dword:00000000
+"AdaptiveRefreshRate"=dword:00000000
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Power]
 "CoalescingTimerInterval"=dword:00000000
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control]
@@ -904,6 +927,10 @@ Windows Registry Editor Version 5.00
 "TimerRebaseThresholdOnDripsExit"=dword:0000001e
 "TransitionLatency"=dword:00000001
 "UserBatteryDischargeEstimator"=dword:00000001
+"VideoIdleTimeout"=dword:00000000
+"EnergySaverStatus"=dword:00000000
+"DynamicThrottlePolicy"=dword:00000000
+"EnergySaverPolicy"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power]
 "HiberbootEnabled"=dword:00000000
@@ -1383,6 +1410,9 @@ Windows Registry Editor Version 5.00
 "UseGpuTimer"=dword:00000001
 "UseXPModel"=dword:00000000
 "lowdebounce"=dword:00000001
+"PowerSavingModeEnabled"=dword:00000000
+"PanelSelfRefresh"=dword:00000000
+"ForceOffScreenTimeout"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Power]
 "ComputePreemption"=dword:00000000
@@ -2173,6 +2203,8 @@ Windows Registry Editor Version 5.00
 "RmDisableRegistryCaching"=dword:00000001
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
 "VsyncIdleTimeout"=dword:00000000
+"EnableFrameBufferCompression"=dword:00000000
+"EnableGpuBoost"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\NVAPI]
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
@@ -2284,9 +2316,6 @@ Windows Registry Editor Version 5.00
 "Icon"="cmd.exe"
 [HKEY_CLASSES_ROOT\Drive\shell\cmdprompt\command]
 @="cmd.exe /s /k pushd \"%V\""
-
-; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\0001]
-; "NetworkAddress"="D45DB2A21F16"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Search]
 "EnableFindMyFiles"=dword:00000000 ; 00000000 classic, 00000001 enhanced
@@ -3445,6 +3474,21 @@ Windows Registry Editor Version 5.00
 "DefaultFileTypeRisk"=dword:00001808
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+"PersonalizationReportingEnabled"=dword:00000000
+"ShowRecommendationsEnabled"=dword:00000000
+"HideFirstRunExperience"=dword:00000001
+"UserFeedbackAllowed"=dword:00000000
+"ConfigureDoNotTrack"=dword:00000001
+"AlternateErrorPagesEnabled"=dword:00000000
+"EdgeCollectionsEnabled"=dword:00000000
+"EdgeShoppingAssistantEnabled"=dword:00000000
+"MicrosoftEdgeInsiderPromotionEnabled"=dword:00000000
+"ShowMicrosoftRewards"=dword:00000000
+"WebWidgetAllowed"=dword:00000000
+"DiagnosticData"=dword:00000000
+"EdgeAssetDeliveryServiceEnabled"=dword:00000000
+"CryptoWalletEnabled"=dword:00000000
+"WalletDonationEnabled"=dword:00000000
 "SplitScreenEnabled"=dword:00000000
 "TrackingPrevention"=dword:00000000
 "AADWebSiteSSOUsingThisProfileEnabled"=dword:00000000
@@ -3466,7 +3510,6 @@ Windows Registry Editor Version 5.00
 "AllowGamesMenu"=dword:00000000
 "AllowSurfGame"=dword:00000000
 "AllowSystemNotifications"=dword:00000001
-"AlternateErrorPagesEnabled"=dword:00000000
 "AlwaysOpenPdfExternally"=dword:00000000
 "AppCacheForceEnabled"=dword:00000000
 "ApplicationGuardFavoritesSyncEnabled"=dword:00000000
@@ -3506,7 +3549,6 @@ Windows Registry Editor Version 5.00
 "ComponentUpdatesEnabled"=dword:00000000
 "ComposeInlineEnabled"=dword:00000000
 "CompressionDictionaryTransportEnabled"=dword:00000001
-"ConfigureDoNotTrack"=dword:00000001
 "ConfigureFriendlyURLFormat"=dword:00000001
 "ConfigureOnlineTextToSpeech"=dword:00000000
 "ConfigureShare"=dword:00000001
@@ -3514,7 +3556,6 @@ Windows Registry Editor Version 5.00
 "CopilotPageContext"=dword:00000000
 "CopilotPageContextEnabled"=dword:00000000
 "CrossOriginWebAssemblyModuleSharingEnabled"=dword:00000000
-"CryptoWalletEnabled"=dword:00000000
 "DefaultAutomaticDownloadsSetting"=dword:00000001
 "DefaultBrowserSettingEnabled"=dword:00000000
 "DefaultBrowserSettingsCampaignEnabled"=dword:00000000
@@ -3550,7 +3591,6 @@ Windows Registry Editor Version 5.00
 "DesktopSharingHubEnabled"=dword:00000000
 "DeviceActivityHeartbeatEnabled"=dword:00000000
 "DeviceMetricsReportingEnabled"=dword:00000000
-"DiagnosticData"=dword:00000000
 "DirectInvokeEnabled"=dword:00000001
 "Disable3DAPIs"=dword:00000000
 "DisableAuthNegotiateCnameLookup"=dword:00000001
@@ -3561,8 +3601,6 @@ Windows Registry Editor Version 5.00
 "DownloadRestrictions"=dword:00000000
 "DriveDisabled"=dword:00000001
 "Edge3PSerpTelemetryEnabled"=dword:00000000
-"EdgeAssetDeliveryServiceEnabled"=dword:00000000
-"EdgeCollectionsEnabled"=dword:00000000
 "EdgeCopilotEnabled"=dword:00000000
 "EdgeDisableDialProtocolForCastDiscovery"=dword:00000001
 "EdgeDiscoverEnabled"=dword:00000000
@@ -3574,7 +3612,6 @@ Windows Registry Editor Version 5.00
 "EdgeManagementPolicyOverridesPlatformPolicy"=dword:00000000
 "EdgeManagementUserPolicyOverridesCloudMachinePolicy"=dword:00000000
 "EdgeOpenInSidebarEnabled"=dword:00000000
-"EdgeShoppingAssistantEnabled"=dword:00000000
 "EdgeWalletCheckoutEnabled"=dword:00000000
 "EdgeWalletEtreeEnabled"=dword:00000000
 "EdgeWorkspacesEnabled"=dword:00000000
@@ -3607,7 +3644,6 @@ Windows Registry Editor Version 5.00
 "GuidedSwitchEnabled"=dword:00000000
 "HardwareAccelerationModeEnabled"=dword:00000000
 "HeartbeatEnabled"=dword:00000000
-"HideFirstRunExperience"=dword:00000001
 "HideInternetExplorerRedirectUXForIncompatibleSitesEnabled"=dword:00000001
 "HideRestoreDialogEnabled"=dword:00000001
 "HomepageLocation"="www.google.com"
@@ -3639,7 +3675,6 @@ Windows Registry Editor Version 5.00
 "MathSolverEnabled"=dword:00000000
 "MediaRouterCastAllowAllIPs"=dword:00000001
 "MetricsReportingEnabled"=dword:00000000
-"MicrosoftEdgeInsiderPromotionEnabled"=dword:00000000
 "MicrosoftEditorProofingEnabled"=dword:00000000
 "MicrosoftEditorSynonymsEnabled"=dword:00000000
 "MicrosoftOfficeMenuEnabled"=dword:00000000
@@ -3671,7 +3706,6 @@ Windows Registry Editor Version 5.00
 "PasswordSharingEnabled"=dword:00000000
 "PDFXFAEnabled"=dword:00000000
 "PerformanceDetectorEnabled"=dword:00000000
-"PersonalizationReportingEnabled"=dword:00000000
 "PictureInPictureOverlayEnabled"=dword:00000001
 "PinBrowserEssentialsToolbarButton"=dword:00000000
 "PinningWizardAllowed"=dword:00000001
@@ -3734,9 +3768,7 @@ Windows Registry Editor Version 5.00
 "ShowCastIconInToolbar"=dword:00000000
 "ShowDownloadsToolbarButton"=dword:00000001
 "ShowHistoryThumbnails"=dword:00000000
-"ShowMicrosoftRewards"=dword:00000000
 "ShowOfficeShortcutInFavoritesBar"=dword:00000000
-"ShowRecommendationsEnabled"=dword:00000000
 "SitePerProcess"=dword:00000000
 "SiteSafetyServicesEnabled"=dword:00000000
 "SleepingTabsEnabled"=dword:00000001
@@ -3770,16 +3802,13 @@ Windows Registry Editor Version 5.00
 "UrlDiagnosticDataEnabled"=dword:00000000
 "UserAgentClientHintsGREASEUpdateEnabled"=dword:00000000
 "UserAgentReduction"=dword:00000000
-"UserFeedbackAllowed"=dword:00000000
 "UseSystemPrintDialog"=dword:00000001
 "VerticalTabsAllowed"=dword:00000001
 "VideoCaptureAllowed"=dword:00000001
 "VisualSearchEnabled"=dword:00000001
-"WalletDonationEnabled"=dword:00000000
 "WAMAuthBelowWin10RS3Enabled"=dword:00000001
 "WebRtcRespectOsRoutingTableEnabled"=dword:00000001
 "WebToBrowserSignInEnabled"=dword:00000000
-"WebWidgetAllowed"=dword:00000000
 "WebWidgetIsEnabledOnStartup"=dword:00000000
 "WindowOcclusionEnabled"=dword:00000000
 "WindowsHelloForHTTPAuthEnabled"=dword:00000001
@@ -5154,15 +5183,21 @@ Windows Registry Editor Version 5.00
 "NetbtPriority"=dword:00000007
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\AFD\Parameters]
-"DefaultReceiveWindow"=dword:00004000
-"DefaultSendWindow"=dword:00004000
+"DefaultReceiveWindow"=dword:00004000 ; 00004000/00100000
+"DefaultSendWindow"=dword:00004000 ; 00004000/00100000
 "DisableRawSecurity"=dword:00000001
-"DynamicSendBufferDisable"=dword:00000000
+"DynamicSendBufferDisable"=dword:00000000 ; 00000000/00000001
 ; "FastCopyReceiveThreshold"=dword:000005b8 ; 00004000/000005b8 (MTU)
 ; "FastSendDatagramThreshold"=dword:000005b8 ; 00004000/000005b8 (MTU)
 "IgnorePushBitOnReceives"=dword:00000001
 "NonBlockingSendSpecialBuffering"=dword:00000001
 "ThreadPriority"=dword:00000000
+"BufferAlignment"=dword:00000001
+"DisableAddressSharing"=dword:00000001
+"DisableChainedReceive"=dword:00000001
+"DisableDirectAcceptEx"=dword:00000001
+"DoNotHoldNICBuffers"=dword:00000001
+"IgnoreOrderlyRelease"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\DNSClient]
 "DisableIdnEncoding"=dword:00000001
@@ -6584,6 +6619,7 @@ Windows Registry Editor Version 5.00
 "TurnOffSPIAnimations"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\QuietHours]
+"Enabled"=dword:00000000
 "AllowCalls"=dword:00000000
 "DisallowNotificationMirroring"=dword:00000001
 
@@ -11145,25 +11181,47 @@ Windows Registry Editor Version 5.00
 "AutoDisableGigabit"="0"
 "EnableTss"="0"
 "ITR"="0"
-"*JumboPacket"="1415"
+"*JumboPacket"="1415" ; 1415/1514
 "LogLinkStateEvent"="51"
-"*LsoV1IPv4"="1"
-"*LsoV2IPv4"="1"
-"*LsoV2IPv6"="1"
+"*LsoV1IPv4"="1" ; 0/1
+"*LsoV2IPv4"="1" ; 0/1
+"*LsoV2IPv6"="1" ; 0/1
 "MasterSlave"="0"
 "*ModernStandbyWoLMagicPacket"="0"
 "*NumRssQueues"="1"
 "*PMARPOffload"="0"
 "*PMNSOffload"="0"
-"*RSS"="1"
+"*RSS"="1" ; 0/1
 "*RssBaseProcNumber"="1"
 "*RssMaxProcNumber"="1"
 "*SpeedDuplex"="0"
 "*TCPChecksumOffloadIPv4"="0"
 "*TCPChecksumOffloadIPv6"="0"
-"*TransmitBuffers"="80"
+"*TransmitBuffers"="80" ; 80/4096
 "TxIntDelay"="5"
 "WakeOnSlot"="0"
+"PnPCapabilities"=dword:00000024
+; "NetworkAddress"="D45DB2A21F16"
+"*IPChecksumOffloadIPv4"="0"
+"*UDPChecksumOffloadIPv4"="0"
+"*UDPChecksumOffloadIPv6"="0"
+"RxSmallPacketBypass"="1" ; 1/00000000
+"*ReceiveBuffers"="2048"
+"RxIntModerationProfile"="0"
+"TxIntModerationProfile"="0"
+"RecvCompletionMethod"=dword:00000000
+"VlanId"=dword:00000000
+"*HeaderDataSplit"=dword:00000001
+"RxIntModeration"=dword:00000000
+"TxIntModeration"=dword:00000000
+"NetworkDirect"=dword:00000001
+"NetworkDirectTechnology"=dword:00000000
+"ThreadedDpcEnable"=dword:00000000
+"TxThreadedDpcEnable"=dword:00000000
+"UsoIPv4"=dword:00000000
+"UsoIPv6"=dword:00000000
+"NdisPoll"=dword:00000001
+"ThreadPoll"=dword:00000bb8
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0001]
 "AdvancedEEE"="0"
@@ -11255,6 +11313,151 @@ Windows Registry Editor Version 5.00
 "*TransmitBuffers"="80"
 "TxIntDelay"="5"
 "WakeOnSlot"="0"
+"PnPCapabilities"=dword:00000024
+; "NetworkAddress"="D45DB2A21F16"
+"*IPChecksumOffloadIPv4"="0"
+"*UDPChecksumOffloadIPv4"="0"
+"*UDPChecksumOffloadIPv6"="0"
+"RxSmallPacketBypass"="1" ; 1/00000000
+"*ReceiveBuffers"="2048"
+"RxIntModerationProfile"="0"
+"TxIntModerationProfile"="0"
+"RecvCompletionMethod"=dword:00000000
+"VlanId"=dword:00000000
+"*HeaderDataSplit"=dword:00000001
+"RxIntModeration"=dword:00000000
+"TxIntModeration"=dword:00000000
+"NetworkDirect"=dword:00000001
+"NetworkDirectTechnology"=dword:00000000
+"ThreadedDpcEnable"=dword:00000000
+"TxThreadedDpcEnable"=dword:00000000
+"UsoIPv4"=dword:00000000
+"UsoIPv6"=dword:00000000
+"NdisPoll"=dword:00000001
+"ThreadPoll"=dword:00000bb8
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0002]
+"PnPCapabilities"=dword:00000024
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}]
+"AdvancedEEE"="0"
+"ASPM"="0"
+"AutoPowerSaveModeEnabled"="0"
+"CLKREQ"="0"
+"*DeviceSleepOnDisconnect"="0"
+"DisableDelayedPowerUp"="1"
+"DisableIntelRST"="1"
+"DisablePhyReset"="1"
+"DMACoalescing"="0"
+"DynamicLTR"="0"
+"*EEE"="0"
+"EEELinkAdvertisement"="0"
+"EEEPlus"="0"
+"EnableAspm"="0"
+"EnableD0PHYFlexibleSpeed"="0"
+"EnableD3ColdInS0"="0"
+"EnableDisconnectedStandby"="0"
+"*EnableDynamicPowerGating"="0"
+"EnableETW"="0"
+"EnableGreenEthernet"="0"
+"EnableModernStandby"="0"
+"EnablePHYFlexibleSpeed"="0"
+"EnablePHYWakeUp"="0"
+"EnablePME"="0"
+"EnablePowerManagement"="0"
+"EnableSavePowerNow"="0"
+"EnableWakeOnManagmentOnTCO"="0"
+"*FlowControl"="0"
+"ForceHostExitUlp"="1"
+"ForceLtrValue"="0"
+"ForceWakeFromMagicPacketOnModernStandby"="0"
+"GigaLite"="0"
+"HwOption"=dword:00C00000
+"HwOptionV2"=dword:00000004
+"HwOptionV3"=dword:00040000
+"I218DisablePLLShut"="1"
+"I218DisablePLLShutGiga"="1"
+"I219DisableK1Off"="1"
+"*IdleRestriction"="1"
+"*InterruptModeration"="0"
+"LatencyToleranceReporting"="0"
+"LinkNegotiationProcess"="0"
+"LTROBFF"="0"
+"*NicAutoPowerSaver"="0"
+"OBFFEnabled"="0"
+"PowerDownPll"="0"
+"PowerSavingMode"="0"
+"*PriorityVLANTag"="0"
+"ReduceSpeedOnPowerDown"="0"
+"S0MgcPkt"="0"
+"S5WakeOnLan"="0"
+"*SelectiveSuspend"="0"
+"SipsEnabled"="0"
+"SleepWhileWaiting"="0"
+"*SSIdleTimeout"="1"
+"SSIdleTimeoutMS"="1"
+"*SSIdleTimeoutScreenOff"="1"
+"ULPMode"="0"
+"WaitAutoNegComplete"="0"
+"WaitForValidPhyIDRead"="0"
+"WakeFromS5"="0"
+"WakeOn"="0"
+"WakeOnFastStartup"="0"
+"WakeOnLink"="0"
+"*WakeOnMagicPacket"="0"
+"*WakeOnPattern"="0"
+"WolShutdownLinkSpeed"="2"
+"AutoDisableGigabit"="0"
+"EnableTss"="0"
+"ITR"="0"
+"*JumboPacket"="1415"
+"LogLinkStateEvent"="51"
+"*LsoV1IPv4"="1"
+"*LsoV2IPv4"="1"
+"*LsoV2IPv6"="1"
+"MasterSlave"="0"
+"*ModernStandbyWoLMagicPacket"="0"
+"*NumRssQueues"="1"
+"*PMARPOffload"="0"
+"*PMNSOffload"="0"
+"*RSS"="1"
+"*RssBaseProcNumber"="1"
+"*RssMaxProcNumber"="1"
+"*SpeedDuplex"="0"
+"*TCPChecksumOffloadIPv4"="0"
+"*TCPChecksumOffloadIPv6"="0"
+"*TransmitBuffers"="80"
+"TxIntDelay"="5"
+"WakeOnSlot"="0"
+"PnPCapabilities"=dword:00000024
+; "NetworkAddress"="D45DB2A21F16"
+"*IPChecksumOffloadIPv4"="0"
+"*UDPChecksumOffloadIPv4"="0"
+"*UDPChecksumOffloadIPv6"="0"
+"RxSmallPacketBypass"="1" ; 1/00000000
+"*ReceiveBuffers"="2048"
+"RxIntModerationProfile"="0"
+"TxIntModerationProfile"="0"
+"RecvCompletionMethod"=dword:00000000
+"VlanId"=dword:00000000
+"*HeaderDataSplit"=dword:00000001
+"RxIntModeration"=dword:00000000
+"TxIntModeration"=dword:00000000
+"NetworkDirect"=dword:00000001
+"NetworkDirectTechnology"=dword:00000000
+"ThreadedDpcEnable"=dword:00000000
+"TxThreadedDpcEnable"=dword:00000000
+"UsoIPv4"=dword:00000000
+"UsoIPv6"=dword:00000000
+"NdisPoll"=dword:00000001
+"ThreadPoll"=dword:00000bb8
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{462f198f-8349-40ba-866f-e5fee927ddee}]
+"TcpAckFrequency"=dword:00000001
+"TcpNoDelay"=dword:00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{d0944d3b-f407-43df-8a58-79d8ccba3b6a}]
+"TcpAckFrequency"=dword:00000001
+"TcpNoDelay"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectDraw]
 "DisableAGPSupport"=dword:00000000
