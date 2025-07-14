@@ -10932,11 +10932,6 @@ Windows Registry Editor Version 5.00
 "G:\\SteamLibrary\\steamapps\\common\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\DeadIsland2\\DeadIsland.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 
-Windows Registry Editor Version 5.00
-
-; Force Fullscreen Exclusive Mode for each .exe abaixo
-; Flags = 0x211 ativa entrada personalizada, modo exclusivo e desabilita FSO
-
 [HKEY_CURRENT_USER\System\GameConfigStore\Applications\wgc.exe]
 "Flags"=dword:00000211
 [HKEY_CURRENT_USER\System\GameConfigStore\Applications\WowClassic.exe]
