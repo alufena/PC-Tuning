@@ -1,3 +1,4 @@
+
 # Credits, source, good links  
 https://bbs.c3.wuyou.net/forum.php?mod=viewthread&tid=437913  
 https://community.acer.com/en/discussion/612495/windows-10-optimization-guide-for-gaming  
@@ -46,7 +47,9 @@ https://github.com/ShadowWhisperer/Remove-MS-Edge
 https://github.com/shoober420/windows11-scripts  
 https://github.com/simeononsecurity/Windows-Optimize-Debloat  
 https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat  
+https://github.com/SLStyler/Dithering-for-Windows-Simple-BAT-  
 https://github.com/Sophia-Community/SophiApp  
+https://github.com/spddl/GoInterruptPolicy  
 https://github.com/spddl/LowAudioLatency  
 https://github.com/TairikuOokami/Windows  
 https://github.com/Teramanbr/TerabyteTweaker  
@@ -60,6 +63,7 @@ https://massgrave.dev/windows_10_links
 https://massgrave.dev/windows_11_links  
 https://n1kobg.blogspot.com  
 https://rufus.ie  
+https://sageinfinity.github.io/docs/Guides/start  
 https://schneegans.de/windows/unattend-generator  
 https://sites.google.com/site/tweakradje/windows/windows-tweaking  
 https://sites.google.com/view/melodystweaks/  
@@ -75,17 +79,22 @@ https://wpd.app
 https://www.bluecataudio.com/Blog/tip-of-the-day/solving-audio-dropouts-dpc-latency-issues-with-nvidia-drivers-on-windows  
 https://www.elevenforum.com/t/restore-default-services-in-windows-11.3109  
 https://www.elevenforum.com/tutorials  
+https://www.elevenforum.com/t/windows-11-tweaks-leader-board.1842  
 https://www.ntlite.com/community/index.php?forums/questions-and-reports.4  
 https://www.oo-software.com/en/shutup10  
 https://www.overclock.net/threads/electrical-issue-causing-input-de-synchronization-or-input-loss.1744698  
 https://www.overclock.net/threads/gaming-and-mouse-response-bios-optimization-guide-for-modern-pc-hardware.1433882  
 https://www.overclock.net/threads/usb-polling-precision.1550666  
 https://www.reddit.com/r/AMDHelp/comments/1lnxb8o/ultimate_amd_performance_fix_guide_stop_lag_fps  
+https://www.reddit.com/r/GlobalOffensive/comments/1luj08w/nvidia_drivers_53758_performance_increase  
 https://www.reddit.com/r/MouseReview/comments/zgbrk3/i_finally_found_a_fix_to_all_my_mouse/  
+https://www.reddit.com/r/techsupport/comments/13avw59/fix_for_high_dpc_latency_wdf01000_ntoskrnl  
 https://www.reddit.com/r/uBlockOrigin/comments/1jbv1xn/youtube_ads_detection_breakages_2025_megathread  
 https://www.reddit.com/r/uBlockOrigin/comments/1jbv1xn/youtube_ads_detection_breakages_2025_megathread  
+https://www.reddit.com/r/Windows11/comments/1kgp7ar/cause_and_solution_to_windows_24h2_related  
 https://www.reddit.com/r/Windows11/comments/12yghi6/eliminating_high_dpc_latency_and_getting_kernel  
 https://www.resplendence.com/latencymon  
+https://www.techpowerup.com/download/microsoft-interrupt-affinity-tool  
 https://www.techpowerup.com/download/techpowerup-nvcleanstall    
 https://www.techpowerup.com/forums/threads/revisiting-hpet-bcdedit-tweaks-what-are-your-timer-bench-results-and-settings.326187  
 https://www.tenforums.com/gaming/117377-share-gaming-tweaks-chec-my-comprehensive-list-will-blow-your-mind.html  
@@ -94,10 +103,12 @@ https://www.tweakhound.com
 https://www.w10privacy.de  
 https://www.wagnardsoft.com/display-driver-uninstaller-ddu-  
 https://www.youtube.com/@0x7972/videos  
+https://www.youtube.com/@anceltweaks/videos  
 https://www.youtube.com/@eastcoasthandle/videos  
 https://www.youtube.com/@FR33THY/videos  
 https://www.youtube.com/@FrameSyncLabs/videos  
 https://www.youtube.com/@GHOSTSPECTRE/videos  
+https://www.youtube.com/@Jayztwocents/videos  
 https://www.youtube.com/@khorvietech/videos  
 https://www.youtube.com/@Panjno/videos  
 https://www.youtube.com/@pcsecuritychannel/videos  
@@ -107,13 +118,3 @@ https://www.youtube.com/watch?v=sbXzM60ad8I
 https://x.com/honestzin  
 https://x.com/jerry05259307  
 https://x.com/Realperfguy  
-https://www.techpowerup.com/download/microsoft-interrupt-affinity-tool  
-https://github.com/spddl/GoInterruptPolicy  
-https://www.reddit.com/r/techsupport/comments/13avw59/fix_for_high_dpc_latency_wdf01000_ntoskrnl  
-https://www.reddit.com/r/Windows11/comments/1kgp7ar/cause_and_solution_to_windows_24h2_related  
-https://www.youtube.com/@Jayztwocents/videos  
-https://www.youtube.com/@anceltweaks/videos  
-https://github.com/SLStyler/Dithering-for-Windows-Simple-BAT-  
-https://www.reddit.com/r/GlobalOffensive/comments/1luj08w/nvidia_drivers_53758_performance_increase  
-https://sageinfinity.github.io/docs/Guides/start  
-https://www.elevenforum.com/t/windows-11-tweaks-leader-board.1842  
