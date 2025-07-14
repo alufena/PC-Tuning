@@ -678,9 +678,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\I/O System]
 "CountOperations"=dword:00000000
 "DisableDiskCounters"=dword:00000001
-"IoEnableSessionZeroAccessCheck"=dword:00000001
-"PassiveIntRealTimeWorkerCount"=dword:00000010 ; 00000010/00000040
-"PassiveIntRealTimeWorkerPriority"=dword:00000018 ; 00000012/00000018
+"IoEnableSessionZeroAccessCheck"=dword:00000000 ; 00000000/00000001
+"PassiveIntRealTimeWorkerCount"=dword:00000000 ; 00000000/00000010/00000040
+"PassiveIntRealTimeWorkerPriority"=dword:00000000 ; 00000000/00000012/00000018
 "RequireDeviceAccessCheck"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\KernelVelocity]
@@ -1413,6 +1413,7 @@ Windows Registry Editor Version 5.00
 "UnsupportedMonitorModesAllowed"=dword:00000001
 "UseGpuTimer"=dword:00000001
 "UseXPModel"=dword:00000000
+"MaxPreRenderedFrames"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Power]
 "ComputePreemption"=dword:00000000
@@ -4686,6 +4687,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MMCSS]
 "Start"=dword:00000004 ; 00000002
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\AUEP]
+"RSX_AUEPStatus"=dword:00000004
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters]
 "AllowInteractiveConnect"=dword:00000000
 
@@ -6054,6 +6058,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Microsoft\MSMQ\Parameters]
 "TCPNoDelay"=dword:00000001
 "IgnoreOSNameValidation"=dword:00000001
+"DisableTaskOffload"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSMQ\Parameters\Security]
 "SecureDSCommunication"=dword:00000000
@@ -10926,6 +10931,190 @@ Windows Registry Editor Version 5.00
 "G:\\DeadIsland2\\DeadIsland\\Binaries\\Win64\\DeadIsland-Win64-Shipping.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\SteamLibrary\\steamapps\\common\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\DeadIsland2\\DeadIsland.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
+
+Windows Registry Editor Version 5.00
+
+; Force Fullscreen Exclusive Mode for each .exe abaixo
+; Flags = 0x211 ativa entrada personalizada, modo exclusivo e desabilita FSO
+
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\wgc.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\WowClassic.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Wow.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\FortniteClient-Win64-Shipping.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\dota2.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\NewWorld.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\NMS.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\witcher3.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\witcher3.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\GTA5_Enhanced.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\PlayGTAV.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\GTA5.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Carmageddon_Max_Damage.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Cities.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Dishonored.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\DyingLightGame.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\NeedForSpeedUnbound.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Fallout76.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\GSS2-Win64-Shipping.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\GTAIV.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Gw2-64.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\HouseFlipper.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\LANoire.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\left4dead2.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\LOSTARK.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Overwatch.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Paladins.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Postal4-Win64-Shipping.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Postal4.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\TslGame.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Discovery.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\VRising.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\amtrucks.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\AoE3DE_s.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\bf1.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Tiger-Win64-Shipping.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\BorderlandsGOTY.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\cs2.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Crysis64.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Crysis.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\DeadByDaylight-Win64-Shipping.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\DH-Win64-Shipping.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Ghostrunner-Win64-Shipping.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\HaloInfinite.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\MadMax.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\MassEffect.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\MassEffect1.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\PlanetCoaster.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\QuakeChampions.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Raft.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\SkyrimSE.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\hl2.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\tf_win64.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\TPH.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Warframe.x64.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Wolfenstein.The.New.Order.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\WorldOfWarships64.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\AlanWake2.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Cyberpunk2077.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\DyingLightGame_x64_rwdi.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\forzahorizon5.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\forza_gaming.desktop.x64_release_final.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Back4Blood.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Crossout.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Fallout4.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\FragPunk.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\re8.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\CivilizationVI_DX12.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\SonsOfTheForest.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\TS4_x64.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\WorldOfTanks.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\tlou-i.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Tropico6.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Stalker2-Win64-Shipping.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Stalker2.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\r5apex_dx12.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\r5apex.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\BF2042.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\cod.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\KFGame.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Marvel-Win64-Shipping.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Marvel.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\NarakaBladepoint.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\RDR2.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\SW3.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\DeadIsland-Win64-Shipping.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Cyberpunk2077.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\DeadIsland.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\FortniteLauncher.exe]
+"Flags"=dword:00000211
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite]
 "Application Name"="FortniteClient-Win64-Shipping.exe"
