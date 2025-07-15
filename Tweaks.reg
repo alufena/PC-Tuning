@@ -251,7 +251,7 @@ Windows Registry Editor Version 5.00
 "DpcWatchdogProfileOffset"=dword:00000000 ; 00002710, 00000000
 "DynamicDpcProtocol"=dword:00000001
 "EnablePerCpuClockTickScheduling"=dword:00000001 ; 00000000/00000001
-"EnableTickAccumulationFromAccountingPeriods"=dword:00000001
+"EnableTickAccumulationFromAccountingPeriods"=dword:00000000 ; 00000000/00000001
 "EnableTsx"=dword:00000000
 "EnableWerUserReporting"=dword:00000000
 "ExQueueWorkItem"=dword:00000020
@@ -292,7 +292,7 @@ Windows Registry Editor Version 5.00
 "PriorityControl"=dword:00000020 ; 00000020/00000032
 "QuantumLength"=dword:0000000e ; 00000002/0000000e/00000014
 "RebalanceMinPriority"=dword:00000001
-"SerializeTimerExpiration"=dword:00000002 ; 00000000/00000001/00000002
+"SerializeTimerExpiration"=dword:00000000 ; 00000000/00000001/00000002
 "SeTokenSingletonAttributesConfig"=dword:00000003
 "SplitLargeCaches"=dword:00000001
 "StackSubSystemStackSize"=dword:00010000
@@ -306,6 +306,11 @@ Windows Registry Editor Version 5.00
 "WatchdogResumeTimeout"=dword:00000000
 "WorkerFactoryThreadIdleTimeout"=dword:00000000
 "XMMIZeroingEnable"=dword:00000000
+"TimerCheckFlags"=dword:00000000
+"ReadyTimeTicks"=dword:00000006
+"ScanLatencyTicks"=dword:00000014
+"ThreadReadyCount"=dword:00000003
+"BoostingPeriodMultiplier"=dword:00000005
 
 [HKEY_LOCAL_MACHINE\SYSTEM]
 "InterruptSteeringDisabled"=dword:00000001
@@ -722,10 +727,10 @@ Windows Registry Editor Version 5.00
 "WaitToKillServiceTimeout"="1000"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
-"TimeLimitInSeconds"=dword:00000001 ; 00000006, 00000000/00000001/00000002/00000012
+"TimeLimitInSeconds"=dword:00000000 ; 00000006, 00000000/00000001/00000002/00000012
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
-"TimeLimitInSeconds"=dword:00000001
+"TimeLimitInSeconds"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
 "AdjustDpcThreshold"=dword:00000000
@@ -3434,6 +3439,15 @@ Windows Registry Editor Version 5.00
 "explorer.exe"=dword:0000000a
 "iexplore.exe"=dword:0000000a
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Network List Manager\Profiles\Private]
+"Category"=dword:00000002
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Network List Manager\Profiles\Unidentified Network]
+"Category"=dword:00000002
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Network List Manager\Profiles\Identifying Network]
+"Category"=dword:00000002
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp]
 "DisableBranchCache"=dword:00000001
 "TcpAutotuning"=dword:00000000 ; 00000000/00000001
@@ -3459,7 +3473,9 @@ Windows Registry Editor Version 5.00
 "PeriodInNanoSeconds"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell]
+"UseActionCenterExperience"=dword:00000000
 "UseWin32BatteryFlyout"=dword:00000001
+"UseWin32TrayClockExperience"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\TestHooks]
 "ConsoleMode"=dword:00000001
@@ -4693,6 +4709,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MMCSS]
 "Start"=dword:00000004 ; 00000002
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TPM]
+"Start"=dword:00000004 ; 00000003
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\AUEP]
 "RSX_AUEPStatus"=dword:00000004
 
@@ -5353,8 +5372,18 @@ Windows Registry Editor Version 5.00
 "AllowRspndrOnPublicNet"=dword:00000000
 "EnableLLTDIO"=dword:00000000
 "EnableRspndr"=dword:00000000
-"ProhibitLLTDIOOnPrivateNet"=dword:00000001
-"ProhibitRspndrOnPrivateNet"=dword:00000001
+"ProhibitLLTDIOOnPrivateNet"=dword:00000000
+"ProhibitRspndrOnPrivateNet"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\LLTD]
+"AllowLLTDIOOnDomain"=dword:00000000
+"AllowLLTDIOOnPublicNet"=dword:00000000
+"AllowRspndrOnDomain"=dword:00000000
+"AllowRspndrOnPublicNet"=dword:00000000
+"EnableLLTDIO"=dword:00000000
+"EnableRspndr"=dword:00000000
+"ProhibitLLTDIOOnPrivateNet"=dword:00000000
+"ProhibitRspndrOnPrivateNet"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowHardwareKeyboardTextSuggestions]
 "value"=dword:00000000
