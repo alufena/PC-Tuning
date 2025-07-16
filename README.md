@@ -120,3 +120,4 @@ https://x.com/jerry05259307
 https://x.com/Realperfguy  
 https://github.com/TK50P/NoMoreDWM  
 https://github.com/LuSlower/dwm-basic  
+https://github.com/Sheikh98-DEV/Windows-Optimizer  
