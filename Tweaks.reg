@@ -429,7 +429,7 @@ Windows Registry Editor Version 5.00
 ; "KMD_RebarControlSupport"=-
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
-"ConfigFileAllocSize"=dword:00000600 ; 00000400/00000600
+"ConfigFileAllocSize"=dword:00000400 ; 00000400/00000600
 "DisableLastAccess"=dword:00000001
 "DontVerifyRandomDrivers"=dword:00000001
 "FileNameCache"=dword:00000400
@@ -452,7 +452,7 @@ Windows Registry Editor Version 5.00
 "NtfsForceNonPagedPoolAllocation"=dword:00000000
 "NtfsMemoryUsage"=dword:00000002 ; 00000000/00000002 (= fsutil behavior set memoryusage)
 "NtfsMftZoneReservation"=dword:00000004 ; 00000000/00000004
-"NtfsQuotaNotifyRate"=dword:00002af8 ; 00000e10/00002af8
+"NtfsQuotaNotifyRate"=dword:ffffffff
 "PathCache"=dword:00000080
 "RefsDisableLastAccessUpdate"=dword:00000001
 "ScrubMode"=dword:00000001
