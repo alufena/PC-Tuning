@@ -274,7 +274,7 @@ Windows Registry Editor Version 5.00
 "IoQueueWorkItem"=dword:00000020
 "IoQueueWorkItemEx"=dword:00000020
 "IoQueueWorkItemToNode"=dword:00000020
-; "KernelSEHOPEnabled"=dword:00000000 ; 00000001 security option for anticheats
+; "KernelSEHOPEnabled"=dword:00000000 ; =-, 00000000 security option for anticheats
 "KiClockTimerAlwaysOnPresent"=dword:00000001
 "KiClockTimerHighLatency"=dword:00000000
 "KiClockTimerPerCpu"=dword:00000001
@@ -611,10 +611,10 @@ Windows Registry Editor Version 5.00
 "EnablePMTUDiscovery"=dword:00000000 ; 00000000/00000001
 "EnableTcpAcks"=dword:00000000
 "EnableWsd"=dword:00000000
-"GlobalMaxTcpWindowSize"=dword:000016d0  ; 000016d0/0000ffff
+"GlobalMaxTcpWindowSize"=dword:0000ffff  ; 000016d0/0000ffff
 "IRPStackSize"=dword:00000020
 "MaxConnectionsPerServer"=dword:00000000
-"MaxFreeTcbs"=dword:0000ffff
+"MaxFreeTcbs"=dword:00010000 ; 00010000/0000ffff
 "MaxHashTableSize"=dword:0000ffff
 "MaxNumRssCpus"=dword:0000000a ; 00000008/00000010/0000000a
 "MaxNumRssThreads"=dword:00000014 ; 00000010/00000014/00000020
@@ -640,7 +640,7 @@ Windows Registry Editor Version 5.00
 "EnablePMTUDiscovery"=dword:00000000
 "InterfaceMetric"=dword:00000046
 "IRPStackSize"=dword:00000020
-"MaxFreeTcbs"=dword:0000ffff
+"MaxFreeTcbs"=dword:00010000
 "MaxUserPort"=dword:0000fffe
 "SackOpts"=dword:00000001
 "Tcp1323Opts"=dword:00000000
