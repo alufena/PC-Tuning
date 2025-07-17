@@ -161,6 +161,13 @@ schtasks /change /tn "microsoft\windows\wwansvc\oobediscovery" /disable
 schtasks /Change /TN "Microsoft\XblGameSave\XblGameSaveTask" /Disable
 schtasks /change /tn "Mozilla\Firefox Background Update 308046B0AF4A39CB" /disable
 schtasks /change /tn "MSIAfterburner" /disable
+schtasks /change /Disable /tn "NvTmRep_CrashReport1_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}" 
+schtasks /change /Disable /tn "NvTmRep_CrashReport2_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}" 
+schtasks /change /Disable /tn "NvTmRep_CrashReport3_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}" 
+schtasks /change /Disable /tn "NvTmRep_CrashReport4_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}" 
+schtasks /change /Disable /tn "NvDriverUpdateCheckDaily_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}" 
+schtasks /change /Disable /tn "NVIDIA GeForce Experience SelfUpdate_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}" 
+schtasks /change /Disable /tn "NvTmMon_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}" 
 schtasks /delete /tn "Microsoft\Windows\RetailDemo\CleanupOfflineContent" /f
 powershell -Command "Get-ScheduledTask | Where-Object { $_.TaskName -like 'MEGAsync Update Task*' } | ForEach-Object { Disable-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath }"
 powershell -Command "Get-ScheduledTask | Where-Object { $_.TaskName -like 'GoogleUpdaterTaskSystem*' } | ForEach-Object { Disable-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath }"
