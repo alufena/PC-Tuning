@@ -47,22 +47,22 @@ taskkill /f /t /im CompPkgSrv.exe
 taskkill /f /t /im TiWorker.exe
 taskkill /f /t /im TrustedInstaller.exe
 taskkill /f /t /im MoUsoCoreWorker.exe
-takeown /f %SystemRoot%\System32\drivers\Acpidev.sys
-takeown /f %SystemRoot%\System32\drivers\Acpipagr.sys
-takeown /f %SystemRoot%\System32\drivers\Acpitime.sys
-takeown /f %SystemRoot%\System32\drivers\Acpipmi.sys
-icacls %SystemRoot%\System32\drivers\Acpidev.sys /grant %username%:F
-icacls %SystemRoot%\System32\drivers\Acpipagr.sys /grant %username%:F
-icacls %SystemRoot%\System32\drivers\Acpitime.sys /grant %username%:F
-icacls %SystemRoot%\System32\drivers\Acpipmi.sys /grant %username%:F
-del /f /q %SystemRoot%\System32\drivers\Acpidev.sys
-del /f /q %SystemRoot%\System32\drivers\Acpipagr.sys
-del /f /q %SystemRoot%\System32\drivers\Acpitime.sys
-del /f /q %SystemRoot%\System32\drivers\Acpipmi.sys
+takeown /f "%SystemRoot%\System32\drivers\Acpidev.sys"
+takeown /f "%SystemRoot%\System32\drivers\Acpipagr.sys"
+takeown /f "%SystemRoot%\System32\drivers\Acpitime.sys"
+takeown /f "%SystemRoot%\System32\drivers\Acpipmi.sys"
+icacls "%SystemRoot%\System32\drivers\Acpidev.sys" /grant %username%:F
+icacls "%SystemRoot%\System32\drivers\Acpipagr.sys" /grant %username%:F
+icacls "%SystemRoot%\System32\drivers\Acpitime.sys" /grant %username%:F
+icacls "%SystemRoot%\System32\drivers\Acpipmi.sys" /grant %username%:F
+del /f /q "%SystemRoot%\System32\drivers\Acpidev.sys"
+del /f /q "%SystemRoot%\System32\drivers\Acpipagr.sys"
+del /f /q "%SystemRoot%\System32\drivers\Acpitime.sys"
+del /f /q "%SystemRoot%\System32\drivers\Acpipmi.sys"
 takeown /f "C:\Windows\System32\mcupdate_GenuineIntel.dll"
 takeown /f "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
-icacls %SystemRoot%\System32\mcupdate_GenuineIntel.dll /grant %username%:F
-icacls %SystemRoot%\System32\mcupdate_AuthenticAMD.dll /grant %username%:F
+icacls "%SystemRoot%\System32\mcupdate_GenuineIntel.dll" /grant %username%:F
+icacls "%SystemRoot%\System32\mcupdate_AuthenticAMD.dll" /grant %username%:F
 del "C:\Windows\System32\mcupdate_GenuineIntel.dll"
 del "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
 taskkill /f /t /im conhost.exe
