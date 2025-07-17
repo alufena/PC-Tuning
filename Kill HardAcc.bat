@@ -361,6 +361,8 @@ bcdedit /set sos No
 ::bcdedit /deletevalue sos
 bcdedit /set timeout 0
 ::bcdedit /deletevalue timeout
+bcdedit /set restrictapicluster 0 
+::bcdedit /deletevalue restrictapicluster
 ::bcdedit /set testsigning No
 ::bcdedit /deletevalue testsigning
 ::bcdedit /set {globalsettings} custom:16000067 true
@@ -445,22 +447,22 @@ pnputil /disable-device "SWD\MIDISRV\MIDIU_DIAG_PING"
 pnputil /disable-device "SWD\MIDISRV\MIDIU_DIAG_LOOPBACK_B"
 pnputil /disable-device "SWD\MIDISRV\MIDIU_DIAG_LOOPBACK_A"
 pnputil /disable-device "SWD\MIDISRV\MIDIU_DIAG_TRANSPORT"
-takeown /f %SystemRoot%\System32\drivers\Acpidev.sys
-takeown /f %SystemRoot%\System32\drivers\Acpipagr.sys
-takeown /f %SystemRoot%\System32\drivers\Acpitime.sys
-takeown /f %SystemRoot%\System32\drivers\Acpipmi.sys
-icacls %SystemRoot%\System32\drivers\Acpidev.sys /grant %username%:F
-icacls %SystemRoot%\System32\drivers\Acpipagr.sys /grant %username%:F
-icacls %SystemRoot%\System32\drivers\Acpitime.sys /grant %username%:F
-icacls %SystemRoot%\System32\drivers\Acpipmi.sys /grant %username%:F
-del /f /q %SystemRoot%\System32\drivers\Acpidev.sys
-del /f /q %SystemRoot%\System32\drivers\Acpipagr.sys
-del /f /q %SystemRoot%\System32\drivers\Acpitime.sys
-del /f /q %SystemRoot%\System32\drivers\Acpipmi.sys
+takeown /f "%SystemRoot%\System32\drivers\Acpidev.sys"
+takeown /f "%SystemRoot%\System32\drivers\Acpipagr.sys"
+takeown /f "%SystemRoot%\System32\drivers\Acpitime.sys"
+takeown /f "%SystemRoot%\System32\drivers\Acpipmi.sys"
+icacls "%SystemRoot%\System32\drivers\Acpidev.sys" /grant %username%:F
+icacls "%SystemRoot%\System32\drivers\Acpipagr.sys" /grant %username%:F
+icacls "%SystemRoot%\System32\drivers\Acpitime.sys" /grant %username%:F
+icacls "%SystemRoot%\System32\drivers\Acpipmi.sys" /grant %username%:F
+del /f /q "%SystemRoot%\System32\drivers\Acpidev.sys"
+del /f /q "%SystemRoot%\System32\drivers\Acpipagr.sys"
+del /f /q "%SystemRoot%\System32\drivers\Acpitime.sys"
+del /f /q "%SystemRoot%\System32\drivers\Acpipmi.sys"
 takeown /f "C:\Windows\System32\mcupdate_GenuineIntel.dll"
 takeown /f "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
-icacls %SystemRoot%\System32\mcupdate_GenuineIntel.dll /grant %username%:F
-icacls %SystemRoot%\System32\mcupdate_AuthenticAMD.dll /grant %username%:F
+icacls "%SystemRoot%\System32\mcupdate_GenuineIntel.dll" /grant %username%:F
+icacls "%SystemRoot%\System32\mcupdate_AuthenticAMD.dll" /grant %username%:F
 del "C:\Windows\System32\mcupdate_GenuineIntel.dll"
 del "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
 reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /va /f
