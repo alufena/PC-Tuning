@@ -24,6 +24,14 @@ netsh int tcp set security profiles=disabled
 netsh int tcp set supplemental internet congestionprovider=ctcp
 netsh int tcp set supplemental internet enablecwndrestart=enabled
 
+# w11 only
+# netsh int tcp set supplemental Template=Internet CongestionProvider=cubic
+# netsh int tcp set supplemental Template=Datacenter CongestionProvider=cubic
+# netsh int tcp set supplemental Template=Compat CongestionProvider=cubic
+# netsh int tcp set supplemental Template=DatacenterCustom CongestionProvider=cubic
+# netsh int tcp set supplemental Template=InternetCustom CongestionProvider=cubic
+# netsh int tcp set supplemental Template=Automatic CongestionProvider=cubic
+
 Set-NetTCPSetting -SettingName * -AutoTuningLevelLocal Disable -ScalingHeuristics Disabled
 
 Disable-NetAdapterPowerManagement *
@@ -33,19 +41,20 @@ Disable-NetAdapterBinding -Name * -ComponentID ms_pacer
 # If you share files on the network, DO NOT disable the client below
 Disable-NetAdapterBinding -Name * -ComponentID ms_msclient
 
-Set-NetOffloadGlobalSetting -PacketCoalescingFilter disabled -Chimney Disabled -Taskoffload Enabled -ReceiveSideScaling Enabled -ReceiveSegmentCoalescing Disabled
+Set-NetOffloadGlobalSetting -PacketCoalescingFilter disabled -Chimney Disabled -Taskoffload Disabled -ReceiveSideScaling Enabled -ReceiveSegmentCoalescing Disabled
+# Taskoffload Disabled/Enabled
 
 Set-NetAdapterRdma -Name "*" -Enabled $True
 Set-NetAdapterRss -Name "*" -Profile Conservative
 Set-NetAdapterIPsecOffload -Name "*" -Enabled $True
-Enable-NetAdapterChecksumOffload -Name "*"
-Enable-NetAdapterEncapsulatedPacketTaskOffload -Name "*"
-Enable-NetAdapterIPsecOffload -Name "*"
-Enable-NetAdapterQos -Name "*"
-Enable-NetAdapterRsc -Name "*"
+Disable-NetAdapterChecksumOffload -Name "*" # Disable/Enable
+Disable-NetAdapterEncapsulatedPacketTaskOffload -Name "*" # Disable/Enable
+Disable-NetAdapterIPsecOffload -Name "*" # Disable/Enable
+Disable-NetAdapterQos -Name "*" # Disable/Enable
+Disable-NetAdapterRsc -Name "*" # Disable/Enable
 Enable-NetAdapterRss -Name "*"
-Enable-NetAdapterSriov -Name "*"
-Enable-NetAdapterVmq -Name "*"
+Disable-NetAdapterSriov -Name "*" # Disable/Enable
+Disable-NetAdapterVmq -Name "*" # Disable/Enable
 
 function Set-RegKey {
     param (
