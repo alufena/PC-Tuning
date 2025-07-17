@@ -7,7 +7,7 @@ fsutil behavior set encryptpagingfile 0
 ::fsutil behavior set memoryusage 1
 fsutil behavior set memoryusage 2
 fsutil behavior set mftzone 4
-fsutil behavior set quotanotify 4294967
+fsutil behavior set quotanotify 4294967295
 fsutil behavior set disabledeletenotify 0
 manage-bde -off C:
 manage-bde -off D:
