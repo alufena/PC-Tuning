@@ -1,4 +1,3 @@
-
 # Credits, source, good links  
 https://bbs.c3.wuyou.net/forum.php?mod=viewthread&tid=437913  
 https://community.acer.com/en/discussion/612495/windows-10-optimization-guide-for-gaming  
@@ -34,6 +33,7 @@ https://github.com/ionuttbara/melody_windows
 https://github.com/ionuttbara/windows-defender-remover  
 https://github.com/Khorvie-Tech/khorvie-tech.github.io  
 https://github.com/letsdoautomation/powershell  
+https://github.com/LuSlower/dwm-basic  
 https://github.com/MarcoRavich/Opendows/blob/main/Tweakers.md  
 https://github.com/miniant-git/REAL  
 https://github.com/NicholasBly/Windows-11-Latency-Optimization  
@@ -44,6 +44,7 @@ https://github.com/rahilpathan/Tweaks-for-Gaming.bat
 https://github.com/rahilpathan/Win10Boost  
 https://github.com/Raphire/Win11Debloat  
 https://github.com/ShadowWhisperer/Remove-MS-Edge  
+https://github.com/Sheikh98-DEV/Windows-Optimizer  
 https://github.com/shoober420/windows11-scripts  
 https://github.com/simeononsecurity/Windows-Optimize-Debloat  
 https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat  
@@ -53,6 +54,7 @@ https://github.com/spddl/GoInterruptPolicy
 https://github.com/spddl/LowAudioLatency  
 https://github.com/TairikuOokami/Windows  
 https://github.com/Teramanbr/TerabyteTweaker  
+https://github.com/TK50P/NoMoreDWM  
 https://github.com/xHybred/NvidiaProfileInspectorRevamped  
 https://github.com/Xiseous/PC-Tuning  
 https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/hosts/native.winoffice.txt  
@@ -114,11 +116,8 @@ https://www.youtube.com/@Panjno/videos
 https://www.youtube.com/@pcsecuritychannel/videos  
 https://www.youtube.com/@Savitarax/videos  
 https://www.youtube.com/@SHYX_TWEAKS/videos  
+https://www.youtube.com/@StixTweaks/videos  
 https://www.youtube.com/watch?v=sbXzM60ad8I  
 https://x.com/honestzin  
 https://x.com/jerry05259307  
 https://x.com/Realperfguy  
-https://github.com/TK50P/NoMoreDWM  
-https://github.com/LuSlower/dwm-basic  
-https://github.com/Sheikh98-DEV/Windows-Optimizer  
-https://www.youtube.com/@StixTweaks/videos  
