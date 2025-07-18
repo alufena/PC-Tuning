@@ -123,3 +123,4 @@ https://x.com/jerry05259307
 https://x.com/Realperfguy  
 https://github.com/jawsk10/Windows-Tweak-by-Jawsk  
 https://github.com/DaddyMadu/Windows10GamingFocus  
+https://github.com/AFaustini/OtimizeWindows  
