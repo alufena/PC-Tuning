@@ -631,6 +631,7 @@ Windows Registry Editor Version 5.00
 "TcpTimedWaitDelay"=dword:0000001e ; 00000020/0000001e
 "TcpWindowSize"=dword:000016d0 ; 000016d0/0000ffff
 "ThreadPriority"=dword:0000000f
+"DisableMediaSenseEventLog"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces]
 "DefaultTTL"=dword:00000040
@@ -724,6 +725,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Power\ModernSleep]
 "CoalescingTimerInterval"=dword:00000000
 "AdaptiveRefreshRate"=dword:00000000
+"ModernSleepEnabled"=dword:00000000
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Power]
 "CoalescingTimerInterval"=dword:00000000
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control]
@@ -955,6 +957,7 @@ Windows Registry Editor Version 5.00
 "TransitionLatency"=dword:00000001
 "UserBatteryDischargeEstimator"=dword:00000001
 "VideoIdleTimeout"=dword:00000000
+"IgnoreCsComplianceCheck"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\whesvc]
 "ECP_WhatIf"=dword:00000001
@@ -3239,7 +3242,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell]
 "ExecutionPolicy"="Unrestricted"
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell]
 "ExecutionPolicy"="Unrestricted"
 
@@ -11601,6 +11603,17 @@ Windows Registry Editor Version 5.00
 "*WakeOnPattern"="0"
 "WakeOnSlot"="0"
 "WolShutdownLinkSpeed"="2"
+"EnableExtraPowerSaving"="0"
+"EnableEDT"="0"
+"ENPWMode"="0"
+"GPPSW"="0"
+"HumanProximityDetection"="0"
+"MIMOPowerSaveMode"="3"
+"UsbSwFast"="1"
+"ForcedUsbMode"="8"
+"BeamformCap"="54"
+"LogDisconnectEvent"="0"
+"LogLinkStateEvent"="16"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0001]
 "AdvancedEEE"="0"
@@ -11714,6 +11727,17 @@ Windows Registry Editor Version 5.00
 "*WakeOnPattern"="0"
 "WakeOnSlot"="0"
 "WolShutdownLinkSpeed"="2"
+"EnableExtraPowerSaving"="0"
+"EnableEDT"="0"
+"ENPWMode"="0"
+"GPPSW"="0"
+"HumanProximityDetection"="0"
+"MIMOPowerSaveMode"="3"
+"UsbSwFast"="1"
+"ForcedUsbMode"="8"
+"BeamformCap"="54"
+"LogDisconnectEvent"="0"
+"LogLinkStateEvent"="16"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0002]
 "PnPCapabilities"=dword:00000024
@@ -11830,6 +11854,17 @@ Windows Registry Editor Version 5.00
 "*WakeOnPattern"="0"
 "WakeOnSlot"="0"
 "WolShutdownLinkSpeed"="2"
+"EnableExtraPowerSaving"="0"
+"EnableEDT"="0"
+"ENPWMode"="0"
+"GPPSW"="0"
+"HumanProximityDetection"="0"
+"MIMOPowerSaveMode"="3"
+"UsbSwFast"="1"
+"ForcedUsbMode"="8"
+"BeamformCap"="54"
+"LogDisconnectEvent"="0"
+"LogLinkStateEvent"="16"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{462f198f-8349-40ba-866f-e5fee927ddee}]
 "TcpAckFrequency"=dword:00000001
