@@ -13,6 +13,7 @@ https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-i
 https://forums.mydigitallife.net/forums/windows-10.54  
 https://forums.mydigitallife.net/forums/windows-11.64  
 https://github.com/Aetopia/NoSteamWebHelper  
+https://github.com/AFaustini/OtimizeWindows  
 https://github.com/AlchemyTweaks/Experimental-Tweaks  
 https://github.com/AlchemyTweaks/Officially-Verified  
 https://github.com/AlchemyTweaks/Verified-Tweaks  
@@ -20,6 +21,7 @@ https://github.com/ancel1x/Ancels-Performance-Batch
 https://github.com/Batlez/Batlez-Tweaks  
 https://github.com/BoringBoredom/PC-Optimization-Hub  
 https://github.com/ChrisTitusTech/winutil  
+https://github.com/DaddyMadu/Windows10GamingFocus  
 https://github.com/djdallmann/GamingPCSetup  
 https://github.com/dubbyOW/BCDEditTweaks  
 https://github.com/emadadel4/itt  
@@ -31,6 +33,7 @@ https://github.com/Hyyote/In-depth-Windows-tweaking
 https://github.com/Invertex/RemoveRazerGameManager  
 https://github.com/ionuttbara/melody_windows  
 https://github.com/ionuttbara/windows-defender-remover  
+https://github.com/jawsk10/Windows-Tweak-by-Jawsk  
 https://github.com/Khorvie-Tech/khorvie-tech.github.io  
 https://github.com/letsdoautomation/powershell  
 https://github.com/LuSlower/dwm-basic  
@@ -106,6 +109,7 @@ https://www.wagnardsoft.com/display-driver-uninstaller-ddu-
 https://www.youtube.com/@0x7972/videos  
 https://www.youtube.com/@anceltweaks/videos  
 https://www.youtube.com/@eastcoasthandle/videos  
+https://www.youtube.com/@exmtweaks/videos  
 https://www.youtube.com/@FR33THY/videos  
 https://www.youtube.com/@FrameSyncLabs/videos  
 https://www.youtube.com/@GHOSTSPECTRE/videos  
@@ -116,10 +120,8 @@ https://www.youtube.com/@pcsecuritychannel/videos
 https://www.youtube.com/@Savitarax/videos  
 https://www.youtube.com/@SHYX_TWEAKS/videos  
 https://www.youtube.com/@StixTweaks/videos  
+https://www.youtube.com/@TechieSavi/videos  
 https://www.youtube.com/watch?v=sbXzM60ad8I  
 https://x.com/honestzin  
 https://x.com/jerry05259307  
 https://x.com/Realperfguy  
-https://github.com/jawsk10/Windows-Tweak-by-Jawsk  
-https://github.com/DaddyMadu/Windows10GamingFocus  
-https://github.com/AFaustini/OtimizeWindows  
