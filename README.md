@@ -124,3 +124,5 @@ https://x.com/Realperfguy
 https://github.com/jawsk10/Windows-Tweak-by-Jawsk  
 https://github.com/DaddyMadu/Windows10GamingFocus  
 https://github.com/AFaustini/OtimizeWindows  
+https://www.reddit.com/r/pcmasterrace/comments/1m36fku/pc_gaming_optimization_guide_fixing_lag_stutters  
+https://community.acer.com/en/discussion/612495/windows-10-optimization-guide-for-gaming/p1  
