@@ -361,20 +361,15 @@ Windows Registry Editor Version 5.00
 "DEVICE_MAX_PENDING_INTERRUPTS"="0"
 "DEVICE_MAX_PENDING_IO"="0"
 "DEVICE_PENDING_INTERRUPTS"="0"
-"DisableDesktopComposition"=dword:00000001
+"DisableDesktopComposition"=-
 "DISABLE_DYNAMIC_FPS"="1"
 "DISABLE_DYNAMIC_TICK"="yes"
 "DisableFullScreenOptimizations"=dword:00000001
 "DisableGPUTimeout"="1"
 "DisableShaderCache"="0"
-"DisableVSync"="1"
 "DISK_MAX_PENDING_INTERRUPTS"="0"
 "DISK_MAX_PENDING_IO"="0"
 "DWM_COMPOSITOR_MAX_PENDING_INTERRUPTS"="0"
-"DWM_DXGI_FLIP_MODE"="1"
-"DWM_FORCE_BLIT"="0"
-"DWM_FRAME_RATE_CAP"="0" 
-"DWM_LAG_FIX"="1"
 "DWM_MAXIMUM_BUFFER_AGE"="0"
 "DWM_MAX_PENDING_INTERRUPTS"="0"
 "DWM_QUEUE_MODE"="1"
@@ -383,7 +378,7 @@ Windows Registry Editor Version 5.00
 "DXGIFlipModel"="1"
 "DXGI_FLIP_SEQUENTIAL"="1"
 "DXGI_MAX_FRAME_LATENCY"="1"
-"DXGI_PRESENT_MODE"="1"
+"DXGI_PRESENT_MODE"=-
 "DX_LOW_LATENCY_MODE"="1"
 "DX_MaxFrameBufferSize"=dword:00000080
 "DX_MaxFramesToRenderAhead"="1"
@@ -422,7 +417,6 @@ Windows Registry Editor Version 5.00
 "NETWORK_BUFFER_SIZE"="512"
 "NETWORK_INTERRUPT_COALESCING"="0"
 "NETWORK_MAX_PENDING_INTERRUPTS"="0"
-; "OverlayTestMode"=dword:00000000
 "PCIE_DEVICE_MAX_PENDING_INTERRUPTS"="0"
 "PCIE_DEVICE_MAX_PENDING_IO"="0"
 "PCIE_DEVICE_PENDING_INTERRUPTS"="0"
@@ -444,7 +438,6 @@ Windows Registry Editor Version 5.00
 "UseFastWindowFlip"="1"
 "UseLowLatencyInputDriver"="1"
 "UseNewScheduler"="1"
-"UseVideoPlaybackOverlay"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0AABB002-A307-447e-9B81-1D819DF6C6D0}]
 "Name"="SustainedPerf"
@@ -1276,7 +1269,7 @@ Windows Registry Editor Version 5.00
 "CustomRefreshRateMode"=dword:00000001
 "DDisplayTestMode"=dword:00000000
 "DebugFailFast"=dword:00000000
-"DisableAdvancedDirectFlip"=dword:00000001
+"DisableAdvancedDirectFlip"=dword:00000000 ; 00000000/00000001
 "DisableDComp"=dword:00000001
 "DisableDeviceBitmaps"=dword:00000001
 "DisableDeviceBitmapsForMultiAdapter"=dword:00000001
@@ -1284,8 +1277,8 @@ Windows Registry Editor Version 5.00
 "DisableDynamicShutdownUI"=dword:00000001
 "DisableHardwareComposition"=dword:00000001
 "DisableHologramCompositor"=dword:00000001
-"DisableIndependentFlip"=dword:00000001
-"DisableLockingMemory"=dword:00000001
+"DisableIndependentFlip"=dword:00000001 ; 00000000/00000001
+"DisableLockingMemory"=dword:00000000 ; 00000000/00000001
 "DisableProjectedShadows"=dword:00000001
 "DisableProjectedShadowsRendering"=dword:00000001
 "DisallowColorizationColorChanges"=dword:00000001
@@ -1304,7 +1297,7 @@ Windows Registry Editor Version 5.00
 "EnableFrontBufferRenderChecks"=dword:00000000
 "EnableImageProcessing"=dword:00000000 ; 00000000/00000001
 "EnableInputPrediction"=dword:00000000
-"EnableMegaRects"=dword:00000001
+"EnableMegaRects"=dword:00000000 ; 00000000/00000001
 "EnableMPCPerfCounter"=dword:00000000
 "EnablePrimitiveReordering"=dword:00000000
 "EnableRenderPathTestMode"=dword:00000000
@@ -1318,16 +1311,16 @@ Windows Registry Editor Version 5.00
 "ForceGdiComposition"=dword:00000001
 "ForceModeEnumeration"=dword:00000001
 "ForceSoftwareD3D"=dword:00000001
-"FrameLatency"=dword:00000001 ; 00000001/00000002
+"FrameLatency"=dword:00000001 ; 00000001/00000002/00000003
 "HighColor"=dword:00000000
 "ImageProcessing8bit"=dword:00000000 ; 00000000/00000001
 "InkGPUAccelOverrideVendorWhitelist"=dword:00000001
 "InteractionOutputPredictionDisabled"=dword:00000001 ; 00000000/00000001
 "LogExpressionPerfStats"=dword:00000000
-"MaxD3DFeatureLevel"=dword:00000000
-"MaxQueuedPresentBuffers"=dword:00000001
+"MaxD3DFeatureLevel"=dword:00000000 ; 00000000/00000001
+"MaxQueuedPresentBuffers"=dword:00000001 ; 00000000/00000001/00000002/00000003
 "MegaRectSearchCount"=dword:00000001
-"MegaRectSize"=dword:0007A120
+"MegaRectSize"=dword:0007a120
 "MouseWheelScrollingMode"=dword:00000001
 "MPCInputRouterWaitForDebugger"=dword:00000000
 "OneCoreNoBootDWM"=dword:00000001 ; 00000000, 00000001
@@ -1347,7 +1340,7 @@ Windows Registry Editor Version 5.00
 "SuperWetEnabled"=dword:00000000 ; 00000000/00000001
 "TelemetryFramesSequenceMaximumPeriodMilliseconds"=dword:00000000 ; 00000000/000001f4
 "UseCopyOnPresent"=dword:00000001
-"UseHWDrawListEntriesOnWARP"=dword:00000001
+"UseHWDrawListEntriesOnWARP"=dword:00000000 ; 00000000/00000001
 "UseLegacyDisplayFrameBuffer"=dword:00000001
 "UseMachineCheck"=dword:00000000
 "UseStaticComposition"=dword:00000001
@@ -1382,9 +1375,14 @@ Windows Registry Editor Version 5.00
 "DisallowComposition"=dword:00000001
 "DisallowFlip3d"=dword:00000001
 "DWMWA_TRANSITIONS_FORCEDISABLED"=dword:00000001
+"EnableAeroPeek"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\DWM\ExtendedComposition]
+"Blur"=dword:00000000
+"Composition"=dword:00000000
+"CompositionPolicy"=dword:00000001
 "Compositor"=""
+"EnableAeroPeek"=dword:00000000
 "EnableColorSeparation"=dword:00000000
 "ExclusiveModeFramerateAveragingPeriodMs"=dword:000003e8 ; 000003e8, 00000000/00000064/000000fa/000001f4/000002ee
 "ExclusiveModeFramerateThresholdPercent"=dword:00000000 ; 0000002d, 00000000/00000001/00000064
@@ -1468,7 +1466,7 @@ Windows Registry Editor Version 5.00
 "DisableBoostedVSyncVirtualization"=dword:00000001
 "DisableCABC"=dword:00000001
 "DisableCudaContextPreemption"=dword:00000001
-; "DisableDynamicPstate"=dword:00000000 ; =-, 00000000/00000001
+"DisableDynamicPstate"=dword:00000000 ; =-, 00000000/00000001
 "DisableGDIAcceleration"=dword:00000000
 "DisableGpuTimeoutDetection"=dword:00000001
 "DisableIndependentVidPnVSync"=dword:00000001
@@ -1629,7 +1627,7 @@ Windows Registry Editor Version 5.00
 "DisableCudaContextPreemption"=dword:00000001
 "DisableDMACopy"=dword:00000001
 "DisableDrmdmaPowerGating"=dword:00000001
-; "DisableDynamicPstate"=dword:00000000
+"DisableDynamicPstate"=dword:00000000
 "DisableGDIAcceleration"=dword:00000000
 "DisableGDSPowerGating"=dword:00000001
 "DisableGfxCGPowerGating"=dword:00000001
@@ -1809,7 +1807,7 @@ Windows Registry Editor Version 5.00
 "DisableCudaContextPreemption"=dword:00000001
 "DisableDMACopy"=dword:00000001
 "DisableDrmdmaPowerGating"=dword:00000001
-; "DisableDynamicPstate"=dword:00000000
+"DisableDynamicPstate"=dword:00000000
 "DisableGDIAcceleration"=dword:00000000
 "DisableGDSPowerGating"=dword:00000001
 "DisableGfxCGPowerGating"=dword:00000001
@@ -1976,7 +1974,7 @@ Windows Registry Editor Version 5.00
 "DisableCudaContextPreemption"=dword:00000001
 "DisableDMACopy"=dword:00000001
 "DisableDrmdmaPowerGating"=dword:00000001
-; "DisableDynamicPstate"=dword:00000000
+"DisableDynamicPstate"=dword:00000000
 "DisableGDIAcceleration"=dword:00000000
 "DisableGDSPowerGating"=dword:00000001
 "DisableGfxCGPowerGating"=dword:00000001
@@ -2143,7 +2141,7 @@ Windows Registry Editor Version 5.00
 "DisableCudaContextPreemption"=dword:00000001
 "DisableDMACopy"=dword:00000001
 "DisableDrmdmaPowerGating"=dword:00000001
-; "DisableDynamicPstate"=dword:00000000
+"DisableDynamicPstate"=dword:00000000
 "DisableGDIAcceleration"=dword:00000000
 "DisableGDSPowerGating"=dword:00000001
 "DisableGfxCGPowerGating"=dword:00000001
@@ -11342,6 +11340,268 @@ Windows Registry Editor Version 5.00
 "G:\\SteamLibrary\\steamapps\\common\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\DeadIsland2\\DeadIsland.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wgc.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WowClassic.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wow.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dota2.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorld.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NMS.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5_Enhanced.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlayGTAV.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Carmageddon_Max_Damage.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cities.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Dishonored.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NeedForSpeedUnbound.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout76.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GSS2-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTAIV.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Gw2-64.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HouseFlipper.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LANoire.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\left4dead2.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LOSTARK.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Overwatch.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Paladins.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Postal4-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Postal4.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Discovery.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\VRising.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\amtrucks.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AoE3DE_s.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\bf1.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tiger-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BorderlandsGOTY.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cs2.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis64.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadByDaylight-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DH-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Ghostrunner-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HaloInfinite.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MadMax.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect1.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlanetCoaster.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\QuakeChampions.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Raft.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SkyrimSE.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hl2.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tf_win64.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TPH.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Warframe.x64.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wolfenstein.The.New.Order.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfWarships64.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AlanWake2.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cyberpunk2077.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame_x64_rwdi.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forzahorizon5.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forza_gaming.desktop.x64_release_final.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Back4Blood.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crossout.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout4.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FragPunk.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\re8.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CivilizationVI_DX12.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SonsOfTheForest.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4_x64.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfTanks.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tlou-i.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tropico6.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Stalker2-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Stalker2.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex_dx12.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BF2042.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\KFGame.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NarakaBladepoint.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RDR2.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SW3.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteLauncher.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+
 [HKEY_CURRENT_USER\System\GameConfigStore\Applications\wgc.exe]
 "Flags"=dword:00000211
 [HKEY_CURRENT_USER\System\GameConfigStore\Applications\WowClassic.exe]
@@ -11355,8 +11615,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\System\GameConfigStore\Applications\NewWorld.exe]
 "Flags"=dword:00000211
 [HKEY_CURRENT_USER\System\GameConfigStore\Applications\NMS.exe]
-"Flags"=dword:00000211
-[HKEY_CURRENT_USER\System\GameConfigStore\Applications\witcher3.exe]
 "Flags"=dword:00000211
 [HKEY_CURRENT_USER\System\GameConfigStore\Applications\witcher3.exe]
 "Flags"=dword:00000211
@@ -11457,8 +11715,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\System\GameConfigStore\Applications\WorldOfWarships64.exe]
 "Flags"=dword:00000211
 [HKEY_CURRENT_USER\System\GameConfigStore\Applications\AlanWake2.exe]
-"Flags"=dword:00000211
-[HKEY_CURRENT_USER\System\GameConfigStore\Applications\Cyberpunk2077.exe]
 "Flags"=dword:00000211
 [HKEY_CURRENT_USER\System\GameConfigStore\Applications\DyingLightGame_x64_rwdi.exe]
 "Flags"=dword:00000211
