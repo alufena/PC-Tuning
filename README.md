@@ -5,6 +5,10 @@ https://community.acer.com/en/discussion/724763/ultimate-laptop-cooling-optimiza
 https://community.amd.com/t5/discussions/input-lag-and-mouse-movement-tweaks-for-gaming-v3-2020-edition  
 https://community.amd.com/t5/gaming-discussions/amd-input-lag-reduction-competitive-e-sports-optimization-guide  
 https://discord.com/invite/SweaeZqpFg  
+https://discord.gg/7WnAdShTcr  
+https://discord.gg/UVa33WKrYQ  
+https://discord.gg/ys3S39pXYS  
+https://discord.gg/eWhAebhmFb  
 https://docs.google.com/document/d/1c2-lUJq74wuYK1WrA_bIvgb89dUN0sj8-hO3vqmrau4  
 https://docs.google.com/document/d/1ILugrwtHfmisYzI1MdCOhSzBPuLJPi5D7xYJgQ4sxDM  
 https://forums.blurbusters.com/viewforum.php?f=10  
@@ -126,3 +130,5 @@ https://x.com/honestzin
 https://x.com/jerry05259307  
 https://x.com/Realperfguy  
 https://blog.s-schoener.com/2024-11-05-segment-heap  
+https://github.com/Syrusaki/Melody-s-automated-script-from-video  
+https://www.mdgx.com/10.php  
