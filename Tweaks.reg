@@ -238,6 +238,9 @@ Windows Registry Editor Version 5.00
 "SafeDllSearchMode"=dword:00000000
 "SafeProcessSearchMode"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Segment Heap]
+"Enabled"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 "AdjustDpcThreshold"=dword:00000000 ; 00000000/00000001/00000320
 "BoostingPeriodMultiplier"=dword:00000005
@@ -361,7 +364,6 @@ Windows Registry Editor Version 5.00
 "DEVICE_MAX_PENDING_INTERRUPTS"="0"
 "DEVICE_MAX_PENDING_IO"="0"
 "DEVICE_PENDING_INTERRUPTS"="0"
-"DisableDesktopComposition"=-
 "DISABLE_DYNAMIC_FPS"="1"
 "DISABLE_DYNAMIC_TICK"="yes"
 "DisableFullScreenOptimizations"=dword:00000001
@@ -378,7 +380,6 @@ Windows Registry Editor Version 5.00
 "DXGIFlipModel"="1"
 "DXGI_FLIP_SEQUENTIAL"="1"
 "DXGI_MAX_FRAME_LATENCY"="1"
-"DXGI_PRESENT_MODE"=-
 "DX_LOW_LATENCY_MODE"="1"
 "DX_MaxFrameBufferSize"=dword:00000080
 "DX_MaxFramesToRenderAhead"="1"
@@ -10254,10 +10255,6 @@ Windows Registry Editor Version 5.00
 
 [-HKEY_CLASSES_ROOT\UserLibraryFolder\shellex\ContextMenuHandlers\SendTo]
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe]
-"UseLargePages"=dword:00000001
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe]
-"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
 "IoPriority"=dword:00000006
@@ -11340,6 +11337,10 @@ Windows Registry Editor Version 5.00
 "G:\\SteamLibrary\\steamapps\\common\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\DeadIsland2\\DeadIsland.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe]
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe]
+"UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wgc.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
