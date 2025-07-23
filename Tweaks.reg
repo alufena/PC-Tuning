@@ -12577,16 +12577,16 @@ Windows Registry Editor Version 5.00
 "EnumReference"=dword:00000001
 "EnumSeparateMMX"=dword:00000001
 "ForceRgbRasterizer"=dword:00000000
-"SoftwareOnly"=dword:00000001 ; 00000000/00000001
+"SoftwareOnly"=dword:00000000 ; 00000000/00000001
 "UseMMXForRGB"=dword:00000001
 
 [HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Direct3D\Drivers]
 "EnableWARP"=dword:00000001
-"SoftwareOnly"=dword:00000001
+"SoftwareOnly"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Direct3D\Drivers]
 "EnableWARP"=dword:00000001
-"SoftwareOnly"=dword:00000001
+"SoftwareOnly"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Direct3D\Drivers]
 "EnableWARP"=dword:00000001
