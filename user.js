@@ -10,7 +10,7 @@
 /****************************************************************************
  * Betterfox                                                                *
  * "Ad meliora"                                                             *
- * version: 138                                                             *
+ * version: 140                                                             *
  * url: https://github.com/yokoffing/Betterfox                              *
 ****************************************************************************/
 
@@ -54,7 +54,6 @@ user_pref("browser.urlbar.speculativeConnect.enabled", false);
 user_pref("browser.places.speculativeConnect.enabled", false);
 user_pref("network.prefetch-next", false);
 user_pref("network.predictor.enabled", false);
-user_pref("network.predictor.enable-prefetch", false);
 
 /** EXPERIMENTAL ***/
 user_pref("layout.css.grid-template-masonry-value.enabled", true);
@@ -90,7 +89,6 @@ user_pref("privacy.history.custom", true);
 user_pref("browser.urlbar.trimHttps", true);
 user_pref("browser.urlbar.untrimOnUserInteraction.featureGate", true);
 user_pref("browser.search.separatePrivateDefault.ui.enabled", true);
-user_pref("browser.urlbar.update2.engineAliasRefresh", true);
 user_pref("browser.search.suggest.enabled", false);
 user_pref("browser.urlbar.quicksuggest.enabled", false);
 user_pref("browser.urlbar.groupLabels.enabled", false);
@@ -184,7 +182,6 @@ user_pref("full-screen-api.warning.timeout", 0);
 /** URL BAR ***/
 user_pref("browser.urlbar.unitConversion.enabled", true);
 user_pref("browser.urlbar.trending.featureGate", false);
-user_pref("dom.text_fragments.create_text_fragment.enabled", true);
 
 /** NEW TAB PAGE ***/
 user_pref("browser.newtabpage.activity-stream.default.sites", "");
@@ -290,9 +287,9 @@ user_pref("datareporting.sessions.current.clean", false);
 user_pref("browser.ml.chat.enabled", false);
 user_pref("browser.newtabpage.activity-stream.telemetry.structuredIngestion.endpoint", "");
 user_pref("toolkit.telemetry.prompted", 2);
-user_pref("network.trr.mode", 0);
-user_pref("network.trr.custom_uri", "");
-user_pref("network.trr.uri", "");
+//user_pref("network.trr.mode", 0);
+//user_pref("network.trr.custom_uri", "");
+//user_pref("network.trr.uri", "");
 user_pref("layers.acceleration.disabled", true);
 user_pref("media.hardware-video-decoding.enabled", false);
 user_pref("permissions.default.geo", 0);
@@ -300,19 +297,9 @@ user_pref("browser.download.autohideButton", false);
 user_pref("accessibility.browsewithcaret_shortcut.enabled", false);
 user_pref("media.gpu-process-decoder", false);
 user_pref("network.dns.disableIPv6", false);
-user_pref("image.mem.shared.unmap.min_expiration_ms", 120000);
-user_pref("network.http.max-persistent-connections-per-proxy", 48);
-user_pref("network.http.pacing.requests.min-parallelism", 10);
-user_pref("network.http.pacing.requests.burst", 14);
-user_pref("network.dnsCacheEntries", 1000);
-user_pref("network.dnsCacheExpirationGracePeriod", 240);
-user_pref("dom.prefetch_dns_for_anchor_http_document", false);
-user_pref("dom.prefetch_dns_for_anchor_https_document", false);
-user_pref("network.predictor.max-resources-per-entry", 250);
-user_pref("network.predictor.max-uri-length", 1000);
-user_pref("dom.enable_web_task_scheduling", true);
-user_pref("dom.ipc.processCount.webIsolated", 1);
-user_pref("dom.ipc.processPrelaunch.fission.number", 1);
+user_pref("network.http.http3.enable", false);
+user_pref("browser.safebrowsing.downloads.enabled", false);
+user_pref("services.sync.prefs.sync.browser.safebrowsing.downloads.enabled", false);
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
