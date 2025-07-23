@@ -132,3 +132,4 @@ https://x.com/Realperfguy
 https://blog.s-schoener.com/2024-11-05-segment-heap  
 https://github.com/Syrusaki/Melody-s-automated-script-from-video  
 https://www.mdgx.com/10.php  
+https://github.com/ran-sama/firefox-preferences  
