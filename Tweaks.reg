@@ -1339,9 +1339,108 @@ Windows Registry Editor Version 5.00
 "SDRBoostPercentOverride"=dword:00000001
 "ShowDirtyRegions"=dword:00000000
 "SuperWetEnabled"=dword:00000000 ; 00000000/00000001
+"TelemetryFramesReportPeriodMilliseconds"=dword:00000000
+"TelemetryFramesSequenceIdleIntervalMilliseconds"=dword:00000000
 "TelemetryFramesSequenceMaximumPeriodMilliseconds"=dword:00000000 ; 00000000/000001f4
 "UseCopyOnPresent"=dword:00000001
 "UseHWDrawListEntriesOnWARP"=dword:00000000 ; 00000000/00000001
+"UseLegacyDisplayFrameBuffer"=dword:00000001
+"UseMachineCheck"=dword:00000000
+"UseStaticComposition"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\Dwm]
+"AlwaysHibernateThumbnails"=dword:00000000
+"AlwaysOffscreenComposition"=dword:00000000
+"AnimationAttributionEnabled"=dword:00000000
+"AnimationAttributionHashingEnabled"=dword:00000000
+"AnimationsShiftKey"=dword:00000000
+"BackdropBlurCachingThrottleMs"=dword:000003E8
+"Blur"=dword:00000000
+"BufferAgingTimeout"=dword:00000000
+"Composition"=dword:00000000
+"CompositionPolicy"=dword:00000001
+"CompositorClockPolicy"=dword:00000001
+"CpuClipAASinkEnableIntermediates"=dword:00000000
+"CpuClipAASinkEnableOcclusion"=dword:00000001
+"CpuClipAASinkEnableRender"=dword:00000000
+"CpuClipFlatteningTolerance"=dword:00000000
+"CustomRefreshRateMode"=dword:00000001
+"DDisplayTestMode"=dword:00000000
+"DebugFailFast"=dword:00000000
+"DisableAdvancedDirectFlip"=dword:00000000
+"DisableDComp"=dword:00000001
+"DisableDeviceBitmaps"=dword:00000001
+"DisableDeviceBitmapsForMultiAdapter"=dword:00000001
+"DisableDrawListCaching"=dword:00000001
+"DisableDynamicShutdownUI"=dword:00000001
+"DisableHardwareComposition"=dword:00000001
+"DisableHologramCompositor"=dword:00000001
+"DisableIndependentFlip"=dword:00000001
+"DisableLockingMemory"=dword:00000000
+"DisableProjectedShadows"=dword:00000001
+"DisableProjectedShadowsRendering"=dword:00000001
+"DisallowColorizationColorChanges"=dword:00000001
+"DisallowComposition"=dword:00000001
+"DisallowNonDrawListRendering"=dword:00000001
+"DiscardSurfaceOnMinimize"=dword:00000001
+"EnableAcrylicBlur"=dword:00000000
+"EnableAeroPeek"=dword:00000000
+"EnableBackdropBrush"=dword:00000000
+"EnableCommonSuperSets"=dword:00000001
+"EnableCpuClipping"=dword:00000001
+"EnableDDisplayScanoutCaching"=dword:00000001
+"EnableDesktopOverlays"=dword:00000000
+"EnableDrawToBackbuffer"=dword:00000000
+"EnableEffectCaching"=dword:00000000
+"EnableFrontBufferRenderChecks"=dword:00000000
+"EnableImageProcessing"=dword:00000000
+"EnableInputPrediction"=dword:00000000
+"EnableMegaRects"=dword:00000000
+"EnableMPCPerfCounter"=dword:00000000
+"EnablePrimitiveReordering"=dword:00000000
+"EnableRenderPathTestMode"=dword:00000000
+"EnableResizeOptimization"=dword:00000001
+"EnableShadow"=dword:00000000
+"EnableWindowColorization"=dword:00000000
+"FlattenVirtualSurfaceEffectInput"=dword:00000001
+"ForceDirectDrawSync"=dword:00000000
+"ForceDisableModeChangeAnimation"=dword:00000001
+"ForceEffectMode"=dword:00000000
+"ForceGdiComposition"=dword:00000001
+"ForceModeEnumeration"=dword:00000001
+"ForceSoftwareD3D"=dword:00000001
+"FrameLatency"=dword:00000001
+"HighColor"=dword:00000000
+"ImageProcessing8bit"=dword:00000000
+"InkGPUAccelOverrideVendorWhitelist"=dword:00000001
+"InteractionOutputPredictionDisabled"=dword:00000001
+"LogExpressionPerfStats"=dword:00000000
+"MaxD3DFeatureLevel"=dword:00000000
+"MaxQueuedPresentBuffers"=dword:00000001
+"MegaRectSearchCount"=dword:00000001
+"MegaRectSize"=dword:0007a120
+"MouseWheelScrollingMode"=dword:00000001
+"MPCInputRouterWaitForDebugger"=dword:00000000
+"OneCoreNoBootDWM"=dword:00000001
+"OneCoreNoDWMRawGameController"=dword:00000000
+"OverlayDisqualifyCount"=dword:00000000
+"OverlayMinFPS"=dword:00000000
+"OverlayQualifyCount"=dword:00000000
+"ParallelModePolicy"=dword:00000000
+"RenderThreadWatchdogTimeoutMilliseconds"=dword:00000000
+"ResampleInLinearSpace"=dword:00000000
+"ResampleModeOverride"=dword:00000000
+"ResizeTimeoutGdi"=dword:00000000
+"ResizeTimeoutModern"=dword:00000000
+"RetryFrameOnDrop"=dword:00000000
+"SDRBoostPercentOverride"=dword:00000001
+"ShowDirtyRegions"=dword:00000000
+"SuperWetEnabled"=dword:00000000
+"TelemetryFramesReportPeriodMilliseconds"=dword:00000000
+"TelemetryFramesSequenceIdleIntervalMilliseconds"=dword:00000000
+"TelemetryFramesSequenceMaximumPeriodMilliseconds"=dword:00000000
+"UseCopyOnPresent"=dword:00000001
+"UseHWDrawListEntriesOnWARP"=dword:00000000
 "UseLegacyDisplayFrameBuffer"=dword:00000001
 "UseMachineCheck"=dword:00000000
 "UseStaticComposition"=dword:00000001
@@ -1536,16 +1635,19 @@ Windows Registry Editor Version 5.00
 "RmFbsrPagedDMA"=dword:00000001 ; =-, 00000000/00000001
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
 "TdrDdiDelay"=dword:0000003c ; 00000005/0000000a/0000003c
-"TdrDebugMode"=dword:00000000
+"TdrDebugMode"=dword:00000000 ; 00000000, 00000003
 "TdrDelay"=dword:0000003c ; 00000000/0000000a/0000003c
 "TdrDodPresentDelay"=dword:00000002
 "TdrDodVSyncDelay"=dword:00000002
 "TdrLevel"=dword:00000003 ; 00000000/00000003
-"TdrLimitCount"=dword:00000005
+"TdrLimitCount"=dword:00000005 ; 00000005/0000003c
 "TdrLimitTime"=dword:0000003c
 "UnsupportedMonitorModesAllowed"=dword:00000001
 "UseGpuTimer"=dword:00000001
 "UseXPModel"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\BasicDisplay]
+"BasicDisplayUserNotified"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Power]
 "ComputePreemption"=dword:00000000
@@ -2662,6 +2764,12 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
 "StartupDelayInMSec"=dword:00000000
 "WaitforIdleState"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
+"StartupDelayInMSec"=dword:00000000
+"WaitForIdleState"=dword:00000000
+[HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
+"StartupDelayInMSec"=dword:00000000
+"WaitForIdleState"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl]
 "DisplayParameters"=dword:00000001
@@ -3317,6 +3425,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Main]
 "DEPOff"=dword:00000001 ; 00000000, 00000001 security option for anticheats
+"DoNotTrack"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\RemovalTools\MpGears]
 "HeartbeatTrackingIndex"=dword:00000000
@@ -4685,12 +4794,10 @@ Windows Registry Editor Version 5.00
 ; "Start"=dword:00000004
 ; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Appinfo]
 ; "Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GraphicsPerfSvc]
-"Start"=dword:00000002
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\bam]
-"Start"=dword:00000002
+"Start"=dword:00000004 ; 00000001, 00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\dam]
-"Start"=dword:00000002
+"Start"=dword:00000004 ; 00000001, 00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GpuEnergyDrv]
 "Start"=dword:00000004 ; 00000001, 00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GpuEnergyDr]
@@ -4784,6 +4891,8 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess]
 "Start"=dword:00000004
+"LaunchProtected"=dword:00000000
+"UserServiceFlags"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\smphost]
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SmsRouter]
@@ -4905,17 +5014,19 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\whesvc]
 "Start"=dword:00000004
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MMCSS]
-"Start"=dword:00000004 ; 00000002
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TPM]
-"Start"=dword:00000004 ; 00000003
+"Start"=dword:00000004 ; 00000003, 00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TimeBroker]
-"Start"=dword:00000004 ; 00000003
+"Start"=dword:00000004 ; 00000003, 00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MMCSS]
+"Start"=dword:00000004 ; 00000002, 00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GraphicsPerfSvc]
+"Start"=dword:00000004 ; 00000003, 00000002 HAGS on/00000004 HAGS off
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\AUEP]
-"RSX_AUEPStatus"=dword:00000004 ; 00000002/00000004
+"RSX_AUEPStatus"=dword:00000004 ; 00000002 mmcss on/00000004 mmcss off
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters]
 "AllowInteractiveConnect"=dword:00000000
@@ -5072,12 +5183,15 @@ Windows Registry Editor Version 5.00
 "VirtualDesktopAltTabFilter"=dword:00000000
 "VirtualDesktopTaskbarFilter"=dword:00000000
 "WebView"=dword:00000000
+"UseTabletModeNotificationIcons"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "CopyBufferSize"=dword:00100000
 "FolderContentsInfoTip"=dword:00000001
 "UseOLEDTaskbarTransparency"=dword:00000000
 "ListviewShadow"=dword:00000000
+"TaskbarAnimations"=dword:00000000
+"UseTabletModeNotificationIcons"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarDeveloperSettings]
 "TaskbarEndTask"=dword:00000001
@@ -6104,6 +6218,26 @@ Windows Registry Editor Version 5.00
 "DisableWebBrowserSettingSync"=dword:00000002
 "DisableWindowsSettingSync"=dword:00000002
 "EnableBackupForWin8Apps"=dword:00000000
+"DisablePersonalizationSettingSyncUserOverride"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync]
+"EnableQuotaFailureDialog"=dword:00000000
+"ReducePrivileges"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Accessibility]
+"EnableOnUpgrade"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\AppSync]
+"EnableOnUpgrade"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Credentials]
+"EnableOnUpgrade"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Language]
+"EnableOnUpgrade"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\PackageState]
+"EnableOnUpgrade"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Personalization]
+"EnableOnUpgrade"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Windows]
+"EnableOnUpgrade"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SettingSync]
 "SyncPolicy"=dword:00000005
@@ -6155,6 +6289,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Policies]
 "FsEnableDevDrive"=dword:00000000
 "FltmgrDevDriveAllowAntivirusFilter"=dword:00000000
+"LongPathsEnabled"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel]
 "{2cc5ca98-6485-489a-920e-b3e88a6ccce3}"=dword:00000001
@@ -6290,6 +6425,10 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MiracastReceiver]
 "NetworkQualificationEnabled"=dword:00000000
+"ConsentToast"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Connect]
+"AllowProjectionToPC"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PlayToReceiver]
 "AutoEnabled"=dword:00000000
@@ -6341,6 +6480,13 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Internet Explorer\Main]
 "DisableFirstRunCustomize"=dword:00000001
+"DoNotTrack"=dword:00000001
+
+[HKEY_USERS\.DEFAULT\Software\Policies\Microsoft\Internet Explorer\Main]
+"DoNotTrack"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsBackup]
+"DisableMonitoring"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\FlipAhead]
 "Enabled"=dword:00000000
@@ -6417,9 +6563,13 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig]
 "BypassCPUCheck"=dword:00000001
 "BypassDiskCheck"=dword:00000001
+"BypassRAM"=dword:00000001
 "BypassRAMCheck"=dword:00000001
+"BypassSecureBoot"=dword:00000001
+"BypassSecureBootCheck"=dword:00000001
 "BypassSecureBootCheck"=dword:00000001
 "BypassStorageCheck"=dword:00000001
+"BypassTPM"=dword:00000001
 "BypassTPMCheck"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\UEV\Agent]
@@ -6485,10 +6635,12 @@ Windows Registry Editor Version 5.00
 "Enabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Remote Assistance]
-"fAllowToGetHelp"=dword:00000000
+"CreateEncryptedOnlyTickets"=dword:00000001
 "fAllowFullControl"=dword:00000000
+"fAllowToGetHelp"=dword:00000000
 "fEnableChatControl"=dword:00000000
-"MaxTicketExpiry"=dword:00000001
+"MaxTicketExpiry"=dword:00000000
+"MaxTicketExpiryUnits"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Network Connections]
 "NC_ShowSharedAccessUI"=dword:00000000
@@ -6857,6 +7009,7 @@ Windows Registry Editor Version 5.00
 "SettingsPageVisibility"="hide:aicomponents;hide:home"
 "StartMenuFavorites"=dword:00000000
 "Start_ShowHelp"=dword:00000000
+"NoAutoTrayNotify"=-
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 "ClearRecentDocsOnExit"=dword:00000001
@@ -6892,11 +7045,22 @@ Windows Registry Editor Version 5.00
 "NoSystraySystemPromotion"=dword:00000001
 "NoThumbnailCache"=dword:00000001
 "TurnOffSPIAnimations"=dword:00000001
+"NoAutoTrayNotify"=-
 
-[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\QuietHours]
-"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\QuietHours]
 "AllowCalls"=dword:00000000
 "DisallowNotificationMirroring"=dword:00000001
+"Enable"=dword:00000000
+"Enabled"=dword:00000000
+"EntryTime"=dword:00000000
+"ExitTime"=dword:00000000
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\QuietHours]
+"AllowCalls"=dword:00000000
+"DisallowNotificationMirroring"=dword:00000001
+"Enable"=dword:00000000
+"Enabled"=dword:00000000
+"EntryTime"=dword:00000000
+"ExitTime"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize]
 "ColorPrevalence"=dword:00000001
@@ -7350,9 +7514,11 @@ Windows Registry Editor Version 5.00
 "AllowDesktopAnalyticsProcessing"=dword:00000000
 "AllowDeviceNameInTelemetry"=dword:00000000
 "AllowTelemetry"=dword:00000000
+"Allow Telemetry"=dword:00000000
 "AllowUpdateComplianceProcessing"=dword:00000000
 "AllowWUfBCloudProcessing"=dword:00000000
 "ConfigureTelemetryForMicrosoft365Analytics"=dword:00000000
+"DisableDeviceDelete"=dword:00000001
 "EnableExtendedBooksTelemetry"=dword:00000000
 "LimitDiagnosticLogCollection"=dword:00000001
 "LimitDumpCollection"=dword:00000000
@@ -7674,9 +7840,10 @@ Windows Registry Editor Version 5.00
 "CheckExeSignatures"="no"
 "RunInvalidSignatures"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Privacy]
+"TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Privacy]
 "TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
-
 [HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\Privacy]
 "TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
 
@@ -7867,6 +8034,10 @@ Windows Registry Editor Version 5.00
 "AutoDownload"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\FileHistory]
+"Disabled"=dword:00000001
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\FileHistory]
+"Disabled"=dword:00000001
+[HKEY_USERS\.DEFAULT\Software\Policies\Microsoft\Windows\FileHistory]
 "Disabled"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel]
@@ -8069,6 +8240,16 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Network]
 "NewNetworkWindowOff"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Narrator\NoRoam]
+"CapsLockAlert"=dword:00000002
+"OnlineServicesEnabled"=dword:00000000
+"WinEnterLaunchEnabled"=dword:00000000
+
+[HKEY_USERS\.DEFAULT\Software\Microsoft\Narrator\NoRoam]
+"CapsLockAlert"=dword:00000002
+"OnlineServicesEnabled"=dword:00000000
+"WinEnterLaunchEnabled"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Microsoft\Narrator\NoRoam]
 "CapsLockAlert"=dword:00000002
 "DetailedFeedback"=dword:00000000
@@ -8104,6 +8285,9 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Narrator\NarratorHome]
 "AutoStart"=dword:00000000
 "MinimizeType"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Narrator\QuickStart]
+"SkipQuickStart"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WCN\UI]
 "DisableWcnUi"=dword:00000001
@@ -8318,6 +8502,7 @@ Windows Registry Editor Version 5.00
 "ShowRecent"=dword:00000000
 "SmartScreenEnabled"="Off"
 "ThumbnailQuality"=dword:00000024
+"EnableAutoTray"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Edge\SmartScreenEnabled]
 @=dword:00000000
@@ -10075,6 +10260,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
 
+[-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Security]
+
 [-HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\AeDebug]
 
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AeDebug]
@@ -10212,6 +10399,10 @@ Windows Registry Editor Version 5.00
 [-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager\Subscriptions]
 
 [-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager\SuggestedApps]
+
+[-HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager\SuggestedApps]
+
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager\SuggestedApps]
 
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Extensions\{c95fe080-8f5d-11d2-a20b-00aa003c157a}]
 
@@ -12308,15 +12499,18 @@ Windows Registry Editor Version 5.00
 "DisableMMX"=dword:00000000
 "EmulatePointSprites"=dword:00000000
 "EmulationOnly"=dword:00000000
+"EnableWARP"=dword:00000001
 "ForceNoSysLock"=dword:00000000
 "ForceRefreshRate"=dword:0000003c
 "UseNonLocalVidMem"=dword:00000001
 
 [HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\DirectDraw]
 "EmulationOnly"=dword:00000000
+"EnableWARP"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\DirectDraw]
 "EmulationOnly"=dword:00000000
+"EnableWARP"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\DirectDraw]
 "DisableAGPSupport"=dword:00000000
@@ -12324,6 +12518,7 @@ Windows Registry Editor Version 5.00
 "DisableMMX"=dword:00000000
 "EmulatePointSprites"=dword:00000000
 "EmulationOnly"=dword:00000000
+"EnableWARP"=dword:00000001
 "ForceNoSysLock"=dword:00000000
 "ForceRefreshRate"=dword:0000003c
 "UseNonLocalVidMem"=dword:00000001
@@ -12337,6 +12532,7 @@ Windows Registry Editor Version 5.00
 "EnableDebugging"=dword:00000000
 "EnableFramePacing"=dword:00000001
 "EnableMultimonDebugging"=dword:00000000
+"EnableWARP"=dword:00000001
 "FewVertices"=dword:00000001
 "FlipMode"=dword:00000001
 "FlipNoVsync"=dword:00000001
@@ -12352,17 +12548,20 @@ Windows Registry Editor Version 5.00
 
 [HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Direct3D]
 "DisableVidMemVBs"=dword:00000000
-"MMX Fast Path"=dword:00000001
+"EnableWARP"=dword:00000001
 "FlipNoVsync"=dword:00000001
+"MMX Fast Path"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Direct3D]
 "DisableVidMemVBs"=dword:00000000
-"MMX Fast Path"=dword:00000001
+"EnableWARP"=dword:00000001
 "FlipNoVsync"=dword:00000001
+"MMX Fast Path"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Direct3D]
 "DisableMMX"=dword:00000000
 "DisableVidMemVBs"=dword:00000000
+"EnableWARP"=dword:00000001
 "FewVertices"=dword:00000001
 "FlipNoVsync"=dword:00000001
 "MaxPreRenderedFrames"=dword:00000001
@@ -12372,21 +12571,25 @@ Windows Registry Editor Version 5.00
 "UseNonLocalVidMem"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D\Drivers]
+"EnableWARP"=dword:00000001
 "EnumNullDevice"=dword:00000001
 "EnumRamp"=dword:00000001
 "EnumReference"=dword:00000001
 "EnumSeparateMMX"=dword:00000001
 "ForceRgbRasterizer"=dword:00000000
-"SoftwareOnly"=dword:00000000
+"SoftwareOnly"=dword:00000001 ; 00000000/00000001
 "UseMMXForRGB"=dword:00000001
 
 [HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Direct3D\Drivers]
-"SoftwareOnly"=dword:00000000
+"EnableWARP"=dword:00000001
+"SoftwareOnly"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Direct3D\Drivers]
-"SoftwareOnly"=dword:00000000
+"EnableWARP"=dword:00000001
+"SoftwareOnly"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Direct3D\Drivers]
+"EnableWARP"=dword:00000001
 "EnumNullDevice"=dword:00000001
 "EnumRamp"=dword:00000001
 "EnumReference"=dword:00000001
@@ -12410,6 +12613,40 @@ Windows Registry Editor Version 5.00
 "Scaling"=dword:00000002
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\GraphicsDrivers\Configuration\MSNILNOEDID_1414_008D_FFFFFFFF_FFFFFFFF_0^030B4FCE00727AC1593E5B6FD18648D6\00\00]
 "Scaling"=dword:00000002
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\GSM60B216843009_01_07DC_0E^3D9A69AD1C84EAB2AAF1FC3855733BB4\00]
+"PrimSurfSize.cx"=dword:00000780
+"PrimSurfSize.cy"=dword:00000438
+"Stride"=dword:00001e00 ; 00001e00/00001db8
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\MSBDD_GSM60B216843009_01_07DC_0E_10DE_2182_00000009_00000000_0^C3074D81ED6937E7FD3B7E5AF6A9CC56\00]
+"PrimSurfSize.cx"=dword:00000780
+"PrimSurfSize.cy"=dword:00000438
+"Stride"=dword:00001e00
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\MSNILGSM60B216843009_01_07DC_0E_1414_008D_FFFFFFFF_FFFFFFFF_0^EE8B061A5740FAAEC96DE444C957CF62\00]
+"PrimSurfSize.cx"=dword:00000780
+"PrimSurfSize.cy"=dword:00000438
+"Stride"=dword:00001e00
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\MSNILNOEDID_1414_008D_FFFFFFFF_FFFFFFFF_0^030B4FCE00727AC1593E5B6FD18648D6\00]
+"PrimSurfSize.cx"=dword:00000780
+"PrimSurfSize.cy"=dword:00000438
+"Stride"=dword:00001e00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\GSM60B216843009_01_07DC_0E^3D9A69AD1C84EAB2AAF1FC3855733BB4\00\00]
+"PrimSurfSize.cx"=dword:00000780
+"PrimSurfSize.cy"=dword:00000438
+"Stride"=dword:00001e00 ; 00001e00/00001db8
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\MSBDD_GSM60B216843009_01_07DC_0E_10DE_2182_00000009_00000000_0^C3074D81ED6937E7FD3B7E5AF6A9CC56\00\00]
+"PrimSurfSize.cx"=dword:00000780
+"PrimSurfSize.cy"=dword:00000438
+"Stride"=dword:00001e00
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\MSNILGSM60B216843009_01_07DC_0E_1414_008D_FFFFFFFF_FFFFFFFF_0^EE8B061A5740FAAEC96DE444C957CF62\00\00]
+"PrimSurfSize.cx"=dword:00000780
+"PrimSurfSize.cy"=dword:00000438
+"Stride"=dword:00001e00
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\MSNILNOEDID_1414_008D_FFFFFFFF_FFFFFFFF_0^030B4FCE00727AC1593E5B6FD18648D6\00\00]
+"PrimSurfSize.cx"=dword:00000780
+"PrimSurfSize.cy"=dword:00000438
+"Stride"=dword:00001e00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\DisplayDatabase\GSM60B216843009_01_07DC_0E]
 "DitherRegistryKey"=hex:db,01,00,00,10,00,00,00,01,01,00,04,f2,00,00,00
