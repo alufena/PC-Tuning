@@ -664,7 +664,7 @@ Windows Registry Editor Version 5.00
 "EnableTcpAcks"=dword:00000000
 "EnableWsd"=dword:00000000
 "GlobalMaxTcpWindowSize"=dword:0000ffff  ; 000016d0/0000ffff/0030d400
-"IRPStackSize"=dword:00000020
+"IRPStackSize"=dword:00000020 ; 00000014/00000020
 "MaxConnectionsPer1_0Server"=dword:00000010
 "MaxConnectionsPerServer"=dword:00000010 ; 00000000/00000010
 "MaxFreeTcbs"=dword:00010000 ; 00010000/0000ffff
@@ -689,6 +689,7 @@ Windows Registry Editor Version 5.00
 "TcpWindowSize"=dword:0000ffff ; 000016d0/0000ffff/0030d400
 "ThreadPriority"=dword:0000000f
 "EnableTCPA"=dword:00000000
+"MultihopSets"=dword:0000000f
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces]
 "DefaultTTL"=dword:00000040
@@ -724,6 +725,7 @@ Windows Registry Editor Version 5.00
 "PriorityQuantumMatrix"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
+"autodisconnect"=dword:ffffffff
 "AutoShareServer"=dword:00000000
 "AutoShareWks"=dword:00000000
 "DisableCompression"=dword:00000001
@@ -736,6 +738,8 @@ Windows Registry Editor Version 5.00
 "SMB1"=dword:00000000
 "SMB2"=dword:00000000
 "SizeReqBuf"=dword:00001104
+"EnableOplocks"=dword:00000000
+"RequireSecuritySignature"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Configuration Manager]
 "EnablePeriodicBackup"=dword:00000000
@@ -7597,7 +7601,7 @@ Windows Registry Editor Version 5.00
 "EnableExtendedBooksTelemetry"=dword:00000000
 "LimitDiagnosticLogCollection"=dword:00000001
 "LimitDumpCollection"=dword:00000000
-"LimitEnhancedDiagnosticDataWindowsAnalytics"=dword:00000001 ; 00000000/00000001
+"LimitEnhancedDiagnosticDataWindowsAnalytics"=dword:00000000 ; 00000000/00000001
 "MaxTelemetryAllowed"=dword:00000000
 "MicrosoftEdgeDataOptIn"=dword:00000000
 
