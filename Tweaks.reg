@@ -339,7 +339,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Kernel DMA Protection]
 "DeviceEnumerationPolicy"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Kernel DMA Protection]
 "DeviceEnumerationPolicy"=dword:00000000
 
@@ -470,11 +469,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm]
 "OverlayTestMode"=dword:00000005 ; MPO =- on, 00000005 off
-
-; [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
-; "KMD_EnableReBarForLegacyASIC"=-
-; "KMD_RebarControlMode"=-
-; "KMD_RebarControlSupport"=-
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "ConfigFileAllocSize"=dword:00000400 ; 00000400/00000600
@@ -694,6 +688,7 @@ Windows Registry Editor Version 5.00
 "TcpTimedWaitDelay"=dword:0000001e ; 00000020/0000001e
 "TcpWindowSize"=dword:0000ffff ; 000016d0/0000ffff/0030d400
 "ThreadPriority"=dword:0000000f
+"EnableTCPA"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces]
 "DefaultTTL"=dword:00000040
@@ -1257,7 +1252,7 @@ Windows Registry Editor Version 5.00
 "AnimationAttributionEnabled"=dword:00000000 ; 00000001, 00000000
 "AnimationAttributionHashingEnabled"=dword:00000000 ; 00000001, 00000000
 "AnimationsShiftKey"=dword:00000000
-"BackdropBlurCachingThrottleMs"=dword:000003E8
+"BackdropBlurCachingThrottleMs"=dword:00000000 ; 00000000/000003e8
 "Blur"=dword:00000000
 "BufferAgingTimeout"=dword:00000000
 "Composition"=dword:00000000
@@ -1320,8 +1315,8 @@ Windows Registry Editor Version 5.00
 "LogExpressionPerfStats"=dword:00000000
 "MaxD3DFeatureLevel"=dword:00000000 ; 00000000/00000001
 "MaxQueuedPresentBuffers"=dword:00000001 ; 00000000/00000001/00000002/00000003
-"MegaRectSearchCount"=dword:00000001
-"MegaRectSize"=dword:0007a120
+"MegaRectSearchCount"=dword:00000000 ; 00000000/00000001
+"MegaRectSize"=dword:00000000 ; 00000000/0007a120
 "MouseWheelScrollingMode"=dword:00000001
 "MPCInputRouterWaitForDebugger"=dword:00000000
 "OneCoreNoBootDWM"=dword:00000001 ; 00000000, 00000001
@@ -1347,6 +1342,17 @@ Windows Registry Editor Version 5.00
 "UseLegacyDisplayFrameBuffer"=dword:00000001
 "UseMachineCheck"=dword:00000000
 "UseStaticComposition"=dword:00000001
+"SuperWetExtensionTimeMicroseconds"=dword:00000000
+"RecurringWatchdogTelemetryTimeoutMilliseconds"=dword:00000000
+"InitialWatchdogTelemetryTimeoutMilliseconds"=dword:00000000
+"MarshalAllDebugInfo"=dword:00000000
+"OptimizeForDirtyExpressions"=dword:00000001
+"OverlayQualifyInterval"=dword:00000000
+"OverlayDisqualifyInterval"=dword:00000000
+"ParallelModeLeaveAfterThresholdMS"=dword:00000000
+"MousewheelAnimationDurationMs"=dword:00000000
+"ChildWindowDpiIsolation"=dword:00000000
+"UseDpiScaling"=dword:00000000 ; 00000000/00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\Dwm]
 "AlwaysHibernateThumbnails"=dword:00000000
@@ -1354,7 +1360,7 @@ Windows Registry Editor Version 5.00
 "AnimationAttributionEnabled"=dword:00000000
 "AnimationAttributionHashingEnabled"=dword:00000000
 "AnimationsShiftKey"=dword:00000000
-"BackdropBlurCachingThrottleMs"=dword:000003E8
+"BackdropBlurCachingThrottleMs"=dword:00000000
 "Blur"=dword:00000000
 "BufferAgingTimeout"=dword:00000000
 "Composition"=dword:00000000
@@ -1418,7 +1424,7 @@ Windows Registry Editor Version 5.00
 "MaxD3DFeatureLevel"=dword:00000000
 "MaxQueuedPresentBuffers"=dword:00000001
 "MegaRectSearchCount"=dword:00000001
-"MegaRectSize"=dword:0007a120
+"MegaRectSize"=dword:00000000
 "MouseWheelScrollingMode"=dword:00000001
 "MPCInputRouterWaitForDebugger"=dword:00000000
 "OneCoreNoBootDWM"=dword:00000001
@@ -1444,6 +1450,17 @@ Windows Registry Editor Version 5.00
 "UseLegacyDisplayFrameBuffer"=dword:00000001
 "UseMachineCheck"=dword:00000000
 "UseStaticComposition"=dword:00000001
+"SuperWetExtensionTimeMicroseconds"=dword:00000000
+"RecurringWatchdogTelemetryTimeoutMilliseconds"=dword:00000000
+"InitialWatchdogTelemetryTimeoutMilliseconds"=dword:00000000
+"MarshalAllDebugInfo"=dword:00000000
+"OptimizeForDirtyExpressions"=dword:00000001
+"OverlayQualifyInterval"=dword:00000000
+"OverlayDisqualifyInterval"=dword:00000000
+"ParallelModeLeaveAfterThresholdMS"=dword:00000000
+"MousewheelAnimationDurationMs"=dword:00000000
+"ChildWindowDpiIsolation"=dword:00000000
+"UseDpiScaling"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
 "AlwaysHibernateThumbnails"=dword:00000000
@@ -1462,7 +1479,7 @@ Windows Registry Editor Version 5.00
 "EnableAeroPeek"=dword:00000000
 "EnableShadow"=dword:00000000
 "OneCoreNoBootDWM"=dword:00000001
-"UseDpiScaling"=dword:00000000 ; 00000000/00000001
+"UseDpiScaling"=dword:00000000
 "UseWindowFrameStagingBuffer"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DWM]
@@ -1728,7 +1745,7 @@ Windows Registry Editor Version 5.00
 "DisableBugcheckCallback"=dword:00000001
 "DisableCpPowerGating"=dword:00000001
 "DisableCudaContextPreemption"=dword:00000001
-"DisableDMACopy"=dword:00000001
+"DisableDMACopy"=dword:00000001 ; 00000000/00000001
 "DisableDrmdmaPowerGating"=dword:00000001
 "DisableDynamicPstate"=dword:00000000
 "DisableGDIAcceleration"=dword:00000000
@@ -1978,8 +1995,11 @@ Windows Registry Editor Version 5.00
 "KMD_EnableGDIAcceleration"=dword:00000001
 "KMD_EnableGfxMidCmdPreemption"=dword:00000000
 "KMD_EnablePreemptionLogging"=dword:00000000
+; "KMD_EnableReBarForLegacyASIC"=dword:00000001 ; 00000000/00000001
 "KMD_EnableSDMAPreemption"=dword:00000000
 "KMD_PreemptionLevelLimit"=dword:00000000
+; "KMD_RebarControlMode"=dword:00000001 ; 00000000/00000001
+; "KMD_RebarControlSupport"=dword:00000001 ; 00000000/00000001
 "LOWLATENCY"=dword:00000001
 "MonitorLatencyTolerance"=dword:00000001
 "MonitorRefreshLatencyTolerance"=dword:00000001
@@ -11971,7 +11991,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite]
 "Application Name"="FortniteClient-Win64-Shipping.exe"
-"DSCP Value"=dword:0000002e
+"DSCP Value"=dword:0000002e ; 46/0000002e
 "Local IP"="*"
 "Local IP Prefix Length"="*"
 "Local Port"="*"
@@ -11979,7 +11999,7 @@ Windows Registry Editor Version 5.00
 "Remote IP"="*"
 "Remote IP Prefix Length"="*"
 "Remote Port"="*"
-"Throttle Rate"=dword:ffffffff
+"Throttle Rate"=dword:ffffffff ; -1/ffffffff
 "Version"="1.0"
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\cs2]
 "Application Name"="cs2.exe"
@@ -12494,29 +12514,41 @@ Windows Registry Editor Version 5.00
 "TcpNoDelay"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectDraw]
-"DisableAGPSupport"=dword:00000000
+"DisableAGPSupport"=dword:00000001 ; 00000000/00000001
 "DisableDDSCAPSInDDSD"=dword:00000000
+"DisableInactivate"=dword:00000001
 "DisableMMX"=dword:00000000
+"DisableNoSysLock"=dword:00000001
 "EmulatePointSprites"=dword:00000000
+"EmulateStateBlocks"=dword:00000000
 "EmulationOnly"=dword:00000000
 "EnableWARP"=dword:00000001
 "ForceNoSysLock"=dword:00000000
 "ForceRefreshRate"=dword:0000003c
 "UseNonLocalVidMem"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D\ReferenceDevice]
+"AllowAsync"=dword:00000001
+
 [HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\DirectDraw]
 "EmulationOnly"=dword:00000000
 "EnableWARP"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\DirectDraw]
+"DisableInactivate"=dword:00000001
+"DisableNoSysLock"=dword:00000001
+"EmulateStateBlocks"=dword:00000000
 "EmulationOnly"=dword:00000000
 "EnableWARP"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\DirectDraw]
-"DisableAGPSupport"=dword:00000000
+"DisableAGPSupport"=dword:00000001
 "DisableDDSCAPSInDDSD"=dword:00000000
+"DisableInactivate"=dword:00000001
 "DisableMMX"=dword:00000000
+"DisableNoSysLock"=dword:00000001
 "EmulatePointSprites"=dword:00000000
+"EmulateStateBlocks"=dword:00000000
 "EmulationOnly"=dword:00000000
 "EnableWARP"=dword:00000001
 "ForceNoSysLock"=dword:00000000
@@ -12586,6 +12618,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Direct3D\Drivers]
 "EnableWARP"=dword:00000001
+"ForceRgbRasterizer"=dword:00000000
 "SoftwareOnly"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Direct3D\Drivers]
