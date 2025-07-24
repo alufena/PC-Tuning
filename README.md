@@ -1,14 +1,15 @@
 # Credits, source, good links  
 https://bbs.c3.wuyou.net/forum.php?mod=viewthread&tid=437913  
+https://blog.s-schoener.com/2024-11-05-segment-heap  
 https://community.acer.com/en/discussion/612495/windows-10-optimization-guide-for-gaming  
 https://community.acer.com/en/discussion/724763/ultimate-laptop-cooling-optimization-guide  
 https://community.amd.com/t5/discussions/input-lag-and-mouse-movement-tweaks-for-gaming-v3-2020-edition  
 https://community.amd.com/t5/gaming-discussions/amd-input-lag-reduction-competitive-e-sports-optimization-guide  
 https://discord.com/invite/SweaeZqpFg  
 https://discord.gg/7WnAdShTcr  
+https://discord.gg/eWhAebhmFb  
 https://discord.gg/UVa33WKrYQ  
 https://discord.gg/ys3S39pXYS  
-https://discord.gg/eWhAebhmFb  
 https://docs.google.com/document/d/1c2-lUJq74wuYK1WrA_bIvgb89dUN0sj8-hO3vqmrau4  
 https://docs.google.com/document/d/1ILugrwtHfmisYzI1MdCOhSzBPuLJPi5D7xYJgQ4sxDM  
 https://forums.blurbusters.com/viewforum.php?f=10  
@@ -49,6 +50,7 @@ https://github.com/QuakedK/Oneclick
 https://github.com/QuakedK/Scripting-Station  
 https://github.com/rahilpathan/Tweaks-for-Gaming.bat  
 https://github.com/rahilpathan/Win10Boost  
+https://github.com/ran-sama/firefox-preferences  
 https://github.com/Raphire/Win11Debloat  
 https://github.com/ShadowWhisperer/Remove-MS-Edge  
 https://github.com/Sheikh98-DEV/Windows-Optimizer  
@@ -59,6 +61,7 @@ https://github.com/SLStyler/Dithering-for-Windows-Simple-BAT-
 https://github.com/Sophia-Community/SophiApp  
 https://github.com/spddl/GoInterruptPolicy  
 https://github.com/spddl/LowAudioLatency  
+https://github.com/Syrusaki/Melody-s-automated-script-from-video  
 https://github.com/TairikuOokami/Windows  
 https://github.com/Teramanbr/TerabyteTweaker  
 https://github.com/TK50P/NoMoreDWM  
@@ -89,6 +92,7 @@ https://www.bluecataudio.com/Blog/tip-of-the-day/solving-audio-dropouts-dpc-late
 https://www.elevenforum.com/t/restore-default-services-in-windows-11.3109  
 https://www.elevenforum.com/tutorials  
 https://www.elevenforum.com/t/windows-11-tweaks-leader-board.1842  
+https://www.mdgx.com/10.php  
 https://www.ntlite.com/community/index.php?forums/questions-and-reports.4  
 https://www.oo-software.com/en/shutup10  
 https://www.overclock.net/threads/electrical-issue-causing-input-de-synchronization-or-input-loss.1744698  
@@ -129,7 +133,3 @@ https://www.youtube.com/watch?v=sbXzM60ad8I
 https://x.com/honestzin  
 https://x.com/jerry05259307  
 https://x.com/Realperfguy  
-https://blog.s-schoener.com/2024-11-05-segment-heap  
-https://github.com/Syrusaki/Melody-s-automated-script-from-video  
-https://www.mdgx.com/10.php  
-https://github.com/ran-sama/firefox-preferences  
