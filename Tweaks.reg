@@ -1073,9 +1073,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EnhancedStorageDevices]
 "TCGSecurityActivationDisabled"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\LeapSecondInformation]
-"Enabled"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Classpnp]
 "NVMeDisablePerfThrottling"=dword:00000001
 
@@ -2629,6 +2626,8 @@ Windows Registry Editor Version 5.00
 "AllowUpgradesWithUnsupportedTPMOrCPU"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Search\Gather\Windows\SystemIndex]
 "RespectPowerModes"=dword:00000001
+"DisableRecovery"=dword:00000001
+"DisableRobotsExclusion"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppID\SppComApi.dll]
 "NoGenTicket"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ResourceTimers]
@@ -2785,15 +2784,6 @@ Windows Registry Editor Version 5.00
 "UseSWRender"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Internet Explorer\Main]
 "UseSWRender"=dword:00000001
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.BackupReminder]
-"Enabled"=dword:00000000
-
-[HKEY_CURRENT_USER\SOFTWARE\Classes\Typelib\{8cec5860-07a1-11d9-b15e-000d56bfe6ee}\1.0\0\win32]
-@=""
-
-[HKEY_CURRENT_USER\SOFTWARE\Classes\Typelib\{8cec5860-07a1-11d9-b15e-000d56bfe6ee}\1.0\0\win64]
-@=""
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ACPI]
 "AMLIGlobalHeapSize"=dword:00008000
@@ -2952,12 +2942,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Credssp]
 "DebugLogLevel"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\FipsAlgorithmPolicy]
-"Enabled"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowClipboardHistory]
-"value"=dword:00000000
-
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\creative]
 "Intent"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\entertainment]
@@ -3030,12 +3014,74 @@ Windows Registry Editor Version 5.00
 "legalnoticecaption"=""
 "legalnoticetext"=""
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\Tracing]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Program-Telemetry]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Program-Inventory]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Program-Compatibility-Troubleshooter]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Kernel-EventTracing/Admin]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MultiTaskingView\AllUpView]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Biometrics]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Internet Explorer\CaretBrowsing]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\UEV\Agent]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.SecurityAndMaintenance]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.SecurityAndMaintenance]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\FlipAhead]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\FTH]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Accessibility]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\AppSync]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\BrowserSettings]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Credentials]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\DesktopTheme]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Language]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\PackageState]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Personalization]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\StartLayout]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Windows]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Input\TIPC]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.Suggested]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.ActionCenter.SmartOptOut]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\HotspotAuthentication]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Steps-Recorder]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\FipsAlgorithmPolicy]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.BackupReminder]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\LeapSecondInformation]
+"Enabled"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE\PlatformValidation]
 "Enabled"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE\OSPlatformValidation_BIOS]
 "Enabled"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE\OSPlatformValidation_UEFI]
 "Enabled"=dword:00000000
 
@@ -3173,9 +3219,6 @@ Windows Registry Editor Version 5.00
 "AllowDevelopmentWithoutDevLicense"=dword:00000001
 "RestrictAppToSystemVolume"=dword:00000001
 "MdmHosts"=-
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowAutomaticAppArchiving]
-"value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE]
 "BypassNRO"=dword:00000001
@@ -3393,9 +3436,6 @@ Windows Registry Editor Version 5.00
 "HeartbeatTrackingIndex"=dword:00000000
 "SpyNetReportingLocation"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Steps-Recorder]
-"Enabled"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ReserveManager]
 "MiscPolicyInfo"=dword:00000002
 "PassedPolicy"=dword:00000000
@@ -3441,21 +3481,15 @@ Windows Registry Editor Version 5.00
 "RequirePlatformSecurityFeature"=dword:00000000
 "RequirePlatformSecurityFeatures"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard]
-"Enabled"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity]
-"Enabled"=dword:00000000
 "ChangedInBootCycle"=-
+"Enabled"=dword:00000000
 "WasEnabledBy"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\System\ControlSet001\Control\DeviceGuard\Scenarios\KernelShadowStacks]
 "ChangedInBootCycle"=-
 "Enabled"=dword:00000001
 "WasEnabledBy"=dword:00000002
-
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.ActionCenter.SmartOptOut]
-"Enabled"=dword:00000000
 
 [HKEY_CURRENT_USER\Control Panel\International\User Profile]
 "DiagTrackAuthorization"=dword:00000000
@@ -5022,9 +5056,6 @@ Windows Registry Editor Version 5.00
 "DCSettingIndex"=dword:00000000
 "ACSettingIndex"=dword:00000000
 
-[HKEY_CURRENT_USER\Software\Microsoft\Input\TIPC]
-"Enabled"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Safety\PrivacIE]
 "DisableLogging"=dword:00000001
 
@@ -5164,18 +5195,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Ole\AppCompat]
 "RequireIntegrityActivationAuthenticationLevel"=dword:00000000
 
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.Suggested]
-"Enabled"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsInkWorkspace\AllowSuggestedAppsInWindowsInkWorkspace]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsInkWorkspace\AllowWindowsInkWorkspace]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowMicrosoftManagedDesktopProcessing]
-"value"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsInkWorkspace]
 "AllowWindowsInkWorkspace"=dword:00000000
 "AllowSuggestedAppsInWindowsInkWorkspace"=dword:00000000
@@ -5275,20 +5294,11 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\Aggregation\Instrumentation\UusFailover]
 "HbStart"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowTelemetry]
-"value"=dword:00000000
-
-[HKEY_CURRENT_USER\Software\Microsoft\PolicyManager\default\NewsAndInterests\AllowNewsAndInterests]
-"value"=dword:00000000
-
 [HKEY_CURRENT_USER\Software\Software\Microsoft\Windows\CurrentVersion\SystemSettings\AccountNotifications]
 "DisableAccountNotifications"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Multimedia\Audio]
 "UserDuckingPreference"=dword:00000003
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowExperimentation]
-"value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
 "RealTimeIsUniversal"=dword:00000001
@@ -5655,41 +5665,235 @@ Windows Registry Editor Version 5.00
 "ProhibitLLTDIOOnPrivateNet"=dword:00000000
 "ProhibitRspndrOnPrivateNet"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowHardwareKeyboardTextSuggestions]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowKeyboardTextSuggestions]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowTextInputSuggestionUpdate]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowLinguisticDataCollection]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowIMELogging]
-"value"=dword:00000000
-
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CPSS\Store\ImproveInkingAndTyping]
-"Value"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CPSS\UserPolicy\ImproveInkingAndTyping]
 "DefaultValue"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CPSS\UserPolicy\InkingAndTypingPersonalization]
 "DefaultValue"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CPSS\DevicePolicy\InkingAndTypingPersonalization]
 "DefaultValue"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CPSS\DevicePolicy\ImproveInkingAndTyping]
 "DefaultValue"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowArchiveScanning]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowBehaviorMonitoring]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowCloudProtection]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowEmailScanning]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowFullScanOnMappedNetworkDrives]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowFullScanRemovableDriveScanning]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowIntrusionPreventionSystem]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowOnAccessProtection]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowRealtimeMonitoring]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowScanningNetworkFiles]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowScriptScanning]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowUserUIAccess]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AvgCPULoadFactor]
+"value"=dword:00000032
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\CheckForSignaturesBeforeRunningScan]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\CloudBlockLevel]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\CloudExtendedTimeout]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\DaysToRetainCleanedMalware]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\DisableCatchupFullScan]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\DisableCatchupQuickScan]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\EnableControlledFolderAccess]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\EnableLowCPUPriority]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\EnableNetworkProtection]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\PUAProtection]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\RealTimeScanDirection]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\ScanParameter]
+"value"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\ScheduleScanDay]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\ScheduleScanTime]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\SignatureUpdateInterval]
+"value"=dword:00000018
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\SubmitSamplesConsent]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsDefenderSecurityCenter\DisableEnhancedNotifications]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsDefenderSecurityCenter\DisableNotifications]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsDefenderSecurityCenter\HideWindowsSecurityNotificationAreaControl]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Browser\AllowSmartScreen]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\SmartScreen\EnableSmartScreenInShell]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\SmartScreen\EnableAppInstallControl]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\SmartScreen\PreventOverrideForFilesInShell]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\Software\Microsoft\PolicyManager\default\WiFi\AllowAutoConnectToWiFiSenseHotspots]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\Software\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting]
+"Value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Maps\AllowOfflineMapsDownloadOverMeteredConnection]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Maps\EnableOfflineMapsAutoUpdate]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\DisableCloudOptimizedContent]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\HideCopilotButton]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\ConfigureChatIcon]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\DeviceGuard\EnableVirtualizationBasedSecurity]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\DeviceGuard\ConfigureSystemGuardLaunch]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\DeviceGuard\LsaCfgFlags]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\DeviceGuard\RequirePlatformSecurityFeatures]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\VirtualizationBasedTechnology\HypervisorEnforcedCodeIntegrity]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\VirtualizationBasedTechnology\RequireUEFIMemoryAttributesTable]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\LockDown\AllowEdgeSwipe]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowSharedUserAppData]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowSyncMySettings]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\PreventUsersFromTurningOnBrowserSyncing]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowThirdPartySuggestionsInWindowsSpotlight]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowWindowsSpotlight]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowSpotlightCollection]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowWindowsSpotlightOnActionCenter]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowWindowsSpotlightOnSettings]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowWindowsSpotlightWindowsWelcomeExperience]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowWindowsTips]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\ConfigureWindowsSpotlightOnLockScreen]
+"value"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CPSS\Store\InkingAndTypingPersonalization]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowEmbeddedMode]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowFindMyDevice]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowIOAVProtection]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\DoNotShowFeedbackNotifications]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\FeedbackHubAlwaysSaveDiagnosticsLocally]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowTailoredExperiencesWithDiagnosticData]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowUserToResetPhone]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\DisableDirectXDatabaseUpdate]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\DisableOneSettingsDownloads]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\EnableOneSettingsAuditing]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Troubleshooting\AllowRecommendations]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowDesktopAnalyticsProcessing]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\HideFrequentlyUsedApps]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\HideRecentlyAddedApps]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\HideRecommendedSection]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowWindowsConsumerFeatures]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\DisableConsumerAccountStateContent]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowDeviceDiscovery]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowManualMDMUnenrollment]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\HidePeopleBar]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowGameDVR]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Connectivity\DisallowNetworkConnectivityActiveTests]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Settings\AllowOnlineTips]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowDeviceNameInDiagnosticData]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowExperimentation]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowTelemetry]
+"value"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\PolicyManager\default\NewsAndInterests\AllowNewsAndInterests]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowClipboardHistory]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowAutomaticAppArchiving]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsInkWorkspace\AllowSuggestedAppsInWindowsInkWorkspace]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsInkWorkspace\AllowWindowsInkWorkspace]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowMicrosoftManagedDesktopProcessing]
+"value"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\TurnOffFileHistory]
 "value"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\ShowOrHideMostUsedApps]
 "value"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowHardwareKeyboardTextSuggestions]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowKeyboardTextSuggestions]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowTextInputSuggestionUpdate]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowLinguisticDataCollection]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\TextInput\AllowIMELogging]
+"value"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CPSS\Store\ImproveInkingAndTyping]
+"Value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowCortana]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Bluetooth\AllowAdvertising]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WirelessDisplay\AllowMdnsAdvertisement]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WirelessDisplay\AllowMdnsDiscovery]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WirelessDisplay\AllowProjectionToPC]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Update\ExcludeWUDriversInQualityUpdate]
+"value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\DoNotSyncBrowserSettings]
+"value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\NewsAndInterests\AllowNewsAndInterests]
+"value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\software\policies\microsoft\ime\shared]
 "Enable Cloud Candidate"="0"
@@ -5712,15 +5916,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\DeviceHealthAttestationService]
 "EnableDeviceHealthAttestationService"=dword:00000000
 "DisableSendGenericDriverNotFoundToWER"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WirelessDisplay\AllowMdnsAdvertisement]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WirelessDisplay\AllowMdnsDiscovery]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WirelessDisplay\AllowProjectionToPC]
-"value"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\VideoSettings]
 "DisableHDROnBattery"=dword:00000001
@@ -5790,25 +5985,25 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\A9\SnapshotCapture]
 "IsFilteringTelemetryEnabled"=dword:00000000
 
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Typelib\{8cec5860-07a1-11d9-b15e-000d56bfe6ee}\1.0\0\win32]
+@=""
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Typelib\{8cec5860-07a1-11d9-b15e-000d56bfe6ee}\1.0\0\win64]
+@=""
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\MicrosoftWindows.Client.AIX_cw5n1h2txyewy]
 @=""
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\MicrosoftWindows.Client.AIX_cw5n1h2txyewy]
 @=""
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\Microsoft.Windows.AppRep.ChxApp_cw5n1h2txyewy]
 @=""
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\Microsoft.Windows.CloudExperienceHost_cw5n1h2txyewy]
 @=""
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\Microsoft.SecHealthUI_8wekyb3d8bbwe]
 @=""
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\MicrosoftWindows.Client.CBS_cw5n1h2txyewy]
 @=""
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\MicrosoftWindows.Client.CoreAI_cw5n1h2txyewy]
+@=""
+[HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
 @=""
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\SystemGuard]
@@ -5917,9 +6112,6 @@ Windows Registry Editor Version 5.00
 "UpdateServiceUrlAlternate"=""
 "WUServer"=""
 "WUStatusServer"=""
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Update\ExcludeWUDriversInQualityUpdate]
-"value"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Orchestrator]
 "EnableUUPScan"=dword:00000001
@@ -6098,39 +6290,6 @@ Windows Registry Editor Version 5.00
 "SV2"=dword:00000000
 "SV3"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\FTH]
-"Enabled"=dword:00000000
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Accessibility]
-"Enabled"=dword:00000000
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\AppSync]
-"Enabled"=dword:00000000
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\BrowserSettings]
-"Enabled"=dword:00000000
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Credentials]
-"Enabled"=dword:00000000
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\DesktopTheme]
-"Enabled"=dword:00000000
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Language]
-"Enabled"=dword:00000000
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\PackageState]
-"Enabled"=dword:00000000
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Personalization]
-"Enabled"=dword:00000000
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\StartLayout]
-"Enabled"=dword:00000000
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\Windows]
-"Enabled"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SettingSync]
 "DisableApplicationSettingSync"=dword:00000002
 "DisableAppSyncSettingSync"=dword:00000002
@@ -6167,9 +6326,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SettingSync]
 "SyncPolicy"=dword:00000005
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\UEV\Agent]
-"Enabled"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WorkFolders]
 "AutoProvision"=dword:00000000
 
@@ -6185,15 +6341,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Systray]
 "HideSystray"=dword:00000001
-
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.SecurityAndMaintenance]
-"Enabled"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.SecurityAndMaintenance]
-"Enabled"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowIOAVProtection]
-"value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsRuntime\WellKnownContracts]
 "Windows.ApplicationModel.SocialInfo.SocialInfoContract"=-
@@ -6397,12 +6544,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Connectivity\DisallowNetworkConnectivityActiveTests]
 "value"="1"
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\Tracing]
-"Enabled"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowFindMyDevice]
-"value"=dword:00000000
-
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Internet Explorer\Main]
 "DisableFirstRunCustomize"=dword:00000001
 "DoNotTrack"=dword:00000001
@@ -6412,9 +6553,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsBackup]
 "DisableMonitoring"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\FlipAhead]
-"Enabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Feeds]
 "BackgroundSyncStatus"=dword:00000000
@@ -6432,12 +6570,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SmartActionPlatform\SmartClipboard]
 "Disabled"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowSyncMySettings]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\PreventUsersFromTurningOnBrowserSyncing]
-"value"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Maintenance]
 "MaintenanceDisabled"=dword:00000001
 "DisableRpcOver"=dword:00000001
@@ -6449,9 +6581,6 @@ Windows Registry Editor Version 5.00
 "NetworkPrinters"=dword:00000000
 "RoamingCredentialSettings"=dword:00000000
 "ThemeSettings"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\DoNotSyncBrowserSettings]
-"value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Schedule]
 "DisableRpcOverTcp"=dword:00000001
@@ -6555,9 +6684,6 @@ Windows Registry Editor Version 5.00
 "AllowNetworking"=dword:00000000
 "AllowClipboardRedirection"=dword:00000000
 "AllowAudioInput"=dword:00000000
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Internet Explorer\CaretBrowsing]
-"Enabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Remote Assistance]
 "CreateEncryptedOnlyTickets"=dword:00000001
@@ -7591,75 +7717,6 @@ Windows Registry Editor Version 5.00
 "SubscribedContentEnabled"=dword:00000000
 "SystemPaneSuggestionsEnabled"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\DoNotShowFeedbackNotifications]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\FeedbackHubAlwaysSaveDiagnosticsLocally]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowUserToResetPhone]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\DisableDirectXDatabaseUpdate]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\DisableOneSettingsDownloads]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\EnableOneSettingsAuditing]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Troubleshooting\AllowRecommendations]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowDesktopAnalyticsProcessing]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\HideFrequentlyUsedApps]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\HideRecentlyAddedApps]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\HideRecommendedSection]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowWindowsConsumerFeatures]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\DisableConsumerAccountStateContent]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowDeviceDiscovery]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowManualMDMUnenrollment]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Program-Telemetry]
-"Enabled"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Program-Inventory]
-"Enabled"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Program-Compatibility-Troubleshooter]
-"Enabled"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Kernel-EventTracing/Admin]
-"Enabled"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\HidePeopleBar]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Connectivity\DisallowNetworkConnectivityActiveTests]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Settings\AllowOnlineTips]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowDeviceNameInDiagnosticData]
-"value"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Tracing]
 "EnableConsoleTracing"=dword:00000000
 
@@ -7674,9 +7731,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement]
 "ScoobeSystemSettingEnabled"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MultiTaskingView\AllUpView]
-"Enabled"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MultitaskingView\AllUpView]
 "AllUpView"=dword:00000000
@@ -7746,9 +7800,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Bluetooth]
 "AllowAdvertising"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Bluetooth\AllowAdvertising]
-"value"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SmartGlass]
 "BluetoothPolicy"=dword:00000000
 
@@ -7768,9 +7819,6 @@ Windows Registry Editor Version 5.00
 "TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
 [HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\Privacy]
 "TailoredExperiencesWithDiagnosticDataEnabled"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowTailoredExperiencesWithDiagnosticData]
-"value"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Lighting]
 "AmbientLightingEnabled"=dword:00000000
@@ -7821,14 +7869,8 @@ Windows Registry Editor Version 5.00
 "AgentActivationLastUsed"=dword:00000000
 "AgentActivationOnLockScreenEnabled"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowCortana]
-"value"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\SearchCompanion]
 "DisableContentFileUpdates"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowSharedUserAppData]
-"value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\Global\Startup\SendTelemetryData]
 @="0"
@@ -7860,36 +7902,6 @@ Windows Registry Editor Version 5.00
 "DisableWindowsSpotlightWindowsWelcomeExperience"=dword:00000001
 "IncludeEnterpriseSpotlight"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowThirdPartySuggestionsInWindowsSpotlight]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowWindowsSpotlight]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowSpotlightCollection]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowWindowsSpotlightOnActionCenter]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowWindowsSpotlightOnSettings]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowWindowsSpotlightWindowsWelcomeExperience]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowWindowsTips]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\ConfigureWindowsSpotlightOnLockScreen]
-"value"=dword:00000000
-
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CPSS\Store\InkingAndTypingPersonalization]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowEmbeddedMode]
-"value"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UnattendSettings\SQMClient]
 "CEIPEnabled"=dword:00000000
 
@@ -7902,9 +7914,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Personalization\Settings]
 "AcceptedPrivacyPolicy"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\NewsAndInterests\AllowNewsAndInterests]
-"value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Dsh]
 "AllowNewsAndInterests"=dword:00000000
@@ -8034,9 +8043,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\safer\codeidentifiers]
 "authenticodeenabled"=dword:00000000
 
-[HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
-@=""
-
 ; restore old explorer in w11
 ; [HKEY_CURRENT_USER\Software\Classes\CLSID\{2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0}\InProcServer32]
 ; @=""
@@ -8125,9 +8131,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Biometrics\FacialFeatures]
 "EnhancedAntiSpoofing"=-
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Biometrics]
-"Enabled"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
 "AnyAboveLockAppsActive"=dword:00000000
@@ -8251,102 +8254,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Exclusions]
 "DisableAutoExclusions"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowArchiveScanning]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowBehaviorMonitoring]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowCloudProtection]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowEmailScanning]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowFullScanOnMappedNetworkDrives]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowFullScanRemovableDriveScanning]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowIntrusionPreventionSystem]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowOnAccessProtection]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowRealtimeMonitoring]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowScanningNetworkFiles]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowScriptScanning]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AllowUserUIAccess]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\AvgCPULoadFactor]
-"value"=dword:00000032
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\CheckForSignaturesBeforeRunningScan]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\CloudBlockLevel]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\CloudExtendedTimeout]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\DaysToRetainCleanedMalware]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\DisableCatchupFullScan]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\DisableCatchupQuickScan]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\EnableControlledFolderAccess]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\EnableLowCPUPriority]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\EnableNetworkProtection]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\PUAProtection]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\RealTimeScanDirection]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\ScanParameter]
-"value"=dword:00000002
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\ScheduleScanDay]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\ScheduleScanTime]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\SignatureUpdateInterval]
-"value"=dword:00000018
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Defender\SubmitSamplesConsent]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsDefenderSecurityCenter\DisableEnhancedNotifications]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsDefenderSecurityCenter\DisableNotifications]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsDefenderSecurityCenter\HideWindowsSecurityNotificationAreaControl]
-"value"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Microsoft Antimalware]
 "ServiceKeepAlive"=dword:00000000
 "AllowFastServiceStartup"=dword:00000000
@@ -8460,60 +8367,6 @@ Windows Registry Editor Version 5.00
 "ContentEvaluation"=dword:00000000
 "EnableWebContentEvaluation"=dword:00000000
 "PreventOverride"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Browser\AllowSmartScreen]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\SmartScreen\EnableSmartScreenInShell]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\SmartScreen\EnableAppInstallControl]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\SmartScreen\PreventOverrideForFilesInShell]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\Software\Microsoft\PolicyManager\default\WiFi\AllowAutoConnectToWiFiSenseHotspots]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\Software\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting]
-"Value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Maps\AllowOfflineMapsDownloadOverMeteredConnection]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Maps\EnableOfflineMapsAutoUpdate]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\DisableCloudOptimizedContent]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Start\HideCopilotButton]
-"value"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\ConfigureChatIcon]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\DeviceGuard\EnableVirtualizationBasedSecurity]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\DeviceGuard\ConfigureSystemGuardLaunch]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\DeviceGuard\LsaCfgFlags]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\DeviceGuard\RequirePlatformSecurityFeatures]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\VirtualizationBasedTechnology\HypervisorEnforcedCodeIntegrity]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\VirtualizationBasedTechnology\RequireUEFIMemoryAttributesTable]
-"value"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\LockDown\AllowEdgeSwipe]
-"value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization]
 "NoLockScreen"=dword:00000001
@@ -8630,9 +8483,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\GameDVR]
 "AllowGameDVR"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\AllowGameDVR]
-"value"=dword:00000000
-
 [HKEY_USERS\.DEFAULT\Software\Microsoft\Games]
 "EnableXBGM"=dword:00000000
 
@@ -8698,9 +8548,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Policy\Settings\Misc]
 "DeviceIdlePolicy"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\HotspotAuthentication]
-"Enabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\NcdAutoSetup\Private]
 "AutoSetup"=dword:00000000
