@@ -149,8 +149,14 @@ for /f "tokens=*" %%i in ('reg query "HKLM\SYSTEM\CurrentControlSet\Enum\USB" /s
     reg add "%%i" /v "fid_D1Latency" /t REG_DWORD /d "0" /f >nul
     reg add "%%i" /v "fid_D2Latency" /t REG_DWORD /d "0" /f >nul
     reg add "%%i" /v "fid_D3Latency" /t REG_DWORD /d "0" /f >nul
+	reg add "%%i" /v "PowerManaged" /t REG_DWORD /d "0" /f >nul
+	reg add "%%i" /v "UserSetDeviceIdleEnabled" /t REG_DWORD /d "0" /f >nul
+	reg add "%%i" /v "IdleEnabled" /t REG_DWORD /d "0" /f >nul
+	reg add "%%i" /v "SystemManagedIdleTimeout" /t REG_DWORD /d "0" /f >nul
+	reg add "%%i" /v "UserWriteCacheSetting" /t REG_DWORD /d "0" /f >nul
+	reg add "%%i" /v "WriteCacheEnableOverride" /t REG_DWORD /d "0" /f >nul
     reg add "%%i\Interrupt Management\MessageSignaledInterruptProperties" /v "MSISupported" /t REG_DWORD /d "1" /f >nul
 )
 
 endlocal
-exit /b 0
+exit
