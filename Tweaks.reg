@@ -250,7 +250,6 @@ Windows Registry Editor Version 5.00
 "DisableControlFlowGuardExportSuppression"=dword:00000001
 "DisableControlFlowGuardXfg"=dword:00000001
 "DisableDynamicTick"=dword:00000001
-"DynamicTickDisable"=dword:00000001
 ; "DisableExceptionChainValidation"=dword:00000001 ; =-, 00000001 security option for anticheats
 ; "DisableLowQosTimerResolution"=dword:00000000 ; =-, 00000000/00000001 (w10 only. breaks w11 24h2)
 "DisableOverlappedExecution"=dword:00000000
@@ -263,6 +262,7 @@ Windows Registry Editor Version 5.00
 "DpcWatchdogProfileBufferSizeBytes"=dword:00000001
 "DpcWatchdogProfileOffset"=dword:00000000 ; 00002710, 00000000
 "DynamicDpcProtocol"=dword:00000001
+"DynamicTickDisable"=dword:00000001
 "EnablePerCpuClockTickScheduling"=dword:00000001 ; 00000000/00000001
 "EnableTickAccumulationFromAccountingPeriods"=dword:00000000 ; 00000000/00000001
 "EnableTsx"=dword:00000000
@@ -297,10 +297,10 @@ Windows Registry Editor Version 5.00
 ; "MaximumSharedReadyQueueSize"=dword:00000001 ; 00000000/00000001/00000080
 "MinDynamicTickDuration"=dword:000003e8
 "MinimumDpcRate"=dword:00000001 ; 00000000/00000001
-; "MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 ; w11 security option for anticheats
-; "MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 ; w11 security option for anticheats
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00 ; w10 security option for anticheats
 "MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00 ; w10 security option for anticheats
+; "MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 ; w11 security option for anticheats
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00 ; w10 security option for anticheats
+; "MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 ; w11 security option for anticheats
 "obcaseinsensitive"=dword:00000001
 "PassiveWatchdogTimeout"=dword:00000000
 "PowerOffFrozenProcessors"=dword:00000000
@@ -357,10 +357,9 @@ Windows Registry Editor Version 5.00
 "DEVICE_MAX_PENDING_IO"="0"
 "DEVICE_PENDING_INTERRUPTS"="0"
 "DISABLE_DYNAMIC_FPS"="1"
-"DISABLE_DYNAMIC_TICK"="yes"
+"DISABLE_DYNAMIC_TICK"="1"
 "DisableFullScreenOptimizations"=dword:00000001
 "DisableGPUTimeout"="1"
-"DisableShaderCache"="0"
 "DISK_MAX_PENDING_INTERRUPTS"="0"
 "DISK_MAX_PENDING_IO"="0"
 "DWM_COMPOSITOR_MAX_PENDING_INTERRUPTS"="0"
@@ -376,8 +375,8 @@ Windows Registry Editor Version 5.00
 "DX_MaxFrameBufferSize"=dword:00000080
 "DX_MaxFramesToRenderAhead"="1"
 "DX_MaxLatency"=dword:00000000
-"ELECTRON_DISABLE_GPU"="true"
-"ELECTRON_ENABLE_CPU_RENDERING"="true"
+"ELECTRON_DISABLE_GPU"="1"
+"ELECTRON_ENABLE_CPU_RENDERING"="1"
 "EnableAdaptiveSync"="0"
 "EnableExclusiveFullScreen"="1"
 "EnableGameMode"="0"
@@ -759,6 +758,7 @@ Windows Registry Editor Version 5.00
 "PassiveIntRealTimeWorkerCount"=dword:00000000 ; 00000000/00000010/00000040
 "PassiveIntRealTimeWorkerPriority"=dword:00000000 ; 00000000/00000012/00000018
 "RequireDeviceAccessCheck"=dword:00000000
+"IoBlockLegacyFsFilters"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\KernelVelocity]
 "DisableFGBoostDecay"=dword:00000001
@@ -2443,6 +2443,7 @@ Windows Registry Editor Version 5.00
 "RmDisableRegistryCaching"=dword:00000001
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
 "VsyncIdleTimeout"=dword:00000000
+"ForceIndependentFlip"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\NVAPI]
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
@@ -3110,7 +3111,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Wisp\Touch]
 "TouchGate"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Config]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Config] 
 "VulnerableDriverBlocklistEnable"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Wacom\Analytics]
@@ -3784,7 +3785,12 @@ Windows Registry Editor Version 5.00
 "LowRiskFileTypes"=".avi;.bat;.com;.cmd;.exe;.htm;.html;.lnk;.mpg;.mpeg;.mov;.mp3;.msi;.m3u;.rar;.reg;.txt;.vbs;.wav;.zip;.iso"
 "DefaultFileTypeRisk"=dword:00001808
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\OpenSearch]
+"SetDefaultSearchEngine"="https://www.google.com/searchdomaincheck?format=opensearch"
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+"ManagedSearchEngines"="[    {      \"allow_search_engine_discovery\": false    },    {      \"is_default\": true,      \"keyword\": \"google.com\",      \"name\": \"Google\",      \"search_url\": \"https://www.google.com/search?q={searchTerms}\",      \"image_search_url\": \"https://www.google.com/searchbyimage/upload\",      \"image_search_post_params\": \"encoded_image={google:imageThumbnail},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight}\"    }  ]"
+"AllowSearchEngineCustomization"=dword:00000001
 "AADWebSiteSSOUsingThisProfileEnabled"=dword:00000000
 "AccessibilityImageLabelsEnabled"=dword:00000000
 "AdditionalSearchBoxEnabled"=dword:00000000
@@ -5489,9 +5495,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Lsa\MSV1_0]
 "RestrictSendingNTLMTraffic"=dword:00000002
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96b-e325-11ce-bfc1-08002be10318}]
-"UpperFilters"=hex(7):
-"LowerFilters"=hex(7):
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96b-e325-11ce-bfc1-08002be10318}]
+; "UpperFilters"=hex(7):
+; "LowerFilters"=hex(7):
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96c-e325-11ce-bfc1-08002be10318}]
 "UpperFilters"=hex(7):
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e967-e325-11ce-bfc1-08002be10318}]
@@ -5856,7 +5862,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WirelessDisplay\AllowProjectionToPC]
 "value"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Update\ExcludeWUDriversInQualityUpdate]
-"value"=dword:00000001
+"value"=dword:00000001 ; 00000000/00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Experience\DoNotSyncBrowserSettings]
 "value"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\NewsAndInterests\AllowNewsAndInterests]
@@ -5994,6 +6000,7 @@ Windows Registry Editor Version 5.00
 "IsResumeAllowed"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\GameDVR]
+"AppCaptureEnabled"=dword:00000000
 "AudioCaptureEnabled"=-
 "AudioEncodingBitrate"=-
 "CursorCaptureEnabled"=-
@@ -6029,6 +6036,9 @@ Windows Registry Editor Version 5.00
 "VKToggleMicrophoneCapture"=-
 "VKToggleRecording"=-
 "VKToggleRecordingIndicator"=-
+"LastGameActivity"=-
+"KGLRevision"=-
+"KGLToGCSUpdatedRevision"=-
 
 [HKEY_CURRENT_USER\Software\Classes\ms-gamebar]
 "URL Protocol"=""
@@ -6040,23 +6050,24 @@ Windows Registry Editor Version 5.00
 "URL Protocol"=""
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
-"ActiveHoursEnd"=dword:00000000
-"ActiveHoursStart"=dword:00000006
-"AllowMUUpdateService"=dword:00000000
+"AllowMUUpdateService"=dword:00000000 ; 00000000/00000001
 "AutoRebootLimitInDays"=dword:0000016d
-"ExcludeWUDriversInQualityUpdate"=dword:00000001
+"ExcludeWUDriversInQualityUpdate"=dword:00000001 ; 00000000/00000001
 "FlightSettingsMaxPauseDays"=dword:00001c84
 "SmartActiveHoursState"=dword:00000000
 "SnoozeRebootHours"=dword:0000ffff
-"UserChoiceActiveHoursEnd"=dword:00000000
-"UserChoiceActiveHoursStart"=dword:00000006
+"IsContinuousInnovationOptedIn"=dword:00000001 ; 00000000/00000001
+"ActiveHoursStart"=dword:00000009
+"ActiveHoursEnd"=dword:0000000a
+"AllowAutoWindowsUpdateDownloadOverMeteredNetwork"=dword:00000000
+"IsActiveHoursEnabled"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DriverSearching]
 "DriverUpdateWizardWuSearchEnabled"=dword:00000000
 "DontSearchWindowsUpdate"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching]
-"SearchOrderConfig"=dword:00000000
+"SearchOrderConfig"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Update]
 "ExcludeWUDriversInQualityUpdate"=dword:00000001
@@ -6064,36 +6075,54 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Update]
 "ExcludeWUDriversInQualityUpdate"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\OSUpgrade]
+"AllowOSUpgrade"=dword:00000000
+"ReservationsAllowed"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
 "AllowTemporaryEnterpriseFeatureControl"=dword:00000000
-"DisableDualScan"=dword:00000001
+"DisableDualScan"=dword:00000001 ; 00000000/00000001
 "DisableOSUpgrade"=dword:00000001
-"DisableWindowsUpdateAccess"=dword:00000001
+"DisableWindowsUpdateAccess"=dword:00000001 ; 00000000/00000001
 "DisableWUfBSafeguards"=dword:00000001
 "DoNotConnectToWindowsUpdateInternetLocations"=dword:00000001
 "ExcludeWUDriversInQualityUpdate"=dword:00000001
 "SetAutoRestartNotificationDisable"=dword:00000001
-"SetDisableUXWUAccess"=dword:00000001
+"SetDisableUXWUAccess"=dword:00000001 ; 00000000/00000001
 "TargetGroup"="Workstations"
 "TargetGroupEnabled"=dword:00000000
-"UpdateServiceUrlAlternate"=""
-"WUServer"=""
-"WUStatusServer"=""
+"AllowOptionalContent"=dword:00000001
+"SetAllowOptionalContent"=dword:00000001
+"SetActiveHours"=dword:00000000
+"ActiveHoursStart"=dword:00000009
+"ActiveHoursEnd"=dword:0000000a
+"ElevateNonAdmins"=dword:00000001
+"IsActiveHoursEnabled"=-
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Orchestrator]
-"EnableUUPScan"=dword:00000001
+"EnableUUPScan"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
 "AUOptions"=dword:00000002
 "AutoInstallMinorUpdates"=dword:00000000
+"NoAutoUpdate"=dword:00000001 ; 00000000/00000001
+"UseWUServer"=dword:00000000 ; 00000000/00000001
+"IncludeRecommendedUpdates"=dword:00000001
+"NoAutoRebootWithLoggedOnUsers"=dword:00000001
+"DetectionFrequencyEnabled"=dword:00000000
+"RescheduleWaitTimeEnabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\WAU]
+"Disabled"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Policies\Microsoft\Windows\WindowsUpdate\AU]
 "NoAutoUpdate"=dword:00000001
-"UseWUServer"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\AU]
 "NoAutorebootWithLoggedOnUser"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\PolicyState]
-"ExcludeWUDrivers"=dword:00000001
+"ExcludeWUDrivers"=dword:00000001 ; 00000000/00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsMediaPlayer]
 "PreventLibrarySharing"=dword:00000001
@@ -6270,6 +6299,7 @@ Windows Registry Editor Version 5.00
 "DisableWebBrowserSettingSync"=dword:00000002
 "DisableWindowsSettingSync"=dword:00000002
 "EnableBackupForWin8Apps"=dword:00000000
+"DisableSyncOnPaidNetwork"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync]
 "EnableQuotaFailureDialog"=dword:00000000
@@ -6424,8 +6454,14 @@ Windows Registry Editor Version 5.00
 "GestureVisualization"=dword:00000000
 "PenVisualization"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\Parameters\Config\VpnCostedNetworkSettings]
+"NoCostedNetwork"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DeviceSetup]
+"CostedNetworkPolicy"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata]
-"PreventDeviceMetadataFromNetwork"=dword:00000001
+"PreventDeviceMetadataFromNetwork"=dword:00000001 ; 00000000/00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FindMyDevice]
 "AllowFindMyDevice"=dword:00000000
@@ -7935,6 +7971,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WindowsStore\WindowsUpdate]
 "AutoDownload"=dword:00000002
 
+[HKEY_CURRENT_USER\Software\Microsoft\PCHC]
+"UpgradeEligibility"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\FileHistory]
 "Disabled"=dword:00000001
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\FileHistory]
@@ -8445,9 +8484,6 @@ Windows Registry Editor Version 5.00
 "MaxMultisampleSize"=dword:00000000
 "UseReferenceRasterizer"=dword:00000000
 "RenderTier"=dword:00000000
-
-[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR]
-"AppCaptureEnabled"=dword:00000000
 
 [HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR] 
 "AppCaptureEnabled"=dword:00000000
@@ -11793,6 +11829,7 @@ Windows Registry Editor Version 5.00
 "Version"="1.0"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0000]
+"EEE"="0"
 "AdvancedEEE"="0"
 "ASPM"="0"
 "AutoDisableGigabit"="0"
@@ -11957,6 +11994,7 @@ Windows Registry Editor Version 5.00
 "Default"="4096"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0001]
+"EEE"="0"
 "AdvancedEEE"="0"
 "ASPM"="0"
 "AutoDisableGigabit"="0"
