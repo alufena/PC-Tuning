@@ -155,6 +155,7 @@ for /f "tokens=*" %%i in ('reg query "HKLM\SYSTEM\CurrentControlSet\Enum\USB" /s
 	reg add "%%i" /v "SystemManagedIdleTimeout" /t REG_DWORD /d "0" /f >nul
 	reg add "%%i" /v "UserWriteCacheSetting" /t REG_DWORD /d "0" /f >nul
 	reg add "%%i" /v "WriteCacheEnableOverride" /t REG_DWORD /d "0" /f >nul
+	reg add "%%i" /v "DefaultPowerState" /t REG_DWORD /d "0" /f >nul
     reg add "%%i\Interrupt Management\MessageSignaledInterruptProperties" /v "MSISupported" /t REG_DWORD /d "1" /f >nul
 )
 
