@@ -134,3 +134,4 @@ https://x.com/honestzin
 https://x.com/jerry05259307  
 https://x.com/Realperfguy  
 https://winaero.com/regownershipex  
+https://www.sordum.org/9416/powerrun-v1-7-run-with-highest-privileges  
