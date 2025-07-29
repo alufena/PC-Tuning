@@ -3336,6 +3336,7 @@ Windows Registry Editor Version 5.00
 "EnableAutoShiftEngage"=dword:00000000
 "EnableDesktopModeAutoInvoke"=dword:00000000
 "EnableDoubleTapSpace"=dword:00000000
+"EnableHandwritingInputPanel"=dword:000000
 "EnableInkingWithTouch"=dword:00000000
 "EnableKeyAudioFeedback"=dword:00000000
 "EnablePredictionSpaceInsertion"=dword:00000000
@@ -3346,7 +3347,6 @@ Windows Registry Editor Version 5.00
 "IncludeRareChar"=dword:00000000
 "IsKeyBackgroundEnabled"=dword:00000000
 "TipbandDesiredVisibility"=dword:00000000
-"EnableHandwritingInputPanel"=dword:000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Control Panel\International]
 "TurnOffAutocorrectMisspelledWords"=dword:00000001
@@ -3827,8 +3827,6 @@ Windows Registry Editor Version 5.00
 "SetDefaultSearchEngine"="https://www.google.com/searchdomaincheck?format=opensearch"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
-"ManagedSearchEngines"="[    {      \"allow_search_engine_discovery\": false    },    {      \"is_default\": true,      \"keyword\": \"google.com\",      \"name\": \"Google\",      \"search_url\": \"https://www.google.com/search?q={searchTerms}\",      \"image_search_url\": \"https://www.google.com/searchbyimage/upload\",      \"image_search_post_params\": \"encoded_image={google:imageThumbnail},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight}\"    }  ]"
-"AllowSearchEngineCustomization"=dword:00000001
 "AADWebSiteSSOUsingThisProfileEnabled"=dword:00000000
 "AccessibilityImageLabelsEnabled"=dword:00000000
 "AdditionalSearchBoxEnabled"=dword:00000000
@@ -3842,6 +3840,7 @@ Windows Registry Editor Version 5.00
 "AllowDeletingBrowserHistory"=dword:00000001
 "AllowFileSelectionDialogs"=dword:00000001
 "AllowGamesMenu"=dword:00000000
+"AllowSearchEngineCustomization"=dword:00000001
 "AllowSurfGame"=dword:00000000
 "AllowSystemNotifications"=dword:00000001
 "AlternateErrorPagesEnabled"=dword:00000000
@@ -4019,6 +4018,7 @@ Windows Registry Editor Version 5.00
 "LocalProvidersEnabled"=dword:00000000
 "LogUploadEnabled"=dword:00000000
 "MAMEnabled"=dword:00000000
+"ManagedSearchEngines"="[    {      \"allow_search_engine_discovery\": false    },    {      \"is_default\": true,      \"keyword\": \"google.com\",      \"name\": \"Google\",      \"search_url\": \"https://www.google.com/search?q={searchTerms}\",      \"image_search_url\": \"https://www.google.com/searchbyimage/upload\",      \"image_search_post_params\": \"encoded_image={google:imageThumbnail},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight}\"    }  ]"
 "MathSolverEnabled"=dword:00000000
 "MediaRouterCastAllowAllIPs"=dword:00000001
 "MetricsReportingEnabled"=dword:00000000
@@ -4702,15 +4702,11 @@ Windows Registry Editor Version 5.00
 "RawMouseThrottleEnabled"=dword:00000001 ; 00000000/00000001
 "RawMouseThrottleForced"=dword:00000001 ; 00000000/00000001
 "RawMouseThrottleLeeway"=dword:00000000
+"SmoothMouseXCurve"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+; "SmoothMouseXCurve"=hex:00,00,00,00,00,00,00,00,15,6e,00,00,00,00,00,00,00,40,01,00,00,00,00,00,29,dc,03,00,00,00,00,00,00,00,28,00,00,00,00,00
+"SmoothMouseYCurve"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+; "SmoothMouseYCurve"=hex:00,00,00,00,00,00,00,00,fd,11,01,00,00,00,00,00,00,24,04,00,00,00,00,00,00,fc,12,00,00,00,00,00,00,c0,bb,01,00,00,00,00
 "SnapToDefaultButton"="0"
-"SmoothMouseXCurve"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
-"SmoothMouseYCurve"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
-; "SmoothMouseXCurve"=hex:00,00,00,00,00,00,00,00,15,6e,00,00,00,00,00,00,00,40, \
-;  01,00,00,00,00,00,29,dc,03,00,00,00,00,00,00,00,28,00,00,00,00,00
-; "SmoothMouseYCurve"=hex:00,00,00,00,00,00,00,00,fd,11,01,00,00,00,00,00,00,24, \
-;  04,00,00,00,00,00,00,fc,12,00,00,00,00,00,00,c0,bb,01,00,00,00,00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Paint]
 "DisableGenerativeFill"=dword:00000001
@@ -11867,7 +11863,6 @@ Windows Registry Editor Version 5.00
 "Version"="1.0"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0000]
-"EEE"="0"
 "AdvancedEEE"="0"
 "ASPM"="0"
 "AutoDisableGigabit"="0"
@@ -11880,6 +11875,7 @@ Windows Registry Editor Version 5.00
 "DisablePhyReset"="1"
 "DMACoalescing"="0"
 "DynamicLTR"="0"
+"EEE"="0"
 "*EEE"="0"
 "EEELinkAdvertisement"="0"
 "EEEPlus"="0"
@@ -12032,7 +12028,6 @@ Windows Registry Editor Version 5.00
 "Default"="4096"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0001]
-"EEE"="0"
 "AdvancedEEE"="0"
 "ASPM"="0"
 "AutoDisableGigabit"="0"
@@ -12045,6 +12040,7 @@ Windows Registry Editor Version 5.00
 "DisablePhyReset"="1"
 "DMACoalescing"="0"
 "DynamicLTR"="0"
+"EEE"="0"
 "*EEE"="0"
 "EEELinkAdvertisement"="0"
 "EEEPlus"="0"
@@ -12422,32 +12418,5 @@ Windows Registry Editor Version 5.00
 "C:\\Windows\\system32\\kernelbase.dll[MofResourceName]"=-
 
 [HKEY_CURRENT_USER\System\GameConfigStore]
-"Win32_AutoGameModeDefaultProfile"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00
-"Win32_GameModeRelatedProcesses"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-  00,00,00,00,00,00,00,00,00,00
+"Win32_AutoGameModeDefaultProfile"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+"Win32_GameModeRelatedProcesses"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
