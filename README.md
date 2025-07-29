@@ -27,6 +27,7 @@ https://github.com/Batlez/Batlez-Tweaks
 https://github.com/BoringBoredom/PC-Optimization-Hub  
 https://github.com/ChrisTitusTech/winutil  
 https://github.com/DaddyMadu/Windows10GamingFocus  
+https://github.com/denis-g/windows10-latency-optimization  
 https://github.com/djdallmann/GamingPCSetup  
 https://github.com/dubbyOW/BCDEditTweaks  
 https://github.com/emadadel4/itt  
@@ -86,6 +87,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1123728480
 https://steamcommunity.com/sharedfiles/filedetails/?id=3439639950  
 https://systeminformer.sourceforge.io  
 https://winaero.com  
+https://winaero.com/regownershipex  
 https://windowsxlite.com  
 https://wpd.app  
 https://www.bluecataudio.com/Blog/tip-of-the-day/solving-audio-dropouts-dpc-latency-issues-with-nvidia-drivers-on-windows  
@@ -106,6 +108,7 @@ https://www.reddit.com/r/uBlockOrigin/comments/1jbv1xn/youtube_ads_detection_bre
 https://www.reddit.com/r/Windows11/comments/1kgp7ar/cause_and_solution_to_windows_24h2_related  
 https://www.reddit.com/r/Windows11/comments/12yghi6/eliminating_high_dpc_latency_and_getting_kernel  
 https://www.resplendence.com/latencymon  
+https://www.sordum.org/9416/powerrun-v1-7-run-with-highest-privileges  
 https://www.techpowerup.com/download/microsoft-interrupt-affinity-tool  
 https://www.techpowerup.com/download/techpowerup-nvcleanstall    
 https://www.techpowerup.com/forums/threads/revisiting-hpet-bcdedit-tweaks-what-are-your-timer-bench-results-and-settings.326187  
@@ -133,5 +136,3 @@ https://www.youtube.com/watch?v=sbXzM60ad8I
 https://x.com/honestzin  
 https://x.com/jerry05259307  
 https://x.com/Realperfguy  
-https://winaero.com/regownershipex  
-https://www.sordum.org/9416/powerrun-v1-7-run-with-highest-privileges  
