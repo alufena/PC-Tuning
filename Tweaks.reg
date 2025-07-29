@@ -238,7 +238,9 @@ Windows Registry Editor Version 5.00
 "BoostingPeriodMultiplier"=dword:00000005
 "BufferSize"=dword:00000020
 "BugCheckUnexpectedInterrupts"=dword:00000000
-"CacheAwareScheduling"=dword:00000007
+"CacheAwareScheduling"=dword:00000007 ; 00000001/00000007
+"Capabilities"=dword:00000110
+"ClockOwner"=dword:00000001
 "ClockTimerAlwaysOnPresent"=dword:00000001
 "ClockTimerHighLatency"=dword:00000000
 "ClockTimerPerCpu"=dword:00000001
@@ -247,25 +249,38 @@ Windows Registry Editor Version 5.00
 "DelayDerefKCBLimit"=dword:00000000
 "DisableAutoBoost"=dword:00000001 ; 00000000/00000001
 "DisableBufferedIoInit"=dword:00000001
+"DisableControlFlowFlowGuardXgf"=dword:00000001
 "DisableControlFlowGuardExportSuppression"=dword:00000001
 "DisableControlFlowGuardXfg"=dword:00000001
 "DisableDynamicTick"=dword:00000001
 ; "DisableExceptionChainValidation"=dword:00000001 ; =-, 00000001 security option for anticheats
+"DisableLightWeightSuspend"=dword:00000001
 ; "DisableLowQosTimerResolution"=dword:00000000 ; =-, 00000000/00000001 (w10 only. breaks w11 24h2)
 "DisableOverlappedExecution"=dword:00000000
 "DisableTsx"=dword:00000001 ; 00000000/00000001
 "DistributeTimers"=dword:00000001 ; 00000000/00000001
 "DpcCumulativeSoftTimeout"=dword:00000000
+"DpcLastCount"=dword:000003e8
 "DpcQueueDepth"=dword:00000001
+"DpcRequestRate"=dword:00000001
+"DpcRoutineActive"=dword:00000001
+"DpcSoftTimeout"=dword:00000000
+"DpcTimeCount"=dword:000003e8
+"DpcTimeLimit"=dword:00000001
 "DpcTimeout"=dword:00000000
 "DpcWatchdogPeriod"=dword:00000000
 "DpcWatchdogProfileBufferSizeBytes"=dword:00000001
+"DpcWatchdogProfileCumulativeDpcThreshold"=dword:00000000
 "DpcWatchdogProfileOffset"=dword:00000000 ; 00002710, 00000000
+"DpcWatchdogProfileSingleDpcThreshold"=dword:00000000
 "DynamicDpcProtocol"=dword:00000001
 "DynamicTickDisable"=dword:00000001
+"EAFModules"=" "
+"EnableControlFlowLowGuardExportSuppression"=dword:00000001
 "EnablePerCpuClockTickScheduling"=dword:00000001 ; 00000000/00000001
 "EnableTickAccumulationFromAccountingPeriods"=dword:00000000 ; 00000000/00000001
 "EnableTsx"=dword:00000000
+"EnableUserReporting"=dword:00000000
 "EnableWerUserReporting"=dword:00000000
 "ExQueueWorkItem"=dword:00000020
 "ExTryQueueWorkItem"=dword:00000020
@@ -276,40 +291,56 @@ Windows Registry Editor Version 5.00
 "HeteroSchedulerOptions"=dword:00000000
 "IdealDpcRate"=dword:00000001 ; 00000000/00000001/00000320
 "IdealModeRandomized"=dword:00000001
-"IdealNodeRandomized"=dword:00000001
 "IdleDurationExpirationTimeout"=dword:00000000
+"IdleHalt"=dword:00000000
 "IdleScanInterval"=dword:00000000
+"InterruptLastCount"=dword:00000001
+"InterruptRate"=dword:00000001
+"InterruptRequest"=dword:00000001
 "InterruptSteeringDisabled"=dword:00000001
 "IoEnqueueIrp"=dword:00000020
 "IoQueueThreadIrp"=dword:00000020
 "IoQueueWorkItem"=dword:00000020
 "IoQueueWorkItemEx"=dword:00000020
 "IoQueueWorkItemToNode"=dword:00000020
+; "KernelSEHOPByHandle"=dword:00000000
 ; "KernelSEHOPEnabled"=dword:00000000 ; =-, 00000000 security option for anticheats
+"KeSpinLockOrdering"=dword:00000001
 "KiClockTimerAlwaysOnPresent"=dword:00000001
 "KiClockTimerHighLatency"=dword:00000000
 "KiClockTimerPerCpu"=dword:00000001
 "LargeSystemCache"=dword:00000001
+"LowPriorityBackgroundWorkItemQueue"=dword:00000000
 "MaxDynamicTickDuration"=dword:000003e8 ; 00000010/0000000a/000003e8
 "MaxDynamicTickDurationSize"=dword:ffffffff
 "MaximumDpcQueueDepth"=dword:00000001 ; 00000000/00000001
 "MaximumDpcRate"=dword:00000001
+"MaximumIncrement"=dword:00001388
+"MaximumKernelWorkerThreads"=dword:000007d0
 ; "MaximumSharedReadyQueueSize"=dword:00000001 ; 00000000/00000001/00000080
 "MinDynamicTickDuration"=dword:000003e8
 "MinimumDpcRate"=dword:00000001 ; 00000000/00000001
+"MinimumIncrement"=dword:00000004
 "MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00 ; w10 security option for anticheats
 ; "MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 ; w11 security option for anticheats
 "MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00 ; w10 security option for anticheats
 ; "MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22 ; w11 security option for anticheats
 "obcaseinsensitive"=dword:00000001
+"ObUnsecureGlobalNames"=hex(7):6e,00,65,00,74,00,66,00,78,00,63,00,75,00,73,00,74,00,6f,00,6d,00,70,00,65,00,72,00,66,00,63,00,6f,00,75,00,6e,00,74,00,65,00,72,00,73,00,2e,00,31,00,2e,00,30,00,00,00,53,00,68,00,61,00,72,00,65,00,64,00,50,00,65,00,72,00,66,00,49,00,50,00,43,00,42,00,6c,00,6f,00,63,00,6b,00,00,00,43,00,6f,00,72,00,5f,00,50,00,72,00,69,00,76,00,61,00,74,00,65,00,5f,00,49,00,50,00,43,00,42,00,6c,00,6f,00,63,00,6b,00,00,00,43,00,6f,00,72,00,5f,00,50,00,75,00,62,00,6c,00,69,00,63,00,5f,00,49,00,50,00,43,00,42,00,6c,00,6f,00,63,00,6b,00,5f,00,00,00,00,00
 "PassiveWatchdogTimeout"=dword:00000000
+"PendingTickFlags"=dword:00000000
 "PowerOffFrozenProcessors"=dword:00000000
 "PriorityControl"=dword:00000028 ; 00000020/00000028/00000032
+"PriorityState"=dword:00000001
+"QuantumEnd"=dword:00000001
 "QuantumLength"=dword:0000000e ; 00000002/0000000e/00000014
+"ReadyThreadCount"=dword:000007d0
 "ReadyTimeTicks"=dword:00000006
+"RealTimeIsCritical"=dword:00000001
 "RebalanceMinPriority"=dword:00000001
 "ScanLatencyTicks"=dword:00000014
-"SerializeTimerExpiration"=dword:00000000 ; 00000000/00000001/00000002
+"SeLpacEnablwatsonReporting"=dword:00000000
+"SerializeTimerExpiration"=dword:00000002 ; 00000000/00000001/00000002
 "SeTokenSingletonAttributesConfig"=dword:00000003
 "SplitLargeCaches"=dword:00000001
 "StackSubSystemStackSize"=dword:00010000
@@ -317,6 +348,7 @@ Windows Registry Editor Version 5.00
 "ThreadReadyCount"=dword:00000003
 "TimeIncrement"=dword:0000000f
 "TimerCheckFlags"=dword:00000000
+"TimerInterruptDelay"=dword:00000001
 "TtmEnabled"=dword:00000000
 "UnlimitDpcQueue"=dword:00000001
 "UseNewEaBuffering"=dword:00000001
@@ -1168,7 +1200,8 @@ Windows Registry Editor Version 5.00
 "Threshold"=dword:00000001
 
 [HKEY_CURRENT_USER\Control Panel\PowerCfg\GlobalPowerPolicy]
-"Policies"=hex:01,00,00,00,02,00,00,00,01,00,00,00,00,00,00,00,02,00,00,00,00,00,00,00,00,00,00,00,2c,01,00,00,32,32,03,03,04,00,00,00,04,00,00,00,00,00,00,00,00,00,00,00,84,03,00,00,2c,01,00,00,00,00,00,00,84,03,00,00,00,01,64,64,64,64,00,00
+"Policies"=hex:01,00,00,00,02,00,00,00,01,00,00,00,00,00,00,00,02,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,2c,01,00,00,32,32,03,03,04,00,00,00,04,00,00,00,00,00,00,00,00,00,00,00,00,00,84,03,00,00,2c,01,00,00,00,00,00,00,84,03,00,00,00,01,64,64,64,64,00,00
+; "Policies"=hex:01,00,00,00,02,00,00,00,01,00,00,00,00,00,00,00,02,00,00,00,00,00,00,00,00,00,00,00,2c,01,00,00,32,32,03,03,04,00,00,00,04,00,00,00,00,00,00,00,00,00,00,00,84,03,00,00,2c,01,00,00,00,00,00,00,84,03,00,00,00,01,64,64,64,64,00,00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Quota System]
 "EnableCpuQuota"=dword:00000000
@@ -3111,7 +3144,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Wisp\Touch]
 "TouchGate"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Config] 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Config]
 "VulnerableDriverBlocklistEnable"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Wacom\Analytics]
@@ -4660,9 +4693,9 @@ Windows Registry Editor Version 5.00
 "MouseThreshold1"="0"
 "MouseThreshold2"="0"
 "RawInput"="1"
-"RawMouseThrottleDuration"=dword:00000000
-"RawMouseThrottleEnabled"=dword:00000000
-"RawMouseThrottleForced"=dword:00000000
+"RawMouseThrottleDuration"=dword:00000014 ; 00000000/00000014
+"RawMouseThrottleEnabled"=dword:00000001 ; 00000000/00000001
+"RawMouseThrottleForced"=dword:00000001 ; 00000000/00000001
 "RawMouseThrottleLeeway"=dword:00000000
 "SnapToDefaultButton"="0"
 "SmoothMouseXCurve"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
@@ -12356,6 +12389,32 @@ Windows Registry Editor Version 5.00
 ; "DriverDateData"=hex:00,80,8c,a3,c5,94,c6,00 ; 00,80,8c,a3,c5,94,c6,01, 00,80,8c,a3,c5,94,c6,00
 ; HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96b-e325-11ce-bfc1-08002be10318}\0001
 ; HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96b-e325-11ce-bfc1-08002be10318}\0002
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Wbem\WDM]
+"ACPI\\PNP0C14\\AOD_0-{05901221-D566-11d1-B2F0-00A0C9062910}"=-
+"ACPI\\PNP0C14\\ASUSWMI_0-{05901221-D566-11d1-B2F0-00A0C9062910}"=-
+"C:\\Windows\\System32\\drivers\\ACPI.sys[ACPIMOFResource]"=-
+"C:\\Windows\\System32\\drivers\\en-US\\ACPI.sys.mui[ACPIMOFResource]"=-
+"C:\\Windows\\System32\\drivers\\en-US\\processr.sys.mui[PROCESSORWMI]"=-
+"C:\\Windows\\System32\\drivers\\HDAudBus.sys[HDAudioMofName]"=-
+"C:\\Windows\\System32\\drivers\\monitor.sys[MonitorWMI]"=-
+"C:\\Windows\\System32\\Drivers\\portcls.SYS[PortclsMof]"=-
+"C:\\Windows\\System32\\drivers\\processr.sys[PROCESSORWMI]"=-
+"C:\\Windows\\system32\\en-US\\kernelbase.dll.mui[MofResourceName]"=-
+"C:\\Windows\\system32\\kernelbase.dll[MofResourceName]"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Wbem\WDM\DREDGE]
+"ACPI\\PNP0C14\\AOD_0-{05901221-D566-11d1-B2F0-00A0C9062910}"=-
+"ACPI\\PNP0C14\\ASUSWMI_0-{05901221-D566-11d1-B2F0-00A0C9062910}"=-
+"C:\\Windows\\System32\\drivers\\ACPI.sys[ACPIMOFResource]"=-
+"C:\\Windows\\System32\\drivers\\en-US\\ACPI.sys.mui[ACPIMOFResource]"=-
+"C:\\Windows\\System32\\drivers\\en-US\\processr.sys.mui[PROCESSORWMI]"=-
+"C:\\Windows\\System32\\drivers\\HDAudBus.sys[HDAudioMofName]"=-
+"C:\\Windows\\System32\\drivers\\monitor.sys[MonitorWMI]"=-
+"C:\\Windows\\System32\\Drivers\\portcls.SYS[PortclsMof]"=-
+"C:\\Windows\\System32\\drivers\\processr.sys[PROCESSORWMI]"=-
+"C:\\Windows\\system32\\en-US\\kernelbase.dll.mui[MofResourceName]"=-
+"C:\\Windows\\system32\\kernelbase.dll[MofResourceName]"=-
 
 [HKEY_CURRENT_USER\System\GameConfigStore]
 "Win32_AutoGameModeDefaultProfile"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,\
