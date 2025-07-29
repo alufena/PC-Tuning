@@ -2617,6 +2617,9 @@ Windows Registry Editor Version 5.00
 "EnableFindMyFiles"=dword:00000000 ; 00000000 classic, 00000001 enhanced
 "SetupCompletedSuccessfully"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WSearch]
+"DelayedAutoStart"=dword:00000000
+
 ; requires special permissions
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\State\DisplayDatabase\GSM60B216843009_01_07DC_0E]
 "DitherRegistryKey"=hex:db,01,00,00,10,00,00,00,01,01,00,04,f2,00,00,00
@@ -3067,6 +3070,8 @@ Windows Registry Editor Version 5.00
 "legalnoticecaption"=""
 "legalnoticetext"=""
 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Microsoft.SkyDrive.Desktop]
+"Enabled"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\Tracing]
 "Enabled"=dword:00000000
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Application-Experience/Program-Telemetry]
@@ -3141,6 +3146,14 @@ Windows Registry Editor Version 5.00
 "Enabled"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\TabletTip\1.7\EmbeddedInkControl]
 "Enable"=dword:00000000 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\KernelShadowStacks]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.LowDisk]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.AutoPlay]
+"Enabled"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Microsoft.Windows.InputSwitchToastHandler]
+"Enabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Wisp\Touch]
 "PalmCheck"=dword:00000000
@@ -3398,9 +3411,11 @@ Windows Registry Editor Version 5.00
 "ScanWithAntiVirus"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings]
+"AutoOpenCopilotLargeScreens"=dword:00000000
 "NOC_GLOBAL_SETTING_TOASTS_ENABLED"=dword:00000000
 "NOC_GLOBAL_SETTING_ALLOW_NOTIFICATION_SOUND"=dword:00000000
 "NOC_GLOBAL_SETTING_ALLOW_CRITICAL_TOASTS_ABOVE_LOCK"=dword:00000000
+"NOC_GLOBAL_SETTING_ALLOW_TOASTS_ABOVE_LOCK"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\FTP]
 "Use PASV"="no"
@@ -3512,6 +3527,9 @@ Windows Registry Editor Version 5.00
 "RequireMicrosoftSignedBootChain"=dword:00000000
 "RequirePlatformSecurityFeature"=dword:00000000
 "RequirePlatformSecurityFeatures"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\DesktopSpotlight\Settings]
+"EnabledState"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity]
 "ChangedInBootCycle"=-
@@ -4655,6 +4673,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start\Companions\Microsoft.YourPhone_8wekyb3d8bbwe]
 "IsEnabled"=dword:00000000
+"IsAvailable"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\WindowsAI\DisableGenerativeFill]
 "Behavior"=dword:00102020
@@ -5516,6 +5535,13 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\WindowsNotepad]
 "DisableAIFeatures"=dword:00000001
 
+[HKEY_CURRENT_USER\Control Panel\Quick Actions\Control Center\Unpinned]
+"Microsoft.QuickAction.BlueLightReduction"=hex(0):
+"Microsoft.QuickAction.Accessibility"=hex(0):
+"Microsoft.QuickAction.NearShare"=hex(0):
+"Microsoft.QuickAction.Cast"=hex(0):
+"Microsoft.QuickAction.ProjectL2"=hex(0):
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\StorageSense]
 "AllowStorageSenseGlobal"=dword:00000000
 "AllowStorageSenseTemporaryFilesCleanup"=dword:00000000
@@ -6101,7 +6127,7 @@ Windows Registry Editor Version 5.00
 "DontSearchWindowsUpdate"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching]
-"SearchOrderConfig"=dword:00000003
+"SearchOrderConfig"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Update]
 "ExcludeWUDriversInQualityUpdate"=dword:00000001
@@ -6385,9 +6411,6 @@ Windows Registry Editor Version 5.00
 "Windows.Services.Maps.GuidanceContract"=-
 "Windows.Services.Maps.LocalSearchContract"=-
 "Windows.System.Profile.ProfileRetailInfoContract"=-
-
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings]
-"AutoOpenCopilotLargeScreens"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Policies]
 "FsEnableDevDrive"=dword:00000000
@@ -7782,6 +7805,9 @@ Windows Registry Editor Version 5.00
 "ShowDelay"=dword:00000000
 "HideDelay"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Installer]
+"DisableCoInstallers"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy]
 "LetAppsAccessAccountInfo"=dword:00000002
 "LetAppsAccessBackgroundSpatialPerception"=dword:00000002
@@ -8173,6 +8199,7 @@ Windows Registry Editor Version 5.00
 "ShowRecentList"=dword:00000000
 "StartAllPinsList"=dword:00000000
 "ShowAllPinsList"=dword:00000001
+"RightCompanionToggledOpen"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Biometrics\FacialFeatures]
 "EnhancedAntiSpoofing"=-
@@ -8377,6 +8404,7 @@ Windows Registry Editor Version 5.00
 "SmartScreenEnabled"="Off"
 "ThumbnailQuality"=dword:00000024
 "EnableAutoTray"=dword:00000000
+"HubMode"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Edge\SmartScreenEnabled]
 @=dword:00000000
