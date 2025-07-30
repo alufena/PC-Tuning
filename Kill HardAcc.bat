@@ -102,6 +102,7 @@ taskkill /f /t /im CrashMailer_64.exe
 taskkill /f /t /im EpicOnlineServicesUserHelper.exe
 taskkill /f /t /im SndVol.exe
 taskkill /f /t /im nvcplui.exe
+taskkill /f /t /im EpicWebHelper.exe
 sc start "SysMain"
 ::sc stop "SysMain"
 sc config "SysMain" start= auto
@@ -313,12 +314,12 @@ bcdedit /set isolatedcontext No
 ::bcdedit /deletevalue isolatedcontext
 bcdedit /set linearaddress57 OptOut
 ::bcdedit /deletevalue linearaddress57
-bcdedit /set maxproc Yes
-::bcdedit /deletevalue maxproc
+::bcdedit /set maxproc Yes
+bcdedit /deletevalue maxproc
 bcdedit /set nolowmem Yes
 ::bcdedit /deletevalue nolowmem
-bcdedit /set numproc 16
-::bcdedit /deletevalue numproc
+::bcdedit /set numproc 16
+bcdedit /deletevalue numproc
 bcdedit /set MSI Default
 ::bcdedit /deletevalue MSI
 bcdedit /set onecpu No
@@ -447,6 +448,9 @@ pnputil /disable-device "SWD\MIDISRV\MIDIU_DIAG_PING"
 pnputil /disable-device "SWD\MIDISRV\MIDIU_DIAG_LOOPBACK_B"
 pnputil /disable-device "SWD\MIDISRV\MIDIU_DIAG_LOOPBACK_A"
 pnputil /disable-device "SWD\MIDISRV\MIDIU_DIAG_TRANSPORT"
+::xbox joystick
+pnputil /disable-device "USB\VID_045E&PID_028E\20492BE"
+::pnputil /enable-device "USB\VID_045E&PID_028E\20492BE"
 takeown /f "%SystemRoot%\System32\drivers\Acpidev.sys"
 takeown /f "%SystemRoot%\System32\drivers\Acpipagr.sys"
 takeown /f "%SystemRoot%\System32\drivers\Acpitime.sys"
@@ -465,6 +469,19 @@ icacls "%SystemRoot%\System32\mcupdate_GenuineIntel.dll" /grant %username%:F
 icacls "%SystemRoot%\System32\mcupdate_AuthenticAMD.dll" /grant %username%:F
 del "C:\Windows\System32\mcupdate_GenuineIntel.dll"
 del "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
+takeown /f "C:\Windows\System32\GameBarPresenceWriter.exe"
+takeown /f "C:\Windows\System32\GameBarPresenceWriter.proxy.dll"
+takeown /f "C:\Windows\System32\Windows.Gaming.UI.GameBar.dll"
+icacls "%SystemRoot%\System32\GameBarPresenceWriter.exe" /grant %username%:F
+icacls "%SystemRoot%\System32\GameBarPresenceWriter.proxy.dll" /grant %username%:F
+icacls "%SystemRoot%\System32\Windows.Gaming.UI.GameBar.dll" /grant %username%:F
+del "C:\Windows\System32\GameBarPresenceWriter.exe"
+del "C:\Windows\System32\GameBarPresenceWriter.proxy.dll"
+del "C:\Windows\System32\Windows.Gaming.UI.GameBar.dll"
+takeown /f "%SystemRoot%\System32\spool\drivers\color" /r /d y >nul
+icacls "%SystemRoot%\System32\spool\drivers\color" /grant Administrators:F /t >nul
+del /f /s /q "%SystemRoot%\System32\spool\drivers\color\*.*" >nul
+for /D %%D in ("%SystemRoot%\System32\spool\drivers\color\*") do rmdir /s /q "%%D"
 reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /va /f
 reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths" /va /f
 reg delete "HKCU\Software\Microsoft\Direct3D\MostRecentApplication" /va /f
