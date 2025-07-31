@@ -21,38 +21,43 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games]
 "Affinity"=dword:00000000
 "Background Only"="False"
-"Clock Rate"=dword:00002710
+"BackgroundPriority"=dword:00000008
+"Clock Rate"=dword:000013ab ; 00002710, 000013ab
 "GPU Priority"=dword:00000012
 "Latency Sensitive"="True"
-"Priority"=dword:00000006
+"Priority"=dword:00000006 ; 00000006/00000008
+"Priority When Yielded"=dword:00000013
 "Scheduling Category"="High"
 "SFIO Priority"="High"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio]
 "Affinity"=dword:00000000
-"Clock Rate"=dword:00002710
 "Background Only"="False"
+"BackgroundPriority"=dword:00000001
+"Clock Rate"=dword:00002710
 "GPU Priority"=dword:00000008
-"Latency Sensitive"="True"
-"Priority"=dword:00000006
-"Scheduling Category"="High"
+"Latency Sensitive"="False" ; True/False
+"Priority"=dword:00000006 ; 00000001/00000006
+"Priority When Yielded"=dword:00000001
+"Scheduling Category"="Low" ; High/Low
 "SFIO Priority"="High"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing]
 "Affinity"=dword:00000000
 "Background Only"="False" ; False/True
-"BackgroundPriority"=dword:00000018
+"BackgroundPriority"=dword:00000001 ; 00000001/00000018
 "Clock Rate"=dword:00002710
 "GPU Priority"=dword:00000008 ; 00000008/00000012
-"Latency Sensitive"="True"
-"Priority"=dword:00000008
-"Scheduling Category"="High"
+"Latency Sensitive"="False" ; True/False
+"Priority"=dword:00000008 ; 00000001/00000008
+"Priority When Yielded"=dword:00000001
+"Scheduling Category"="Low" ; High/Low
 "SFIO Priority"="High"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Pro Audio]
 "Affinity"=dword:00000000
-"Clock Rate"=dword:00002710
 "Background Only"="False"
+"Clock Rate"=dword:00002710
 "GPU Priority"=dword:00000008
 "Latency Sensitive"="True"
 "Priority"=dword:00000006
@@ -64,47 +69,57 @@ Windows Registry Editor Version 5.00
 "Background Only"="False"
 "Clock Rate"=dword:00000a8e
 "GPU Priority"=dword:00000008
+"Latency Sensitive"="True"
 "Priority"=dword:00000006
 "Scheduling Category"="High"
 "SFIO Priority"="High"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Capture]
+"Affinity"=dword:00000000
+"Background Only"="True"
+"BackgroundPriority"=dword:00000008
+"Clock Rate"=dword:000013ab ; 00002710, 000013ab
+"GPU Priority"=dword:00000008
 "Latency Sensitive"="True"
+"Priority"=dword:00000005 ; 00000005/00000008
+"Priority When Yielded"=dword:00000013
+"Scheduling Category"="High" ; Medium, High
+"SFIO Priority"="Normal"
 
-; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Capture]
-; "Affinity"=dword:00000000
-; "Background Only"="True"
-; "Clock Rate"=dword:00002710
-; "GPU Priority"=dword:00000008
-; "Priority"=dword:00000005
-; "Scheduling Category"="Medium"
-; "SFIO Priority"="Normal"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Distribution]
+"Affinity"=dword:00000000
+"Background Only"="True"
+"BackgroundPriority"=dword:00000008
+"Clock Rate"=dword:000013ab ; 00002710, 000013ab
+"GPU Priority"=dword:00000008
+"Latency Sensitive"="True"
+"Priority"=dword:00000008 ; 00000004, 00000008
+"Priority When Yielded"=dword:00000013
+"Scheduling Category"="High" ; Medium, High
+"SFIO Priority"="Normal"
 
-; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Distribution]
-; "Affinity"=dword:00000000
-; "Background Only"="True"
-; "Clock Rate"=dword:00002710
-; "GPU Priority"=dword:00000008
-; "Priority"=dword:00000004
-; "Scheduling Category"="Medium"
-; "SFIO Priority"="Normal"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Playback]
+"Affinity"=dword:00000000
+"Background Only"="False"
+"BackgroundPriority"=dword:00000004
+"Clock Rate"=dword:00002710
+"GPU Priority"=dword:00000008
+"Latency Sensitive"="False"
+"Priority"=dword:00000001 ; 00000003, 00000001
+"Scheduling Category"="Low" ; Medium, Low
+"SFIO Priority"="Normal"
 
-; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Playback]
-; "Affinity"=dword:00000000
-; "Background Only"="False"
-; "BackgroundPriority"=dword:00000004
-; "Clock Rate"=dword:00002710
-; "GPU Priority"=dword:00000008
-; "Priority"=dword:00000003
-; "Scheduling Category"="Medium"
-; "SFIO Priority"="Normal"
-
-; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Window Manager]
-; "Affinity"=dword:00000000
-; "Clock Rate"=dword:00002710
-; "Background Only"="True"
-; "GPU Priority"=dword:00000008
-; "Priority"=dword:00000005
-; "Scheduling Category"="Medium"
-; "SFIO Priority"="Normal"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Window Manager]
+"Affinity"=dword:00000000
+"Background Only"="True"
+"BackgroundPriority"=dword:00000008
+"Clock Rate"=dword:000013ab ; 00002710, 000013ab
+"GPU Priority"=dword:00000008
+"Latency Sensitive"="True"
+"Priority"=dword:00000008 ; 00000005, 00000008
+"Priority When Yielded"=dword:00000013
+"Scheduling Category"="High" ; Medium, High
+"SFIO Priority"="Normal"
 
 [HKEY_CURRENT_USER\System\GameConfigStore]
 "GameDVR_DSEBehavior"=dword:00000002 ; =-, 00000002
@@ -567,15 +582,16 @@ Windows Registry Editor Version 5.00
 "D3D12_RESOURCE_ALIGNMENT"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
-"AlwaysOn"=dword:00000001
-"IdleDetectionCycles"=dword:00000000 ; 00000000/00000001/00000005
-"LazyModeTimeout"=dword:000061a8
-"MaxThreadsPerProcess"=dword:00000000 ; 00000000/00000080/0000000a
-"MaxThreadsTotal"=dword:00000080 ; 00000080/0000ffff
+; "AlwaysOn"=dword:00000001 ; mmcss off
+"IdleDetectionCycles"=dword:00000005 ; 00000000/00000001/00000005
+; "LazyModeTimeout"=dword:000061a8 ; mmcss off
+"MaxThreadsPerProcess"=dword:00000080 ; 00000000/00000080/0000000a
+"MaxThreadsTotal"=dword:0000ffff ; 00000080/0000ffff
 "NetworkThrottlingIndex"=dword:0000000a ; 0000000a/00000014/ffffffff
-"NoLazyMode"=dword:00000001
-"SchedulerPeriod"=dword:00000001
-"SystemResponsiveness"=dword:00000000 ; 00000014, 00000000/00000001/0000000a
+; "NoLazyMode"=dword:00000001 ; mmcss off
+"SchedulerPeriod"=dword:000186a0 ; 00000001/000186a0
+"SchedulerTimerResolution"=dword:00001388
+"SystemResponsiveness"=dword:00000014 ; 00000014, 00000000/00000001/0000000a
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
 "AuditLevel"=dword:00000000
@@ -5064,12 +5080,12 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000004 ; 00000003, 00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MMCSS]
-"Start"=dword:00000004 ; 00000002, 00000004
+"Start"=dword:00000002 ; 00000002, 00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GraphicsPerfSvc]
 "Start"=dword:00000004 ; 00000003, 00000002 HAGS on/00000004 HAGS off
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\AUEP]
-"RSX_AUEPStatus"=dword:00000004 ; 00000002 mmcss on/00000004 mmcss off
+"RSX_AUEPStatus"=dword:00000002 ; 00000002 mmcss on/00000004 mmcss off
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters]
 "AllowInteractiveConnect"=dword:00000000
@@ -8500,6 +8516,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Policy]
 "VerifiedAndReputablePolicyState"=dword:00000000
+"UpgradedSystem"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage]
 "OpenAtLogon"=dword:00000000
@@ -8623,6 +8640,9 @@ Windows Registry Editor Version 5.00
 "DisableSelectiveSuspend"=dword:00000001
 "DisablePowerDown"=dword:00000001
 "EnIdleEndpointSupport"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Shell\USB]
+"NotifyOnWeakCharger"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HidUsb]
 "IdleEnabled"=dword:00000000
@@ -12370,14 +12390,18 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\GraphicsDrivers\Configuration\GSM60B216843009_01_07DC_0E^3D9A69AD1C84EAB2AAF1FC3855733BB4\00\00]
 "Scaling"=dword:00000002 ; 00000003, 00000000/00000002
+"PixelFormat"=dword:00000001 ; 00000015, 00000001
 ; "ScanlineOrdering"=dword:00000000
 ; "Rotation"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\GraphicsDrivers\Configuration\MSBDD_GSM60B216843009_01_07DC_0E_10DE_2182_00000009_00000000_0^C3074D81ED6937E7FD3B7E5AF6A9CC56\00\00]
 "Scaling"=dword:00000002
+"PixelFormat"=dword:00000001
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\GraphicsDrivers\Configuration\MSNILGSM60B216843009_01_07DC_0E_1414_008D_FFFFFFFF_FFFFFFFF_0^EE8B061A5740FAAEC96DE444C957CF62\00\00]
 "Scaling"=dword:00000002
+"PixelFormat"=dword:00000001
 [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\GraphicsDrivers\Configuration\MSNILNOEDID_1414_008D_FFFFFFFF_FFFFFFFF_0^030B4FCE00727AC1593E5B6FD18648D6\00\00]
 "Scaling"=dword:00000002
+"PixelFormat"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration\GSM60B216843009_01_07DC_0E^3D9A69AD1C84EAB2AAF1FC3855733BB4\00]
 "PrimSurfSize.cx"=dword:00000780
