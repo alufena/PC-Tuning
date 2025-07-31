@@ -102,7 +102,7 @@ https://www.overclock.net/threads/gaming-and-mouse-response-bios-optimization-gu
 https://www.overclock.net/threads/usb-polling-precision.1550666  
 https://www.reddit.com/r/AMDHelp/comments/1lnxb8o/ultimate_amd_performance_fix_guide_stop_lag_fps  
 https://www.reddit.com/r/GlobalOffensive/comments/1luj08w/nvidia_drivers_53758_performance_increase  
-https://www.reddit.com/r/MouseReview/comments/zgbrk3/i_finally_found_a_fix_to_all_my_mouse/  
+https://www.reddit.com/r/MouseReview/comments/zgbrk3/i_finally_found_a_fix_to_all_my_mouse  
 https://www.reddit.com/r/techsupport/comments/13avw59/fix_for_high_dpc_latency_wdf01000_ntoskrnl  
 https://www.reddit.com/r/uBlockOrigin/comments/1jbv1xn/youtube_ads_detection_breakages_2025_megathread  
 https://www.reddit.com/r/Windows11/comments/1kgp7ar/cause_and_solution_to_windows_24h2_related  
