@@ -596,76 +596,87 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
 "AuditLevel"=dword:00000000
 "CpuPriorityClass"=dword:00000005
-"IoPriority"=dword:00000005
+"IoPriority"=dword:00000000
 "MinimumStackCommitInBytes"=dword:00008000
-"PagePriority"=dword:00000005
-
+"PagePriority"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
 "AuditLevel"=dword:00000000
 "CpuPriorityClass"=dword:00000005
-"IoPriority"=dword:00000005
+"IoPriority"=dword:00000000
 "MinimumStackCommitInBytes"=dword:00008000
-"PagePriority"=dword:00000005
+"PagePriority"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\audiodg.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000002
+"IoPriority"=dword:00000002
+"PagePriority"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\audiodg.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000002
+"IoPriority"=dword:00000002
+"PagePriority"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
-"IoPriority"=dword:00000001
-"PagePriority"=dword:00000001
-
+"IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
-"IoPriority"=dword:00000001
-"PagePriority"=dword:00000001
+"IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\fontdrvhost.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
-"IoPriority"=dword:00000001
-"PagePriority"=dword:00000001
-
+"IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\fontdrvhost.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
-"IoPriority"=dword:00000001
-"PagePriority"=dword:00000001
+"IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
-"IoPriority"=dword:00000001
-"PagePriority"=dword:00000001
-
+"IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
-"IoPriority"=dword:00000001
-"PagePriority"=dword:00000001
+"IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003  ; =-, 00000001/00000003/00000004/00000006
-"IoPriority"=dword:00000003 ; =-, 00000001/00000003/00000006
-"PagePriority"=dword:00000003 ; =-, 00000001/00000003/00000006
-
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
-"IoPriority"=dword:00000003
-"PagePriority"=dword:00000003
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003  ; =-, 00000003/00000004/00000006
-"IoPriority"=dword:00000003 ; =-, 00000003/00000006
-"PagePriority"=dword:00000003 ; =-, 00000003/00000006
-
+"CpuPriorityClass"=dword:00000004
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
+"CpuPriorityClass"=dword:00000004
 "IoPriority"=dword:00000003
 "PagePriority"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ntoskrnl.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003  ; =-, 00000003/00000004/00000006
-"IoPriority"=dword:00000003 ; =-, 00000003/00000006
-"PagePriority"=dword:00000003 ; =-, 00000003/00000006
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ntoskrnl.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000003
+"CpuPriorityClass"=dword:00000004
 "IoPriority"=dword:00000003
 "PagePriority"=dword:00000003
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ntoskrnl.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000004
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winlogon.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winlogon.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NDIS\Parameters]
 "CheckFwVersion"=dword:00000000
@@ -839,7 +850,7 @@ Windows Registry Editor Version 5.00
 "HandlerTimeout"=dword:7fffffff
 "PortableOperatingSystem"=dword:00000000
 "ServicesPipeTimeout"=dword:00240000
-"SvcHostSplitThresholdInKB"=dword:04000000 ; 00380000, 01000000/02000000/04000000
+"SvcHostSplitThresholdInKB"=dword:01000000 ; 00380000, 01000000/02000000/04000000
 "WaitToKillServiceTimeout"="1000"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0DA965DC-8FCF-4c0b-8EFE-8DD5E7BC959A}\{7E01ADEF-81E6-4e1b-8075-56F373584694}]
@@ -2798,6 +2809,12 @@ Windows Registry Editor Version 5.00
 "StartupDelayInMSec"=dword:00000000
 "WaitForIdleState"=dword:00000000
 [HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
+"StartupDelayInMSec"=dword:00000000
+"WaitForIdleState"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
+"StartupDelayInMSec"=dword:00000000
+"WaitForIdleState"=dword:00000000
+[HKEY_CURRENT_USER\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
 "StartupDelayInMSec"=dword:00000000
 "WaitForIdleState"=dword:00000000
 
@@ -7148,6 +7165,7 @@ Windows Registry Editor Version 5.00
 "SettingsPageVisibility"="hide:aicomponents;hide:home"
 "StartMenuFavorites"=dword:00000000
 "Start_ShowHelp"=dword:00000000
+"UseDesktopIniCache"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 "ClearRecentDocsOnExit"=dword:00000001
@@ -10218,745 +10236,745 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NMS.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4_x64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wow.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TheForest.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\QuakeChampions.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\KFGame.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTAIV.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SocialClubHelper.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlayGTAIV.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forzahorizon5.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\amtrucks.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hl2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Warframe.x64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfWarships64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Ghostrunner-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\left4dead2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadByDaylight-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DH-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LANoire.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Dishonored.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorld.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorldLauncher.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HaloInfinite.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Overwatch.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LOSTARK.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfTanks.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Paladins.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Carmageddon_Max_Damage.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Raft.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tiger-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HouseFlipper.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tlou-i.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cyberpunk2077.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RDR2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tropico6.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GSS2-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlanetCoaster.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cities.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MadMax.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BorderlandsGOTY.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\VRising.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TPH.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dota2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SkyrimSE.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ffmpeg.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Topaz Video AI.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\avc_enhance_video.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\bf1.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame_x64_rwdi.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout4.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NarakaBladepoint.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout76.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Gw2-64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Starfield.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CivilizationVI_DX12.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forza_gaming.desktop.x64_release_final.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crossout.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BF2042.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AlanWake2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Discovery.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\re8.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect1.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WowClassic.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WolfNewOrder_x64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\aces.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AoE3DE_s.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod22-cod.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NeedForSpeedUnbound.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tf_win64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex_dx12.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SonsOfTheForest.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Back4Blood.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\World of Warcraft Launcher.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SW3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MarvelRivals_Launcher.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Obsidian.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5_Enhanced.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cs2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteLauncher.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NMS.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4_x64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wow.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TheForest.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\QuakeChampions.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\KFGame.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTAIV.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlayGTAIV.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forzahorizon5.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\amtrucks.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hl2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Warframe.x64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfWarships64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Ghostrunner-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\left4dead2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadByDaylight-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DH-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LANoire.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Dishonored.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorld.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorldLauncher.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HaloInfinite.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Overwatch.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LOSTARK.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfTanks.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Paladins.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Carmageddon_Max_Damage.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Raft.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tiger-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HouseFlipper.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tlou-i.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cyberpunk2077.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RDR2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tropico6.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GSS2-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlanetCoaster.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cities.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MadMax.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BorderlandsGOTY.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\VRising.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TPH.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dota2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SkyrimSE.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ffmpeg.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Topaz Video AI.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\avc_enhance_video.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\bf1.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame_x64_rwdi.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout4.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NarakaBladepoint.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout76.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Gw2-64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Starfield.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CivilizationVI_DX12.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forza_gaming.desktop.x64_release_final.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crossout.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BF2042.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AlanWake2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Discovery.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\re8.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect1.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WowClassic.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WolfNewOrder_x64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\aces.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AoE3DE_s.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod22-cod.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NeedForSpeedUnbound.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tf_win64.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex_dx12.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SonsOfTheForest.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Back4Blood.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\World of Warcraft Launcher.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SW3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MarvelRivals_Launcher.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Obsidian.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5_Enhanced.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cs2.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteLauncher.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland-Win64-Shipping.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
-"IoPriority"=dword:00000006
-"PagePriority"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\DirectX\UserGpuPreferences]
 "C:\\Program Files\\Electronic Arts\\EA Desktop\\EA Desktop\\EADesktop.exe"="GpuPreference=1;"
