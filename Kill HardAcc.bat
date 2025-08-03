@@ -381,18 +381,18 @@ lodctr /e:PerfOS
 taskkill /f /t /im OfficeClickToRun.exe
 taskkill /f /t /im ShellHost.exe
 wmic process where name="Adobe Crash Processor.exe" CALL terminate
+wmic process where name="dllhost.exe" CALL setpriority 64
+wmic process where name="dwm.exe" CALL setpriority 64
+::wmic process where name="dwm.exe" CALL setpriority 128
+::wmic process where name="dwm.exe" CALL setpriority 256
+::wmic process where name="dwm.exe" CALL setpriority 32768
+wmic process where name="fontdrvhost.exe" CALL setpriority 64
 wmic process where name="MoUsoCoreWorker.exe" CALL terminate
 wmic process where name="MpDefenderCoreService.exe" CALL terminate
 wmic process where name="OfficeClickToRun.exe" CALL terminate
 wmic process where name="taskhostw.exe" CALL terminate
-wmic process where name="WmiPrvSvc.exe" CALL terminate
-::wmic process where name="dwm.exe" CALL setpriority 32768
-::wmic process where name="dwm.exe" CALL setpriority 64
-::wmic process where name="dwm.exe" CALL setpriority 256
-wmic process where name="dwm.exe" CALL setpriority 128
-wmic process where name="dllhost.exe" CALL setpriority 64
-wmic process where name="fontdrvhost.exe" CALL setpriority 64
 wmic process where name="winlogon.exe" CALL setpriority 64
+wmic process where name="WmiPrvSvc.exe" CALL terminate
 taskkill /f /t /im MoUsoCoreWorker.exe
 taskkill /f /t /im RuntimeBroker.exe
 taskkill /f /t /im UserOOBEBroker.exe
@@ -482,6 +482,8 @@ takeown /f "%SystemRoot%\System32\spool\drivers\color" /r /d y >nul
 icacls "%SystemRoot%\System32\spool\drivers\color" /grant Administrators:F /t >nul
 del /f /s /q "%SystemRoot%\System32\spool\drivers\color\*.*" >nul
 for /D %%D in ("%SystemRoot%\System32\spool\drivers\color\*") do rmdir /s /q "%%D"
+takeown /f "%WinDir%\HelpPane.exe"
+icacls "%WinDir%\HelpPane.exe" /deny Everyone:(X)
 reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /va /f
 reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths" /va /f
 reg delete "HKCU\Software\Microsoft\Direct3D\MostRecentApplication" /va /f
@@ -507,6 +509,8 @@ reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Regedit" /va 
 reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit\Favorites" /va /f
 reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Regedit\Favorites" /va /f
 ::timeout /t 8 /nobreak
+winget uninstall "windows web experience pack"
+winget uninstall --id Microsoft.WindowsWebExperiencePack
 taskkill /f /t /im node.exe
 taskkill /f /t /im powershell.exe
 taskkill /f /t /im conhost.exe
