@@ -65,6 +65,21 @@ icacls "%SystemRoot%\System32\mcupdate_GenuineIntel.dll" /grant %username%:F
 icacls "%SystemRoot%\System32\mcupdate_AuthenticAMD.dll" /grant %username%:F
 del "C:\Windows\System32\mcupdate_GenuineIntel.dll"
 del "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
+takeown /f "C:\Windows\System32\GameBarPresenceWriter.exe"
+takeown /f "C:\Windows\System32\GameBarPresenceWriter.proxy.dll"
+takeown /f "C:\Windows\System32\Windows.Gaming.UI.GameBar.dll"
+icacls "%SystemRoot%\System32\GameBarPresenceWriter.exe" /grant %username%:F
+icacls "%SystemRoot%\System32\GameBarPresenceWriter.proxy.dll" /grant %username%:F
+icacls "%SystemRoot%\System32\Windows.Gaming.UI.GameBar.dll" /grant %username%:F
+del "C:\Windows\System32\GameBarPresenceWriter.exe"
+del "C:\Windows\System32\GameBarPresenceWriter.proxy.dll"
+del "C:\Windows\System32\Windows.Gaming.UI.GameBar.dll"
+takeown /f "%SystemRoot%\System32\spool\drivers\color" /r /d y >nul
+icacls "%SystemRoot%\System32\spool\drivers\color" /grant Administrators:F /t >nul
+del /f /s /q "%SystemRoot%\System32\spool\drivers\color\*.*" >nul
+for /D %%D in ("%SystemRoot%\System32\spool\drivers\color\*") do rmdir /s /q "%%D"
+takeown /f "%WinDir%\HelpPane.exe"
+icacls "%WinDir%\HelpPane.exe" /deny Everyone:(X)
 taskkill /f /t /im conhost.exe
 taskkill /f /t /im cmd.exe
 exit
