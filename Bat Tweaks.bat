@@ -1,14 +1,21 @@
 fsutil behavior set allowextchar 0
+fsutil behavior set Bugcheckoncorrupt 0
 fsutil behavior set disable8dot3 1
 fsutil behavior set DisableCompression 1
+fsutil behavior set disabledeletenotify 0
 fsutil behavior set disableencryption 1
 fsutil behavior set disablelastaccess 1
+fsutil behavior set disablespotcorruptionhandling 1
 fsutil behavior set encryptpagingfile 0
 ::fsutil behavior set memoryusage 1
 fsutil behavior set memoryusage 2
 fsutil behavior set mftzone 4
 fsutil behavior set quotanotify 4294967295
-fsutil behavior set disabledeletenotify 0
+fsutil repair set C: 0
+fsutil repair set D: 0
+fsutil repair set E: 0
+fsutil repair set F: 0
+fsutil repair set G: 0
 manage-bde -off C:
 manage-bde -off D:
 manage-bde -off E:
@@ -33,6 +40,21 @@ icacls "%SystemRoot%\System32\mcupdate_GenuineIntel.dll" /grant %username%:F
 icacls "%SystemRoot%\System32\mcupdate_AuthenticAMD.dll" /grant %username%:F
 del "C:\Windows\System32\mcupdate_GenuineIntel.dll"
 del "C:\Windows\System32\mcupdate_AuthenticAMD.dll"
+takeown /f "C:\Windows\System32\GameBarPresenceWriter.exe"
+takeown /f "C:\Windows\System32\GameBarPresenceWriter.proxy.dll"
+takeown /f "C:\Windows\System32\Windows.Gaming.UI.GameBar.dll"
+icacls "%SystemRoot%\System32\GameBarPresenceWriter.exe" /grant %username%:F
+icacls "%SystemRoot%\System32\GameBarPresenceWriter.proxy.dll" /grant %username%:F
+icacls "%SystemRoot%\System32\Windows.Gaming.UI.GameBar.dll" /grant %username%:F
+del "C:\Windows\System32\GameBarPresenceWriter.exe"
+del "C:\Windows\System32\GameBarPresenceWriter.proxy.dll"
+del "C:\Windows\System32\Windows.Gaming.UI.GameBar.dll"
+takeown /f "%SystemRoot%\System32\spool\drivers\color" /r /d y >nul
+icacls "%SystemRoot%\System32\spool\drivers\color" /grant Administrators:F /t >nul
+del /f /s /q "%SystemRoot%\System32\spool\drivers\color\*.*" >nul
+for /D %%D in ("%SystemRoot%\System32\spool\drivers\color\*") do rmdir /s /q "%%D"
+takeown /f "%WinDir%\HelpPane.exe"
+icacls "%WinDir%\HelpPane.exe" /deny Everyone:(X)
 powercfg -change monitor-timeout-ac 0
 powercfg -change standby-timeout-ac 0
 powercfg -change hibernate-timeout-ac 0
