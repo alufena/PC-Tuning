@@ -5,56 +5,61 @@ netsh int ip set global loopbackworkercount=16
 netsh int ip set global neighborcachelimit=4096
 netsh int ip set global taskoffload=disabled
 netsh int isatap set state disabled
-netsh int tcp set global autotuninglevel=disabled # disabled/normal
-netsh int tcp set global dca=enabled
+netsh int tcp set global autotuninglevel=normal # disabled/normal
+netsh int tcp set global dca=disabled # disabled/enabled
 netsh int tcp set global ecncapability=disabled # disabled/enabled
 netsh int tcp set global fastopen=enabled
 netsh int tcp set global fastopenfallback=enabled
 netsh int tcp set global hystart=enabled
-netsh int tcp set global initialRto=3000
+netsh int tcp set global initialRto=2000 # 2000/3000
 netsh int tcp set global maxsynretransmissions=2
 netsh int tcp set global netdma=enabled
 netsh int tcp set global nonsackrttresiliency=disabled
 netsh int tcp set global pacingprofile=always
-netsh int tcp set global rsc=disabled
+netsh int tcp set global rsc=disabled # disabled/enabled
 netsh int tcp set global rss=enabled
 netsh int tcp set global timestamps=disabled
 netsh int tcp set security mpp=disabled
 netsh int tcp set security profiles=disabled
-netsh int tcp set supplemental internet congestionprovider=ctcp
+netsh int tcp set supplemental internet congestionprovider=ctcp # ctcp/dctcp
+# netsh int tcp set supplemental internet congestionprovider=dctcp
 netsh int tcp set supplemental internet enablecwndrestart=enabled
 
 # w11 only
-# netsh int tcp set supplemental Template=Internet CongestionProvider=cubic
-# netsh int tcp set supplemental Template=Datacenter CongestionProvider=cubic
-# netsh int tcp set supplemental Template=Compat CongestionProvider=cubic
-# netsh int tcp set supplemental Template=DatacenterCustom CongestionProvider=cubic
-# netsh int tcp set supplemental Template=InternetCustom CongestionProvider=cubic
 # netsh int tcp set supplemental Template=Automatic CongestionProvider=cubic
+# netsh int tcp set supplemental Template=Compat CongestionProvider=bbr2
+# netsh int tcp set supplemental Template=Compat CongestionProvider=cubic
+# netsh int tcp set supplemental Template=Datacenter CongestionProvider=bbr2
+# netsh int tcp set supplemental Template=Datacenter CongestionProvider=cubic
+# netsh int tcp set supplemental Template=DatacenterCustom CongestionProvider=bbr2
+# netsh int tcp set supplemental Template=DatacenterCustom CongestionProvider=cubic
+# netsh int tcp set supplemental Template=Internet CongestionProvider=bbr2
+# netsh int tcp set supplemental Template=Internet CongestionProvider=cubic
+# netsh int tcp set supplemental Template=InternetCustom CongestionProvider=bbr2
+# netsh int tcp set supplemental Template=InternetCustom CongestionProvider=cubic
 
-Set-NetTCPSetting -SettingName * -AutoTuningLevelLocal Disable -ScalingHeuristics Disabled
+Set-NetTCPSetting -SettingName "*" -AutoTuningLevelLocal Normal -ScalingHeuristics Disabled -MinRto 300
 
-Disable-NetAdapterPowerManagement *
-Disable-NetAdapterLso -Name *
-Disable-NetAdapterBinding -Name * -ComponentID ms_pacer
+Disable-NetAdapterPowerManagement -Name "*"
+Disable-NetAdapterLso -Name "*"
+Disable-NetAdapterBinding -Name "*" -ComponentID ms_pacer
 
 # If you share files on the network, DO NOT disable the client below
-Disable-NetAdapterBinding -Name * -ComponentID ms_msclient
+Disable-NetAdapterBinding -Name "*" -ComponentID ms_msclient
 
-Set-NetOffloadGlobalSetting -PacketCoalescingFilter disabled -Chimney Disabled -Taskoffload Disabled -ReceiveSideScaling Enabled -ReceiveSegmentCoalescing Disabled
-# Taskoffload Disabled/Enabled
+Set-NetOffloadGlobalSetting -PacketCoalescingFilter disabled -Chimney Disabled -Taskoffload Disabled -ReceiveSideScaling Enabled -ReceiveSegmentCoalescing Disabled # Taskoffload Disabled/Enabled
 
 Set-NetAdapterRdma -Name "*" -Enabled $True
 Set-NetAdapterRss -Name "*" -Profile Conservative
 Set-NetAdapterIPsecOffload -Name "*" -Enabled $True
-Disable-NetAdapterChecksumOffload -Name "*" # Disable/Enable
-Disable-NetAdapterEncapsulatedPacketTaskOffload -Name "*" # Disable/Enable
-Disable-NetAdapterIPsecOffload -Name "*" # Disable/Enable
+Enable-NetAdapterChecksumOffload -Name "*" # Disable/Enable
+Enable-NetAdapterEncapsulatedPacketTaskOffload -Name "*" # Disable/Enable
+Enable-NetAdapterIPsecOffload -Name "*" # Disable/Enable
 Disable-NetAdapterQos -Name "*" # Disable/Enable
 Disable-NetAdapterRsc -Name "*" # Disable/Enable
 Enable-NetAdapterRss -Name "*"
-Disable-NetAdapterSriov -Name "*" # Disable/Enable
-Disable-NetAdapterVmq -Name "*" # Disable/Enable
+Enable-NetAdapterSriov -Name "*" # Disable/Enable
+Enable-NetAdapterVmq -Name "*" # Disable/Enable
 
 function Set-RegKey {
     param (
@@ -84,7 +89,6 @@ foreach ($interface in $interfaces) {
     Set-RegKey -path $interface.PSPath -name "NetbiosOptions" -value 2
 }
 
-
 $driverPath = "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces"
 $networkInterfaces = Get-ChildItem -Path $driverPath
 foreach ($interface in $networkInterfaces) {
@@ -108,13 +112,13 @@ foreach ($interface in $networkInterfaces) {
     Set-RegKey -path $interface.PSPath -name "ULPMode" -value "0" -type "String"
 }
 
-# netsh int tcp set supplemental internet congestionprovider=dctcp
+Disable-NetAdapterBinding -Name "*" -DisplayName 'Client for Microsoft Networks'
+Disable-NetAdapterBinding -Name "*" -DisplayName 'File and Printer Sharing for Microsoft Networks'
+Disable-NetAdapterQos -Name "*"
+Disable-NetAdapterBinding -Name "*" -DisplayName 'Microsoft Network Adapter Multiplexor Protocol'
+Disable-NetAdapterBinding -Name "*" -DisplayName 'Microsoft LLDP Protocol Driver'
+Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6
+Disable-NetAdapterBinding -Name "*" -DisplayName 'Link-Layer Topology Discovery Responder'
+Disable-NetAdapterBinding -Name "*" -DisplayName 'Link-Layer Topology Discovery Mapper I/O Driver'
 
-Disable-NetAdapterBinding -Name * -DisplayName 'Client for Microsoft Networks'
-Disable-NetAdapterBinding -Name * -DisplayName 'File and Printer Sharing for Microsoft Networks'
-Disable-NetAdapterQos -Name *
-Disable-NetAdapterBinding -Name * -DisplayName 'Microsoft Network Adapter Multiplexor Protocol'
-Disable-NetAdapterBinding -Name * -DisplayName 'Microsoft LLDP Protocol Driver'
-Disable-NetAdapterBinding -Name * -ComponentID ms_tcpip6
-Disable-NetAdapterBinding -Name * -DisplayName 'Link-Layer Topology Discovery Responder'
-Disable-NetAdapterBinding -Name * -DisplayName 'Link-Layer Topology Discovery Mapper I/O Driver'
+exit
