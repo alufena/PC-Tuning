@@ -6128,6 +6128,13 @@ Windows Registry Editor Version 5.00
 "AllowRecallEnablement"=dword:00000000
 "DisableAIDataAnalysis"=dword:00000001
 "DisableClickToDo"=dword:00000001
+"TurnOffSavingSnapshots"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsAI]
+"AllowRecallEnablement"=dword:00000000
+"DisableAIDataAnalysis"=dword:00000001
+"DisableClickToDo"=dword:00000001
+"TurnOffSavingSnapshots"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\MDM]
 "DisableRegistration"=dword:00000001
@@ -6190,11 +6197,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WinBio]
 "SupportPeripheralsWithEnhancedSignInSecurity"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsAI]
-"AllowRecallEnablement"=dword:00000000
-"DisableAIDataAnalysis"=dword:00000001
-"DisableClickToDo"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\ClickToDo]
 "DisableClickToDo"=dword:00000001
@@ -10153,6 +10155,12 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
 
+[-HKEY_CLASSES_ROOT\ms-office-ai]
+
+[-HKEY_CLASSES_ROOT\ms-copilot]
+
+[-HKEY_CLASSES_ROOT\ms-clicktodo]
+
 [-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Security]
 
 [-HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\AeDebug]
@@ -12125,7 +12133,7 @@ Windows Registry Editor Version 5.00
 "PowerDownPll"="0"
 "PowerSavingMode"="0"
 "*PriorityVLANTag"="0"
-"*ReceiveBuffers"="2048" ; 2048/6144
+"*ReceiveBuffers"="1024" ; 1024/2048/6144
 "RecvCompletionMethod"=dword:00000000
 "ReduceSpeedOnPowerDown"="0"
 "*RSS"="1" ; 0/1
@@ -12152,7 +12160,7 @@ Windows Registry Editor Version 5.00
 "*TCPChecksumOffloadIPv6"="3" ; 0/3
 "ThreadedDpcEnable"=dword:00000000
 "ThreadPoll"=dword:00000bb8
-"*TransmitBuffers"="80" ; 80/4096/6144
+"*TransmitBuffers"="1024" ; 80/1024/2048/4096/6144
 "TxAbsIntDelay"="0"
 "TxIntDelay"="0" ; 0/5
 "TxIntModeration"=dword:00000000
@@ -12294,7 +12302,7 @@ Windows Registry Editor Version 5.00
 "PowerDownPll"="0"
 "PowerSavingMode"="0"
 "*PriorityVLANTag"="0"
-"*ReceiveBuffers"="2048"
+"*ReceiveBuffers"="1024"
 "RecvCompletionMethod"=dword:00000000
 "ReduceSpeedOnPowerDown"="0"
 "*RSS"="1"
@@ -12321,7 +12329,7 @@ Windows Registry Editor Version 5.00
 "*TCPChecksumOffloadIPv6"="3"
 "ThreadedDpcEnable"=dword:00000000
 "ThreadPoll"=dword:00000bb8
-"*TransmitBuffers"="80"
+"*TransmitBuffers"="1024"
 "TxAbsIntDelay"="0"
 "TxIntDelay"="5"
 "TxIntModeration"=dword:00000000
