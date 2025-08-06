@@ -1138,6 +1138,7 @@ Windows Registry Editor Version 5.00
 "TransitionLatency"=dword:00000001
 "UserBatteryDischargeEstimator"=dword:00000001
 "VideoIdleTimeout"=dword:00000000
+"PowerRequestOverrideEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\whesvc]
 "ECP_WhatIf"=dword:00000001
@@ -4400,6 +4401,8 @@ Windows Registry Editor Version 5.00
 "AllowTabPreloading"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
+"DeveloperToolsDisabled"=dword:00000000
+"DeveloperToolsAvailability"=dword:00000001
 "AbusiveExperienceInterventionEnforce"=dword:00000000
 "AccessCodeCastEnabled"=dword:00000001
 "AccessControlAllowMethodsInCORSPreflightSpecConformant"=dword:00000001
