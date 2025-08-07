@@ -249,8 +249,9 @@ Windows Registry Editor Version 5.00
 "SafeDllSearchMode"=dword:00000000
 "SafeProcessSearchMode"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Segment Heap]
-"Enabled"=dword:00000001
+; breaks opengl apps and prevents windows update from downloading optional driver updates
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Segment Heap]
+; "Enabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 "AdditionalClockTicksInProcessor"=dword:99999999
