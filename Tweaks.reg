@@ -242,7 +242,11 @@ Windows Registry Editor Version 5.00
 "EnableMCA"=dword:00000000
 "EnableMCE"=dword:00000000
 "EnableTimerWatchdog"=dword:00000000
+"HeapDeCommitFreeBlockThreshold"=dword:00002000 ; 00020000/00000800
 "HeapDeCommitFreeBlockThreshold"=dword:00040000
+"HeapDeCommitTotalFreeThreshold"=dword:00020000 ; 00020000/00008000
+"HeapSegmentCommit"=dword:00004000 ; 00001000/00004000
+"HeapSegmentReserve"=dword:00200000 ; 00200000/00080000
 "ImageExecutionOptions"=dword:00000000 ; 00000000, 00000001
 "ObjectSecurityMode"=dword:00000001 ; 00000000/00000001
 "ProtectionMode"=dword:00000000 ; =-, 00000000 security option for anticheats
@@ -250,8 +254,8 @@ Windows Registry Editor Version 5.00
 "SafeProcessSearchMode"=dword:00000000
 
 ; breaks opengl apps and prevents windows update from downloading optional driver updates
-; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Segment Heap]
-; "Enabled"=dword:00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Segment Heap]
+"Enabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 "AdditionalClockTicksInProcessor"=dword:99999999
@@ -10356,6 +10360,11 @@ Windows Registry Editor Version 5.00
 
 [-HKEY_CLASSES_ROOT\UserLibraryFolder\shellex\ContextMenuHandlers\SendTo]
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe]
+"UseLargePages"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe]
+"UseLargePages"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
 "IoPriority"=dword:00000003
@@ -11438,10 +11447,71 @@ Windows Registry Editor Version 5.00
 "G:\\SteamLibrary\\steamapps\\common\\Cyberpunk 2077\\bin\\x64\\Cyberpunk2077.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 "G:\\DeadIsland2\\DeadIsland.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\googleearth.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\googleearth.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\chrome.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\chrome.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\firefox.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\firefox.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\msedge.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\msedge.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe]
-"UseLargePages"=dword:00000001
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe]
-"UseLargePages"=dword:00000001
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winword.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winword.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\excel.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\excel.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\powerpnt.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\powerpnt.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\outlook.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\outlook.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\devenv.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\devenv.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\code.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\code.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\discord.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\discord.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\steam.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\steam.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\spotify.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\spotify.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\vlc.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\vlc.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Obsidian.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Obsidian.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wgc.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
