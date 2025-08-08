@@ -728,14 +728,14 @@ Windows Registry Editor Version 5.00
 "EnableNicAutoPowerSaverInSleepStudy"=dword:00000000
 "MaxNumRssCpus"=dword:00000008 ; 00000008/00000010/0000000a
 "MaxNumRssThreads"=dword:00000010 ; 00000010/00000014
-"RssBaseCpu"=dword:00000002 ; 00000001/00000002/00000003/00000004
+"RssBaseCpu"=dword:00000002 ; 00000001/00000002/00000003/00000004/00000006
 "ThreadPriority"=dword:0000001f ; 0000001f/0000000f
 "TrackNblOwner"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]
 "DefaultTTL"=dword:00000040
 "DesktopTTL"=dword:00000040
-"DisableAutoTuning"=dword:00000001
+"DisableAutoTuning"=dword:00000000 ; 00000000/00000001
 "DisableIPSourceRouting"=dword:00000001
 "DisableLargeMtu"=dword:00000000
 "DisableMediaSenseEventLog"=dword:00000001
@@ -4874,9 +4874,11 @@ Windows Registry Editor Version 5.00
 "SnapToDefaultButton"="0"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Paint]
-"DisableGenerativeFill"=dword:00000001
 "DisableCocreator"=dword:00000001
+"DisableGenerativeErase"=dword:00000001
+"DisableGenerativeFill"=dword:00000001
 "DisableImageCreator"=dword:00000001
+"DisableRemoveBackground"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MicrosoftEdgeElevationService]
 "Start"=dword:00000004
@@ -5745,6 +5747,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel]
 "{20D04FE0-3AEA-1069-A2D8-08002B30309D}"=dword:00000001
 "{645FF040-5081-101B-9F08-00AA002F954E}"=dword:00000000
+"{2cc5ca98-6485-489a-920e-b3e88a6ccce3}"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\COM3]
 "RemoteAccessEnabled"=dword:00000000
@@ -6575,9 +6578,6 @@ Windows Registry Editor Version 5.00
 "FsEnableDevDrive"=dword:00000000
 "FltmgrDevDriveAllowAntivirusFilter"=dword:00000000
 "LongPathsEnabled"=dword:00000001
-
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel]
-"{2cc5ca98-6485-489a-920e-b3e88a6ccce3}"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\TelemetryController]
 "RunsBlocked"=dword:00000001
@@ -7464,6 +7464,15 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\15.0\Word\Options]
 "EnableLogging"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Preferences]
+"UseNewOutlook"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\Options\General]
+"HideNewOutlookToggle"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\office\16.0\outlook\preferences]
+"NewOutlookMigrationUserSetting"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Word\Options]
 "EnableLogging"=dword:00000000
@@ -10173,6 +10182,8 @@ Windows Registry Editor Version 5.00
 [-HKEY_CLASSES_ROOT\ms-copilot]
 
 [-HKEY_CLASSES_ROOT\ms-clicktodo]
+
+[-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{2cc5ca98-6485-489a-920e-b3e88a6ccce3}]
 
 [-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Security]
 
