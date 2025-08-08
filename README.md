@@ -140,3 +140,5 @@ https://www.youtube.com/@macer4689/videos
 https://github.com/zoicware/ZOICWARE  
 https://x.com/x1lly  
 https://www.youtube.com/@xilly/videos  
+https://github.com/andrew-s-taylor/public  
+https://github.com/arcadesdude/BRU  
