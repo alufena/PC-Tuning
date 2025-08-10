@@ -725,22 +725,30 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ctfmon.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000005
+"IoPriority"=dword:00000002
+"PagePriority"=dword:00000002
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ctfmon.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000005
+"IoPriority"=dword:00000002
+"PagePriority"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sihost.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
 "IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sihost.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
 "IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sppsvc.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
 "IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sppsvc.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
 "IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NDIS\Parameters]
 "CheckFwVersion"=dword:00000000
@@ -3151,10 +3159,10 @@ Windows Registry Editor Version 5.00
 "DisableLockScreenAppNotifications"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\System]
-"PublishUserActivities"=dword:00000000
-"EnableFontProviders"=dword:00000000
-"UploadUserActivities"=dword:00000000
 "DisableLockScreenAppNotifications"=dword:00000001 
+"EnableFontProviders"=dword:00000000
+"PublishUserActivities"=dword:00000000
+"UploadUserActivities"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
 "ConfigureWindowsSpotlight"=dword:00000002
@@ -8513,9 +8521,10 @@ Windows Registry Editor Version 5.00
 "authenticodeenabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\Geo]
-"Nation"="21" ; 21/32
+"Nation"="94" ; 21/32/94
+[HKEY_CURRENT_USER\Control Panel\International\Geo]
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\DeviceRegion]  
-"DeviceRegion"=dword:00000015 ; 00000015/00000032
+"DeviceRegion"=dword:000000de ; 000000de/00000015/00000032
 
 ; restore old explorer in w11
 ; [HKEY_CURRENT_USER\Software\Classes\CLSID\{2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0}\InProcServer32]
