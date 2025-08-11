@@ -381,6 +381,7 @@ lodctr /e:PerfOS
 taskkill /f /t /im OfficeClickToRun.exe
 taskkill /f /t /im ShellHost.exe
 wmic process where name="Adobe Crash Processor.exe" CALL terminate
+wmic process where name="ctfmon.exe" CALL setpriority 16384
 wmic process where name="dllhost.exe" CALL setpriority 64
 wmic process where name="dwm.exe" CALL setpriority 64
 ::wmic process where name="dwm.exe" CALL setpriority 128
@@ -426,6 +427,8 @@ for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object { $
 for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'Microsoft System Management BIOS Driver'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
 for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'System Speaker'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
 for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'AMD SMBus'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -Command "Get-PnpDevice | Where-Object {$_.FriendlyName -eq 'Motherboard resources'} | Select-Object -ExpandProperty InstanceId"') do pnputil /disable-device "%%i"
+for /f "tokens=*" %%i in ('powershell -NoProfile -Command "Get-PnpDevice -PresentOnly:$false | Where-Object { $_.FriendlyName -eq 'Microsoft Device Association Root Enumerator' } | Select-Object -ExpandProperty InstanceId"') do pnputil /remove-device "%%i"
 pnputil /disable-device "ROOT\AMDLOG\0000"
 pnputil /disable-device "ROOT\AMDSAFD&FUN_01&REV_01\0000"
 pnputil /disable-device "ROOT\KDNIC\0000"
