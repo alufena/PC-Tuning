@@ -1,9 +1,8 @@
-netsh interface 6to4 set state disabled
-netsh interface tcp set supplemental Internet congestionprovider=ctcp
-netsh interface teredo set state disabled
+netsh int 6to4 set state disabled
 netsh int ip set global loopbackworkercount=16
 netsh int ip set global neighborcachelimit=4096
 netsh int ip set global taskoffload=disabled
+netsh int ip set interface ethernet currenthoplimit=64
 netsh int isatap set state disabled
 netsh int tcp set global autotuninglevel=normal # disabled/normal
 netsh int tcp set global dca=disabled # disabled/enabled
@@ -24,6 +23,7 @@ netsh int tcp set security profiles=disabled
 netsh int tcp set supplemental internet congestionprovider=ctcp # ctcp/dctcp
 # netsh int tcp set supplemental internet congestionprovider=dctcp
 netsh int tcp set supplemental internet enablecwndrestart=enabled
+netsh int teredo set state disabled
 
 # w11 only
 # netsh int tcp set supplemental Template=Automatic CongestionProvider=cubic
@@ -39,6 +39,8 @@ netsh int tcp set supplemental internet enablecwndrestart=enabled
 # netsh int tcp set supplemental Template=InternetCustom CongestionProvider=cubic
 
 Set-NetTCPSetting -SettingName "*" -AutoTuningLevelLocal Normal -ScalingHeuristics Disabled -MinRto 300
+
+Set-NetTCPSetting -SettingName "*" -MinRto 300
 
 Disable-NetAdapterPowerManagement -Name "*"
 Disable-NetAdapterLso -Name "*"
