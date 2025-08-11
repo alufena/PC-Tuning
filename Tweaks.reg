@@ -429,6 +429,7 @@ Windows Registry Editor Version 5.00
 "AUDIO_MAX_PENDING_INTERRUPTS"="0"
 "CEF_DISABLE_GPU"="1"
 "CHROME_HEADLESS"="1"
+"CLOUDSDK_CORE_DISABLE_PROMPTS"="1"
 "__COMPAT_LAYER"="DISABLEDXMAXIMIZEDWINDOWEDMODE DISABLEFADEANIMATIONS NOSHADOW NOPADDEDBORDER NOGHOST DISABLEANIMATION DISABLETHEMES DISABLETHEMEMENUS DISABLEDWM PERPROCESSSYSTEMDPIFORCEOFF HIGHDPIAWARE"
 "CONFIG_HZ"="FFFFFFFFFFFFFFFF"
 "CPU_BOOST_POLICY"="2"
@@ -450,6 +451,9 @@ Windows Registry Editor Version 5.00
 "DisableGPUTimeout"="1"
 "DISK_MAX_PENDING_INTERRUPTS"="0"
 "DISK_MAX_PENDING_IO"="0"
+"DOCKER_CLI_TELEMETRY_OPTOUT"="1"
+"DOTNET_CLI_TELEMETRY_OPTOUT"="1"
+"DOTNET_TRY_CLI_TELEMETRY_OPTOUT"="1"
 "DWM_COMPOSITOR_MAX_PENDING_INTERRUPTS"="0"
 "DWM_MAX_BUFFER_AGE"="0"
 "DWM_MAXIMUM_BUFFER_AGE"="0"
@@ -511,6 +515,7 @@ Windows Registry Editor Version 5.00
 "NETWORK_BUFFER_SIZE"="512"
 "NETWORK_INTERRUPT_COALESCING"="0"
 "NETWORK_MAX_PENDING_INTERRUPTS"="0"
+"npm_config_loglevel"="silent"
 "PCIE_DEVICE_MAX_PENDING_INTERRUPTS"="0"
 "PCIE_DEVICE_MAX_PENDING_IO"="0"
 "PCIE_DEVICE_PENDING_INTERRUPTS"="0"
@@ -532,6 +537,7 @@ Windows Registry Editor Version 5.00
 "UseFastWindowFlip"="1"
 "UseLowLatencyInputDriver"="1"
 "UseNewScheduler"="1"
+"VS_TELEMETRY_OPT_OUT"="1"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0AABB002-A307-447e-9B81-1D819DF6C6D0}]
 "Name"="SustainedPerf"
@@ -749,6 +755,80 @@ Windows Registry Editor Version 5.00
 "CpuPriorityClass"=dword:00000001
 "IoPriority"=dword:00000000
 "PagePriority"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\fontdrvhost.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WmiPrvSE.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winlogon.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\audiodg.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ntoskrnl.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\services.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\fontdrvhost.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WmiPrvSE.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winlogon.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\audiodg.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ntoskrnl.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\services.exe]
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NDIS\Parameters]
 "CheckFwVersion"=dword:00000000
@@ -1155,6 +1235,7 @@ Windows Registry Editor Version 5.00
 "PerfBoostAtGuaranteed"=dword:00000001
 "PerfCalculateActualUtilization"=dword:00000000 ; 00000000/00000001
 "PlatformAoAcOverride"=dword:00000000
+"PowerRequestOverrideEnabled"=dword:00000000
 "PowerThrottling"=dword:00000000
 "PowerThrottlingOff"=dword:00000001
 "PpmMfBufferingThreshold"=dword:00000000
@@ -1171,7 +1252,6 @@ Windows Registry Editor Version 5.00
 "TransitionLatency"=dword:00000001
 "UserBatteryDischargeEstimator"=dword:00000001
 "VideoIdleTimeout"=dword:00000000
-"PowerRequestOverrideEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\whesvc]
 "ECP_WhatIf"=dword:00000001
@@ -3159,7 +3239,7 @@ Windows Registry Editor Version 5.00
 "DisableLockScreenAppNotifications"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\System]
-"DisableLockScreenAppNotifications"=dword:00000001 
+"DisableLockScreenAppNotifications"=dword:00000001
 "EnableFontProviders"=dword:00000000
 "PublishUserActivities"=dword:00000000
 "UploadUserActivities"=dword:00000000
@@ -5299,6 +5379,11 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GraphicsPerfSvc]
 "Start"=dword:00000004 ; 00000003, 00000002 HAGS on/00000004 HAGS off
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DisplayEnhancementService]
+"Start"=dword:00000004 ; 00000003, 00000004
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wmiacpi]
+"Start"=dword:00000004 ; 00000003, 00000004
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\AUEP]
 "RSX_AUEPStatus"=dword:00000004 ; 00000002/00000004
 
@@ -6383,6 +6468,9 @@ Windows Registry Editor Version 5.00
 "SmartActiveHoursState"=dword:00000000
 "SnoozeRebootHours"=dword:0000ffff
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\StateVariables] 
+"SmartSchedulerPredictedConfidence"=dword:0000000050
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DriverSearching]
 "DriverUpdateWizardWuSearchEnabled"=dword:00000000
 "DontSearchWindowsUpdate"=dword:00000001
@@ -6409,7 +6497,7 @@ Windows Registry Editor Version 5.00
 "DisableOSUpgrade"=dword:00000001
 "DisableWindowsUpdateAccess"=dword:00000001 ; 00000000/00000001
 "DisableWUfBSafeguards"=dword:00000001
-"DoNotConnectToWindowsUpdateInternetLocations"=dword:00000001
+"DoNotConnectToWindowsUpdateInternetLocations"=dword:00000001 ; 00000000/00000001
 "ElevateNonAdmins"=dword:00000001
 "ExcludeWUDriversInQualityUpdate"=dword:00000001
 "IsActiveHoursEnabled"=-
@@ -10994,6 +11082,18 @@ Windows Registry Editor Version 5.00
 "CpuPriorityClass"=dword:00000006
 "IoPriority"=dword:00000003
 "PagePriority"=dword:00000003
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wgc.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Postal4-Win64-Shipping.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
@@ -11363,6 +11463,18 @@ Windows Registry Editor Version 5.00
 "CpuPriorityClass"=dword:00000006
 "IoPriority"=dword:00000003
 "PagePriority"=dword:00000003
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wgc.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Postal4-Win64-Shipping.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4.exe\PerfOptions]
+"CpuPriorityClass"=dword:00000006
+"IoPriority"=dword:00000003
+"PagePriority"=dword:00000003
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\DirectX\UserGpuPreferences]
 "C:\\Program Files\\Electronic Arts\\EA Desktop\\EA Desktop\\EADesktop.exe"="GpuPreference=1;"
@@ -11706,330 +11818,1256 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\googleearth.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\googleearth.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\chrome.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\chrome.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\firefox.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\firefox.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\msedge.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\msedge.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winword.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winword.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\excel.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\excel.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\powerpnt.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\powerpnt.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\outlook.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\outlook.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\devenv.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\devenv.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\code.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\code.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\discord.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\discord.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\steam.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\steam.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\spotify.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\spotify.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\vlc.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\vlc.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Obsidian.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Obsidian.exe]
 "FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe]
+"FrontEndHeapDebugOptions"=dword:00000004
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wgc.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WowClassic.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wow.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dota2.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorld.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NMS.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5_Enhanced.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlayGTAV.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Carmageddon_Max_Damage.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cities.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Dishonored.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NeedForSpeedUnbound.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout76.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GSS2-Win64-Shipping.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTAIV.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Gw2-64.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HouseFlipper.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LANoire.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\left4dead2.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LOSTARK.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Overwatch.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Paladins.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Postal4-Win64-Shipping.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Postal4.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Discovery.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\VRising.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\amtrucks.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AoE3DE_s.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\bf1.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tiger-Win64-Shipping.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BorderlandsGOTY.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cs2.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis64.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadByDaylight-Win64-Shipping.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DH-Win64-Shipping.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Ghostrunner-Win64-Shipping.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HaloInfinite.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MadMax.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect1.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlanetCoaster.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\QuakeChampions.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Raft.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SkyrimSE.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hl2.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tf_win64.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TPH.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Warframe.x64.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wolfenstein.The.New.Order.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfWarships64.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AlanWake2.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cyberpunk2077.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame_x64_rwdi.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forzahorizon5.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forza_gaming.desktop.x64_release_final.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Back4Blood.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crossout.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout4.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FragPunk.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\re8.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CivilizationVI_DX12.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SonsOfTheForest.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4_x64.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfTanks.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tlou-i.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tropico6.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Stalker2-Win64-Shipping.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Stalker2.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex_dx12.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BF2042.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\KFGame.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel-Win64-Shipping.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NarakaBladepoint.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RDR2.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SW3.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland-Win64-Shipping.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteLauncher.exe]
 "FrontEndHeapDebugOptions"=dword:00000008
 "UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping_BE.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping_EAC_EOS.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wgc.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WowClassic.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wow.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dota2.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorld.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NMS.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5_Enhanced.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlayGTAV.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Carmageddon_Max_Damage.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cities.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Dishonored.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NeedForSpeedUnbound.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout76.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GSS2-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTAIV.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Gw2-64.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HouseFlipper.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LANoire.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\left4dead2.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LOSTARK.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Overwatch.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Paladins.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Postal4-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Postal4.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Discovery.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\VRising.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\amtrucks.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AoE3DE_s.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\bf1.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tiger-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BorderlandsGOTY.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cs2.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis64.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadByDaylight-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DH-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Ghostrunner-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HaloInfinite.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MadMax.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect1.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlanetCoaster.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\QuakeChampions.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Raft.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SkyrimSE.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hl2.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tf_win64.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TPH.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Warframe.x64.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wolfenstein.The.New.Order.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfWarships64.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AlanWake2.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cyberpunk2077.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame_x64_rwdi.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forzahorizon5.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forza_gaming.desktop.x64_release_final.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Back4Blood.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crossout.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout4.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FragPunk.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\re8.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CivilizationVI_DX12.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SonsOfTheForest.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4_x64.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfTanks.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tlou-i.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tropico6.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Stalker2-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Stalker2.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex_dx12.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BF2042.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\KFGame.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NarakaBladepoint.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RDR2.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SW3.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland-Win64-Shipping.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteLauncher.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping_BE.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping_EAC_EOS.exe]
+"FrontEndHeapDebugOptions"=dword:00000008
+"UseSegmentHeap"=dword:00000002
+"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"EAFModules"=" "
 
 [HKEY_CURRENT_USER\System\GameConfigStore\Applications\wgc.exe]
 "Flags"=dword:00000211
@@ -12204,6 +13242,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\System\GameConfigStore\Applications\DeadIsland.exe]
 "Flags"=dword:00000211
 [HKEY_CURRENT_USER\System\GameConfigStore\Applications\FortniteLauncher.exe]
+"Flags"=dword:00000211
+[HKEY_CURRENT_USER\System\GameConfigStore\Applications\TS4.exe]
 "Flags"=dword:00000211
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\QoS\fortnite]
@@ -12489,7 +13529,7 @@ Windows Registry Editor Version 5.00
 "SipsEnabled"="0"
 "SleepWhileWaiting"="0"
 "*SpeedDuplex"="0"
-"*SSIdleTimeout"="1"
+"*SSIdleTimeout"="1" ; 1/60
 "SSIdleTimeoutMS"="1"
 "*SSIdleTimeoutScreenOff"="1"
 "*TCPChecksumOffloadIPv4"="3" ; 0/3
@@ -12519,6 +13559,17 @@ Windows Registry Editor Version 5.00
 "*WakeOnPattern"="0"
 "WakeOnSlot"="0"
 "WolShutdownLinkSpeed"="2"
+"EeePhyEnable"="0"
+"WakeUpModeCap"="0"
+"SavePowerNowEnabled"="0"
+"WakeOnMagicPacketFromS5"="0"
+"Ultra Low Power Mode"="Disabled"
+"System Idle Power Saver"="Disabled"
+"Selective Suspend"="Disabled"
+"Selective Suspend Idle Timeout"="Disabled"
+"Link Speed Battery Saver"="Disabled"
+"TxDelay"="0"
+"EnableLLI"="1"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\0000\Ndi\params]
 "ParamDesc"="IPv4 Checksum Offload"
@@ -12667,7 +13718,7 @@ Windows Registry Editor Version 5.00
 "ThreadPoll"=dword:00000bb8
 "*TransmitBuffers"="1024"
 "TxAbsIntDelay"="0"
-"TxIntDelay"="5"
+"TxIntDelay"="0"
 "TxIntModeration"=dword:00000000
 "TxIntModerationProfile"="0"
 "TxThreadedDpcEnable"=dword:00000000
@@ -12688,6 +13739,17 @@ Windows Registry Editor Version 5.00
 "*WakeOnPattern"="0"
 "WakeOnSlot"="0"
 "WolShutdownLinkSpeed"="2"
+"EeePhyEnable"="0"
+"WakeUpModeCap"="0"
+"SavePowerNowEnabled"="0"
+"WakeOnMagicPacketFromS5"="0"
+"Ultra Low Power Mode"="Disabled"
+"System Idle Power Saver"="Disabled"
+"Selective Suspend"="Disabled"
+"Selective Suspend Idle Timeout"="Disabled"
+"Link Speed Battery Saver"="Disabled"
+"TxDelay"="0"
+"EnableLLI"="1"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\0001\Ndi\params]
 "ParamDesc"="IPv4 Checksum Offload"
@@ -13109,6 +14171,126 @@ Windows Registry Editor Version 5.00
 "TriggerType"=dword:00000004
 "Type"=dword:00001040
 "Value"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{AADCED64-746C-4633-A97C-D61349046527}]
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{AADCED64-746C-4633-A97C-D61349046527}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{91FBB303-0CD5-4055-BF42-E512A681B325}]
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{91FBB303-0CD5-4055-BF42-E512A681B325}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{C418DD9D-0D14-4efb-8FBF-CFE535C8FAC7}]
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{C418DD9D-0D14-4efb-8FBF-CFE535C8FAC7}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{BC75B1ED-5833-4858-9BB8-CBF0B166DF9D}]
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{BC75B1ED-5833-4858-9BB8-CBF0B166DF9D}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{E5094040-C46C-4115-B030-04FB2E545B00}]
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{E5094040-C46C-4115-B030-04FB2E545B00}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{B087BE9D-ED37-454f-AF9C-04291E351182}]
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{B087BE9D-ED37-454f-AF9C-04291E351182}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{7150F9BF-48AD-4da4-A49C-29EF4A8369BA}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{7150F9BF-48AD-4da4-A49C-29EF4A8369BA}]
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{A3F3E39B-5D83-4940-B954-28315B82F0A8}]
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{A3F3E39B-5D83-4940-B954-28315B82F0A8}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{6232C319-91AC-4931-9385-E70C2B099F0E}]
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{6232C319-91AC-4931-9385-E70C2B099F0E}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{74EE6C03-5363-4554-B161-627540339CAB}]
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{74EE6C03-5363-4554-B161-627540339CAB}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{E47248BA-94CC-49c4-BBB5-9EB7F05183D0}]
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{E47248BA-94CC-49c4-BBB5-9EB7F05183D0}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{17D89FEC-5C44-4972-B12D-241CAEF74509}]
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{17D89FEC-5C44-4972-B12D-241CAEF74509}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{3A0DBA37-F8B2-4356-83DE-3E90BD5C261F}]
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{3A0DBA37-F8B2-4356-83DE-3E90BD5C261F}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{6A4C88C6-C502-4f74-8F60-2CB23EDC24E2}]
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{6A4C88C6-C502-4f74-8F60-2CB23EDC24E2}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{E62688F0-25FD-4c90-BFF5-F508B9D2E31F}]
+"TraceFileMaxSize"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{E62688F0-25FD-4c90-BFF5-F508B9D2E31F}]
+"LogLevel"=dword:00000000
+"TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 
 [HKEY_CURRENT_USER\System\GameConfigStore]
 "Win32_AutoGameModeDefaultProfile"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
