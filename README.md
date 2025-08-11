@@ -5,6 +5,7 @@ https://community.acer.com/en/discussion/612495/windows-10-optimization-guide-fo
 https://community.acer.com/en/discussion/724763/ultimate-laptop-cooling-optimization-guide  
 https://community.amd.com/t5/discussions/input-lag-and-mouse-movement-tweaks-for-gaming-v3-2020-edition  
 https://community.amd.com/t5/gaming-discussions/amd-input-lag-reduction-competitive-e-sports-optimization-guide  
+https://discord.com/invite/6TMHU63  
 https://discord.com/invite/SweaeZqpFg  
 https://discord.gg/7WnAdShTcr  
 https://discord.gg/eWhAebhmFb  
@@ -23,6 +24,8 @@ https://github.com/AlchemyTweaks/Experimental-Tweaks
 https://github.com/AlchemyTweaks/Officially-Verified  
 https://github.com/AlchemyTweaks/Verified-Tweaks  
 https://github.com/ancel1x/Ancels-Performance-Batch  
+https://github.com/andrew-s-taylor/public  
+https://github.com/arcadesdude/BRU  
 https://github.com/Batlez/Batlez-Tweaks  
 https://github.com/BoringBoredom/PC-Optimization-Hub  
 https://github.com/ChrisTitusTech/winutil  
@@ -34,6 +37,7 @@ https://github.com/emadadel4/itt
 https://github.com/FR33THYFR33THY/Ultimate-Windows-Optimization-Guide  
 https://github.com/HakanFly/Windows-Tweaks  
 https://github.com/henrypp/memreduct  
+https://github.com/HickerDicker/SapphireOS  
 https://github.com/Hyyote/files-  
 https://github.com/Hyyote/In-depth-Windows-tweaking  
 https://github.com/Invertex/RemoveRazerGameManager  
@@ -68,6 +72,7 @@ https://github.com/Teramanbr/TerabyteTweaker
 https://github.com/TK50P/NoMoreDWM  
 https://github.com/xHybred/NvidiaProfileInspectorRevamped  
 https://github.com/Xiseous/PC-Tuning  
+https://github.com/zoicware/ZOICWARE  
 https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/hosts/native.winoffice.txt  
 https://greasyfork.org/en/scripts/469878-youtube-super-fast-chat  
 https://greasyfork.org/en/scripts/473972-youtube-js-engine-tamer  
@@ -126,6 +131,7 @@ https://www.youtube.com/@FrameSyncLabs/videos
 https://www.youtube.com/@GHOSTSPECTRE/videos  
 https://www.youtube.com/@Jayztwocents/videos  
 https://www.youtube.com/@khorvietech/videos  
+https://www.youtube.com/@macer4689/videos  
 https://www.youtube.com/@Panjno/videos  
 https://www.youtube.com/@pcsecuritychannel/videos  
 https://www.youtube.com/@Savitarax/videos  
@@ -133,13 +139,8 @@ https://www.youtube.com/@SHYX_TWEAKS/videos
 https://www.youtube.com/@StixTweaks/videos  
 https://www.youtube.com/@TechieSavi/videos  
 https://www.youtube.com/watch?v=sbXzM60ad8I  
+https://www.youtube.com/@xilly/videos  
 https://x.com/honestzin  
 https://x.com/jerry05259307  
 https://x.com/Realperfguy  
-https://www.youtube.com/@macer4689/videos  
-https://github.com/zoicware/ZOICWARE  
 https://x.com/x1lly  
-https://www.youtube.com/@xilly/videos  
-https://github.com/andrew-s-taylor/public  
-https://github.com/arcadesdude/BRU  
-https://github.com/HickerDicker/SapphireOS  
