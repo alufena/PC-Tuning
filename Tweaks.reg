@@ -3769,6 +3769,10 @@ Windows Registry Editor Version 5.00
 "debugger"="C:\\Windows\\System32\\systray.exe"
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AggregatorHost.exe]
 "debugger"="C:\\Windows\\System32\\systray.exe"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SIHClient.exe]
+"debugger"="C:\\Windows\\System32\\systray.exe"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WaaSMedicAgent.exe]
+"debugger"="C:\\Windows\\System32\\systray.exe"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun]
 "1"="wlms.exe"
@@ -3778,6 +3782,8 @@ Windows Registry Editor Version 5.00
 "5"="DeviceCensus.exe"
 "6"="wsqmcons.exe"
 "7"="AggregatorHost.exe"
+"8"="SIHClient.exe"
+"9"="WaaSMedicAgent.exe"
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WDI\{9c5a40da-b965-4fc3-8781-88dd50a6299d}]
 "ScenarioExecutionEnabled"=dword:00000000
@@ -13613,10 +13619,10 @@ Windows Registry Editor Version 5.00
 "type"="enum"
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0000\Ndi\params\*ReceiveBuffers]
 "Max"="6144"
-"Default"="2048"
+"Default"="1024" ; 1024/2048
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0000\Ndi\params\*TransmitBuffers]
 "Max"="6144"
-"Default"="4096"
+"Default"="1024" ; 1024/4096
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0001]
 "AdvancedEEE"="0"
@@ -13793,10 +13799,10 @@ Windows Registry Editor Version 5.00
 "type"="enum"
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0001\Ndi\params\*ReceiveBuffers]
 "Max"="6144"
-"Default"="2048"
+"Default"="1024"
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0001\Ndi\params\*TransmitBuffers]
 "Max"="6144"
-"Default"="4096"
+"Default"="1024"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{462f198f-8349-40ba-866f-e5fee927ddee}]
 "DisableAutoNegotiation"=dword:00000000 ; 00000000/00000001
