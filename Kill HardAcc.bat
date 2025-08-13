@@ -1,6 +1,7 @@
 sc start "TabletInputService"
 sc config "TabletInputService" start= auto
 reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&1&UID37124\Device Parameters" /v EDID /f
+reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&2&UID37124\Device Parameters" /v EDID /f
 reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\IrisService" /f
 reg delete "HKEY_CURRENT_USER\Software\Spoon" /f
 taskkill /f /t /im acrotray.exe
@@ -363,6 +364,7 @@ bcdedit /set sos No
 bcdedit /set timeout 0
 ::bcdedit /deletevalue timeout
 bcdedit /set restrictapicluster 0 
+bcdedit /set pciexpress forcedisable
 ::bcdedit /deletevalue restrictapicluster
 ::bcdedit /set testsigning No
 ::bcdedit /deletevalue testsigning
@@ -402,6 +404,7 @@ bcdedit /set nx AlwaysOff
 ::bcdedit /deletevalue nx
 bcdedit /deletevalue nointegritychecks
 bcdedit /deletevalue loadoptions
+::bcdedit /set loadoptions "DISABLE-LSA-ISO,DISABLE-VBS"
 powershell -Command "Set-ProcessMitigation -System -Disable DEP,EmulateAtlThunks,ForceRelocateImages,RequireInfo,BottomUp,HighEntropy,StrictHandle,DisableWin32kSystemCalls,AuditSystemCall,DisableExtensionPoints,BlockDynamicCode,AllowThreadsToOptOut,AuditDynamicCode,CFG,SuppressExports,StrictCFG,MicrosoftSignedOnly,AllowStoreSignedBinaries,AuditMicrosoftSigned,AuditStoreSigned,EnforceModuleDependencySigning,DisableNonSystemFonts,AuditFont,BlockRemoteImageLoads,BlockLowLabelImageLoads,PreferSystem32,AuditRemoteImageLoads,AuditLowLabelImageLoads,AuditPreferSystem32,SEHOP,AuditSEHOP,SEHOPTelemetry,TerminateOnError"
 taskkill /f /t /im CompPkgSrv.exe
 taskkill /f /t /im SearchProtocolHost.exe
