@@ -148,7 +148,7 @@ Windows Registry Editor Version 5.00
 "ConnectMultiplePorts"=dword:00000000
 "LayeredLatency"=dword:00000000
 "MaximumPortsServiced"=dword:00000000 ; 00000000/00000001/00000010
-"MouseDataQueueSize"=dword:00000010 ; 00000064, 00000010/00000014/00000016/00000032
+"MouseDataQueueSize"=dword:00000010 ; 00000064, 00000010/00000014/00000016/00000032/00000100
 "MouseReportBufferCount"=dword:00000004
 "MouseTransmitTimeout"=dword:00000000
 "SendOutputToAllPorts"=dword:00000000
@@ -157,7 +157,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters]
 "ConnectMultiplePorts"=dword:00000000
-"KeyboardDataQueueSize"=dword:00000003 ; 00000064, 00000003/00000010/00000014
+"KeyboardDataQueueSize"=dword:00000003 ; 00000064, 00000003/00000010/00000014/00000100
 "KeyboardReportBufferCount"=dword:00000004
 "KeyboardTransmitTimeout"=dword:00000000
 "LayeredLatency"=dword:00000000
@@ -883,7 +883,7 @@ Windows Registry Editor Version 5.00
 "SynAttackProtect"=dword:00000001
 "Tcp1323Opts"=dword:00000000
 "TcpAckFrequency"=dword:00000001
-; "TcpCongestionControl"="cubic" ; w11 only
+"TcpCongestionControl"="cubic" ; newreno/cubic
 "TcpDelAckFreq"=dword:00000001
 "TcpDelAckTicks"=dword:00000000
 "TcpMaxDataRetransmissions"=dword:00000005
@@ -1865,6 +1865,8 @@ Windows Registry Editor Version 5.00
 "EnableRuntimePowerManagement"=dword:00000000
 "EnableSCGMidBufferPreemption"=dword:00000000
 "EnableWDDM23Synchronization"=dword:00000001
+"ExitLatency"=dword:00000001
+"ExitLatencyCheckEnabled"=dword:00000001
 "F1TransitionLatency"=dword:00000001
 "FlipModel"=dword:00000001
 "FlipQueuePolicy"=dword:00000004
@@ -1877,6 +1879,12 @@ Windows Registry Editor Version 5.00
 "HwFlipPolicy"=dword:00000000
 "HwLegacyFlipPolicy"=dword:00000000
 "KnownProcessBoostMode"=dword:00000000
+"Latency"=dword:00000001
+"LatencyToleranceDefault"=dword:00000001
+"LatencyToleranceFSVP"=dword:00000001
+"LatencyTolerancePerfOverride"=dword:00000001
+"LatencyToleranceScreenOffIR"=dword:00000001
+"LatencyToleranceVSyncEnabled"=dword:00000001
 "lowdebounce"=dword:00000001
 "LOWLATENCY"=dword:00000001
 "MaxFrameLatency"=dword:00000001
@@ -1907,6 +1915,7 @@ Windows Registry Editor Version 5.00
 "RmDisableRegistryCaching"=dword:00000001
 "RmFbsrPagedDMA"=dword:00000001 ; =-, 00000000/00000001
 "RmGpsPsEnablePerCpuCoreDpc"=dword:00000001
+"RtlCapabilityCheckLatency"=dword:00000001
 "RuntimePowerManagement"=dword:00000000
 "SchedulingDelay"=dword:00000000
 "SupportRuntimePowerManagement"=dword:00000000
@@ -6787,6 +6796,8 @@ Windows Registry Editor Version 5.00
 "UserSetting_DisableStartupSound"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\ScPnP]
+"EnableScPnP"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\ScPnP]
 "EnableScPnP"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
@@ -13789,14 +13800,32 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{462f198f-8349-40ba-866f-e5fee927ddee}]
 "DisableAutoNegotiation"=dword:00000000 ; 00000000/00000001
-"EnableJumboPackets"=dword:00000000 ; 00000000/00000001
-"NICInterruptModeration"=dword:00000000 ; 00000000 interrupt moderation off/00000001 interrupt moderation on
+"EnableJumboPackets"=dword:00000000
+"InitialCongestionWindow"=dword:0000000a
+"NICInterruptModeration"=dword:00000000
 "TcpAckFrequency"=dword:00000001
 "TcpDelAckTicks"=dword:00000000
 "TcpNoDelay"=dword:00000001
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{d0944d3b-f407-43df-8a58-79d8ccba3b6a}]
-"DisableAutoNegotiation"=dword:00000000 ; 00000000/00000001
+"DisableAutoNegotiation"=dword:00000000
 "EnableJumboPackets"=dword:00000000
+"InitialCongestionWindow"=dword:0000000a
+"NICInterruptModeration"=dword:00000000
+"TcpAckFrequency"=dword:00000001
+"TcpDelAckTicks"=dword:00000000
+"TcpNoDelay"=dword:00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{a42ee5e1-495c-463a-a9c9-c2b1708c5657}]
+"DisableAutoNegotiation"=dword:00000000
+"EnableJumboPackets"=dword:00000000
+"InitialCongestionWindow"=dword:0000000a
+"NICInterruptModeration"=dword:00000000
+"TcpAckFrequency"=dword:00000001
+"TcpDelAckTicks"=dword:00000000
+"TcpNoDelay"=dword:00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{dbe5820f-9160-4d6e-9eac-5828cf6e3e5d}]
+"DisableAutoNegotiation"=dword:00000000
+"EnableJumboPackets"=dword:00000000
+"InitialCongestionWindow"=dword:0000000a
 "NICInterruptModeration"=dword:00000000
 "TcpAckFrequency"=dword:00000001
 "TcpDelAckTicks"=dword:00000000
