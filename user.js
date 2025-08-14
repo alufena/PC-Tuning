@@ -281,6 +281,7 @@ user_pref("browser.ml.enable", false);
 user_pref("browser.newtabpage.activity-stream.newtabLayouts.variant-a", false);
 user_pref("browser.newtabpage.activity-stream.newtabLayouts.variant-b", false);
 user_pref("browser.newtabpage.activity-stream.newtabShortcuts.refresh", false);
+user_pref("browser.tabs.groups.enabled", false);
 
 user_pref("browser.newtabpage.activity-stream.asrouter.providers.snippets", "");
 user_pref("browser.newtabpage.activity-stream.discoverystream.config", "");
