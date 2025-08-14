@@ -231,6 +231,7 @@ Windows Registry Editor Version 5.00
 ; "WorkingSetMaxSize"=dword:ffffffff
 ; "WorkingSetMinSize"=dword:ffffffff
 "WriteWatch"=dword:00000000
+"DisableCHPE"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager]
 "AllowProtectedRenames"="0"
@@ -1259,6 +1260,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power]
 "FlushPolicy"=dword:00000001
 "HiberbootEnabled"=dword:00000000
+"ProcessorThrottleLogInterval"=dword:00000000
 "SleepStudyDisabled"=dword:00000001
 "TtmEnabled"=dword:00000000
 
