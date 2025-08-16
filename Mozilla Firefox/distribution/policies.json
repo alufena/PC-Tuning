@@ -8,6 +8,7 @@
 	"AutofillAddressEnabled": false,
 	"AutofillCreditCardEnabled": false,
 	"DisablePocket": true,
-    "DisableTelemetry": true
+    "DisableTelemetry": true,
+	"HardwareAcceleration": false
   }
 }
