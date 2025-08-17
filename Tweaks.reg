@@ -11743,7 +11743,7 @@ Windows Registry Editor Version 5.00
 "PagePriority"=dword:00000003
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\DirectX\UserGpuPreferences]
-"‪C:\\Program Files\\Mozilla Firefox\\firefox.exe"="GpuPreference=1;"
+"C:\\Program Files\\Mozilla Firefox\\firefox.exe"="GpuPreference=1;"
 "C:\\Program Files\\Electronic Arts\\EA Desktop\\EA Desktop\\EADesktop.exe"="GpuPreference=1;"
 "C:\\Program Files\\Electronic Arts\\EA Desktop\\EA Desktop\\EACefSubProcess.exe"="GpuPreference=1;"
 "C:\\Program Files\\Notepad++\\notepad++.exe"="GpuPreference=1;"
