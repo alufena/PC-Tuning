@@ -169,6 +169,11 @@ schtasks /change /Disable /tn "NvDriverUpdateCheckDaily_{B2FE1952-0186-46C3-BAEC
 schtasks /change /Disable /tn "NVIDIA GeForce Experience SelfUpdate_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}" 
 schtasks /change /Disable /tn "NvTmMon_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}" 
 schtasks /delete /tn "Microsoft\Windows\RetailDemo\CleanupOfflineContent" /f
+schtasks /change /tn "\Microsoft\Windows\WindowsColorSystem\Calibration Loader" /disable
+schtasks /Change /TN "\Microsoft\Windows\WindowsAI\Recall\InitialConfiguration" /Disable
+schtasks /Change /TN "\Microsoft\Windows\WindowsAI\Recall\PolicyConfiguration" /Disable
+schtasks /Delete /TN "\Microsoft\Windows\WindowsAI\Recall\InitialConfiguration" /F
+schtasks /Delete /TN "\Microsoft\Windows\WindowsAI\Recall\PolicyConfiguration" /F
 powershell -Command "Get-ScheduledTask | Where-Object { $_.TaskName -like 'MEGAsync Update Task*' } | ForEach-Object { Disable-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath }"
 powershell -Command "Get-ScheduledTask | Where-Object { $_.TaskName -like 'GoogleUpdaterTaskSystem*' } | ForEach-Object { Disable-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath }"
 powershell -Command "Get-ScheduledTask | Where-Object { $_.TaskName -like 'Firefox Default Browser Agent*' } | ForEach-Object { Disable-ScheduledTask -TaskName $_.TaskName -TaskPath $_.TaskPath }"
