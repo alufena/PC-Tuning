@@ -65,12 +65,10 @@ for %%a in ("SleepStudy" "Kernel-Processor-Power" "UserModePowerService") do (
 ECHO Disabling background access of default apps...
 POWERSHELL "ForEach($key in (Get-ChildItem 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications')) { Set-ItemProperty -Path ('HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\' + $key.PSChildName) -Name 'Disabled' -Value 1 -ErrorAction SilentlyContinue }" >NUL 2>&1
 
-setlocal EnableDelayedExpansion
 ECHO Disabling synchronisation of settings...
 POWERSHELL -Command "Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync' -Name 'BackupPolicy' -Value 0x3c -ErrorAction SilentlyContinue; Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync' -Name 'DeviceMetadataUploaded' -Value 0 -ErrorAction SilentlyContinue; Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync' -Name 'PriorLogons' -Value 1 -ErrorAction SilentlyContinue" >NUL 2>&1
 POWERSHELL -Command "$groups = @('Accessibility','AppSync','BrowserSettings','Credentials','DesktopTheme','Language','PackageState','Personalization','StartLayout','Windows'); foreach ($group in $groups) { $path = 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SettingSync\Groups\' + $group; New-Item -Path $path -Force -ErrorAction SilentlyContinue | Out-Null; Set-ItemProperty -Path $path -Name 'Enabled' -Value 0 -ErrorAction SilentlyContinue }" >NUL 2>&1
 
-setlocal EnableDelayedExpansion
 ECHO Removing SystemApps telemetry...
 set key=HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\InboxApplications
 for %%i in (
@@ -159,5 +157,20 @@ for /f "tokens=*" %%i in ('reg query "HKLM\SYSTEM\CurrentControlSet\Enum\USB" /s
     reg add "%%i\Interrupt Management\MessageSignaledInterruptProperties" /v "MSISupported" /t REG_DWORD /d "1" /f >nul
 )
 
+ECHO WppRecorder_UseTimeStamp to 0 wherever it is found
+REM List of root hives to search. You can add or remove hives as needed.
+for %%H in (HKLM HKCU HKCR HKU) do (
+    echo Searching %%H ...
+    REM Query for keys containing the value name and parse only lines starting with "HKEY"
+    for /f "delims=" %%K in ('reg query "%%H" /f WppRecorder_UseTimeStamp /s /t REG_DWORD 2^>nul ^| findstr /r /i "^HKEY"') do (
+        echo    Updating %%K
+        reg add "%%K" /v WppRecorder_UseTimeStamp /t REG_DWORD /d 0 /f >nul
+    )
+)
+
+echo.
+echo All occurrences of WppRecorder_UseTimeStamp have been set to 0.
+
 endlocal
+timeout 8
 exit
