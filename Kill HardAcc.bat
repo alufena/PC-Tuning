@@ -104,6 +104,7 @@ taskkill /f /t /im EpicOnlineServicesUserHelper.exe
 taskkill /f /t /im SndVol.exe
 taskkill /f /t /im nvcplui.exe
 taskkill /f /t /im EpicWebHelper.exe
+taskkill /f /t /im CrashReportClient.exe
 sc start "SysMain"
 ::sc stop "SysMain"
 sc config "SysMain" start= auto
@@ -514,6 +515,8 @@ reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit" /va 
 reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Regedit" /va /f
 reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit\Favorites" /va /f
 reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Regedit\Favorites" /va /f
+reg delete "HKLM\SOFTWARE\Microsoft\Wbem\WDM" /va /f
+reg delete "HKLM\SOFTWARE\Microsoft\Wbem\WDM\DREDGE" /va /f
 ::timeout /t 8 /nobreak
 winget uninstall "windows web experience pack"
 winget uninstall --id Microsoft.WindowsWebExperiencePack
