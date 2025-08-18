@@ -13,10 +13,10 @@ Windows Registry Editor Version 5.00
 "HwSchTreatExperimentalAsStable"=dword:00000000 ; HAGS 00000001 on, 00000000 off
 
 [HKEY_CURRENT_USER\Software\Microsoft\DirectX\UserGpuPreferences]
-"DirectXUserGlobalSettings"="SwapEffectUpgradeEnable=0;" ; optimizations for windowed games (w11) 00000001 on, 00000000 off
+"DirectXUserGlobalSettings"="SwapEffectUpgradeEnable=0;" ; optimizations for windowed games (w11 only) 00000001 on, 00000000 off
 
 [HKEY_CURRENT_USER\Software\Microsoft\DirectX\GraphicsSettings]
-"SwapEffectUpgradeCache"=dword:00000000 ; optimizations for windowed games (w11) 00000001 on, 00000000 off
+"SwapEffectUpgradeCache"=dword:00000000 ; optimizations for windowed games (w11 only) 00000001 on, 00000000 off
 "SpecificGPUOptionApplicable"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games]
@@ -845,6 +845,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]
 "DefaultTTL"=dword:00000040 ; 00000040/00000062
+"DelayedAckFrequency"=dword:00000001
+"DelayedAckTicks"=dword:00000001
 "DesktopTTL"=dword:00000040
 "DisableAutoTuning"=dword:00000000 ; 00000000/00000001
 "DisableIPSourceRouting"=dword:00000001
@@ -889,6 +891,7 @@ Windows Registry Editor Version 5.00
 "TcpCongestionControl"="cubic" ; newreno/cubic
 "TcpDelAckFreq"=dword:00000001
 "TcpDelAckTicks"=dword:00000000
+"TcpMaxConnectRetransmissions"=dword:00000001
 "TcpMaxDataRetransmissions"=dword:00000005
 "TcpMaxDupAcks"=dword:00000002
 "TCPNoDelay"=dword:00000001
@@ -896,9 +899,6 @@ Windows Registry Editor Version 5.00
 "TcpTimedWaitDelay"=dword:0000001e ; 00000020/0000001e
 "TcpWindowSize"=dword:0000ffff ; 000016d0/0000ffff/0030d400
 "ThreadPriority"=dword:0000000f
-"TcpMaxConnectRetransmissions"=dword:00000001
-"DelayedAckFrequency"=dword:00000001
-"DelayedAckTicks"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces]
 "DefaultTTL"=dword:00000040
@@ -4202,6 +4202,7 @@ Windows Registry Editor Version 5.00
 "SetDefaultSearchEngine"="https://www.google.com/searchdomaincheck?format=opensearch"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+"HttpsOnlyMode"="force_enabled"
 "AADWebSiteSSOUsingThisProfileEnabled"=dword:00000000
 "AccessibilityImageLabelsEnabled"=dword:00000000
 "AdditionalSearchBoxEnabled"=dword:00000000
@@ -5570,6 +5571,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ws2ifsl]
 "Start"=dword:00000004 ; 00000004, 00000004
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WSAIFabricSvc]
+"Start"=dword:00000004
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\atapi]
 "Start"=dword:00000004 ; 00000000, 00000004
 
@@ -6523,7 +6527,6 @@ Windows Registry Editor Version 5.00
 "DisableAIDataAnalysis"=dword:00000001
 "DisableClickToDo"=dword:00000001
 "TurnOffSavingSnapshots"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsAI]
 "AllowRecallEnablement"=dword:00000000
 "DisableAIDataAnalysis"=dword:00000001
@@ -8813,37 +8816,15 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\DeviceRegion]  
 "DeviceRegion"=dword:000000de ; 000000de/00000015/00000032
 
-; restore old explorer in w11
+; restore old explorer (w11 only)
 ; [HKEY_CURRENT_USER\Software\Classes\CLSID\{2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0}\InProcServer32]
 ; @=""
 ; [HKEY_CURRENT_USER\Software\Classes\CLSID\{6480100b-5a83-4d1e-9f69-8ae5a88e9a33}\InProcServer32]
 ; @=""
 ; [HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Toolbar\ShellBrowser]
-; "ITBar7Layout"=hex:13,00,00,00,00,00,00,00,00,00,00,00,20,00,00,00,10,00,01,00,\
-;  00,00,00,00,01,00,00,00,01,07,00,00,5e,01,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
-;  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+; "ITBar7Layout"=hex:13,00,00,00,00,00,00,00,00,00,00,00,20,00,00,00,10,00,01,00,00,00,00,00,01,00,00,00,01,07,00,00,5e,01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
 
-; w11 only. disable explorer action bar
+; disable explorer action bar (w11 only)
 ; [HKEY_CURRENT_USER\Software\Classes\CLSID\{2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0}]
 ; @="CLSID_ItemsViewAdapter"
 ; [HKEY_CURRENT_USER\Software\Classes\CLSID\{2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0}\InProcServer32]
@@ -10776,6 +10757,10 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\WindowsAI]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\EndOfLife]
 
 [-HKEY_CLASSES_ROOT\ms-office-ai]
 
@@ -13696,6 +13681,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0000]
 "AdvancedEEE"="0"
+"AllowAllSpeedsLPLU"="0"
 "ASPM"="0"
 "AutoDisableGigabit"="0"
 "AutoPowerSaveModeEnabled"="0"
@@ -13717,6 +13703,7 @@ Windows Registry Editor Version 5.00
 "EnableD3ColdInS0"="0"
 "EnableDisconnectedStandby"="0"
 "*EnableDynamicPowerGating"="0"
+"EnableDynamicPowerGating"=dword:00000000
 "EnableEDT"="0"
 "EnableETW"="0"
 "EnableExtraPowerSaving"="0"
@@ -13770,11 +13757,13 @@ Windows Registry Editor Version 5.00
 "NetworkDirect"=dword:00000001
 "NetworkDirectTechnology"=dword:00000000
 "*NicAutoPowerSaver"="0"
+"NicAutoPowerSaver"=dword:00000000
 "*NumaNodeId"="0"
 "*NumRssQueues"="1" ; 1/2
 "OBFFEnabled"="0"
 "*PMARPOffload"="0"
 "*PMNSOffload"="0"
+"*PMWiFiRekeyOffload"="0"
 "PnPCapabilities"=dword:00000024
 "PowerDownPll"="0"
 "PowerSavingMode"="0"
@@ -13782,6 +13771,8 @@ Windows Registry Editor Version 5.00
 "*ReceiveBuffers"="1024" ; 1024/2048/6144
 "RecvCompletionMethod"=dword:00000000
 "ReduceSpeedOnPowerDown"="0"
+"*RscIPv4"="0"
+"*RscIPv6"="0"
 "*RSS"="1" ; 0/1
 "*RssBaseProcGroup"="0"
 "*RssBaseProcNumber"="2" ; 1/2
@@ -13808,6 +13799,8 @@ Windows Registry Editor Version 5.00
 "System Idle Power Saver"="Disabled"
 "*TCPChecksumOffloadIPv4"="3" ; 0/3
 "*TCPChecksumOffloadIPv6"="3" ; 0/3
+"*TCPConnectionOffloadIPv4"="3"
+"*TCPConnectionOffloadIPv6"="3"
 "ThreadedDpcEnable"=dword:00000000
 "ThreadPoll"=dword:00000bb8
 "*TransmitBuffers"="1024" ; 80/1024/2048/4096/6144
@@ -13819,6 +13812,7 @@ Windows Registry Editor Version 5.00
 "TxThreadedDpcEnable"=dword:00000000
 "*UDPChecksumOffloadIPv4"="3" ; 0/3
 "*UDPChecksumOffloadIPv6"="3" ; 0/3
+"*UdpRsc"="0"
 "ULPMode"="0"
 "Ultra Low Power Mode"="Disabled"
 "UsbSwFast"="1"
@@ -13827,6 +13821,7 @@ Windows Registry Editor Version 5.00
 "VlanId"=dword:00000000
 "WaitAutoNegComplete"="0"
 "WaitForValidPhyIDRead"="0"
+"WakeFromPowerOff"="0"
 "WakeFromS5"="0"
 "WakeOn"="0"
 "WakeOnFastStartup"="0"
@@ -13837,16 +13832,6 @@ Windows Registry Editor Version 5.00
 "WakeOnSlot"="0"
 "WakeUpModeCap"="0"
 "WolShutdownLinkSpeed"="2"
-"*PMWiFiRekeyOffload"="0"
-"*RscIPv4"="0"
-"*RscIPv6"="0"
-"*TCPConnectionOffloadIPv4"="3"
-"*TCPConnectionOffloadIPv6"="3"
-"*UdpRsc"="0"
-"AllowAllSpeedsLPLU"="0"
-"WakeFromPowerOff"="0"
-"NicAutoPowerSaver"=dword:00000000
-"EnableDynamicPowerGating"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\0000\Ndi\params]
 "ParamDesc"="IPv4 Checksum Offload"
@@ -13886,6 +13871,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0001]
 "AdvancedEEE"="0"
+"AllowAllSpeedsLPLU"="0"
 "ASPM"="0"
 "AutoDisableGigabit"="0"
 "AutoPowerSaveModeEnabled"="0"
@@ -13907,6 +13893,7 @@ Windows Registry Editor Version 5.00
 "EnableD3ColdInS0"="0"
 "EnableDisconnectedStandby"="0"
 "*EnableDynamicPowerGating"="0"
+"EnableDynamicPowerGating"=dword:00000000
 "EnableEDT"="0"
 "EnableETW"="0"
 "EnableExtraPowerSaving"="0"
@@ -13960,11 +13947,13 @@ Windows Registry Editor Version 5.00
 "NetworkDirect"=dword:00000001
 "NetworkDirectTechnology"=dword:00000000
 "*NicAutoPowerSaver"="0"
+"NicAutoPowerSaver"=dword:00000000
 "*NumaNodeId"="0"
 "*NumRssQueues"="1" ; 1/2
 "OBFFEnabled"="0"
 "*PMARPOffload"="0"
 "*PMNSOffload"="0"
+"*PMWiFiRekeyOffload"="0"
 "PnPCapabilities"=dword:00000024
 "PowerDownPll"="0"
 "PowerSavingMode"="0"
@@ -13972,6 +13961,8 @@ Windows Registry Editor Version 5.00
 "*ReceiveBuffers"="1024"
 "RecvCompletionMethod"=dword:00000000
 "ReduceSpeedOnPowerDown"="0"
+"*RscIPv4"="0"
+"*RscIPv6"="0"
 "*RSS"="1"
 "*RssBaseProcGroup"="0"
 "*RssBaseProcNumber"="2"
@@ -13998,6 +13989,8 @@ Windows Registry Editor Version 5.00
 "System Idle Power Saver"="Disabled"
 "*TCPChecksumOffloadIPv4"="3"
 "*TCPChecksumOffloadIPv6"="3"
+"*TCPConnectionOffloadIPv4"="3"
+"*TCPConnectionOffloadIPv6"="3"
 "ThreadedDpcEnable"=dword:00000000
 "ThreadPoll"=dword:00000bb8
 "*TransmitBuffers"="1024"
@@ -14009,6 +14002,7 @@ Windows Registry Editor Version 5.00
 "TxThreadedDpcEnable"=dword:00000000
 "*UDPChecksumOffloadIPv4"="3"
 "*UDPChecksumOffloadIPv6"="3"
+"*UdpRsc"="0"
 "ULPMode"="0"
 "Ultra Low Power Mode"="Disabled"
 "UsbSwFast"="1"
@@ -14017,6 +14011,7 @@ Windows Registry Editor Version 5.00
 "VlanId"=dword:00000000
 "WaitAutoNegComplete"="0"
 "WaitForValidPhyIDRead"="0"
+"WakeFromPowerOff"="0"
 "WakeFromS5"="0"
 "WakeOn"="0"
 "WakeOnFastStartup"="0"
@@ -14027,16 +14022,6 @@ Windows Registry Editor Version 5.00
 "WakeOnSlot"="0"
 "WakeUpModeCap"="0"
 "WolShutdownLinkSpeed"="2"
-"*PMWiFiRekeyOffload"="0"
-"*RscIPv4"="0"
-"*RscIPv6"="0"
-"*TCPConnectionOffloadIPv4"="3"
-"*TCPConnectionOffloadIPv6"="3"
-"*UdpRsc"="0"
-"AllowAllSpeedsLPLU"="0"
-"WakeFromPowerOff"="0"
-"NicAutoPowerSaver"=dword:00000000
-"EnableDynamicPowerGating"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\0001\Ndi\params]
 "ParamDesc"="IPv4 Checksum Offload"
@@ -14309,32 +14294,6 @@ Windows Registry Editor Version 5.00
 ; "DriverDateData"=hex:00,80,8c,a3,c5,94,c6,00 ; 00,80,8c,a3,c5,94,c6,01, 00,80,8c,a3,c5,94,c6,00
 ; HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96b-e325-11ce-bfc1-08002be10318}\0001
 ; HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96b-e325-11ce-bfc1-08002be10318}\0002
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Wbem\WDM]
-"ACPI\\PNP0C14\\AOD_0-{05901221-D566-11d1-B2F0-00A0C9062910}"=-
-"ACPI\\PNP0C14\\ASUSWMI_0-{05901221-D566-11d1-B2F0-00A0C9062910}"=-
-"C:\\Windows\\System32\\drivers\\ACPI.sys[ACPIMOFResource]"=-
-"C:\\Windows\\System32\\drivers\\en-US\\ACPI.sys.mui[ACPIMOFResource]"=-
-"C:\\Windows\\System32\\drivers\\en-US\\processr.sys.mui[PROCESSORWMI]"=-
-"C:\\Windows\\System32\\drivers\\HDAudBus.sys[HDAudioMofName]"=-
-"C:\\Windows\\System32\\drivers\\monitor.sys[MonitorWMI]"=-
-"C:\\Windows\\System32\\Drivers\\portcls.SYS[PortclsMof]"=-
-"C:\\Windows\\System32\\drivers\\processr.sys[PROCESSORWMI]"=-
-"C:\\Windows\\system32\\en-US\\kernelbase.dll.mui[MofResourceName]"=-
-"C:\\Windows\\system32\\kernelbase.dll[MofResourceName]"=-
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Wbem\WDM\DREDGE]
-"ACPI\\PNP0C14\\AOD_0-{05901221-D566-11d1-B2F0-00A0C9062910}"=-
-"ACPI\\PNP0C14\\ASUSWMI_0-{05901221-D566-11d1-B2F0-00A0C9062910}"=-
-"C:\\Windows\\System32\\drivers\\ACPI.sys[ACPIMOFResource]"=-
-"C:\\Windows\\System32\\drivers\\en-US\\ACPI.sys.mui[ACPIMOFResource]"=-
-"C:\\Windows\\System32\\drivers\\en-US\\processr.sys.mui[PROCESSORWMI]"=-
-"C:\\Windows\\System32\\drivers\\HDAudBus.sys[HDAudioMofName]"=-
-"C:\\Windows\\System32\\drivers\\monitor.sys[MonitorWMI]"=-
-"C:\\Windows\\System32\\Drivers\\portcls.SYS[PortclsMof]"=-
-"C:\\Windows\\System32\\drivers\\processr.sys[PROCESSORWMI]"=-
-"C:\\Windows\\system32\\en-US\\kernelbase.dll.mui[MofResourceName]"=-
-"C:\\Windows\\system32\\kernelbase.dll[MofResourceName]"=-
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0AABB002-A307-447e-9B81-1D819DF6C6D0}\{CE74AA52-A71A-4036-BEEF-B6C411010E28}\{9AE06AC0-B216-4b81-A251-BAE05CBA3B1E}]
 @="OR"
