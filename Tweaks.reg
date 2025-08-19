@@ -390,7 +390,7 @@ Windows Registry Editor Version 5.00
 "ReadyTimeTicks"=dword:00000006
 "RealTimeIsCritical"=dword:00000001
 "RebalanceMinPriority"=dword:00000001
-"ReservedCpuSets"=hex:06,00,00,00,00,00,00,00
+; "ReservedCpuSets"=hex:06,00,00,00,00,00,00,00
 "ScanLatencyTicks"=dword:00000014
 "SchedulerMaximumLatency"=dword:00000000
 "SeLpacEnableWatsonReporting"=dword:00000000
@@ -1932,7 +1932,7 @@ Windows Registry Editor Version 5.00
 "SchedulingDelay"=dword:00000000
 "SupportRuntimePowerManagement"=dword:00000000
 "TdrDdiDelay"=dword:0000003c ; 00000005/0000000a/0000003c
-"TdrDebugMode"=dword:00000000 ; 00000000, 00000002/00000003
+"TdrDebugMode"=dword:00000002 ; 00000002, 00000000/00000003
 "TdrDelay"=dword:0000003c ; 00000000/00000002/0000000a/0000003c
 "TdrDodPresentDelay"=dword:00000002
 "TdrDodVSyncDelay"=dword:00000002
@@ -2865,7 +2865,7 @@ Windows Registry Editor Version 5.00
 ; "HwQueuedRenderPacketGroupLimitPerNode"=dword:00000000
 "HwQueuePacketCap"=dword:00000000
 "HwSchThreadOffloadMode"=dword:00000002
-"MaxFocusGpuQuantumWithoutPresent"=dword:00000064
+"MaxFocusGpuQuantumWithoutPresent"=dword:00000064 ; 0000000a/00000064
 "MaximumAllowedPreemptionDelay"=dword:00000384 ; 00000000/00000384
 "MaxYieldInterval"=dword:00000010
 "MinYieldInterval"=dword:00001f40 
