@@ -1704,7 +1704,7 @@ Windows Registry Editor Version 5.00
 "DisableHologramCompositor"=dword:00000001
 "DisallowAnimations"=dword:00000001
 "DisallowColorizationColorChanges"=dword:00000001
-"DisallowFlip3d"=dword:00000001
+"DisallowFlip3d"=dword:00000000 ; 00000000/00000001
 "DWMWA_TRANSITIONS_FORCEDISABLED"=dword:00000001
 "EnableAeroPeek"=dword:00000000
 "EnableShadow"=dword:00000000
@@ -1720,7 +1720,7 @@ Windows Registry Editor Version 5.00
 "DisallowAnimations"=dword:00000001
 "DisallowColorizationColorChanges"=dword:00000001
 "DisallowComposition"=dword:00000001
-"DisallowFlip3d"=dword:00000001
+"DisallowFlip3d"=dword:00000000
 "DWMWA_TRANSITIONS_FORCEDISABLED"=dword:00000001
 "EnableAeroPeek"=dword:00000000
 
@@ -1732,7 +1732,7 @@ Windows Registry Editor Version 5.00
 "DisallowAnimations"=dword:00000001
 "DisallowColorizationColorChanges"=dword:00000001
 "DisallowComposition"=dword:00000001
-"DisallowFlip3d"=dword:00000001
+"DisallowFlip3d"=dword:00000000
 "DWMWA_TRANSITIONS_FORCEDISABLED"=dword:00000001
 "EnableAeroPeek"=dword:00000000
 
@@ -1998,7 +1998,7 @@ Windows Registry Editor Version 5.00
 "DisableMonitoredFenceGpuVa"=dword:00000001
 "DisableMultiSourceMPOCheck"=dword:00000001
 "DisablePagingContextGpuVa"=dword:00000001
-"DisableSecondaryIFlipSupport"=dword:00000001
+"DisableSecondaryIFlipSupport"=dword:00000000 ; 00000000/00000001
 "DriverManagesResidencyOverride"=dword:00000001
 "DriverStoreCopyMode"=dword:00000001
 "EnableBasicRenderGpuPv"=dword:00000000
@@ -2850,16 +2850,16 @@ Windows Registry Editor Version 5.00
 "EnableMidGfxPreemptionVGPU"=dword:00000000
 "EnablePreemption"=dword:00000000
 "EnableSCGMidBufferPreemption"=dword:00000000
-"FlipDoNotFlipMode"=dword:00000001
-"FlipOverrideMode"=dword:00000003
+"FlipDoNotFlipMode"=dword:00000000 ; 00000000/00000001
+"FlipOverrideMode"=dword:00000000 ; 00000000/00000003
 "ForceEnableFlipFenceModel"=dword:00000000
 "ForceFlipTrueImmediateMode"=dword:00000000
-"ForceIndependentFlip"=dword:00000001
+"ForceIndependentFlip"=dword:00000001 ; 00000000/00000001
 ; "ForcePreemptionAware"=dword:00000000
 "ForegroundPriorityBoost"=dword:00000001 ; 00000000/00000001
 "FrameServerAutoBoostPriority"=dword:00000011 ; 00000000/00000011
 "GPUPreemptionLevel"=dword:00000000
-"HistoryLogSize"=dword:00000040
+"HistoryLogSize"=dword:00000000 ; 00000000/00000040
 "HwIndependentFlip"=dword:00000002
 "HwQueuedRenderPacketGroupLimit"=dword:00000002 ; 00000000/00000002
 ; "HwQueuedRenderPacketGroupLimitPerNode"=dword:00000000
@@ -4313,7 +4313,13 @@ Windows Registry Editor Version 5.00
 "EnableMtcUvc"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters]
-"Type"="NTP"
+"Type"="NTP" ; NoSync/NTP
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient]
+"Enabled"=dword:00000000 ; 00000000/00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config]
+"AnnounceFlags"=dword:00000005 ; 0000000a, 00000005
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
+"DisableAutoDaylightTimeSet"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Associations]
 "LowRiskFileTypes"=".avi;.bat;.com;.cmd;.exe;.htm;.html;.lnk;.mpg;.mpeg;.mov;.mp3;.msi;.m3u;.rar;.reg;.txt;.vbs;.wav;.zip;.iso"
@@ -14278,7 +14284,7 @@ Windows Registry Editor Version 5.00
 "EnableWARP"=dword:00000001
 "FewVertices"=dword:00000001
 "FlipMode"=dword:00000001
-"FlipNoVsync"=dword:00000001
+"FlipNoVsync"=dword:00000001 ; 00000000/00000001
 "ForceWARP"=dword:00000001
 "FullDebug"=dword:00000000
 "LoadDebugRuntime"=dword:00000000
