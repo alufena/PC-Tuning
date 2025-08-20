@@ -4313,7 +4313,8 @@ Windows Registry Editor Version 5.00
 "EnableMtcUvc"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters]
-"Type"="NTP" ; NoSync/NTP
+"Type"="NoSync" ; NoSync/NTP
+"NtpServer"="" ; time.windows.com,0x9
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient]
 "Enabled"=dword:00000000 ; 00000000/00000001
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config]
@@ -7971,7 +7972,7 @@ Windows Registry Editor Version 5.00
 "ExitTime"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize]
-"ColorPrevalence"=dword:00000001
+"ColorPrevalence"=dword:00000000 ; 00000000/00000001
 "Drop Shadow"="FALSE"
 "EnableBlurBehind"=dword:00000000
 "EnableTransparency"=dword:00000000
