@@ -1262,7 +1262,7 @@ Windows Registry Editor Version 5.00
 "ThrottlePolicy"=dword:00000000
 "TimerRebaseThresholdOnDripsExit"=dword:0000001e
 "TransitionLatency"=dword:00000001
-"UserBatteryDischargeEstimator"=dword:00000001
+"UserBatteryDischargeEstimator"=dword:00000000 ; 00000000/00000001
 "VideoIdleTimeout"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\whesvc]
@@ -3408,6 +3408,7 @@ Windows Registry Editor Version 5.00
 "WaitForNetwork"=dword:00000000
 "EnableFontProviders"=dword:00000000
 "DisableLockScreenAppNotifications"=dword:00000001
+"DisableSuggestedActions"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\System]
 "DisableLockScreenAppNotifications"=dword:00000001
@@ -4028,6 +4029,26 @@ Windows Registry Editor Version 5.00
 "ExecutionPolicy"="Unrestricted"
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell]
 "ExecutionPolicy"="Unrestricted"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\NetworkConnectivityStatusIndicator]
+@=""
+"NoActiveProbe"=dword:00000001
+"DisablePassivePolling"=dword:00000000 ; 00000000/00000001
+"MaxActiveProbes"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet]
+"EnableActiveProbing"=dword:00000000
+"MinimumInternetHopCount"=dword:00000001 ; 00000001/00000014
+"ActiveDnsProbeContent"="" ; 131.107.255.255
+"ActiveDnsProbeContentV6"="" ; fd3e:4f5a:5b81::1
+"ActiveDnsProbeHost"="" ;dns.msftncsi.com
+"ActiveDnsProbeHostV6"="" ; dns.msftncsi.com
+"ActiveWebProbeContent"="" ; Microsoft Connect Test
+"ActiveWebProbeContentV6"="" ; Microsoft Connect Test
+"ActiveWebProbeHost"="" ; www.msftconnecttest.com
+"ActiveWebProbeHostV6"="" ; ipv6.msftconnecttest.com
+"ActiveWebProbePath"="" ; connecttest.txt
+"ActiveWebProbePathV6"="" ; connecttest.txt
+"PassivePollPeriod"=dword:0000001e ; 0000000f, 0000001e
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\1]
 "2707"=dword:00000000
@@ -5705,6 +5726,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\atapi]
 "Start"=dword:00000004 ; 00000000, 00000004
 
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nsi]
+; "Start"=dword:00000002 ; 00000002, 00000004
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\AUEP]
 "RSX_AUEPStatus"=dword:00000004 ; 00000002/00000004
 
@@ -6893,7 +6917,7 @@ Windows Registry Editor Version 5.00
 "MonitorRemovalRecalcBehavior"=dword:00000001
 "MouseWheelRouting"=dword:00000002
 "PaddedBorderWidth"="0"
-"PaintDesktopVersion"=dword:00000001
+"PaintDesktopVersion"=dword:00000000
 "PreferredRefreshRate"="60"
 "RestorePreviousStateRecalcBehavior"=dword:00000000
 "ScreenSaveTimeOut"=-
@@ -6903,7 +6927,7 @@ Windows Registry Editor Version 5.00
 "UserPreferencesMask"=hex:90,12,03,80,10,00,00,00
 "WaitToKillAppTimeout"="1000"
 "WaitToKillServiceTimeout"="1000"
-"Win8DpiScaling"=dword:00000000 ; 00000001/00000000
+"Win8DpiScaling"=dword:00000000 ; 00000000/00000001
 "WindowArrangementActive"="0"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TSFairShare\NetFS]
@@ -7925,7 +7949,7 @@ Windows Registry Editor Version 5.00
 "DisableThumbnailCache"=dword:00000001
 "DisallowRun"=dword:00000001
 "GreyMSIAds"=dword:00000000
-; "HideClock"=dword:00000001
+"HideClock"=dword:00000001
 "HideLanguageBar"=dword:00000001
 "HideSCAMeetNow"=dword:00000001
 "LinkResolveIgnoreLinkInfo"=dword:00000001
@@ -7954,6 +7978,7 @@ Windows Registry Editor Version 5.00
 "NoSystraySystemPromotion"=dword:00000001
 "NoThumbnailCache"=dword:00000001
 "TurnOffSPIAnimations"=dword:00000001
+"HideSCANetwork"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\QuietHours]
 "AllowCalls"=dword:00000000
@@ -7992,6 +8017,7 @@ Windows Registry Editor Version 5.00
 "{596AB062-B4D2-4215-9F74-E9109B0A8153}"=""
 "{CA6CC9F1-867A-481E-951E-A28C5E4F01EA}"="Edit in Notepad"
 "{CB3B0003-8088-4EDE-8769-8B354AB2FF8C}"="Ask Copilot"
+"{2F788D0F-1317-441B-86D2-4725301BD49D}"="Send to My Phone"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\EventTranscriptKey]
 "EnableEventTranscript"=dword:00000000
@@ -13856,7 +13882,7 @@ Windows Registry Editor Version 5.00
 "GPPSW"="0"
 "*HeaderDataSplit"=dword:00000001
 "HumanProximityDetection"="0"
-"HwOption"=dword:00C00000
+"HwOption"=dword:00c00000
 "HwOptionV2"=dword:00000004
 "HwOptionV3"=dword:00040000
 "I218DisablePLLShut"="1"
@@ -13872,9 +13898,9 @@ Windows Registry Editor Version 5.00
 "Link Speed Battery Saver"="Disabled"
 "LogDisconnectEvent"="0"
 "LogLinkStateEvent"="0"
-"*LsoV1IPv4"="0" ; 0/1
-"*LsoV2IPv4"="0" ; 0/1
-"*LsoV2IPv6"="0" ; 0/1
+"*LsoV1IPv4"="1" ; 0/1
+"*LsoV2IPv4"="1" ; 0/1
+"*LsoV2IPv6"="1" ; 0/1
 "LTROBFF"="0"
 "MasterSlave"="0"
 "*MaxRssProcessors"="1" ; 1/4
@@ -13889,9 +13915,9 @@ Windows Registry Editor Version 5.00
 "*NumaNodeId"="0"
 "*NumRssQueues"="1" ; 1/2
 "OBFFEnabled"="0"
-"*PMARPOffload"="0"
-"*PMNSOffload"="0"
-"*PMWiFiRekeyOffload"="0"
+"*PMARPOffload"="1" ; 0/1
+"*PMNSOffload"="0" ; 0/1
+"*PMWiFiRekeyOffload"="1" ; 0/1
 "PnPCapabilities"=dword:00000024
 "PowerDownPll"="0"
 "PowerSavingMode"="0"
@@ -13899,8 +13925,8 @@ Windows Registry Editor Version 5.00
 "*ReceiveBuffers"="1024" ; 1024/2048/6144
 "RecvCompletionMethod"=dword:00000000
 "ReduceSpeedOnPowerDown"="0"
-"*RscIPv4"="0"
-"*RscIPv6"="0"
+"*RscIPv4"="1" ; 0/1
+"*RscIPv6"="1" ; 0/1
 "*RSS"="1" ; 0/1
 "*RssBaseProcGroup"="0"
 "*RssBaseProcNumber"="2" ; 1/2
@@ -13911,7 +13937,7 @@ Windows Registry Editor Version 5.00
 "RxIntDelay"="0"
 "RxIntModeration"=dword:00000000
 "RxIntModerationProfile"="0"
-"RxSmallPacketBypass"="1" ; 1/00000000
+"RxSmallPacketBypass"="1" ; 00000000/1
 "S0MgcPkt"="0"
 "S5WakeOnLan"="0"
 "SavePowerNowEnabled"="0"
@@ -13927,8 +13953,8 @@ Windows Registry Editor Version 5.00
 "System Idle Power Saver"="Disabled"
 "*TCPChecksumOffloadIPv4"="3" ; 0/3
 "*TCPChecksumOffloadIPv6"="3" ; 0/3
-"*TCPConnectionOffloadIPv4"="3"
-"*TCPConnectionOffloadIPv6"="3"
+"*TCPConnectionOffloadIPv4"="1" ; 1/3
+"*TCPConnectionOffloadIPv6"="1" ; 1/3
 "ThreadedDpcEnable"=dword:00000000
 "ThreadPoll"=dword:00000bb8
 "*TransmitBuffers"="1024" ; 80/1024/2048/4096/6144
@@ -13940,12 +13966,12 @@ Windows Registry Editor Version 5.00
 "TxThreadedDpcEnable"=dword:00000000
 "*UDPChecksumOffloadIPv4"="3" ; 0/3
 "*UDPChecksumOffloadIPv6"="3" ; 0/3
-"*UdpRsc"="0"
+"*UdpRsc"="1" ; 0/1
 "ULPMode"="0"
 "Ultra Low Power Mode"="Disabled"
 "UsbSwFast"="1"
-"UsoIPv4"=dword:00000000
-"UsoIPv6"=dword:00000000
+"UsoIPv4"="0" ; 00000000/0
+"UsoIPv6"="0" ; 00000000/0
 "VlanId"=dword:00000000
 "WaitAutoNegComplete"="0"
 "WaitForValidPhyIDRead"="0"
@@ -13960,6 +13986,13 @@ Windows Registry Editor Version 5.00
 "WakeOnSlot"="0"
 "WakeUpModeCap"="0"
 "WolShutdownLinkSpeed"="2"
+"*EncapsulatedPacketTaskOffloadNvgre"="1"
+"*EncapsulatedPacketTaskOffloadVxlan"="1"
+"*EncapsulatedPacketTaskOffload"="1"
+"*IPsecOffloadV1IPv4"="3"
+"*IPsecOffloadV2"="3"
+"*IPsecOffloadV2IPv4"="3"
+"ForceRscEnabled"="1"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\0000\Ndi\params]
 "ParamDesc"="IPv4 Checksum Offload"
@@ -14046,7 +14079,7 @@ Windows Registry Editor Version 5.00
 "GPPSW"="0"
 "*HeaderDataSplit"=dword:00000001
 "HumanProximityDetection"="0"
-"HwOption"=dword:00C00000
+"HwOption"=dword:00c00000
 "HwOptionV2"=dword:00000004
 "HwOptionV3"=dword:00040000
 "I218DisablePLLShut"="1"
@@ -14062,9 +14095,9 @@ Windows Registry Editor Version 5.00
 "Link Speed Battery Saver"="Disabled"
 "LogDisconnectEvent"="0"
 "LogLinkStateEvent"="0"
-"*LsoV1IPv4"="0"
-"*LsoV2IPv4"="0"
-"*LsoV2IPv6"="0"
+"*LsoV1IPv4"="1"
+"*LsoV2IPv4"="1"
+"*LsoV2IPv6"="1"
 "LTROBFF"="0"
 "MasterSlave"="0"
 "*MaxRssProcessors"="1"
@@ -14077,11 +14110,11 @@ Windows Registry Editor Version 5.00
 "*NicAutoPowerSaver"="0"
 "NicAutoPowerSaver"=dword:00000000
 "*NumaNodeId"="0"
-"*NumRssQueues"="1" ; 1/2
+"*NumRssQueues"="1"
 "OBFFEnabled"="0"
-"*PMARPOffload"="0"
+"*PMARPOffload"="1"
 "*PMNSOffload"="0"
-"*PMWiFiRekeyOffload"="0"
+"*PMWiFiRekeyOffload"="1"
 "PnPCapabilities"=dword:00000024
 "PowerDownPll"="0"
 "PowerSavingMode"="0"
@@ -14089,8 +14122,8 @@ Windows Registry Editor Version 5.00
 "*ReceiveBuffers"="1024"
 "RecvCompletionMethod"=dword:00000000
 "ReduceSpeedOnPowerDown"="0"
-"*RscIPv4"="0"
-"*RscIPv6"="0"
+"*RscIPv4"="1"
+"*RscIPv6"="1"
 "*RSS"="1"
 "*RssBaseProcGroup"="0"
 "*RssBaseProcNumber"="2"
@@ -14117,8 +14150,8 @@ Windows Registry Editor Version 5.00
 "System Idle Power Saver"="Disabled"
 "*TCPChecksumOffloadIPv4"="3"
 "*TCPChecksumOffloadIPv6"="3"
-"*TCPConnectionOffloadIPv4"="3"
-"*TCPConnectionOffloadIPv6"="3"
+"*TCPConnectionOffloadIPv4"="1"
+"*TCPConnectionOffloadIPv6"="1"
 "ThreadedDpcEnable"=dword:00000000
 "ThreadPoll"=dword:00000bb8
 "*TransmitBuffers"="1024"
@@ -14130,12 +14163,12 @@ Windows Registry Editor Version 5.00
 "TxThreadedDpcEnable"=dword:00000000
 "*UDPChecksumOffloadIPv4"="3"
 "*UDPChecksumOffloadIPv6"="3"
-"*UdpRsc"="0"
+"*UdpRsc"="1"
 "ULPMode"="0"
 "Ultra Low Power Mode"="Disabled"
 "UsbSwFast"="1"
-"UsoIPv4"=dword:00000000
-"UsoIPv6"=dword:00000000
+"UsoIPv4"="0"
+"UsoIPv6"="0"
 "VlanId"=dword:00000000
 "WaitAutoNegComplete"="0"
 "WaitForValidPhyIDRead"="0"
@@ -14150,6 +14183,13 @@ Windows Registry Editor Version 5.00
 "WakeOnSlot"="0"
 "WakeUpModeCap"="0"
 "WolShutdownLinkSpeed"="2"
+"*EncapsulatedPacketTaskOffloadNvgre"="1"
+"*EncapsulatedPacketTaskOffloadVxlan"="1"
+"*EncapsulatedPacketTaskOffload"="1"
+"*IPsecOffloadV1IPv4"="3"
+"*IPsecOffloadV2"="3"
+"*IPsecOffloadV2IPv4"="3"
+"ForceRscEnabled"="1"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\0001\Ndi\params]
 "ParamDesc"="IPv4 Checksum Offload"
