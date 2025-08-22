@@ -49,6 +49,7 @@ https://github.com/letsdoautomation/powershell
 https://github.com/LuSlower/dwm-basic  
 https://github.com/MarcoRavich/Opendows/blob/main/Tweakers.md  
 https://github.com/miniant-git/REAL  
+https://github.com/MrGrappleMan/Fynelium-NT  
 https://github.com/NicholasBly/Windows-11-Latency-Optimization  
 https://github.com/Orbmu2k/nvidiaProfileInspector  
 https://github.com/QuakedK/Oneclick  
@@ -123,6 +124,7 @@ https://www.tweakhound.com
 https://www.w10privacy.de  
 https://www.wagnardsoft.com/display-driver-uninstaller-ddu-  
 https://www.youtube.com/@0x7972/videos  
+https://www.youtube.com/@Alchemytweaks/videos  
 https://www.youtube.com/@anceltweaks/videos  
 https://www.youtube.com/@eastcoasthandle/videos  
 https://www.youtube.com/@exmtweaks/videos  
@@ -144,4 +146,3 @@ https://x.com/honestzin
 https://x.com/jerry05259307  
 https://x.com/Realperfguy  
 https://x.com/x1lly  
-https://github.com/MrGrappleMan/Fynelium-NT  
