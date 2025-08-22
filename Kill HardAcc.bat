@@ -255,10 +255,12 @@ sc config "Dnscache" start= disabled
 sc stop "KtmRm"
 sc config "KtmRm" start= disabled
 sc stop "WSAIFabricSvc"
-sc config WSAIFabricSvc start= disabled
+sc config "WSAIFabricSvc" start= disabled
+sc stop "tzautoupdate"
+sc config "tzautoupdate" start= disabled
 sc config "winmgmt" start= auto
 sc config "BTHUSB" start= disabled
-sc start "GraphicsPerfSvc"
+::sc start "GraphicsPerfSvc"
 bitsadmin.exe /reset /allusers
 ie4uinit.exe -ClearIconCache
 w32tm /resync
@@ -404,8 +406,8 @@ taskkill /f /t /im WMIADAP.exe
 bcdedit /set nx AlwaysOff
 ::bcdedit /deletevalue nx
 bcdedit /deletevalue nointegritychecks
-bcdedit /deletevalue loadoptions
-::bcdedit /set loadoptions "DISABLE-LSA-ISO,DISABLE-VBS"
+::bcdedit /deletevalue loadoptions
+bcdedit /set loadoptions "DISABLE-LSA-ISO,DISABLE-VBS"
 powershell -Command "Set-ProcessMitigation -System -Disable DEP,EmulateAtlThunks,ForceRelocateImages,RequireInfo,BottomUp,HighEntropy,StrictHandle,DisableWin32kSystemCalls,AuditSystemCall,DisableExtensionPoints,BlockDynamicCode,AllowThreadsToOptOut,AuditDynamicCode,CFG,SuppressExports,StrictCFG,MicrosoftSignedOnly,AllowStoreSignedBinaries,AuditMicrosoftSigned,AuditStoreSigned,EnforceModuleDependencySigning,DisableNonSystemFonts,AuditFont,BlockRemoteImageLoads,BlockLowLabelImageLoads,PreferSystem32,AuditRemoteImageLoads,AuditLowLabelImageLoads,AuditPreferSystem32,SEHOP,AuditSEHOP,SEHOPTelemetry,TerminateOnError"
 taskkill /f /t /im CompPkgSrv.exe
 taskkill /f /t /im SearchProtocolHost.exe
@@ -517,6 +519,15 @@ reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit\Favor
 reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Regedit\Favorites" /va /f
 reg delete "HKLM\SOFTWARE\Microsoft\Wbem\WDM" /va /f
 reg delete "HKLM\SOFTWARE\Microsoft\Wbem\WDM\DREDGE" /va /f
+reg delete "HKLM\SOFTWARE\Microsoft\FTH\State" /va /f
+wusa.exe /uninstall /kb:5063878 /quiet /norestart
+wusa.exe /uninstall /kb:5063875 /quiet /norestart
+wusa.exe /uninstall /kb:5063709 /quiet /norestart
+wusa.exe /uninstall /kb:5063877 /quiet /norestart
+wusa.exe /uninstall /kb:5063871 /quiet /norestart
+wusa.exe /uninstall /kb:5063889 /quiet /norestart
+wusa.exe /uninstall /kb:5062660 /quiet /norestart
+for %K in (5063878 5063875 5063709 5063877 5063871 5063889 5062660) do for /f "tokens=*" %P in ('dism /online /get-packages ^| findstr %K') do dism /online /remove-package /packagename:%P /quiet /norestart
 ::timeout /t 8 /nobreak
 winget uninstall "windows web experience pack"
 winget uninstall --id Microsoft.WindowsWebExperiencePack
