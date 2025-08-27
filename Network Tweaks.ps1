@@ -1,139 +1,320 @@
+netsh advfirewall firewall set rule group="Network Discovery" new enable=No
 netsh int 6to4 set state disabled
 netsh int ip set global loopbackworkercount=16
 netsh int ip set global neighborcachelimit=4096
-netsh int ip set global taskoffload=disabled
+# netsh int ip set global taskoffload=disabled
+netsh int ip set global taskoffload=enabled
+# netsh int ip set interface ethernet currenthoplimit=0
 netsh int ip set interface ethernet currenthoplimit=64
+# netsh int ip set interface ethernet currenthoplimit=128
 netsh int isatap set state disabled
-netsh int tcp set global autotuninglevel=normal # disabled/normal
+# netsh int tcp set global autotuninglevel=disabled
+# netsh int tcp set global autotuninglevel=experimental # breaks windows update
+netsh int tcp set global autotuninglevel=normal
 netsh int tcp set global chimney=disabled
-netsh int tcp set global congestionprovider=cubic # default/cubic
-netsh int tcp set global dca=disabled # disabled/enabled
-netsh int tcp set global ecncapability=disabled # disabled/enabled
+# netsh int tcp set global congestionprovider=cubic
+# netsh int tcp set global congestionprovider=default
+# netsh int tcp set global congestionprovider=ctcp
+netsh int tcp set global congestionprovider=dctcp
+netsh int tcp set global dca=disabled
+# netsh int tcp set global dca=enabled
+#netsh int tcp set global ecncapability=disabled
+netsh int tcp set global ecncapability=enabled
 netsh int tcp set global fastopen=enabled
 netsh int tcp set global fastopenfallback=enabled
-netsh int tcp set global hystart=enabled
-netsh int tcp set global initialRto=3000 # 2000/3000
-netsh int tcp set global maxsynretransmissions=3 # 2/3/4
+netsh int tcp set global hystart=disabled
+# netsh int tcp set global hystart=enabled
+# netsh int tcp set global initialRto=300
+netsh int tcp set global initialRto=2000
+# netsh int tcp set global initialRto=3000
+# netsh int tcp set global maxsynretransmissions=2
+netsh int tcp set global maxsynretransmissions=3
+# netsh int tcp set global maxsynretransmissions=4
 netsh int tcp set global netdma=enabled
 netsh int tcp set global nonsackrttresiliency=disabled
-netsh int tcp set global pacingprofile=always # always/off
-netsh int tcp set global prr=enabled
-netsh int tcp set global rsc=disabled # disabled/enabled
+netsh int tcp set global pacingprofile=always
+# netsh int tcp set global pacingprofile=off
+netsh int tcp set global prr=disabled
+# netsh int tcp set global prr=enabled
+netsh int tcp set global rsc=disabled
+# netsh int tcp set global rsc=enabled
 netsh int tcp set global rss=enabled
-netsh int tcp set global timestamps=disabled # disabled/enabled
+netsh int tcp set global timestamps=disabled
+# netsh int tcp set global timestamps=enabled
+netsh int tcp set heuristics wsh=disabled forcews=enabled
 netsh int tcp set security mpp=disabled
 netsh int tcp set security profiles=disabled
-netsh int tcp set supplemental internet congestionprovider=cubic # ctcp/dctcp/newreno/cubic
+# netsh int tcp set supplemental internet congestionprovider=ctcp
+# netsh int tcp set supplemental internet congestionprovider=cubic
+netsh int tcp set supplemental internet congestionprovider=dctcp
+# netsh int tcp set supplemental internet congestionprovider=newreno
 netsh int tcp set supplemental internet enablecwndrestart=enabled
+# netsh int tcp set supplemental template=custom icw=2
 netsh int tcp set supplemental template=custom icw=10
 netsh int teredo set state disabled
 netsh int udp set global uro=disabled
-netsh advfirewall firewall set rule group="Network Discovery" new enable=No
+netsh int udp set global uso=disabled
+netsh winsock set autotuning on
 
-Disable-NetAdapterBinding -Name "*" -ComponentId 'vmware_bridge','ms_lldp','ms_lltdio','ms_implat','ms_rspndr','ms_server','ms_msclient'
+# netsh interface tcp set supplemental template=automatic congestionprovider=ctcp
+netsh interface tcp set supplemental template=automatic congestionprovider=dctcp
+netsh interface tcp set supplemental template=automatic delayedackfrequency=1
+netsh interface tcp set supplemental template=automatic delayedacktimeout=10
+netsh interface tcp set supplemental template=automatic enablecwndrestart=enabled
+netsh interface tcp set supplemental template=automatic icw=10
+netsh interface tcp set supplemental template=automatic minrto=300
+netsh interface tcp set supplemental template=automatic rack=enabled
+netsh interface tcp set supplemental template=automatic taillossprobe=enabled
 
-# netsh int tcp set supplemental Template=Automatic CongestionProvider=cubic
-# netsh int tcp set supplemental Template=Compat CongestionProvider=bbr2
-# netsh int tcp set supplemental Template=Compat CongestionProvider=cubic
-# netsh int tcp set supplemental Template=Datacenter CongestionProvider=bbr2
-# netsh int tcp set supplemental Template=Datacenter CongestionProvider=cubic
-# netsh int tcp set supplemental Template=DatacenterCustom CongestionProvider=bbr2
-# netsh int tcp set supplemental Template=DatacenterCustom CongestionProvider=cubic
-# netsh int tcp set supplemental Template=Internet CongestionProvider=bbr2
-# netsh int tcp set supplemental Template=Internet CongestionProvider=cubic
+# netsh interface tcp set supplemental template=datacenter congestionprovider=ctcp
+netsh interface tcp set supplemental template=datacenter congestionprovider=dctcp
+netsh interface tcp set supplemental template=datacenter delayedackfrequency=1
+netsh interface tcp set supplemental template=datacenter delayedacktimeout=10
+netsh interface tcp set supplemental template=datacenter enablecwndrestart=enabled
+netsh interface tcp set supplemental template=datacenter icw=10
+netsh interface tcp set supplemental template=datacenter minrto=300
+netsh interface tcp set supplemental template=datacenter rack=enabled
+netsh interface tcp set supplemental template=datacenter taillossprobe=enabled
+
+# netsh interface tcp set supplemental template=internet congestionprovider=ctcp
+netsh interface tcp set supplemental template=internet congestionprovider=dctcp
+netsh interface tcp set supplemental template=internet delayedackfrequency=1
+netsh interface tcp set supplemental template=internet delayedacktimeout=10
+netsh interface tcp set supplemental template=internet enablecwndrestart=enabled
+netsh interface tcp set supplemental template=internet icw=10
+netsh interface tcp set supplemental template=internet minrto=300
+netsh interface tcp set supplemental template=internet rack=enabled
+netsh interface tcp set supplemental template=internet taillossprobe=enabled
+
+# netsh interface tcp set supplemental template=compat congestionprovider=ctcp
+netsh interface tcp set supplemental template=compat congestionprovider=dctcp
+netsh interface tcp set supplemental template=compat delayedackfrequency=1
+netsh interface tcp set supplemental template=compat delayedacktimeout=10
+netsh interface tcp set supplemental template=compat enablecwndrestart=enabled
+netsh interface tcp set supplemental template=compat icw=10
+netsh interface tcp set supplemental template=compat minrto=300
+netsh interface tcp set supplemental template=compat rack=enabled
+netsh interface tcp set supplemental template=compat taillossprobe=enabled
+
+# netsh interface tcp set supplemental template=custom congestionprovider=ctcp
+netsh interface tcp set supplemental template=custom congestionprovider=dctcp
+netsh interface tcp set supplemental template=custom delayedackfrequency=1
+netsh interface tcp set supplemental template=custom delayedacktimeout=10
+netsh interface tcp set supplemental template=custom enablecwndrestart=enabled
+netsh interface tcp set supplemental template=custom icw=2
+netsh interface tcp set supplemental template=custom minrto=300
+netsh interface tcp set supplemental template=custom rack=enabled
+netsh interface tcp set supplemental template=custom taillossprobe=enabled
+
 # netsh int tcp set supplemental Template=InternetCustom CongestionProvider=bbr2
+# netsh int tcp set supplemental Template=InternetCustom CongestionProvider=BBR # w11 only
+# netsh int tcp set supplemental Template=InternetCustom CongestionProvider=ctcp
 # netsh int tcp set supplemental Template=InternetCustom CongestionProvider=cubic
+netsh int tcp set supplemental Template=InternetCustom CongestionProvider=dctcp
+# netsh int tcp set supplemental Template=InternetCustom CongestionProvider=NewReno
 
-# w11 only
-# netsh int tcp set supplemental Template=Internet CongestionProvider=BBR
-# netsh int tcp set supplemental Template=Datacenter CongestionProvider=BBR
-# netsh int tcp set supplemental Template=Compat CongestionProvider=BBR
-# netsh int tcp set supplemental Template=DatacenterCustom CongestionProvider=BBR
-# netsh int tcp set supplemental Template=InternetCustom CongestionProvider=BBR
-# netsh int tcp set supplemental Template=Automatic CongestionProvider=BBR
-
-Set-NetTCPSetting -SettingName "*" -AutoTuningLevelLocal Normal -ScalingHeuristics Disabled
-Set-NetTCPSetting -SettingName internet -MinRto 300
-
-Disable-NetAdapterPowerManagement -Name "*"
-Disable-NetAdapterLso -Name "*"
-Disable-NetAdapterBinding -Name "*" -ComponentID ms_pacer
-
-# If you share files on the network, DO NOT disable the client below
-Disable-NetAdapterBinding -Name "*" -ComponentID ms_msclient
-
-Set-NetOffloadGlobalSetting -PacketCoalescingFilter Disabled -Chimney Disabled -Taskoffload Disabled -ReceiveSideScaling Enabled -ReceiveSegmentCoalescing Disabled # Taskoffload Disabled/Enabled, ReceiveSideScaling Enabled/Disabled
-
-Set-NetAdapterRdma -Name "*" -Enabled $True
-Set-NetAdapterRss -Name "*" -Profile Conservative
-Set-NetAdapterIPsecOffload -Name "*" -Enabled $True
-Enable-NetAdapterChecksumOffload -Name "*" # Disable/Enable
-Enable-NetAdapterEncapsulatedPacketTaskOffload -Name "*" # Disable/Enable
-Enable-NetAdapterIPsecOffload -Name "*" # Disable/Enable
-Disable-NetAdapterQos -Name "*" # Disable/Enable
-Disable-NetAdapterRsc -Name "*" # Disable/Enable
-Enable-NetAdapterRss -Name "*"
-Enable-NetAdapterSriov -Name "*" # Disable/Enable
-Enable-NetAdapterVmq -Name "*" # Disable/Enable
-
-function Set-RegKey {
-    param (
-        [string]$path,
-        [string]$name,
-        [string]$value,
-        [string]$type = "DWord"
-    )
-    if ($type -eq "DWord") {
-        Set-ItemProperty -Path $path -Name $name -Value $value -Type DWord -Force
-    } else {
-        Set-ItemProperty -Path $path -Name $name -Value $value -Type String -Force
-    }
-}
-
-$tcpipPath = "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces"
-$tcpInterfaces = Get-ChildItem -Path $tcpipPath
-foreach ($interface in $tcpInterfaces) {
-    Set-RegKey -path $interface.PSPath -name "TCPNoDelay" -value 1
-    Set-RegKey -path $interface.PSPath -name "TcpAckFrequency" -value 1
-    Set-RegKey -path $interface.PSPath -name "TcpDelAckTicks" -value 0
-}
-
-$netbtPath = "HKLM:\SYSTEM\CurrentControlSet\services\NetBT\Parameters\Interfaces"
-$interfaces = Get-ChildItem -Path $netbtPath
-foreach ($interface in $interfaces) {
-    Set-RegKey -path $interface.PSPath -name "NetbiosOptions" -value 2
-}
-
-$driverPath = "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces"
-$networkInterfaces = Get-ChildItem -Path $driverPath
-foreach ($interface in $networkInterfaces) {
-
-    Set-RegKey -path $interface.PSPath -name "*FlowControl" -value "0" -type "String"
-    Set-RegKey -path $interface.PSPath -name "FlowControlCap" -value "0" -type "String"
-
-    Set-RegKey -path $interface.PSPath -name "TxIntDelay" -value "0" -type "String"
-    Set-RegKey -path $interface.PSPath -name "TxAbsIntDelay" -value "0" -type "String"
-    Set-RegKey -path $interface.PSPath -name "RxIntDelay" -value "0" -type "String"
-    Set-RegKey -path $interface.PSPath -name "RxAbsIntDelay" -value "0" -type "String"
-
-    Set-RegKey -path $interface.PSPath -name "*InterruptModeration" -value "0" -type "String"
-
-    Set-RegKey -path $interface.PSPath -name "*EEE" -value "0" -type "String"
-    Set-RegKey -path $interface.PSPath -name "AdvancedEEE" -value "0" -type "String"
-    Set-RegKey -path $interface.PSPath -name "AutoPowerSaveModeEnabled" -value "0" -type "String"
-    Set-RegKey -path $interface.PSPath -name "EnableEDT" -value "0" -type "String"
-    Set-RegKey -path $interface.PSPath -name "EnableGreenEthernet" -value "0" -type "String"
-    Set-RegKey -path $interface.PSPath -name "PowerSavingMode" -value "0" -type "String"
-    Set-RegKey -path $interface.PSPath -name "ULPMode" -value "0" -type "String"
-}
-
+Disable-NetAdapterBinding -Name "*" -ComponentId 'ms_implat'
+Disable-NetAdapterBinding -Name "*" -ComponentId 'ms_lldp'
+Disable-NetAdapterBinding -Name "*" -ComponentId 'ms_lltdio'
+Disable-NetAdapterBinding -Name "*" -ComponentId 'ms_msclient' # If you share files on the network, DO NOT disable the client
+Disable-NetAdapterBinding -Name "*" -ComponentId 'ms_pacer'
+Disable-NetAdapterBinding -Name "*" -ComponentId 'ms_rspndr'
+Disable-NetAdapterBinding -Name "*" -ComponentId 'ms_server'
+Disable-NetAdapterBinding -Name "*" -ComponentId 'ms_tcpip6'
+Disable-NetAdapterBinding -Name "*" -ComponentId 'vmware_bridge'
 Disable-NetAdapterBinding -Name "*" -DisplayName 'Client for Microsoft Networks'
 Disable-NetAdapterBinding -Name "*" -DisplayName 'File and Printer Sharing for Microsoft Networks'
-Disable-NetAdapterQos -Name "*"
-Disable-NetAdapterBinding -Name "*" -DisplayName 'Microsoft Network Adapter Multiplexor Protocol'
-Disable-NetAdapterBinding -Name "*" -DisplayName 'Microsoft LLDP Protocol Driver'
-Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6
-Disable-NetAdapterBinding -Name "*" -DisplayName 'Link-Layer Topology Discovery Responder'
 Disable-NetAdapterBinding -Name "*" -DisplayName 'Link-Layer Topology Discovery Mapper I/O Driver'
+Disable-NetAdapterBinding -Name "*" -DisplayName 'Link-Layer Topology Discovery Responder'
+Disable-NetAdapterBinding -Name "*" -DisplayName 'Microsoft LLDP Protocol Driver'
+Disable-NetAdapterBinding -Name "*" -DisplayName 'Microsoft Network Adapter Multiplexor Protocol'
+# Disable-NetAdapterChecksumOffload -Name "*"
+Disable-NetAdapterEncapsulatedPacketTaskOffload -Name '*'
+Disable-NetAdapterIPsecOffload -Name '*'
+Disable-NetAdapterLso -Name "*"
+Disable-NetAdapterPowerManagement -Name "*"
+Disable-NetAdapterQos -Name "*"
+Disable-NetAdapterRdma -Name '*'
+Disable-NetAdapterRsc -Name "*"
+Disable-NetAdapterSriov -Name '*'
+Disable-NetAdapterUso -Name '*'
+Disable-NetAdapterVmq -Name '*'
+Enable-NetAdapterChecksumOffload -Name "*"
+# Enable-NetAdapterEncapsulatedPacketTaskOffload -Name "*"
+# Enable-NetAdapterIPsecOffload -Name "*"
+# Enable-NetAdapterQos -Name "*"
+# Enable-NetAdapterRsc -Name "*"
+Enable-NetAdapterRss -Name "*"
+# Enable-NetAdapterSriov -Name "*"
+# Enable-NetAdapterVmq -Name "*"
+Set-NetAdapterDataPathConfiguration -Name '*' -IncludeHidden -Profile Dispatch
+Set-NetAdapterIPsecOffload -Name "*" -Enabled $True
+# Set-NetAdapterRdma -Name "*" -Enabled $True
+# Set-NetAdapterRss -Name '*' -IncludeHidden -NumberOfReceiveQueues 1 -Profile Conservative -BaseProcessorGroup 0 -BaseProcessorNumber 0 -MaxProcessorGroup 0 -MaxProcessorNumber 0 -MaxProcessors 1 -NumaNode 0 -Enabled $true
+Set-NetAdapterRss -Name "*" -Profile Conservative
+Set-NetOffloadGlobalSetting -Chimney Disabled
+Set-NetOffloadGlobalSetting -NetworkDirectAcrossIPSubnets Blocked 
+Set-NetOffloadGlobalSetting -NetworkDirect Disabled
+Set-NetOffloadGlobalSetting -PacketCoalescingFilter Disabled
+Set-NetOffloadGlobalSetting -ReceiveSegmentCoalescing Disabled
+# Set-NetOffloadGlobalSetting -ReceiveSideScaling Disabled
+Set-NetOffloadGlobalSetting -ReceiveSideScaling Enabled
+# Set-NetOffloadGlobalSetting -Taskoffload Disabled
+Set-NetOffloadGlobalSetting -Taskoffload Enabled
+Set-NetTCPSetting -SettingName "*" -AutoTuningLevelLocal Normal
+Set-NetTCPSetting -SettingName internet -MinRto 300 # 20/300
+Set-NetTCPSetting -SettingName "*" -ScalingHeuristics Disabled
+Set-NetUDPSetting -DynamicPortRangeNumberOfPorts 5000
+Set-NetUDPSetting -DynamicPortRangeStartPort 60000
+
+Set-NetIPv4Protocol -AddressMaskReply Disabled
+Set-NetIPv4Protocol -DeadGatewayDetection Enabled
+Set-NetIPv4Protocol -DefaultHopLimit 128
+Set-NetIPv4Protocol -DhcpMediaSense Disabled
+Set-NetIPv4Protocol -GroupForwardedFragments Disabled
+Set-NetIPv4Protocol -IcmpRedirects Disabled
+Set-NetIPv4Protocol -IGMPLevel All
+Set-NetIPv4Protocol -IGMPVersion Version3
+Set-NetIPv4Protocol -MediaSenseEventLog Disabled
+Set-NetIPv4Protocol -MinimumMtu 1500
+Set-NetIPv4Protocol -MulticastForwarding Enabled
+Set-NetIPv4Protocol -NeighborCacheLimitEntries 256
+Set-NetIPv4Protocol -RandomizeIdentifiers Enabled
+Set-NetIPv4Protocol -ReassemblyLimitBytes 65535
+Set-NetIPv4Protocol -RouteCacheLimitEntries 256
+Set-NetIPv4Protocol -SourceRoutingBehavior Drop
+
+Set-NetIPv6Protocol -AddressMaskReply Disabled
+Set-NetIPv6Protocol -DeadGatewayDetection Enabled
+Set-NetIPv6Protocol -DefaultHopLimit 128
+Set-NetIPv6Protocol -DhcpMediaSense Disabled
+Set-NetIPv6Protocol -GroupForwardedFragments Disabled
+Set-NetIPv6Protocol -IcmpRedirects Disabled
+Set-NetIPv6Protocol -IGMPLevel All
+Set-NetIPv6Protocol -IGMPVersion Version3
+Set-NetIPv6Protocol -MediaSenseEventLog Disabled
+Set-NetIPv6Protocol -MinimumMtu 1500
+Set-NetIPv6Protocol -MulticastForwarding Enabled
+Set-NetIPv6Protocol -NeighborCacheLimitEntries 256
+Set-NetIPv6Protocol -RandomizeIdentifiers Enabled
+Set-NetIPv6Protocol -ReassemblyLimitBytes 65535
+Set-NetIPv6Protocol -RouteCacheLimitEntries 256
+Set-NetIPv6Protocol -SourceRoutingBehavior Drop
+
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -AdvertiseDefaultRoute Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -AdvertisedRouterLifetime 450
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -Advertising Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -BaseReachableTimeMs 15
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -ClampMss Enabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -CurrentHopLimit 64
+# Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -CurrentHopLimit 0
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -DadRetransmitTimeMs 1000
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -DadTransmits 5
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -Dhcp Enabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -DirectedMacWolPattern Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -EcnMarking AppDecide
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -ForceArpNdWolPattern Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -Forwarding Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -IgnoreDefaultRoutes Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -InterfaceMetric 0
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -ManagedAddressConfiguration Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -NeighborDiscoverySupported Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -NeighborUnreachabilityDetection Enabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -NlMtuBytes 1500
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -OtherStatefulConfiguration Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -PolicyStore ActiveStore
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -ReachableTime 5000
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -RetransmitTimeMs 500
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -RouterDiscovery Enabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -WeakHostReceive Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv4 -WeakHostSend Disabled
+
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -AdvertiseDefaultRoute Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -AdvertisedRouterLifetime 450
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -Advertising Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -BaseReachableTimeMs 15
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -ClampMss Enabled
+# Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -CurrentHopLimit 0
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -CurrentHopLimit 64
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -DadRetransmitTimeMs 1000
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -DadTransmits 5
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -Dhcp Enabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -DirectedMacWolPattern Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -EcnMarking AppDecide
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -ForceArpNdWolPattern Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -Forwarding Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -IgnoreDefaultRoutes Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -InterfaceMetric 0
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -ManagedAddressConfiguration Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -NeighborDiscoverySupported Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -NeighborUnreachabilityDetection Enabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -NlMtuBytes 1500
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -OtherStatefulConfiguration Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -PolicyStore ActiveStore
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -ReachableTime 5000
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -RetransmitTimeMs 500
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -RouterDiscovery Enabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -WeakHostReceive Disabled
+Set-NetIPInterface -InterfaceAlias 'Wi-Fi' -AddressFamily IPv6 -WeakHostSend Disabled
+
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -AdvertiseDefaultRoute Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -AdvertisedRouterLifetime 450
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -Advertising Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -BaseReachableTimeMs 15
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -ClampMss Enabled
+# Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -CurrentHopLimit 0
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -CurrentHopLimit 64
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -DadRetransmitTimeMs 1000
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -DadTransmits 5
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -Dhcp Enabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -DirectedMacWolPattern Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -EcnMarking AppDecide
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -ForceArpNdWolPattern Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -Forwarding Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -IgnoreDefaultRoutes Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -InterfaceMetric 0
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -ManagedAddressConfiguration Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -NeighborDiscoverySupported Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -NeighborUnreachabilityDetection Enabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -NlMtuBytes 1500
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -OtherStatefulConfiguration Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -PolicyStore ActiveStore
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -ReachableTime 5000
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -RetransmitTimeMs 500
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -RouterDiscovery Enabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -WeakHostReceive Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv4 -WeakHostSend Disabled
+
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -AdvertiseDefaultRoute Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -AdvertisedRouterLifetime 450
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -Advertising Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -BaseReachableTimeMs 15
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -ClampMss Enabled
+# Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -CurrentHopLimit 0
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -CurrentHopLimit 64
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -DadRetransmitTimeMs 1000
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -DadTransmits 5
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -Dhcp Enabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -DirectedMacWolPattern Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -EcnMarking AppDecide
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -ForceArpNdWolPattern Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -Forwarding Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -IgnoreDefaultRoutes Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -InterfaceMetric 0
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -ManagedAddressConfiguration Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -NeighborDiscoverySupported Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -NeighborUnreachabilityDetection Enabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -NlMtuBytes 1500
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -OtherStatefulConfiguration Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -PolicyStore ActiveStore
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -ReachableTime 5000
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -RetransmitTimeMs 500
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -RouterDiscovery Enabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -WeakHostReceive Disabled
+Set-NetIPInterface -InterfaceAlias 'Ethernet' -AddressFamily IPv6 -WeakHostSend Disabled
+
+Clear-DnsClientCache
+Start-Process -FilePath "ipconfig.exe" -ArgumentList "/flushdns" -NoNewWindow -Wait
+Start-Process -FilePath "ipconfig.exe" -ArgumentList "/renew" -NoNewWindow -Wait
 
 exit
