@@ -258,7 +258,7 @@ Windows Registry Editor Version 5.00
 
 ; breaks opengl apps and prevents windows update from downloading optional driver updates
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Segment Heap]
-"Enabled"=dword:00000001
+"Enabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 "AdditionalClockTicksInProcessor"=dword:99999999
@@ -474,7 +474,8 @@ Windows Registry Editor Version 5.00
 "DXGIFlipModel"="1"
 "DXGI_FLIP_SEQUENTIAL"="1"
 "DXGI_MAX_FRAME_LATENCY"="1"
-"DXGI_SWAPCHAIN_FLUSH"="0"
+"DXGI_SWAPCHAIN_FLUSH"="1" ; 0/1
+"DXGI_FRAME_LATENCY_WAITABLE_OBJECT"="1"
 "DXGL_FRAME_LATENCY_WAITABLE_OBJECT"="1"
 "DX_LOW_LATENCY_MODE"="1"
 "DX_MaxFrameBufferSize"=dword:00000080
@@ -495,7 +496,7 @@ Windows Registry Editor Version 5.00
 "GPU_PENDING_INTERRUPTS"="0"
 "GPU_SCHEDULER_MODE"="2"
 "GPU_SINGLE_ALLOC_PERCENT"="100"
-"GPU_SYNC_OBJECTS"="0"
+"GPU_SYNC_OBJECTS"="1" ; 0/1
 "HWACCEL"="0"
 "HZ"="FFFFFFFFFFFFFFFF"
 "IO_COMPLETION_POLICY"="0"
@@ -547,6 +548,8 @@ Windows Registry Editor Version 5.00
 "UseLowLatencyInputDriver"="1"
 "UseNewScheduler"="1"
 "VS_TELEMETRY_OPT_OUT"="1"
+"GPU_FORCE_64BIT_PTR"="0"
+"GPU_MAX_HEAP_SIZE"="100"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Profile\Events\{54533251-82be-4824-96c1-47b60b740d00}\{0AABB002-A307-447e-9B81-1D819DF6C6D0}]
 "Name"="SustainedPerf"
@@ -664,16 +667,16 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
 "AuditLevel"=dword:00000000
-"CpuPriorityClass"=dword:00000005
-"IoPriority"=dword:00000002
+"CpuPriorityClass"=dword:00000001 ; 00000001/00000005
+"IoPriority"=dword:00000000 ; 00000000/00000005
 "MinimumStackCommitInBytes"=dword:00008000
-"PagePriority"=dword:00000002
+"PagePriority"=dword:00000000 ; 00000000/00000005
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe\PerfOptions]
 "AuditLevel"=dword:00000000
-"CpuPriorityClass"=dword:00000005
-"IoPriority"=dword:00000002
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000000
 "MinimumStackCommitInBytes"=dword:00008000
-"PagePriority"=dword:00000002
+"PagePriority"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\audiodg.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000002
@@ -881,7 +884,7 @@ Windows Registry Editor Version 5.00
 "GlobalMaxTcpWindowSize"=dword:0000ffff  ; 000016d0/0000ffff/0030d400
 "IRPStackSize"=dword:00000020 ; 00000014/00000020/00000032/00000050
 "MaxConnectionsPer1_0Server"=dword:00000010
-"MaxConnectionsPerServer"=dword:00000010 ; 00000000/00000010
+"MaxConnectionsPerServer"=dword:0000000a ; 00000000/0000000a/00000010
 "MaxFreeTcbs"=dword:00010000 ; 00010000/0000ffff/00065536
 "MaxFreeTWTCount"=dword:00000000
 "MaxHashTableSize"=dword:0000ffff
@@ -1576,6 +1579,7 @@ Windows Registry Editor Version 5.00
 "UseLegacyDisplayFrameBuffer"=dword:00000001
 "UseMachineCheck"=dword:00000000
 "UseStaticComposition"=dword:00000001
+"DisableDWM"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\Dwm]
 "AlwaysHibernateThumbnails"=dword:00000000
@@ -1691,6 +1695,7 @@ Windows Registry Editor Version 5.00
 "UseLegacyDisplayFrameBuffer"=dword:00000001
 "UseMachineCheck"=dword:00000000
 "UseStaticComposition"=dword:00000001
+"DisableDWM"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM]
 "AlwaysHibernateThumbnails"=dword:00000000
@@ -1711,6 +1716,7 @@ Windows Registry Editor Version 5.00
 "OneCoreNoBootDWM"=dword:00000001
 "UseDpiScaling"=dword:00000000
 "UseWindowFrameStagingBuffer"=dword:00000000
+"DisableDWM"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DWM]
 "AnimationAttributionEnabled"=dword:00000000
@@ -1748,6 +1754,7 @@ Windows Registry Editor Version 5.00
 "ForwardOnlyOnly"=dword:00000000
 "RemoveSRMeshInShell"=dword:00000000
 "SydneyDownsampleFilterKernelSize"=dword:00000000
+"DisableDWM"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm\Scene]
 "EnableDrawToBackbuffer"=dword:00000000
@@ -2449,6 +2456,7 @@ Windows Registry Editor Version 5.00
 "RMGpuOperationMode"=dword:00000000
 "RmNdivSliding"=dword:00000000
 "RMSlcg"=dword:0003ffff
+"DisableDWM"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001]
 "Acceleration.Level"=dword:00000000
@@ -2623,6 +2631,7 @@ Windows Registry Editor Version 5.00
 "RMGpuOperationMode"=dword:00000000
 "RmNdivSliding"=dword:00000000
 "RMSlcg"=dword:0003ffff
+"DisableDWM"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0002]
 "Acceleration.Level"=dword:00000000
@@ -2797,6 +2806,7 @@ Windows Registry Editor Version 5.00
 "RMGpuOperationMode"=dword:00000000
 "RmNdivSliding"=dword:00000000
 "RMSlcg"=dword:0003ffff
+"DisableDWM"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global\NvBackend]
 "DisableThreadedOptimization"=dword:00000000 ; 00000000/00000001
@@ -4033,11 +4043,12 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\NetworkConnectivityStatusIndicator]
 @=""
 "NoActiveProbe"=dword:00000001
-"DisablePassivePolling"=dword:00000000 ; 00000000/00000001
+"DisablePassivePolling"=dword:00000001 ; 00000000/00000001
 "MaxActiveProbes"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet]
 "EnableActiveProbing"=dword:00000000
-"MinimumInternetHopCount"=dword:00000001 ; 00000001/00000014
+"MinimumInternetHopCount"=dword:00000014 ; 00000001/00000014
 "ActiveDnsProbeContent"="" ; 131.107.255.255
 "ActiveDnsProbeContentV6"="" ; fd3e:4f5a:5b81::1
 "ActiveDnsProbeHost"="" ;dns.msftncsi.com
@@ -5351,10 +5362,6 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\WinPhoneCritical]
 "Start"=dword:00000000
-; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LicenseManager]
-; "Start"=dword:00000004
-; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\sppsvc]
-; "Start"=dword:00000004
 ; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Appinfo]
 ; "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\bam]
@@ -5485,8 +5492,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WwanSvc]
 "Start"=dword:00000004
 
-; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\UsoSvc]
-; "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wisvc]
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc]
@@ -5633,8 +5638,8 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\tunnel]
 "Start"=dword:00000004 ; 00000003, 00000004
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\CLFS]
-"Start"=dword:00000004 ; 00000000, 00000004
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\CLFS]
+; "Start"=dword:00000004 ; 00000000, 00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\CmBatt]
 "Start"=dword:00000004 ; 00000003, 00000004
@@ -5665,6 +5670,7 @@ Windows Registry Editor Version 5.00
 ; "Start"=dword:00000004 ; 00000003, 00000004 ; breaks ms store
 ; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mpsdrv]
 ; "Start"=dword:00000004 ; 00000003, 00000004 ; breaks ms store
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mrxsmb]
 "Start"=dword:00000004 ; 00000003, 00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Mrxsmb10]
@@ -5728,6 +5734,23 @@ Windows Registry Editor Version 5.00
 
 ; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nsi]
 ; "Start"=dword:00000002 ; 00000002, 00000004
+
+; disables windows update
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\UsoSvc]
+; "Start"=dword:00000004 ; 00000003, 00000004
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LicenseManager]
+; "Start"=dword:00000004 ; 00000003, 00000004
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\sppsvc]
+; "Start"=dword:00000004 ; 00000002, 00000004
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BITS]
+; "Start"=dword:00000004 ; 00000003, 00000004
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wuauserv]
+; "Start"=dword:00000004 ; 00000003, 00000004
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\cryptsvc]
+; "Start"=dword:00000004 ; 00000002, 00000004
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TabletInputService]
+"Start"=dword:00000002 ; 00000002/00000003
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\AUEP]
 "RSX_AUEPStatus"=dword:00000004 ; 00000002/00000004
@@ -6609,6 +6632,8 @@ Windows Registry Editor Version 5.00
 "value"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\NewsAndInterests\AllowNewsAndInterests]
 "value"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Connectivity\DisableCrossDeviceResume]
+"value"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\software\policies\microsoft\ime\shared]
 "Enable Cloud Candidate"="0"
@@ -6880,6 +6905,10 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\PolicyState]
 "ExcludeWUDrivers"=dword:00000001 ; 00000000/00000001
+
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\Settings]
+; "PausedFeatureStatus"=dword:00000000
+; "PausedQualityStatus"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsMediaPlayer]
 "PreventLibrarySharing"=dword:00000001
@@ -7997,7 +8026,7 @@ Windows Registry Editor Version 5.00
 "ExitTime"=dword:00000000
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize]
-"ColorPrevalence"=dword:00000000 ; 00000000/00000001
+"ColorPrevalence"=dword:00000001 ; 00000000/00000001
 "Drop Shadow"="FALSE"
 "EnableBlurBehind"=dword:00000000
 "EnableTransparency"=dword:00000000
@@ -13898,9 +13927,9 @@ Windows Registry Editor Version 5.00
 "Link Speed Battery Saver"="Disabled"
 "LogDisconnectEvent"="0"
 "LogLinkStateEvent"="0"
-"*LsoV1IPv4"="1" ; 0/1
-"*LsoV2IPv4"="1" ; 0/1
-"*LsoV2IPv6"="1" ; 0/1
+"*LsoV1IPv4"="0" ; 0/1
+"*LsoV2IPv4"="0" ; 0/1
+"*LsoV2IPv6"="0" ; 0/1
 "LTROBFF"="0"
 "MasterSlave"="0"
 "*MaxRssProcessors"="1" ; 1/4
@@ -14095,9 +14124,9 @@ Windows Registry Editor Version 5.00
 "Link Speed Battery Saver"="Disabled"
 "LogDisconnectEvent"="0"
 "LogLinkStateEvent"="0"
-"*LsoV1IPv4"="1"
-"*LsoV2IPv4"="1"
-"*LsoV2IPv6"="1"
+"*LsoV1IPv4"="0"
+"*LsoV2IPv4"="0"
+"*LsoV2IPv6"="0"
 "LTROBFF"="0"
 "MasterSlave"="0"
 "*MaxRssProcessors"="1"
