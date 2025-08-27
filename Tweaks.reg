@@ -258,7 +258,7 @@ Windows Registry Editor Version 5.00
 
 ; breaks opengl apps and prevents windows update from downloading optional driver updates
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Segment Heap]
-"Enabled"=dword:00000000
+"Enabled"=dword:00000001 ; 00000000/00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 "AdditionalClockTicksInProcessor"=dword:99999999
@@ -864,6 +864,7 @@ Windows Registry Editor Version 5.00
 "DisableNSOffload"=dword:00000001
 "DisablePowerManagement"=dword:00000001
 "DisableTaskOffload"=dword:00000000 ; 00000000 rss on/00000001 rss off
+"DisablegTaskOffload"=dword:00000000
 "DisableTCPChimney"=dword:00000001
 "DisableTCPRSS"=dword:00000000 ;  00000000 rss on/00000001 rss off
 "DisableTcpTimestamps"=dword:00000001
@@ -897,7 +898,7 @@ Windows Registry Editor Version 5.00
 "SynAttackProtect"=dword:00000001
 "Tcp1323Opts"=dword:00000000
 "TcpAckFrequency"=dword:00000001
-"TcpCongestionControl"="cubic" ; newreno/cubic
+"TcpCongestionControl"="dctcp" ; newreno/cubic/ctcp/dctcp
 "TcpDelAckFreq"=dword:00000001
 "TcpDelAckTicks"=dword:00000000
 "TcpMaxConnectRetransmissions"=dword:00000001
@@ -1267,6 +1268,7 @@ Windows Registry Editor Version 5.00
 "TransitionLatency"=dword:00000001
 "UserBatteryDischargeEstimator"=dword:00000000 ; 00000000/00000001
 "VideoIdleTimeout"=dword:00000000
+"FxVsyncEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\whesvc]
 "ECP_WhatIf"=dword:00000001
@@ -1310,7 +1312,7 @@ Windows Registry Editor Version 5.00
 "ThreadPriority"=dword:0000000f
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB]
-"AllowIdleIrpInD3"=dword:00000001
+"AllowIdleIrpInD3"=dword:00000000
 "EnhancedPowerManagementEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USBXHCI\Parameters\Wdf]
@@ -2268,6 +2270,10 @@ Windows Registry Editor Version 5.00
 "vrrCursorMarginUs"=dword:00000001
 "vrrDeflickerMarginUs"=dword:00000001
 "vrrDeflickerMaxUs"=dword:00000001
+"WDDMv22EnableSmoothTransition"=dword:00000000
+"EnableIoMmu"=dword:00000000
+"PageFaultDebugMode"=dword:00000000
+"SimulateSecureBoot"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global\System]
 "EnableAGPFW"=dword:00000001
@@ -2457,6 +2463,35 @@ Windows Registry Editor Version 5.00
 "RmNdivSliding"=dword:00000000
 "RMSlcg"=dword:0003ffff
 "DisableDWM"=dword:00000001
+"RMDisablePerIntrDPCQueueing"=dword:00000001
+"RmIntrLockingMode"=dword:00000001
+"RmWatchDogInterval"=dword:00000000
+"RmWatchDogTimeOut"=dword:00000000
+"FlipNoVsync"=dword:00000001
+"enableVrrDisplayValidation"=dword:00000000
+"RmBreak"=dword:00000000
+"RMAllowECCPageRetirementSLI"=dword:00000000
+"RMGuestECCState"=dword:00000000
+"RMAssertOnEccErrors"=dword:00000000
+"RMSystemCrashOnEccDBE"=dword:00000000
+"RMNoECCFuseCheck"=dword:00000001
+"RMDisableSwdxDirectCtxswScrub"=dword:00000001
+"RMDisableRamchainScrub"=dword:00000001
+"RMNoECCFBScrub"=dword:00000001
+"RMInitScrub"=dword:00000000
+"RMDisableFastScrubber"=dword:00000001
+"RMDisableScrubOnFree"=dword:00000001
+"RMDisableAsyncMemScrub"=dword:00000001
+"RMEnableSMECC"=dword:00000000
+"RMEnableSHMECC"=dword:00000000
+"RMEnableL1ECC"=dword:00000000
+"RMGpcTileMap"=dword:00000000
+"DualConnectorTileDisplay"=dword:00000000
+"TilePoolPagingMode"=dword:00000000
+"enableMultiHeadsGpuScalingOnTiledMonitor"=dword:00000000
+"RMFermiScreenTileRowOffset"=dword:00000000
+"RmOverrideSupportChipsetAspm"=dword:00000000
+"RMSbiosEnableASPMDT"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001]
 "Acceleration.Level"=dword:00000000
@@ -2632,6 +2667,35 @@ Windows Registry Editor Version 5.00
 "RmNdivSliding"=dword:00000000
 "RMSlcg"=dword:0003ffff
 "DisableDWM"=dword:00000001
+"RMDisablePerIntrDPCQueueing"=dword:00000001
+"RmIntrLockingMode"=dword:00000001
+"RmWatchDogInterval"=dword:00000000
+"RmWatchDogTimeOut"=dword:00000000
+"FlipNoVsync"=dword:00000001
+"enableVrrDisplayValidation"=dword:00000000
+"RmBreak"=dword:00000000
+"RMAllowECCPageRetirementSLI"=dword:00000000
+"RMGuestECCState"=dword:00000000
+"RMAssertOnEccErrors"=dword:00000000
+"RMSystemCrashOnEccDBE"=dword:00000000
+"RMNoECCFuseCheck"=dword:00000001
+"RMDisableSwdxDirectCtxswScrub"=dword:00000001
+"RMDisableRamchainScrub"=dword:00000001
+"RMNoECCFBScrub"=dword:00000001
+"RMInitScrub"=dword:00000000
+"RMDisableFastScrubber"=dword:00000001
+"RMDisableScrubOnFree"=dword:00000001
+"RMDisableAsyncMemScrub"=dword:00000001
+"RMEnableSMECC"=dword:00000000
+"RMEnableSHMECC"=dword:00000000
+"RMEnableL1ECC"=dword:00000000
+"RMGpcTileMap"=dword:00000000
+"DualConnectorTileDisplay"=dword:00000000
+"TilePoolPagingMode"=dword:00000000
+"enableMultiHeadsGpuScalingOnTiledMonitor"=dword:00000000
+"RMFermiScreenTileRowOffset"=dword:00000000
+"RmOverrideSupportChipsetAspm"=dword:00000000
+"RMSbiosEnableASPMDT"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0002]
 "Acceleration.Level"=dword:00000000
@@ -2807,6 +2871,35 @@ Windows Registry Editor Version 5.00
 "RmNdivSliding"=dword:00000000
 "RMSlcg"=dword:0003ffff
 "DisableDWM"=dword:00000001
+"RMDisablePerIntrDPCQueueing"=dword:00000001
+"RmIntrLockingMode"=dword:00000001
+"RmWatchDogInterval"=dword:00000000
+"RmWatchDogTimeOut"=dword:00000000
+"FlipNoVsync"=dword:00000001
+"enableVrrDisplayValidation"=dword:00000000
+"RmBreak"=dword:00000000
+"RMAllowECCPageRetirementSLI"=dword:00000000
+"RMGuestECCState"=dword:00000000
+"RMAssertOnEccErrors"=dword:00000000
+"RMSystemCrashOnEccDBE"=dword:00000000
+"RMNoECCFuseCheck"=dword:00000001
+"RMDisableSwdxDirectCtxswScrub"=dword:00000001
+"RMDisableRamchainScrub"=dword:00000001
+"RMNoECCFBScrub"=dword:00000001
+"RMInitScrub"=dword:00000000
+"RMDisableFastScrubber"=dword:00000001
+"RMDisableScrubOnFree"=dword:00000001
+"RMDisableAsyncMemScrub"=dword:00000001
+"RMEnableSMECC"=dword:00000000
+"RMEnableSHMECC"=dword:00000000
+"RMEnableL1ECC"=dword:00000000
+"RMGpcTileMap"=dword:00000000
+"DualConnectorTileDisplay"=dword:00000000
+"TilePoolPagingMode"=dword:00000000
+"enableMultiHeadsGpuScalingOnTiledMonitor"=dword:00000000
+"RMFermiScreenTileRowOffset"=dword:00000000
+"RmOverrideSupportChipsetAspm"=dword:00000000
+"RMSbiosEnableASPMDT"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global\NvBackend]
 "DisableThreadedOptimization"=dword:00000000 ; 00000000/00000001
@@ -2829,6 +2922,19 @@ Windows Registry Editor Version 5.00
 "MonitorRefreshLatencyTolerance"=dword:00000001
 "SwapChainBackBuffer"=dword:00000001
 "TdrResetFromTimeoutAsync"=dword:00000001
+"ReduceStalls"=dword:00000001 
+"EnableHDASurfaces"=dword:00000001
+"DmaMaximumSegmentSize"=dword:00004000
+; "DisableOverlays"=dword:00000001
+"EnableSoftwarePaging"=dword:00000000
+"EnableTiledResources"=dword:00000001
+; "HwSchTrimInterval"=dword:0000000a
+; "HwSchPriority"=dword:00000001
+"EnableMultiPlaneOverlay"=dword:00000000 ; 00000000/00000001
+"EnableFlipEx"=dword:00000001
+"EnableIndependentFlip"=dword:00000001
+; "EnableVariableRefresh"=dword:00000001
+"EnableFramePacing"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers\Scheduler]
 "AdjustWorkerThreadPriority"=dword:00000001 ; 00000000/00000001
@@ -6216,8 +6322,8 @@ Windows Registry Editor Version 5.00
 "DisableRawSecurity"=dword:00000001
 "DoNotHoldNICBuffers"=dword:00000001
 "DynamicSendBufferDisable"=dword:00000000 ; 00000000/00000001
-; "FastCopyReceiveThreshold"=dword:000005b8 ; 00004000/000005dc/000005b8 (MTU)
-; "FastSendDatagramThreshold"=dword:000005b8 ; 00004000/000005dc/000005b8 (MTU)
+"FastCopyReceiveThreshold"=dword:00010000 ; 00004000/000005dc/000005b8/00010000 (MTU)
+"FastSendDatagramThreshold"=dword:00010000 ; 00004000/000005dc/000005b8/00010000 (MTU)
 "IgnoreOrderlyRelease"=dword:00000001
 "IgnorePushBitOnReceives"=dword:00000001
 "NonBlockingSendSpecialBuffering"=dword:00000001
@@ -8032,6 +8138,7 @@ Windows Registry Editor Version 5.00
 "EnableTransparency"=dword:00000000
 "ThemeChangesDesktopIcons"=dword:00000000
 "ThemeChangesMousePointers"=dword:00000000
+"EnablingTransparency"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters]
 "AllowInsecureGuestAuth"=dword:00000000
@@ -8807,6 +8914,7 @@ Windows Registry Editor Version 5.00
 "PreventIndex"=dword:00000001
 "PreventIndexOnBattery"=dword:00000001
 "PreventUsingAdvancedIndexingOptions"=dword:00000001
+"DoNotUseWebResults"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Settings\VoiceActivation\Microsoft.549981C3F5F10_8wekyb3d8bbwe!App]
 "AgentActivationEnabled"=dword:00000000
@@ -14022,6 +14130,8 @@ Windows Registry Editor Version 5.00
 "*IPsecOffloadV2"="3"
 "*IPsecOffloadV2IPv4"="3"
 "ForceRscEnabled"="1"
+"FastCopyReceiveThreshold"=dword:00010000 ; (MTU)
+"FastSendDatagramThreshold"=dword:00010000 ; (MTU)
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\0000\Ndi\params]
 "ParamDesc"="IPv4 Checksum Offload"
@@ -14219,6 +14329,8 @@ Windows Registry Editor Version 5.00
 "*IPsecOffloadV2"="3"
 "*IPsecOffloadV2IPv4"="3"
 "ForceRscEnabled"="1"
+"FastCopyReceiveThreshold"=dword:00010000
+"FastSendDatagramThreshold"=dword:00010000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\0001\Ndi\params]
 "ParamDesc"="IPv4 Checksum Offload"
