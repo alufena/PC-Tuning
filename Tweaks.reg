@@ -244,7 +244,7 @@ Windows Registry Editor Version 5.00
 "DisablePagingExecutive"=dword:00000001
 "DisableWpbtExecution"=dword:00000001
 "EnableMCA"=dword:00000000
-"EnableMCE"=dword:00000000 00002000
+"EnableMCE"=dword:00000000
 "EnableTimerWatchdog"=dword:00000000
 ; "HeapDeCommitFreeBlockThreshold"=dword:00002000 ; 00002000/00000800
 ; "HeapDeCommitTotalFreeThreshold"=dword:00020000 ; 00020000/00008000
@@ -12449,7 +12449,6 @@ Windows Registry Editor Version 5.00
 "MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\outlook.exe]
-
 "MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
 "MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
 "EAFModules"=" "
