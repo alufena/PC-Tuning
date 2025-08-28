@@ -3157,6 +3157,11 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Drive\shell\cmdprompt\command]
 @="cmd.exe /s /k pushd \"%V\""
 
+[HKEY_CLASSES_ROOT\regfile\shell\32bit]
+@="Merge (32-bit registry)"
+[HKEY_CLASSES_ROOT\regfile\shell\32bit\command]
+@="C:\\Windows\\SysWOW64\\regedit.exe \"%1\""
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Search]
 "EnableFindMyFiles"=dword:00000000 ; 00000000 classic, 00000001 enhanced
 "SetupCompletedSuccessfully"=dword:00000001
@@ -4150,18 +4155,28 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell]
 "ExecutionPolicy"="Unrestricted"
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters]
+"Type"="NoSync" ; NoSync/NTP
+"NtpServer"="" ; time.windows.com,0x9
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient]
+"Enabled"=dword:00000000 ; 00000000/00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config]
+"AnnounceFlags"=dword:00000005 ; 0000000a, 00000005
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
+"DisableAutoDaylightTimeSet"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\NetworkConnectivityStatusIndicator]
 @=""
-"NoActiveProbe"=dword:00000001
+"NoActiveProbe"=dword:00000001 ; 00000000/00000001
 "DisablePassivePolling"=dword:00000001 ; 00000000/00000001
 "MaxActiveProbes"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet]
-"EnableActiveProbing"=dword:00000000
+"EnableActiveProbing"=dword:00000000 ; 00000000/00000001
 "MinimumInternetHopCount"=dword:00000014 ; 00000001/00000014
 "ActiveDnsProbeContent"="" ; 131.107.255.255
 "ActiveDnsProbeContentV6"="" ; fd3e:4f5a:5b81::1
-"ActiveDnsProbeHost"="" ;dns.msftncsi.com
+"ActiveDnsProbeHost"="" ; dns.msftncsi.com
 "ActiveDnsProbeHostV6"="" ; dns.msftncsi.com
 "ActiveWebProbeContent"="" ; Microsoft Connect Test
 "ActiveWebProbeContentV6"="" ; Microsoft Connect Test
@@ -4453,16 +4468,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\MTCUVC]
 "EnableMtcUvc"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters]
-"Type"="NoSync" ; NoSync/NTP
-"NtpServer"="" ; time.windows.com,0x9
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient]
-"Enabled"=dword:00000000 ; 00000000/00000001
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config]
-"AnnounceFlags"=dword:00000005 ; 0000000a, 00000005
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
-"DisableAutoDaylightTimeSet"=dword:00000001
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Associations]
 "LowRiskFileTypes"=".avi;.bat;.com;.cmd;.exe;.htm;.html;.lnk;.mpg;.mpeg;.mov;.mp3;.msi;.m3u;.rar;.reg;.txt;.vbs;.wav;.zip;.iso"
@@ -5307,9 +5312,15 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Policies\BraveSoftware\Brave]
 "SuppressUnsupportedOSWarning"=dword:00000001
-
 [HKEY_CURRENT_USER\Software\Policies\Chromium]
 "SuppressUnsupportedOSWarning"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Chromium]
+"ExtensionManifestV2Availability"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Vivaldi]
+"ExtensionManifestV2Availability"=dword:00000002
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\YandexBrowser]
+"ExtensionManifestV2Availability"=dword:00000002
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start\Companions\Microsoft.YourPhone_8wekyb3d8bbwe]
 "IsEnabled"=dword:00000000
@@ -8595,6 +8606,11 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Office\Common\Graphics]
 "DisableHardwareAcceleration"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft]
+"SPONSORS"="DISABLE"
+[HKEY_LOCAL_MACHINE\Wow6432Node\SOFTWARE\JavaSoft]
+"SPONSORS"="DISABLE"
+
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack]
 "ShowedToastAtLevel"=dword:00000001
 
@@ -9336,6 +9352,9 @@ Windows Registry Editor Version 5.00
 "Enabled"=dword:00000001
 "DisabledByDefault"=dword:00000000
 
+[HKEY_LOCAL_MACHINE\SYSTEM\WPA\PosReady] 
+"Installed"=dword:00000001
+
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Narrator\NarratorHome]
 "AutoStart"=dword:00000000
 "MinimizeType"=dword:00000000
@@ -9515,9 +9534,88 @@ Windows Registry Editor Version 5.00
 ; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Intelppm\Parameters]
 ; "DisablePowerSavingFeatures"=dword:00000001
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\.NET\3.5]
+"3.5 SP1"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\.NET\3.5 Client Profile]
+"3.5 Client Profile SP1"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\.NET\4.0]
+"4.0"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\.NET\4.0 Client Profile]
+"4.0 Client Profile"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\.NET\4.5.1]
+"4.5.1"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\DirectX]
+"June2010"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\DirectX\Jun2010]
+"dxsetup"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\OpenAL\2.0.7.0]
+"2.0.7.0"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\PhysX]
+"8.09.04"=dword:00000001
+"9.12.1031"=dword:00000001
+"9.13.1220"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\vcredist\2005]
+"x86 SP1"=dword:00000001
+"x64 SP1"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\vcredist\2008]
+"x86 SP1"=dword:00000001
+"x64 SP1"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\vcredist\2010]
+"x86"=dword:00000001
+"x64"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\vcredist\2012]
+"x86 Update 2"=dword:00000001
+"x64 Update 2"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\vcredist\2013]
+"x86 Update 1"=dword:00000001
+"x64 Update 1"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\XNA\3.0]
+"3.0"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\XNA\3.1]
+"3.1"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\XNA\4.0]
+"4.0 Refresh"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\vcredist\2015-2022]
+"x86"=dword:00000001
+"x64"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\vcredist\2015-2022]
+"14.16.27012.6"=dword:00000001
+"14.21.27702.2"=dword:00000001
+"14.28.29914.0"=dword:00000001
+"14.36.32532.0"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\.NET\4.6.1]
+"4.6.1"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\.NET\4.6.2]
+"4.6.2"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\.NET\4.7.1]
+"4.7.1"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\.NET\4.7.2]
+"4.7.2"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\.NET\4.8]
+"4.8"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\UCRT]
+"ucrt"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\DirectX]
+"June2010"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\DirectX\Jun2010]
+"dxsetup"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\DirectX\EndUser]
+"enduser"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\Vulkan]
+"Runtime"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\OpenAL\2.0.9.0]
+"2.0.9.0"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\PhysX]
+"9.14.0702"=dword:00000001
+"9.17.0526"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\XNA\4.0]
+"4.0 Refresh"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Valve\Steam\Apps\CommonRedist\MSVCR]
+"installed"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\JreMetrics]
 "DisableSponsors"="Y"
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\JreMetrics]
 "DisableSponsors"="Y"
 
