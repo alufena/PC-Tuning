@@ -1,12 +1,16 @@
-# Define device class GUID only for Mouse
+# Define device class GUIDs for Mouse and Keyboard
 $deviceClasses = @(
     @{
         Path  = "HKLM:\SYSTEM\CurrentControlSet\Control\Class\{4d36e96f-e325-11ce-bfc1-08002be10318}";
         Label = "Mouse"
+    },
+    @{
+        Path  = "HKLM:\SYSTEM\CurrentControlSet\Control\Class\{4d36e96b-e325-11ce-bfc1-08002be10318}";
+        Label = "Keyboard"
     }
 )
 
-Write-Host "Starting check and patch for Mouse drivers..." -ForegroundColor Yellow
+Write-Host "Starting check and patch for Mouse and Keyboard drivers..." -ForegroundColor Yellow
 
 foreach ($class in $deviceClasses) {
     Write-Host "`n=== CHECKING $($class.Label) DRIVERS ===" -ForegroundColor Cyan
