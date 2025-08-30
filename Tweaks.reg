@@ -265,10 +265,14 @@ Windows Registry Editor Version 5.00
 "AdjustDpcThreshold"=dword:00000000 ; 00000000/00000001/00000320
 "AdminlessEnableWatsonReporting"=dword:00000000
 "AdminlessEnableWatsonThrottling"=dword:00000000
-"BoostingPeriodMultiplier"=dword:00000005
+"AlwaysTrackIoBoosting"=dword:00000001
+"AmdTprLowerInterruptDelayConfig"=dword:00000001
+"BoostingPeriodMultiplier"=dword:00000005 ; 00000000/00000005
 "BufferSize"=dword:00000020
 "BugCheckUnexpectedInterrupts"=dword:00000000
 "CacheAwareScheduling"=dword:00000001 ; 00000001/00000007
+"CacheErrataOverride"=dword:00000001
+"CacheIsoBitmap"=dword:00000001
 "Capabilities"=dword:00000110
 "ClockOwner"=dword:00000001
 "ClockRate"=dword:00000001
@@ -279,6 +283,8 @@ Windows Registry Editor Version 5.00
 "CpuThrottle"=dword:00000000
 "CyclesPerClockQuantum"=dword:00000001
 "DebugPollInterval"=dword:000003e8 ; 00000000/00000001/000003e8/000000fa
+"DefaultDynamicHeteroCpuPolicy"=dword:00000006
+"DefaultHeteroCpuPolicy"=dword:00000001 ; 00000001/00000004
 "DelayCloseSize"=dword:00000000
 "DelayDerefKCBLimit"=dword:00000000 ; 00000000/00000001
 "DisableAutoBoost"=dword:00000001 ; 00000000/00000001
@@ -292,6 +298,7 @@ Windows Registry Editor Version 5.00
 "DisableLightWeightSuspend"=dword:00000001
 ; "DisableLowQosTimerResolution"=dword:00000000 ; =-, 00000000/00000001 (w10 only. breaks w11 24h2)
 "DisableOverlappedExecution"=dword:00000000
+"DisablePointerParameterAlignmentValidation"=dword:00000001
 ; "DisablePrefetcher"=dword:00000001
 "DisableTsx"=dword:00000001 ; 00000000/00000001
 "DistributeTimers"=dword:00000001 ; 00000000/00000001
@@ -312,6 +319,10 @@ Windows Registry Editor Version 5.00
 "DpcWatchdogProfileOffset"=dword:00000000 ; 00002710, 00000000
 "DpcWatchdogProfileSingleDpcThreshold"=dword:00000000
 "DynamicDpcProtocol"=dword:00000001 ; 00000000/00000001
+"DynamicHeteroCpuPolicyImportant"=dword:00000006
+"DynamicHeteroCpuPolicyImportantPriority"=dword:0000000a
+"DynamicHeteroCpuPolicyImportantShort"=dword:00000006
+"DynamicHeteroCpuPolicyMask"=dword:00000003
 "DynamicTickDisable"=dword:00000001
 "EAFModules"=" "
 "EnableControlFlowLowGuardExportSuppression"=dword:00000001
@@ -338,7 +349,7 @@ Windows Registry Editor Version 5.00
 "InterruptRequest"=dword:00000001
 "InterruptRequestRate"=dword:99999999
 "InterruptSteeringDisabled"=dword:00000001
-"InterruptSteeringFlags"=dword:00000000 ; 00000000/00000003
+"InterruptSteeringFlags"=dword:00000001 ; 00000000/00000001/00000003
 "IoEnqueueIrp"=dword:00000020
 "IoQueueThreadIrp"=dword:00000020
 "IoQueueWorkItem"=dword:00000020
@@ -380,6 +391,7 @@ Windows Registry Editor Version 5.00
 "PendingTickFlags"=dword:00000000
 "PerfBoostPolicy"=dword:00000001
 "PerfBootPerformance"=dword:00000001
+"PerfIsoEnabled"=dword:00000001
 "PowerOffFrozenProcessors"=dword:00000000
 "PriorityControl"=dword:00000028 ; 00000020/00000028/00000032
 "PriorityState"=dword:00000001
@@ -389,13 +401,14 @@ Windows Registry Editor Version 5.00
 "ReadyThreadCount"=dword:000007d0 ; 000007d0/000000ff
 "ReadyTimeTicks"=dword:00000006
 "RealTimeIsCritical"=dword:00000001
-"RebalanceMinPriority"=dword:00000001
+"RebalanceMinPriority"=dword:00000000 ; 00000000/00000001
 ; "ReservedCpuSets"=hex:06,00,00,00,00,00,00,00
 "ScanLatencyTicks"=dword:00000014
+"SchedulerAssistThreadFlagOverride"=dword:00000001 ; 00000000/00000001
 "SchedulerMaximumLatency"=dword:00000000
 "SeLpacEnableWatsonReporting"=dword:00000000
 "SeLpacEnableWatsonThrottling"=dword:00000000
-"SeLpacEnablwatsonReporting"=dword:00000000
+"SeLpacEnablWatsonReporting"=dword:00000000
 "SeLpacEnablWatsonThrottling"=dword:00000000
 "SerializeTimerExpiration"=dword:00000002 ; 00000000/00000001/00000002
 "SeTokenSingletonAttributesConfig"=dword:00000003
@@ -416,6 +429,7 @@ Windows Registry Editor Version 5.00
 "VerifierDpcScalingFactor"=dword:00000001
 "WatchdogResumeTimeout"=dword:00000000
 "WorkerFactoryThreadIdleTimeout"=dword:00000000
+"WpsSimulationOverride"=dword:00000001
 "XMMIZeroingEnable"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM]
@@ -1075,7 +1089,7 @@ Windows Registry Editor Version 5.00
 "MaxWorkerThreads"=dword:00000010
 "PriorityControl"=dword:00000028
 "ProcessorScheduling"=dword:00000002
-"SchedulerAssistThreadFlagOverride"=dword:00000000 ; 00000000/00000001
+"SchedulerAssistThreadFlagOverride"=dword:00000001
 "TaskOffload"=dword:00000001
 "ThreadAffinityBoost"=dword:00000001
 "ThreadBoostType"=dword:00000001 ; 00000001/00000002
@@ -9014,7 +9028,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\WindowsCopilot]
 "TurnOffWindowsCopilot"=dword:00000001
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot]
 "TurnOffWindowsCopilot"=dword:00000001
 
@@ -9099,7 +9112,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Accessibility]
 "Configuration"=-
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility]
 "Configuration"=-
 
@@ -9108,8 +9120,8 @@ Windows Registry Editor Version 5.00
 "selfvoice"=dword:00000000
 
 [HKEY_CURRENT_USER\Control Panel\Accessibility\SlateLaunch]
-"LaunchAT"=dword:00000000
 "ATapp"=""
+"LaunchAT"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\PrecisionTouchPad]
 "AAPThreshold"=dword:00000000
@@ -9133,11 +9145,17 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\safer\codeidentifiers]
 "authenticodeenabled"=dword:00000000
 
+; DMA mode
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\Geo]
-"Nation"="94" ; 21/32/94
+"Nation"="94" ; 32, 94
 [HKEY_CURRENT_USER\Control Panel\International\Geo]
+"Name"="Germany" ; BR, Germany
+"Nation"="94" ; 32, 94
+[HKEY_USERS\.DEFAULT\Control Panel\International\Geo]
+"Name"="Germany"
+"Nation"="94"
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\DeviceRegion]  
-"DeviceRegion"=dword:000000de ; 000000de/00000015/00000032
+"DeviceRegion"=dword:0000005e ; 00000020, 0000005e
 
 ; restore old explorer (w11 only)
 ; [HKEY_CURRENT_USER\Software\Classes\CLSID\{2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0}\InProcServer32]
