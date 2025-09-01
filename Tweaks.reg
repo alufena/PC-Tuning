@@ -431,6 +431,15 @@ Windows Registry Editor Version 5.00
 "WorkerFactoryThreadIdleTimeout"=dword:00000000
 "WpsSimulationOverride"=dword:00000001
 "XMMIZeroingEnable"=dword:00000000
+"XStateContextLookasidePerProcMaxDepth"=dword:0000000a
+"IdealNodeRandomized"=dword:00000000
+"HgsPlusFeedbackUpdateThresholdRuntime"=dword:00000000
+"HgsPlusFeedbackUpdateThresholdNetRuntime"=dword:00000000
+"HgsPlusInvalidFeedbackLimit"=dword:00000000
+"HgsPlusLowerPerfClassFeedbackThreshold"=dword:00000000
+"HgsPlusHigherPerfClassFeedbackThreshold"=dword:00000000
+"HgsPlusMinimumScoreDifferenceForSwap"=dword:00000064
+"HgsPlusThreadCreationDefaultClass"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\SYSTEM]
 "InterruptSteeringDisabled"=dword:00000001
@@ -484,7 +493,9 @@ Windows Registry Editor Version 5.00
 "DX12_AGGRESSIVE_PIPELINE"="1"
 "DX12_FORCE_WARP"="0"
 "DX_ENABLE_HIGH_SPEED_PRESENT"="1"
-"DXGI_ALLOW_TEARING"="1"
+"DXGI_ALLOW_TEARING"="1" ; 0/1
+"DXGI_PRESENT_ALLOW_TEARING"="1"
+"DXGI_SWAP_CHAIN_FLAG_ALLOW_TEARING"="1"
 "DXGIFlipModel"="1"
 "DXGI_FLIP_SEQUENTIAL"="1"
 "DXGI_FRAME_LATENCY_WAITABLE_OBJECT"="1"
@@ -860,9 +871,9 @@ Windows Registry Editor Version 5.00
 "CheckFwVersion"=dword:00000000
 "DefaultPnPCapabilities"=dword:00000024
 "EnableNicAutoPowerSaverInSleepStudy"=dword:00000000
-"MaxNumRssCpus"=dword:00000008 ; 00000008/00000010/0000000a
+"MaxNumRssCpus"=dword:00000010 ; 00000008/00000010/0000000a
 "MaxNumRssThreads"=dword:00000010 ; 00000010/00000014
-"RssBaseCpu"=dword:00000002 ; 00000001/00000002/00000003/00000004/00000006
+"RssBaseCpu"=dword:00000000 ; 00000000/00000001/00000002/00000003/00000004/00000006
 "ThreadPriority"=dword:0000001f ; 0000001f/0000000f
 "TrackNblOwner"=dword:00000000
 
@@ -1421,7 +1432,9 @@ Windows Registry Editor Version 5.00
 "Cstates"=dword:00000000
 "DedicatedSegmentSize"=dword:00000512
 "ProccesorLatencyThrottlingEnabled"=dword:00000000
+"ProcessorLatencyThrottlingEnabled"=dword:00000000
 "ProccesorThrottlingEnabled"=dword:00000000
+"ProcessorThrottlingEnabled"=dword:00000000
 "Threshold"=dword:00000001
 
 [HKEY_CURRENT_USER\Control Panel\PowerCfg\GlobalPowerPolicy]
@@ -13694,7 +13707,7 @@ Windows Registry Editor Version 5.00
 "BeamformCap"="54"
 "CLKREQ"="0"
 "*DeviceSleepOnDisconnect"="0"
-"DisableDelayedPowerUp"="1"
+"DisableDelayedPowerUp"="1" ; 1/2
 "DisableIntelRST"="1"
 "DisablePhyReset"="1"
 "DMACoalescing"="0"
@@ -13748,7 +13761,7 @@ Windows Registry Editor Version 5.00
 "I219DisableK1Off"="1"
 "*IdleRestriction"="1"
 "*InterruptModeration"="0"
-"*IPChecksumOffloadIPv4"="3" ; 0/3
+"*IPChecksumOffloadIPv4"="0" ; 0/3
 "*IPsecOffloadV1IPv4"="3"
 "*IPsecOffloadV2"="3"
 "*IPsecOffloadV2IPv4"="3"
@@ -13764,7 +13777,7 @@ Windows Registry Editor Version 5.00
 "*LsoV2IPv6"="0" ; 0/1
 "LTROBFF"="0"
 "MasterSlave"="0"
-"*MaxRssProcessors"="1" ; 1/4
+"*MaxRssProcessors"="16" ; 1/4
 "MIMOPowerSaveMode"="3"
 "*ModernStandbyWoLMagicPacket"="0"
 "NdisPoll"=dword:00000001
@@ -13772,11 +13785,11 @@ Windows Registry Editor Version 5.00
 "NetworkDirect"=dword:00000001
 "NetworkDirectTechnology"=dword:00000000
 "*NicAutoPowerSaver"="0"
-"NicAutoPowerSaver"=dword:00000000
+"NicAutoPowerSaver"=dword:00000000 ; 00000000/2
 "*NumaNodeId"="0"
-"*NumRssQueues"="1" ; 1/2
+"*NumRssQueues"="4" ; 1/2
 "OBFFEnabled"="0"
-"*PMARPOffload"="1" ; 0/1
+"*PMARPOffload"="0" ; 0/1
 "*PMNSOffload"="0" ; 0/1
 "*PMWiFiRekeyOffload"="1" ; 0/1
 "PnPCapabilities"=dword:00000024
@@ -13790,9 +13803,9 @@ Windows Registry Editor Version 5.00
 "*RscIPv6"="1" ; 0/1
 "*RSS"="1" ; 0/1
 "*RssBaseProcGroup"="0"
-"*RssBaseProcNumber"="2" ; 1/2
+"*RssBaseProcNumber"="0" ; 1/2
 "*RssMaxProcGroup"="0"
-"*RssMaxProcNumber"="2" ; 1/2/4
+"*RssMaxProcNumber"="15" ; 1/2/4
 "*RSSProfile"="4"
 "RxAbsIntDelay"="0"
 "RxIntDelay"="0"
@@ -13812,8 +13825,8 @@ Windows Registry Editor Version 5.00
 "SSIdleTimeoutMS"="1"
 "*SSIdleTimeoutScreenOff"="1"
 "System Idle Power Saver"="Disabled"
-"*TCPChecksumOffloadIPv4"="3" ; 0/3
-"*TCPChecksumOffloadIPv6"="3" ; 0/3
+"*TCPChecksumOffloadIPv4"="0" ; 0/3
+"*TCPChecksumOffloadIPv6"="0" ; 0/3
 "*TCPConnectionOffloadIPv4"="1" ; 1/3
 "*TCPConnectionOffloadIPv6"="1" ; 1/3
 "ThreadedDpcEnable"=dword:00000000
@@ -13825,8 +13838,8 @@ Windows Registry Editor Version 5.00
 "TxIntModeration"=dword:00000000
 "TxIntModerationProfile"="0"
 "TxThreadedDpcEnable"=dword:00000000
-"*UDPChecksumOffloadIPv4"="3" ; 0/3
-"*UDPChecksumOffloadIPv6"="3" ; 0/3
+"*UDPChecksumOffloadIPv4"="0" ; 0/3
+"*UDPChecksumOffloadIPv6"="0" ; 0/3
 "*UdpRsc"="1" ; 0/1
 "ULPMode"="0"
 "Ultra Low Power Mode"="Disabled"
@@ -13847,6 +13860,10 @@ Windows Registry Editor Version 5.00
 "WakeOnSlot"="0"
 "WakeUpModeCap"="0"
 "WolShutdownLinkSpeed"="2"
+"*LargeSendOffloadIPv4"="0"
+"S5NicKeepOverrideMacAddrV2"="0"
+"EnableConnectedPowerGating"="0"
+"EnableWakeOnLan"="0"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\0000\Ndi\params]
 "ParamDesc"="IPv4 Checksum Offload"
@@ -13947,7 +13964,7 @@ Windows Registry Editor Version 5.00
 "I219DisableK1Off"="1"
 "*IdleRestriction"="1"
 "*InterruptModeration"="0"
-"*IPChecksumOffloadIPv4"="3"
+"*IPChecksumOffloadIPv4"="0"
 "*IPsecOffloadV1IPv4"="3"
 "*IPsecOffloadV2"="3"
 "*IPsecOffloadV2IPv4"="3"
@@ -13963,7 +13980,7 @@ Windows Registry Editor Version 5.00
 "*LsoV2IPv6"="0"
 "LTROBFF"="0"
 "MasterSlave"="0"
-"*MaxRssProcessors"="1"
+"*MaxRssProcessors"="16"
 "MIMOPowerSaveMode"="3"
 "*ModernStandbyWoLMagicPacket"="0"
 "NdisPoll"=dword:00000001
@@ -13973,9 +13990,9 @@ Windows Registry Editor Version 5.00
 "*NicAutoPowerSaver"="0"
 "NicAutoPowerSaver"=dword:00000000
 "*NumaNodeId"="0"
-"*NumRssQueues"="1"
+"*NumRssQueues"="4"
 "OBFFEnabled"="0"
-"*PMARPOffload"="1"
+"*PMARPOffload"="0"
 "*PMNSOffload"="0"
 "*PMWiFiRekeyOffload"="1"
 "PnPCapabilities"=dword:00000024
@@ -13989,9 +14006,9 @@ Windows Registry Editor Version 5.00
 "*RscIPv6"="1"
 "*RSS"="1"
 "*RssBaseProcGroup"="0"
-"*RssBaseProcNumber"="2"
+"*RssBaseProcNumber"="0"
 "*RssMaxProcGroup"="0"
-"*RssMaxProcNumber"="2"
+"*RssMaxProcNumber"="15"
 "*RSSProfile"="4"
 "RxAbsIntDelay"="0"
 "RxIntDelay"="0"
@@ -14011,8 +14028,8 @@ Windows Registry Editor Version 5.00
 "SSIdleTimeoutMS"="1"
 "*SSIdleTimeoutScreenOff"="1"
 "System Idle Power Saver"="Disabled"
-"*TCPChecksumOffloadIPv4"="3"
-"*TCPChecksumOffloadIPv6"="3"
+"*TCPChecksumOffloadIPv4"="0"
+"*TCPChecksumOffloadIPv6"="0"
 "*TCPConnectionOffloadIPv4"="1"
 "*TCPConnectionOffloadIPv6"="1"
 "ThreadedDpcEnable"=dword:00000000
@@ -14024,8 +14041,8 @@ Windows Registry Editor Version 5.00
 "TxIntModeration"=dword:00000000
 "TxIntModerationProfile"="0"
 "TxThreadedDpcEnable"=dword:00000000
-"*UDPChecksumOffloadIPv4"="3"
-"*UDPChecksumOffloadIPv6"="3"
+"*UDPChecksumOffloadIPv4"="0"
+"*UDPChecksumOffloadIPv6"="0"
 "*UdpRsc"="1"
 "ULPMode"="0"
 "Ultra Low Power Mode"="Disabled"
@@ -14046,6 +14063,10 @@ Windows Registry Editor Version 5.00
 "WakeOnSlot"="0"
 "WakeUpModeCap"="0"
 "WolShutdownLinkSpeed"="2"
+"*LargeSendOffloadIPv4"="0"
+"S5NicKeepOverrideMacAddrV2"="0"
+"EnableConnectedPowerGating"="0"
+"EnableWakeOnLan"="0"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\0001\Ndi\params]
 "ParamDesc"="IPv4 Checksum Offload"
