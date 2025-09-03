@@ -410,7 +410,7 @@ Windows Registry Editor Version 5.00
 "SeLpacEnableWatsonThrottling"=dword:00000000
 "SeLpacEnablWatsonReporting"=dword:00000000
 "SeLpacEnablWatsonThrottling"=dword:00000000
-"SerializeTimerExpiration"=dword:00000002 ; 00000000/00000001/00000002
+"SerializeTimerExpiration"=dword:00000001 ; 00000000/00000001/00000002
 "SeTokenSingletonAttributesConfig"=dword:00000003
 "SplitLargeCaches"=dword:00000000 ; 00000000/00000001
 "StackSubSystemStackSize"=dword:00010000
@@ -677,6 +677,7 @@ Windows Registry Editor Version 5.00
 "D3D12_MULTITHREADED"=dword:00000001
 "D3D12_RESIDENCY_MANAGEMENT_ENABLED"=dword:00000001
 "D3D12_RESOURCE_ALIGNMENT"=dword:00000001
+"DisableHWOverlay"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
 "AlwaysOn"=dword:00000001 ; mmcss off
@@ -1559,7 +1560,7 @@ Windows Registry Editor Version 5.00
 "ForceGdiComposition"=dword:00000001
 "ForceModeEnumeration"=dword:00000001
 "ForceSoftwareD3D"=dword:00000001
-"FrameLatency"=dword:00000001 ; 00000001/00000002/00000003
+"FrameLatency"=dword:00000002 ; 00000001/00000002/00000003
 "HighColor"=dword:00000000
 "ImageProcessing8bit"=dword:00000000 ; 00000000/00000001
 "InitialWatchdogTelemetryTimeoutMilliseconds"=dword:00000000
@@ -1675,7 +1676,7 @@ Windows Registry Editor Version 5.00
 "ForceGdiComposition"=dword:00000001
 "ForceModeEnumeration"=dword:00000001
 "ForceSoftwareD3D"=dword:00000001
-"FrameLatency"=dword:00000001
+"FrameLatency"=dword:00000002
 "HighColor"=dword:00000000
 "ImageProcessing8bit"=dword:00000000
 "InitialWatchdogTelemetryTimeoutMilliseconds"=dword:00000000
@@ -1780,7 +1781,7 @@ Windows Registry Editor Version 5.00
 "EnableAeroPeek"=dword:00000000
 "EnableColorSeparation"=dword:00000000
 "ExclusiveModeFramerateAveragingPeriodMs"=dword:000003e8 ; 000003e8, 00000000/00000064/000000fa/000001f4/000002ee
-"ExclusiveModeFramerateThresholdPercent"=dword:00000000 ; 0000002d, 00000000/00000001/00000064
+"ExclusiveModeFramerateThresholdPercent"=dword:00000001 ; 0000002d, 00000000/00000001/00000064
 "ForwardOnlyOnly"=dword:00000000
 "RemoveSRMeshInShell"=dword:00000000
 "SydneyDownsampleFilterKernelSize"=dword:00000000
@@ -2072,6 +2073,8 @@ Windows Registry Editor Version 5.00
 "ValidateWDDMCaps"=dword:00000000
 "VirtualGpuOnly"=dword:00000000
 "WDDM2LockManagement"=dword:00000001
+"DisableAsyncShaderCompile"=dword:00000000
+"ShaderCacheMode"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\BasicDisplay]
 "BasicDisplayUserNotified"=dword:00000000
@@ -9300,6 +9303,7 @@ Windows Registry Editor Version 5.00
 "ScriptingEnabled"=dword:00000000
 "UserVerbosityLevel"=dword:00000001
 "WinEnterLaunchEnabled"=dword:00000000
+"BrailleEnabled"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Narrator]
 "AutoreadAdvancedInfo"=dword:00000000
@@ -9698,6 +9702,7 @@ Windows Registry Editor Version 5.00
 "SelectiveSuspendEnabled"=dword:00000000
 "ThreadPriority"=dword:0000000f
 "UseUsbHidPollingRate"=dword:00000001
+"IdleEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\kbdhid]
 "Tag"=dword:00000001
