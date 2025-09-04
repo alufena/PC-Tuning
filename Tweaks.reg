@@ -241,6 +241,7 @@ Windows Registry Editor Version 5.00
 "AlpcWakePolicy"=dword:00000001 ; 00000000/00000001
 "AuditBaseDirectories"=dword:00000000
 "AuditBaseObjects"=dword:00000000
+"CWDIllegalInDllSearch"=dword:00000002
 "DisablePagingExecutive"=dword:00000001
 "DisableWpbtExecution"=dword:00000001
 "EnableMCA"=dword:00000000
@@ -253,7 +254,7 @@ Windows Registry Editor Version 5.00
 "ImageExecutionOptions"=dword:00000000 ; 00000000, 00000001
 "ObjectSecurityMode"=dword:00000001 ; 00000000/00000001
 "ProtectionMode"=dword:00000000 ; =-, 00000000 security option for anticheats
-"SafeDllSearchMode"=dword:00000000
+"SafeDllSearchMode"=dword:00000000 ; 00000000/00000001
 "SafeProcessSearchMode"=dword:00000000
 
 ; breaks opengl apps and prevents windows update from downloading optional driver updates
@@ -339,12 +340,21 @@ Windows Registry Editor Version 5.00
 "ForceParkingRequested"=dword:00000000
 "GlobalTimerResolutionRequests"=dword:00000001
 "HeteroSchedulerOptions"=dword:00000000
+"HgsPlusFeedbackUpdateThresholdNetRuntime"=dword:00000000
+"HgsPlusFeedbackUpdateThresholdRuntime"=dword:00000000
+"HgsPlusHigherPerfClassFeedbackThreshold"=dword:00000000
+"HgsPlusInvalidFeedbackLimit"=dword:00000000
+"HgsPlusLowerPerfClassFeedbackThreshold"=dword:00000000
+"HgsPlusMinimumScoreDifferenceForSwap"=dword:00000064
+"HgsPlusThreadCreationDefaultClass"=dword:00000003
 "IdealDpcRate"=dword:00000001 ; 00000000/00000001/00000320/99999999
 "IdealModeRandomized"=dword:00000001
+"IdealNodeRandomized"=dword:00000000
 "IdleDurationExpirationTimeout"=dword:00000000
 "IdleHalt"=dword:00000000
 "IdleScanInterval"=dword:00000000
 "InterruptLastCount"=dword:00000001 ; 00000001/ffffffff
+"InterruptPolicyOverride"=dword:00000001
 "InterruptRate"=dword:00000001 ; 00000001/99999999
 "InterruptRequest"=dword:00000001
 "InterruptRequestRate"=dword:99999999
@@ -432,14 +442,6 @@ Windows Registry Editor Version 5.00
 "WpsSimulationOverride"=dword:00000001
 "XMMIZeroingEnable"=dword:00000000
 "XStateContextLookasidePerProcMaxDepth"=dword:0000000a
-"IdealNodeRandomized"=dword:00000000
-"HgsPlusFeedbackUpdateThresholdRuntime"=dword:00000000
-"HgsPlusFeedbackUpdateThresholdNetRuntime"=dword:00000000
-"HgsPlusInvalidFeedbackLimit"=dword:00000000
-"HgsPlusLowerPerfClassFeedbackThreshold"=dword:00000000
-"HgsPlusHigherPerfClassFeedbackThreshold"=dword:00000000
-"HgsPlusMinimumScoreDifferenceForSwap"=dword:00000064
-"HgsPlusThreadCreationDefaultClass"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\SYSTEM]
 "InterruptSteeringDisabled"=dword:00000001
@@ -1345,6 +1347,7 @@ Windows Registry Editor Version 5.00
 "NoExtraBufferRoom"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags]
+"DisableHCS0Idle"=dword:00000001
 "fid_D1Latency"=dword:00000000
 "fid_D2Latency"=dword:00000000
 "fid_D3Latency"=dword:00000000
@@ -1792,11 +1795,15 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows]
 "AllowDelayedFlips"=dword:00000000
+"DCEInUseTelemetryDisabled"=dword:00000001
 "DesktopHeapLogging"=dword:00000000
 "DisplayVersion"=dword:00000000
 "DwmInputUsesIoCompletionPort"=dword:00000000
 "EnableDwmInputProcessing"=dword:00000000
+"EnableRIMPnpThreadDelayBugcheck"=dword:00000000
+"IsVailContainer"=dword:00000000
 "RequireSignedAppInit_DLLs"=dword:00000000
+"RimObserverQueueSize"=dword:0000fa00
 "RITdemonTimerPowerSaveCoalescing"=dword:00000000
 "RITdemonTimerPowerSaveElapse"=dword:00000000
 "ShutdownWarningDialogTimeout"=dword:00000001
@@ -1877,6 +1884,7 @@ Windows Registry Editor Version 5.00
 "DefaultLatencyToleranceTimerPeriod"=dword:00000001
 "DiagnosticsBufferExpansionTime"=dword:0000012c
 "DisableAsyncPstates"=dword:00000001
+"DisableAsyncShaderCompile"=dword:00000000
 "DisableBadDriverCheckForHwProtection"=dword:00000001
 "DisableBadDriverCheckForHwProtection"=dword:00000001
 "DisableBoostedVSyncVirtualization"=dword:00000001
@@ -2049,6 +2057,7 @@ Windows Registry Editor Version 5.00
 "RtlCapabilityCheckLatency"=dword:00000001
 "RuntimePowerManagement"=dword:00000000
 "SchedulingDelay"=dword:00000000
+"ShaderCacheMode"=dword:00000002
 "SmallQuantumMode"=dword:00000001
 "SupportMultipleIntegratedDisplays"=dword:00000000
 "SupportRuntimePowerManagement"=dword:00000000
@@ -2073,8 +2082,6 @@ Windows Registry Editor Version 5.00
 "ValidateWDDMCaps"=dword:00000000
 "VirtualGpuOnly"=dword:00000000
 "WDDM2LockManagement"=dword:00000001
-"DisableAsyncShaderCompile"=dword:00000000
-"ShaderCacheMode"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\BasicDisplay]
 "BasicDisplayUserNotified"=dword:00000000
@@ -2284,7 +2291,7 @@ Windows Registry Editor Version 5.00
 "RMOPSB"=dword:00002aa2
 "RMPcieLinkSpeed"=dword:00000010 ; 00000004/00000010
 "RmPerfRatedTdpLimit"=dword:00000000
-"RmPowerFeature"=dword:944555a0 ;00000040/944555a0
+"RmPowerFeature"=dword:944555a0 ;00000040/544a63f5/944555a0
 "RmPowerFeature2"=dword:555556a6 ; 05555555/555556a6
 "RmRcWatchdog"=dword:00000000
 "RMSkipHdcp22Init"=dword:00000001
@@ -3236,6 +3243,7 @@ Windows Registry Editor Version 5.00
 "EnableDpxLog"=dword:00000000
 "LCUReoffer"=dword:00000000
 "ResetManifestCache"=dword:00000001
+"EnableLog"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform]
 "InactivityShutdownDelay"=dword:ffffffff
 "Activation"=dword:00000000
@@ -3426,15 +3434,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Hiddll]
 "DisableAsyncIOForAsyncHandle"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows]
-"DCEInUseTelemetryDisabled"=dword:00000001
-"DesktopHeapLogging"=dword:00000000
-"DwmInputUsesIoCompletionPort"=dword:00000000
-"EnableDwmInputProcessing"=dword:00000000
-"EnableRIMPnpThreadDelayBugcheck"=dword:00000000
-"IsVailContainer"=dword:00000000
-"RimObserverQueueSize"=dword:0000fa00
-
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ACPI\Parameters]
 "AmliWatchdogTimeout"=dword:00000000
 "APEIOSCGranted"=hex:01,00,00,00
@@ -3445,7 +3444,7 @@ Windows Registry Editor Version 5.00
 "EMcaLoggingSupport"=hex:00
 "EnableFastInterruptProcessing"=dword:00000001
 "ForceCPUInterruptsToCore0"=dword:00000001
-"ForcePCIBootConfig"=dword:0000000A
+"ForcePCIBootConfig"=dword:0000000a
 "IRQDistribution"=dword:00000002
 "NotifyOsShutdownCritical"=dword:00000000
 "NotifyOsShutdownEnabled"=dword:00000000
@@ -5903,15 +5902,15 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000002 ; 00000002/00000003
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mcupdate_AuthenticAMD]
-"Start"=dword:00000004
-"Type"=dword:00000001
 "ErrorControl"=dword:00000001
 "ImagePath"="system32\\mcupdate_AuthenticAMD.dll"
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mcupdate_GenuineIntel]
 "Start"=dword:00000004
 "Type"=dword:00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mcupdate_GenuineIntel]
 "ErrorControl"=dword:00000001
 "ImagePath"="system32\\mcupdate_GenuineIntel.dll"
+"Start"=dword:00000004
+"Type"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\AUEP]
 "RSX_AUEPStatus"=dword:00000004 ; 00000002/00000004
@@ -6413,9 +6412,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ListBoxSmoothScrolling]
 "DefaultApplied"=dword:00000001
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl\StorageTelemetry]
-"DeviceDumpEnabled"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Lsa\MSV1_0]
 "RestrictSendingNTLMTraffic"=dword:00000002
 
@@ -6436,6 +6432,7 @@ Windows Registry Editor Version 5.00
 "StorageTCCode_2"=dword:00000000
 "StorageTCCode_3"=dword:00000000
 "StorageTCCode_4"=dword:00000000
+"DeviceDumpEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\StorageDevicePolicies]
 "WriteProtect"=dword:00000000
@@ -11124,6 +11121,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
+
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\SPP\Clients]
 
 [-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\BannerStore]
 
