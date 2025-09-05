@@ -1884,7 +1884,7 @@ Windows Registry Editor Version 5.00
 "DefaultLatencyToleranceNoContext"=dword:00000001
 "DefaultLatencyToleranceTimerPeriod"=dword:00000001
 "DiagnosticsBufferExpansionTime"=dword:0000012c
-"DisableAsyncPstates"=dword:00000001
+"DisableAsyncPstates"=dword:00000001  ; 00000000/00000001
 "DisableAsyncShaderCompile"=dword:00000000
 "DisableBadDriverCheckForHwProtection"=dword:00000001
 "DisableBadDriverCheckForHwProtection"=dword:00000001
@@ -2292,8 +2292,8 @@ Windows Registry Editor Version 5.00
 "RMOPSB"=dword:00002aa2
 "RMPcieLinkSpeed"=dword:00000010 ; 00000004/00000010
 "RmPerfRatedTdpLimit"=dword:00000000
-"RmPowerFeature"=dword:944555a0 ;00000040/544a63f5/944555a0
-"RmPowerFeature2"=dword:555556a6 ; 05555555/555556a6
+"RmPowerFeature"=dword:00000040 ;00000040/544a63f5/944555a0
+"RmPowerFeature2"=dword:05555555 ; 05555555/555556a6
 "RmRcWatchdog"=dword:00000000
 "RMSkipHdcp22Init"=dword:00000001
 "RmWotHdcpEnable"=dword:00000000
@@ -2438,7 +2438,7 @@ Windows Registry Editor Version 5.00
 ; "PowerMizerLevel"=dword:00000001
 ; "PowerMizerLevelAC"=dword:00000001
 "PowerSavingTweaks"=dword:00000000
-"Power schemizerLevelAC"=dword:00000001
+; "Power schemizerLevelAC"=dword:00000001
 "PP_SclkDeepSleepDisable"=dword:00000001
 "PP_ThermalAutoThrottlingEnable"=dword:00000000
 "PreferSystemMemoryContiguous"=dword:00000001
@@ -2505,8 +2505,8 @@ Windows Registry Editor Version 5.00
 "RmOverrideSupportChipsetAspm"=dword:00000000
 "RMPcieLinkSpeed"=dword:00000010
 "RmPerfRatedTdpLimit"=dword:00000000
-"RmPowerFeature"=dword:944555a0
-"RmPowerFeature2"=dword:555556a6
+"RmPowerFeature"=dword:00000040
+"RmPowerFeature2"=dword:05555555
 "RmProfilingAdminOnly"=dword:00000000
 "RmRcWatchdog"=dword:00000000
 "RMSbiosEnableASPMDT"=dword:00000000
@@ -2530,6 +2530,7 @@ Windows Registry Editor Version 5.00
 "vrrCursorMarginUs"=dword:00000001
 "vrrDeflickerMarginUs"=dword:00000001
 "vrrDeflickerMaxUs"=dword:00000001
+"PowerSavingMode"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001]
 "Acceleration.Level"=dword:00000000
@@ -2642,7 +2643,7 @@ Windows Registry Editor Version 5.00
 ; "PowerMizerLevel"=dword:00000001
 ; "PowerMizerLevelAC"=dword:00000001
 "PowerSavingTweaks"=dword:00000000
-"Power schemizerLevelAC"=dword:00000001
+; "Power schemizerLevelAC"=dword:00000001
 "PP_SclkDeepSleepDisable"=dword:00000001
 "PP_ThermalAutoThrottlingEnable"=dword:00000000
 "PreferSystemMemoryContiguous"=dword:00000001
@@ -2709,8 +2710,8 @@ Windows Registry Editor Version 5.00
 "RmOverrideSupportChipsetAspm"=dword:00000000
 "RMPcieLinkSpeed"=dword:00000010
 "RmPerfRatedTdpLimit"=dword:00000000
-"RmPowerFeature"=dword:944555a0
-"RmPowerFeature2"=dword:555556a6
+"RmPowerFeature"=dword:00000040
+"RmPowerFeature2"=dword:05555555
 "RmProfilingAdminOnly"=dword:00000000
 "RmRcWatchdog"=dword:00000000
 "RMSbiosEnableASPMDT"=dword:00000000
@@ -2734,6 +2735,7 @@ Windows Registry Editor Version 5.00
 "vrrCursorMarginUs"=dword:00000001
 "vrrDeflickerMarginUs"=dword:00000001
 "vrrDeflickerMaxUs"=dword:00000001
+"PowerSavingMode"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0002]
 "Acceleration.Level"=dword:00000000
@@ -2846,7 +2848,7 @@ Windows Registry Editor Version 5.00
 ; "PowerMizerLevel"=dword:00000001
 ; "PowerMizerLevelAC"=dword:00000001
 "PowerSavingTweaks"=dword:00000000
-"Power schemizerLevelAC"=dword:00000001
+; "Power schemizerLevelAC"=dword:00000001
 "PP_SclkDeepSleepDisable"=dword:00000001
 "PP_ThermalAutoThrottlingEnable"=dword:00000000
 "PreferSystemMemoryContiguous"=dword:00000001
@@ -2913,8 +2915,8 @@ Windows Registry Editor Version 5.00
 "RmOverrideSupportChipsetAspm"=dword:00000000
 "RMPcieLinkSpeed"=dword:00000010
 "RmPerfRatedTdpLimit"=dword:00000000
-"RmPowerFeature"=dword:944555a0
-"RmPowerFeature2"=dword:555556a6
+"RmPowerFeature"=dword:00000040
+"RmPowerFeature2"=dword:05555555
 "RmProfilingAdminOnly"=dword:00000000
 "RmRcWatchdog"=dword:00000000
 "RMSbiosEnableASPMDT"=dword:00000000
@@ -2938,6 +2940,7 @@ Windows Registry Editor Version 5.00
 "vrrCursorMarginUs"=dword:00000001
 "vrrDeflickerMarginUs"=dword:00000001
 "vrrDeflickerMaxUs"=dword:00000001
+"PowerSavingMode"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global\NvBackend]
 "DisableThreadedOptimization"=dword:00000000 ; 00000000/00000001
@@ -3056,8 +3059,8 @@ Windows Registry Editor Version 5.00
 "RMFspg"=dword:0000000f
 "RMGpuOperationMode"=dword:00000000
 "RmNdivSliding"=dword:00000000
-"RmPowerFeature"=dword:944555a0 ;00000040/944555a0
-"RmPowerFeature2"=dword:555556a6 ; 05555555/555556a6
+"RmPowerFeature"=dword:00000040
+"RmPowerFeature2"=dword:05555555
 "RMSlcg"=dword:0003ffff
 
 [HKEY_CURRENT_USER\Software\NVIDIA Corporation\Global\NVTweak]
@@ -3216,7 +3219,7 @@ Windows Registry Editor Version 5.00
 "DisableBackOffOnIO"=dword:00000001
 "DisableBackOffOnUser"=dword:00000001
 ; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Video\{DEB039CC-B704-4F53-B43E-9DD4432FA2E9}\0000]
-; "PerfLevelSrc"=dword:00002222 ; =-, 00002222/00003322
+; "PerfLevelSrc"=dword:00002222 ; =-, 00000003/00002222/00003322
 ; "PowerMizerEnable"=dword:00000001 ; =-, 00000000/00000001
 ; "PowerMizerLevel"=dword:00000001 ; =-, 00000000/00000001
 ; "PowerMizerLevelAC"=dword:00000001 ; =-, 00000000/00000001
@@ -6886,11 +6889,13 @@ Windows Registry Editor Version 5.00
 "DisableAIDataAnalysis"=dword:00000001
 "DisableClickToDo"=dword:00000001
 "TurnOffSavingSnapshots"=dword:00000001
+"DisableSettingsAgent"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsAI]
 "AllowRecallEnablement"=dword:00000000
 "DisableAIDataAnalysis"=dword:00000001
 "DisableClickToDo"=dword:00000001
 "TurnOffSavingSnapshots"=dword:00000001
+"DisableSettingsAgent"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\MDM]
 "DisableRegistration"=dword:00000001
