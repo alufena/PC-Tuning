@@ -149,7 +149,7 @@ Windows Registry Editor Version 5.00
 "LayeredLatency"=dword:00000000
 "MaximumPortsServiced"=dword:00000000 ; 00000000/00000001/00000010
 "MouseDataQueueSize"=dword:00000010 ; 00000064, 00000010/00000014/00000016/00000032/00000100
-"MouseReportBufferCount"=dword:00000004
+"MouseReportBufferCount"=dword:00000004 ; 00000000/00000004
 "MouseTransmitTimeout"=dword:00000000
 "SendOutputToAllPorts"=dword:00000000
 "ThreadPriority"=dword:0000001f
@@ -158,7 +158,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters]
 "ConnectMultiplePorts"=dword:00000000
 "KeyboardDataQueueSize"=dword:00000003 ; 00000064, 00000003/00000010/00000014/00000100
-"KeyboardReportBufferCount"=dword:00000004
+"KeyboardReportBufferCount"=dword:00000004 ; 00000000/00000004
 "KeyboardTransmitTimeout"=dword:00000000
 "LayeredLatency"=dword:00000000
 "MaximumPortsServiced"=dword:00000000 ; 00000000/00000001
@@ -987,6 +987,7 @@ Windows Registry Editor Version 5.00
 "SizReqBuf"=dword:00004000 ; 00004000/00004410/00017424
 "SMB1"=dword:00000000
 "SMB2"=dword:00000000
+"SMBv1"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Configuration Manager]
 "EnablePeriodicBackup"=dword:00000000
@@ -1344,7 +1345,7 @@ Windows Registry Editor Version 5.00
 "EnhancedPowerManagementEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USBXHCI\Parameters\Wdf]
-"NoExtraBufferRoom"=dword:00000000
+"NoExtraBufferRoom"=dword:00000000 ; 00000000/00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags]
 "DisableHCS0Idle"=dword:00000001
@@ -3479,6 +3480,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Preferences]
 "ModelDownloadAllowed"=-
+"VoiceActivationDefaultOn"=dword:00000000
+"VoiceActivationEnableAboveLockscreen"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Maps]
 "AutoDownloadAndUpdateMapData"=dword:00000000
@@ -3562,6 +3565,7 @@ Windows Registry Editor Version 5.00
 "SlowLinkUIEnabled"=dword:00000000
 "UploadUserActivities"=dword:00000000
 "WaitForNetwork"=dword:00000000
+"AllowOnlineTips"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\System]
 "DisableLockScreenAppNotifications"=dword:00000001
@@ -3717,6 +3721,8 @@ Windows Registry Editor Version 5.00
 "Enabled"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Input\TIPC]
 "Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Input\TIPC]
+"Enabled"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.Suggested]
 "Enabled"=dword:00000000
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.ActionCenter.SmartOptOut]
@@ -3763,6 +3769,8 @@ Windows Registry Editor Version 5.00
 "Enable"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Superfetch/StoreLog]
 "Enable"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Biometrics\Credential Provider]
+"Enabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Wisp\Touch]
 "PalmCheck"=dword:00000000
@@ -3883,6 +3891,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE]
 "BypassNRO"=dword:00000001
+"DisableVoice"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer]
 "CheckSameSourceAndTargetForFRAndDFS"=dword:00000000
@@ -3911,6 +3920,7 @@ Windows Registry Editor Version 5.00
 "ServerAdminUI"=dword:00000000
 "ShellViewReentered"=dword:00000001
 "ShowOrHideMostUsedApps"=dword:00000002
+"DisableSearchHistory"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer]
 "CheckSameSourceAndTargetForFRAndDFS"=dword:00000000
@@ -4505,7 +4515,19 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\OpenSearch]
 "SetDefaultSearchEngine"="https://www.google.com/searchdomaincheck?format=opensearch"
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\SearchScopes]
+"ShowSearchSuggestionsGlobal"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Geolocation]
+"PolicyDisableGeolocation"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\BooksLibrary]
+"EnableExtendedBooksTelemetry"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+"InAppSupportEnabled"=dword:00000000
+"SignInCtaOnNtpEnabled"=dword:00000000
+"RelatedMatchesCloudServiceEnabled"=dword:00000000
 "AADWebSiteSSOUsingThisProfileEnabled"=dword:00000000
 "AccessibilityImageLabelsEnabled"=dword:00000000
 "AdditionalSearchBoxEnabled"=dword:00000000
@@ -4534,9 +4556,9 @@ Windows Registry Editor Version 5.00
 "AudioProcessHighPriorityEnabled"=dword:00000001
 "AudioSandboxEnabled"=dword:00000001
 "AutoDiscardSleepingTabsEnabled"=-
-"AutofillAddressEnabled"=dword:00000001
-"AutofillCreditCardEnabled"=dword:00000001
-"AutofillMembershipsEnabled"=dword:00000001
+"AutofillAddressEnabled"=dword:00000000
+"AutofillCreditCardEnabled"=dword:00000000
+"AutofillMembershipsEnabled"=dword:00000000
 "AutoImportAtFirstRun"=dword:00000004
 "AutoLaunchProtocolsComponentEnabled"=dword:00000001
 ; "AutomaticHttpsDefault"=dword:00000000
@@ -4714,9 +4736,9 @@ Windows Registry Editor Version 5.00
 "NetworkServiceSandboxEnabled"=dword:00000001
 "NewPDFReaderEnabled"=dword:00000000
 "NewSmartScreenLibraryEnabled"=dword:00000000
-"NewTabPageAllowedBackgroundTypes"=dword:00000003
+"NewTabPageAllowedBackgroundTypes"=dword:00000001
 "NewTabPageAppLauncherEnabled"=dword:00000001
-"NewTabPageBingChatEnabled"=dword:00000001
+"NewTabPageBingChatEnabled"=dword:00000000
 "NewTabPageCompanyLogoEnabled"=dword:00000000
 "NewTabPageContentEnabled"=dword:00000000
 "NewTabPageHideDefaultTopSites"=dword:00000001
@@ -4789,7 +4811,7 @@ Windows Registry Editor Version 5.00
 "SearchFiltersEnabled"=dword:00000001
 "SearchForImageEnabled"=dword:00000001
 "SearchInSidebarEnabled"=dword:00000002
-"SearchSuggestEnabled"=dword:00000001
+"SearchSuggestEnabled"=dword:00000000
 "SendIntranetToInternetExplorer"=dword:00000000
 "SendSiteInfoToImproveServices"=dword:00000000
 "ShadowStackCrashRollbackBehavior"=dword:00000000
@@ -4914,6 +4936,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\EdgeUI]
 "DisableMFUTracking"=dword:00000001
 "AllowEdgeSwipe"=dword:00000000
+"DisableRecentApps"=dword:00000001
+"TurnOffBackstack"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EdgeUI]
 "AllowEdgeSwipe"=dword:00000000
@@ -4928,7 +4952,6 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\MicrosoftEdge\TabPreloader]
 "AllowTabPreloading"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\TabPreloader]
 "AllowTabPreloading"=dword:00000000
 
@@ -5163,6 +5186,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Mozilla\Firefox]
 "DisableTelemetry"=dword:00000001
+"DisableDefaultBrowserAgent"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\BraveSoftware\Brave]
 "AbusiveExperienceInterventionEnforce"=dword:00000000
@@ -7206,7 +7230,7 @@ Windows Registry Editor Version 5.00
 "EveryoneIncludesAnonymous"=dword:00000000
 "IsPplAutoEnabled"=dword:00000000
 "LimitBlankPasswordUse"=dword:00000001
-"LmCompatibilityLevel"=dword:00000001 ; =-, 00000001/00000005
+"LmCompatibilityLevel"=dword:00000005 ; =-, 00000001/00000005
 "LsaConfigFlags"=dword:00000000
 "LsaLookupRestrictIsolatedNameLevel"=dword:00000001
 "RestrictAnonymous"=dword:00000001 ; 00000001/00000002
@@ -7217,6 +7241,7 @@ Windows Registry Editor Version 5.00
 "SCENoApplyLegacyAuditPolicy"=dword:00000000
 "TurnOffAnonymousBlock"=dword:00000000
 "UseMachineId"=dword:00000001
+"NoLMHash"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\VxD\BIOS]
 "AGPConcur"=dword:00000001
@@ -7248,6 +7273,7 @@ Windows Registry Editor Version 5.00
 "DisableSyncOnPaidNetwork"=dword:00000001
 "DisableApplicationSettingSyncUserOverride"=dword:00000000
 "DisableStartLayoutSettingSyncUserOverride"=dword:00000000
+"SyncPolicy"=dword:00000005
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\SettingSync]
 "DisableApplicationSettingSync"=dword:00000002
@@ -7446,6 +7472,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Internet Settings]
 "EnableHTTP2"=dword:00000001
+"CallLegacyWCMPolicies"=dword:00000000
+"EnableSSL3Fallback"=dword:00000000
+"PreventIgnoreCertErrors"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTP\Parameters]
 "EnableHttp2Tls"=dword:00000001
@@ -7534,6 +7563,13 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config]
 "DownloadMode"=dword:00000000
 "DODownloadMode"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization]
+"SystemSettingsDownloadMode"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Clipboard]
+"CloudClipboardAutomaticUpload"=dword:00000000
+"EnableClipboardHistory"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SmartActionPlatform\SmartClipboard]
 "Disabled"=dword:00000001
@@ -7781,6 +7817,11 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\MediaPlayer\Preferences]
 "UsageTracking"=dword:00000000
 
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\WindowsMediaPlayer]
+"PreventCDDVDMetadataRetrieval"=dword:00000001
+"PreventMusicFileMetadataRetrieval"=dword:00000001
+"PreventRadioPresetsRetrieval"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\SQMClient\Windows]
 "CEIPEnable"=dword:00000000
 
@@ -7804,13 +7845,25 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Internet Connection Wizard]
 "ExitOnMSICW"=dword:00000001
 
+[HKEY_CURRENT_USER\Software\Piriform\CCleaner]
+"Monitoring"=dword:00000000
+"HelpImproveCCleaner"=dword:00000000
+"SystemMonitoring"=dword:00000000
+"UpdateAuto"=dword:00000000
+"UpdateCheck"=dword:00000000
+"UpdateBackground"=dword:00000000
+"CheckTrialOffer"=dword:00000000
+"(Cfg)HealthCheck"=dword:00000000
+"(Cfg)QuickClean"=dword:00000000
+"(Cfg)QuickCleanIpm"=dword:00000000
+"(Cfg)GetIpmForTrial"=dword:00000000
+"(Cfg)SoftwareUpdater"=dword:00000000
+"(Cfg)SoftwareUpdaterIpm"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform]
 "NoGenTicket"=dword:00000001
 "NoAcquireGT"=dword:00000001
 "AllowWindowsEntitlementReactivation"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\VSCommon\15.0\SQM]
-"OptIn"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Shared Tools\MsConfig]
 "NoRebootUI"=dword:00000001
@@ -7917,6 +7970,7 @@ Windows Registry Editor Version 5.00
 "ErrorPort"=-
 "MachineID"="0"
 "ServiceTimeout"=-
+"LoggingDisabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Windows]
 "ErrorMode"=dword:00000002
@@ -8359,6 +8413,10 @@ Windows Registry Editor Version 5.00
 "DisableTelemetry"=dword:00000001
 "VerboseLogging"=dword:00000000
 
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\15.0\Common\ClientTelemetry]
+"DisableTelemetry"=dword:00000001
+"VerboseLogging"=dword:00000000
+
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Common\clienttelemetry]
 "sendtelemetry"=dword:00000003
 
@@ -8527,9 +8585,6 @@ Windows Registry Editor Version 5.00
 "InitEncrypt"=dword:00000002
 "InitSign"=dword:00000002
 
-[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\Options\Calendar]
-"EnableCalendarLogging"=dword:00000000
-
 [HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\Outlook\options\General]
 "DisableOutlookMobileHyperlink"=dword:00000001
 
@@ -8661,6 +8716,7 @@ Windows Registry Editor Version 5.00
 "LimitDumpCollection"=dword:00000000
 "MaxTelemetryAllowed"=dword:00000001 ; 00000000/00000001
 "MicrosoftEdgeDataOptIn"=dword:00000000
+"DoNotShowFeedbackNotifications"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\DataCollection]
 "AllowTelemetry"=dword:00000000
@@ -8680,12 +8736,33 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\ScriptedDiagnosticsProvider\Policy]
 "DisableQueryRemoteServer"=dword:00000001
 "EnableQueryRemoteServer"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\ScriptedDiagnosticsProvider\Policy]
 "EnableQueryRemoteServer"=dword:00000000 
+"DisableQueryRemoteServer"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\VisualStudio\SQM]
 "OptIn"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VSCommon\14.0\SQM]
+"OptIn"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\VSCommon\14.0\SQM]
+"OptIn"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VSCommon\15.0\SQM]
+"OptIn"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\VSCommon\15.0\SQM]
+"OptIn"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VSCommon\16.0\SQM]
+"OptIn"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\VSCommon\16.0\SQM]
+"OptIn"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\VSCommon\17.0\SQM]
+"OptIn"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\VisualStudio\IntelliCode]
+"DisableRemoteAnalysis"=dword:00000001
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\VSCommon\16.0\IntelliCode]
+"DisableRemoteAnalysis"=dword:00000001
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\VSCommon\17.0\IntelliCode]
+"DisableRemoteAnalysis"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\VisualStudio\Feedback]
 "DisableFeedbackDialog"=dword:00000001
@@ -8974,6 +9051,8 @@ Windows Registry Editor Version 5.00
 "PreventIndexOnBattery"=dword:00000001
 "PreventUsingAdvancedIndexingOptions"=dword:00000001
 "DoNotUseWebResults"=dword:00000000
+"PreventRemoteQueries"=dword:00000001
+"PreventUnwantedAddIns"=" "
 
 [HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Settings\VoiceActivation\Microsoft.549981C3F5F10_8wekyb3d8bbwe!App]
 "AgentActivationEnabled"=dword:00000000
@@ -9019,6 +9098,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UnattendSettings\SQMClient]
 "CEIPEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\SQMClient]
+"UploadDisableFlag"=dword:00000001
 
 [HKEY_CURRENT_USER\Policies\Microsoft\Windows\CloudContent]
 "DisableTailoredExperiencesWithDiagnosticData"=dword:00000001
@@ -9320,6 +9402,67 @@ Windows Registry Editor Version 5.00
 "FollowNarrator"=dword:00000000
 "FollowMouse"=dword:00000000
 "FollowFocus"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\Diffie-Hellman]
+"ServerMinKeyBitLength"=dword:00000800
+"ClientMinKeyBitLength"=dword:00000800
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\PKCS]
+"ServerMinKeyBitLength"=dword:00000800
+"ClientMinKeyBitLength"=dword:00000800
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC2 40/128]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC2 56/128]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC2 128/128]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 128/128]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 64/128]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 56/128]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 40/128]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\DES 56/56]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\Triple DES 168]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\Triple DES 168/168]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\NULL]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\MD5]
+"Enabled"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL]
+"AllowInsecureRenegoClients"=dword:00000000
+"AllowInsecureRenegoServers"=dword:00000000
+"DisableRenegoOnServer"=dword:00000001
+"DisableRenegoOnClient"=dword:00000001
+"UseScsvForTls"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v2.0.50727]
+"SchUseStrongCrypto"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v2.0.50727]
+"SchUseStrongCrypto"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
+"SchUseStrongCrypto"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319]
+"SchUseStrongCrypto"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v2.0.50727]
+"SystemDefaultTlsVersions"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v2.0.50727]
+"SystemDefaultTlsVersions"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
+"SystemDefaultTlsVersions"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319]
+"SystemDefaultTlsVersions"=dword:00000001
+
+[HKLM\SOFTWARE\Policies\Microsoft\Windows\WinRM\Client]
+"AllowBasic"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Client]
 "Enabled"=dword:00000000
