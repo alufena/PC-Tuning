@@ -196,9 +196,9 @@ Windows Registry Editor Version 5.00
 "FeatureSettingsOverride"=dword:00000003 ; 00000000, 00000003 security option for anticheats
 "FeatureSettingsOverrideMask"=dword:00000003 ; 00000000, 00000003 security option for anticheats
 "ForceSingleCoreAffinityForCriticalThreads"=dword:00000001
-"IoPageLockLimit"=dword:08000000 ; 00000000/00100000/00ff0000/08000000/000f0000/ffffffff
-"LargePageMinimum"=dword:00000000 ; ffffffff/00000000
-"LargeSystemCache"=dword:00000001 ; 00000000, 00000001
+"IoPageLockLimit"=dword:00400000 ; 00000000/00100000/00ff0000/00400000/08000000/000f0000/ffffffff
+"LargePageMinimum"=dword:00000000 ; 00000000/ffffffff
+"LargeSystemCache"=dword:00000000 ; 00000000, 00000001
 "MakeLowMemory"=dword:00000001
 "MapAllocationFragment"=dword:00020000
 "Mirroring"=dword:00000000
@@ -226,6 +226,7 @@ Windows Registry Editor Version 5.00
 "SystemPages"=dword:0000c000 ; 00000000/0000c000/ffffffff
 "SystemPtesLimit"=dword:00000000
 "ThreadSchedulingMode"=dword:00000001
+"ThreadSchedulingModel"=dword:00000001
 "TimerBResolution"=dword:00000001
 "TimerMinResolution"=dword:00000001
 "TrackLockedPages"=dword:00000000
@@ -374,7 +375,7 @@ Windows Registry Editor Version 5.00
 "KiClockTimerAlwaysOnPresent"=dword:00000001
 "KiClockTimerHighLatency"=dword:00000000
 "KiClockTimerPerCpu"=dword:00000001
-"LargeSystemCache"=dword:00000001
+"LargeSystemCache"=dword:00000000
 "LockPagesInMemory"=dword:00000001
 "LowPriorityBackgroundWorkItemQueue"=dword:00000000
 "MaxDynamicTickDuration"=dword:000003e8 ; 00000010/0000000a/000003e8
@@ -707,13 +708,13 @@ Windows Registry Editor Version 5.00
 "PagePriority"=dword:00000005
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\audiodg.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000002
-"IoPriority"=dword:00000002
-"PagePriority"=dword:00000002
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\audiodg.exe\PerfOptions]
-"CpuPriorityClass"=dword:00000002
-"IoPriority"=dword:00000002
-"PagePriority"=dword:00000002
+"CpuPriorityClass"=dword:00000001
+"IoPriority"=dword:00000000
+"PagePriority"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000001
@@ -1109,6 +1110,7 @@ Windows Registry Editor Version 5.00
 "ThreadAffinityBoost"=dword:00000001
 "ThreadBoostType"=dword:00000001 ; 00000001/00000002
 "ThreadCycleTimeOptimization"=dword:00000001
+"ThreadSchedulingMode"=dword:00000001
 "ThreadSchedulingModel"=dword:00000001
 "TimeCriticalThreads"=dword:00000001
 
@@ -1457,6 +1459,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\pci\Parameters]
 "ASPMOptOut"=dword:00000001
+"EnableIdlePowerManagement"=dword:00000000
+"EnableAsyncPowerManagement"=dword:00000000
+"EnableNativePowerManagement"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters]
 "DisableParallelAandAAAA"=dword:00000001
@@ -1884,13 +1889,10 @@ Windows Registry Editor Version 5.00
 "DefaultLatencyToleranceNoContext"=dword:00000001
 "DefaultLatencyToleranceTimerPeriod"=dword:00000001
 "DiagnosticsBufferExpansionTime"=dword:0000012c
-"DisableAsyncPstates"=dword:00000001  ; 00000000/00000001
+"DisableAsyncPstates"=dword:00000001 ; 00000000/00000001
 "DisableAsyncShaderCompile"=dword:00000000
 "DisableBadDriverCheckForHwProtection"=dword:00000001
-"DisableBadDriverCheckForHwProtection"=dword:00000001
 "DisableBoostedVSyncVirtualization"=dword:00000001
-"DisableBoostedVSyncVirtualization"=dword:00000001
-"DisableCABC"=dword:00000001
 "DisableCABC"=dword:00000001
 "DisableCudaContextPreemption"=dword:00000001
 "DisableDwmVSync"=dword:00000001
@@ -1899,11 +1901,9 @@ Windows Registry Editor Version 5.00
 "DisableGdiContextGpuVa"=dword:00000001
 "DisableGpuTimeoutDetection"=dword:00000001
 "DisableIndependentVidPnVSync"=dword:00000001
-"DisableIndependentVidPnVSync"=dword:00000001
 "DisableKmRender"=dword:00000000
 "DisableKmRenderBoost"=dword:00000000
 "DisableMonitoredFenceGpuVa"=dword:00000001
-"DisableMultiSourceMPOCheck"=dword:00000001
 "DisableMultiSourceMPOCheck"=dword:00000001
 "DisableOverclockedPstates"=dword:00000001
 "DisableOverlay"=dword:00000001 ; 00000001/00000000
@@ -3808,51 +3808,66 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{7150F9BF-48AD-4da4-A49C-29EF4A8369BA}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{A3F3E39B-5D83-4940-B954-28315B82F0A8}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{6232C319-91AC-4931-9385-E70C2B099F0E}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{74EE6C03-5363-4554-B161-627540339CAB}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{E47248BA-94CC-49c4-BBB5-9EB7F05183D0}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{17D89FEC-5C44-4972-B12D-241CAEF74509}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{3A0DBA37-F8B2-4356-83DE-3E90BD5C261F}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{6A4C88C6-C502-4f74-8F60-2CB23EDC24E2}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{E62688F0-25FD-4c90-BFF5-F508B9D2E31F}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{E5094040-C46C-4115-B030-04FB2E545B00}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{B087BE9D-ED37-454f-AF9C-04291E351182}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{AADCED64-746C-4633-A97C-D61349046527}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{91FBB303-0CD5-4055-BF42-E512A681B325}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{C418DD9D-0D14-4efb-8FBF-CFE535C8FAC7}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{E4F48E54-F38D-4884-BFB9-D4D2E5729C18}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{BC75B1ED-5833-4858-9BB8-CBF0B166DF9D}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
+"TraceFileMaxSize"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Peernet]
 "Disabled"=dword:00000001
@@ -7009,11 +7024,17 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Classes\ms-gamebar]
 "URL Protocol"=""
 @="URL:ms-gamebar"
-
 [HKEY_CLASSES_ROOT\ms-gamebar]
 @="URL:ms-gamebar"
 "NoOpenWith"=""
 "URL Protocol"=""
+[HKEY_CLASSES_ROOT\ms-gamebar\shell\open\command]
+@=""
+[HKEY_CLASSES_ROOT\ms-gamingoverlay]
+@="URL:GamebarHandler"
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\ms-gamingoverlay\shell\open\command]
+@=""
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
 "ActiveHoursEnd"=dword:0000000a
@@ -8951,8 +8972,6 @@ Windows Registry Editor Version 5.00
 "LetAppsAccessPhone"=dword:00000002
 "LetAppsAccessRadios"=dword:00000002
 "LetAppsActivateWithVoice"=dword:00000002
-"LetAppsActivateWithVoice"=dword:00000002
-"LetAppsActivateWithVoiceAboveLock"=dword:00000002
 "LetAppsActivateWithVoiceAboveLock"=dword:00000002
 "LetAppsGetDiagnosticInfo"=dword:00000002
 "LetAppsRunInBackground"=dword:00000002
@@ -8961,6 +8980,9 @@ Windows Registry Editor Version 5.00
 "LetAppsRunInBackground_UserInControlOfTheseApps"=-
 "LetAppsSyncWithDevices"=dword:00000002
 "LetAppsAccessSystemAIModels"=dword:00000002
+"LetAppsAccessTrustedDevices"=dword:00000002
+"LetAppsAccessTasks"=dword:00000002
+"LetAppsAccessHumanPresence"=dword:00000002
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsCopilot]
 "AllowCopilotRuntime"=dword:00000000
@@ -9438,8 +9460,8 @@ Windows Registry Editor Version 5.00
 "Enabled"=dword:00000000
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\MD5]
 "Enabled"=dword:00000000
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA]
-"Enabled"=dword:00000000
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA]
+; "Enabled"=dword:00000000 ; breaks battle.net
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL]
 "AllowInsecureRenegoClients"=dword:00000000
@@ -14633,15 +14655,9 @@ Windows Registry Editor Version 5.00
 "Type"=dword:00001040
 "Value"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{AADCED64-746C-4633-A97C-D61349046527}]
-"TraceFileMaxSize"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{AADCED64-746C-4633-A97C-D61349046527}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
-"TraceFileMaxSize"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{91FBB303-0CD5-4055-BF42-E512A681B325}]
 "TraceFileMaxSize"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{91FBB303-0CD5-4055-BF42-E512A681B325}]
@@ -14649,15 +14665,9 @@ Windows Registry Editor Version 5.00
 "TraceLevel"=dword:00000000
 "TraceFileMaxSize"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{C418DD9D-0D14-4efb-8FBF-CFE535C8FAC7}]
-"TraceFileMaxSize"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{C418DD9D-0D14-4efb-8FBF-CFE535C8FAC7}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
-"TraceFileMaxSize"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{BC75B1ED-5833-4858-9BB8-CBF0B166DF9D}]
 "TraceFileMaxSize"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{BC75B1ED-5833-4858-9BB8-CBF0B166DF9D}]
@@ -14665,15 +14675,9 @@ Windows Registry Editor Version 5.00
 "TraceLevel"=dword:00000000
 "TraceFileMaxSize"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{E5094040-C46C-4115-B030-04FB2E545B00}]
-"TraceFileMaxSize"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{E5094040-C46C-4115-B030-04FB2E545B00}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
-"TraceFileMaxSize"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{B087BE9D-ED37-454f-AF9C-04291E351182}]
 "TraceFileMaxSize"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{B087BE9D-ED37-454f-AF9C-04291E351182}]
@@ -14686,18 +14690,9 @@ Windows Registry Editor Version 5.00
 "TraceLevel"=dword:00000000
 "TraceFileMaxSize"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{7150F9BF-48AD-4da4-A49C-29EF4A8369BA}]
-"TraceFileMaxSize"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{A3F3E39B-5D83-4940-B954-28315B82F0A8}]
-"TraceFileMaxSize"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{A3F3E39B-5D83-4940-B954-28315B82F0A8}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
-"TraceFileMaxSize"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{6232C319-91AC-4931-9385-E70C2B099F0E}]
 "TraceFileMaxSize"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{6232C319-91AC-4931-9385-E70C2B099F0E}]
@@ -14705,15 +14700,9 @@ Windows Registry Editor Version 5.00
 "TraceLevel"=dword:00000000
 "TraceFileMaxSize"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{74EE6C03-5363-4554-B161-627540339CAB}]
-"TraceFileMaxSize"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{74EE6C03-5363-4554-B161-627540339CAB}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
-"TraceFileMaxSize"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{E47248BA-94CC-49c4-BBB5-9EB7F05183D0}]
 "TraceFileMaxSize"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{E47248BA-94CC-49c4-BBB5-9EB7F05183D0}]
@@ -14721,15 +14710,9 @@ Windows Registry Editor Version 5.00
 "TraceLevel"=dword:00000000
 "TraceFileMaxSize"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{17D89FEC-5C44-4972-B12D-241CAEF74509}]
-"TraceFileMaxSize"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{17D89FEC-5C44-4972-B12D-241CAEF74509}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
-"TraceFileMaxSize"=dword:00000000
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{3A0DBA37-F8B2-4356-83DE-3E90BD5C261F}]
 "TraceFileMaxSize"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{3A0DBA37-F8B2-4356-83DE-3E90BD5C261F}]
@@ -14737,16 +14720,10 @@ Windows Registry Editor Version 5.00
 "TraceLevel"=dword:00000000
 "TraceFileMaxSize"=dword:00000000 
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{6A4C88C6-C502-4f74-8F60-2CB23EDC24E2}]
-"TraceFileMaxSize"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{6A4C88C6-C502-4f74-8F60-2CB23EDC24E2}]
 "LogLevel"=dword:00000000
 "TraceLevel"=dword:00000000
 "TraceFileMaxSize"=dword:00000000 
-
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Group Policy\{E62688F0-25FD-4c90-BFF5-F508B9D2E31F}]
-"TraceFileMaxSize"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Group Policy\{E62688F0-25FD-4c90-BFF5-F508B9D2E31F}]
 "LogLevel"=dword:00000000
