@@ -21,6 +21,7 @@ manage-bde -off D:
 manage-bde -off E:
 manage-bde -off F:
 manage-bde -off G:
+net user defaultuser0 /delete
 for %%a in ("SleepStudy" "Kernel-Processor-Power" "UserModePowerService") do (wevtutil sl Microsoft-Windows-%%a/Diagnostic /e:false)
 takeown /f "%SystemRoot%\System32\drivers\Acpidev.sys"
 takeown /f "%SystemRoot%\System32\drivers\Acpipagr.sys"
