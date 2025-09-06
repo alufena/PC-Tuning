@@ -105,10 +105,10 @@ taskkill /f /t /im SndVol.exe
 taskkill /f /t /im nvcplui.exe
 taskkill /f /t /im EpicWebHelper.exe
 taskkill /f /t /im CrashReportClient.exe
-sc start "SysMain"
 ::sc stop "SysMain"
-sc config "SysMain" start= auto
 ::sc config "SysMain" start= disabled
+sc config "SysMain" start= auto
+sc start "SysMain"
 sc config "wlidsvc" start= auto
 sc stop "ClickToRunSvc"
 sc config "ClickToRunSvc" start= manual
@@ -186,6 +186,8 @@ sc stop "FontCache"
 sc config "FontCache" start= disabled
 sc stop "PcaSvc"
 sc config "PcaSvc" start= disabled
+::sc start "PcaSvc"
+::sc config "PcaSvc" start= auto
 sc stop "UCPD"
 sc config "UCPD" start= disabled
 sc stop "XblAuthManager"
@@ -261,7 +263,7 @@ sc config "tzautoupdate" start= disabled
 sc config "winmgmt" start= auto
 sc config "BTHUSB" start= disabled
 ::sc start "GraphicsPerfSvc"
-bitsadmin.exe /reset /allusers
+::bitsadmin.exe /reset /allusers
 ie4uinit.exe -ClearIconCache
 w32tm /resync
 sc stop "UsoSvc"
@@ -393,6 +395,7 @@ wmic process where name="dwm.exe" CALL setpriority 64
 ::wmic process where name="dwm.exe" CALL setpriority 256
 ::wmic process where name="dwm.exe" CALL setpriority 32768
 wmic process where name="fontdrvhost.exe" CALL setpriority 64
+wmic process where name="audiodg.exe" CALL setpriority 64
 wmic process where name="MoUsoCoreWorker.exe" CALL terminate
 wmic process where name="MpDefenderCoreService.exe" CALL terminate
 wmic process where name="OfficeClickToRun.exe" CALL terminate
@@ -520,14 +523,14 @@ reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Regedit\Favor
 reg delete "HKLM\SOFTWARE\Microsoft\Wbem\WDM" /va /f
 reg delete "HKLM\SOFTWARE\Microsoft\Wbem\WDM\DREDGE" /va /f
 reg delete "HKLM\SOFTWARE\Microsoft\FTH\State" /va /f
-wusa.exe /uninstall /kb:5063878 /quiet /norestart
-wusa.exe /uninstall /kb:5063875 /quiet /norestart
-wusa.exe /uninstall /kb:5063709 /quiet /norestart
-wusa.exe /uninstall /kb:5063877 /quiet /norestart
-wusa.exe /uninstall /kb:5063871 /quiet /norestart
-wusa.exe /uninstall /kb:5063889 /quiet /norestart
-wusa.exe /uninstall /kb:5062660 /quiet /norestart
-for %K in (5063878 5063875 5063709 5063877 5063871 5063889 5062660) do for /f "tokens=*" %P in ('dism /online /get-packages ^| findstr %K') do dism /online /remove-package /packagename:%P /quiet /norestart
+::wusa.exe /uninstall /kb:5063878 /quiet /norestart
+::wusa.exe /uninstall /kb:5063875 /quiet /norestart
+::wusa.exe /uninstall /kb:5063709 /quiet /norestart
+::wusa.exe /uninstall /kb:5063877 /quiet /norestart
+::wusa.exe /uninstall /kb:5063871 /quiet /norestart
+::wusa.exe /uninstall /kb:5063889 /quiet /norestart
+::wusa.exe /uninstall /kb:5062660 /quiet /norestart
+::for %K in (5063878 5063875 5063709 5063877 5063871 5063889 5062660) do for /f "tokens=*" %P in ('dism /online /get-packages ^| findstr %K') do dism /online /remove-package /packagename:%P /quiet /norestart
 ::timeout /t 8 /nobreak
 winget uninstall "windows web experience pack"
 winget uninstall --id Microsoft.WindowsWebExperiencePack
