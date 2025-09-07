@@ -151,3 +151,5 @@ https://www.regfiles.net
 https://privacy.sexy  
 https://github.com/undergroundwires/privacy.sexy  
 https://github.com/awesome-windows11/windows11  
+https://github.com/eskezje/useplatformtick-research  
+https://x.com/BEYONDPERF_LLG  
