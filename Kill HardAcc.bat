@@ -282,21 +282,21 @@ powercfg.exe hibernate off
 bcdedit /set disabledynamictick Yes
 ::bcdedit /set disabledynamictick No
 ::bcdedit /deletevalue disabledynamictick
-bcdedit /set hypervisorlaunchtype off
-::bcdedit /set hypervisorlaunchtype auto
-bcdedit /set tscsyncpolicy enhanced
-::bcdedit /set tscsyncpolicy legacy
+bcdedit /set hypervisorlaunchtype Off
+::bcdedit /set hypervisorlaunchtype Auto
+bcdedit /set tscsyncpolicy Enhanced
+::bcdedit /set tscsyncpolicy Legacy
 ::bcdedit /deletevalue tscsyncpolicy
 bcdedit /set uselegacyapicmode No
 ::bcdedit /set uselegacyapicmode Yes
 ::bcdedit /deletevalue uselegacyapicmode
-bcdedit /set useplatformclock false
+bcdedit /set useplatformclock No
 ::bcdedit /deletevalue useplatformclock
-::bcdedit /set useplatformtick Yes
-bcdedit /set useplatformtick No
+bcdedit /set useplatformtick Yes
+::bcdedit /set useplatformtick No
 ::bcdedit /deletevalue useplatformtick
-::bcdedit /set x2apicpolicy Enable
-bcdedit /set x2apicpolicy Disable
+bcdedit /set x2apicpolicy Enable
+::bcdedit /set x2apicpolicy Disable
 ::bcdedit /deletevalue x2apicpolicy
 bcdedit /set allowedinmemorysettings 0x0
 ::bcdedit /deletevalue allowedinmemorysettings
@@ -310,6 +310,7 @@ bcdedit /set configaccesspolicy Default
 ::bcdedit /deletevalue configaccesspolicy
 bcdedit /set disableelamdrivers Yes
 ::bcdedit /deletevalue disableelamdrivers
+::bcdedit /set debug Yes
 bcdedit /set debug No
 ::bcdedit /deletevalue debug
 bcdedit /set ems No
@@ -321,7 +322,8 @@ bcdedit /set isolatedcontext No
 bcdedit /set linearaddress57 OptOut
 ::bcdedit /deletevalue linearaddress57
 ::bcdedit /set maxproc Yes
-bcdedit /deletevalue maxproc
+bcdedit /set maxproc No
+::bcdedit /deletevalue maxproc
 bcdedit /set nolowmem Yes
 ::bcdedit /deletevalue nolowmem
 ::bcdedit /set numproc 16
@@ -338,7 +340,7 @@ bcdedit /set usefirmwarepcisettings No
 ::bcdedit /deletevalue usefirmwarepcisettings
 bcdedit /set usephysicaldestination No
 ::bcdedit /deletevalue usephysicaldestination
-bcdedit /set vm no
+bcdedit /set vm No
 ::bcdedit /deletevalue vm
 bcdedit /set vsmlaunchtype Off
 ::bcdedit /deletevalue vsmlaunchtype
@@ -368,8 +370,12 @@ bcdedit /set sos No
 ::bcdedit /deletevalue sos
 bcdedit /set timeout 0
 ::bcdedit /deletevalue timeout
-bcdedit /set restrictapicluster 0 
-bcdedit /set pciexpress forcedisable
+bcdedit /set pciexpress ForceDisable
+bcdedit /set disabledynamicparks yes
+bcdedit /set pciexpress forcedisablemsi false
+bcdedit /set disablecoalescing yes
+bcdedit /set xsavedisable Yes
+bcdedit /set restrictapicluster 0
 ::bcdedit /deletevalue restrictapicluster
 ::bcdedit /set testsigning No
 ::bcdedit /deletevalue testsigning
