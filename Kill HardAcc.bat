@@ -282,22 +282,23 @@ powercfg.exe hibernate off
 bcdedit /set disabledynamictick Yes
 ::bcdedit /set disabledynamictick No
 ::bcdedit /deletevalue disabledynamictick
-bcdedit /set hypervisorlaunchtype Off
-::bcdedit /set hypervisorlaunchtype Auto
-bcdedit /set tscsyncpolicy Enhanced
-::bcdedit /set tscsyncpolicy Legacy
-::bcdedit /deletevalue tscsyncpolicy
+bcdedit /set useplatformclock No
+::bcdedit /deletevalue useplatformclock
+::bcdedit /set useplatformtick Yes
+bcdedit /set useplatformtick No
+::bcdedit /deletevalue useplatformtick
 bcdedit /set uselegacyapicmode No
 ::bcdedit /set uselegacyapicmode Yes
 ::bcdedit /deletevalue uselegacyapicmode
-bcdedit /set useplatformclock No
-::bcdedit /deletevalue useplatformclock
-bcdedit /set useplatformtick Yes
-::bcdedit /set useplatformtick No
-::bcdedit /deletevalue useplatformtick
 bcdedit /set x2apicpolicy Enable
 ::bcdedit /set x2apicpolicy Disable
 ::bcdedit /deletevalue x2apicpolicy
+bcdedit /set tscsyncpolicy Enhanced
+::bcdedit /set tscsyncpolicy Legacy
+::bcdedit /deletevalue tscsyncpolicy
+bcdedit /set hypervisorlaunchtype Off
+::bcdedit /set hypervisorlaunchtype Auto
+::bcdedit /deletevalue hypervisorlaunchtype
 bcdedit /set allowedinmemorysettings 0x0
 ::bcdedit /deletevalue allowedinmemorysettings
 bcdedit /set avoidlowmemory 0x8000000
@@ -326,8 +327,8 @@ bcdedit /set maxproc No
 ::bcdedit /deletevalue maxproc
 bcdedit /set nolowmem Yes
 ::bcdedit /deletevalue nolowmem
-::bcdedit /set numproc 16
-bcdedit /deletevalue numproc
+bcdedit /set numproc 16
+::bcdedit /deletevalue numproc
 bcdedit /set MSI Default
 ::bcdedit /deletevalue MSI
 bcdedit /set onecpu No
@@ -368,13 +369,14 @@ bcdedit /set pae ForceDisable
 bcdedit /set sos No
 ::bcdedit /set sos On
 ::bcdedit /deletevalue sos
-bcdedit /set timeout 0
+bcdedit /timeout 0
 ::bcdedit /deletevalue timeout
 bcdedit /set pciexpress ForceDisable
-bcdedit /set disabledynamicparks yes
+::bcdedit /set disabledynamicparks yes
 bcdedit /set pciexpress forcedisablemsi false
 bcdedit /set disablecoalescing yes
-bcdedit /set xsavedisable Yes
+::bcdedit /set xsavedisable Yes
+bcdedit /set xsavedisable 1
 bcdedit /set restrictapicluster 0
 ::bcdedit /deletevalue restrictapicluster
 ::bcdedit /set testsigning No
@@ -382,9 +384,9 @@ bcdedit /set restrictapicluster 0
 ::bcdedit /set {globalsettings} custom:16000067 true
 ::bcdedit /set graphicsmodedisabled No
 ::bcdedit /deletevalue graphicsmodedisabled
-::bcdedit /set integrityservices disable
+bcdedit /set integrityservices disable
 ::bcdedit /deletevalue integrityservices
-::bcdedit /set firstmegabytepolicy UseAll
+bcdedit /set firstmegabytepolicy UseAll
 ::bcdedit /deletevalue firstmegabytepolicy
 %windir%\system32\lodctr /R
 %windir%\sysWOW64\lodctr /R
@@ -408,6 +410,7 @@ wmic process where name="OfficeClickToRun.exe" CALL terminate
 wmic process where name="taskhostw.exe" CALL terminate
 wmic process where name="winlogon.exe" CALL setpriority 64
 wmic process where name="WmiPrvSvc.exe" CALL terminate
+powershell -NoProfile -Command "$p = Get-Process audiodg -ErrorAction SilentlyContinue; if ($p) { $p.ProcessorAffinity = 1 }"
 taskkill /f /t /im MoUsoCoreWorker.exe
 taskkill /f /t /im RuntimeBroker.exe
 taskkill /f /t /im UserOOBEBroker.exe
