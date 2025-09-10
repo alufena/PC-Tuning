@@ -26,7 +26,7 @@ Windows Registry Editor Version 5.00
 "Clock Rate"=dword:000013ab ; 00002710, 000013ab
 "GPU Priority"=dword:00000012
 "Latency Sensitive"="True"
-"Priority"=dword:00000006 ; 00000006/00000008
+"Priority"=dword:00000008 ; 00000006/00000008
 "Priority When Yielded"=dword:00000013
 "Scheduling Category"="High"
 "SFIO Priority"="High"
@@ -38,7 +38,7 @@ Windows Registry Editor Version 5.00
 "Clock Rate"=dword:00002710
 "GPU Priority"=dword:00000008
 "Latency Sensitive"="False" ; True/False
-"Priority"=dword:00000006 ; 00000001/00000006
+"Priority"=dword:00000001 ; 00000001/00000006
 "Priority When Yielded"=dword:00000001
 "Scheduling Category"="Low" ; High/Low
 "SFIO Priority"="High"
@@ -50,7 +50,7 @@ Windows Registry Editor Version 5.00
 "Clock Rate"=dword:00002710
 "GPU Priority"=dword:00000008 ; 00000008/00000012
 "Latency Sensitive"="False" ; True/False
-"Priority"=dword:00000008 ; 00000001/00000008
+"Priority"=dword:00000001 ; 00000001/00000008
 "Priority When Yielded"=dword:00000001
 "Scheduling Category"="Low" ; High/Low
 "SFIO Priority"="High"
@@ -60,10 +60,12 @@ Windows Registry Editor Version 5.00
 "Background Only"="False"
 "Clock Rate"=dword:00002710
 "GPU Priority"=dword:00000008
-"Latency Sensitive"="True"
-"Priority"=dword:00000006
-"Scheduling Category"="High"
+"Latency Sensitive"="False" ; True/False
+"Priority"=dword:00000001 ; 00000006, 00000001
+"Scheduling Category"="Low" ; High/Low
 "SFIO Priority"="High"
+"Priority When Yielded"=dword:00000001
+"BackgroundPriority"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Low Latency]
 "Affinity"=dword:00000000
@@ -82,7 +84,7 @@ Windows Registry Editor Version 5.00
 "Clock Rate"=dword:000013ab ; 00002710, 000013ab
 "GPU Priority"=dword:00000008
 "Latency Sensitive"="True"
-"Priority"=dword:00000005 ; 00000005/00000008
+"Priority"=dword:00000008 ; 00000005/00000008
 "Priority When Yielded"=dword:00000013
 "Scheduling Category"="High" ; Medium, High
 "SFIO Priority"="Normal"
@@ -102,7 +104,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Playback]
 "Affinity"=dword:00000000
 "Background Only"="False"
-"BackgroundPriority"=dword:00000004
+"BackgroundPriority"=dword:00000001 ; 00000004, 00000001
 "Clock Rate"=dword:00002710
 "GPU Priority"=dword:00000008
 "Latency Sensitive"="False"
@@ -740,13 +742,13 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
 "AlwaysUseDirectFlip"=dword:00000001
 "AllowTearing"=dword:00000001
-"AlwaysOn"=dword:00000001 ; mmcss off
+; "AlwaysOn"=dword:00000001 ; mmcss off
 "IdleDetectionCycles"=dword:00000005 ; 00000000/00000001/00000005
-"LazyModeTimeout"=dword:000061a8 ; mmcss off
+; "LazyModeTimeout"=dword:000061a8 ; mmcss off
 "MaxThreadsPerProcess"=dword:00000080 ; 00000000/00000080/0000000a
 "MaxThreadsTotal"=dword:0000ffff ; 00000080/0000ffff
-"NetworkThrottlingIndex"=dword:ffffffff ; 0000000a/00000014/ffffffff
-"NoLazyMode"=dword:00000001 ; mmcss off
+"NetworkThrottlingIndex"=dword:0000000a ; 0000000a/00000014/ffffffff
+; "NoLazyMode"=dword:00000001 ; mmcss off
 "SchedulerPeriod"=dword:000186a0 ; 00000001/000186a0
 "SchedulerTimerResolution"=dword:00001388
 "SystemResponsiveness"=dword:00000000 ; 00000014, 00000000/00000001/0000000a
@@ -1531,6 +1533,9 @@ Windows Registry Editor Version 5.00
 "EnableIdlePowerManagement"=dword:00000000
 "EnableAsyncPowerManagement"=dword:00000000
 "EnableNativePowerManagement"=dword:00000000
+"EnableASPM"=dword:00000000
+"MaximumPayloadSize"=dword:00000100 ; 00000100/00000200/00000512
+"PnpAsyncNewDevice"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters]
 "DisableParallelAandAAAA"=dword:00000001
@@ -3485,13 +3490,14 @@ Windows Registry Editor Version 5.00
 "EnableMSI"=dword:00000001
 "ForceMSI"=dword:00000001
 "InterruptManagementPolicy"=dword:00000003
-"InterruptSteeringEnabled"=dword:00000001
+"InterruptSteeringEnabled"=dword:00000000 ; 00000000/00000001
 "LowLatencyMode"=dword:00000001
 "MaxMSI"=dword:00000010 
 "MSIEnable"=dword:00000001
 "PCIDelayTransaction"=dword:00000000
 "PCIPrefetchEnable"=dword:00000001
 "UseMPSCap"=dword:00000001
+"InterruptSteeringDisabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TimeBroker]
 "DisableDynamicTick"=dword:00000001
@@ -6136,7 +6142,7 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000004 ; 00000003, 00000004
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MMCSS]
-"Start"=dword:00000004 ; 00000002, 00000004
+"Start"=dword:00000002 ; 00000002, 00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GraphicsPerfSvc]
 "Start"=dword:00000004 ; 00000003, 00000002 HAGS on/00000004 HAGS off
 
