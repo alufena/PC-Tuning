@@ -153,3 +153,4 @@ https://github.com/undergroundwires/privacy.sexy
 https://github.com/awesome-windows11/windows11  
 https://github.com/eskezje/useplatformtick-research  
 https://x.com/BEYONDPERF_LLG  
+https://forums.mydigitallife.net/threads/repo-windows-10-telemetry-repository.63874/page-66#post-1686849  
