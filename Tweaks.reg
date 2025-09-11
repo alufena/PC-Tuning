@@ -6325,6 +6325,11 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\amdxata]
 "Start"=dword:00000004
 
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\UnistoreSvc]
+"Start"=dword:00000004
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\UserDataSvc]
+"Start"=dword:00000004
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mcupdate_AuthenticAMD]
 "ErrorControl"=dword:00000001
 "ImagePath"="system32\\mcupdate_AuthenticAMD.dll"
@@ -6755,6 +6760,28 @@ Windows Registry Editor Version 5.00
 "Value"="Deny"
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\callhistory]
 "Value"="Deny"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\broadFileSystemAccess]
+"Value"="Deny"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\documentsLibrary]
+"Value"="Deny"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\downloadsFolder]
+"Value"="Deny"
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\graphicsCaptureProgrammatic]
+; "Value"="Deny"
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\graphicsCaptureWithoutBorder]
+; "Value"="Deny"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location]
+"Value"="Deny"
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone]
+; "Value"="Deny"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\musicLibrary]
+"Value"="Deny"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\picturesLibrary]
+"Value"="Deny"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\videosLibrary]
+"Value"="Deny"
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam]
+; "Value"="Deny"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Psched]
 "TimerResolution"=dword:00000001
@@ -6919,7 +6946,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\InputPersonalization]
 "AcceptedPrivacyPolicy"=dword:00000000
-"AllowInputPersonalization"=-
+"AllowInputPersonalization"=dword:00000000
 "HarvestContacts"=dword:00000000
 "Installed"=dword:00000000
 "RestrictImplicitInkCollection"=dword:00000001
@@ -6928,7 +6955,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\InputPersonalization]
 "AcceptedPrivacyPolicy"=dword:00000000
-"AllowInputPersonalization"=-
+"AllowInputPersonalization"=dword:00000000
 "HarvestContacts"=dword:00000000
 "Installed"=dword:00000000
 "RestrictImplicitInkCollection"=dword:00000001
@@ -6937,7 +6964,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_USERS\.DEFAULT\Software\Microsoft\InputPersonalization]
 "AcceptedPrivacyPolicy"=dword:00000000
-"AllowInputPersonalization"=-
+"AllowInputPersonalization"=dword:00000000
 "HarvestContacts"=dword:00000000
 "Installed"=dword:00000000
 "RestrictImplicitInkCollection"=dword:00000001
@@ -7216,6 +7243,8 @@ Windows Registry Editor Version 5.00
 "value"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Connectivity\DisableCrossDeviceResume]
 "value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\DisableOneDriveFileSync]
+"value"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\software\policies\microsoft\ime\shared]
 "Enable Cloud Candidate"="0"
@@ -7285,12 +7314,16 @@ Windows Registry Editor Version 5.00
 "AllowRecallEnablement"=dword:00000000
 "DisableAIDataAnalysis"=dword:00000001
 "DisableClickToDo"=dword:00000001
+"DisableDataCollection"=dword:00000001
+"DisableRecall"=dword:00000001
 "DisableSettingsAgent"=dword:00000001
 "TurnOffSavingSnapshots"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsAI]
 "AllowRecallEnablement"=dword:00000000
 "DisableAIDataAnalysis"=dword:00000001
 "DisableClickToDo"=dword:00000001
+"DisableDataCollection"=dword:00000001
+"DisableRecall"=dword:00000001
 "DisableSettingsAgent"=dword:00000001
 "TurnOffSavingSnapshots"=dword:00000001
 
@@ -7948,9 +7981,6 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Spelling\Options]
 "UserDictionaryMerged"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Connectivity\DisallowNetworkConnectivityActiveTests]
-"value"="1"
-
 [HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Internet Explorer\Main]
 "DisableFirstRunCustomize"=dword:00000001
 "DoNotTrack"=dword:00000001
@@ -8390,6 +8420,9 @@ Windows Registry Editor Version 5.00
 "LocalSettingOverrideSpynetReporting"=dword:00000000
 "SpynetReporting"=dword:00000000
 "SubmitSamplesConsent"=dword:00000002
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\Network Protection]
+"EnableNetworkProtection"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\UX Configuration]
 "SuppressRebootNotification"=dword:00000001
@@ -9113,7 +9146,7 @@ Windows Registry Editor Version 5.00
 "EnableExtendedBooksTelemetry"=dword:00000000
 "LimitDiagnosticLogCollection"=dword:00000001
 "LimitDumpCollection"=dword:00000000
-"MaxTelemetryAllowed"=dword:00000001 ; 00000000/00000001
+"MaxTelemetryAllowed"=dword:00000000 ; 00000000 education, ltsc and enterprise/00000001 pro
 "MicrosoftEdgeDataOptIn"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\DataCollection]
@@ -9188,6 +9221,12 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Assistance\Client\1.0]
 "NoActiveHelp"=dword:00000001 
 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors]
+"DisableLocation"=dword:00000001
+"DisableLocationScripting"=dword:00000001
+"DisableSensors"=dword:00000001
+"DisableWindowsLocationProvider"=dword:00000001
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
 "AllowBuildPreview"=dword:00000000
 "AllowCommercialDataPipeline"=dword:00000000
@@ -9208,7 +9247,7 @@ Windows Registry Editor Version 5.00
 "LimitDiagnosticLogCollection"=dword:00000001
 "LimitDumpCollection"=dword:00000000
 "LimitEnhancedDiagnosticDataWindowsAnalytics"=dword:00000000 ; 00000000/00000001
-"MaxTelemetryAllowed"=dword:00000001
+"MaxTelemetryAllowed"=dword:00000000
 "MicrosoftEdgeDataOptIn"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Policies\DataCollection]
@@ -9219,7 +9258,7 @@ Windows Registry Editor Version 5.00
 "EnableExtendedBooksTelemetry"=dword:00000000
 "LimitDiagnosticLogCollection"=dword:00000001
 "LimitDumpCollection"=dword:00000000
-"MaxTelemetryAllowed"=dword:00000001
+"MaxTelemetryAllowed"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
 "ContentDeliveryAllowed"=dword:00000000
@@ -9332,6 +9371,7 @@ Windows Registry Editor Version 5.00
 "LetAppsAccessBackgroundSpatialPerception"=dword:00000002
 "LetAppsAccessCalendar"=dword:00000002
 "LetAppsAccessCallHistory"=dword:00000002
+; "LetAppsAccessCamera"=dword:00000002
 "LetAppsAccessContacts"=dword:00000002
 "LetAppsAccessEmail"=dword:00000002
 "LetAppsAccessGazeInput"=dword:00000002
@@ -9339,9 +9379,14 @@ Windows Registry Editor Version 5.00
 "LetAppsAccessGenerativeAI_ForceAllowTheseApps"=hex(7):00,00
 "LetAppsAccessGenerativeAI_ForceDenyTheseApps"=hex(7):00,00
 "LetAppsAccessGenerativeAI_UserInControlOfTheseApps"=hex(7):00,00
+; "LetAppsAccessGraphicsCaptureProgrammatic"=dword:00000002
+; "LetAppsAccessGraphicsCaptureWithoutBorder"=dword:00000002
 "LetAppsAccessHumanPresence"=dword:00000002
+; "LetAppsAccessLocation"=dword:00000002
 "LetAppsAccessMessaging"=dword:00000002
+; "LetAppsAccessMicrophone"=dword:00000002
 "LetAppsAccessMotion"=dword:00000002
+; "LetAppsAccessNotifications"=dword:00000002
 "LetAppsAccessPhone"=dword:00000002
 "LetAppsAccessRadios"=dword:00000002
 "LetAppsAccessSystemAIModels"=dword:00000002
@@ -9355,6 +9400,73 @@ Windows Registry Editor Version 5.00
 "LetAppsRunInBackground_ForceDenyTheseApps"=-
 "LetAppsRunInBackground_UserInControlOfTheseApps"=-
 "LetAppsSyncWithDevices"=dword:00000002
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers]
+"authenticodeenabled"=dword:00000000
+"DefaultLevel"=dword:00040000
+; "TransparentEnabled"=dword:00000001 ; breaks snipping tool
+"PolicyScope"=dword:00000000
+"ExecutableTypes"=hex(7):41,00,44,00,45,00,00,00,41,00,44,00,50,00,00,00,42,00,41,00,53,00,00,00,42,00,41,00,54,00,00,00,43,00,48,00,4d,00,00,00,43,00,4d,00,44,00,00,00,43,00,4f,00,4d,00,00,00,43,00,50,00,4c,00,00,00,43,00,52,00,54,00,00,00,45,00,58,00,45,00,00,00,48,00,4c,00,50,00,00,00,48,00,54,00,41,00,00,00,49,00,4e,00,46,00,00,00,49,00,4e,00,53,00,00,00,49,00,53,00,50,00,00,00,4c,00,4e,00,4b,00,00,00,4d,00,44,00,42,00,00,00,4d,00,44,00,45,00,00,00,4d,00,53,00,43,00,00,00,4d,00,53,00,49,00,00,00,4d,00,53,00,50,00,00,00,4d,00,53,00,54,00,00,00,4f,00,43,00,58,00,00,00,50,00,43,00,44,00,00,00,50,00,49,00,46,00,00,00,52,00,45,00,47,00,00,00,53,00,43,00,52,00,00,00,53,00,48,00,53,00,00,00,55,00,52,00,4c,00,00,00,56,00,42,00,00,00,57,00,53,00,43,00,00,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\0\Paths\{1daab1ae-fec4-482e-a15a-b5b586752486}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SystemApps\\Microsoft.Windows.Search_cw5n1h2txyewy"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\0\Paths\{2ae19190-6c5b-4426-80e5-45a42d6cfd9a}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SystemApps\\Microsoft.Windows.SecHealthUI_cw5n1h2txyewy"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\0\Paths\{2bab548d-029f-4392-8311-1d568d42be0a}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SystemApps\\Microsoft.Windows.CloudExperienceHost_cw5n1h2txyewy"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\0\Paths\{3e81c348-835e-4b3b-a18c-90b9230b06a7}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\0\Paths\{838cd950-c381-4726-b109-45257ba7f8e3}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SystemApps\\Microsoft.Windows.AppRep.ChxApp_cw5n1h2txyewy"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\0\Paths\{32a1661a-6479-425a-ab56-0a88213a31a2}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CoreAI_cw5n1h2txyewy"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\0\Paths\{4a9abca6-5931-4688-85ec-45151b74d564}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\0\Paths\{cb7dea17-be21-49e1-8bab-477c3762313c}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SystemApps\\MicrosoftWindows.Client.AIX_cw5n1h2txyewy"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\0\Paths\{cba2b0e5-48cd-432e-b99e-e1911230fa4c}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SystemApps\\Microsoft.Windows.CloudExperienceHost_cw5n1h2txyewy"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\0\Paths\{eba85572-f7f5-4a16-8462-b1e14f3c9767}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"="C:\\Windows\\SystemApps\\Microsoft.Windows.AppRep.ChxApp_cw5n1h2txyewy"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\262144\Paths\{191cd7fa-f240-4a17-8986-94d480a6c8ca}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,48,00,4b,00,45,00,59,00,5f,00,4c,00,4f,00,43,00,41,00,4c,00,5f,00,4d,00,41,00,43,00,48,00,49,00,4e,00,45,00,5f,00,4c,00,41,00,42,00,45,00,4c,00,5f,00,25,00,5c,00,53,00,4f,00,46,00,54,00,57,00,41,00,52,00,45,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,6f,00,66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,20,00,4e,00,54,00,5c,00,43,00,75,00,72,00,72,00,65,00,6e,00,74,00,56,00,65,00,72,00,73,00,69,00,6f,00,6e,00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\262144\Paths\{d2c34ab2-529a-46b2-b293-fc853fce72ea}]
+"Description"=""
+"SaferFlags"=dword:00000000
+"ItemData"=hex(2):25,00,48,00,4b,00,45,00,59,00,5f,00,4c,00,4f,00,43,00,41,00,4c,00,5f,00,4d,00,41,00,43,00,48,00,49,00,4e,00,45,00,5f,00,4c,00,41,00,42,00,45,00,4c,00,5f,00,25,00,5c,00,53,00,4f,00,46,00,54,00,57,00,41,00,52,00,45,00,5c,00,4d,00,69,00,63,00,72,00,6f,00,73,00,6f,00,66,00,74,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,00,43,00,75,00,72,00,72,00,65,00,6e,00,74,00,56,00,65,00,72,00,73,00,69,00,6f,00,6e,00,5c,00,50,00,72,00,6f,00,67,00,72,00,61,00,6d,00,46,00,69,00,6c,00,65,00,73,00,44,00,69,00,72,00,25,00,00,00
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsCopilot]
 "AllowCopilotRuntime"=dword:00000000
@@ -9626,8 +9738,8 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\OneDrive]
 "DisableFileSyncNGSC"=dword:00000001
 "DisableFileSync"=dword:00000001
-"DisableMeteredNetworkFileSync"=dword:00000000
-"DisableLibrariesDefaultSaveToOneDrive"=dword:00000000
+"DisableMeteredNetworkFileSync"=dword:00000001
+"DisableLibrariesDefaultSaveToOneDrive"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\OneDrive]
 "PreventNetworkTrafficPreUserSignIn"=dword:00000001
@@ -9638,9 +9750,6 @@ Windows Registry Editor Version 5.00
 "BackgroundHistoryPath2"=-
 "BackgroundHistoryPath3"=-
 "BackgroundHistoryPath4"=-
-
-[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\safer\codeidentifiers]
-"authenticodeenabled"=dword:00000000
 
 ; DMA mode
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\Geo]
@@ -10081,10 +10190,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Internet Explorer\PhishingFilter]
 "EnabledV9"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\PhishingFilter]
 "EnabledV9"=dword:00000000
-
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\PhishingFilter]
 "Enabled"=dword:00000000
 "EnabledV8"=dword:00000000
@@ -11686,6 +11793,74 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MapsBroker]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\AppID]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Application Experience]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\AppxDeploymentClient]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Autochk]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\CloudExperienceHost]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Customer Experience Improvement Program
+]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Device Information]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Diagnosis]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\DiskDiagnostic]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\DiskFootprint]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Feedback]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Flighting]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Location]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Maintenance]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Maps]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\MemoryDiagnostic]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\NetTrace]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Offline Files]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Power Efficiency Diagnostics]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\PushToInstall]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Ras]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Registry]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Time Synchronization]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Time Zone]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\User Profile Service]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Windows Defender]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Windows Error Reporting]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Windows Filtering Platform]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\WindowsUpdate]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\UpdateOrchestrator]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\WaaSMedic]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\XblGameSave]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MRT.exe]
 
 [-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\SPP\Clients]
 
