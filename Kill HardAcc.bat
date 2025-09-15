@@ -1,10 +1,17 @@
 sc start "TabletInputService"
 sc config "TabletInputService" start= auto
+sc start "TextInputManagementService"
+sc config "TextInputManagementService" start= auto
+reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\1&8713bca&0&UID0\Device Parameters" /v EDID /f
+reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&0&UID0\Device Parameters" /v EDID /f
+reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&0&UID37124\Device Parameters" /v EDID /f
 reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&1&UID37124\Device Parameters" /v EDID /f
 reg delete "HKLM\SYSTEM\CurrentControlSet\Enum\DISPLAY\GSM60B2\5&2adb58f6&2&UID37124\Device Parameters" /v EDID /f
 reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\IrisService" /f
 reg delete "HKEY_CURRENT_USER\Software\Spoon" /f
 taskkill /f /t /im acrotray.exe
+::powershell -Command "Get-Process -Name 'acrotray' -Force | ForEach-Object { $_.Kill() }"
+taskkill /f /t /im CredentialEnrollmentManager.exe
 taskkill /f /t /im adb.exe
 taskkill /f /t /im AdobeIPCBroker.exe
 taskkill /f /t /im Agent.exe
@@ -14,6 +21,7 @@ taskkill /f /t /im AppVShNotify.exe
 taskkill /f /t /im armsvc.exe
 taskkill /f /t /im backgroundTaskHost.exe
 taskkill /f /t /im CalculatorApp.exe
+taskkill /f /t /im identity_helper.exe
 taskkill /f /t /im calculator.exe
 taskkill /f /t /im CCLibrary.exe
 taskkill /f /t /im CCXProcess.exe
@@ -105,6 +113,15 @@ taskkill /f /t /im SndVol.exe
 taskkill /f /t /im nvcplui.exe
 taskkill /f /t /im EpicWebHelper.exe
 taskkill /f /t /im CrashReportClient.exe
+taskkill /f /t /im CrossDeviceResume.exe
+taskkill /f /t /im ShellExperienceHost.exe
+taskkill /f /t /im SystemSettings.exe
+taskkill /f /t /im perfhost.exe
+taskkill /f /t /im TieringEngineService.exe
+taskkill /f /t /im wbengine.exe
+taskkill /f /t /im PerceptionSimulationService.exe
+taskkill /f /t /im Locator.exe
+taskkill /f /t /im upfc.exe
 ::sc stop "SysMain"
 ::sc config "SysMain" start= disabled
 sc config "SysMain" start= auto
@@ -126,8 +143,9 @@ sc stop "OneSyncSvc"
 sc config "OneSyncSvc" start= disabled
 sc stop "DusmSvc"
 sc config "DusmSvc" start= disabled
-sc stop "DoSvc"
-sc config "DoSvc" start= disabled
+::breaks windows update w11 only
+::sc stop "DoSvc"
+::sc config "DoSvc" start= disabled
 sc stop "DPS"
 sc config "DPS" start= disabled
 sc stop "RmSvc"
@@ -262,8 +280,8 @@ sc stop "tzautoupdate"
 sc config "tzautoupdate" start= disabled
 sc config "winmgmt" start= auto
 sc config "BTHUSB" start= disabled
-::sc start "GraphicsPerfSvc"
-::bitsadmin.exe /reset /allusers
+sc start "GraphicsPerfSvc"
+bitsadmin.exe /reset /allusers
 ie4uinit.exe -ClearIconCache
 w32tm /resync
 sc stop "UsoSvc"
@@ -371,17 +389,18 @@ bcdedit /set sos No
 ::bcdedit /deletevalue sos
 bcdedit /timeout 0
 ::bcdedit /deletevalue timeout
-bcdedit /set pciexpress ForceDisable
+::bcdedit /set pciexpress ForceDisable
+bcdedit /deletevalue pciexpress
 ::bcdedit /set disabledynamicparks yes
-bcdedit /set pciexpress forcedisablemsi false
 bcdedit /set disablecoalescing yes
-::bcdedit /set xsavedisable Yes
-bcdedit /set xsavedisable 1
 bcdedit /set restrictapicluster 0
 ::bcdedit /deletevalue restrictapicluster
 ::bcdedit /set testsigning No
 ::bcdedit /deletevalue testsigning
 ::bcdedit /set {globalsettings} custom:16000067 true
+::bcdedit /set xsavedisable Yes
+::bcdedit /set xsavedisable 1
+::bcdedit /deletevalue xsavedisable
 ::bcdedit /set graphicsmodedisabled No
 ::bcdedit /deletevalue graphicsmodedisabled
 bcdedit /set integrityservices disable
@@ -395,6 +414,7 @@ C:\Windows\System32\wbem\winmgmt.exe /RESYNCPERF
 lodctr /e:PerfOS
 taskkill /f /t /im OfficeClickToRun.exe
 taskkill /f /t /im ShellHost.exe
+if not exist C:\Windows\System32\wbem\WMIC.exe DISM /Online /Add-Capability /CapabilityName:WMIC~~~~
 wmic process where name="Adobe Crash Processor.exe" CALL terminate
 wmic process where name="ctfmon.exe" CALL setpriority 16384
 wmic process where name="dllhost.exe" CALL setpriority 64
@@ -410,6 +430,8 @@ wmic process where name="OfficeClickToRun.exe" CALL terminate
 wmic process where name="taskhostw.exe" CALL terminate
 wmic process where name="winlogon.exe" CALL setpriority 64
 wmic process where name="WmiPrvSvc.exe" CALL terminate
+::powershell -Command "Stop-Process -Name 'Adobe Crash Processor' -Force"
+::powershell -Command "(Get-Process -Name 'ctfmon').PriorityClass = 'BelowNormal'"
 powershell -NoProfile -Command "$p = Get-Process audiodg -ErrorAction SilentlyContinue; if ($p) { $p.ProcessorAffinity = 1 }"
 taskkill /f /t /im MoUsoCoreWorker.exe
 taskkill /f /t /im RuntimeBroker.exe
@@ -420,6 +442,7 @@ bcdedit /set nx AlwaysOff
 bcdedit /deletevalue nointegritychecks
 ::bcdedit /deletevalue loadoptions
 bcdedit /set loadoptions "DISABLE-LSA-ISO,DISABLE-VBS"
+for /f "tokens=*" %%a in ('logman query ^| findstr /i "trace"') do logman stop "%%a" -ets
 powershell -Command "Set-ProcessMitigation -System -Disable DEP,EmulateAtlThunks,ForceRelocateImages,RequireInfo,BottomUp,HighEntropy,StrictHandle,DisableWin32kSystemCalls,AuditSystemCall,DisableExtensionPoints,BlockDynamicCode,AllowThreadsToOptOut,AuditDynamicCode,CFG,SuppressExports,StrictCFG,MicrosoftSignedOnly,AllowStoreSignedBinaries,AuditMicrosoftSigned,AuditStoreSigned,EnforceModuleDependencySigning,DisableNonSystemFonts,AuditFont,BlockRemoteImageLoads,BlockLowLabelImageLoads,PreferSystem32,AuditRemoteImageLoads,AuditLowLabelImageLoads,AuditPreferSystem32,SEHOP,AuditSEHOP,SEHOPTelemetry,TerminateOnError"
 taskkill /f /t /im CompPkgSrv.exe
 taskkill /f /t /im SearchProtocolHost.exe
@@ -541,10 +564,14 @@ reg delete "HKLM\SOFTWARE\Microsoft\FTH\State" /va /f
 ::wusa.exe /uninstall /kb:5062660 /quiet /norestart
 ::for %K in (5063878 5063875 5063709 5063877 5063871 5063889 5062660) do for /f "tokens=*" %P in ('dism /online /get-packages ^| findstr %K') do dism /online /remove-package /packagename:%P /quiet /norestart
 ::timeout /t 8 /nobreak
-winget uninstall "windows web experience pack"
-winget uninstall --id Microsoft.WindowsWebExperiencePack
+winget uninstall "windows web experience pack" --disable-interactivity --accept-source-agreements
+winget uninstall --id Microsoft.WindowsWebExperiencePack  --disable-interactivity --accept-source-agreements
 taskkill /f /t /im node.exe
 taskkill /f /t /im powershell.exe
+taskkill /f /t /im Taskmgr.exe
+taskkill /f /t /im taskhostw.exe
+taskkill /f /t /im OpenConsole.exe
+taskkill /f /t /im WindowsTerminal.exe
 taskkill /f /t /im conhost.exe
 taskkill /f /t /im cmd.exe
 exit
