@@ -567,7 +567,7 @@ Windows Registry Editor Version 5.00
 "GPU_MEMORY_MANAGEMENT_POLICY"="0"
 "GPU_MINIMUM_BATCH_SIZE"="64"
 "GPU_PENDING_INTERRUPTS"="0"
-"GPU_PREEMPTION_POLICY"="0" ; 0/1
+"GPU_PREEMPTION_POLICY"="1" ; 0/1
 "GPU_SCHEDULER_MODE"="2" ; 2/4
 "GPU_SINGLE_ALLOC_PERCENT"="100"
 "GPU_SYNC_OBJECTS"="1" ; 0/1
@@ -861,77 +861,77 @@ Windows Registry Editor Version 5.00
 "PagePriority"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\fontdrvhost.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WmiPrvSE.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winlogon.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\audiodg.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ntoskrnl.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\services.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\fontdrvhost.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsass.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WmiPrvSE.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winlogon.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\audiodg.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ntoskrnl.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\services.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NDIS\Parameters]
@@ -1952,8 +1952,8 @@ Windows Registry Editor Version 5.00
 "CABCOption"=dword:00000002
 "CddBootImageMode"=dword:00000000
 "CddBootScreenMode"=dword:00000000
-"ComputePreemption"=dword:00000000 ; 00000000/00000001
-"ComputePreemptionLevel"=dword:00000000 ; 00000000/00000001
+"ComputePreemption"=dword:00000001 ; 00000000/00000001
+"ComputePreemptionLevel"=dword:00000001 ; 00000000/00000001
 "ContextNoPatchMode"=dword:00000000 ; 00000000/00000001
 "CreateGdiPrimaryOnSlaveGpu"=dword:00000000
 "CrtcPhaseFrames"=dword:00000002
@@ -1973,7 +1973,7 @@ Windows Registry Editor Version 5.00
 "DisableBadDriverCheckForHwProtection"=dword:00000001
 "DisableBoostedVSyncVirtualization"=dword:00000001
 "DisableCABC"=dword:00000001
-"DisableCudaContextPreemption"=dword:00000001  ; 00000000/00000001
+"DisableCudaContextPreemption"=dword:00000000  ; 00000000/00000001
 "DisableDwmVSync"=dword:00000001
 "DisableDynamicPstate"=dword:00000000 ; 00000000/00000001
 "DisableGDIAcceleration"=dword:00000000
@@ -1990,8 +1990,8 @@ Windows Registry Editor Version 5.00
 "DisableOverlays"=dword:00000000 ; 00000000/00000001 w10 only
 "DisablePagingContextGpuVa"=dword:00000001
 "DisablePFonDP"=dword:00000001
-"DisablePreemption"=dword:00000001 ; 00000000/00000001
-"DisablePreemptionOnS3S4"=dword:00000001 ; 00000000/00000001
+"DisablePreemption"=dword:00000000 ; 00000000/00000001
+"DisablePreemptionOnS3S4"=dword:00000000 ; 00000000/00000001
 "DisableSecondaryIFlipSupport"=dword:00000000 ; 00000000/00000001
 "DisableVaBackedVm"=dword:00000000
 "DisableVersionMismatchCheck"=dword:00000000 ; 00000000/00000001
@@ -2010,9 +2010,9 @@ Windows Registry Editor Version 5.00
 "EnableAdvancedMemoryTimings"=dword:00000001
 "EnableAggressivePStateBoost"=dword:00000001
 "EnableAggressivePStateOnly"=dword:00000001
-"EnableAsyncMidBufferPreemption"=dword:00000000 ; 00000000/00000001
+"EnableAsyncMidBufferPreemption"=dword:00000001 ; 00000000/00000001
 "EnableBasicRenderGpuPv"=dword:00000000
-"EnableCEPreemption"=dword:00000000 ; 00000000/00000001
+"EnableCEPreemption"=dword:00000001 ; 00000000/00000001
 "EnableDecodeMPO"=dword:00000000
 "EnableDirectFlip"=dword:00000001
 "EnableExperimentalRefreshRates"=dword:00000000
@@ -2025,18 +2025,18 @@ Windows Registry Editor Version 5.00
 "EnableIndependentFlip"=dword:00000001
 "EnableIntegratedPanelAcmByault"=dword:00000000
 "EnableIntegratedPanelAcmByDefault"=dword:00000000
-"EnableMidBufferPreemption"=dword:00000000 ; 00000000/00000001
-"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000 ; 00000000/00000001
-"EnableMidGfxPreemption"=dword:00000000 ; 00000000/00000001
-"EnableMidGfxPreemptionVGPU"=dword:00000000 ; 00000000/00000001
+"EnableMidBufferPreemption"=dword:00000001 ; 00000000/00000001
+"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000001 ; 00000000/00000001
+"EnableMidGfxPreemption"=dword:00000001 ; 00000000/00000001
+"EnableMidGfxPreemptionVGPU"=dword:00000001 ; 00000000/00000001
 "EnableMultiPlaneOverlay3DDIs"=dword:00000000
 "EnableOfferReclaimOnDriver"=dword:00000001
 "EnableOptimizedFlipQueue"=dword:00000001
 "EnablePanelFitterSupport"=dword:00000000
 "EnablePerformanceMode"=dword:00000001
-"EnablePreemption"=dword:00000000 ; 00000000/00000001
+"EnablePreemption"=dword:00000001 ; 00000000/00000001
 "EnableRuntimePowerManagement"=dword:00000000
-"EnableSCGMidBufferPreemption"=dword:00000000 ; 00000000/00000001
+"EnableSCGMidBufferPreemption"=dword:00000001 ; 00000000/00000001
 "EnableTimedCalls"=dword:00000000
 "EnableWDDM23Synchronization"=dword:00000000 ; 00000000/00000001
 "ExitLatency"=dword:00000001
@@ -2065,7 +2065,7 @@ Windows Registry Editor Version 5.00
 "ForceUsb4MonitorSupport"=dword:00000000
 "ForceVariableRefresh"=dword:00000000
 "GdiPhysicalAdapterIndex"=dword:00000000
-"GPUPreemptionLevel"=dword:00000000 ; 00000000/00000001
+"GPUPreemptionLevel"=dword:00000001 ; 00000000/00000001
 "GpuPreferencePolicy"=dword:00000000
 "GpuPriorityChangeMode"=dword:00000001
 "GpuVirtualizationFlags"=dword:00000004
@@ -2109,7 +2109,7 @@ Windows Registry Editor Version 5.00
 "PageFaultDebugMode"=dword:00000000
 "PanelSelfRefresh"=dword:00000000
 "PciLatencyTimerControl"=dword:00000020 ; 00000014/00000020/00000032/000000ff
-"PerfAnalyzeMidBufferPreemption"=dword:00000000 ; 00000000/00000001
+"PerfAnalyzeMidBufferPreemption"=dword:00000001 ; 00000000/00000001
 "PlatformSupportMiracast"=dword:00000000 ; 00000000/00000001
 "PMMEnable"=dword:00000000
 "PoFxPowerControl"=dword:00000000
@@ -2162,7 +2162,7 @@ Windows Registry Editor Version 5.00
 "ValidateWDDMCaps"=dword:00000000
 "VirtualGpuOnly"=dword:00000000
 "WDDM2LockManagement"=dword:00000001
-"ForcePreemptionAware"=dword:00000000 ; 00000000/00000001
+"ForcePreemptionAware"=dword:00000001 ; 00000000/00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\BasicDisplay]
 "BasicDisplayUserNotified"=dword:00000000
@@ -2171,7 +2171,7 @@ Windows Registry Editor Version 5.00
 "ForcePreserveBootDisplay"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Power]
-"ComputePreemption"=dword:00000000
+"ComputePreemption"=dword:00000001
 "D3PCLatency"=dword:00000001
 "DefaultD3TransitionLatencyActivelyUsed"=dword:00000001
 "DefaultD3TransitionLatencyIdleLongTime"=dword:00000001
@@ -2191,23 +2191,23 @@ Windows Registry Editor Version 5.00
 "DefaultMemoryRefreshLatencyToleranceActivelyUsed"=dword:00000001
 "DefaultMemoryRefreshLatencyToleranceMonitorOff"=dword:00000001
 "DefaultMemoryRefreshLatencyToleranceNoContext"=dword:00000001
-"DisableCudaContextPreemption"=dword:00000001
-"DisablePreemptionOnS3S4"=dword:00000001
+"DisableCudaContextPreemption"=dword:00000000
+"DisablePreemptionOnS3S4"=dword:00000000
 "DisableWriteCombining"=dword:00000001
-"EnableAsyncMidBufferPreemption"=dword:00000000
-"EnableCEPreemption"=dword:00000000
-"EnableMidBufferPreemption"=dword:00000000
-"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
-"EnableMidGfxPreemption"=dword:00000000
-"EnableMidGfxPreemptionVGPU"=dword:00000000
-"EnablePreemption"=dword:00000000
+"EnableAsyncMidBufferPreemption"=dword:00000001
+"EnableCEPreemption"=dword:00000001
+"EnableMidBufferPreemption"=dword:00000001
+"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000001
+"EnableMidGfxPreemption"=dword:00000001
+"EnableMidGfxPreemptionVGPU"=dword:00000001
+"EnablePreemption"=dword:00000001
 "EnableRuntimePowerManagement"=dword:00000000
-"EnableSCGMidBufferPreemption"=dword:00000000
+"EnableSCGMidBufferPreemption"=dword:00000001
 "ExitLatency"=dword:00000001
 "ExitLatencyCheckEnabled"=dword:00000001
 "F1TransitionLatency"=dword:00000001
 "FlTransitionLatency"=dword:00000001
-"GPUPreemptionLevel"=dword:00000000
+"GPUPreemptionLevel"=dword:00000001
 "Latency"=dword:00000001
 "LatencyToleranceDefault"=dword:00000001
 "LatencyToleranceFSVP"=dword:00000001
@@ -2221,7 +2221,7 @@ Windows Registry Editor Version 5.00
 "MonitorRefreshLatencyTolerance"=dword:00000001
 "Node3DLowLatency"=dword:00000001
 "PciLatencyTimerControl"=dword:00000020
-"PerfAnalyzeMidBufferPreemption"=dword:00000000
+"PerfAnalyzeMidBufferPreemption"=dword:00000001
 "PowerSavingTweaks"=dword:00000000
 "PrimaryPushBufferSize"=dword:00000001
 "RMDeepL1EntryLatencyUsec"=dword:00000001
@@ -2232,7 +2232,7 @@ Windows Registry Editor Version 5.00
 "RtlCapabilityCheckLatency"=dword:00000001
 "TransitionLatency"=dword:00000001
 "UseGpuTimer"=dword:00000001
-"ForcePreemptionAware"=dword:00000000
+"ForcePreemptionAware"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm]
 "{41FCC608-8496-4DEF-B43E-7D9BD675A6FF}"=dword:00000001
@@ -2241,8 +2241,8 @@ Windows Registry Editor Version 5.00
 "AllowdGPUPassthrough"=dword:00000000
 "AllowMaxPerf"=dword:00000002 ; 00000001/00000002
 "BuffersInFlight"=dword:00001000
-"ComputePreemption"=dword:00000000
-"ComputePreemptionLevel"=dword:00000000
+"ComputePreemption"=dword:00000001
+"ComputePreemptionLevel"=dword:00000001
 "D3PCLatency"=dword:00000001
 "DesktopStereoShortcuts"=dword:00000000
 "DisableAcpPowerGating"=dword:00000001
@@ -2251,7 +2251,7 @@ Windows Registry Editor Version 5.00
 "DisableBlockWrite"=dword:00000000
 "DisableBugcheckCallback"=dword:00000001 ; 00000000/00000001
 "DisableCpPowerGating"=dword:00000001
-"DisableCudaContextPreemption"=dword:00000001
+"DisableCudaContextPreemption"=dword:00000000
 "DisableDMACopy"=dword:00000001 ; 00000000/00000001
 "DisableDrmdmaPowerGating"=dword:00000001
 "DisableDynamicPstate"=dword:00000000
@@ -2272,8 +2272,8 @@ Windows Registry Editor Version 5.00
 "DisableOverlays"=dword:00000000
 "DisablePFonDP"=dword:00000001
 "DisablePowerGating"=dword:00000001
-"DisablePreemption"=dword:00000001
-"DisablePreemptionOnS3S4"=dword:00000001
+"DisablePreemption"=dword:00000000
+"DisablePreemptionOnS3S4"=dword:00000000
 "DisableSamuClockGating"=dword:00000001
 "DisableSysClockGating"=dword:00000001
 "DisableTRCOnPreWin10"=dword:00000001
@@ -2285,9 +2285,9 @@ Windows Registry Editor Version 5.00
 "DpiMapIommuContiguous"=dword:00000001
 "EnableAggressivePStateBoost"=dword:00000001
 "EnableAggressivePStateOnly"=dword:00000001
-"EnableAsyncMidBufferPreemption"=dword:00000000
+"EnableAsyncMidBufferPreemption"=dword:00000001
 "EnableBugcheckDisplay"=dword:00000000
-"EnableCEPreemption"=dword:00000000
+"EnableCEPreemption"=dword:00000001
 "EnableCoreSlowdown"=dword:00000000
 "EnableDirectFlip"=dword:00000001
 "EnableHDAudioD3Cold"=dword:00000000
@@ -2297,30 +2297,30 @@ Windows Registry Editor Version 5.00
 "EnableIoMmuOnSLI"=dword:00000000
 ; "EnableMClkSlowdown"=dword:00000000
 "EnableMemoryTiling"=dword:00000000
-"EnableMidBufferPreemption"=dword:00000000
-"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
-"EnableMidGfxPreemption"=dword:00000000
-"EnableMidGfxPreemptionVGPU"=dword:00000000
+"EnableMidBufferPreemption"=dword:00000001
+"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000001
+"EnableMidGfxPreemption"=dword:00000001
+"EnableMidGfxPreemptionVGPU"=dword:00000001
 "EnableMidGfxpSharedBuffer"=dword:00000001 ; 00000000/00000001
 ; "EnableNVClkSlowdown"=dword:00000000
 "ENABLE_OCA_LOGGING"=dword:00000000
 "EnablePerformanceMode"=dword:00000001
-"EnablePreemption"=dword:00000000
+"EnablePreemption"=dword:00000001
 "EnableRuntimePowerManagement"=dword:00000000
-"EnableSCGMidBufferPreemption"=dword:00000000
+"EnableSCGMidBufferPreemption"=dword:00000001
 "EnableSystemMemoryTiling"=dword:00000000
 "EnableTiledDisplay"=dword:00000000 ; 00000000/00000001
 "EnableUlps"=dword:00000000
-"EnableVCNPreemption"=dword:00000000 ; 00000000/00000001
+"EnableVCNPreemption"=dword:00000001 ; 00000000/00000001
 "F1TransitionLatency"=dword:00000001
 "FlTransitionLatency"=dword:00000001
-"GPUPreemptionLevel"=dword:00000000
-"KMD_EnableComputePreemption"=dword:00000000 ; 00000000/00000001
+"GPUPreemptionLevel"=dword:00000001
+"KMD_EnableComputePreemption"=dword:00000001 ; 00000000/00000001
 "KMD_EnableGDIAcceleration"=dword:00000001
-"KMD_EnableGfxMidCmdPreemption"=dword:00000000 ; 00000000/00000001
+"KMD_EnableGfxMidCmdPreemption"=dword:00000001 ; 00000000/00000001
 "KMD_EnablePreemptionLogging"=dword:00000000
-"KMD_EnableSDMAPreemption"=dword:00000000 ; 00000000/00000001
-"KMD_PreemptionLevelLimit"=dword:00000000 ; 00000000/00000001
+"KMD_EnableSDMAPreemption"=dword:00000001 ; 00000000/00000001
+"KMD_PreemptionLevelLimit"=dword:00000001 ; 00000000/00000001
 "LogErrorEntries"=dword:00000000
 "LogEventEntries"=dword:00000000
 "LogPagingEntries"=dword:00000000
@@ -2336,7 +2336,7 @@ Windows Registry Editor Version 5.00
 "PCIEPowerControl"=dword:00000000
 "PCIEPowerControl_8086191f50001458"=dword:00000000
 "PciLatencyTimerControl"=dword:00000020
-"PerfAnalyzeMidBufferPreemption"=dword:00000000
+"PerfAnalyzeMidBufferPreemption"=dword:00000001
 ; "PerfLevelSrc"=dword:00002222
 ; "PowerMizerDefault"=dword:00000001
 ; "PowerMizerDefaultAC"=dword:00000001
@@ -2436,8 +2436,8 @@ Windows Registry Editor Version 5.00
 "AllowSnapshot"=dword:00000000
 "AllowSubscription"=dword:00000000
 "BuffersInFlight"=dword:00001000
-"ComputePreemption"=dword:00000000
-"ComputePreemptionLevel"=dword:00000000
+"ComputePreemption"=dword:00000001
+"ComputePreemptionLevel"=dword:00000001
 "D3PCLatency"=dword:00000001
 "DesktopStereoShortcuts"=dword:00000000
 "DisableAcpPowerGating"=dword:00000001
@@ -2447,7 +2447,7 @@ Windows Registry Editor Version 5.00
 "DisableBlockWrite"=dword:00000000
 "DisableBugcheckCallback"=dword:00000001
 "DisableCpPowerGating"=dword:00000001
-"DisableCudaContextPreemption"=dword:00000001
+"DisableCudaContextPreemption"=dword:00000000
 "DisableDMACopy"=dword:00000001
 "DisableDrmdmaPowerGating"=dword:00000001
 "DisableDWM"=dword:00000001
@@ -2468,8 +2468,8 @@ Windows Registry Editor Version 5.00
 "DisableOverlays"=dword:00000000
 "DisablePFonDP"=dword:00000001
 "DisablePowerGating"=dword:00000001
-"DisablePreemption"=dword:00000001
-"DisablePreemptionOnS3S4"=dword:00000001
+"DisablePreemption"=dword:00000000
+"DisablePreemptionOnS3S4"=dword:00000000
 "DisableSamuClockGating"=dword:00000001
 "DisableSAMUPowerGating"=dword:00000001
 "DisableSysClockGating"=dword:00000001
@@ -2486,48 +2486,48 @@ Windows Registry Editor Version 5.00
 "EnableAggressivePStateOnly"=dword:00000001
 "EnableAspmL0s"=dword:00000000
 "EnableAspmL1"=dword:00000000
-"EnableAsyncMidBufferPreemption"=dword:00000000
-"EnableCEPreemption"=dword:00000000
+"EnableAsyncMidBufferPreemption"=dword:00000001
+"EnableCEPreemption"=dword:00000001
 "EnableCoreSlowdown"=dword:00000000
 "EnableDirectFlip"=dword:00000001
 "EnableGpuFirmware"=dword:00000000 ; 00000000, 00000001
 "EnableHDAudioD3Cold"=dword:00000000
 "EnableIndependentFlip"=dword:00000001
 ; "EnableMClkSlowdown"=dword:00000000
-"EnableMidBufferPreemption"=dword:00000000
-"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
-"EnableMidGfxPreemption"=dword:00000000
-"EnableMidGfxPreemptionVGPU"=dword:00000000
+"EnableMidBufferPreemption"=dword:00000001
+"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000001
+"EnableMidGfxPreemption"=dword:00000001
+"EnableMidGfxPreemptionVGPU"=dword:00000001
 "EnableMidGfxpSharedBuffer"=dword:00000001
 "enableMultiHeadsGpuScalingOnTiledMonitor"=dword:00000000
 ; "EnableNVClkSlowdown"=dword:00000000
 "ENABLE_OCA_LOGGING"=dword:00000000
 "EnablePerformanceMode"=dword:00000001
-"EnablePreemption"=dword:00000000
+"EnablePreemption"=dword:00000001
 "EnableRuntimePowerManagement"=dword:00000000
-"EnableSCGMidBufferPreemption"=dword:00000000
+"EnableSCGMidBufferPreemption"=dword:00000001
 "EnableSystemMemoryTiling"=dword:00000000
 "EnableTiledDisplay"=dword:00000000
 "EnableUlps"=dword:00000000
 "EnableUlps_NA"="0"
 "EnableUvdClockGating"=dword:00000000
 "EnableVceSwClockGating"=dword:00000000
-"EnableVCNPreemption"=dword:00000000
+"EnableVCNPreemption"=dword:00000001
 "enableVrrDisplayValidation"=dword:00000000
 "F1TransitionLatency"=dword:00000001
 "FeatureControl"=dword:00000004
 "FlipNoVsync"=dword:00000001
 "FlTransitionLatency"=dword:00000001
 "GlitchFreeMClk"=dword:00000000
-"GPUPreemptionLevel"=dword:00000000
+"GPUPreemptionLevel"=dword:00000001
 "GrCtxSwMode"=dword:00000002
-"KMD_EnableComputePreemption"=dword:00000000
+"KMD_EnableComputePreemption"=dword:00000001
 "KMD_EnableGDIAcceleration"=dword:00000001
-"KMD_EnableGfxMidCmdPreemption"=dword:00000000
+"KMD_EnableGfxMidCmdPreemption"=dword:00000001
 "KMD_EnablePreemptionLogging"=dword:00000000
 ; "KMD_EnableReBarForLegacyASIC"=dword:00000001 ; 00000000/00000001
-"KMD_EnableSDMAPreemption"=dword:00000000
-"KMD_PreemptionLevelLimit"=dword:00000000
+"KMD_EnableSDMAPreemption"=dword:00000001
+"KMD_PreemptionLevelLimit"=dword:00000001
 ; "KMD_RebarControlMode"=dword:00000001 ; 00000000/00000001
 ; "KMD_RebarControlSupport"=dword:00000001 ; 00000000/00000001
 "LOWLATENCY"=dword:00000001
@@ -2541,7 +2541,7 @@ Windows Registry Editor Version 5.00
 "PCIEPowerControl"=dword:00000000
 "PCIEPowerControl_8086191f50001458"=dword:00000000
 "PciLatencyTimerControl"=dword:00000020
-"PerfAnalyzeMidBufferPreemption"=dword:00000000
+"PerfAnalyzeMidBufferPreemption"=dword:00000001
 ; "PerfLevelSrc"=dword:00002222
 ; "PowerMizerDefault"=dword:00000001
 ; "PowerMizerDefaultAC"=dword:00000001
@@ -2698,7 +2698,7 @@ Windows Registry Editor Version 5.00
 "EnablePowerThrottle"=dword:00000000
 "EnableVoltageOptimizations"=dword:00000000
 "RMElpgStateOnInit"=dword:00000003
-"ForcePreemptionAware"=dword:00000000
+"ForcePreemptionAware"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global\NvBackend]
 "DisableThreadedOptimization"=dword:00000000 ; 00000000/00000001
@@ -2895,28 +2895,28 @@ Windows Registry Editor Version 5.00
 "RmMIONoPowerOff"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\FTS]
-"ComputePreemption"=dword:00000000
-"DisableCudaContextPreemption"=dword:00000001
+"ComputePreemption"=dword:00000001
+"DisableCudaContextPreemption"=dword:00000000
 "DisableDWM"=dword:00000001
-"DisablePreemption"=dword:00000001
-"DisablePreemptionOnS3S4"=dword:00000001
-"EnableAsyncMidBufferPreemption"=dword:00000000
-"EnableCEPreemption"=dword:00000000
+"DisablePreemption"=dword:00000000
+"DisablePreemptionOnS3S4"=dword:00000000
+"EnableAsyncMidBufferPreemption"=dword:00000001
+"EnableCEPreemption"=dword:00000001
 "EnableGR535"=dword:00000001
 "EnableHwCursor"=dword:00000001
-"EnableMidBufferPreemption"=dword:00000000
-"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000000
-"EnableMidGfxPreemption"=dword:00000000
-"EnableMidGfxPreemptionVGPU"=dword:00000000
-"EnablePreemption"=dword:00000000
+"EnableMidBufferPreemption"=dword:00000001
+"EnableMidBufferPreemptionForHighTdrTimeout"=dword:00000001
+"EnableMidGfxPreemption"=dword:00000001
+"EnableMidGfxPreemptionVGPU"=dword:00000001
+"EnablePreemption"=dword:00000001
 "EnablePStates"=dword:00000000
 "EnableRID61684"=dword:00000001
 "EnableRID73779"=dword:00000001
 "EnableRID73780"=dword:00000001
 "EnableRID74361"=dword:00000001
-"EnableSCGMidBufferPreemption"=dword:00000000
-"GPUPreemptionLevel"=dword:00000000
-"PerfAnalyzeMidBufferPreemption"=dword:00000000
+"EnableSCGMidBufferPreemption"=dword:00000001
+"GPUPreemptionLevel"=dword:00000001
+"PerfAnalyzeMidBufferPreemption"=dword:00000001
 "UsePolledSwapChain"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\Parameters\FTS]
@@ -12691,903 +12691,903 @@ Windows Registry Editor Version 5.00
 "G:\\SteamLibrary\\steamapps\\common\\Shadow Warrior 3\\SW3\\Binaries\\Win64\\SW3.exe"="~ HIGHDPIAWARE RUNASADMIN DISABLEDXMAXIMIZEDWINDOWEDMODE"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\googleearth.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\googleearth.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\chrome.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\chrome.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\firefox.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\firefox.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\msedge.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\msedge.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winword.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winword.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\excel.exe]
 
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\excel.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\powerpnt.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\powerpnt.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\outlook.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\outlook.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\devenv.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\devenv.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\code.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\code.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\discord.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\discord.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\steam.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\steam.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\spotify.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\spotify.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\vlc.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\vlc.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Obsidian.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Obsidian.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\svchost.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Launcher.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Launcher.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LauncherPatcher.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LauncherPatcher.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarService.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarService.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarSteamHelper.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RockstarSteamHelper.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SocialClubHelper.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SocialClubHelper.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wgc.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WowClassic.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wow.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dota2.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorld.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NMS.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5_Enhanced.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlayGTAV.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Carmageddon_Max_Damage.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cities.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Dishonored.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NeedForSpeedUnbound.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout76.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GSS2-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTAIV.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Gw2-64.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HouseFlipper.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LANoire.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\left4dead2.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LOSTARK.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Overwatch.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Paladins.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Postal4-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Postal4.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Discovery.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\VRising.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\amtrucks.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AoE3DE_s.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\bf1.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tiger-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BorderlandsGOTY.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cs2.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis64.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadByDaylight-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DH-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Ghostrunner-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HaloInfinite.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MadMax.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect1.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlanetCoaster.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\QuakeChampions.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Raft.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SkyrimSE.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hl2.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tf_win64.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TPH.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Warframe.x64.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wolfenstein.The.New.Order.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfWarships64.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AlanWake2.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cyberpunk2077.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame_x64_rwdi.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forzahorizon5.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forza_gaming.desktop.x64_release_final.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Back4Blood.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crossout.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout4.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FragPunk.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\re8.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CivilizationVI_DX12.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SonsOfTheForest.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4_x64.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfTanks.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tlou-i.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tropico6.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Stalker2-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Stalker2.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex_dx12.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BF2042.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\KFGame.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NarakaBladepoint.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RDR2.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SW3.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteLauncher.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping_BE.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping_EAC_EOS.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\wgc.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WowClassic.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wow.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dota2.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NewWorld.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NMS.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5_Enhanced.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlayGTAV.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTA5.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Carmageddon_Max_Damage.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cities.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Dishonored.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NeedForSpeedUnbound.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout76.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GSS2-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GTAIV.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Gw2-64.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HouseFlipper.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LANoire.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\left4dead2.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LOSTARK.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Overwatch.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Paladins.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Postal4-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Postal4.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TslGame.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Discovery.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\VRising.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\amtrucks.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AoE3DE_s.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\bf1.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tiger-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BorderlandsGOTY.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cs2.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis64.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crysis.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadByDaylight-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DH-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Ghostrunner-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HaloInfinite.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MadMax.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MassEffect1.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PlanetCoaster.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\QuakeChampions.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Raft.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SkyrimSE.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hl2.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tf_win64.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TPH.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Warframe.x64.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Wolfenstein.The.New.Order.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfWarships64.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AlanWake2.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Cyberpunk2077.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DyingLightGame_x64_rwdi.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forzahorizon5.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\forza_gaming.desktop.x64_release_final.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Back4Blood.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Crossout.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Fallout4.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FragPunk.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\re8.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CivilizationVI_DX12.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SonsOfTheForest.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TS4_x64.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WorldOfTanks.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\tlou-i.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Tropico6.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Stalker2-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Stalker2.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex_dx12.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\BF2042.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cod.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\KFGame.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Marvel.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NarakaBladepoint.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RDR2.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SW3.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland-Win64-Shipping.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DeadIsland.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteLauncher.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping_BE.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\FortniteClient-Win64-Shipping_EAC_EOS.exe]
-"MitigationAuditOptions"=hex:20,00,00,20,20,20,22,22,00,00,00,00,00,00,00,00
-"MitigationOptions"=hex:22,22,22,22,22,22,22,22,20,02,00,00,00,20,00,00
+"MitigationAuditOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
+"MitigationOptions"=hex:22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22
 "EAFModules"=" "
 
 [HKEY_CURRENT_USER\System\GameConfigStore\Applications\wgc.exe]
