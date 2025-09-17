@@ -13,9 +13,9 @@ Windows Registry Editor Version 5.00
 "UseNexusForGameBarEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
-"HwSchMode"=dword:00000001 ; HAGS 00000002, 00000001
-"HwSchedMode"=dword:00000001 ; HAGS 00000002, 00000001
-"HwSchTreatExperimentalAsStable"=dword:00000000 ; HAGS 00000001, 00000000
+"HwSchMode"=dword:00000001 ; HAGS on 00000002, off 00000001
+"HwSchedMode"=dword:00000001 ; HAGS on 00000002, off 00000001
+"HwSchTreatExperimentalAsStable"=dword:00000000 ; HAGS on 00000001, off 00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\DirectX\UserGpuPreferences]
 "DirectXUserGlobalSettings"="HighPerfAdapter=10DE&2182&3FBE1458;AutoHDREnable=0;VRROptimizeEnable=0;SwapEffectUpgradeEnable=0;" ; SwapEffectUpgradeEnable = optimizations for windowed games (w11 only) 1, 0
@@ -1034,7 +1034,7 @@ Windows Registry Editor Version 5.00
 "UseDelayedAcceptance"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Executive]
-"AdditionalCriticalWorkerThreads"=dword:00000000 ; 00000000, 00000010/00000040
+"AdditionalCriticalWorkerThreads"=dword:00000040 ; 00000000, 00000010/00000040
 "AdditionalDelayedWorkerThreads"=dword:00000000 ; 00000000, 00000010
 "MaxTimeSeparationBeforeCorrect"=dword:00000001
 "PriorityQuantumMatrix"=dword:00000000
@@ -2426,6 +2426,7 @@ Windows Registry Editor Version 5.00
 "TexturePrecache"=dword:00000001
 "TurboQueue"=dword:00000001
 
+; gpu
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000]
 "BasePriority"=dword:000000c8
 "OverTargetPriority"=dword:00000050
@@ -2583,7 +2584,7 @@ Windows Registry Editor Version 5.00
 "RMDisableGpuASPMFlags"=dword:00000003
 "RmDisableHdcp22"=dword:00000001
 "RmDisableHwFaultBuffer"=dword:00000001
-"RmDisableInforomNvlink"=dword:00000001
+"RmDisableInforomNvlink"=dword:00000001 ; 00000001/00000003
 "RmDisableInst2Sys"=dword:00000000
 "RMDisableNoncontigAlloc"=dword:00000001
 "RMDisableOptimalPowerForPadlinkPll"=dword:00000001
@@ -2593,7 +2594,7 @@ Windows Registry Editor Version 5.00
 "RmDisableRegistryCaching"=dword:00000001
 "RMDisableScrubOnFree"=dword:00000001
 "RMDisableSwdxDirectCtxswScrub"=dword:00000001
-"RMDiWakeupTimer"=dword:00000002
+"RMDiWakeupTimer"=dword:00000002 ; 00000002/80000000
 "RmDwbMscg"=dword:00000001
 "RMElcg"=dword:55555555
 "RMElpg"=dword:00000fff
@@ -2602,7 +2603,7 @@ Windows Registry Editor Version 5.00
 "RmEnableHda"=dword:00000000
 "RMEnableL1ECC"=dword:00000000
 "RmEnableNoiseAwarePll"=dword:00000000
-"RMEnablePowerSupplyCapacity"=dword:00000001
+"RMEnablePowerSupplyCapacity"=dword:00000001 ; 00000000/00000001
 "RMEnableSHMECC"=dword:00000000
 "RMEnableSMECC"=dword:00000000
 "RmFbsrPagedDMA"=dword:00000001
@@ -2631,7 +2632,7 @@ Windows Registry Editor Version 5.00
 "RmLpwrCtrlMsDifrCgParameters"=dword:00000555
 "RmLpwrCtrlMsDifrSwAsrParameters"=dword:00001555
 "RmLpwrCtrlMsLtcParameters"=dword:00000005
-"RMLpwrEiClient"=dword:00000005
+"RMLpwrEiClient"=dword:00000005 ; 00000003/00000005
 "RMLpwrEiIdleThresholdUs"=dword:00000001
 "RmLpwrFgRppg"=dword:00000000
 "RMLpwrGrIdleThresholdUs"=dword:00000001
@@ -2699,6 +2700,22 @@ Windows Registry Editor Version 5.00
 "EnableVoltageOptimizations"=dword:00000000
 "RMElpgStateOnInit"=dword:00000003
 "ForcePreemptionAware"=dword:00000001
+"RMDisableIntrIllegalCompstatAccess"=dword:00000001
+"RmClkControllersOverride"=dword:00000003
+"RMI2cSpeed"=dword:00000400
+"RMPcieFLRPolicy"=dword:00000001
+"RM2644249"=dword:00000001
+"RmWar1760398"=dword:00000001
+"RmCeElcgWar1895530"=dword:00000001
+"RMBug2519005War"=dword:00000001
+"RMEnableMSCGConfig"=dword:00000001
+"RmSec2EnableApm"=dword:00000000
+"RMCBAllocVPR"=dword:00000000
+"RmGpsACPIType"=dword:00000000
+"RmDisableFanDiag"=dword:00000001
+"RmPerPllProgramming"=dword:00000000
+"RmGpsPreferIntrinsicFuncs"=dword:00000001
+"DISABLE_DSC"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global\NvBackend]
 "DisableThreadedOptimization"=dword:00000000 ; 00000000/00000001
@@ -2895,6 +2912,7 @@ Windows Registry Editor Version 5.00
 "RmMIONoPowerOff"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\FTS]
+"EnableFrameQueue"=dword:00000000 ; 00000001, 00000000/00000002
 "ComputePreemption"=dword:00000001
 "DisableCudaContextPreemption"=dword:00000000
 "DisableDWM"=dword:00000001
@@ -2921,6 +2939,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\Parameters\FTS]
 "EnableGR535"=dword:00000001
+"EnableFrameQueue"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global\FTS]
 "EnableRID44231"=dword:00000000
@@ -3967,11 +3986,10 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging]
 "EnableScriptBlockLogging"=dword:00000000
-"EnableScriptBlockInvocationLogging"=-
-
+"EnableScriptBlockInvocationLogging"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging]
 "EnableScriptBlockLogging"=dword:00000000
-"EnableScriptBlockInvocationLogging"=- 
+"EnableScriptBlockInvocationLogging"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShell]
 "EnableScripts"=dword:00000001
@@ -6021,8 +6039,6 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000004 ; 00000003, 00000004
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\seclogon]
 "Start"=dword:00000004 ; 00000003, 00000004
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\StorSvc]
-"Start"=dword:00000004 ; 00000003, 00000004
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\svsvc]
 "Start"=dword:00000004 ; 00000003, 00000004
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\swprv]
@@ -7351,7 +7367,6 @@ Windows Registry Editor Version 5.00
 "PaintDesktopVersion"=dword:00000000
 "PreferredRefreshRate"="60"
 "RestorePreviousStateRecalcBehavior"=dword:00000000
-"ScreenSaveTimeOut"=-
 "SCRNSAVE.EXE"=-
 "SmoothScroll"=dword:00000000
 "SnapSizing"="0"
@@ -7360,6 +7375,8 @@ Windows Registry Editor Version 5.00
 "WaitToKillServiceTimeout"="1000"
 "Win8DpiScaling"=dword:00000000 ; 00000000/00000001
 "WindowArrangementActive"="0"
+"ScreenSaveActive"="0"
+"ScreenSaveTimeOut"="0"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TSFairShare\NetFS]
 "EnableFairShare"=dword:00000000
@@ -10167,7 +10184,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Shell\USB]
 "NotifyOnWeakCharger"=dword:00000000
-
+	
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HidUsb]
 "IdleEnabled"=dword:00000000
 
@@ -14204,7 +14221,8 @@ Windows Registry Editor Version 5.00
 "Throttle Rate"="-1"
 "Version"="1.0"
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0010]
+; network (nic)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0001]
 "AdvancedEEE"="0"
 "AllowAllSpeedsLPLU"="0"
 "ASPM"="0"
