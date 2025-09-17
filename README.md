@@ -155,3 +155,4 @@ https://github.com/eskezje/useplatformtick-research
 https://x.com/BEYONDPERF_LLG  
 https://forums.mydigitallife.net/threads/repo-windows-10-telemetry-repository.63874/page-66#post-1686849  
 https://github.com/jadenkiu/revert-windows-11-emojis  
+https://github.com/Duckleeng/DWMEnableMMCSS  
