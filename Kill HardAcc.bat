@@ -432,7 +432,7 @@ wmic process where name="winlogon.exe" CALL setpriority 64
 wmic process where name="WmiPrvSvc.exe" CALL terminate
 ::powershell -Command "Stop-Process -Name 'Adobe Crash Processor' -Force"
 ::powershell -Command "(Get-Process -Name 'ctfmon').PriorityClass = 'BelowNormal'"
-powershell -NoProfile -Command "$p = Get-Process audiodg -ErrorAction SilentlyContinue; if ($p) { $p.ProcessorAffinity = 1 }"
+::powershell -NoProfile -Command "$p = Get-Process audiodg -ErrorAction SilentlyContinue; if ($p) { $p.ProcessorAffinity = 1 }"
 taskkill /f /t /im MoUsoCoreWorker.exe
 taskkill /f /t /im RuntimeBroker.exe
 taskkill /f /t /im UserOOBEBroker.exe
@@ -567,6 +567,7 @@ reg delete "HKLM\SOFTWARE\Microsoft\FTH\State" /va /f
 winget uninstall "windows web experience pack" --disable-interactivity --accept-source-agreements
 winget uninstall --id Microsoft.WindowsWebExperiencePack  --disable-interactivity --accept-source-agreements
 taskkill /f /t /im node.exe
+taskkill /f /t /im upfc.exe
 taskkill /f /t /im powershell.exe
 taskkill /f /t /im Taskmgr.exe
 taskkill /f /t /im taskhostw.exe
