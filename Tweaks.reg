@@ -257,19 +257,22 @@ Windows Registry Editor Version 5.00
 "EnableMCA"=dword:00000000
 "EnableMCE"=dword:00000000
 "EnableTimerWatchdog"=dword:00000000
-"HeapDeCommitFreeBlockThreshold"=dword:00000000 ; 00000000/00002000/00000800
-"HeapDeCommitTotalFreeThreshold"=dword:00000000 ; 00000000/00020000/00008000
-"HeapSegmentCommit"=dword:00000000 ; 00000000/00004000/00001000
-"HeapSegmentReserve"=dword:00000000 ; 00000000/00200000/00080000
+"HeapDeCommitFreeBlockThreshold"=dword:00001000 ; 00001000, 00000000/00000800/00002000/00010000
+"HeapDeCommitTotalFreeThreshold"=dword:00020000 ; 00010000, 00000000/00008000/00020000
+"HeapSegmentCommit"=dword:00004000 ; 00002000, 00000000/00001000/00004000
+"HeapSegmentReserve"=dword:00200000 ; 00100000, 00000000/00080000/00200000
 "ImageExecutionOptions"=dword:00000000 ; 00000000, 00000001
 "ObjectSecurityMode"=dword:00000001 ; 00000000/00000001
 "ProtectionMode"=dword:00000000 ; =-, 00000000 security option for anticheats
 "SafeDllSearchMode"=dword:00000000 ; 00000000/00000001
 "SafeProcessSearchMode"=dword:00000000
 
-; breaks opengl apps and prevents windows update from downloading optional driver updates
-; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Segment Heap]
-; "Enabled"=dword:00000001 ; 00000000/00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Segment Heap]
+"Enabled"=dword:00000001 ; 00000000/00000001
+"HeapSegmentReserve"=dword:00200000
+"HeapSegmentCommit"=dword:00004000
+"HeapDeCommitTotalFreeThreshold"=dword:00020000
+"HeapDeCommitFreeBlockThreshold"=dword:00001000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 "AdditionalClockTicksInProcessor"=dword:99999999
@@ -10184,7 +10187,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Shell\USB]
 "NotifyOnWeakCharger"=dword:00000000
-	
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HidUsb]
 "IdleEnabled"=dword:00000000
 
@@ -11847,6 +11850,9 @@ Windows Registry Editor Version 5.00
 "UseLargePages"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe]
 "UseLargePages"=dword:00000001
+; "FrontEndHeapDebugOptions"=dword:00000004 ; excludes the process from segment heap globally
+; "FrontEndHeapDebugOptions"=dword:00000008 ; forces the process to use low fragmentation heap, even if segment heap is disabled
+; "UseSegmentHeap"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\witcher3.exe\PerfOptions]
 "CpuPriorityClass"=dword:00000006
