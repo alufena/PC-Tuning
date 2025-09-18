@@ -500,6 +500,7 @@ Windows Registry Editor Version 5.00
 "DIRECT_CPU"="1"
 "DIRECT_GPU"="1"
 "DISABLE_CPU_PARKING"="1"
+"DISABLE_CORE_PARKING"="1"
 "DISABLE_DYNAMIC_FPS"="1"
 "DISABLE_DYNAMIC_TICK"="1"
 "DisableFullScreenOptimizations"=dword:00000001
@@ -1209,6 +1210,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\stornvme\Parameters\Device]
 "IdlePowerMode"=dword:00000000
 "IoTimeoutValue"=dword:000001f4
+"DeviceQueueDepth"=dword:00000008 ; 00000020, 00000001/00000008
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\iaStor\Parameters\Port0]
 "LPM"=dword:00000000
@@ -1464,6 +1466,7 @@ Windows Registry Editor Version 5.00
 "MaxPerformance"=dword:00000064
 "MaxPerformance1"=dword:00000064
 "PerfEnergyPreference"=dword:00000000
+"PerfEnergyPreference1"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Processor]
 "AllowPepPerfStates"=dword:00000000
@@ -2382,7 +2385,7 @@ Windows Registry Editor Version 5.00
 "RMLpwrMsIdleThresholdUs"=dword:00000001
 "RmMIONoPowerOff"=dword:00000001
 "RMOPSB"=dword:00002aa2
-"RMPcieLinkSpeed"=dword:00000003 ; 00000003/00000004/00000010
+"RMPcieLinkSpeed"=dword:00000003 ; 00000003 pcie 3.0/00000004/00000010
 "RmPerfRatedTdpLimit"=dword:00000000
 "RmPowerFeature"=dword:00000040 ;00000040/544a63f5/54455555/55443355/944555a0
 "RmPowerFeature2"=dword:05555555 ; 05555555/55443355/555556a6
@@ -2566,7 +2569,7 @@ Windows Registry Editor Version 5.00
 "RMAllowECCPageRetirementSLI"=dword:00000000
 "RMAsrWakeup"=dword:00000000
 "RMAssertOnEccErrors"=dword:00000000
-"RMBandwidthFeature"=dword:00208884
+"RMBandwidthFeature"=dword:00208884 ; 00208884/51044414
 "RMBandwidthFeature2"=dword:00000001
 "RMBlcg"=dword:11111111
 "RmBreak"=dword:00000000
@@ -2654,7 +2657,7 @@ Windows Registry Editor Version 5.00
 "RMPcieLtrOverride"=dword:00000002
 "RmPerfCfOverride"=dword:00000000 ; 00000000/00000001
 "RmPerfCfPolicyOverrides"=dword:00000000 ; 00000000/00000003
-"RmPerfLimitsOverride"=dword:00000000 ; 00000000/0000000f
+"RmPerfLimitsOverride"=dword:00000000 ; 00000000/0000000f/00000016
 "RmPerfRatedTdpLimit"=dword:00000000
 "RmPgCtrlDiParameters"=dword:00000015
 "RmPgCtrlGrParameters"=dword:55555555
@@ -2719,6 +2722,14 @@ Windows Registry Editor Version 5.00
 "RmPerPllProgramming"=dword:00000000
 "RmGpsPreferIntrinsicFuncs"=dword:00000001
 "DISABLE_DSC"=dword:00000001
+"RMUcodeEncryption"=dword:00015555
+"RMAERRForceDisable"=dword:00000001
+"RMDisableRCOnDBE"=dword:00000001
+"RM1441072"=dword:00000001
+"RMAERRHandling"=dword:00000000
+"RMChkSuppl200405980Driv"=dword:13deed31
+"RmBootFromHs"=dword:000000c0
+; "RmPmuBootstrapMode"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global\NvBackend]
 "DisableThreadedOptimization"=dword:00000000 ; 00000000/00000001
@@ -5922,7 +5933,7 @@ Windows Registry Editor Version 5.00
 "Type"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\CDPSvc]
-"Start"=dword:00000004 ; night light
+"Start"=dword:00000004 ; night light and breaks display settings
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\AarSvc]
 "Start"=dword:00000004 ; 00000003, 00000004
@@ -6044,8 +6055,8 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000004 ; 00000003, 00000004
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\svsvc]
 "Start"=dword:00000004 ; 00000003, 00000004
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\swprv]
-"Start"=dword:00000004 ; 00000003, 00000004
+; [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\swprv]
+; "Start"=dword:00000003 ; 00000003, 00000004 system restore
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\TieringEngineService]
 "Start"=dword:00000004 ; 00000003, 00000004
 ; [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\TimeBrokerSvc]
@@ -6054,8 +6065,8 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000004 ; 00000003, 00000004
 ; [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VaultSvc]
 ; "Start"=dword:00000003 ; 00000003, 00000004
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VSS]
-"Start"=dword:00000004 ; 00000003, 00000004
+; [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VSS]
+; "Start"=dword:00000003 ; 00000003, 00000004 system restore
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\WalletService]
 "Start"=dword:00000004 ; 00000003, 00000004
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\WarpJITSvc]
@@ -6438,6 +6449,12 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Gwx]
 "DisableGwx"=dword:00000001
+
+; [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\System]
+; "DisableLockWorkstation"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Classes\ms-officeapp\Shell\Open\Command]
+@="rundll32"
 
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\SideBySide\Configuration]
 "CBSLogCompress"=dword:00000001
