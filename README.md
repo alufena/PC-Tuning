@@ -156,3 +156,4 @@ https://x.com/BEYONDPERF_LLG
 https://forums.mydigitallife.net/threads/repo-windows-10-telemetry-repository.63874/page-66#post-1686849  
 https://github.com/jadenkiu/revert-windows-11-emojis  
 https://github.com/Duckleeng/DWMEnableMMCSS  
+https://cryptpad.fr/pad/#/2/pad/view/7qhwcrrOLFJCmptks7PnZn1YgS5QHULwLLzuPk8+Q7Q/embed  
