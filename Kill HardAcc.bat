@@ -390,7 +390,7 @@ bcdedit /set sos No
 bcdedit /timeout 0
 ::bcdedit /deletevalue timeout
 ::bcdedit /set pciexpress ForceDisable
-bcdedit /deletevalue pciexpress
+::bcdedit /deletevalue pciexpress
 ::bcdedit /set disabledynamicparks yes
 bcdedit /set disablecoalescing yes
 bcdedit /set restrictapicluster 0
@@ -566,10 +566,12 @@ reg delete "HKLM\SOFTWARE\Microsoft\FTH\State" /va /f
 ::timeout /t 8 /nobreak
 winget uninstall "windows web experience pack" --disable-interactivity --accept-source-agreements
 winget uninstall --id Microsoft.WindowsWebExperiencePack  --disable-interactivity --accept-source-agreements
+rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 132 %windir%\inf\input.inf
 taskkill /f /t /im node.exe
 taskkill /f /t /im upfc.exe
 taskkill /f /t /im powershell.exe
 taskkill /f /t /im Taskmgr.exe
+taskkill /f /t /im TrustedInstaller.exe
 taskkill /f /t /im taskhostw.exe
 taskkill /f /t /im OpenConsole.exe
 taskkill /f /t /im WindowsTerminal.exe
