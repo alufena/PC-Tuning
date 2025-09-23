@@ -244,6 +244,7 @@ Windows Registry Editor Version 5.00
 ; "WorkingSetMaxSize"=dword:ffffffff
 ; "WorkingSetMinSize"=dword:ffffffff
 "WriteWatch"=dword:00000000
+"OverlayTestMode"=dword:00000005
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager]
 "AllowProtectedRenames"="0"
@@ -462,6 +463,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM]
 "InterruptSteeringDisabled"=dword:00000001
 "UseLargePages"=dword:00000001
+"OverlayTestMode"=dword:00000005
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Kernel DMA Protection]
 "DeviceEnumerationPolicy"=dword:00000000
@@ -1306,7 +1308,7 @@ Windows Registry Editor Version 5.00
 "EnableIdleStates"=dword:00000000
 "EnergyEstimationDisabled"=dword:00000001
 "EnergyEstimationEnabled"=dword:00000000
-"EnergySaverPolicy"=dword:00000001
+"EnergySaverPolicy"=dword:00000001 ; 00000001/00000002
 "EnergySaverState"=dword:00000002
 "EnergySaverStatus"=dword:00000000
 "EventProcessorEnabled"=dword:00000000 ; 00000000/00000001
@@ -1992,7 +1994,7 @@ Windows Registry Editor Version 5.00
 "DisableDwmVSync"=dword:00000001
 "DisableDynamicPstate"=dword:00000000 ; 00000000/00000001
 "DisableGDIAcceleration"=dword:00000000
-"DisableGdiContextGpuVa"=dword:00000001
+"DisableGdiContextGpuVa"=dword:00000001 ; 00000000/00000001
 "DisableGpuTimeoutDetection"=dword:00000001
 "DisableIndependentVidPnVSync"=dword:00000001
 "DisableKmRender"=dword:00000000
@@ -2008,7 +2010,7 @@ Windows Registry Editor Version 5.00
 "DisablePreemption"=dword:00000000 ; 00000000/00000001
 "DisablePreemptionOnS3S4"=dword:00000000 ; 00000000/00000001
 "DisableSecondaryIFlipSupport"=dword:00000000 ; 00000000/00000001
-"DisableVaBackedVm"=dword:00000000
+"DisableVaBackedVm"=dword:00000000 ; 00000000/00000001
 "DisableVersionMismatchCheck"=dword:00000000 ; 00000000/00000001
 "DisableVerticalBlankInterrupts"=dword:00000001
 "DisableWriteCombining"=dword:00000001 ; 00000000/00000001
@@ -2741,7 +2743,7 @@ Windows Registry Editor Version 5.00
 ; "RmPmuBootstrapMode"=dword:00000003
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\NVIDIA Corporation\Global\NvBackend]
-"DisableThreadedOptimization"=dword:00000001 ; 00000000/00000001
+"DisableThreadedOptimization"=dword:00000000 ; 00000000/00000001
 "LowLatencyMode"=dword:00000001
 "OptimizePerf"=dword:00000001
 
@@ -3820,9 +3822,6 @@ Windows Registry Editor Version 5.00
 "DisableSR"=-
 "DisableConfig"=-
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Policies\Microsoft\FeatureManagement\Overrides]
-"4011992206"=dword:00000002
-
 [HKEY_CURRENT_USER\Software\Microsoft\input]
 "IsInputAppPreloadEnabled"=dword:00000000
 
@@ -4066,6 +4065,12 @@ Windows Registry Editor Version 5.00
 "debugger"="C:\\Windows\\System32\\systray.exe"
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\msedgewebview2.exe]
 "debugger"="C:\\Windows\\System32\\systray.exe"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\CrashReportClient.exe]
+"debugger"="C:\\Windows\\System32\\systray.exe"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\crashhelper.exe]
+"debugger"="C:\\Windows\\System32\\systray.exe"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\UnityCrashHandler64.exe]
+"debugger"="C:\\Windows\\System32\\systray.exe"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun]
 "1"="wlms.exe"
@@ -4080,6 +4085,9 @@ Windows Registry Editor Version 5.00
 "10"="CrossDeviceResume.exe"
 "11"="mobsync.exe"
 "12"="msedgewebview2.exe"
+"13"="CrashReportClient.exe"
+"14"="crashhelper.exe"
+"15"="UnityCrashHandler64.exe"
 
 [HKEY_LOCAL_MACHINE\System\ControlSet001\Control\FeatureManagement\Overrides\8\1387020943]
 "EnabledStateOptions"=dword:00000000
@@ -4094,6 +4102,9 @@ Windows Registry Editor Version 5.00
 "Variant"=dword:00000000
 "VariantPayload"=dword:00000000
 "VariantPayloadKind"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Policies\Microsoft\FeatureManagement\Overrides]
+"4011992206"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WDI\{9c5a40da-b965-4fc3-8781-88dd50a6299d}]
 "ScenarioExecutionEnabled"=dword:00000000
@@ -5406,10 +5417,10 @@ Windows Registry Editor Version 5.00
 "RawMouseThrottleEnabled"=dword:00000001 ; 00000000/00000001
 "RawMouseThrottleForced"=dword:00000001 ; 00000000/00000001
 "RawMouseThrottleLeeway"=dword:00000000
-"SmoothMouseXCurve"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
-; "SmoothMouseXCurve"=hex:00,00,00,00,00,00,00,00,15,6e,00,00,00,00,00,00,00,40,01,00,00,00,00,00,29,dc,03,00,00,00,00,00,00,00,28,00,00,00,00,00
-"SmoothMouseYCurve"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
-; "SmoothMouseYCurve"=hex:00,00,00,00,00,00,00,00,fd,11,01,00,00,00,00,00,00,24,04,00,00,00,00,00,00,fc,12,00,00,00,00,00,00,c0,bb,01,00,00,00,00
+; "SmoothMouseXCurve"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+"SmoothMouseXCurve"=hex:00,00,00,00,00,00,00,00,15,6e,00,00,00,00,00,00,00,40,01,00,00,00,00,00,29,dc,03,00,00,00,00,00,00,00,28,00,00,00,00,00
+; "SmoothMouseYCurve"=hex:00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+"SmoothMouseYCurve"=hex:00,00,00,00,00,00,00,00,fd,11,01,00,00,00,00,00,00,24,04,00,00,00,00,00,00,fc,12,00,00,00,00,00,00,c0,bb,01,00,00,00,00
 "SnapToDefaultButton"="0"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Paint]
@@ -5948,7 +5959,7 @@ Windows Registry Editor Version 5.00
 "Type"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\CDPSvc]
-"Start"=dword:00000004
+"Start"=dword:00000004 ; night light
 
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\AarSvc]
 "Start"=dword:00000004 ; 00000003, 00000004
@@ -6985,7 +6996,7 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\AllowUserToResetPhone]
 "value"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\DisableDirectXDatabaseUpdate]
-"value"=dword:00000001
+"value"=dword:00000000 ; 00000000/00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\DisableOneSettingsDownloads]
 "value"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\EnableOneSettingsAuditing]
@@ -7097,20 +7108,24 @@ Windows Registry Editor Version 5.00
 "EnableDeviceHealthAttestationService"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\VideoSettings]
-"DisableHDROnBattery"=dword:00000001
-"EnableAutoEnhanceDuringPlayback"=dword:00000000
-"EnableHDRForPlayback"=dword:00000001
-"EnableOutsideModeFeature"=dword:00000000
-"VideoQualityOnBattery"=dword:00000001
+"DisableHDROnBattery"=dword:00000000 ; 00000000/00000001
+"EnableAutoEnhanceDuringPlayback"=dword:00000001 ; 00000000/00000001
+"EnableHDRForPlayback"=dword:00000000 ; 00000000/00000001
+"EnableOutsideModeFeature"=dword:00000001 ; 00000000/00000001
+"VideoQualityOnBattery"=dword:00000000; 00000000/00000001
+"AllowLowResolution"=dword:00000000
+"DecreaseResolutionOnBattery"=dword:00000000
+"DisableAutoLightingOnBattery"=dword:00000000
+"DisableOtherEnhancementsOnBattery"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Audio]
 "DisableProtectedAudioDG"=dword:00000001
 "PerformanceIdleTime"=dword:00000000
 "MMCSSPriority"=dword:00000006
 "SystemResponsiveness"=dword:0000000a
-; "DisableSpatialOnComboEndpoints"=dword:00000000 ; 00000000, 00000001
-; "EnableCaptureMonitor"=dword:00000001 ; 00000000, 00000001
-; "EnableLogonHIDControls"=dword:00000001 ; 00000000, 00000001
+"DisableSpatialOnComboEndpoints"=dword:00000000 ; 00000000, 00000001
+"EnableCaptureMonitor"=dword:00000001 ; 00000000, 00000001
+"EnableLogonHIDControls"=dword:00000001 ; 00000000, 00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\iSCSI]
 "RestrictAdditionalLogins"=dword:00000001
@@ -7288,7 +7303,7 @@ Windows Registry Editor Version 5.00
 "URL Protocol"=""
 "NoOpenWith"=""
 [HKEY_CLASSES_ROOT\ms-gamebarservices\shell\open\command]
-@="\\$env:SystemRoot\\System32\\systray.exe\" "
+@="\\$env:SystemRoot\\System32\\systray.exe\""
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]
 "ActiveHoursEnd"=dword:0000000a
@@ -7416,13 +7431,15 @@ Windows Registry Editor Version 5.00
 "SCRNSAVE.EXE"=-
 "SmoothScroll"=dword:00000000
 "SnapSizing"="0"
-"UserPreferencesMask"=hex:90,12,03,80,10,01,00,00
+"UserPreferencesMask"=hex:90,12,02,80,10,01,00,00
 "WaitToKillAppTimeout"="1000"
 "WaitToKillServiceTimeout"="1000"
 "Win8DpiScaling"=dword:00000000 ; 00000000/00000001
 "WindowArrangementActive"="0"
 "ScreenSaveActive"="0"
 "ScreenSaveTimeOut"="0"
+"WheelScrollChars"="7"
+"WheelScrollLines"="7" ; 3, -3/7
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TSFairShare\NetFS]
 "EnableFairShare"=dword:00000000
@@ -9640,6 +9657,16 @@ Windows Registry Editor Version 5.00
 "BounceTime"="0"
 "DelayBeforeAcceptance"="0"
 "Flags"="58" ; 58/59
+"Last BounceKey Setting"=dword:00000000
+"Input_Delay"=dword:00000ffe
+"Input_Shaw2"=dword:000007dd
+"Keyboard_Input"=dword:00007fff
+"On"=dword:00000001
+"Shaw_Delay"=dword:0000edd3
+"Shaw_KeyboardRepeat"=dword:0000edd4
+"TCMinput"=dword:000000ff
+"Teclado_DelayRepeat"=dword:0000dde4
+"Wsa_D3s"=dword:00000000
 
 [HKEY_CURRENT_USER\Control Panel\Keyboard]
 "InitialKeyboardIndicators"=dword:00000002
@@ -9692,7 +9719,6 @@ Windows Registry Editor Version 5.00
 "DisableSearchBoxSuggestions"=dword:00000001
 "HasAboveLockTips"=dword:00000000
 "HistoryViewEnabled"=dword:00000000
-"ImmersiveSearch"=-
 "ImmersiveSearch"=dword:00000000
 "IsAssignedAccess"=dword:00000000
 "IsMicrophoneAvailable"=dword:00000000
@@ -11624,6 +11650,10 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
+
+[-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\CloudStore\Store\DefaultAccount\Current\default$windows.data.bluelightreduction.bluelightreductionstate]
+
+[-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\CloudStore\Store\DefaultAccount\Current\default$windows.data.bluelightreduction.settings]
 
 [-HKEY_USERS\.DEFAULT\Keyboard Layout\Substitutes]
 
@@ -14283,7 +14313,7 @@ Windows Registry Editor Version 5.00
 "Version"="1.0"
 
 ; network (nic)
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0002]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}\0000]
 "AdvancedEEE"="0"
 "AllowAllSpeedsLPLU"="0"
 "ASPM"="0"
