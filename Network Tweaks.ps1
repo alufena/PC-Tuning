@@ -1,62 +1,44 @@
 netsh advfirewall firewall set rule group="Network Discovery" new enable=No
+Set-NetFirewallRule -Group '*-32752*' -Enabled 'False'
+Get-NetFirewallRule -Group '*-32752*' | Where-Object 'Profile' -Match 'Public' | Set-NetFirewallRule -Enabled 'False'
+Get-NetFirewallRule -Group '*-32752*' | Where-Object 'Profile' -Match 'Private' | Set-NetFirewallRule -Enabled 'False'
+Get-NetFirewallRule -Group '*-32752*' | Where-Object 'Profile' -Match 'Domain' | Set-NetFirewallRule -Enabled 'False'
 netsh int 6to4 set state disabled
 netsh int ip set global loopbackworkercount=16
 netsh int ip set global neighborcachelimit=4096
-# netsh int ip set global taskoffload=disabled
-netsh int ip set global taskoffload=enabled
-# netsh int ip set interface ethernet currenthoplimit=0
-netsh int ip set interface ethernet currenthoplimit=64
-# netsh int ip set interface ethernet currenthoplimit=128
+netsh int ip set global taskoffload=enabled # disabled/enabled
+netsh int ip set interface ethernet currenthoplimit=64 # 0/40/64/128
+netsh int ipv4 set glob defaultcurhoplimit=64
+netsh int ipv6 set glob defaultcurhoplimit=64
 netsh int isatap set state disabled
-# netsh int tcp set global autotuninglevel=disabled
-# netsh int tcp set global autotuninglevel=experimental # breaks windows update
-netsh int tcp set global autotuninglevel=normal
+netsh int tcp set global autotuninglevel=normal # disabled/normal
 netsh int tcp set global chimney=disabled
-# netsh int tcp set global congestionprovider=cubic
-# netsh int tcp set global congestionprovider=default
-# netsh int tcp set global congestionprovider=ctcp
-netsh int tcp set global congestionprovider=dctcp
-netsh int tcp set global dca=disabled
-# netsh int tcp set global dca=enabled
-#netsh int tcp set global ecncapability=disabled
-netsh int tcp set global ecncapability=enabled
+netsh int tcp set global congestionprovider=dctcp # cubic/default/ctcp/dctcp
+netsh int tcp set global dca=disabled # disabled/enabled
+netsh int tcp set global ecncapability=enabled # disabled/enabled 
 netsh int tcp set global fastopen=enabled
 netsh int tcp set global fastopenfallback=enabled
-netsh int tcp set global hystart=disabled
-# netsh int tcp set global hystart=enabled
-# netsh int tcp set global initialRto=300
-netsh int tcp set global initialRto=2000
-# netsh int tcp set global initialRto=3000
-# netsh int tcp set global maxsynretransmissions=2
-netsh int tcp set global maxsynretransmissions=3
-# netsh int tcp set global maxsynretransmissions=4
+netsh int tcp set global hystart=disabled # disabled/enabled
+netsh int tcp set global initialRto=2000 # 300/2000/3000
+netsh int tcp set global maxsynretransmissions=3 # 2/3/4
 netsh int tcp set global netdma=enabled
 netsh int tcp set global nonsackrttresiliency=disabled
-netsh int tcp set global pacingprofile=always
-# netsh int tcp set global pacingprofile=off
-netsh int tcp set global prr=disabled
-# netsh int tcp set global prr=enabled
-netsh int tcp set global rsc=disabled
-# netsh int tcp set global rsc=enabled
+netsh int tcp set global pacingprofile=always # off/always
+netsh int tcp set global prr=disabled # disabled/enabled
+netsh int tcp set global rsc=disabled # disabled/enabled
 netsh int tcp set global rss=enabled
-netsh int tcp set global timestamps=disabled
-# netsh int tcp set global timestamps=enabled
+netsh int tcp set global timestamps=disabled # disabled/enabled
 netsh int tcp set heuristics wsh=disabled forcews=enabled
 netsh int tcp set security mpp=disabled
 netsh int tcp set security profiles=disabled
-# netsh int tcp set supplemental internet congestionprovider=ctcp
-# netsh int tcp set supplemental internet congestionprovider=cubic
-netsh int tcp set supplemental internet congestionprovider=dctcp
-# netsh int tcp set supplemental internet congestionprovider=newreno
+netsh int tcp set supplemental internet congestionprovider=dctcp # cubic/newreno/ctcp/dctcp
 netsh int tcp set supplemental internet enablecwndrestart=enabled
-# netsh int tcp set supplemental template=custom icw=2
-netsh int tcp set supplemental template=custom icw=10
+netsh int tcp set supplemental template=custom icw=10 # 2/10
 netsh int teredo set state disabled
 netsh int udp set global uro=disabled
 netsh int udp set global uso=disabled
 netsh winsock set autotuning on
 
-# netsh interface tcp set supplemental template=automatic congestionprovider=ctcp
 netsh interface tcp set supplemental template=automatic congestionprovider=dctcp
 netsh interface tcp set supplemental template=automatic delayedackfrequency=1
 netsh interface tcp set supplemental template=automatic delayedacktimeout=10
@@ -66,7 +48,6 @@ netsh interface tcp set supplemental template=automatic minrto=300
 netsh interface tcp set supplemental template=automatic rack=enabled
 netsh interface tcp set supplemental template=automatic taillossprobe=enabled
 
-# netsh interface tcp set supplemental template=datacenter congestionprovider=ctcp
 netsh interface tcp set supplemental template=datacenter congestionprovider=dctcp
 netsh interface tcp set supplemental template=datacenter delayedackfrequency=1
 netsh interface tcp set supplemental template=datacenter delayedacktimeout=10
@@ -76,7 +57,6 @@ netsh interface tcp set supplemental template=datacenter minrto=300
 netsh interface tcp set supplemental template=datacenter rack=enabled
 netsh interface tcp set supplemental template=datacenter taillossprobe=enabled
 
-# netsh interface tcp set supplemental template=internet congestionprovider=ctcp
 netsh interface tcp set supplemental template=internet congestionprovider=dctcp
 netsh interface tcp set supplemental template=internet delayedackfrequency=1
 netsh interface tcp set supplemental template=internet delayedacktimeout=10
@@ -86,7 +66,6 @@ netsh interface tcp set supplemental template=internet minrto=300
 netsh interface tcp set supplemental template=internet rack=enabled
 netsh interface tcp set supplemental template=internet taillossprobe=enabled
 
-# netsh interface tcp set supplemental template=compat congestionprovider=ctcp
 netsh interface tcp set supplemental template=compat congestionprovider=dctcp
 netsh interface tcp set supplemental template=compat delayedackfrequency=1
 netsh interface tcp set supplemental template=compat delayedacktimeout=10
@@ -96,7 +75,6 @@ netsh interface tcp set supplemental template=compat minrto=300
 netsh interface tcp set supplemental template=compat rack=enabled
 netsh interface tcp set supplemental template=compat taillossprobe=enabled
 
-# netsh interface tcp set supplemental template=custom congestionprovider=ctcp
 netsh interface tcp set supplemental template=custom congestionprovider=dctcp
 netsh interface tcp set supplemental template=custom delayedackfrequency=1
 netsh interface tcp set supplemental template=custom delayedacktimeout=10
@@ -106,12 +84,7 @@ netsh interface tcp set supplemental template=custom minrto=300
 netsh interface tcp set supplemental template=custom rack=enabled
 netsh interface tcp set supplemental template=custom taillossprobe=enabled
 
-# netsh int tcp set supplemental Template=InternetCustom CongestionProvider=bbr2
-# netsh int tcp set supplemental Template=InternetCustom CongestionProvider=BBR # w11 only
-# netsh int tcp set supplemental Template=InternetCustom CongestionProvider=ctcp
-# netsh int tcp set supplemental Template=InternetCustom CongestionProvider=cubic
-netsh int tcp set supplemental Template=InternetCustom CongestionProvider=dctcp
-# netsh int tcp set supplemental Template=InternetCustom CongestionProvider=NewReno
+netsh int tcp set supplemental Template=InternetCustom CongestionProvider=dctcp # cubic/bbr2/BBR/ctcp/dctcp/NewReno
 
 Disable-NetAdapterBinding -Name "*" -ComponentId 'ms_implat'
 Disable-NetAdapterBinding -Name "*" -ComponentId 'ms_lldp'
