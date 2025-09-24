@@ -1966,7 +1966,7 @@ Windows Registry Editor Version 5.00
 "AllowAdvancedEtwLogging"=dword:00000000
 "AllowDeepCStates"=dword:00000000
 "BuffersInFlight"=dword:00001000 ; 00001000/00000080
-"CABCOption"=dword:00000002
+"CABCOption"=dword:00000000 ; 00000000/00000002
 "CddBootImageMode"=dword:00000000
 "CddBootScreenMode"=dword:00000000
 "ComputePreemption"=dword:00000001 ; 00000000/00000001
@@ -3339,6 +3339,13 @@ Windows Registry Editor Version 5.00
 "WaitForNetwork"=dword:00000000
 "WinStationsDisabled"="1"
 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"RestartApps"=dword:00000000
+"EnableGoodbye"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\PassportForWork\DynamicLock]
+"DynamicLock"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EventLog\ProtectedEventLogging]
 "EnableProtectedEventLogging"=dword:00000000
 
@@ -3401,6 +3408,8 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Settings\OnlineSpeechPrivacy]
 "HasAccepted"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Settings\OnlineSpeechLogging]
+"LoggingAllowed"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Preferences]
 "VoiceActivationOn"=dword:00000000
@@ -3494,6 +3503,7 @@ Windows Registry Editor Version 5.00
 "UploadUserActivities"=dword:00000000
 "WaitForNetwork"=dword:00000000
 "DontDisplayNetworkSelectionUI"=dword:00000001
+"AllowUserInfoAccess"=dword:00000002
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\System]
 "DisableLockScreenAppNotifications"=dword:00000001
@@ -3818,9 +3828,11 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore]
 "DisableSR"=-
 "DisableConfig"=-
+"RPSessionInterval"=dword:00000000 ; 00000001, 00000000
 [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\SystemRestore]
 "DisableSR"=-
 "DisableConfig"=-
+"RPSessionInterval"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\input]
 "IsInputAppPreloadEnabled"=dword:00000000
@@ -3850,7 +3862,7 @@ Windows Registry Editor Version 5.00
 "HideRecentlyAddedApps"=dword:00000001
 "HideRecommendedPersonalizedSites"=dword:00000001
 "HideRecommendedSection"=dword:00000001
-"HideTaskViewButton"=dword:00000000
+"HideTaskViewButton"=dword:00000001
 "LockedStartLayout"=dword:00000000
 "MultiTaskingAltTabFilter"=dword:00000003
 "NoAutoplayfornonVolume"=dword:00000001
@@ -3992,12 +4004,20 @@ Windows Registry Editor Version 5.00
 "SaveZoneInformation"=dword:00000001
 "ScanWithAntiVirus"=dword:00000000
 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PushNotifications]
+"LockScreenToastEnabled"=dword:00000000
+; "ToastEnabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SystemSettings\AccountNotifications]
+"EnableAccountNotifications"=dword:00000000
+
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings]
 "AutoOpenCopilotLargeScreens"=dword:00000000
 "NOC_GLOBAL_SETTING_TOASTS_ENABLED"=dword:00000000
 "NOC_GLOBAL_SETTING_ALLOW_NOTIFICATION_SOUND"=dword:00000000
 "NOC_GLOBAL_SETTING_ALLOW_CRITICAL_TOASTS_ABOVE_LOCK"=dword:00000000
 "NOC_GLOBAL_SETTING_ALLOW_TOASTS_ABOVE_LOCK"=dword:00000000
+; "NoToastApplicationNotification"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\FTP]
 "Use PASV"="no"
@@ -4033,6 +4053,10 @@ Windows Registry Editor Version 5.00
 "DisableUAR"=dword:00000001
 "SbEnable"=dword:00000000
 "VDMDisallowed"=dword:00000001
+"DisableAPISamping"=dword:00000001
+"DisableApplicationFootprint"=dword:00000001
+"DisableWin32AppBackup"=dword:00000001
+"DisableInstallTracing"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\AppCompat]
 "AITEnable"=dword:00000000 
@@ -5454,80 +5478,7 @@ Windows Registry Editor Version 5.00
 "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\MDCoreSvc]
 "Start"=dword:00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Circular Kernel Context Logger]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\AppModel]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\SQMLogger]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Diagtrack-Listener]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\AutoLogger-Diagtrack-Listener]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\DiagLog]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\DefenderAuditLogger]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\DefenderApiLogger]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Cellcore]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\CloudExperienceHostOobe]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\DataMarket]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\HolographicDevice]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\iclsClient]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\iclsProxy]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\LwtNetLog]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Mellanox-Kernel]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Microsoft-Windows-AssignedAccess-Trace]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Microsoft-Windows-Setup]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\NBSMBLOGGER]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\PEAuthLog]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\RdrLog]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\ReadyBoot]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\SetupPlatform]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\SetupPlatformTel]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\SocketHeciServer]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\SpoolerLogger]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\TCPIPLOGGER]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\TileStore]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Tpm]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\TPMProvisioningService]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\UBPM]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\WdiContextLog]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\WFP-IPsec Trace]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\WiFiDriverIHVSession]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\WiFiDriverIHVSessionRepro]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\WiFiSession]
-"Start"=dword:00000004 ; 00000000/00000004
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\WinPhoneCritical]
-"Start"=dword:00000004 ; 00000000/00000004
+
 ; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Appinfo]
 ; "Start"=dword:00000004
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\bam]
@@ -6168,6 +6119,92 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WUDFRd]
 "Start"=dword:00000004 ; 00000003/00000004
 
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Diagtrack-Listener\{FBDC4594-A4A9-5F04-AF86-7BD18A7938B9}]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Circular Kernel Context Logger]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\AppModel]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\SQMLogger]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Diagtrack-Listener]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\AutoLogger-Diagtrack-Listener]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\DiagLog]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\DefenderAuditLogger]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\Autologger\DefenderApiLogger]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Cellcore]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\CloudExperienceHostOobe]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\DataMarket]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\HolographicDevice]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\iclsClient]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\iclsProxy]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\LwtNetLog]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Mellanox-Kernel]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Microsoft-Windows-AssignedAccess-Trace]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Microsoft-Windows-Setup]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\NBSMBLOGGER]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\PEAuthLog]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\RdrLog]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\ReadyBoot]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\SetupPlatform]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\SetupPlatformTel]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\SocketHeciServer]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\SpoolerLogger]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\TCPIPLOGGER]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\TileStore]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Tpm]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\TPMProvisioningService]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\UBPM]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\WdiContextLog]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\WFP-IPsec Trace]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\WiFiDriverIHVSession]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\WiFiDriverIHVSessionRepro]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\WiFiSession]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\WinPhoneCritical]
+"Start"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\CimFSUnionFS-Filter]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Microsoft-Windows-Rdp-Graphics-RdpIdd-Trace]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\NetCore]
+"Start"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\RadioMgr]
+"Start"=dword:00000000
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\AUEP]
 "RSX_AUEPStatus"=dword:00000004 ; 00000002/00000004
 
@@ -6244,6 +6281,7 @@ Windows Registry Editor Version 5.00
 "AllowFailFastOnAnyFailure"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ExpandableTaskbar"=dword:00000001
 "IsBatteryPercentageEnabled"=dword:00000000
 "AutoCheckSelect"=dword:00000000
 "AutoSearch"=dword:00000000
@@ -6313,6 +6351,7 @@ Windows Registry Editor Version 5.00
 "WebView"=dword:00000000
 "EnableXamlStartMenu"=dword:00000000
 "ShowInputButton"=dword:00000000
+"ShowNotificationIcon"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "CopyBufferSize"=dword:00100000
@@ -6385,8 +6424,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mouhid\Parameters]
 "LogPages"=dword:00000000
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger\Diagtrack-Listener\{FBDC4594-A4A9-5F04-AF86-7BD18A7938B9}]
-"Start"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\Aggregation\ControlGroups\PwdlessAggregator{fb3cd94d-95ef-5a73-b35c-6c78451095ef}]
 "Enabled"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack\Aggregation\ControlGroups\UpdateHeartbeatScan{025d2741-697b-5e0e-7e77-9a36140251f7}]
@@ -7081,6 +7118,8 @@ Windows Registry Editor Version 5.00
 "value"=dword:00000001
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\System\DisableOneDriveFileSync]
 "value"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Connectivity\AllowBluetooth]
+"value"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\software\policies\microsoft\ime\shared]
 "Enable Cloud Candidate"="0"
@@ -7309,7 +7348,7 @@ Windows Registry Editor Version 5.00
 "ActiveHoursEnd"=dword:0000000a
 "ActiveHoursStart"=dword:00000009
 "AllowAutoWindowsUpdateDownloadOverMeteredNetwork"=dword:00000000
-"AllowMUUpdateService"=dword:00000000 ; 00000000/00000001
+"AllowMUUpdateService"=dword:00000001 ; 00000000/00000001
 "AutoRebootLimitInDays"=dword:0000016d
 "ExcludeWUDriversInQualityUpdate"=dword:00000001 ; 00000000/00000001
 "FlightSettingsMaxPauseDays"=dword:00001c84
@@ -7317,6 +7356,7 @@ Windows Registry Editor Version 5.00
 "IsContinuousInnovationOptedIn"=dword:00000001 ; 00000000/00000001
 "SmartActiveHoursState"=dword:00000000
 "SnoozeRebootHours"=dword:0000ffff
+"IsExpedited"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\StateVariables] 
 "SmartSchedulerPredictedConfidence"=dword:00000050
@@ -7613,9 +7653,20 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Notifications]
 "DisableNotifications"=dword:00000001
 "DisableEnhancedNotifications"=dword:00000001
+"FilesBlockedNotificationDisabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender Security Center\Notifications]
 "DisableNotifications"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows Defender Security Center\Account protection]
+"DisableWindowsHelloNotifications"=dword:00000001
+"DisableNotifications"=dword:00000001
+"DisableDynamiclockNotifications"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender Security Center\Virus and threat protection]
+"SummaryNotificationDisabled"=dword:00000001
+"NoActionNotificationDisabled"=dword:00000001
+"FilesBlockedNotificationDisabled"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Security Center]
 "SecurityCenterInDomain"=dword:00000000
@@ -7870,6 +7921,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Clipboard]
 "CloudClipboardAutomaticUpload"=dword:00000000
+"EnableCloudClipboard"=dword:00000000
 "EnableClipboardHistory"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\SmartActionPlatform\SmartClipboard]
@@ -8998,7 +9050,7 @@ Windows Registry Editor Version 5.00
 "DisableHardwareAcceleration"=dword:00000001
 
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack]
-"ShowedToastAtLevel"=dword:00000001
+"ShowedToastAtLevel"=dword:00000000 ; 00000000 education ltsc or enterprise/00000001 anything else
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsSelfHost\UI\Visibility]
 "DiagnosticErrorText"=-
@@ -9016,8 +9068,8 @@ Windows Registry Editor Version 5.00
 "DoNotShowFeedbackNotifications"=dword:00000001
 "EnableExtendedBooksTelemetry"=dword:00000000
 "LimitDiagnosticLogCollection"=dword:00000001
-"LimitDumpCollection"=dword:00000000
-"MaxTelemetryAllowed"=dword:00000000 ; 00000000 education, ltsc and enterprise/00000001 pro
+"LimitDumpCollection"=dword:00000001 ; 00000000/00000001
+"MaxTelemetryAllowed"=dword:00000000 ; 00000000 education ltsc or enterprise/00000001 anything else
 "MicrosoftEdgeDataOptIn"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\DataCollection]
@@ -9116,10 +9168,11 @@ Windows Registry Editor Version 5.00
 "DoNotShowFeedbackNotifications"=dword:00000001
 "EnableExtendedBooksTelemetry"=dword:00000000
 "LimitDiagnosticLogCollection"=dword:00000001
-"LimitDumpCollection"=dword:00000000
+"LimitDumpCollection"=dword:00000001
 "LimitEnhancedDiagnosticDataWindowsAnalytics"=dword:00000000 ; 00000000/00000001
 "MaxTelemetryAllowed"=dword:00000000
 "MicrosoftEdgeDataOptIn"=dword:00000000
+"AutoConnectAllowedOEM"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Policies\DataCollection]
 "AllowDesktopAnalyticsProcessing"=dword:00000000
@@ -9128,7 +9181,7 @@ Windows Registry Editor Version 5.00
 "AllowWUfBCloudProcessing"=dword:00000000
 "EnableExtendedBooksTelemetry"=dword:00000000
 "LimitDiagnosticLogCollection"=dword:00000001
-"LimitDumpCollection"=dword:00000000
+"LimitDumpCollection"=dword:00000001
 "MaxTelemetryAllowed"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
@@ -9214,6 +9267,7 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PenWorkspace]
 "PenWorkspaceAppSuggestionsEnabled"=dword:00000000
+"PenWorkspaceButtonDesiredVisibility"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Pen]
 "EnableEmbeddedInkControl"=dword:00000000
@@ -9271,6 +9325,9 @@ Windows Registry Editor Version 5.00
 "LetAppsRunInBackground_ForceDenyTheseApps"=-
 "LetAppsRunInBackground_UserInControlOfTheseApps"=-
 "LetAppsSyncWithDevices"=dword:00000002
+
+; [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location]
+; "ShowGlobalPrompts"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers]
 "authenticodeenabled"=dword:00000000
@@ -9345,6 +9402,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Mobility]
 "OptedIn"=dword:00000000
 "CrossDeviceEnabled"=dword:00000000
+"PhoneLinkEnabled"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\software\microsoft\wcmsvc\wifinetworkmanager]
 "wifisensecredshared"=dword:00000000
@@ -9435,6 +9493,7 @@ Windows Registry Editor Version 5.00
 "DoNotUseWebResults"=dword:00000000
 "PreventRemoteQueries"=dword:00000001
 "PreventUnwantedAddIns"=" "
+"SearchOnTaskbarMode"=dword:00000000
 
 [HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Settings\VoiceActivation\Microsoft.549981C3F5F10_8wekyb3d8bbwe!App]
 "AgentActivationEnabled"=dword:00000000
@@ -9452,6 +9511,9 @@ Windows Registry Editor Version 5.00
 "DisableContentFileUpdate"=dword:00000001
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\Global\Startup\SendTelemetryData]
+@="0"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\Global\Startup\SendNonNvDisplayDetails]
 @="0"
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\Global\Startup]
@@ -9570,6 +9632,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CDP\SettingsPage]
 "BluetoothLastDisabledNearShare"=dword:00000000
 "NearShareChannelUserAuthzPolicy"=dword:00000000
+"WifiLastDisabledNearShare"=dword:00000000
+"RomeSdkChannelUserAuthzPolicy"=dword:00000000
 
 [HKEY_CURRENT_USER\Control Panel\Accessibility\SoundSentry]
 "Flags"="0"
@@ -9581,6 +9645,7 @@ Windows Registry Editor Version 5.00
 "DynamicScrollbars"=dword:00000000
 "Sound on Activation"=dword:00000000
 "Warning Sounds"=dword:00000000
+; "MessageDuration"=dword:00000005 ; 00000005, 0000000f
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Accessibility]
 "AnimationFilter"=dword:00000003
@@ -9600,6 +9665,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\PrecisionTouchPad]
 "AAPThreshold"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Touchpad]
+"TouchpadDesiredVisibility"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\OneDrive]
 "DisableFileSyncNGSC"=dword:00000001
@@ -9668,8 +9736,11 @@ Windows Registry Editor Version 5.00
 "Teclado_DelayRepeat"=dword:0000dde4
 "Wsa_D3s"=dword:00000000
 
+[HKEY_USERS\.DEFAULT\Control Panel\Keyboard]
+"InitialKeyboardIndicators"="2"
+
 [HKEY_CURRENT_USER\Control Panel\Keyboard]
-"InitialKeyboardIndicators"=dword:00000002
+"InitialKeyboardIndicators"="2" ; 2/00000002
 "KeyboardSpeed"="31"
 "KeyboardDelay"="0"
 "TypematicDelay"=dword:00000000
@@ -9692,6 +9763,7 @@ Windows Registry Editor Version 5.00
 "IsDeviceSearchHistoryEnabled"=dword:00000000
 "IsDynamicSearchBoxEnabled"=dword:00000000
 "IsGlobalFileSearchProviderToggleEnabled"=dword:00000000
+"IsGlobalWebSearchProviderToggleEnabled"=dword:00000000
 "IsMSACloudSearchEnabled"=dword:00000000
 "SafeSearchMode"=dword:00000000
 
@@ -9700,6 +9772,7 @@ Windows Registry Editor Version 5.00
 "StartAllPinsList"=dword:00000000
 "ShowAllPinsList"=dword:00000001
 "RightCompanionToggledOpen"=dword:00000000
+"ShowFrequentList"=dword:00000000
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Biometrics\FacialFeatures]
 "EnhancedAntiSpoofing"=-
@@ -10049,6 +10122,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Dfrg\BootOptimizeFunction]
 "Enable"="N" ; Y/N
 
+[HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\PhishingFilter]
+"EnabledV9"=dword:00000000
+"PreventOverride"=dword:00000000
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Internet Explorer\PhishingFilter]
 "EnabledV9"=dword:00000000
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\PhishingFilter]
@@ -11651,6 +11727,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
 "FolderType"="NotSpecified"
 
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\PassportForWork\DynamicLock\Plugins]
+
 [-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\CloudStore\Store\DefaultAccount\Current\default$windows.data.bluelightreduction.bluelightreductionstate]
 
 [-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\CloudStore\Store\DefaultAccount\Current\default$windows.data.bluelightreduction.settings]
@@ -11729,7 +11807,7 @@ Windows Registry Editor Version 5.00
 
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MRT.exe]
 
-[-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\SPP\Clients]
+[-HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\SPP\Clients] ; system restore
 
 [-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\BannerStore]
 
