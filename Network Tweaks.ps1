@@ -85,7 +85,6 @@ netsh interface tcp set supplemental template=custom rack=enabled
 netsh interface tcp set supplemental template=custom taillossprobe=enabled
 
 netsh int tcp set supplemental Template=InternetCustom CongestionProvider=dctcp # cubic/bbr2/BBR/ctcp/dctcp/NewReno
-
 Disable-NetAdapterBinding -Name "*" -ComponentId 'ms_implat'
 Disable-NetAdapterBinding -Name "*" -ComponentId 'ms_lldp'
 Disable-NetAdapterBinding -Name "*" -ComponentId 'ms_lltdio'
@@ -102,7 +101,7 @@ Disable-NetAdapterBinding -Name "*" -DisplayName 'Link-Layer Topology Discovery 
 Disable-NetAdapterBinding -Name "*" -DisplayName 'Microsoft LLDP Protocol Driver'
 Disable-NetAdapterBinding -Name "*" -DisplayName 'Microsoft Network Adapter Multiplexor Protocol'
 # Disable-NetAdapterChecksumOffload -Name "*"
-Disable-NetAdapterEncapsulatedPacketTaskOffload -Name '*'
+# Disable-NetAdapterEncapsulatedPacketTaskOffload -Name '*'
 Disable-NetAdapterIPsecOffload -Name '*'
 Disable-NetAdapterLso -Name "*"
 Disable-NetAdapterPowerManagement -Name "*"
@@ -113,7 +112,7 @@ Disable-NetAdapterSriov -Name '*'
 Disable-NetAdapterUso -Name '*'
 Disable-NetAdapterVmq -Name '*'
 Enable-NetAdapterChecksumOffload -Name "*"
-# Enable-NetAdapterEncapsulatedPacketTaskOffload -Name "*"
+Enable-NetAdapterEncapsulatedPacketTaskOffload -Name "*"
 # Enable-NetAdapterIPsecOffload -Name "*"
 # Enable-NetAdapterQos -Name "*"
 # Enable-NetAdapterRsc -Name "*"
@@ -128,8 +127,11 @@ Set-NetAdapterRss -Name "*" -Profile Conservative
 Set-NetOffloadGlobalSetting -Chimney Disabled
 Set-NetOffloadGlobalSetting -NetworkDirectAcrossIPSubnets Blocked 
 Set-NetOffloadGlobalSetting -NetworkDirect Disabled
+Set-NetOffloadGlobalSetting -PacketCoalescingFilter Disable
 Set-NetOffloadGlobalSetting -PacketCoalescingFilter Disabled
-Set-NetOffloadGlobalSetting -ReceiveSegmentCoalescing Disabled
+# Set-NetOffloadGlobalSetting -ReceiveSegmentCoalescing Disabled
+Set-NetOffloadGlobalSetting -ReceiveSegmentCoalescing Enable
+Set-NetOffloadGlobalSetting -ReceiveSegmentCoalescing Enabled
 # Set-NetOffloadGlobalSetting -ReceiveSideScaling Disabled
 Set-NetOffloadGlobalSetting -ReceiveSideScaling Enabled
 # Set-NetOffloadGlobalSetting -Taskoffload Disabled
