@@ -157,5 +157,6 @@ https://forums.mydigitallife.net/threads/repo-windows-10-telemetry-repository.63
 https://github.com/jadenkiu/revert-windows-11-emojis  
 https://github.com/Duckleeng/DWMEnableMMCSS  
 https://cryptpad.fr/pad/#/2/pad/view/7qhwcrrOLFJCmptks7PnZn1YgS5QHULwLLzuPk8+Q7Q/embed  
-http://rh-software.com  
+https://rh-software.com  
 https://github.com/agadiffe/WindowsMize  
+https:/www.microsoft.com/en-us/download/details.aspx?id=100295  
